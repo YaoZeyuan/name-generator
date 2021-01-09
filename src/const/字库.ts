@@ -1,7 +1,7 @@
 import { Type_音调 } from "./音调相关"
 import { 总字库 } from "./char_db"
 
-type Type_Char_Item = {
+export type Type_Char_Item = {
   // 文字本身
   char: string
   pinyin: string
@@ -5152,14 +5152,7 @@ for (let char of 常见字_list) {
   }
 }
 
-export type Type_Pinyin_Item = {
-  pinyin: string,
-  tone: Type_音调,
-  char: string,
-  pinyin_without_tone: string
-}
-
-export const Const_Pinyin_To_Char: { [key: string]: Type_Pinyin_Item } = {}
+export const Const_Pinyin_To_Char: { [key: string]: Type_Char_Item } = {}
 for (let char of Object.keys(常见字字库)) {
   let item = 常见字字库[char]
   if (Const_Pinyin_To_Char[item.pinyin]) {
@@ -5174,7 +5167,7 @@ for (let char of Object.keys(常见字字库)) {
   }
 }
 
-export let Pinyin_List: Type_Pinyin_Item[] = []
+export let Pinyin_List: Type_Char_Item[] = []
 for (let pinyin of Object.keys(Const_Pinyin_To_Char)) {
   Pinyin_List.push(Const_Pinyin_To_Char[pinyin])
 }
