@@ -1,76 +1,91 @@
 import React, { useEffect, useState } from "react";
-import { char_db, 音标_list } from "./const/char_db";
-// import { pinyin2char } from "./const/char";
-import { Picker } from "react-weui";
-//import styles
-import "weui";
-import "react-weui/build/packages/react-weui.css";
+import { Const_Pinyin_To_Char, Pinyin_List } from "./const/字库";
+import { Select } from "zent";
 
-let charList = {
-  items: [],
-};
-for (let 音标 of 音标_list) {
-  charList.items.push({
-    label: `${音标} ${char_db[音标]}`,
-    char: `${char_db[音标]}`,
-    pinyin: `${音标}`,
-  });
+// 引入样式
+import "zent/css/index.css";
+
+let optionList = [];
+for (let item of Pinyin_List) {
+  let option = {
+    key: item.pinyin,
+    text: `${item.pinyin}-${item.char}`,
+  };
+  optionList.push(option);
 }
-const Const_Total_Choose = charList.items.length;
 
-const Const_Storage_Key = "name_storage";
+const Const_Total_Choose = Pinyin_List.length;
 
-let defaultSelectStr = localStorage.getItem(Const_Storage_Key) || "[0,0]";
-let defaultSelectList = JSON.parse(defaultSelectStr);
+const Const_Storage_Key_1 = "name_storage_1";
+const Const_Storage_Key_2 = "name_storage_2";
+
+let defaultSelectChar_1_str = localStorage.getItem(Const_Storage_Key_1);
+let defaultSelectChar_2_str = localStorage.getItem(Const_Storage_Key_2);
+
+let defaultSelectChar_1 = optionList[0];
+let defaultSelectChar_2 = optionList[0];
+try {
+  if (defaultSelectChar_1_str !== null) {
+    defaultSelectChar_1 = JSON.parse(defaultSelectChar_1_str);
+  }
+} catch (e) {}
+try {
+  if (defaultSelectChar_1_str !== null) {
+    defaultSelectChar_2 = JSON.parse(defaultSelectChar_2_str);
+  }
+} catch (e) {}
 
 export default () => {
   let [show, setShow] = useState(true);
-  let [chooseList, setChooseList] = useState(defaultSelectList);
+  let [selectChar_1, setSelectChar_1] = useState(defaultSelectChar_1);
+  let [selectChar_2, setSelectChar_2] = useState(defaultSelectChar_2);
 
-  let firstChar = char_db[音标_list[chooseList[0]]];
-  let secondChar = char_db[音标_list[chooseList[1]]];
-
-  let updateChoose = (newChooseList: [number, number]) => {
-    console.log("chooseList =>", newChooseList);
-    setChooseList(newChooseList);
-    localStorage.setItem(Const_Storage_Key, JSON.stringify(newChooseList));
+  let updateChoose = (newChoose: any, char_index) => {
+    switch (char_index) {
+      case 1:
+        setSelectChar_1(newChoose);
+        localStorage.setItem(Const_Storage_Key_1, JSON.stringify(newChoose));
+        break;
+      case 2:
+        setSelectChar_2(newChoose);
+        localStorage.setItem(Const_Storage_Key_2, JSON.stringify(newChoose));
+        break;
+    }
   };
+
+  let char1 = Const_Pinyin_To_Char[selectChar_1.key].char;
+  let char2 = Const_Pinyin_To_Char[selectChar_2.key].char;
 
   return (
     <div>
-      <pre>{/* {JSON.stringify(pinyin2char)} */}</pre>
       <button
         onClick={() => {
           let random1 =
-            parseInt(Math.random() * 100000000) % Const_Total_Choose;
+            parseInt(`${Math.random() * 100000000}`) % Const_Total_Choose;
           let random2 =
-            parseInt(Math.random() * 100000000) % Const_Total_Choose;
-          updateChoose([random1, random2]);
+            parseInt(`${Math.random() * 100000000}`) % Const_Total_Choose;
+          updateChoose(optionList[random1], 1);
+          updateChoose(optionList[random2], 2);
         }}
       >
         随机取名
       </button>
       <p></p>
-      <button
-        onClick={() => {
-          setShow(!show);
+      <p>姓名:姚{`${char1}${char2}`}</p>
+      <Select
+        onChange={(selectChar_1) => {
+          updateChoose(selectChar_1, 1);
         }}
-      >
-        Picker状态:{`${show ? "开" : "关"}`}
-      </button>
-      <p>姓名:姚{`${firstChar}${secondChar}`}</p>
-      <Picker
-        defaultSelect={chooseList}
-        show={show}
-        onCancel={() => {
-          setShow(false);
+        options={optionList}
+        value={selectChar_1}
+      ></Select>
+      <Select
+        onChange={(selectChar_2) => {
+          updateChoose(selectChar_2, 2);
         }}
-        onChange={(selected) => {
-          setShow(false);
-          updateChoose(selected);
-        }}
-        groups={[charList, charList]}
-      ></Picker>
+        options={optionList}
+        value={selectChar_2}
+      ></Select>
     </div>
   );
 };
