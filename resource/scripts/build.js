@@ -26,6 +26,7 @@ const formatWebpackMessages = require("react-dev-utils/formatWebpackMessages");
 const printHostingInstructions = require("react-dev-utils/printHostingInstructions");
 const FileSizeReporter = require("react-dev-utils/FileSizeReporter");
 const printBuildError = require("react-dev-utils/printBuildError");
+const shelljs = require("shelljs");
 
 const measureFileSizesBeforeBuild =
   FileSizeReporter.measureFileSizesBeforeBuild;
@@ -211,11 +212,18 @@ function build(previousFileSizes) {
 function copyBuildResultToMail() {
   let rootPath = path.resolve(paths.appPath, "..");
   console.log("开始copyBuildResultToMail");
-  // 删除静态资源文件
+  // 删除旧静态资源文件目录
   fs.removeSync(path.resolve(rootPath, "static"));
+  // 复制并覆盖为新静态资源文件
   fs.copySync(paths.appBuild, rootPath, {
     dereference: true,
   });
+  // git 提交
+  shelljs.exec(`git add *`);
+  shelljs.exec(`git commit -m "feat: 构建完成, 提交代码"`);
+  // git push
+  shelljs.exec(`git push`);
+  console.log("代码构建&发布完毕");
   return;
 }
 
