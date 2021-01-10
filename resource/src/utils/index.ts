@@ -1,6 +1,10 @@
 import { Type_Char_Item } from "../const/字库"
 
 export function isCharLegal(beforChar: Type_Char_Item, currentChar: Type_Char_Item) {
+    if (beforChar === undefined || currentChar === undefined) {
+        // 传入值不规范, 则不予以比较
+        return true
+    }
     // 规则1-两字音调不能相同
     if (beforChar.tone === currentChar.tone) {
         return false

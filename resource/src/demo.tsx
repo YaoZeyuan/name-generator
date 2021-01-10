@@ -5,11 +5,22 @@ import {
   Type_Char_Item,
 } from "./const/字库";
 import { 总字库 } from "./const/char_db";
-import { Select } from "zent";
+import {
+  Select,
+  Button,
+  Dropdown,
+  DropdownButton,
+  DropdownClickTrigger,
+  DropdownContent,
+  DropdownPosition,
+  Menu,
+} from "zent";
 import * as utils from "./utils";
 
 // 引入样式
 import "zent/css/index.css";
+
+const { MenuItem } = Menu;
 
 type Type_Char_Option = {
   key: string;
@@ -68,6 +79,8 @@ export default () => {
   let [inputFamilyName, setInputFamilyName] = useState(defaultInputFamilyName);
   let [selectChar_1, setSelectChar_1] = useState(defaultSelectChar_1);
   let [selectChar_2, setSelectChar_2] = useState(defaultSelectChar_2);
+  let [dropMenuShow_1, setDropMenuShow_1] = useState(false);
+  let [dropMenuShow_2, setDropMenuShow_2] = useState(false);
 
   let updateChoose = (newChoose: any, char_index) => {
     switch (char_index) {
@@ -102,6 +115,18 @@ export default () => {
     return isLegal;
   });
 
+  let char_1_menuItemList = [];
+  let char_2_menuItemList = [];
+  for (let item of char_1_OptionList) {
+    let ele = <MenuItem key={item.key}>{item.text}</MenuItem>;
+    char_1_menuItemList.push(ele);
+  }
+
+  for (let item of char_2_OptionList) {
+    let ele = <MenuItem key={item.key}>{item.text}</MenuItem>;
+    char_2_menuItemList.push(ele);
+  }
+
   return (
     <div>
       <div>
@@ -118,7 +143,7 @@ export default () => {
           }}
         ></input>
       </div>
-      <button
+      <Button
         onClick={() => {
           let new_char_1_optionList = TotalCharOptionList.filter((item) => {
             let isLegal = utils.isCharLegal(familyNameItem, item.char_item);
@@ -149,26 +174,63 @@ export default () => {
         }}
       >
         随机取名
-      </button>
+      </Button>
       <p></p>
       <p>
         姓名:{inputFamilyName}
         {`${char1}${char2}`}
       </p>
-      <Select
-        onChange={(selectChar_1) => {
-          updateChoose(selectChar_1, 1);
-        }}
-        options={char_1_OptionList}
-        value={selectChar_1}
-      ></Select>
-      <Select
-        onChange={(selectChar_2) => {
-          updateChoose(selectChar_2, 2);
-        }}
-        options={char_2_OptionList}
-        value={selectChar_2}
-      ></Select>
+      <Button type="primary" outline>
+        {inputFamilyName}
+      </Button>
+      <Dropdown
+        visible={dropMenuShow_1}
+        onVisibleChange={(v) => setDropMenuShow_1(!dropMenuShow_1)}
+        position={DropdownPosition.AutoBottomLeft}
+      >
+        <DropdownClickTrigger>
+          <DropdownButton type="primary">
+            {selectChar_1 ? selectChar_1.text : "可选字_1"}
+          </DropdownButton>
+        </DropdownClickTrigger>
+        <DropdownContent>
+          <Menu
+            onClick={(cliclItem, key: string) => {
+              setDropMenuShow_1(false);
+              let chooseOption = char_1_OptionList.find((item) => {
+                return item.key === key;
+              });
+              updateChoose(chooseOption, 1);
+            }}
+          >
+            {char_1_menuItemList}
+          </Menu>
+        </DropdownContent>
+      </Dropdown>
+      <Dropdown
+        visible={dropMenuShow_2}
+        onVisibleChange={(v) => setDropMenuShow_2(!dropMenuShow_2)}
+        position={DropdownPosition.AutoBottomLeft}
+      >
+        <DropdownClickTrigger>
+          <DropdownButton type="primary">
+            {selectChar_2 ? selectChar_2.text : "可选字_2"}
+          </DropdownButton>
+        </DropdownClickTrigger>
+        <DropdownContent>
+          <Menu
+            onClick={(cliclItem, key: string) => {
+              setDropMenuShow_2(false);
+              let chooseOption = char_2_OptionList.find((item) => {
+                return item.key === key;
+              });
+              updateChoose(chooseOption, 2);
+            }}
+          >
+            {char_2_menuItemList}
+          </Menu>
+        </DropdownContent>
+      </Dropdown>
     </div>
   );
 };
