@@ -58,16 +58,14 @@ checkBrowsers(paths.appPath, isInteractive)
     // This lets us display how much they changed later.
     return measureFileSizesBeforeBuild(paths.appBuild);
   })
-  .then(async (previousFileSizes) => {
+  .then((previousFileSizes) => {
     // Remove all content but keep the directory so that
     // if you're in it, you don't end up in Trash
     fs.emptyDirSync(paths.appBuild);
     // Merge with the public folder
     copyPublicFolder();
     // Start the webpack build
-    await build(previousFileSizes);
-    copyBuildResultToMail();
-    return;
+    return build(previousFileSizes);
   })
   .then(
     ({ stats, previousFileSizes, warnings }) => {
@@ -126,6 +124,9 @@ checkBrowsers(paths.appPath, isInteractive)
       }
     }
   )
+  .then(() => {
+    copyBuildResultToMail();
+  })
   .catch((err) => {
     if (err && err.message) {
       console.log(err.message);
@@ -208,8 +209,11 @@ function build(previousFileSizes) {
  * 将build结果复制到主文件夹中
  */
 function copyBuildResultToMail() {
+  let rootPath = path.resolve(paths.appPath, "..");
   console.log("开始copyBuildResultToMail");
-  fs.copySync(paths.appBuild, path.resolve(appPath, ".."), {
+  // 删除静态资源文件
+  fs.removeSync(path.resolve(rootPath, "static"));
+  fs.copySync(paths.appBuild, rootPath, {
     dereference: true,
   });
   return;
