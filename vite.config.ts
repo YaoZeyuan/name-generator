@@ -19,9 +19,4 @@ export default defineConfig({
       }
     ]
   },
-  esbuild: {
-    // 为jsx/tsx文件自动注入React变量
-    // 同时, 项目其他文件中不能出现`import React from 'react'`语句, 否则会引起变量名重复, 导致项目无法启动
-    "jsxInject": "import React from 'react';"
-  }
 })
