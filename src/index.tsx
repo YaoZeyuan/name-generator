@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
-
+import { useDebounceFn } from "ahooks";
 import { 总字库 } from "@/const/char_db";
 import {
   Const_Level_0_Pinyin,
@@ -108,6 +108,7 @@ export default () => {
     let char_姓氏_最后一个字 = 总字库[char_姓氏?.[char_姓氏.length - 1] || ""];
 
     let needFileterCharList = input_需过滤字列表.split("");
+    // 使用set, 方便过滤掉重复的拼音
     let needFileterPinyinSet = new Set();
     for (let needFileterChar of needFileterCharList) {
       let pinyin = 总字库[needFileterChar]?.pinyin;
@@ -167,8 +168,6 @@ export default () => {
           onChange={(e) => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
-            // 去重
-            inputValue = [...new Set(inputValue.split("")).values()].join("");
             localStorage.setItem(
               Const_Storage_需过滤字列表_Key,
               JSON.stringify(inputValue)
