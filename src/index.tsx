@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Const_Pinyin_To_Char, Type_Char_Item } from "./const/字库";
+import { proxy, useSnapshot } from "valtio";
 
 import { 总字库 } from "@/const/char_db";
 import {
@@ -20,19 +20,14 @@ import {
   MenuCascader,
   ICascaderItem,
 } from "zent";
-import { clone, getNode } from "zent/es/cascader/public-options-fns";
-import * as utils from "./utils";
+import * as utils from "@/utils";
+import * as Types from "@/types/index";
+import NameList from "@/component/name_list";
 
 // 引入样式
 import "zent/css/index.css";
 
 const { MenuItem } = Menu;
-
-type Type_Char_Option = {
-  key: string;
-  text: string;
-  char_item: Type_Char_Item;
-};
 
 const Const_Storage_Key = "name_storage";
 const Const_Storage_姓氏_Key = `${Const_Storage_Key}_family_name`;
@@ -50,7 +45,7 @@ type Type_Pinyin_Menu_Option_Level =
   | typeof Const_Pinyin_Menu_Option_Level_可选字;
 
 // 所有可选字列表
-let TotalCharOptionList: Type_Char_Option[] = [];
+let TotalCharOptionList: Types.Type_Char_Option[] = [];
 
 const char_level =
   (parseInt(localStorage.getItem(Const_Storage_Char_Leve_Key) || "0") as
@@ -76,7 +71,7 @@ switch (char_level) {
 for (let pinyin of Object.keys(Pinyin_Database_Map)) {
   let pinyin_option_list = Pinyin_Database_Map[pinyin].option_list;
   for (let item of pinyin_option_list) {
-    let option: Type_Char_Option = {
+    let option: Types.Type_Char_Option = {
       key: `${item.pinyin}-${item.char}`,
       text: `${item.pinyin}-${item.char}`,
       char_item: item,
@@ -188,11 +183,16 @@ try {
   }
 } catch (e) {}
 
-export default () => {
-  let [dropMenuShow_1, setDropMenuShow_1] = useState(false);
-  let [dropMenuShow_2, setDropMenuShow_2] = useState(false);
+const store = proxy<{
+  nameList: Types.Type_Name[];
+}>({
+  nameList: [],
+});
 
+export default () => {
   let [input_姓氏, set_input_姓氏] = useState(default_input_姓氏);
+
+  let storeSnapshot = useSnapshot(store);
 
   let [select_char_人名_第一个字, set_select_char_人名_第一个字] = useState(
     default_select_人名_第一个字
@@ -266,6 +266,36 @@ export default () => {
     char_2_menuItemList.push(ele);
   }
 
+  let randomGenerateName = (char_姓氏: string) => {
+    let char_姓氏_最后一个字 = 总字库[char_姓氏?.[char_姓氏.length - 1] || ""];
+
+    let new_char_1_optionList = TotalCharOptionList.filter((item) => {
+      let isLegal = utils.isCharLegal(char_姓氏_最后一个字, item.char_item);
+      return isLegal;
+    });
+
+    let random1 =
+      parseInt(`${Math.random() * 100000000}`) % new_char_1_optionList.length;
+    let randomChar1 = new_char_1_optionList[random1];
+
+    let new_char_2_optionList = TotalCharOptionList.filter((item) => {
+      let isLegal = utils.isCharLegal(randomChar1.char_item, item.char_item);
+      return isLegal;
+    });
+
+    let random2 =
+      parseInt(`${Math.random() * 100000000}`) % new_char_2_optionList.length;
+
+    let randomChar2 = new_char_2_optionList[random2];
+
+    let name: Types.Type_Name = {
+      姓氏: input_姓氏,
+      人名_第一个字: randomChar1,
+      人名_第二个字: randomChar2,
+    };
+    return name;
+  };
+
   return (
     <div>
       <div>
@@ -284,49 +314,20 @@ export default () => {
         ></input>
       </div>
       <Button
-        onClick={() => {
-          let new_char_1_optionList = TotalCharOptionList.filter((item) => {
-            let isLegal = utils.isCharLegal(
-              char_姓氏_最后一个字,
-              item.char_item
-            );
-            return isLegal;
-          });
-
-          let random1 =
-            parseInt(`${Math.random() * 100000000}`) %
-            new_char_1_optionList.length;
-          let randomChar1 = new_char_1_optionList[random1];
-
-          let new_char_2_optionList = TotalCharOptionList.filter((item) => {
-            let isLegal = utils.isCharLegal(
-              randomChar1.char_item,
-              item.char_item
-            );
-            return isLegal;
-          });
-
-          let random2 =
-            parseInt(`${Math.random() * 100000000}`) %
-            new_char_2_optionList.length;
-
-          let randomChar2 = new_char_2_optionList[random2];
-
-          updateChoose(randomChar1, 1);
-          updateChoose(randomChar2, 2);
+        onClick={function () {
+          let randomNameList: Types.Type_Name[] = [];
+          for (let i = 0; i < 100; i++) {
+            let randomName = randomGenerateName(input_姓氏);
+            randomNameList.push(randomName);
+          }
+          store.nameList = randomNameList;
+          // console.log("main nameList => ", []);
         }}
       >
-        随机取名
+        随机生成100个名字
       </Button>
-      <p></p>
-      <p>
-        姓名:{input_姓氏}
-        {`${char1}${char2}`}
-      </p>
-      <Button type="primary" outline>
-        {input_姓氏}
-      </Button>
-      <MenuCascader
+      <NameList nameList={storeSnapshot.nameList}></NameList>
+      {/* <MenuCascader
         options={optionList}
         loadOptions={async (selectedOptions, meta) => {
           if (selectedOptions === null) {
@@ -358,7 +359,7 @@ export default () => {
           setOptionList([...newOptionList]);
           return;
         }}
-      ></MenuCascader>
+      ></MenuCascader> */}
     </div>
   );
 };
