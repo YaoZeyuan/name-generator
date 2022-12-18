@@ -9873,14 +9873,13 @@ let total_result: {
       },
     ]
   },
-  // 到这里了
   "ta": {
     "pinyin_without_tone": "ta",
     "option_list": [
       {
         "pinyin": "tā",
         "tone": 1,
-        "char": "他",
+        "char": "它",
         "char_list": [
           "他",
           "它",
@@ -9910,24 +9909,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "ta"
       },
-      {
-        "pinyin": "tǎ",
-        "tone": 3,
-        "char": "溚",
-        "char_list": [
-          "溚"
-        ],
-        "pinyin_without_tone": "ta"
-      },
-      {
-        "pinyin": "tà",
-        "tone": 4,
-        "char": "鞳",
-        "char_list": [
-          "鞳"
-        ],
-        "pinyin_without_tone": "ta"
-      }
     ]
   },
   "tai": {
@@ -9956,24 +9937,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tai"
       },
-      {
-        "pinyin": "tāi",
-        "tone": 1,
-        "char": "胎",
-        "char_list": [
-          "胎"
-        ],
-        "pinyin_without_tone": "tai"
-      },
-      {
-        "pinyin": "tái",
-        "tone": 2,
-        "char": "抬",
-        "char_list": [
-          "抬"
-        ],
-        "pinyin_without_tone": "tai"
-      }
     ]
   },
   "tan": {
@@ -9982,7 +9945,7 @@ let total_result: {
       {
         "pinyin": "tān",
         "tone": 1,
-        "char": "贪",
+        "char": "滩",
         "char_list": [
           "贪",
           "摊",
@@ -10030,26 +9993,7 @@ let total_result: {
         ],
         "pinyin_without_tone": "tan"
       },
-      {
-        "pinyin": "tán",
-        "tone": 2,
-        "char": "倓",
-        "char_list": [
-          "倓",
-          "惔",
-          "榃"
-        ],
-        "pinyin_without_tone": "tan"
-      },
-      {
-        "pinyin": "tǎn",
-        "tone": 3,
-        "char": "菼",
-        "char_list": [
-          "菼"
-        ],
-        "pinyin_without_tone": "tan"
-      }
+
     ]
   },
   "tang": {
@@ -10084,7 +10028,7 @@ let total_result: {
       {
         "pinyin": "tǎng",
         "tone": 3,
-        "char": "倘",
+        "char": "淌",
         "char_list": [
           "倘",
           "淌",
@@ -10095,31 +10039,13 @@ let total_result: {
       {
         "pinyin": "tàng",
         "tone": 4,
-        "char": "烫",
+        "char": "趟",
         "char_list": [
           "烫",
           "趟"
         ],
         "pinyin_without_tone": "tang"
       },
-      {
-        "pinyin": "táng",
-        "tone": 2,
-        "char": "䣘",
-        "char_list": [
-          "䣘"
-        ],
-        "pinyin_without_tone": "tang"
-      },
-      {
-        "pinyin": "tǎng",
-        "tone": 3,
-        "char": "镋",
-        "char_list": [
-          "镋"
-        ],
-        "pinyin_without_tone": "tang"
-      }
     ]
   },
   "tao": {
@@ -10155,15 +10081,6 @@ let total_result: {
         "pinyin_without_tone": "tao"
       },
       {
-        "pinyin": "tǎo",
-        "tone": 3,
-        "char": "讨",
-        "char_list": [
-          "讨"
-        ],
-        "pinyin_without_tone": "tao"
-      },
-      {
         "pinyin": "tào",
         "tone": 4,
         "char": "套",
@@ -10172,15 +10089,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tao"
       },
-      {
-        "pinyin": "táo",
-        "tone": 2,
-        "char": "𫘦",
-        "char_list": [
-          "𫘦"
-        ],
-        "pinyin_without_tone": "tao"
-      }
     ]
   },
   "te": {
@@ -10196,15 +10104,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "te"
       },
-      {
-        "pinyin": "tè",
-        "tone": 4,
-        "char": "螣",
-        "char_list": [
-          "螣"
-        ],
-        "pinyin_without_tone": "te"
-      }
     ]
   },
   "teng": {
@@ -10223,15 +10122,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "teng"
       },
-      {
-        "pinyin": "téng",
-        "tone": 2,
-        "char": "䲢",
-        "char_list": [
-          "䲢"
-        ],
-        "pinyin_without_tone": "teng"
-      }
     ]
   },
   "ti": {
@@ -10285,26 +10175,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "ti"
       },
-      {
-        "pinyin": "tí",
-        "tone": 2,
-        "char": "遆",
-        "char_list": [
-          "遆",
-          "𫘨"
-        ],
-        "pinyin_without_tone": "ti"
-      },
-      {
-        "pinyin": "tī",
-        "tone": 1,
-        "char": "䴘",
-        "char_list": [
-          "䴘",
-          "擿"
-        ],
-        "pinyin_without_tone": "ti"
-      }
     ]
   },
   "tian": {
@@ -10334,43 +10204,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tian"
       },
-      {
-        "pinyin": "tiǎn",
-        "tone": 3,
-        "char": "晪",
-        "char_list": [
-          "晪",
-          "舔"
-        ],
-        "pinyin_without_tone": "tian"
-      },
-      {
-        "pinyin": "tiàn",
-        "tone": 4,
-        "char": "掭",
-        "char_list": [
-          "掭"
-        ],
-        "pinyin_without_tone": "tian"
-      },
-      {
-        "pinyin": "tiǎn",
-        "tone": 3,
-        "char": "淟",
-        "char_list": [
-          "淟"
-        ],
-        "pinyin_without_tone": "tian"
-      },
-      {
-        "pinyin": "tiān",
-        "tone": 1,
-        "char": "黇",
-        "char_list": [
-          "黇"
-        ],
-        "pinyin_without_tone": "tian"
-      }
     ]
   },
   "tiao": {
@@ -10389,7 +10222,7 @@ let total_result: {
       {
         "pinyin": "tiáo",
         "tone": 2,
-        "char": "条",
+        "char": "迢",
         "char_list": [
           "条",
           "迢",
@@ -10404,15 +10237,6 @@ let total_result: {
         "char": "跳",
         "char_list": [
           "跳"
-        ],
-        "pinyin_without_tone": "tiao"
-      },
-      {
-        "pinyin": "tiǎo",
-        "tone": 3,
-        "char": "嬥",
-        "char_list": [
-          "嬥"
         ],
         "pinyin_without_tone": "tiao"
       },
@@ -10479,38 +10303,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "ting"
       },
-      {
-        "pinyin": "tǐng",
-        "tone": 3,
-        "char": "圢",
-        "char_list": [
-          "圢",
-          "侹",
-          "珽",
-          "烶",
-          "颋"
-        ],
-        "pinyin_without_tone": "ting"
-      },
-      {
-        "pinyin": "tīng",
-        "tone": 1,
-        "char": "𬘩",
-        "char_list": [
-          "𬘩",
-          "桯"
-        ],
-        "pinyin_without_tone": "ting"
-      },
-      {
-        "pinyin": "tíng",
-        "tone": 2,
-        "char": "䗴",
-        "char_list": [
-          "䗴"
-        ],
-        "pinyin_without_tone": "ting"
-      }
     ]
   },
   "tong": {
@@ -10528,7 +10320,7 @@ let total_result: {
       {
         "pinyin": "tóng",
         "tone": 2,
-        "char": "同",
+        "char": "彤",
         "char_list": [
           "仝",
           "同",
@@ -10554,51 +10346,11 @@ let total_result: {
         ],
         "pinyin_without_tone": "tong"
       },
-      {
-        "pinyin": "tòng",
-        "tone": 4,
-        "char": "痛",
-        "char_list": [
-          "痛"
-        ],
-        "pinyin_without_tone": "tong"
-      },
-      {
-        "pinyin": "tóng",
-        "tone": 2,
-        "char": "峂",
-        "char_list": [
-          "峂",
-          "𫍣",
-          "哃",
-          "鲖",
-          "橦"
-        ],
-        "pinyin_without_tone": "tong"
-      },
-      {
-        "pinyin": "tǒng",
-        "tone": 3,
-        "char": "㛚",
-        "char_list": [
-          "㛚"
-        ],
-        "pinyin_without_tone": "tong"
-      }
     ]
   },
   "tou": {
     "pinyin_without_tone": "tou",
     "option_list": [
-      {
-        "pinyin": "tōu",
-        "tone": 1,
-        "char": "偷",
-        "char_list": [
-          "偷"
-        ],
-        "pinyin_without_tone": "tou"
-      },
       {
         "pinyin": "tóu",
         "tone": 2,
@@ -10627,7 +10379,7 @@ let total_result: {
       {
         "pinyin": "tū",
         "tone": 1,
-        "char": "秃",
+        "char": "突",
         "char_list": [
           "凸",
           "秃",
@@ -10672,24 +10424,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tu"
       },
-      {
-        "pinyin": "tú",
-        "tone": 2,
-        "char": "𬳿",
-        "char_list": [
-          "𬳿"
-        ],
-        "pinyin_without_tone": "tu"
-      },
-      {
-        "pinyin": "tū",
-        "tone": 1,
-        "char": "㻬",
-        "char_list": [
-          "㻬"
-        ],
-        "pinyin_without_tone": "tu"
-      }
     ]
   },
   "tuan": {
@@ -10704,25 +10438,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tuan"
       },
-      {
-        "pinyin": "tuān",
-        "tone": 1,
-        "char": "猯",
-        "char_list": [
-          "猯",
-          "煓"
-        ],
-        "pinyin_without_tone": "tuan"
-      },
-      {
-        "pinyin": "tuàn",
-        "tone": 4,
-        "char": "彖",
-        "char_list": [
-          "彖"
-        ],
-        "pinyin_without_tone": "tuan"
-      }
     ]
   },
   "tui": {
@@ -10738,15 +10453,6 @@ let total_result: {
         "pinyin_without_tone": "tui"
       },
       {
-        "pinyin": "tuǐ",
-        "tone": 3,
-        "char": "腿",
-        "char_list": [
-          "腿"
-        ],
-        "pinyin_without_tone": "tui"
-      },
-      {
         "pinyin": "tuì",
         "tone": 4,
         "char": "退",
@@ -10757,25 +10463,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tui"
       },
-      {
-        "pinyin": "tuí",
-        "tone": 2,
-        "char": "颓",
-        "char_list": [
-          "颓",
-          "魋"
-        ],
-        "pinyin_without_tone": "tui"
-      },
-      {
-        "pinyin": "tuí",
-        "tone": 2,
-        "char": "𬯎",
-        "char_list": [
-          "𬯎"
-        ],
-        "pinyin_without_tone": "tui"
-      }
     ]
   },
   "tun": {
@@ -10802,24 +10489,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "tun"
       },
-      {
-        "pinyin": "tún",
-        "tone": 2,
-        "char": "忳",
-        "char_list": [
-          "忳"
-        ],
-        "pinyin_without_tone": "tun"
-      },
-      {
-        "pinyin": "tūn",
-        "tone": 1,
-        "char": "焞",
-        "char_list": [
-          "焞"
-        ],
-        "pinyin_without_tone": "tun"
-      }
     ]
   },
   "tuo": {
@@ -10858,35 +10527,16 @@ let total_result: {
         ],
         "pinyin_without_tone": "tuo"
       },
-      {
-        "pinyin": "tuò",
-        "tone": 4,
-        "char": "唾",
-        "char_list": [
-          "唾",
-          "萚",
-          "箨"
-        ],
-        "pinyin_without_tone": "tuo"
-      },
-      {
-        "pinyin": "tuó",
-        "tone": 2,
-        "char": "𬶍",
-        "char_list": [
-          "𬶍"
-        ],
-        "pinyin_without_tone": "tuo"
-      }
     ]
   },
+  // 到这里了
   "wa": {
     "pinyin_without_tone": "wa",
     "option_list": [
       {
         "pinyin": "wā",
         "tone": 1,
-        "char": "挖",
+        "char": "洼",
         "char_list": [
           "挖",
           "洼",
@@ -10914,39 +10564,11 @@ let total_result: {
         ],
         "pinyin_without_tone": "wa"
       },
-      {
-        "pinyin": "wà",
-        "tone": 4,
-        "char": "袜",
-        "char_list": [
-          "袜",
-          "腽"
-        ],
-        "pinyin_without_tone": "wa"
-      },
-      {
-        "pinyin": "wa",
-        "tone": 0,
-        "char": "哇",
-        "char_list": [
-          "哇"
-        ],
-        "pinyin_without_tone": "wa"
-      }
     ]
   },
   "wai": {
     "pinyin_without_tone": "wai",
     "option_list": [
-      {
-        "pinyin": "wāi",
-        "tone": 1,
-        "char": "歪",
-        "char_list": [
-          "歪"
-        ],
-        "pinyin_without_tone": "wai"
-      },
       {
         "pinyin": "wài",
         "tone": 4,
@@ -10964,7 +10586,7 @@ let total_result: {
       {
         "pinyin": "wān",
         "tone": 1,
-        "char": "弯",
+        "char": "湾",
         "char_list": [
           "弯",
           "湾",
@@ -10987,7 +10609,7 @@ let total_result: {
       {
         "pinyin": "wǎn",
         "tone": 3,
-        "char": "挽",
+        "char": "婉",
         "char_list": [
           "宛",
           "挽",
@@ -11009,26 +10631,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "wan"
       },
-      {
-        "pinyin": "wàn",
-        "tone": 4,
-        "char": "𬇕",
-        "char_list": [
-          "𬇕",
-          "妧",
-          "鿏"
-        ],
-        "pinyin_without_tone": "wan"
-      },
-      {
-        "pinyin": "wān",
-        "tone": 1,
-        "char": "婠",
-        "char_list": [
-          "婠"
-        ],
-        "pinyin_without_tone": "wan"
-      }
     ]
   },
   "wang": {
@@ -11047,7 +10649,7 @@ let total_result: {
       {
         "pinyin": "wáng",
         "tone": 2,
-        "char": "亡",
+        "char": "王",
         "char_list": [
           "亡",
           "王"
@@ -11133,7 +10735,7 @@ let total_result: {
       {
         "pinyin": "wèi",
         "tone": 4,
-        "char": "位",
+        "char": "卫",
         "char_list": [
           "卫",
           "为",
@@ -11154,51 +10756,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "wei"
       },
-      {
-        "pinyin": "wěi",
-        "tone": 3,
-        "char": "𫇭",
-        "char_list": [
-          "𫇭",
-          "𬀩",
-          "𬱟",
-          "薳"
-        ],
-        "pinyin_without_tone": "wei"
-      },
-      {
-        "pinyin": "wéi",
-        "tone": 2,
-        "char": "𣲗",
-        "char_list": [
-          "𣲗",
-          "峗",
-          "硙",
-          "琟",
-          "𬶏"
-        ],
-        "pinyin_without_tone": "wei"
-      },
-      {
-        "pinyin": "wēi",
-        "tone": 1,
-        "char": "溦",
-        "char_list": [
-          "溦"
-        ],
-        "pinyin_without_tone": "wei"
-      },
-      {
-        "pinyin": "wèi",
-        "tone": 4,
-        "char": "碨",
-        "char_list": [
-          "碨",
-          "𬭬",
-          "螱"
-        ],
-        "pinyin_without_tone": "wei"
-      }
     ]
   },
   "wen": {
@@ -11251,25 +10808,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "wen"
       },
-      {
-        "pinyin": "wén",
-        "tone": 2,
-        "char": "𫘜",
-        "char_list": [
-          "𫘜"
-        ],
-        "pinyin_without_tone": "wen"
-      },
-      {
-        "pinyin": "wēn",
-        "tone": 1,
-        "char": "辒",
-        "char_list": [
-          "辒",
-          "蕰"
-        ],
-        "pinyin_without_tone": "wen"
-      }
     ]
   },
   "weng": {
@@ -11286,24 +10824,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "weng"
       },
-      {
-        "pinyin": "wèng",
-        "tone": 4,
-        "char": "蕹",
-        "char_list": [
-          "蕹"
-        ],
-        "pinyin_without_tone": "weng"
-      },
-      {
-        "pinyin": "wēng",
-        "tone": 1,
-        "char": "𬭩",
-        "char_list": [
-          "𬭩"
-        ],
-        "pinyin_without_tone": "weng"
-      }
     ]
   },
   "wo": {
@@ -11312,7 +10832,7 @@ let total_result: {
       {
         "pinyin": "wō",
         "tone": 1,
-        "char": "窝",
+        "char": "涡",
         "char_list": [
           "涡",
           "窝",
@@ -11413,25 +10933,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "wu"
       },
-      {
-        "pinyin": "wǔ",
-        "tone": 3,
-        "char": "𣲘",
-        "char_list": [
-          "𣲘",
-          "旿"
-        ],
-        "pinyin_without_tone": "wu"
-      },
-      {
-        "pinyin": "wú",
-        "tone": 2,
-        "char": "郚",
-        "char_list": [
-          "郚"
-        ],
-        "pinyin_without_tone": "wu"
-      }
     ]
   },
   "xi": {
@@ -11495,7 +10996,7 @@ let total_result: {
       {
         "pinyin": "xǐ",
         "tone": 3,
-        "char": "洗",
+        "char": "喜",
         "char_list": [
           "枲",
           "洗",
@@ -11519,47 +11020,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xi"
       },
-      {
-        "pinyin": "xī",
-        "tone": 1,
-        "char": "肸",
-        "char_list": [
-          "肸",
-          "㴔",
-          "嶲",
-          "谿"
-        ],
-        "pinyin_without_tone": "xi"
-      },
-      {
-        "pinyin": "xì",
-        "tone": 4,
-        "char": "咥",
-        "char_list": [
-          "咥"
-        ],
-        "pinyin_without_tone": "xi"
-      },
-      {
-        "pinyin": "xí",
-        "tone": 2,
-        "char": "𫘬",
-        "char_list": [
-          "𫘬",
-          "鳛"
-        ],
-        "pinyin_without_tone": "xi"
-      },
-      {
-        "pinyin": "xǐ",
-        "tone": 3,
-        "char": "暿",
-        "char_list": [
-          "暿",
-          "𬶮"
-        ],
-        "pinyin_without_tone": "xi"
-      }
     ]
   },
   "xia": {
@@ -11668,45 +11128,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xian"
       },
-      {
-        "pinyin": "xiàn",
-        "tone": 4,
-        "char": "𬀪",
-        "char_list": [
-          "𬀪",
-          "𪾢",
-          "硍"
-        ],
-        "pinyin_without_tone": "xian"
-      },
-      {
-        "pinyin": "xiǎn",
-        "tone": 3,
-        "char": "狝",
-        "char_list": [
-          "狝",
-          "㬎"
-        ],
-        "pinyin_without_tone": "xian"
-      },
-      {
-        "pinyin": "xián",
-        "tone": 2,
-        "char": "𫍯",
-        "char_list": [
-          "𫍯"
-        ],
-        "pinyin_without_tone": "xian"
-      },
-      {
-        "pinyin": "xiān",
-        "tone": 1,
-        "char": "𬸣",
-        "char_list": [
-          "𬸣"
-        ],
-        "pinyin_without_tone": "xian"
-      }
     ]
   },
   "xiang": {
@@ -11775,7 +11196,7 @@ let total_result: {
       {
         "pinyin": "xiāo",
         "tone": 1,
-        "char": "消",
+        "char": "潇",
         "char_list": [
           "哮",
           "宵",
@@ -11817,70 +11238,11 @@ let total_result: {
         ],
         "pinyin_without_tone": "xiao"
       },
-      {
-        "pinyin": "xiao",
-        "tone": 0,
-        "char": "滧",
-        "char_list": [
-          "滧"
-        ],
-        "pinyin_without_tone": "xiao"
-      },
-      {
-        "pinyin": "xiáo",
-        "tone": 2,
-        "char": "洨",
-        "char_list": [
-          "洨",
-          "淆"
-        ],
-        "pinyin_without_tone": "xiao"
-      },
-      {
-        "pinyin": "xiāo",
-        "tone": 1,
-        "char": "猇",
-        "char_list": [
-          "猇",
-          "翛"
-        ],
-        "pinyin_without_tone": "xiao"
-      },
-      {
-        "pinyin": "xiǎo",
-        "tone": 3,
-        "char": "𫍲",
-        "char_list": [
-          "𫍲",
-          "皛"
-        ],
-        "pinyin_without_tone": "xiao"
-      },
-      {
-        "pinyin": "xiào",
-        "tone": 4,
-        "char": "敩",
-        "char_list": [
-          "敩"
-        ],
-        "pinyin_without_tone": "xiao"
-      }
     ]
   },
   "xie": {
     "pinyin_without_tone": "xie",
     "option_list": [
-      {
-        "pinyin": "xiē",
-        "tone": 1,
-        "char": "歇",
-        "char_list": [
-          "些",
-          "歇",
-          "蝎"
-        ],
-        "pinyin_without_tone": "xie"
-      },
       {
         "pinyin": "xié",
         "tone": 2,
@@ -11894,15 +11256,6 @@ let total_result: {
           "谐",
           "携",
           "鞋"
-        ],
-        "pinyin_without_tone": "xie"
-      },
-      {
-        "pinyin": "xiě",
-        "tone": 3,
-        "char": "写",
-        "char_list": [
-          "写"
         ],
         "pinyin_without_tone": "xie"
       },
@@ -11924,25 +11277,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xie"
       },
-      {
-        "pinyin": "xiè",
-        "tone": 4,
-        "char": "𬹼",
-        "char_list": [
-          "𬹼",
-          "薢"
-        ],
-        "pinyin_without_tone": "xie"
-      },
-      {
-        "pinyin": "xié",
-        "tone": 2,
-        "char": "㙦",
-        "char_list": [
-          "㙦"
-        ],
-        "pinyin_without_tone": "xie"
-      }
     ]
   },
   "xin": {
@@ -11960,6 +11294,7 @@ let total_result: {
           "锌",
           "新",
           "薪",
+          "䜣",
           "馨"
         ],
         "pinyin_without_tone": "xin"
@@ -11974,25 +11309,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xin"
       },
-      {
-        "pinyin": "xǐn",
-        "tone": 3,
-        "char": "伈",
-        "char_list": [
-          "伈"
-        ],
-        "pinyin_without_tone": "xin"
-      },
-      {
-        "pinyin": "xīn",
-        "tone": 1,
-        "char": "䜣",
-        "char_list": [
-          "䜣",
-          "𫷷"
-        ],
-        "pinyin_without_tone": "xin"
-      }
     ]
   },
   "xing": {
@@ -12036,7 +11352,7 @@ let total_result: {
       {
         "pinyin": "xìng",
         "tone": 4,
-        "char": "兴",
+        "char": "杏",
         "char_list": [
           "兴",
           "杏",
@@ -12047,25 +11363,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xing"
       },
-      {
-        "pinyin": "xíng",
-        "tone": 2,
-        "char": "𫰛",
-        "char_list": [
-          "𫰛",
-          "钘"
-        ],
-        "pinyin_without_tone": "xing"
-      },
-      {
-        "pinyin": "xīng",
-        "tone": 1,
-        "char": "骍",
-        "char_list": [
-          "骍"
-        ],
-        "pinyin_without_tone": "xing"
-      }
     ]
   },
   "xiong": {
@@ -12095,16 +11392,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xiong"
       },
-      {
-        "pinyin": "xiòng",
-        "tone": 4,
-        "char": "诇",
-        "char_list": [
-          "诇",
-          "夐"
-        ],
-        "pinyin_without_tone": "xiong"
-      }
     ]
   },
   "xiu": {
@@ -12145,16 +11432,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xiu"
       },
-      {
-        "pinyin": "xiū",
-        "tone": 1,
-        "char": "脩",
-        "char_list": [
-          "脩",
-          "䗛"
-        ],
-        "pinyin_without_tone": "xiu"
-      }
     ]
   },
   "xu": {
@@ -12217,27 +11494,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xu"
       },
-      {
-        "pinyin": "xū",
-        "tone": 1,
-        "char": "𬣙",
-        "char_list": [
-          "𬣙",
-          "旴",
-          "湑",
-          "𦈡"
-        ],
-        "pinyin_without_tone": "xu"
-      },
-      {
-        "pinyin": "xù",
-        "tone": 4,
-        "char": "㳚",
-        "char_list": [
-          "㳚"
-        ],
-        "pinyin_without_tone": "xu"
-      }
     ]
   },
   "xuan": {
@@ -12295,61 +11551,11 @@ let total_result: {
         ],
         "pinyin_without_tone": "xuan"
       },
-      {
-        "pinyin": "xuán",
-        "tone": 2,
-        "char": "𫠊",
-        "char_list": [
-          "𫠊"
-        ],
-        "pinyin_without_tone": "xuan"
-      },
-      {
-        "pinyin": "xuǎn",
-        "tone": 3,
-        "char": "咺",
-        "char_list": [
-          "咺"
-        ],
-        "pinyin_without_tone": "xuan"
-      },
-      {
-        "pinyin": "xuàn",
-        "tone": 4,
-        "char": "琄",
-        "char_list": [
-          "琄"
-        ],
-        "pinyin_without_tone": "xuan"
-      },
-      {
-        "pinyin": "xuān",
-        "tone": 1,
-        "char": "𫓶",
-        "char_list": [
-          "𫓶",
-          "禤",
-          "𫍽",
-          "翾"
-        ],
-        "pinyin_without_tone": "xuan"
-      }
     ]
   },
   "xue": {
     "pinyin_without_tone": "xue",
     "option_list": [
-      {
-        "pinyin": "xuē",
-        "tone": 1,
-        "char": "削",
-        "char_list": [
-          "削",
-          "靴",
-          "薛"
-        ],
-        "pinyin_without_tone": "xue"
-      },
       {
         "pinyin": "xué",
         "tone": 2,
@@ -12378,15 +11584,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "xue"
       },
-      {
-        "pinyin": "xué",
-        "tone": 2,
-        "char": "峃",
-        "char_list": [
-          "峃"
-        ],
-        "pinyin_without_tone": "xue"
-      }
     ]
   },
   "xun": {
@@ -12395,7 +11592,7 @@ let total_result: {
       {
         "pinyin": "xún",
         "tone": 2,
-        "char": "旬",
+        "char": "巡",
         "char_list": [
           "寻",
           "旬",
@@ -12432,42 +11629,11 @@ let total_result: {
         ],
         "pinyin_without_tone": "xun"
       },
-      {
-        "pinyin": "xún",
-        "tone": 2,
-        "char": "𬘓",
-        "char_list": [
-          "𬘓",
-          "𬩽",
-          "𬍤",
-          "栒",
-          "𬊈"
-        ],
-        "pinyin_without_tone": "xun"
-      },
-      {
-        "pinyin": "xūn",
-        "tone": 1,
-        "char": "𫄸",
-        "char_list": [
-          "𫄸"
-        ],
-        "pinyin_without_tone": "xun"
-      }
     ]
   },
   "ya": {
     "pinyin_without_tone": "ya",
     "option_list": [
-      {
-        "pinyin": "ya",
-        "tone": 0,
-        "char": "呀",
-        "char_list": [
-          "呀"
-        ],
-        "pinyin_without_tone": "ya"
-      },
       {
         "pinyin": "yā",
         "tone": 1,
@@ -12520,15 +11686,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "ya"
       },
-      {
-        "pinyin": "yà",
-        "tone": 4,
-        "char": "猰",
-        "char_list": [
-          "猰"
-        ],
-        "pinyin_without_tone": "ya"
-      }
     ]
   },
   "yan": {
@@ -12611,38 +11768,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yan"
       },
-      {
-        "pinyin": "yǎn",
-        "tone": 3,
-        "char": "沇",
-        "char_list": [
-          "沇",
-          "䶮",
-          "渰",
-          "𬸘",
-          "𬙂",
-          "𪩘"
-        ],
-        "pinyin_without_tone": "yan"
-      },
-      {
-        "pinyin": "yán",
-        "tone": 2,
-        "char": "𫄧",
-        "char_list": [
-          "𫄧"
-        ],
-        "pinyin_without_tone": "yan"
-      },
-      {
-        "pinyin": "yàn",
-        "tone": 4,
-        "char": "烻",
-        "char_list": [
-          "烻"
-        ],
-        "pinyin_without_tone": "yan"
-      }
     ]
   },
   "yang": {
@@ -12738,17 +11863,6 @@ let total_result: {
         "pinyin_without_tone": "yao"
       },
       {
-        "pinyin": "yǎo",
-        "tone": 3,
-        "char": "咬",
-        "char_list": [
-          "咬",
-          "舀",
-          "崾"
-        ],
-        "pinyin_without_tone": "yao"
-      },
-      {
         "pinyin": "yào",
         "tone": 4,
         "char": "耀",
@@ -12759,24 +11873,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yao"
       },
-      {
-        "pinyin": "yǎo",
-        "tone": 3,
-        "char": "窅",
-        "char_list": [
-          "窅"
-        ],
-        "pinyin_without_tone": "yao"
-      },
-      {
-        "pinyin": "yāo",
-        "tone": 1,
-        "char": "㙘",
-        "char_list": [
-          "㙘"
-        ],
-        "pinyin_without_tone": "yao"
-      }
     ]
   },
   "ye": {
@@ -12829,16 +11925,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "ye"
       },
-      {
-        "pinyin": "yè",
-        "tone": 4,
-        "char": "堨",
-        "char_list": [
-          "堨",
-          "楪"
-        ],
-        "pinyin_without_tone": "ye"
-      }
     ]
   },
   "yi": {
@@ -12940,40 +12026,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yi"
       },
-      {
-        "pinyin": "yì",
-        "tone": 4,
-        "char": "𬬩",
-        "char_list": [
-          "𬬩",
-          "㑊",
-          "廙",
-          "燚",
-          "𫄷",
-          "𬟁"
-        ],
-        "pinyin_without_tone": "yi"
-      },
-      {
-        "pinyin": "yǐ",
-        "tone": 3,
-        "char": "𫖮",
-        "char_list": [
-          "𫖮",
-          "踦",
-          "𬺈"
-        ],
-        "pinyin_without_tone": "yi"
-      },
-      {
-        "pinyin": "yī",
-        "tone": 1,
-        "char": "繄",
-        "char_list": [
-          "繄"
-        ],
-        "pinyin_without_tone": "yi"
-      }
     ]
   },
   "yin": {
@@ -13032,40 +12084,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yin"
       },
-      {
-        "pinyin": "yīn",
-        "tone": 1,
-        "char": "骃",
-        "char_list": [
-          "骃",
-          "𬘡",
-          "𬤇",
-          "𬮱",
-          "歅"
-        ],
-        "pinyin_without_tone": "yin"
-      },
-      {
-        "pinyin": "yín",
-        "tone": 2,
-        "char": "珢",
-        "char_list": [
-          "珢",
-          "龂",
-          "蟫"
-        ],
-        "pinyin_without_tone": "yin"
-      },
-      {
-        "pinyin": "yìn",
-        "tone": 4,
-        "char": "䲟",
-        "char_list": [
-          "䲟",
-          "慭"
-        ],
-        "pinyin_without_tone": "yin"
-      }
     ]
   },
   "ying": {
@@ -13126,16 +12144,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "ying"
       },
-      {
-        "pinyin": "yīng",
-        "tone": 1,
-        "char": "䓨",
-        "char_list": [
-          "䓨",
-          "锳"
-        ],
-        "pinyin_without_tone": "ying"
-      }
     ]
   },
   "yong": {
@@ -13180,15 +12188,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yong"
       },
-      {
-        "pinyin": "yòng",
-        "tone": 4,
-        "char": "㶲",
-        "char_list": [
-          "㶲"
-        ],
-        "pinyin_without_tone": "yong"
-      }
     ]
   },
   "you": {
@@ -13250,17 +12249,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "you"
       },
-      {
-        "pinyin": "yóu",
-        "tone": 2,
-        "char": "浟",
-        "char_list": [
-          "浟",
-          "𬨎",
-          "鲉"
-        ],
-        "pinyin_without_tone": "you"
-      }
     ]
   },
   "yu": {
@@ -13342,39 +12330,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yu"
       },
-      {
-        "pinyin": "yū",
-        "tone": 1,
-        "char": "迂",
-        "char_list": [
-          "迂",
-          "淤",
-          "瘀"
-        ],
-        "pinyin_without_tone": "yu"
-      },
-      {
-        "pinyin": "yù",
-        "tone": 4,
-        "char": "圫",
-        "char_list": [
-          "圫",
-          "悆",
-          "淯",
-          "潏"
-        ],
-        "pinyin_without_tone": "yu"
-      },
-      {
-        "pinyin": "yǔ",
-        "tone": 3,
-        "char": "峿",
-        "char_list": [
-          "峿",
-          "㺄"
-        ],
-        "pinyin_without_tone": "yu"
-      }
     ]
   },
   "yuan": {
@@ -13383,7 +12338,7 @@ let total_result: {
       {
         "pinyin": "yuān",
         "tone": 1,
-        "char": "冤",
+        "char": "渊",
         "char_list": [
           "冤",
           "眢",
@@ -13434,15 +12389,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yuan"
       },
-      {
-        "pinyin": "yuán",
-        "tone": 2,
-        "char": "𫘪",
-        "char_list": [
-          "𫘪"
-        ],
-        "pinyin_without_tone": "yuan"
-      }
     ]
   },
   "yue": {
@@ -13477,25 +12423,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yue"
       },
-      {
-        "pinyin": "yuè",
-        "tone": 4,
-        "char": "𫐄",
-        "char_list": [
-          "𫐄",
-          "𬸚"
-        ],
-        "pinyin_without_tone": "yue"
-      },
-      {
-        "pinyin": "yuē",
-        "tone": 1,
-        "char": "彟",
-        "char_list": [
-          "彟"
-        ],
-        "pinyin_without_tone": "yue"
-      }
     ]
   },
   "yun": {
@@ -13504,7 +12431,7 @@ let total_result: {
       {
         "pinyin": "yūn",
         "tone": 1,
-        "char": "晕",
+        "char": "缊",
         "char_list": [
           "晕",
           "缊"
@@ -13548,28 +12475,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "yun"
       },
-      {
-        "pinyin": "yún",
-        "tone": 2,
-        "char": "沄",
-        "char_list": [
-          "沄",
-          "涢",
-          "榅"
-        ],
-        "pinyin_without_tone": "yun"
-      },
-      {
-        "pinyin": "yūn",
-        "tone": 1,
-        "char": "煴",
-        "char_list": [
-          "煴",
-          "𫖳",
-          "馧"
-        ],
-        "pinyin_without_tone": "yun"
-      }
     ]
   },
   "za": {
@@ -13585,24 +12490,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "za"
       },
-      {
-        "pinyin": "zā",
-        "tone": 1,
-        "char": "拶",
-        "char_list": [
-          "拶"
-        ],
-        "pinyin_without_tone": "za"
-      },
-      {
-        "pinyin": "zǎ",
-        "tone": 3,
-        "char": "咋",
-        "char_list": [
-          "咋"
-        ],
-        "pinyin_without_tone": "za"
-      }
     ]
   },
   "zai": {
@@ -13611,7 +12498,7 @@ let total_result: {
       {
         "pinyin": "zāi",
         "tone": 1,
-        "char": "灾",
+        "char": "哉",
         "char_list": [
           "灾",
           "哉",
@@ -13631,7 +12518,7 @@ let total_result: {
       {
         "pinyin": "zài",
         "tone": 4,
-        "char": "再",
+        "char": "载",
         "char_list": [
           "再",
           "在",
@@ -13644,82 +12531,22 @@ let total_result: {
   "zan": {
     "pinyin_without_tone": "zan",
     "option_list": [
-      {
-        "pinyin": "zán",
-        "tone": 2,
-        "char": "咱",
-        "char_list": [
-          "咱"
-        ],
-        "pinyin_without_tone": "zan"
-      },
+
       {
         "pinyin": "zàn",
         "tone": 4,
-        "char": "暂",
+        "char": "赞",
         "char_list": [
           "暂",
           "赞"
         ],
         "pinyin_without_tone": "zan"
       },
-      {
-        "pinyin": "zǎn",
-        "tone": 3,
-        "char": "寁",
-        "char_list": [
-          "寁"
-        ],
-        "pinyin_without_tone": "zan"
-      }
-    ]
-  },
-  "zang": {
-    "pinyin_without_tone": "zang",
-    "option_list": [
-      {
-        "pinyin": "zāng",
-        "tone": 1,
-        "char": "脏",
-        "char_list": [
-          "赃",
-          "脏"
-        ],
-        "pinyin_without_tone": "zang"
-      },
-      {
-        "pinyin": "zàng",
-        "tone": 4,
-        "char": "葬",
-        "char_list": [
-          "葬"
-        ],
-        "pinyin_without_tone": "zang"
-      },
-      {
-        "pinyin": "zǎng",
-        "tone": 3,
-        "char": "驵",
-        "char_list": [
-          "驵"
-        ],
-        "pinyin_without_tone": "zang"
-      }
     ]
   },
   "zao": {
     "pinyin_without_tone": "zao",
     "option_list": [
-      {
-        "pinyin": "zāo",
-        "tone": 1,
-        "char": "遭",
-        "char_list": [
-          "遭",
-          "糟"
-        ],
-        "pinyin_without_tone": "zao"
-      },
       {
         "pinyin": "zǎo",
         "tone": 3,
@@ -13757,15 +12584,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zao"
       },
-      {
-        "pinyin": "zào",
-        "tone": 4,
-        "char": "慥",
-        "char_list": [
-          "慥"
-        ],
-        "pinyin_without_tone": "zao"
-      }
     ]
   },
   "ze": {
@@ -13774,7 +12592,7 @@ let total_result: {
       {
         "pinyin": "zé",
         "tone": 2,
-        "char": "则",
+        "char": "泽",
         "char_list": [
           "则",
           "择",
@@ -13782,36 +12600,6 @@ let total_result: {
           "责"
         ],
         "pinyin_without_tone": "ze"
-      }
-    ]
-  },
-  "zei": {
-    "pinyin_without_tone": "zei",
-    "option_list": [
-      {
-        "pinyin": "zéi",
-        "tone": 2,
-        "char": "贼",
-        "char_list": [
-          "鲫",
-          "贼",
-          "鲗"
-        ],
-        "pinyin_without_tone": "zei"
-      }
-    ]
-  },
-  "zen": {
-    "pinyin_without_tone": "zen",
-    "option_list": [
-      {
-        "pinyin": "zěn",
-        "tone": 3,
-        "char": "怎",
-        "char_list": [
-          "怎"
-        ],
-        "pinyin_without_tone": "zen"
       }
     ]
   },
@@ -13838,16 +12626,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zeng"
       },
-      {
-        "pinyin": "zēng",
-        "tone": 1,
-        "char": "矰",
-        "char_list": [
-          "矰",
-          "䎖"
-        ],
-        "pinyin_without_tone": "zeng"
-      }
     ]
   },
   "zha": {
@@ -13899,37 +12677,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zha"
       },
-      {
-        "pinyin": "zhā",
-        "tone": 1,
-        "char": "吒",
-        "char_list": [
-          "吒",
-          "奓",
-          "齇"
-        ],
-        "pinyin_without_tone": "zha"
-      },
-      {
-        "pinyin": "zhà",
-        "tone": 4,
-        "char": "溠",
-        "char_list": [
-          "溠",
-          "䃎",
-          "霅"
-        ],
-        "pinyin_without_tone": "zha"
-      },
-      {
-        "pinyin": "zhǎ",
-        "tone": 3,
-        "char": "鲊",
-        "char_list": [
-          "鲊"
-        ],
-        "pinyin_without_tone": "zha"
-      }
     ]
   },
   "zhai": {
@@ -13938,7 +12685,7 @@ let total_result: {
       {
         "pinyin": "zhāi",
         "tone": 1,
-        "char": "摘",
+        "char": "斋",
         "char_list": [
           "斋",
           "摘"
@@ -13966,7 +12713,7 @@ let total_result: {
       {
         "pinyin": "zhài",
         "tone": 4,
-        "char": "债",
+        "char": "寨",
         "char_list": [
           "债",
           "寨"
@@ -13990,7 +12737,8 @@ let total_result: {
           "粘",
           "瞻",
           "鹯",
-          "鳣"
+          "鳣",
+          "嶦",
         ],
         "pinyin_without_tone": "zhan"
       },
@@ -14023,16 +12771,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhan"
       },
-      {
-        "pinyin": "zhān",
-        "tone": 1,
-        "char": "嶦",
-        "char_list": [
-          "嶦",
-          "𫗴"
-        ],
-        "pinyin_without_tone": "zhan"
-      }
     ]
   },
   "zhang": {
@@ -14041,7 +12779,7 @@ let total_result: {
       {
         "pinyin": "zhāng",
         "tone": 1,
-        "char": "张",
+        "char": "彰",
         "char_list": [
           "张",
           "章",
@@ -14097,7 +12835,7 @@ let total_result: {
       {
         "pinyin": "zhǎo",
         "tone": 3,
-        "char": "爪",
+        "char": "沼",
         "char_list": [
           "爪",
           "找",
@@ -14121,24 +12859,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhao"
       },
-      {
-        "pinyin": "zhāo",
-        "tone": 1,
-        "char": "𬬿",
-        "char_list": [
-          "𬬿"
-        ],
-        "pinyin_without_tone": "zhao"
-      },
-      {
-        "pinyin": "zhào",
-        "tone": 4,
-        "char": "𬶐",
-        "char_list": [
-          "𬶐"
-        ],
-        "pinyin_without_tone": "zhao"
-      }
     ]
   },
   "zhe": {
@@ -14171,7 +12891,9 @@ let total_result: {
           "折",
           "哲",
           "詟",
-          "辙"
+          "辙",
+          "晢",
+          "喆"
         ],
         "pinyin_without_tone": "zhe"
       },
@@ -14196,25 +12918,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhe"
       },
-      {
-        "pinyin": "zhé",
-        "tone": 2,
-        "char": "晢",
-        "char_list": [
-          "晢",
-          "喆"
-        ],
-        "pinyin_without_tone": "zhe"
-      },
-      {
-        "pinyin": "zhè",
-        "tone": 4,
-        "char": "䗪",
-        "char_list": [
-          "䗪"
-        ],
-        "pinyin_without_tone": "zhe"
-      }
     ]
   },
   "zhen": {
@@ -14234,7 +12937,8 @@ let total_result: {
           "真",
           "葴",
           "斟",
-          "瑧"
+          "瑧",
+          "禛"
         ],
         "pinyin_without_tone": "zhen"
       },
@@ -14265,34 +12969,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhen"
       },
-      {
-        "pinyin": "zhèn",
-        "tone": 4,
-        "char": "揕",
-        "char_list": [
-          "揕",
-          "瑱"
-        ],
-        "pinyin_without_tone": "zhen"
-      },
-      {
-        "pinyin": "zhēn",
-        "tone": 1,
-        "char": "禛",
-        "char_list": [
-          "禛"
-        ],
-        "pinyin_without_tone": "zhen"
-      },
-      {
-        "pinyin": "zhěn",
-        "tone": 3,
-        "char": "鬒",
-        "char_list": [
-          "鬒"
-        ],
-        "pinyin_without_tone": "zhen"
-      }
     ]
   },
   "zheng": {
@@ -14338,15 +13014,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zheng"
       },
-      {
-        "pinyin": "zhēng",
-        "tone": 1,
-        "char": "烝",
-        "char_list": [
-          "烝"
-        ],
-        "pinyin_without_tone": "zheng"
-      }
     ]
   },
   "zhi": {
@@ -14439,36 +13106,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhi"
       },
-      {
-        "pinyin": "zhǐ",
-        "tone": 3,
-        "char": "扺",
-        "char_list": [
-          "扺"
-        ],
-        "pinyin_without_tone": "zhi"
-      },
-      {
-        "pinyin": "zhī",
-        "tone": 1,
-        "char": "泜",
-        "char_list": [
-          "泜",
-          "禔"
-        ],
-        "pinyin_without_tone": "zhi"
-      },
-      {
-        "pinyin": "zhì",
-        "tone": 4,
-        "char": "𬃊",
-        "char_list": [
-          "𬃊",
-          "跱",
-          "疐"
-        ],
-        "pinyin_without_tone": "zhi"
-      }
     ]
   },
   "zhong": {
@@ -14494,7 +13131,7 @@ let total_result: {
       {
         "pinyin": "zhǒng",
         "tone": 3,
-        "char": "肿",
+        "char": "种",
         "char_list": [
           "肿",
           "种",
@@ -14557,34 +13194,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhou"
       },
-      {
-        "pinyin": "zhǒu",
-        "tone": 3,
-        "char": "肘",
-        "char_list": [
-          "肘",
-          "帚"
-        ],
-        "pinyin_without_tone": "zhou"
-      },
-      {
-        "pinyin": "zhòu",
-        "tone": 4,
-        "char": "㑇",
-        "char_list": [
-          "㑇"
-        ],
-        "pinyin_without_tone": "zhou"
-      },
-      {
-        "pinyin": "zhōu",
-        "tone": 1,
-        "char": "赒",
-        "char_list": [
-          "赒"
-        ],
-        "pinyin_without_tone": "zhou"
-      }
     ]
   },
   "zhu": {
@@ -14635,7 +13244,7 @@ let total_result: {
       {
         "pinyin": "zhù",
         "tone": 4,
-        "char": "助",
+        "char": "祝",
         "char_list": [
           "住",
           "助",
@@ -14652,30 +13261,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhu"
       },
-      {
-        "pinyin": "zhǔ",
-        "tone": 3,
-        "char": "𬣞",
-        "char_list": [
-          "𬣞"
-        ],
-        "pinyin_without_tone": "zhu"
-      }
-    ]
-  },
-  "zhua": {
-    "pinyin_without_tone": "zhua",
-    "option_list": [
-      {
-        "pinyin": "zhuā",
-        "tone": 1,
-        "char": "抓",
-        "char_list": [
-          "抓",
-          "髽"
-        ],
-        "pinyin_without_tone": "zhua"
-      }
     ]
   },
   "zhuan": {
@@ -14711,15 +13296,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhuan"
       },
-      {
-        "pinyin": "zhuàn",
-        "tone": 4,
-        "char": "僎",
-        "char_list": [
-          "僎"
-        ],
-        "pinyin_without_tone": "zhuan"
-      }
     ]
   },
   "zhuang": {
@@ -14790,26 +13366,6 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhun"
       },
-      {
-        "pinyin": "zhūn",
-        "tone": 1,
-        "char": "谆",
-        "char_list": [
-          "窀",
-          "谆",
-          "衠"
-        ],
-        "pinyin_without_tone": "zhun"
-      },
-      {
-        "pinyin": "zhǔn",
-        "tone": 3,
-        "char": "𬘯",
-        "char_list": [
-          "𬘯"
-        ],
-        "pinyin_without_tone": "zhun"
-      }
     ]
   },
   "zhuo": {
@@ -14818,7 +13374,7 @@ let total_result: {
       {
         "pinyin": "zhuō",
         "tone": 1,
-        "char": "捉",
+        "char": "卓",
         "char_list": [
           "卓",
           "拙",
@@ -14844,30 +13400,11 @@ let total_result: {
         ],
         "pinyin_without_tone": "zhuo"
       },
-      {
-        "pinyin": "zhuó",
-        "tone": 2,
-        "char": "汋",
-        "char_list": [
-          "汋",
-          "𬸦"
-        ],
-        "pinyin_without_tone": "zhuo"
-      }
     ]
   },
   "zi": {
     "pinyin_without_tone": "zi",
     "option_list": [
-      {
-        "pinyin": "zi",
-        "tone": 0,
-        "char": "子",
-        "char_list": [
-          "子"
-        ],
-        "pinyin_without_tone": "zi"
-      },
       {
         "pinyin": "zī",
         "tone": 1,
@@ -14910,24 +13447,7 @@ let total_result: {
         ],
         "pinyin_without_tone": "zi"
       },
-      {
-        "pinyin": "zǐ",
-        "tone": 3,
-        "char": "虸",
-        "char_list": [
-          "虸"
-        ],
-        "pinyin_without_tone": "zi"
-      },
-      {
-        "pinyin": "zī",
-        "tone": 1,
-        "char": "镃",
-        "char_list": [
-          "镃"
-        ],
-        "pinyin_without_tone": "zi"
-      }
+
     ]
   },
   "zong": {
@@ -15049,16 +13569,7 @@ let total_result: {
   "zuo": {
     "pinyin_without_tone": "zuo",
     "option_list": [
-      {
-        "pinyin": "zuó",
-        "tone": 2,
-        "char": "昨",
-        "char_list": [
-          "昨",
-          "琢"
-        ],
-        "pinyin_without_tone": "zuo"
-      },
+
       {
         "pinyin": "zuǒ",
         "tone": 3,
