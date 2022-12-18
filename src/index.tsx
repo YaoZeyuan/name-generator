@@ -6,7 +6,7 @@ import {
   Const_Level_0_Pinyin,
   Const_Level_1_Pinyin,
   Const_Level_2_Pinyin,
-} from "./const/pinyin_按音调对汉字进行分类整理";
+} from "./const/pinyin_移除不好的字";
 
 import { Button, Menu, ICascaderItem } from "zent";
 import * as utils from "@/utils";
