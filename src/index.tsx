@@ -8,18 +8,7 @@ import {
   Const_Level_2_Pinyin,
 } from "./const/pinyin_按音调对汉字进行分类整理";
 
-import {
-  Select,
-  Button,
-  Dropdown,
-  DropdownButton,
-  DropdownClickTrigger,
-  DropdownContent,
-  DropdownPosition,
-  Menu,
-  MenuCascader,
-  ICascaderItem,
-} from "zent";
+import { Button, Menu, ICascaderItem } from "zent";
 import * as utils from "@/utils";
 import * as Types from "@/types/index";
 import NameList from "@/component/name_list";

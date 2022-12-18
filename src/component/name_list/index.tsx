@@ -1,16 +1,5 @@
 import * as Types from "@/types/index";
-import {
-  Select,
-  Button,
-  Dropdown,
-  DropdownButton,
-  DropdownClickTrigger,
-  DropdownContent,
-  DropdownPosition,
-  Menu,
-  MenuCascader,
-  ICascaderItem,
-} from "zent";
+import { Button } from "zent";
 import "./index.less";
 
 export default ({ nameList = [] }: { nameList: Types.Type_Name[] }) => {
