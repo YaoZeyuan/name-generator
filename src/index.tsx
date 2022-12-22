@@ -12,6 +12,7 @@ import { Button, Input } from "antd";
 import * as utils from "@/utils";
 import * as Types from "@/types/index";
 import NameList from "@/component/name_list";
+import { saveAs } from "file-saver";
 
 const Const_Storage_Key = "name_storage";
 const Const_Storage_姓氏_Key = `${Const_Storage_Key}_family_name`;
@@ -183,10 +184,35 @@ export default () => {
             store.totalNameCount = nameList.length;
             // 随机打乱
             nameList.sort(() => Math.random() - 0.5);
-            store.nameList = nameList.slice(0, storeSnapshot.maxDisplayItem);
+            store.nameList = nameList;
           }}
         >
-          点击生成所有可能的名字
+          点击生成所有可能的名字发音
+        </Button>
+        <Button
+          disabled={storeSnapshot.nameList.length === 0}
+          type="primary"
+          onClick={() => {
+            let nameList = storeSnapshot.nameList;
+            let columns = [];
+            for (let i = 0; i < nameList.length; i++) {
+              let item = nameList[i];
+              columns.push(
+                `${i + 1}-${item.姓氏}${item.人名_第一个字.char_item.char}${
+                  item.人名_第二个字.char_item.char
+                }`
+              );
+            }
+
+            let str = "姓名,\n" + columns.join(",\n");
+
+            let blob = new Blob([str], {
+              type: "text/plain;charset=utf-8",
+            });
+            saveAs(blob, "所有可能的姓名发音列表.csv");
+          }}
+        >
+          点击下载
         </Button>
       </div>
 
@@ -196,7 +222,7 @@ export default () => {
         {storeSnapshot.columnCount}个
       </p>
       <NameList
-        nameList={storeSnapshot.nameList}
+        nameList={storeSnapshot.nameList.slice(0, storeSnapshot.maxDisplayItem)}
         columnCount={storeSnapshot.columnCount}
       ></NameList>
     </div>
