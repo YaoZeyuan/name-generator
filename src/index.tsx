@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
 import { useDebounceFn } from "ahooks";
-import { 总字库 } from "@/const/char_db";
-import {
-  Const_Level_0_Pinyin,
-  Const_Level_1_Pinyin,
-  Const_Level_2_Pinyin,
-} from "./const/pinyin_移除不好的字";
+import PinyinList from "@/../database/chardb/raw_pinyin_list.json";
+import NameCharDb_Min_1 from "@/../database/chardb/zd_name_chardb_min_1.json";
+import NameCharDb_Min_5 from "@/../database/chardb/zd_name_chardb_min_5.json";
+import NameCharDb_Min_10 from "@/../database/chardb/zd_name_chardb_min_10.json";
+import * as Type from "@/../script/common/type";
 
 import { Button, Input } from "antd";
 import * as utils from "@/utils";
@@ -28,18 +27,18 @@ const char_level =
     | 1
     | 2) || 0;
 // 根据汉字级别, 设定所使用的选项集
-let Pinyin_Database_Map: typeof Const_Level_0_Pinyin;
+let Pinyin_Database_Map: Type.CharPinyinDB;
 
 switch (char_level) {
   case 0:
-    Pinyin_Database_Map = Const_Level_0_Pinyin;
+    Pinyin_Database_Map = NameCharDb_Min_1;
     break;
   case 1:
-    Pinyin_Database_Map = Const_Level_1_Pinyin;
+    Pinyin_Database_Map = NameCharDb_Min_5;
     break;
   case 2:
   default:
-    Pinyin_Database_Map = Const_Level_2_Pinyin;
+    Pinyin_Database_Map = NameCharDb_Min_10;
     break;
 }
 

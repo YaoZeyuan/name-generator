@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/file-saver': ^2.0.5
   '@types/node': ^16.10.1
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
@@ -25,6 +26,7 @@ dependencies:
   valtio: 1.10.5_react@17.0.2
 
 devDependencies:
+  '@types/file-saver': 2.0.5
   '@types/node': 16.18.26
   '@types/react': 17.0.58
   '@types/react-dom': 17.0.20
@@ -428,6 +430,10 @@ packages:
 
   /@tsconfig/node16/1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/@tsconfig/node16/-/node16-1.0.3.tgz}
+    dev: true
+
+  /@types/file-saver/2.0.5:
+    resolution: {integrity: sha512-zv9kNf3keYegP5oThGLaPk8E081DFDuwfqjtiTzm6PoxChdJ1raSuADf2YGCVIyrSynLrgc8JWv296s7Q7pQSQ==}
     dev: true
 
   /@types/js-cookie/2.2.7:

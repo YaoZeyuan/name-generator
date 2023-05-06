@@ -20,6 +20,7 @@
     "valtio": "^1.7.6"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@types/node": "^16.10.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

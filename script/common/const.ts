@@ -15,31 +15,44 @@ export const CharDb_人名字典_Uri = path.resolve(
 
 export const Raw_Char_Db_汉典原始数据_Uri = path.resolve(
   basePath,
-  "database/chardb/raw_zdic.txt"
+  "database/char_db/raw_zdic.txt"
 );
 
 export const Raw_Char_Db_汉典_拼音列表_Uri = path.resolve(
   basePath,
-  "database/chardb/raw_pinyin_list.json"
+  "database/char_db/raw_pinyin_list.json"
 );
 
 export const Char_Db_total_移除多音字_以字为单位_Uri = path.resolve(
   basePath,
-  "database/chardb/zd_without_muilt_tone_chardb.json"
+  "database/char_db/zd_without_muilt_tone_char_db.json"
 );
 
 export const Char_Db_name_char_移除多音字_姓名用字_最少出现1次_Uri =
-  path.resolve(basePath, "database/chardb/zd_name_chardb_min_1.json");
+  path.resolve(basePath, "database/char_db/zd_name_char_db_min_1.json");
 export const Char_Db_name_char_移除多音字_姓名用字_最少出现2次_Uri =
-  path.resolve(basePath, "database/chardb/zd_name_chardb_min_2.json");
+  path.resolve(basePath, "database/char_db/zd_name_char_db_min_2.json");
 export const Char_Db_name_char_移除多音字_姓名用字_最少出现3次_Uri =
-  path.resolve(basePath, "database/chardb/zd_name_chardb_min_3.json");
+  path.resolve(basePath, "database/char_db/zd_name_char_db_min_3.json");
 export const Char_Db_name_char_移除多音字_姓名用字_最少出现4次_Uri =
-  path.resolve(basePath, "database/chardb/zd_name_chardb_min_4.json");
+  path.resolve(basePath, "database/char_db/zd_name_char_db_min_4.json");
 export const Char_Db_name_char_移除多音字_姓名用字_最少出现5次_Uri =
-  path.resolve(basePath, "database/chardb/zd_name_chardb_min_5.json");
+  path.resolve(basePath, "database/char_db/zd_name_char_db_min_5.json");
 export const Char_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri =
-  path.resolve(basePath, "database/chardb/zd_name_chardb_min_10.json");
+  path.resolve(basePath, "database/char_db/zd_name_char_db_min_10.json");
+
+export const Pinyin_Db_name_char_移除多音字_姓名用字_最少出现1次_Uri =
+  path.resolve(basePath, "database/pinyin_db/zd_name_pinyin_db_min_1.json");
+export const Pinyin_Db_name_char_移除多音字_姓名用字_最少出现2次_Uri =
+  path.resolve(basePath, "database/pinyin_db/zd_name_pinyin_db_min_2.json");
+export const Pinyin_Db_name_char_移除多音字_姓名用字_最少出现3次_Uri =
+  path.resolve(basePath, "database/pinyin_db/zd_name_pinyin_db_min_3.json");
+export const Pinyin_Db_name_char_移除多音字_姓名用字_最少出现4次_Uri =
+  path.resolve(basePath, "database/pinyin_db/zd_name_pinyin_db_min_4.json");
+export const Pinyin_Db_name_char_移除多音字_姓名用字_最少出现5次_Uri =
+  path.resolve(basePath, "database/pinyin_db/zd_name_pinyin_db_min_5.json");
+export const Pinyin_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri =
+  path.resolve(basePath, "database/pinyin_db/zd_name_pinyin_db_min_10.json");
 
 export const 音调_Map: Record<string, Type.Type_音调> = {
   ü: 1,

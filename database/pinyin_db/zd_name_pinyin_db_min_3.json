@@ -1,0 +1,2778 @@
+{
+    "yi": {
+        "pinyin_without_tone": "yi",
+        "option_list": [
+            {
+                "pinyin": "yī",
+                "pinyin_without_tone": "yi",
+                "tone": 1,
+                "char": "医",
+                "char_list": [
+                    {
+                        "char": "医",
+                        "pinyin": "yī",
+                        "pinyin_without_tone": "yi",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "yì",
+                "pinyin_without_tone": "yi",
+                "tone": 4,
+                "char": "乂",
+                "char_list": [
+                    {
+                        "char": "乂",
+                        "pinyin": "yì",
+                        "pinyin_without_tone": "yi",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "呓",
+                        "pinyin": "yì",
+                        "pinyin_without_tone": "yi",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "湙",
+                        "pinyin": "yì",
+                        "pinyin_without_tone": "yi",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "義",
+                        "pinyin": "yì",
+                        "pinyin_without_tone": "yi",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "gen": {
+        "pinyin_without_tone": "gen",
+        "option_list": [
+            {
+                "pinyin": "gēn",
+                "pinyin_without_tone": "gen",
+                "tone": 1,
+                "char": "跟",
+                "char_list": [
+                    {
+                        "char": "跟",
+                        "pinyin": "gēn",
+                        "pinyin_without_tone": "gen",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "gèn",
+                "pinyin_without_tone": "gen",
+                "tone": 4,
+                "char": "亘",
+                "char_list": [
+                    {
+                        "char": "亘",
+                        "pinyin": "gèn",
+                        "pinyin_without_tone": "gen",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "wei": {
+        "pinyin_without_tone": "wei",
+        "option_list": [
+            {
+                "pinyin": "wēi",
+                "pinyin_without_tone": "wei",
+                "tone": 1,
+                "char": "危",
+                "char_list": [
+                    {
+                        "char": "危",
+                        "pinyin": "wēi",
+                        "pinyin_without_tone": "wei",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "wěi",
+                "pinyin_without_tone": "wei",
+                "tone": 3,
+                "char": "娓",
+                "char_list": [
+                    {
+                        "char": "娓",
+                        "pinyin": "wěi",
+                        "pinyin_without_tone": "wei",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "wèi",
+                "pinyin_without_tone": "wei",
+                "tone": 4,
+                "char": "位",
+                "char_list": [
+                    {
+                        "char": "位",
+                        "pinyin": "wèi",
+                        "pinyin_without_tone": "wei",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "味",
+                        "pinyin": "wèi",
+                        "pinyin_without_tone": "wei",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "jiao": {
+        "pinyin_without_tone": "jiao",
+        "option_list": [
+            {
+                "pinyin": "jiǎo",
+                "pinyin_without_tone": "jiao",
+                "tone": 3,
+                "char": "佼",
+                "char_list": [
+                    {
+                        "char": "佼",
+                        "pinyin": "jiǎo",
+                        "pinyin_without_tone": "jiao",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "jie": {
+        "pinyin_without_tone": "jie",
+        "option_list": [
+            {
+                "pinyin": "jié",
+                "pinyin_without_tone": "jie",
+                "tone": 2,
+                "char": "倢",
+                "char_list": [
+                    {
+                        "char": "倢",
+                        "pinyin": "jié",
+                        "pinyin_without_tone": "jie",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zhi": {
+        "pinyin_without_tone": "zhi",
+        "option_list": [
+            {
+                "pinyin": "zhī",
+                "pinyin_without_tone": "zhi",
+                "tone": 1,
+                "char": "祗",
+                "char_list": [
+                    {
+                        "char": "祗",
+                        "pinyin": "zhī",
+                        "pinyin_without_tone": "zhi",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "zhí",
+                "pinyin_without_tone": "zhi",
+                "tone": 2,
+                "char": "值",
+                "char_list": [
+                    {
+                        "char": "值",
+                        "pinyin": "zhí",
+                        "pinyin_without_tone": "zhi",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "zhì",
+                "pinyin_without_tone": "zhi",
+                "tone": 4,
+                "char": "挚",
+                "char_list": [
+                    {
+                        "char": "挚",
+                        "pinyin": "zhì",
+                        "pinyin_without_tone": "zhi",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "梽",
+                        "pinyin": "zhì",
+                        "pinyin_without_tone": "zhi",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "jing": {
+        "pinyin_without_tone": "jing",
+        "option_list": [
+            {
+                "pinyin": "jǐng",
+                "pinyin_without_tone": "jing",
+                "tone": 3,
+                "char": "儆",
+                "char_list": [
+                    {
+                        "char": "儆",
+                        "pinyin": "jǐng",
+                        "pinyin_without_tone": "jing",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "song": {
+        "pinyin_without_tone": "song",
+        "option_list": [
+            {
+                "pinyin": "sōng",
+                "pinyin_without_tone": "song",
+                "tone": 1,
+                "char": "凇",
+                "char_list": [
+                    {
+                        "char": "凇",
+                        "pinyin": "sōng",
+                        "pinyin_without_tone": "song",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "sòng",
+                "pinyin_without_tone": "song",
+                "tone": 4,
+                "char": "诵",
+                "char_list": [
+                    {
+                        "char": "诵",
+                        "pinyin": "sòng",
+                        "pinyin_without_tone": "song",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "mai": {
+        "pinyin_without_tone": "mai",
+        "option_list": [
+            {
+                "pinyin": "mài",
+                "pinyin_without_tone": "mai",
+                "tone": 4,
+                "char": "劢",
+                "char_list": [
+                    {
+                        "char": "劢",
+                        "pinyin": "mài",
+                        "pinyin_without_tone": "mai",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "dong": {
+        "pinyin_without_tone": "dong",
+        "option_list": [
+            {
+                "pinyin": "dōng",
+                "pinyin_without_tone": "dong",
+                "tone": 1,
+                "char": "岽",
+                "char_list": [
+                    {
+                        "char": "岽",
+                        "pinyin": "dōng",
+                        "pinyin_without_tone": "dong",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "dòng",
+                "pinyin_without_tone": "dong",
+                "tone": 4,
+                "char": "动",
+                "char_list": [
+                    {
+                        "char": "动",
+                        "pinyin": "dòng",
+                        "pinyin_without_tone": "dong",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xie": {
+        "pinyin_without_tone": "xie",
+        "option_list": [
+            {
+                "pinyin": "xié",
+                "pinyin_without_tone": "xie",
+                "tone": 2,
+                "char": "勰",
+                "char_list": [
+                    {
+                        "char": "勰",
+                        "pinyin": "xié",
+                        "pinyin_without_tone": "xie",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "shi": {
+        "pinyin_without_tone": "shi",
+        "option_list": [
+            {
+                "pinyin": "shí",
+                "pinyin_without_tone": "shi",
+                "tone": 2,
+                "char": "十",
+                "char_list": [
+                    {
+                        "char": "十",
+                        "pinyin": "shí",
+                        "pinyin_without_tone": "shi",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "shì",
+                "pinyin_without_tone": "shi",
+                "tone": 4,
+                "char": "市",
+                "char_list": [
+                    {
+                        "char": "市",
+                        "pinyin": "shì",
+                        "pinyin_without_tone": "shi",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "huan": {
+        "pinyin_without_tone": "huan",
+        "option_list": [
+            {
+                "pinyin": "huàn",
+                "pinyin_without_tone": "huan",
+                "tone": 4,
+                "char": "唤",
+                "char_list": [
+                    {
+                        "char": "唤",
+                        "pinyin": "huàn",
+                        "pinyin_without_tone": "huan",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "nan": {
+        "pinyin_without_tone": "nan",
+        "option_list": [
+            {
+                "pinyin": "nán",
+                "pinyin_without_tone": "nan",
+                "tone": 2,
+                "char": "喃",
+                "char_list": [
+                    {
+                        "char": "喃",
+                        "pinyin": "nán",
+                        "pinyin_without_tone": "nan",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "hui": {
+        "pinyin_without_tone": "hui",
+        "option_list": [
+            {
+                "pinyin": "huī",
+                "pinyin_without_tone": "hui",
+                "tone": 1,
+                "char": "恢",
+                "char_list": [
+                    {
+                        "char": "恢",
+                        "pinyin": "huī",
+                        "pinyin_without_tone": "hui",
+                        "tone": 1,
+                        "count": 3
+                    },
+                    {
+                        "char": "挥",
+                        "pinyin": "huī",
+                        "pinyin_without_tone": "hui",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "huí",
+                "pinyin_without_tone": "hui",
+                "tone": 2,
+                "char": "回",
+                "char_list": [
+                    {
+                        "char": "回",
+                        "pinyin": "huí",
+                        "pinyin_without_tone": "hui",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "huǐ",
+                "pinyin_without_tone": "hui",
+                "tone": 3,
+                "char": "悔",
+                "char_list": [
+                    {
+                        "char": "悔",
+                        "pinyin": "huǐ",
+                        "pinyin_without_tone": "hui",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "yin": {
+        "pinyin_without_tone": "yin",
+        "option_list": [
+            {
+                "pinyin": "yīn",
+                "pinyin_without_tone": "yin",
+                "tone": 1,
+                "char": "因",
+                "char_list": [
+                    {
+                        "char": "因",
+                        "pinyin": "yīn",
+                        "pinyin_without_tone": "yin",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "tan": {
+        "pinyin_without_tone": "tan",
+        "option_list": [
+            {
+                "pinyin": "tán",
+                "pinyin_without_tone": "tan",
+                "tone": 2,
+                "char": "坛",
+                "char_list": [
+                    {
+                        "char": "坛",
+                        "pinyin": "tán",
+                        "pinyin_without_tone": "tan",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ken": {
+        "pinyin_without_tone": "ken",
+        "option_list": [
+            {
+                "pinyin": "kěn",
+                "pinyin_without_tone": "ken",
+                "tone": 3,
+                "char": "垦",
+                "char_list": [
+                    {
+                        "char": "垦",
+                        "pinyin": "kěn",
+                        "pinyin_without_tone": "ken",
+                        "tone": 3,
+                        "count": 3
+                    },
+                    {
+                        "char": "肯",
+                        "pinyin": "kěn",
+                        "pinyin_without_tone": "ken",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "yao": {
+        "pinyin_without_tone": "yao",
+        "option_list": [
+            {
+                "pinyin": "yáo",
+                "pinyin_without_tone": "yao",
+                "tone": 2,
+                "char": "堯",
+                "char_list": [
+                    {
+                        "char": "堯",
+                        "pinyin": "yáo",
+                        "pinyin_without_tone": "yao",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "su": {
+        "pinyin_without_tone": "su",
+        "option_list": [
+            {
+                "pinyin": "sù",
+                "pinyin_without_tone": "su",
+                "tone": 4,
+                "char": "塑",
+                "char_list": [
+                    {
+                        "char": "塑",
+                        "pinyin": "sù",
+                        "pinyin_without_tone": "su",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "rang": {
+        "pinyin_without_tone": "rang",
+        "option_list": [
+            {
+                "pinyin": "rǎng",
+                "pinyin_without_tone": "rang",
+                "tone": 3,
+                "char": "壤",
+                "char_list": [
+                    {
+                        "char": "壤",
+                        "pinyin": "rǎng",
+                        "pinyin_without_tone": "rang",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "bei": {
+        "pinyin_without_tone": "bei",
+        "option_list": [
+            {
+                "pinyin": "bèi",
+                "pinyin_without_tone": "bei",
+                "tone": 4,
+                "char": "备",
+                "char_list": [
+                    {
+                        "char": "备",
+                        "pinyin": "bèi",
+                        "pinyin_without_tone": "bei",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ran": {
+        "pinyin_without_tone": "ran",
+        "option_list": [
+            {
+                "pinyin": "rǎn",
+                "pinyin_without_tone": "ran",
+                "tone": 3,
+                "char": "姌",
+                "char_list": [
+                    {
+                        "char": "姌",
+                        "pinyin": "rǎn",
+                        "pinyin_without_tone": "ran",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "pei": {
+        "pinyin_without_tone": "pei",
+        "option_list": [
+            {
+                "pinyin": "pèi",
+                "pinyin_without_tone": "pei",
+                "tone": 4,
+                "char": "姵",
+                "char_list": [
+                    {
+                        "char": "姵",
+                        "pinyin": "pèi",
+                        "pinyin_without_tone": "pei",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "qi": {
+        "pinyin_without_tone": "qi",
+        "option_list": [
+            {
+                "pinyin": "qí",
+                "pinyin_without_tone": "qi",
+                "tone": 2,
+                "char": "綦",
+                "char_list": [
+                    {
+                        "char": "綦",
+                        "pinyin": "qí",
+                        "pinyin_without_tone": "qi",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "芪",
+                        "pinyin": "qí",
+                        "pinyin_without_tone": "qi",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "qǐ",
+                "pinyin_without_tone": "qi",
+                "tone": 3,
+                "char": "婍",
+                "char_list": [
+                    {
+                        "char": "婍",
+                        "pinyin": "qǐ",
+                        "pinyin_without_tone": "qi",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ying": {
+        "pinyin_without_tone": "ying",
+        "option_list": [
+            {
+                "pinyin": "yīng",
+                "pinyin_without_tone": "ying",
+                "tone": 1,
+                "char": "婴",
+                "char_list": [
+                    {
+                        "char": "婴",
+                        "pinyin": "yīng",
+                        "pinyin_without_tone": "ying",
+                        "tone": 1,
+                        "count": 3
+                    },
+                    {
+                        "char": "缨",
+                        "pinyin": "yīng",
+                        "pinyin_without_tone": "ying",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "si": {
+        "pinyin_without_tone": "si",
+        "option_list": [
+            {
+                "pinyin": "sī",
+                "pinyin_without_tone": "si",
+                "tone": 1,
+                "char": "媤",
+                "char_list": [
+                    {
+                        "char": "媤",
+                        "pinyin": "sī",
+                        "pinyin_without_tone": "si",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "pin": {
+        "pinyin_without_tone": "pin",
+        "option_list": [
+            {
+                "pinyin": "pín",
+                "pinyin_without_tone": "pin",
+                "tone": 2,
+                "char": "嫔",
+                "char_list": [
+                    {
+                        "char": "嫔",
+                        "pinyin": "pín",
+                        "pinyin_without_tone": "pin",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zi": {
+        "pinyin_without_tone": "zi",
+        "option_list": [
+            {
+                "pinyin": "zǐ",
+                "pinyin_without_tone": "zi",
+                "tone": 3,
+                "char": "耔",
+                "char_list": [
+                    {
+                        "char": "耔",
+                        "pinyin": "zǐ",
+                        "pinyin_without_tone": "zi",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "zì",
+                "pinyin_without_tone": "zi",
+                "tone": 4,
+                "char": "字",
+                "char_list": [
+                    {
+                        "char": "字",
+                        "pinyin": "zì",
+                        "pinyin_without_tone": "zi",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "恣",
+                        "pinyin": "zì",
+                        "pinyin_without_tone": "zi",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ni": {
+        "pinyin_without_tone": "ni",
+        "option_list": [
+            {
+                "pinyin": "ní",
+                "pinyin_without_tone": "ni",
+                "tone": 2,
+                "char": "尼",
+                "char_list": [
+                    {
+                        "char": "尼",
+                        "pinyin": "ní",
+                        "pinyin_without_tone": "ni",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "yu": {
+        "pinyin_without_tone": "yu",
+        "option_list": [
+            {
+                "pinyin": "yú",
+                "pinyin_without_tone": "yu",
+                "tone": 2,
+                "char": "隅",
+                "char_list": [
+                    {
+                        "char": "隅",
+                        "pinyin": "yú",
+                        "pinyin_without_tone": "yu",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "yǔ",
+                "pinyin_without_tone": "yu",
+                "tone": 3,
+                "char": "祤",
+                "char_list": [
+                    {
+                        "char": "祤",
+                        "pinyin": "yǔ",
+                        "pinyin_without_tone": "yu",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "yù",
+                "pinyin_without_tone": "yu",
+                "tone": 4,
+                "char": "峪",
+                "char_list": [
+                    {
+                        "char": "峪",
+                        "pinyin": "yù",
+                        "pinyin_without_tone": "yu",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "浴",
+                        "pinyin": "yù",
+                        "pinyin_without_tone": "yu",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "lai": {
+        "pinyin_without_tone": "lai",
+        "option_list": [
+            {
+                "pinyin": "lái",
+                "pinyin_without_tone": "lai",
+                "tone": 2,
+                "char": "崃",
+                "char_list": [
+                    {
+                        "char": "崃",
+                        "pinyin": "lái",
+                        "pinyin_without_tone": "lai",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "mei": {
+        "pinyin_without_tone": "mei",
+        "option_list": [
+            {
+                "pinyin": "méi",
+                "pinyin_without_tone": "mei",
+                "tone": 2,
+                "char": "嵋",
+                "char_list": [
+                    {
+                        "char": "嵋",
+                        "pinyin": "méi",
+                        "pinyin_without_tone": "mei",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "湄",
+                        "pinyin": "méi",
+                        "pinyin_without_tone": "mei",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "měi",
+                "pinyin_without_tone": "mei",
+                "tone": 3,
+                "char": "渼",
+                "char_list": [
+                    {
+                        "char": "渼",
+                        "pinyin": "měi",
+                        "pinyin_without_tone": "mei",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "gong": {
+        "pinyin_without_tone": "gong",
+        "option_list": [
+            {
+                "pinyin": "gōng",
+                "pinyin_without_tone": "gong",
+                "tone": 1,
+                "char": "工",
+                "char_list": [
+                    {
+                        "char": "工",
+                        "pinyin": "gōng",
+                        "pinyin_without_tone": "gong",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "pang": {
+        "pinyin_without_tone": "pang",
+        "option_list": [
+            {
+                "pinyin": "páng",
+                "pinyin_without_tone": "pang",
+                "tone": 2,
+                "char": "庞",
+                "char_list": [
+                    {
+                        "char": "庞",
+                        "pinyin": "páng",
+                        "pinyin_without_tone": "pang",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "shu": {
+        "pinyin_without_tone": "shu",
+        "option_list": [
+            {
+                "pinyin": "shù",
+                "pinyin_without_tone": "shu",
+                "tone": 4,
+                "char": "庶",
+                "char_list": [
+                    {
+                        "char": "庶",
+                        "pinyin": "shù",
+                        "pinyin_without_tone": "shu",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "wang": {
+        "pinyin_without_tone": "wang",
+        "option_list": [
+            {
+                "pinyin": "wǎng",
+                "pinyin_without_tone": "wang",
+                "tone": 3,
+                "char": "往",
+                "char_list": [
+                    {
+                        "char": "往",
+                        "pinyin": "wǎng",
+                        "pinyin_without_tone": "wang",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "bian": {
+        "pinyin_without_tone": "bian",
+        "option_list": [
+            {
+                "pinyin": "biàn",
+                "pinyin_without_tone": "bian",
+                "tone": 4,
+                "char": "忭",
+                "char_list": [
+                    {
+                        "char": "忭",
+                        "pinyin": "biàn",
+                        "pinyin_without_tone": "bian",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xun": {
+        "pinyin_without_tone": "xun",
+        "option_list": [
+            {
+                "pinyin": "xún",
+                "pinyin_without_tone": "xun",
+                "tone": 2,
+                "char": "恂",
+                "char_list": [
+                    {
+                        "char": "恂",
+                        "pinyin": "xún",
+                        "pinyin_without_tone": "xun",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "旬",
+                        "pinyin": "xún",
+                        "pinyin_without_tone": "xun",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "xùn",
+                "pinyin_without_tone": "xun",
+                "tone": 4,
+                "char": "汛",
+                "char_list": [
+                    {
+                        "char": "汛",
+                        "pinyin": "xùn",
+                        "pinyin_without_tone": "xun",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "讯",
+                        "pinyin": "xùn",
+                        "pinyin_without_tone": "xun",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ke": {
+        "pinyin_without_tone": "ke",
+        "option_list": [
+            {
+                "pinyin": "kè",
+                "pinyin_without_tone": "ke",
+                "tone": 4,
+                "char": "恪",
+                "char_list": [
+                    {
+                        "char": "恪",
+                        "pinyin": "kè",
+                        "pinyin_without_tone": "ke",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xing": {
+        "pinyin_without_tone": "xing",
+        "option_list": [
+            {
+                "pinyin": "xīng",
+                "pinyin_without_tone": "xing",
+                "tone": 1,
+                "char": "惺",
+                "char_list": [
+                    {
+                        "char": "惺",
+                        "pinyin": "xīng",
+                        "pinyin_without_tone": "xing",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "xíng",
+                "pinyin_without_tone": "xing",
+                "tone": 2,
+                "char": "邢",
+                "char_list": [
+                    {
+                        "char": "邢",
+                        "pinyin": "xíng",
+                        "pinyin_without_tone": "xing",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "min": {
+        "pinyin_without_tone": "min",
+        "option_list": [
+            {
+                "pinyin": "mín",
+                "pinyin_without_tone": "min",
+                "tone": 2,
+                "char": "慜",
+                "char_list": [
+                    {
+                        "char": "慜",
+                        "pinyin": "mín",
+                        "pinyin_without_tone": "min",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "kai": {
+        "pinyin_without_tone": "kai",
+        "option_list": [
+            {
+                "pinyin": "kǎi",
+                "pinyin_without_tone": "kai",
+                "tone": 3,
+                "char": "慨",
+                "char_list": [
+                    {
+                        "char": "慨",
+                        "pinyin": "kǎi",
+                        "pinyin_without_tone": "kai",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "suo": {
+        "pinyin_without_tone": "suo",
+        "option_list": [
+            {
+                "pinyin": "suǒ",
+                "pinyin_without_tone": "suo",
+                "tone": 3,
+                "char": "所",
+                "char_list": [
+                    {
+                        "char": "所",
+                        "pinyin": "suǒ",
+                        "pinyin_without_tone": "suo",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "kang": {
+        "pinyin_without_tone": "kang",
+        "option_list": [
+            {
+                "pinyin": "kàng",
+                "pinyin_without_tone": "kang",
+                "tone": 4,
+                "char": "抗",
+                "char_list": [
+                    {
+                        "char": "抗",
+                        "pinyin": "kàng",
+                        "pinyin_without_tone": "kang",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zheng": {
+        "pinyin_without_tone": "zheng",
+        "option_list": [
+            {
+                "pinyin": "zhěng",
+                "pinyin_without_tone": "zheng",
+                "tone": 3,
+                "char": "拯",
+                "char_list": [
+                    {
+                        "char": "拯",
+                        "pinyin": "zhěng",
+                        "pinyin_without_tone": "zheng",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "gan": {
+        "pinyin_without_tone": "gan",
+        "option_list": [
+            {
+                "pinyin": "gǎn",
+                "pinyin_without_tone": "gan",
+                "tone": 3,
+                "char": "敢",
+                "char_list": [
+                    {
+                        "char": "敢",
+                        "pinyin": "gǎn",
+                        "pinyin_without_tone": "gan",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ji": {
+        "pinyin_without_tone": "ji",
+        "option_list": [
+            {
+                "pinyin": "jì",
+                "pinyin_without_tone": "ji",
+                "tone": 4,
+                "char": "既",
+                "char_list": [
+                    {
+                        "char": "既",
+                        "pinyin": "jì",
+                        "pinyin_without_tone": "ji",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "迹",
+                        "pinyin": "jì",
+                        "pinyin_without_tone": "ji",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zhe": {
+        "pinyin_without_tone": "zhe",
+        "option_list": [
+            {
+                "pinyin": "zhé",
+                "pinyin_without_tone": "zhe",
+                "tone": 2,
+                "char": "晢",
+                "char_list": [
+                    {
+                        "char": "晢",
+                        "pinyin": "zhé",
+                        "pinyin_without_tone": "zhe",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zhuo": {
+        "pinyin_without_tone": "zhuo",
+        "option_list": [
+            {
+                "pinyin": "zhuó",
+                "pinyin_without_tone": "zhuo",
+                "tone": 2,
+                "char": "晫",
+                "char_list": [
+                    {
+                        "char": "晫",
+                        "pinyin": "zhuó",
+                        "pinyin_without_tone": "zhuo",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "yang": {
+        "pinyin_without_tone": "yang",
+        "option_list": [
+            {
+                "pinyin": "yáng",
+                "pinyin_without_tone": "yang",
+                "tone": 2,
+                "char": "暘",
+                "char_list": [
+                    {
+                        "char": "暘",
+                        "pinyin": "yáng",
+                        "pinyin_without_tone": "yang",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "fan": {
+        "pinyin_without_tone": "fan",
+        "option_list": [
+            {
+                "pinyin": "fán",
+                "pinyin_without_tone": "fan",
+                "tone": 2,
+                "char": "杋",
+                "char_list": [
+                    {
+                        "char": "杋",
+                        "pinyin": "fán",
+                        "pinyin_without_tone": "fan",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "long": {
+        "pinyin_without_tone": "long",
+        "option_list": [
+            {
+                "pinyin": "lóng",
+                "pinyin_without_tone": "long",
+                "tone": 2,
+                "char": "栊",
+                "char_list": [
+                    {
+                        "char": "栊",
+                        "pinyin": "lóng",
+                        "pinyin_without_tone": "long",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "bai": {
+        "pinyin_without_tone": "bai",
+        "option_list": [
+            {
+                "pinyin": "bǎi",
+                "pinyin_without_tone": "bai",
+                "tone": 3,
+                "char": "栢",
+                "char_list": [
+                    {
+                        "char": "栢",
+                        "pinyin": "bǎi",
+                        "pinyin_without_tone": "bai",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zhu": {
+        "pinyin_without_tone": "zhu",
+        "option_list": [
+            {
+                "pinyin": "zhū",
+                "pinyin_without_tone": "zhu",
+                "tone": 1,
+                "char": "株",
+                "char_list": [
+                    {
+                        "char": "株",
+                        "pinyin": "zhū",
+                        "pinyin_without_tone": "zhu",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "bang": {
+        "pinyin_without_tone": "bang",
+        "option_list": [
+            {
+                "pinyin": "bàng",
+                "pinyin_without_tone": "bang",
+                "tone": 4,
+                "char": "棒",
+                "char_list": [
+                    {
+                        "char": "棒",
+                        "pinyin": "bàng",
+                        "pinyin_without_tone": "bang",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "peng": {
+        "pinyin_without_tone": "peng",
+        "option_list": [
+            {
+                "pinyin": "péng",
+                "pinyin_without_tone": "peng",
+                "tone": 2,
+                "char": "棚",
+                "char_list": [
+                    {
+                        "char": "棚",
+                        "pinyin": "péng",
+                        "pinyin_without_tone": "peng",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zun": {
+        "pinyin_without_tone": "zun",
+        "option_list": [
+            {
+                "pinyin": "zūn",
+                "pinyin_without_tone": "zun",
+                "tone": 1,
+                "char": "樽",
+                "char_list": [
+                    {
+                        "char": "樽",
+                        "pinyin": "zūn",
+                        "pinyin_without_tone": "zun",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "bi": {
+        "pinyin_without_tone": "bi",
+        "option_list": [
+            {
+                "pinyin": "bǐ",
+                "pinyin_without_tone": "bi",
+                "tone": 3,
+                "char": "比",
+                "char_list": [
+                    {
+                        "char": "比",
+                        "pinyin": "bǐ",
+                        "pinyin_without_tone": "bi",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "qian": {
+        "pinyin_without_tone": "qian",
+        "option_list": [
+            {
+                "pinyin": "qiān",
+                "pinyin_without_tone": "qian",
+                "tone": 1,
+                "char": "汧",
+                "char_list": [
+                    {
+                        "char": "汧",
+                        "pinyin": "qiān",
+                        "pinyin_without_tone": "qian",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "qián",
+                "pinyin_without_tone": "qian",
+                "tone": 2,
+                "char": "钤",
+                "char_list": [
+                    {
+                        "char": "钤",
+                        "pinyin": "qián",
+                        "pinyin_without_tone": "qian",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "黔",
+                        "pinyin": "qián",
+                        "pinyin_without_tone": "qian",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "yan": {
+        "pinyin_without_tone": "yan",
+        "option_list": [
+            {
+                "pinyin": "yān",
+                "pinyin_without_tone": "yan",
+                "tone": 1,
+                "char": "焉",
+                "char_list": [
+                    {
+                        "char": "焉",
+                        "pinyin": "yān",
+                        "pinyin_without_tone": "yan",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "yǎn",
+                "pinyin_without_tone": "yan",
+                "tone": 3,
+                "char": "沇",
+                "char_list": [
+                    {
+                        "char": "沇",
+                        "pinyin": "yǎn",
+                        "pinyin_without_tone": "yan",
+                        "tone": 3,
+                        "count": 3
+                    },
+                    {
+                        "char": "龑",
+                        "pinyin": "yǎn",
+                        "pinyin_without_tone": "yan",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zhan": {
+        "pinyin_without_tone": "zhan",
+        "option_list": [
+            {
+                "pinyin": "zhān",
+                "pinyin_without_tone": "zhan",
+                "tone": 1,
+                "char": "沾",
+                "char_list": [
+                    {
+                        "char": "沾",
+                        "pinyin": "zhān",
+                        "pinyin_without_tone": "zhan",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "lu": {
+        "pinyin_without_tone": "lu",
+        "option_list": [
+            {
+                "pinyin": "lú",
+                "pinyin_without_tone": "lu",
+                "tone": 2,
+                "char": "泸",
+                "char_list": [
+                    {
+                        "char": "泸",
+                        "pinyin": "lú",
+                        "pinyin_without_tone": "lu",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "芦",
+                        "pinyin": "lú",
+                        "pinyin_without_tone": "lu",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "lù",
+                "pinyin_without_tone": "lu",
+                "tone": 4,
+                "char": "琭",
+                "char_list": [
+                    {
+                        "char": "琭",
+                        "pinyin": "lù",
+                        "pinyin_without_tone": "lu",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "er": {
+        "pinyin_without_tone": "er",
+        "option_list": [
+            {
+                "pinyin": "ěr",
+                "pinyin_without_tone": "er",
+                "tone": 3,
+                "char": "洱",
+                "char_list": [
+                    {
+                        "char": "洱",
+                        "pinyin": "ěr",
+                        "pinyin_without_tone": "er",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "guang": {
+        "pinyin_without_tone": "guang",
+        "option_list": [
+            {
+                "pinyin": "guāng",
+                "pinyin_without_tone": "guang",
+                "tone": 1,
+                "char": "洸",
+                "char_list": [
+                    {
+                        "char": "洸",
+                        "pinyin": "guāng",
+                        "pinyin_without_tone": "guang",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "nong": {
+        "pinyin_without_tone": "nong",
+        "option_list": [
+            {
+                "pinyin": "nóng",
+                "pinyin_without_tone": "nong",
+                "tone": 2,
+                "char": "浓",
+                "char_list": [
+                    {
+                        "char": "浓",
+                        "pinyin": "nóng",
+                        "pinyin_without_tone": "nong",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xu": {
+        "pinyin_without_tone": "xu",
+        "option_list": [
+            {
+                "pinyin": "xǔ",
+                "pinyin_without_tone": "xu",
+                "tone": 3,
+                "char": "珝",
+                "char_list": [
+                    {
+                        "char": "珝",
+                        "pinyin": "xǔ",
+                        "pinyin_without_tone": "xu",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "xù",
+                "pinyin_without_tone": "xu",
+                "tone": 4,
+                "char": "溆",
+                "char_list": [
+                    {
+                        "char": "溆",
+                        "pinyin": "xù",
+                        "pinyin_without_tone": "xu",
+                        "tone": 4,
+                        "count": 3
+                    },
+                    {
+                        "char": "蓄",
+                        "pinyin": "xù",
+                        "pinyin_without_tone": "xu",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xi": {
+        "pinyin_without_tone": "xi",
+        "option_list": [
+            {
+                "pinyin": "xī",
+                "pinyin_without_tone": "xi",
+                "tone": 1,
+                "char": "爔",
+                "char_list": [
+                    {
+                        "char": "爔",
+                        "pinyin": "xī",
+                        "pinyin_without_tone": "xi",
+                        "tone": 1,
+                        "count": 3
+                    },
+                    {
+                        "char": "琋",
+                        "pinyin": "xī",
+                        "pinyin_without_tone": "xi",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "yuan": {
+        "pinyin_without_tone": "yuan",
+        "option_list": [
+            {
+                "pinyin": "yuán",
+                "pinyin_without_tone": "yuan",
+                "tone": 2,
+                "char": "爰",
+                "char_list": [
+                    {
+                        "char": "爰",
+                        "pinyin": "yuán",
+                        "pinyin_without_tone": "yuan",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "辕",
+                        "pinyin": "yuán",
+                        "pinyin_without_tone": "yuan",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "po": {
+        "pinyin_without_tone": "po",
+        "option_list": [
+            {
+                "pinyin": "pò",
+                "pinyin_without_tone": "po",
+                "tone": 4,
+                "char": "珀",
+                "char_list": [
+                    {
+                        "char": "珀",
+                        "pinyin": "pò",
+                        "pinyin_without_tone": "po",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "li": {
+        "pinyin_without_tone": "li",
+        "option_list": [
+            {
+                "pinyin": "lí",
+                "pinyin_without_tone": "li",
+                "tone": 2,
+                "char": "琍",
+                "char_list": [
+                    {
+                        "char": "琍",
+                        "pinyin": "lí",
+                        "pinyin_without_tone": "li",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "jin": {
+        "pinyin_without_tone": "jin",
+        "option_list": [
+            {
+                "pinyin": "jīn",
+                "pinyin_without_tone": "jin",
+                "tone": 1,
+                "char": "琎",
+                "char_list": [
+                    {
+                        "char": "琎",
+                        "pinyin": "jīn",
+                        "pinyin_without_tone": "jin",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "jìn",
+                "pinyin_without_tone": "jin",
+                "tone": 4,
+                "char": "瑨",
+                "char_list": [
+                    {
+                        "char": "瑨",
+                        "pinyin": "jìn",
+                        "pinyin_without_tone": "jin",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xia": {
+        "pinyin_without_tone": "xia",
+        "option_list": [
+            {
+                "pinyin": "xiá",
+                "pinyin_without_tone": "xia",
+                "tone": 2,
+                "char": "瑕",
+                "char_list": [
+                    {
+                        "char": "瑕",
+                        "pinyin": "xiá",
+                        "pinyin_without_tone": "xia",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "se": {
+        "pinyin_without_tone": "se",
+        "option_list": [
+            {
+                "pinyin": "sè",
+                "pinyin_without_tone": "se",
+                "tone": 4,
+                "char": "瑟",
+                "char_list": [
+                    {
+                        "char": "瑟",
+                        "pinyin": "sè",
+                        "pinyin_without_tone": "se",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "rong": {
+        "pinyin_without_tone": "rong",
+        "option_list": [
+            {
+                "pinyin": "róng",
+                "pinyin_without_tone": "rong",
+                "tone": 2,
+                "char": "瑢",
+                "char_list": [
+                    {
+                        "char": "瑢",
+                        "pinyin": "róng",
+                        "pinyin_without_tone": "rong",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "茸",
+                        "pinyin": "róng",
+                        "pinyin_without_tone": "rong",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zan": {
+        "pinyin_without_tone": "zan",
+        "option_list": [
+            {
+                "pinyin": "zàn",
+                "pinyin_without_tone": "zan",
+                "tone": 4,
+                "char": "瓒",
+                "char_list": [
+                    {
+                        "char": "瓒",
+                        "pinyin": "zàn",
+                        "pinyin_without_tone": "zan",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ou": {
+        "pinyin_without_tone": "ou",
+        "option_list": [
+            {
+                "pinyin": "ōu",
+                "pinyin_without_tone": "ou",
+                "tone": 1,
+                "char": "瓯",
+                "char_list": [
+                    {
+                        "char": "瓯",
+                        "pinyin": "ōu",
+                        "pinyin_without_tone": "ou",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ling": {
+        "pinyin_without_tone": "ling",
+        "option_list": [
+            {
+                "pinyin": "líng",
+                "pinyin_without_tone": "ling",
+                "tone": 2,
+                "char": "皊",
+                "char_list": [
+                    {
+                        "char": "皊",
+                        "pinyin": "líng",
+                        "pinyin_without_tone": "ling",
+                        "tone": 2,
+                        "count": 3
+                    },
+                    {
+                        "char": "零",
+                        "pinyin": "líng",
+                        "pinyin_without_tone": "ling",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xiao": {
+        "pinyin_without_tone": "xiao",
+        "option_list": [
+            {
+                "pinyin": "xiǎo",
+                "pinyin_without_tone": "xiao",
+                "tone": 3,
+                "char": "皛",
+                "char_list": [
+                    {
+                        "char": "皛",
+                        "pinyin": "xiǎo",
+                        "pinyin_without_tone": "xiao",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "kuang": {
+        "pinyin_without_tone": "kuang",
+        "option_list": [
+            {
+                "pinyin": "kuàng",
+                "pinyin_without_tone": "kuang",
+                "tone": 4,
+                "char": "矿",
+                "char_list": [
+                    {
+                        "char": "矿",
+                        "pinyin": "kuàng",
+                        "pinyin_without_tone": "kuang",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "di": {
+        "pinyin_without_tone": "di",
+        "option_list": [
+            {
+                "pinyin": "dǐ",
+                "pinyin_without_tone": "di",
+                "tone": 3,
+                "char": "砥",
+                "char_list": [
+                    {
+                        "char": "砥",
+                        "pinyin": "dǐ",
+                        "pinyin_without_tone": "di",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "gui": {
+        "pinyin_without_tone": "gui",
+        "option_list": [
+            {
+                "pinyin": "guī",
+                "pinyin_without_tone": "gui",
+                "tone": 1,
+                "char": "硅",
+                "char_list": [
+                    {
+                        "char": "硅",
+                        "pinyin": "guī",
+                        "pinyin_without_tone": "gui",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "qing": {
+        "pinyin_without_tone": "qing",
+        "option_list": [
+            {
+                "pinyin": "qìng",
+                "pinyin_without_tone": "qing",
+                "tone": 4,
+                "char": "磬",
+                "char_list": [
+                    {
+                        "char": "磬",
+                        "pinyin": "qìng",
+                        "pinyin_without_tone": "qing",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "tong": {
+        "pinyin_without_tone": "tong",
+        "option_list": [
+            {
+                "pinyin": "tóng",
+                "pinyin_without_tone": "tong",
+                "tone": 2,
+                "char": "秱",
+                "char_list": [
+                    {
+                        "char": "秱",
+                        "pinyin": "tóng",
+                        "pinyin_without_tone": "tong",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "fu": {
+        "pinyin_without_tone": "fu",
+        "option_list": [
+            {
+                "pinyin": "fú",
+                "pinyin_without_tone": "fu",
+                "tone": 2,
+                "char": "符",
+                "char_list": [
+                    {
+                        "char": "符",
+                        "pinyin": "fú",
+                        "pinyin_without_tone": "fu",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ruo": {
+        "pinyin_without_tone": "ruo",
+        "option_list": [
+            {
+                "pinyin": "ruò",
+                "pinyin_without_tone": "ruo",
+                "tone": 4,
+                "char": "箬",
+                "char_list": [
+                    {
+                        "char": "箬",
+                        "pinyin": "ruò",
+                        "pinyin_without_tone": "ruo",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "chou": {
+        "pinyin_without_tone": "chou",
+        "option_list": [
+            {
+                "pinyin": "chóu",
+                "pinyin_without_tone": "chou",
+                "tone": 2,
+                "char": "绸",
+                "char_list": [
+                    {
+                        "char": "绸",
+                        "pinyin": "chóu",
+                        "pinyin_without_tone": "chou",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "nai": {
+        "pinyin_without_tone": "nai",
+        "option_list": [
+            {
+                "pinyin": "nài",
+                "pinyin_without_tone": "nai",
+                "tone": 4,
+                "char": "耐",
+                "char_list": [
+                    {
+                        "char": "耐",
+                        "pinyin": "nài",
+                        "pinyin_without_tone": "nai",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "cha": {
+        "pinyin_without_tone": "cha",
+        "option_list": [
+            {
+                "pinyin": "chá",
+                "pinyin_without_tone": "cha",
+                "tone": 2,
+                "char": "茶",
+                "char_list": [
+                    {
+                        "char": "茶",
+                        "pinyin": "chá",
+                        "pinyin_without_tone": "cha",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "luo": {
+        "pinyin_without_tone": "luo",
+        "option_list": [
+            {
+                "pinyin": "luó",
+                "pinyin_without_tone": "luo",
+                "tone": 2,
+                "char": "萝",
+                "char_list": [
+                    {
+                        "char": "萝",
+                        "pinyin": "luó",
+                        "pinyin_without_tone": "luo",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "luò",
+                "pinyin_without_tone": "luo",
+                "tone": 4,
+                "char": "荦",
+                "char_list": [
+                    {
+                        "char": "荦",
+                        "pinyin": "luò",
+                        "pinyin_without_tone": "luo",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "biao": {
+        "pinyin_without_tone": "biao",
+        "option_list": [
+            {
+                "pinyin": "biāo",
+                "pinyin_without_tone": "biao",
+                "tone": 1,
+                "char": "镖",
+                "char_list": [
+                    {
+                        "char": "镖",
+                        "pinyin": "biāo",
+                        "pinyin_without_tone": "biao",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            },
+            {
+                "pinyin": "biǎo",
+                "pinyin_without_tone": "biao",
+                "tone": 3,
+                "char": "表",
+                "char_list": [
+                    {
+                        "char": "表",
+                        "pinyin": "biǎo",
+                        "pinyin_without_tone": "biao",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zhao": {
+        "pinyin_without_tone": "zhao",
+        "option_list": [
+            {
+                "pinyin": "zhào",
+                "pinyin_without_tone": "zhao",
+                "tone": 4,
+                "char": "诏",
+                "char_list": [
+                    {
+                        "char": "诏",
+                        "pinyin": "zhào",
+                        "pinyin_without_tone": "zhao",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "mi": {
+        "pinyin_without_tone": "mi",
+        "option_list": [
+            {
+                "pinyin": "mì",
+                "pinyin_without_tone": "mi",
+                "tone": 4,
+                "char": "谧",
+                "char_list": [
+                    {
+                        "char": "谧",
+                        "pinyin": "mì",
+                        "pinyin_without_tone": "mi",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xiang": {
+        "pinyin_without_tone": "xiang",
+        "option_list": [
+            {
+                "pinyin": "xiàng",
+                "pinyin_without_tone": "xiang",
+                "tone": 4,
+                "char": "象",
+                "char_list": [
+                    {
+                        "char": "象",
+                        "pinyin": "xiàng",
+                        "pinyin_without_tone": "xiang",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "chi": {
+        "pinyin_without_tone": "chi",
+        "option_list": [
+            {
+                "pinyin": "chì",
+                "pinyin_without_tone": "chi",
+                "tone": 4,
+                "char": "赤",
+                "char_list": [
+                    {
+                        "char": "赤",
+                        "pinyin": "chì",
+                        "pinyin_without_tone": "chi",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "liao": {
+        "pinyin_without_tone": "liao",
+        "option_list": [
+            {
+                "pinyin": "liáo",
+                "pinyin_without_tone": "liao",
+                "tone": 2,
+                "char": "辽",
+                "char_list": [
+                    {
+                        "char": "辽",
+                        "pinyin": "liáo",
+                        "pinyin_without_tone": "liao",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "han": {
+        "pinyin_without_tone": "han",
+        "option_list": [
+            {
+                "pinyin": "hán",
+                "pinyin_without_tone": "han",
+                "tone": 2,
+                "char": "邯",
+                "char_list": [
+                    {
+                        "char": "邯",
+                        "pinyin": "hán",
+                        "pinyin_without_tone": "han",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "zou": {
+        "pinyin_without_tone": "zou",
+        "option_list": [
+            {
+                "pinyin": "zōu",
+                "pinyin_without_tone": "zou",
+                "tone": 1,
+                "char": "邹",
+                "char_list": [
+                    {
+                        "char": "邹",
+                        "pinyin": "zōu",
+                        "pinyin_without_tone": "zou",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "lin": {
+        "pinyin_without_tone": "lin",
+        "option_list": [
+            {
+                "pinyin": "lín",
+                "pinyin_without_tone": "lin",
+                "tone": 2,
+                "char": "邻",
+                "char_list": [
+                    {
+                        "char": "邻",
+                        "pinyin": "lín",
+                        "pinyin_without_tone": "lin",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "chen": {
+        "pinyin_without_tone": "chen",
+        "option_list": [
+            {
+                "pinyin": "chēn",
+                "pinyin_without_tone": "chen",
+                "tone": 1,
+                "char": "郴",
+                "char_list": [
+                    {
+                        "char": "郴",
+                        "pinyin": "chēn",
+                        "pinyin_without_tone": "chen",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "you": {
+        "pinyin_without_tone": "you",
+        "option_list": [
+            {
+                "pinyin": "yǒu",
+                "pinyin_without_tone": "you",
+                "tone": 3,
+                "char": "酉",
+                "char_list": [
+                    {
+                        "char": "酉",
+                        "pinyin": "yǒu",
+                        "pinyin_without_tone": "you",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "xin": {
+        "pinyin_without_tone": "xin",
+        "option_list": [
+            {
+                "pinyin": "xīn",
+                "pinyin_without_tone": "xin",
+                "tone": 1,
+                "char": "鈊",
+                "char_list": [
+                    {
+                        "char": "鈊",
+                        "pinyin": "xīn",
+                        "pinyin_without_tone": "xin",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "chuan": {
+        "pinyin_without_tone": "chuan",
+        "option_list": [
+            {
+                "pinyin": "chuàn",
+                "pinyin_without_tone": "chuan",
+                "tone": 4,
+                "char": "钏",
+                "char_list": [
+                    {
+                        "char": "钏",
+                        "pinyin": "chuàn",
+                        "pinyin_without_tone": "chuan",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "chai": {
+        "pinyin_without_tone": "chai",
+        "option_list": [
+            {
+                "pinyin": "chāi",
+                "pinyin_without_tone": "chai",
+                "tone": 1,
+                "char": "钗",
+                "char_list": [
+                    {
+                        "char": "钗",
+                        "pinyin": "chāi",
+                        "pinyin_without_tone": "chai",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "an": {
+        "pinyin_without_tone": "an",
+        "option_list": [
+            {
+                "pinyin": "ǎn",
+                "pinyin_without_tone": "an",
+                "tone": 3,
+                "char": "铵",
+                "char_list": [
+                    {
+                        "char": "铵",
+                        "pinyin": "ǎn",
+                        "pinyin_without_tone": "an",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ru": {
+        "pinyin_without_tone": "ru",
+        "option_list": [
+            {
+                "pinyin": "rú",
+                "pinyin_without_tone": "ru",
+                "tone": 2,
+                "char": "铷",
+                "char_list": [
+                    {
+                        "char": "铷",
+                        "pinyin": "rú",
+                        "pinyin_without_tone": "ru",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "keng": {
+        "pinyin_without_tone": "keng",
+        "option_list": [
+            {
+                "pinyin": "kēng",
+                "pinyin_without_tone": "keng",
+                "tone": 1,
+                "char": "铿",
+                "char_list": [
+                    {
+                        "char": "铿",
+                        "pinyin": "kēng",
+                        "pinyin_without_tone": "keng",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "qiang": {
+        "pinyin_without_tone": "qiang",
+        "option_list": [
+            {
+                "pinyin": "qiāng",
+                "pinyin_without_tone": "qiang",
+                "tone": 1,
+                "char": "锵",
+                "char_list": [
+                    {
+                        "char": "锵",
+                        "pinyin": "qiāng",
+                        "pinyin_without_tone": "qiang",
+                        "tone": 1,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "du": {
+        "pinyin_without_tone": "du",
+        "option_list": [
+            {
+                "pinyin": "dù",
+                "pinyin_without_tone": "du",
+                "tone": 4,
+                "char": "镀",
+                "char_list": [
+                    {
+                        "char": "镀",
+                        "pinyin": "dù",
+                        "pinyin_without_tone": "du",
+                        "tone": 4,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "shan": {
+        "pinyin_without_tone": "shan",
+        "option_list": [
+            {
+                "pinyin": "shǎn",
+                "pinyin_without_tone": "shan",
+                "tone": 3,
+                "char": "闪",
+                "char_list": [
+                    {
+                        "char": "闪",
+                        "pinyin": "shǎn",
+                        "pinyin_without_tone": "shan",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ai": {
+        "pinyin_without_tone": "ai",
+        "option_list": [
+            {
+                "pinyin": "ǎi",
+                "pinyin_without_tone": "ai",
+                "tone": 3,
+                "char": "霭",
+                "char_list": [
+                    {
+                        "char": "霭",
+                        "pinyin": "ǎi",
+                        "pinyin_without_tone": "ai",
+                        "tone": 3,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    },
+    "ao": {
+        "pinyin_without_tone": "ao",
+        "option_list": [
+            {
+                "pinyin": "áo",
+                "pinyin_without_tone": "ao",
+                "tone": 2,
+                "char": "骜",
+                "char_list": [
+                    {
+                        "char": "骜",
+                        "pinyin": "áo",
+                        "pinyin_without_tone": "ao",
+                        "tone": 2,
+                        "count": 3
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -2,7 +2,7 @@ import * as path from "path";
 import * as fs from "fs";
 import * as Const from "../common/const";
 import * as Type from "../common/type";
-import { isMap } from "util/types";
+import { TypeOpen } from "antd/es/message/interface";
 
 const Tool = {
   /**
@@ -83,6 +83,55 @@ const Tool = {
       CharDB_Min_10,
     };
   },
+  charPinyinDb2PinyinCharDb(charPinyinDb: Type.CharPinyinDB) {
+    let pinyinCharDb: Type.Pinyin_Db = {};
+    let pinyinWithToneCharDb: Record<string, Type.Pinyin_of_Char> = {};
+
+    // 先按音调对字符进行汇总
+    for (let char of Object.keys(charPinyinDb)) {
+      let charPinyin = charPinyinDb[char];
+      if (pinyinWithToneCharDb[charPinyin.pinyin] === undefined) {
+        pinyinWithToneCharDb[charPinyin.pinyin] = {
+          pinyin: charPinyin.pinyin,
+          pinyin_without_tone: charPinyin.pinyin_without_tone,
+          tone: charPinyin.tone,
+          char: charPinyin.char,
+          char_list: [charPinyin],
+        };
+      } else {
+        pinyinWithToneCharDb[charPinyin.pinyin].char_list.push(charPinyin);
+      }
+    }
+    // 然后再创建音调数据库
+    for (let pinyin of Object.keys(pinyinWithToneCharDb)) {
+      let pinyinItem = pinyinWithToneCharDb[pinyin];
+      // 对pinyinItem进行规整
+      // 按字符频率进行排序, 出现次数最多的放最前面
+      pinyinItem.char_list.sort((a, b) => {
+        return b.count - a.count;
+      });
+      // 按字符频率进行排序, 以出现次数最多的字作为该声调的代表字
+      pinyinItem.char = pinyinItem.char_list[0].char;
+
+      if (pinyinCharDb[pinyinItem.pinyin_without_tone] === undefined) {
+        pinyinCharDb[pinyinItem.pinyin_without_tone] = {
+          pinyin_without_tone: pinyinItem.pinyin_without_tone,
+          option_list: [pinyinItem],
+        };
+      } else {
+        pinyinCharDb[pinyinItem.pinyin_without_tone].option_list.push(
+          pinyinItem
+        );
+        // 按1/2/3/4声对音调顺序进行排序
+        pinyinCharDb[pinyinItem.pinyin_without_tone].option_list.sort(
+          (a, b) => {
+            return a.tone - b.tone;
+          }
+        );
+      }
+    }
+    return pinyinCharDb;
+  },
 };
 
 /**
@@ -93,20 +142,32 @@ async function asyncRunner() {
     .readFileSync(Const.Raw_Char_Db_汉典原始数据_Uri)
     .toString();
   const lineList = content.split("\n");
-  const PinyinList_全部: Type.Char_Pinyin[] = [];
-  const PinyinDb_不含多音字: Record<string, Type.Char_Pinyin> = {};
-  const PinyinDb_不含多音字_姓名用字_Min_1: Record<string, Type.Char_Pinyin> =
-    {};
-  const PinyinDb_不含多音字_姓名用字_Min_2: Record<string, Type.Char_Pinyin> =
-    {};
-  const PinyinDb_不含多音字_姓名用字_Min_3: Record<string, Type.Char_Pinyin> =
-    {};
-  const PinyinDb_不含多音字_姓名用字_Min_4: Record<string, Type.Char_Pinyin> =
-    {};
-  const PinyinDb_不含多音字_姓名用字_Min_5: Record<string, Type.Char_Pinyin> =
-    {};
-  const PinyinDb_不含多音字_姓名用字_Min_10: Record<string, Type.Char_Pinyin> =
-    {};
+  const PinyinList_全部: Type.Char_With_Pinyin[] = [];
+  const PinyinDb_不含多音字: Record<string, Type.Char_With_Pinyin> = {};
+  const PinyinDb_不含多音字_姓名用字_Min_1: Record<
+    string,
+    Type.Char_With_Pinyin
+  > = {};
+  const PinyinDb_不含多音字_姓名用字_Min_2: Record<
+    string,
+    Type.Char_With_Pinyin
+  > = {};
+  const PinyinDb_不含多音字_姓名用字_Min_3: Record<
+    string,
+    Type.Char_With_Pinyin
+  > = {};
+  const PinyinDb_不含多音字_姓名用字_Min_4: Record<
+    string,
+    Type.Char_With_Pinyin
+  > = {};
+  const PinyinDb_不含多音字_姓名用字_Min_5: Record<
+    string,
+    Type.Char_With_Pinyin
+  > = {};
+  const PinyinDb_不含多音字_姓名用字_Min_10: Record<
+    string,
+    Type.Char_With_Pinyin
+  > = {};
 
   const {
     CharDB_Min_1,
@@ -119,7 +180,7 @@ async function asyncRunner() {
 
   const db2PinyinListMap = new Map<
     Type.CharDB,
-    Record<string, Type.Char_Pinyin>
+    Record<string, Type.Char_With_Pinyin>
   >();
   db2PinyinListMap.set(CharDB_Min_10, PinyinDb_不含多音字_姓名用字_Min_10);
   db2PinyinListMap.set(CharDB_Min_5, PinyinDb_不含多音字_姓名用字_Min_5);
@@ -156,7 +217,7 @@ async function asyncRunner() {
         if (key?.[char] !== undefined) {
           const item = db2PinyinListMap.get(key) as Record<
             string,
-            Type.Char_Pinyin
+            Type.Char_With_Pinyin
           >;
           item[char] = charPinyin;
         }
@@ -206,6 +267,55 @@ async function asyncRunner() {
   fs.writeFileSync(
     Const.Char_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri,
     JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_10, null, 4)
+  );
+
+  fs.writeFileSync(
+    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现1次_Uri,
+    JSON.stringify(
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_1),
+      null,
+      4
+    )
+  );
+  fs.writeFileSync(
+    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现2次_Uri,
+    JSON.stringify(
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_2),
+      null,
+      4
+    )
+  );
+  fs.writeFileSync(
+    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现3次_Uri,
+    JSON.stringify(
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_3),
+      null,
+      4
+    )
+  );
+  fs.writeFileSync(
+    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现4次_Uri,
+    JSON.stringify(
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_4),
+      null,
+      4
+    )
+  );
+  fs.writeFileSync(
+    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现5次_Uri,
+    JSON.stringify(
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_5),
+      null,
+      4
+    )
+  );
+  fs.writeFileSync(
+    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri,
+    JSON.stringify(
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_10),
+      null,
+      4
+    )
   );
 
   console.log("字典文件处理完毕");
