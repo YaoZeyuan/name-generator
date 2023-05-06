@@ -18,6 +18,10 @@ export type Char_Pinyin = {
   pinyin: "yǎn" | string;
   tone: 1 | 2 | 3 | 4;
   pinyin_without_tone: "yan" | string;
+  /**
+   * 出现频率
+   */
+  count: number;
 };
 
 export type Type_音调 = 1 | 2 | 3 | 4;

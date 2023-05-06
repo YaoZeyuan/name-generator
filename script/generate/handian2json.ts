@@ -147,6 +147,7 @@ async function asyncRunner() {
         pinyin: pinyinList[0],
         pinyin_without_tone: Tool.remove音调(pinyinList[0]),
         tone: Tool.parse音标音调(pinyinList[0]),
+        count: CharDB_Min_1[char]?.count ?? 0,
       };
       PinyinDb_不含多音字[char] = charPinyin;
 
@@ -169,6 +170,7 @@ async function asyncRunner() {
         pinyin,
         pinyin_without_tone,
         tone,
+        count: CharDB_Min_1[char]?.count ?? 0,
       });
     }
   }

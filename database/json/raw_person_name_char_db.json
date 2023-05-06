@@ -1,59 +1,83 @@
 {
+    "1": {
+        "char": "1",
+        "count": 3
+    },
+    "4": {
+        "char": "4",
+        "count": 1
+    },
+    "6": {
+        "char": "6",
+        "count": 2
+    },
+    "7": {
+        "char": "7",
+        "count": 2
+    },
+    "8": {
+        "char": "8",
+        "count": 3
+    },
+    "9": {
+        "char": "9",
+        "count": 1
+    },
     "明": {
         "char": "明",
-        "count": 2088
+        "count": 2163
     },
     "聪": {
         "char": "聪",
-        "count": 242
+        "count": 262
     },
     "松": {
         "char": "松",
-        "count": 453
+        "count": 474
     },
     "平": {
         "char": "平",
-        "count": 898
+        "count": 918
     },
     "海": {
         "char": "海",
-        "count": 1848
+        "count": 1901
     },
     "博": {
         "char": "博",
-        "count": 1738
+        "count": 1793
     },
     "楠": {
         "char": "楠",
-        "count": 520
+        "count": 564
     },
     "辰": {
         "char": "辰",
-        "count": 1452
+        "count": 1477
     },
     "巧": {
         "char": "巧",
-        "count": 122
+        "count": 127
     },
     "檬": {
         "char": "檬",
-        "count": 29
+        "count": 30
     },
     "怡": {
         "char": "怡",
-        "count": 1892
+        "count": 1949
     },
     "章": {
         "char": "章",
-        "count": 106
+        "count": 108
     },
     "钰": {
         "char": "钰",
-        "count": 836
+        "count": 872
     },
     "睿": {
         "char": "睿",
-        "count": 2182
+        "count": 2211
     },
     "禧": {
         "char": "禧",
@@ -61,19 +85,19 @@
     },
     "玉": {
         "char": "玉",
-        "count": 1174
+        "count": 1232
     },
     "晴": {
         "char": "晴",
-        "count": 729
+        "count": 743
     },
     "煜": {
         "char": "煜",
-        "count": 526
+        "count": 543
     },
     "民": {
         "char": "民",
-        "count": 269
+        "count": 283
     },
     "乘": {
         "char": "乘",
@@ -81,11 +105,11 @@
     },
     "州": {
         "char": "州",
-        "count": 36
+        "count": 37
     },
     "佳": {
         "char": "佳",
-        "count": 2555
+        "count": 2700
     },
     "音": {
         "char": "音",
@@ -93,15 +117,15 @@
     },
     "炜": {
         "char": "炜",
-        "count": 400
+        "count": 415
     },
     "桦": {
         "char": "桦",
-        "count": 97
+        "count": 103
     },
     "彦": {
         "char": "彦",
-        "count": 754
+        "count": 781
     },
     "祾": {
         "char": "祾",
@@ -109,55 +133,55 @@
     },
     "彤": {
         "char": "彤",
-        "count": 1090
+        "count": 1115
     },
     "如": {
         "char": "如",
-        "count": 285
+        "count": 294
     },
     "韵": {
         "char": "韵",
-        "count": 261
+        "count": 273
     },
     "婷": {
         "char": "婷",
-        "count": 1366
+        "count": 1460
     },
     "正": {
         "char": "正",
-        "count": 589
+        "count": 621
     },
     "东": {
         "char": "东",
-        "count": 1087
+        "count": 1142
     },
     "骏": {
         "char": "骏",
-        "count": 416
+        "count": 425
     },
     "维": {
         "char": "维",
-        "count": 377
+        "count": 392
     },
     "峰": {
         "char": "峰",
-        "count": 1174
+        "count": 1214
     },
     "伟": {
         "char": "伟",
-        "count": 1672
+        "count": 1752
     },
     "琦": {
         "char": "琦",
-        "count": 577
+        "count": 607
     },
     "恩": {
         "char": "恩",
-        "count": 779
+        "count": 783
     },
     "泽": {
         "char": "泽",
-        "count": 2051
+        "count": 2087
     },
     "麒": {
         "char": "麒",
@@ -165,11 +189,11 @@
     },
     "宇": {
         "char": "宇",
-        "count": 4217
+        "count": 4350
     },
     "智": {
         "char": "智",
-        "count": 838
+        "count": 869
     },
     "委": {
         "char": "委",
@@ -177,15 +201,15 @@
     },
     "嘉": {
         "char": "嘉",
-        "count": 2599
+        "count": 2654
     },
     "瑶": {
         "char": "瑶",
-        "count": 799
+        "count": 828
     },
     "安": {
         "char": "安",
-        "count": 882
+        "count": 905
     },
     "奔": {
         "char": "奔",
@@ -193,55 +217,55 @@
     },
     "宝": {
         "char": "宝",
-        "count": 517
+        "count": 532
     },
     "玲": {
         "char": "玲",
-        "count": 806
+        "count": 842
     },
     "承": {
         "char": "承",
-        "count": 418
+        "count": 424
     },
     "志": {
         "char": "志",
-        "count": 1726
+        "count": 1788
     },
     "楚": {
         "char": "楚",
-        "count": 341
+        "count": 348
     },
     "瑜": {
         "char": "瑜",
-        "count": 597
+        "count": 614
     },
     "馥": {
         "char": "馥",
-        "count": 20
+        "count": 22
     },
     "阳": {
         "char": "阳",
-        "count": 1156
+        "count": 1207
     },
     "昊": {
         "char": "昊",
-        "count": 1110
+        "count": 1140
     },
     "城": {
         "char": "城",
-        "count": 278
+        "count": 282
     },
     "恒": {
         "char": "恒",
-        "count": 753
+        "count": 774
     },
     "晔": {
         "char": "晔",
-        "count": 93
+        "count": 99
     },
     "衡": {
         "char": "衡",
-        "count": 113
+        "count": 114
     },
     "熹": {
         "char": "熹",
@@ -249,11 +273,11 @@
     },
     "家": {
         "char": "家",
-        "count": 1246
+        "count": 1292
     },
     "希": {
         "char": "希",
-        "count": 796
+        "count": 809
     },
     "汶": {
         "char": "汶",
@@ -261,95 +285,95 @@
     },
     "健": {
         "char": "健",
-        "count": 551
+        "count": 578
     },
     "璟": {
         "char": "璟",
-        "count": 193
+        "count": 197
     },
     "琪": {
         "char": "琪",
-        "count": 1473
+        "count": 1526
     },
     "俊": {
         "char": "俊",
-        "count": 2442
+        "count": 2508
     },
     "凯": {
         "char": "凯",
-        "count": 825
+        "count": 860
     },
     "林": {
         "char": "林",
-        "count": 1154
+        "count": 1196
     },
     "岚": {
         "char": "岚",
-        "count": 223
+        "count": 226
     },
     "琳": {
         "char": "琳",
-        "count": 1121
+        "count": 1165
     },
     "晓": {
         "char": "晓",
-        "count": 2303
+        "count": 2424
     },
     "沐": {
         "char": "沐",
-        "count": 478
+        "count": 479
     },
     "佩": {
         "char": "佩",
-        "count": 196
+        "count": 206
     },
     "儒": {
         "char": "儒",
-        "count": 105
+        "count": 107
     },
     "诗": {
         "char": "诗",
-        "count": 1256
+        "count": 1273
     },
     "颖": {
         "char": "颖",
-        "count": 969
+        "count": 1027
     },
     "舒": {
         "char": "舒",
-        "count": 434
+        "count": 457
     },
     "羽": {
         "char": "羽",
-        "count": 685
+        "count": 699
     },
     "未": {
         "char": "未",
-        "count": 30
+        "count": 33
     },
     "来": {
         "char": "来",
-        "count": 113
+        "count": 116
     },
     "文": {
         "char": "文",
-        "count": 3566
+        "count": 3733
     },
     "堂": {
         "char": "堂",
-        "count": 45
+        "count": 46
     },
     "斌": {
         "char": "斌",
-        "count": 599
+        "count": 633
     },
     "依": {
         "char": "依",
-        "count": 709
+        "count": 724
     },
     "茹": {
         "char": "茹",
-        "count": 400
+        "count": 422
     },
     "译": {
         "char": "译",
@@ -357,23 +381,23 @@
     },
     "熠": {
         "char": "熠",
-        "count": 189
+        "count": 193
     },
     "敏": {
         "char": "敏",
-        "count": 923
+        "count": 991
     },
     "燚": {
         "char": "燚",
-        "count": 31
+        "count": 32
     },
     "岳": {
         "char": "岳",
-        "count": 156
+        "count": 161
     },
     "滨": {
         "char": "滨",
-        "count": 89
+        "count": 92
     },
     "粤": {
         "char": "粤",
@@ -381,35 +405,35 @@
     },
     "龙": {
         "char": "龙",
-        "count": 879
+        "count": 915
     },
     "源": {
         "char": "源",
-        "count": 717
+        "count": 745
     },
     "芷": {
         "char": "芷",
-        "count": 633
+        "count": 638
     },
     "静": {
         "char": "静",
-        "count": 1096
+        "count": 1156
     },
     "卓": {
         "char": "卓",
-        "count": 480
+        "count": 498
     },
     "翰": {
         "char": "翰",
-        "count": 211
+        "count": 216
     },
     "华": {
         "char": "华",
-        "count": 1943
+        "count": 2017
     },
     "子": {
         "char": "子",
-        "count": 4491
+        "count": 4556
     },
     "籽": {
         "char": "籽",
@@ -417,55 +441,55 @@
     },
     "轩": {
         "char": "轩",
-        "count": 2830
+        "count": 2846
     },
     "梓": {
         "char": "梓",
-        "count": 3229
+        "count": 3244
     },
     "昕": {
         "char": "昕",
-        "count": 689
+        "count": 722
     },
     "柏": {
         "char": "柏",
-        "count": 319
+        "count": 322
     },
     "玮": {
         "char": "玮",
-        "count": 402
+        "count": 427
     },
     "德": {
         "char": "德",
-        "count": 563
+        "count": 584
     },
     "育": {
         "char": "育",
-        "count": 102
+        "count": 110
     },
     "烽": {
         "char": "烽",
-        "count": 48
+        "count": 49
     },
     "瀚": {
         "char": "瀚",
-        "count": 282
+        "count": 290
     },
     "予": {
         "char": "予",
-        "count": 300
+        "count": 304
     },
     "鸿": {
         "char": "鸿",
-        "count": 510
+        "count": 528
     },
     "政": {
         "char": "政",
-        "count": 320
+        "count": 328
     },
     "峻": {
         "char": "峻",
-        "count": 369
+        "count": 373
     },
     "境": {
         "char": "境",
@@ -473,103 +497,103 @@
     },
     "康": {
         "char": "康",
-        "count": 426
+        "count": 439
     },
     "丽": {
         "char": "丽",
-        "count": 1521
+        "count": 1609
     },
     "萱": {
         "char": "萱",
-        "count": 1258
+        "count": 1266
     },
     "米": {
         "char": "米",
-        "count": 80
+        "count": 81
     },
     "铭": {
         "char": "铭",
-        "count": 1208
+        "count": 1237
     },
     "冉": {
         "char": "冉",
-        "count": 291
+        "count": 295
     },
     "崇": {
         "char": "崇",
-        "count": 98
+        "count": 103
     },
     "茵": {
         "char": "茵",
-        "count": 153
+        "count": 157
     },
     "哲": {
         "char": "哲",
-        "count": 794
+        "count": 821
     },
     "思": {
         "char": "思",
-        "count": 2226
+        "count": 2284
     },
     "晏": {
         "char": "晏",
-        "count": 53
+        "count": 54
     },
     "一": {
         "char": "一",
-        "count": 1677
+        "count": 1741
     },
     "仪": {
         "char": "仪",
-        "count": 326
+        "count": 337
     },
     "雨": {
         "char": "雨",
-        "count": 2618
+        "count": 2700
     },
     "萌": {
         "char": "萌",
-        "count": 372
+        "count": 395
     },
     "雅": {
         "char": "雅",
-        "count": 1595
+        "count": 1638
     },
     "强": {
         "char": "强",
-        "count": 773
+        "count": 800
     },
     "毅": {
         "char": "毅",
-        "count": 610
+        "count": 629
     },
     "欣": {
         "char": "欣",
-        "count": 2497
+        "count": 2553
     },
     "傲": {
         "char": "傲",
-        "count": 62
+        "count": 65
     },
     "谦": {
         "char": "谦",
-        "count": 321
+        "count": 322
     },
     "伯": {
         "char": "伯",
-        "count": 82
+        "count": 83
     },
     "雄": {
         "char": "雄",
-        "count": 178
+        "count": 190
     },
     "宸": {
         "char": "宸",
-        "count": 1162
+        "count": 1170
     },
     "得": {
         "char": "得",
-        "count": 39
+        "count": 40
     },
     "煦": {
         "char": "煦",
@@ -577,211 +601,211 @@
     },
     "国": {
         "char": "国",
-        "count": 1186
+        "count": 1214
     },
     "培": {
         "char": "培",
-        "count": 270
+        "count": 282
     },
     "月": {
         "char": "月",
-        "count": 523
+        "count": 550
     },
     "好": {
         "char": "好",
-        "count": 123
+        "count": 126
     },
     "诚": {
         "char": "诚",
-        "count": 441
+        "count": 449
     },
     "浩": {
         "char": "浩",
-        "count": 2400
+        "count": 2463
     },
     "赫": {
         "char": "赫",
-        "count": 159
+        "count": 161
     },
     "钟": {
         "char": "钟",
-        "count": 68
+        "count": 70
     },
     "皓": {
         "char": "皓",
-        "count": 1033
+        "count": 1049
     },
     "荣": {
         "char": "荣",
-        "count": 751
+        "count": 779
     },
     "栋": {
         "char": "栋",
-        "count": 259
+        "count": 274
     },
     "义": {
         "char": "义",
-        "count": 304
+        "count": 314
     },
     "婧": {
         "char": "婧",
-        "count": 464
+        "count": 493
     },
     "均": {
         "char": "均",
-        "count": 130
+        "count": 131
     },
     "霖": {
         "char": "霖",
-        "count": 810
+        "count": 827
     },
     "涛": {
         "char": "涛",
-        "count": 971
+        "count": 1017
     },
     "莉": {
         "char": "莉",
-        "count": 500
+        "count": 524
     },
     "乐": {
         "char": "乐",
-        "count": 1301
+        "count": 1323
     },
     "儿": {
         "char": "儿",
-        "count": 177
+        "count": 179
     },
     "理": {
         "char": "理",
-        "count": 59
+        "count": 61
     },
     "凌": {
         "char": "凌",
-        "count": 343
+        "count": 351
     },
     "麟": {
         "char": "麟",
-        "count": 148
+        "count": 150
     },
     "启": {
         "char": "启",
-        "count": 387
+        "count": 396
     },
     "圣": {
         "char": "圣",
-        "count": 252
+        "count": 259
     },
     "庆": {
         "char": "庆",
-        "count": 592
+        "count": 616
     },
     "豪": {
         "char": "豪",
-        "count": 1279
+        "count": 1311
     },
     "润": {
         "char": "润",
-        "count": 403
+        "count": 413
     },
     "晖": {
         "char": "晖",
-        "count": 170
+        "count": 184
     },
     "权": {
         "char": "权",
-        "count": 214
+        "count": 221
     },
     "棋": {
         "char": "棋",
-        "count": 180
+        "count": 184
     },
     "天": {
         "char": "天",
-        "count": 1250
+        "count": 1299
     },
     "行": {
         "char": "行",
-        "count": 167
+        "count": 177
     },
     "威": {
         "char": "威",
-        "count": 301
+        "count": 323
     },
     "微": {
         "char": "微",
-        "count": 123
+        "count": 127
     },
     "淼": {
         "char": "淼",
-        "count": 166
+        "count": 173
     },
     "雯": {
         "char": "雯",
-        "count": 953
+        "count": 1016
     },
     "祥": {
         "char": "祥",
-        "count": 528
+        "count": 544
     },
     "基": {
         "char": "基",
-        "count": 65
+        "count": 68
     },
     "筱": {
         "char": "筱",
-        "count": 254
+        "count": 260
     },
     "童": {
         "char": "童",
-        "count": 211
+        "count": 217
     },
     "馨": {
         "char": "馨",
-        "count": 1160
+        "count": 1177
     },
     "鑫": {
         "char": "鑫",
-        "count": 1087
+        "count": 1146
     },
     "悦": {
         "char": "悦",
-        "count": 1183
+        "count": 1215
     },
     "亮": {
         "char": "亮",
-        "count": 630
+        "count": 646
     },
     "杰": {
         "char": "杰",
-        "count": 1978
+        "count": 2062
     },
     "烨": {
         "char": "烨",
-        "count": 396
+        "count": 413
     },
     "翔": {
         "char": "翔",
-        "count": 673
+        "count": 706
     },
     "淇": {
         "char": "淇",
-        "count": 539
+        "count": 547
     },
     "元": {
         "char": "元",
-        "count": 518
+        "count": 541
     },
     "荧": {
         "char": "荧",
-        "count": 33
+        "count": 34
     },
     "远": {
         "char": "远",
-        "count": 681
+        "count": 697
     },
     "兆": {
         "char": "兆",
-        "count": 195
+        "count": 209
     },
     "祉": {
         "char": "祉",
@@ -789,71 +813,71 @@
     },
     "乔": {
         "char": "乔",
-        "count": 195
+        "count": 200
     },
     "仁": {
         "char": "仁",
-        "count": 238
+        "count": 243
     },
     "贤": {
         "char": "贤",
-        "count": 442
+        "count": 451
     },
     "翀": {
         "char": "翀",
-        "count": 52
+        "count": 59
     },
     "涵": {
         "char": "涵",
-        "count": 2871
+        "count": 2916
     },
     "紫": {
         "char": "紫",
-        "count": 914
+        "count": 927
     },
     "梦": {
         "char": "梦",
-        "count": 980
+        "count": 1055
     },
     "秋": {
         "char": "秋",
-        "count": 437
+        "count": 450
     },
     "玥": {
         "char": "玥",
-        "count": 698
+        "count": 721
     },
     "亭": {
         "char": "亭",
-        "count": 72
+        "count": 77
     },
     "蓝": {
         "char": "蓝",
-        "count": 86
+        "count": 89
     },
     "之": {
         "char": "之",
-        "count": 258
+        "count": 270
     },
     "榕": {
         "char": "榕",
-        "count": 74
+        "count": 81
     },
     "昭": {
         "char": "昭",
-        "count": 120
+        "count": 123
     },
     "逸": {
         "char": "逸",
-        "count": 720
+        "count": 753
     },
     "冬": {
         "char": "冬",
-        "count": 336
+        "count": 341
     },
     "言": {
         "char": "言",
-        "count": 419
+        "count": 428
     },
     "枞": {
         "char": "枞",
@@ -865,35 +889,35 @@
     },
     "保": {
         "char": "保",
-        "count": 141
+        "count": 142
     },
     "贝": {
         "char": "贝",
-        "count": 126
+        "count": 129
     },
     "冰": {
         "char": "冰",
-        "count": 311
+        "count": 326
     },
     "妍": {
         "char": "妍",
-        "count": 1166
+        "count": 1186
     },
     "灿": {
         "char": "灿",
-        "count": 191
+        "count": 196
     },
     "春": {
         "char": "春",
-        "count": 1039
+        "count": 1071
     },
     "慈": {
         "char": "慈",
-        "count": 49
+        "count": 52
     },
     "济": {
         "char": "济",
-        "count": 39
+        "count": 40
     },
     "琮": {
         "char": "琮",
@@ -901,35 +925,35 @@
     },
     "澔": {
         "char": "澔",
-        "count": 9
+        "count": 10
     },
     "岱": {
         "char": "岱",
-        "count": 36
+        "count": 37
     },
     "应": {
         "char": "应",
-        "count": 65
+        "count": 67
     },
     "璋": {
         "char": "璋",
-        "count": 36
+        "count": 37
     },
     "登": {
         "char": "登",
-        "count": 71
+        "count": 74
     },
     "迪": {
         "char": "迪",
-        "count": 250
+        "count": 275
     },
     "定": {
         "char": "定",
-        "count": 70
+        "count": 73
     },
     "霁": {
         "char": "霁",
-        "count": 38
+        "count": 42
     },
     "埼": {
         "char": "埼",
@@ -937,23 +961,23 @@
     },
     "菲": {
         "char": "菲",
-        "count": 594
+        "count": 617
     },
     "富": {
         "char": "富",
-        "count": 175
+        "count": 177
     },
     "甘": {
         "char": "甘",
-        "count": 10
+        "count": 11
     },
     "淦": {
         "char": "淦",
-        "count": 13
+        "count": 14
     },
     "朗": {
         "char": "朗",
-        "count": 171
+        "count": 174
     },
     "官": {
         "char": "官",
@@ -961,27 +985,27 @@
     },
     "冠": {
         "char": "冠",
-        "count": 232
+        "count": 238
     },
     "辉": {
         "char": "辉",
-        "count": 989
+        "count": 1033
     },
     "坤": {
         "char": "坤",
-        "count": 414
+        "count": 443
     },
     "男": {
         "char": "男",
-        "count": 106
+        "count": 112
     },
     "光": {
         "char": "光",
-        "count": 518
+        "count": 539
     },
     "耀": {
         "char": "耀",
-        "count": 344
+        "count": 354
     },
     "果": {
         "char": "果",
@@ -989,35 +1013,35 @@
     },
     "心": {
         "char": "心",
-        "count": 816
+        "count": 852
     },
     "汉": {
         "char": "汉",
-        "count": 124
+        "count": 130
     },
     "钦": {
         "char": "钦",
-        "count": 147
+        "count": 152
     },
     "铠": {
         "char": "铠",
-        "count": 75
+        "count": 76
     },
     "然": {
         "char": "然",
-        "count": 1345
+        "count": 1364
     },
     "星": {
         "char": "星",
-        "count": 674
+        "count": 693
     },
     "扬": {
         "char": "扬",
-        "count": 402
+        "count": 416
     },
     "灏": {
         "char": "灏",
-        "count": 196
+        "count": 200
     },
     "闳": {
         "char": "闳",
@@ -1029,83 +1053,83 @@
     },
     "泓": {
         "char": "泓",
-        "count": 290
+        "count": 294
     },
     "旭": {
         "char": "旭",
-        "count": 789
+        "count": 834
     },
     "昀": {
         "char": "昀",
-        "count": 115
+        "count": 118
     },
     "虹": {
         "char": "虹",
-        "count": 139
+        "count": 143
     },
     "厚": {
         "char": "厚",
-        "count": 74
+        "count": 75
     },
     "炫": {
         "char": "炫",
-        "count": 118
+        "count": 120
     },
     "达": {
         "char": "达",
-        "count": 212
+        "count": 226
     },
     "焕": {
         "char": "焕",
-        "count": 101
+        "count": 103
     },
     "新": {
         "char": "新",
-        "count": 794
+        "count": 818
     },
     "慧": {
         "char": "慧",
-        "count": 1101
+        "count": 1178
     },
     "弥": {
         "char": "弥",
-        "count": 4
+        "count": 5
     },
     "妮": {
         "char": "妮",
-        "count": 284
+        "count": 297
     },
     "兴": {
         "char": "兴",
-        "count": 470
+        "count": 484
     },
     "语": {
         "char": "语",
-        "count": 1083
+        "count": 1093
     },
     "珈": {
         "char": "珈",
-        "count": 86
+        "count": 87
     },
     "畅": {
         "char": "畅",
-        "count": 176
+        "count": 187
     },
     "致": {
         "char": "致",
-        "count": 172
+        "count": 173
     },
     "杭": {
         "char": "杭",
-        "count": 119
+        "count": 124
     },
     "璐": {
         "char": "璐",
-        "count": 319
+        "count": 355
     },
     "诺": {
         "char": "诺",
-        "count": 734
+        "count": 737
     },
     "简": {
         "char": "简",
@@ -1113,43 +1137,43 @@
     },
     "建": {
         "char": "建",
-        "count": 1269
+        "count": 1305
     },
     "帆": {
         "char": "帆",
-        "count": 321
+        "count": 344
     },
     "洁": {
         "char": "洁",
-        "count": 536
+        "count": 583
     },
     "金": {
         "char": "金",
-        "count": 922
+        "count": 948
     },
     "莎": {
         "char": "莎",
-        "count": 104
+        "count": 107
     },
     "锦": {
         "char": "锦",
-        "count": 866
+        "count": 882
     },
     "艺": {
         "char": "艺",
-        "count": 804
+        "count": 828
     },
     "景": {
         "char": "景",
-        "count": 548
+        "count": 554
     },
     "敬": {
         "char": "敬",
-        "count": 236
+        "count": 239
     },
     "桐": {
         "char": "桐",
-        "count": 704
+        "count": 715
     },
     "镜": {
         "char": "镜",
@@ -1157,35 +1181,35 @@
     },
     "珊": {
         "char": "珊",
-        "count": 349
+        "count": 356
     },
     "珏": {
         "char": "珏",
-        "count": 47
+        "count": 56
     },
     "筠": {
         "char": "筠",
-        "count": 88
+        "count": 91
     },
     "淏": {
         "char": "淏",
-        "count": 55
+        "count": 56
     },
     "宏": {
         "char": "宏",
-        "count": 722
+        "count": 747
     },
     "浚": {
         "char": "浚",
-        "count": 121
+        "count": 124
     },
     "卿": {
         "char": "卿",
-        "count": 165
+        "count": 173
     },
     "柯": {
         "char": "柯",
-        "count": 118
+        "count": 125
     },
     "尹": {
         "char": "尹",
@@ -1193,7 +1217,7 @@
     },
     "可": {
         "char": "可",
-        "count": 856
+        "count": 875
     },
     "镭": {
         "char": "镭",
@@ -1201,31 +1225,31 @@
     },
     "太": {
         "char": "太",
-        "count": 41
+        "count": 43
     },
     "立": {
         "char": "立",
-        "count": 679
+        "count": 700
     },
     "昆": {
         "char": "昆",
-        "count": 80
+        "count": 84
     },
     "霓": {
         "char": "霓",
-        "count": 19
+        "count": 20
     },
     "柳": {
         "char": "柳",
-        "count": 85
+        "count": 86
     },
     "吟": {
         "char": "吟",
-        "count": 9
+        "count": 14
     },
     "露": {
         "char": "露",
-        "count": 176
+        "count": 191
     },
     "律": {
         "char": "律",
@@ -1237,31 +1261,31 @@
     },
     "茂": {
         "char": "茂",
-        "count": 135
+        "count": 136
     },
     "美": {
         "char": "美",
-        "count": 628
+        "count": 647
     },
     "潼": {
         "char": "潼",
-        "count": 171
+        "count": 172
     },
     "圆": {
         "char": "圆",
-        "count": 116
+        "count": 125
     },
     "慕": {
         "char": "慕",
-        "count": 139
+        "count": 141
     },
     "白": {
         "char": "白",
-        "count": 30
+        "count": 31
     },
     "宁": {
         "char": "宁",
-        "count": 836
+        "count": 869
     },
     "蟠": {
         "char": "蟠",
@@ -1269,11 +1293,11 @@
     },
     "沛": {
         "char": "沛",
-        "count": 282
+        "count": 290
     },
     "芃": {
         "char": "芃",
-        "count": 96
+        "count": 98
     },
     "羲": {
         "char": "羲",
@@ -1281,11 +1305,11 @@
     },
     "鹏": {
         "char": "鹏",
-        "count": 979
+        "count": 1031
     },
     "萍": {
         "char": "萍",
-        "count": 512
+        "count": 532
     },
     "璞": {
         "char": "璞",
@@ -1293,43 +1317,43 @@
     },
     "其": {
         "char": "其",
-        "count": 173
+        "count": 179
     },
     "绮": {
         "char": "绮",
-        "count": 116
+        "count": 117
     },
     "茜": {
         "char": "茜",
-        "count": 300
+        "count": 315
     },
     "蓉": {
         "char": "蓉",
-        "count": 214
+        "count": 231
     },
     "泉": {
         "char": "泉",
-        "count": 170
+        "count": 176
     },
     "锟": {
         "char": "锟",
-        "count": 25
+        "count": 26
     },
     "容": {
         "char": "容",
-        "count": 101
+        "count": 105
     },
     "进": {
         "char": "进",
-        "count": 197
+        "count": 203
     },
     "锐": {
         "char": "锐",
-        "count": 351
+        "count": 357
     },
     "瑞": {
         "char": "瑞",
-        "count": 1293
+        "count": 1329
     },
     "材": {
         "char": "材",
@@ -1337,59 +1361,59 @@
     },
     "森": {
         "char": "森",
-        "count": 303
+        "count": 316
     },
     "尚": {
         "char": "尚",
-        "count": 201
+        "count": 208
     },
     "力": {
         "char": "力",
-        "count": 182
+        "count": 197
     },
     "渝": {
         "char": "渝",
-        "count": 76
+        "count": 78
     },
     "世": {
         "char": "世",
-        "count": 471
+        "count": 493
     },
     "君": {
         "char": "君",
-        "count": 821
+        "count": 859
     },
     "仕": {
         "char": "仕",
-        "count": 98
+        "count": 101
     },
     "淑": {
         "char": "淑",
-        "count": 368
+        "count": 382
     },
     "铮": {
         "char": "铮",
-        "count": 62
+        "count": 70
     },
     "帅": {
         "char": "帅",
-        "count": 178
+        "count": 197
     },
     "烁": {
         "char": "烁",
-        "count": 110
+        "count": 112
     },
     "恺": {
         "char": "恺",
-        "count": 188
+        "count": 199
     },
     "嫣": {
         "char": "嫣",
-        "count": 156
+        "count": 157
     },
     "颂": {
         "char": "颂",
-        "count": 50
+        "count": 51
     },
     "韦": {
         "char": "韦",
@@ -1397,7 +1421,7 @@
     },
     "全": {
         "char": "全",
-        "count": 192
+        "count": 196
     },
     "莘": {
         "char": "莘",
@@ -1405,7 +1429,7 @@
     },
     "蔚": {
         "char": "蔚",
-        "count": 152
+        "count": 159
     },
     "阅": {
         "char": "阅",
@@ -1413,15 +1437,15 @@
     },
     "悟": {
         "char": "悟",
-        "count": 5
+        "count": 6
     },
     "熙": {
         "char": "熙",
-        "count": 1355
+        "count": 1361
     },
     "曦": {
         "char": "曦",
-        "count": 546
+        "count": 559
     },
     "习": {
         "char": "习",
@@ -1429,19 +1453,19 @@
     },
     "成": {
         "char": "成",
-        "count": 962
+        "count": 995
     },
     "影": {
         "char": "影",
-        "count": 81
+        "count": 82
     },
     "枫": {
         "char": "枫",
-        "count": 94
+        "count": 100
     },
     "锋": {
         "char": "锋",
-        "count": 602
+        "count": 614
     },
     "铜": {
         "char": "铜",
@@ -1449,7 +1473,7 @@
     },
     "暄": {
         "char": "暄",
-        "count": 86
+        "count": 87
     },
     "忻": {
         "char": "忻",
@@ -1457,11 +1481,11 @@
     },
     "乾": {
         "char": "乾",
-        "count": 106
+        "count": 114
     },
     "杏": {
         "char": "杏",
-        "count": 26
+        "count": 27
     },
     "泫": {
         "char": "泫",
@@ -1469,27 +1493,27 @@
     },
     "濡": {
         "char": "濡",
-        "count": 4
+        "count": 5
     },
     "滔": {
         "char": "滔",
-        "count": 66
+        "count": 69
     },
     "艳": {
         "char": "艳",
-        "count": 965
+        "count": 1000
     },
     "胤": {
         "char": "胤",
-        "count": 77
+        "count": 78
     },
     "桢": {
         "char": "桢",
-        "count": 61
+        "count": 68
     },
     "炯": {
         "char": "炯",
-        "count": 32
+        "count": 34
     },
     "熳": {
         "char": "熳",
@@ -1505,11 +1529,11 @@
     },
     "奕": {
         "char": "奕",
-        "count": 1020
+        "count": 1039
     },
     "霏": {
         "char": "霏",
-        "count": 185
+        "count": 188
     },
     "锜": {
         "char": "锜",
@@ -1517,11 +1541,11 @@
     },
     "先": {
         "char": "先",
-        "count": 143
+        "count": 146
     },
     "羿": {
         "char": "羿",
-        "count": 83
+        "count": 85
     },
     "殷": {
         "char": "殷",
@@ -1529,39 +1553,39 @@
     },
     "祺": {
         "char": "祺",
-        "count": 438
+        "count": 444
     },
     "盈": {
         "char": "盈",
-        "count": 203
+        "count": 210
     },
     "映": {
         "char": "映",
-        "count": 81
+        "count": 84
     },
     "永": {
         "char": "永",
-        "count": 971
+        "count": 993
     },
     "良": {
         "char": "良",
-        "count": 401
+        "count": 419
     },
     "晨": {
         "char": "晨",
-        "count": 1701
+        "count": 1756
     },
     "侨": {
         "char": "侨",
-        "count": 22
+        "count": 23
     },
     "禹": {
         "char": "禹",
-        "count": 329
+        "count": 336
     },
     "昱": {
         "char": "昱",
-        "count": 406
+        "count": 419
     },
     "愈": {
         "char": "愈",
@@ -1569,19 +1593,19 @@
     },
     "钺": {
         "char": "钺",
-        "count": 9
+        "count": 11
     },
     "川": {
         "char": "川",
-        "count": 216
+        "count": 225
     },
     "蕴": {
         "char": "蕴",
-        "count": 69
+        "count": 72
     },
     "青": {
         "char": "青",
-        "count": 508
+        "count": 528
     },
     "肇": {
         "char": "肇",
@@ -1589,11 +1613,11 @@
     },
     "臻": {
         "char": "臻",
-        "count": 158
+        "count": 163
     },
     "振": {
         "char": "振",
-        "count": 677
+        "count": 701
     },
     "瑄": {
         "char": "瑄",
@@ -1601,39 +1625,39 @@
     },
     "莹": {
         "char": "莹",
-        "count": 635
+        "count": 673
     },
     "姿": {
         "char": "姿",
-        "count": 85
+        "count": 87
     },
     "卉": {
         "char": "卉",
-        "count": 106
+        "count": 112
     },
     "洋": {
         "char": "洋",
-        "count": 778
+        "count": 817
     },
     "宜": {
         "char": "宜",
-        "count": 280
+        "count": 293
     },
     "学": {
         "char": "学",
-        "count": 460
+        "count": 468
     },
     "能": {
         "char": "能",
-        "count": 33
+        "count": 36
     },
     "孝": {
         "char": "孝",
-        "count": 116
+        "count": 117
     },
     "丰": {
         "char": "丰",
-        "count": 219
+        "count": 229
     },
     "玟": {
         "char": "玟",
@@ -1645,11 +1669,11 @@
     },
     "福": {
         "char": "福",
-        "count": 289
+        "count": 294
     },
     "特": {
         "char": "特",
-        "count": 32
+        "count": 33
     },
     "菡": {
         "char": "菡",
@@ -1657,11 +1681,11 @@
     },
     "笑": {
         "char": "笑",
-        "count": 192
+        "count": 201
     },
     "洪": {
         "char": "洪",
-        "count": 484
+        "count": 497
     },
     "拓": {
         "char": "拓",
@@ -1669,35 +1693,35 @@
     },
     "洛": {
         "char": "洛",
-        "count": 161
+        "count": 165
     },
     "小": {
         "char": "小",
-        "count": 1175
+        "count": 1213
     },
     "西": {
         "char": "西",
-        "count": 87
+        "count": 91
     },
     "珂": {
         "char": "珂",
-        "count": 162
+        "count": 169
     },
     "洲": {
         "char": "洲",
-        "count": 135
+        "count": 144
     },
     "丹": {
         "char": "丹",
-        "count": 591
+        "count": 634
     },
     "圻": {
         "char": "圻",
-        "count": 25
+        "count": 26
     },
     "仲": {
         "char": "仲",
-        "count": 86
+        "count": 89
     },
     "竺": {
         "char": "竺",
@@ -1705,11 +1729,11 @@
     },
     "泳": {
         "char": "泳",
-        "count": 162
+        "count": 163
     },
     "庭": {
         "char": "庭",
-        "count": 176
+        "count": 177
     },
     "约": {
         "char": "约",
@@ -1721,19 +1745,19 @@
     },
     "琨": {
         "char": "琨",
-        "count": 57
+        "count": 61
     },
     "超": {
         "char": "超",
-        "count": 577
+        "count": 649
     },
     "蝶": {
         "char": "蝶",
-        "count": 38
+        "count": 41
     },
     "临": {
         "char": "临",
-        "count": 25
+        "count": 26
     },
     "貴": {
         "char": "貴",
@@ -1741,19 +1765,19 @@
     },
     "升": {
         "char": "升",
-        "count": 142
+        "count": 151
     },
     "靖": {
         "char": "靖",
-        "count": 452
+        "count": 462
     },
     "隆": {
         "char": "隆",
-        "count": 70
+        "count": 79
     },
     "驰": {
         "char": "驰",
-        "count": 90
+        "count": 96
     },
     "珮": {
         "char": "珮",
@@ -1761,7 +1785,7 @@
     },
     "伦": {
         "char": "伦",
-        "count": 102
+        "count": 105
     },
     "普": {
         "char": "普",
@@ -1769,7 +1793,7 @@
     },
     "方": {
         "char": "方",
-        "count": 274
+        "count": 286
     },
     "箬": {
         "char": "箬",
@@ -1777,7 +1801,7 @@
     },
     "少": {
         "char": "少",
-        "count": 262
+        "count": 273
     },
     "泷": {
         "char": "泷",
@@ -1785,39 +1809,39 @@
     },
     "斯": {
         "char": "斯",
-        "count": 176
+        "count": 188
     },
     "励": {
         "char": "励",
-        "count": 21
+        "count": 22
     },
     "添": {
         "char": "添",
-        "count": 143
+        "count": 144
     },
     "曜": {
         "char": "曜",
-        "count": 33
+        "count": 36
     },
     "磊": {
         "char": "磊",
-        "count": 435
+        "count": 476
     },
     "璇": {
         "char": "璇",
-        "count": 263
+        "count": 292
     },
     "焱": {
         "char": "焱",
-        "count": 85
+        "count": 87
     },
     "屹": {
         "char": "屹",
-        "count": 124
+        "count": 129
     },
     "英": {
         "char": "英",
-        "count": 598
+        "count": 619
     },
     "棉": {
         "char": "棉",
@@ -1825,43 +1849,43 @@
     },
     "赞": {
         "char": "赞",
-        "count": 33
+        "count": 34
     },
     "兵": {
         "char": "兵",
-        "count": 342
+        "count": 351
     },
     "江": {
         "char": "江",
-        "count": 457
+        "count": 475
     },
     "滢": {
         "char": "滢",
-        "count": 184
+        "count": 193
     },
     "晟": {
         "char": "晟",
-        "count": 222
+        "count": 233
     },
     "捷": {
         "char": "捷",
-        "count": 105
+        "count": 119
     },
     "礼": {
         "char": "礼",
-        "count": 145
+        "count": 146
     },
     "珺": {
         "char": "珺",
-        "count": 177
+        "count": 187
     },
     "狄": {
         "char": "狄",
-        "count": 14
+        "count": 15
     },
     "相": {
         "char": "相",
-        "count": 90
+        "count": 94
     },
     "焯": {
         "char": "焯",
@@ -1869,7 +1893,7 @@
     },
     "延": {
         "char": "延",
-        "count": 184
+        "count": 189
     },
     "绵": {
         "char": "绵",
@@ -1877,83 +1901,83 @@
     },
     "凡": {
         "char": "凡",
-        "count": 643
+        "count": 681
     },
     "姗": {
         "char": "姗",
-        "count": 112
+        "count": 118
     },
     "廷": {
         "char": "廷",
-        "count": 162
+        "count": 168
     },
     "曼": {
         "char": "曼",
-        "count": 235
+        "count": 242
     },
     "真": {
         "char": "真",
-        "count": 106
+        "count": 120
     },
     "潇": {
         "char": "潇",
-        "count": 207
+        "count": 223
     },
     "千": {
         "char": "千",
-        "count": 143
+        "count": 145
     },
     "伊": {
         "char": "伊",
-        "count": 527
+        "count": 538
     },
     "奂": {
         "char": "奂",
-        "count": 6
+        "count": 7
     },
     "宣": {
         "char": "宣",
-        "count": 147
+        "count": 150
     },
     "妤": {
         "char": "妤",
-        "count": 233
+        "count": 234
     },
     "炳": {
         "char": "炳",
-        "count": 92
+        "count": 97
     },
     "晋": {
         "char": "晋",
-        "count": 246
+        "count": 251
     },
     "娟": {
         "char": "娟",
-        "count": 661
+        "count": 683
     },
     "红": {
         "char": "红",
-        "count": 1085
+        "count": 1107
     },
     "懿": {
         "char": "懿",
-        "count": 330
+        "count": 337
     },
     "韬": {
         "char": "韬",
-        "count": 178
+        "count": 189
     },
     "杨": {
         "char": "杨",
-        "count": 335
+        "count": 353
     },
     "航": {
         "char": "航",
-        "count": 850
+        "count": 874
     },
     "领": {
         "char": "领",
-        "count": 30
+        "count": 31
     },
     "至": {
         "char": "至",
@@ -1961,11 +1985,11 @@
     },
     "南": {
         "char": "南",
-        "count": 215
+        "count": 227
     },
     "湘": {
         "char": "湘",
-        "count": 153
+        "count": 155
     },
     "联": {
         "char": "联",
@@ -1973,7 +1997,7 @@
     },
     "齐": {
         "char": "齐",
-        "count": 231
+        "count": 234
     },
     "翎": {
         "char": "翎",
@@ -1981,15 +2005,15 @@
     },
     "程": {
         "char": "程",
-        "count": 452
+        "count": 469
     },
     "铎": {
         "char": "铎",
-        "count": 30
+        "count": 33
     },
     "弘": {
         "char": "弘",
-        "count": 182
+        "count": 185
     },
     "笠": {
         "char": "笠",
@@ -1997,15 +2021,15 @@
     },
     "丞": {
         "char": "丞",
-        "count": 106
+        "count": 108
     },
     "淳": {
         "char": "淳",
-        "count": 173
+        "count": 179
     },
     "茗": {
         "char": "茗",
-        "count": 204
+        "count": 205
     },
     "喨": {
         "char": "喨",
@@ -2013,31 +2037,31 @@
     },
     "若": {
         "char": "若",
-        "count": 832
+        "count": 860
     },
     "闯": {
         "char": "闯",
-        "count": 25
+        "count": 26
     },
     "翊": {
         "char": "翊",
-        "count": 251
+        "count": 252
     },
     "震": {
         "char": "震",
-        "count": 108
+        "count": 120
     },
     "楷": {
         "char": "楷",
-        "count": 201
+        "count": 204
     },
     "幸": {
         "char": "幸",
-        "count": 88
+        "count": 91
     },
     "豫": {
         "char": "豫",
-        "count": 71
+        "count": 72
     },
     "濠": {
         "char": "濠",
@@ -2045,35 +2069,35 @@
     },
     "裕": {
         "char": "裕",
-        "count": 191
+        "count": 195
     },
     "铃": {
         "char": "铃",
-        "count": 56
+        "count": 58
     },
     "婕": {
         "char": "婕",
-        "count": 138
+        "count": 153
     },
     "柔": {
         "char": "柔",
-        "count": 130
+        "count": 131
     },
     "善": {
         "char": "善",
-        "count": 143
+        "count": 144
     },
     "刚": {
         "char": "刚",
-        "count": 502
+        "count": 516
     },
     "媛": {
         "char": "媛",
-        "count": 583
+        "count": 604
     },
     "显": {
         "char": "显",
-        "count": 88
+        "count": 90
     },
     "贻": {
         "char": "贻",
@@ -2081,7 +2105,7 @@
     },
     "徐": {
         "char": "徐",
-        "count": 44
+        "count": 48
     },
     "骧": {
         "char": "骧",
@@ -2089,35 +2113,35 @@
     },
     "喻": {
         "char": "喻",
-        "count": 32
+        "count": 34
     },
     "咏": {
         "char": "咏",
-        "count": 112
+        "count": 114
     },
     "云": {
         "char": "云",
-        "count": 1070
+        "count": 1122
     },
     "治": {
         "char": "治",
-        "count": 166
+        "count": 169
     },
     "堃": {
         "char": "堃",
-        "count": 26
+        "count": 28
     },
     "夏": {
         "char": "夏",
-        "count": 161
+        "count": 162
     },
     "李": {
         "char": "李",
-        "count": 94
+        "count": 100
     },
     "意": {
         "char": "意",
-        "count": 162
+        "count": 169
     },
     "楼": {
         "char": "楼",
@@ -2129,15 +2153,15 @@
     },
     "迅": {
         "char": "迅",
-        "count": 37
+        "count": 40
     },
     "路": {
         "char": "路",
-        "count": 98
+        "count": 105
     },
     "加": {
         "char": "加",
-        "count": 102
+        "count": 104
     },
     "赋": {
         "char": "赋",
@@ -2145,15 +2169,15 @@
     },
     "鹭": {
         "char": "鹭",
-        "count": 22
+        "count": 25
     },
     "宪": {
         "char": "宪",
-        "count": 58
+        "count": 59
     },
     "祖": {
         "char": "祖",
-        "count": 146
+        "count": 150
     },
     "绰": {
         "char": "绰",
@@ -2161,23 +2185,23 @@
     },
     "鼎": {
         "char": "鼎",
-        "count": 37
+        "count": 40
     },
     "竣": {
         "char": "竣",
-        "count": 92
+        "count": 93
     },
     "颢": {
         "char": "颢",
-        "count": 70
+        "count": 72
     },
     "祯": {
         "char": "祯",
-        "count": 47
+        "count": 50
     },
     "汝": {
         "char": "汝",
-        "count": 65
+        "count": 68
     },
     "浛": {
         "char": "浛",
@@ -2185,7 +2209,7 @@
     },
     "婉": {
         "char": "婉",
-        "count": 345
+        "count": 356
     },
     "晞": {
         "char": "晞",
@@ -2193,35 +2217,35 @@
     },
     "雪": {
         "char": "雪",
-        "count": 798
+        "count": 859
     },
     "芮": {
         "char": "芮",
-        "count": 228
+        "count": 230
     },
     "呈": {
         "char": "呈",
-        "count": 51
+        "count": 53
     },
     "业": {
         "char": "业",
-        "count": 161
+        "count": 165
     },
     "函": {
         "char": "函",
-        "count": 83
+        "count": 86
     },
     "惠": {
         "char": "惠",
-        "count": 307
+        "count": 320
     },
     "继": {
         "char": "继",
-        "count": 219
+        "count": 225
     },
     "开": {
         "char": "开",
-        "count": 192
+        "count": 196
     },
     "浣": {
         "char": "浣",
@@ -2229,19 +2253,19 @@
     },
     "砚": {
         "char": "砚",
-        "count": 34
+        "count": 35
     },
     "彬": {
         "char": "彬",
-        "count": 514
+        "count": 543
     },
     "越": {
         "char": "越",
-        "count": 312
+        "count": 331
     },
     "纬": {
         "char": "纬",
-        "count": 38
+        "count": 42
     },
     "嵚": {
         "char": "嵚",
@@ -2249,39 +2273,39 @@
     },
     "大": {
         "char": "大",
-        "count": 238
+        "count": 251
     },
     "卫": {
         "char": "卫",
-        "count": 305
+        "count": 308
     },
     "凤": {
         "char": "凤",
-        "count": 361
+        "count": 376
     },
     "颐": {
         "char": "颐",
-        "count": 49
+        "count": 50
     },
     "愉": {
         "char": "愉",
-        "count": 45
+        "count": 46
     },
     "奇": {
         "char": "奇",
-        "count": 269
+        "count": 285
     },
     "键": {
         "char": "键",
-        "count": 39
+        "count": 41
     },
     "琛": {
         "char": "琛",
-        "count": 180
+        "count": 189
     },
     "秀": {
         "char": "秀",
-        "count": 424
+        "count": 436
     },
     "凇": {
         "char": "凇",
@@ -2289,23 +2313,23 @@
     },
     "箐": {
         "char": "箐",
-        "count": 7
+        "count": 9
     },
     "孜": {
         "char": "孜",
-        "count": 52
+        "count": 54
     },
     "垚": {
         "char": "垚",
-        "count": 94
+        "count": 95
     },
     "芸": {
         "char": "芸",
-        "count": 299
+        "count": 310
     },
     "知": {
         "char": "知",
-        "count": 194
+        "count": 197
     },
     "蒽": {
         "char": "蒽",
@@ -2317,43 +2341,43 @@
     },
     "燊": {
         "char": "燊",
-        "count": 70
+        "count": 71
     },
     "宗": {
         "char": "宗",
-        "count": 231
+        "count": 235
     },
     "芳": {
         "char": "芳",
-        "count": 656
+        "count": 689
     },
     "兰": {
         "char": "兰",
-        "count": 317
+        "count": 331
     },
     "臣": {
         "char": "臣",
-        "count": 101
+        "count": 102
     },
     "实": {
         "char": "实",
-        "count": 58
+        "count": 61
     },
     "泰": {
         "char": "泰",
-        "count": 133
+        "count": 135
     },
     "镒": {
         "char": "镒",
-        "count": 8
+        "count": 9
     },
     "名": {
         "char": "名",
-        "count": 107
+        "count": 109
     },
     "雁": {
         "char": "雁",
-        "count": 65
+        "count": 69
     },
     "尘": {
         "char": "尘",
@@ -2361,7 +2385,7 @@
     },
     "霆": {
         "char": "霆",
-        "count": 91
+        "count": 92
     },
     "宦": {
         "char": "宦",
@@ -2369,11 +2393,11 @@
     },
     "谊": {
         "char": "谊",
-        "count": 38
+        "count": 39
     },
     "标": {
         "char": "标",
-        "count": 51
+        "count": 53
     },
     "笙": {
         "char": "笙",
@@ -2389,15 +2413,15 @@
     },
     "孟": {
         "char": "孟",
-        "count": 116
+        "count": 121
     },
     "鸣": {
         "char": "鸣",
-        "count": 305
+        "count": 315
     },
     "旎": {
         "char": "旎",
-        "count": 15
+        "count": 17
     },
     "祈": {
         "char": "祈",
@@ -2413,23 +2437,23 @@
     },
     "玙": {
         "char": "玙",
-        "count": 21
+        "count": 22
     },
     "沁": {
         "char": "沁",
-        "count": 215
+        "count": 222
     },
     "绍": {
         "char": "绍",
-        "count": 142
+        "count": 144
     },
     "薇": {
         "char": "薇",
-        "count": 301
+        "count": 318
     },
     "旺": {
         "char": "旺",
-        "count": 139
+        "count": 145
     },
     "虢": {
         "char": "虢",
@@ -2441,39 +2465,39 @@
     },
     "亦": {
         "char": "亦",
-        "count": 379
+        "count": 389
     },
     "易": {
         "char": "易",
-        "count": 209
+        "count": 217
     },
     "靓": {
         "char": "靓",
-        "count": 45
+        "count": 54
     },
     "寅": {
         "char": "寅",
-        "count": 80
+        "count": 87
     },
     "运": {
         "char": "运",
-        "count": 161
+        "count": 164
     },
     "煊": {
         "char": "煊",
-        "count": 124
+        "count": 126
     },
     "禾": {
         "char": "禾",
-        "count": 110
+        "count": 111
     },
     "经": {
         "char": "经",
-        "count": 36
+        "count": 42
     },
     "晶": {
         "char": "晶",
-        "count": 420
+        "count": 455
     },
     "梵": {
         "char": "梵",
@@ -2485,15 +2509,15 @@
     },
     "唯": {
         "char": "唯",
-        "count": 74
+        "count": 77
     },
     "田": {
         "char": "田",
-        "count": 113
+        "count": 122
     },
     "沣": {
         "char": "沣",
-        "count": 38
+        "count": 39
     },
     "牧": {
         "char": "牧",
@@ -2501,47 +2525,47 @@
     },
     "格": {
         "char": "格",
-        "count": 69
+        "count": 77
     },
     "尊": {
         "char": "尊",
-        "count": 26
+        "count": 27
     },
     "禄": {
         "char": "禄",
-        "count": 28
+        "count": 29
     },
     "舜": {
         "char": "舜",
-        "count": 55
+        "count": 57
     },
     "闻": {
         "char": "闻",
-        "count": 80
+        "count": 84
     },
     "芯": {
         "char": "芯",
-        "count": 304
+        "count": 307
     },
     "勇": {
         "char": "勇",
-        "count": 691
+        "count": 711
     },
     "与": {
         "char": "与",
-        "count": 27
+        "count": 29
     },
     "贇": {
         "char": "贇",
-        "count": 4
+        "count": 6
     },
     "展": {
         "char": "展",
-        "count": 136
+        "count": 142
     },
     "长": {
         "char": "长",
-        "count": 283
+        "count": 291
     },
     "桓": {
         "char": "桓",
@@ -2553,11 +2577,11 @@
     },
     "爱": {
         "char": "爱",
-        "count": 310
+        "count": 320
     },
     "瑷": {
         "char": "瑷",
-        "count": 16
+        "count": 17
     },
     "敞": {
         "char": "敞",
@@ -2565,35 +2589,35 @@
     },
     "朝": {
         "char": "朝",
-        "count": 185
+        "count": 192
     },
     "擎": {
         "char": "擎",
-        "count": 25
+        "count": 26
     },
     "斐": {
         "char": "斐",
-        "count": 88
+        "count": 96
     },
     "歌": {
         "char": "歌",
-        "count": 65
+        "count": 70
     },
     "凝": {
         "char": "凝",
-        "count": 102
+        "count": 105
     },
     "灵": {
         "char": "灵",
-        "count": 282
+        "count": 293
     },
     "娜": {
         "char": "娜",
-        "count": 588
+        "count": 618
     },
     "原": {
         "char": "原",
-        "count": 97
+        "count": 100
     },
     "鎣": {
         "char": "鎣",
@@ -2601,7 +2625,7 @@
     },
     "蕊": {
         "char": "蕊",
-        "count": 333
+        "count": 339
     },
     "稼": {
         "char": "稼",
@@ -2609,19 +2633,19 @@
     },
     "忠": {
         "char": "忠",
-        "count": 342
+        "count": 352
     },
     "剑": {
         "char": "剑",
-        "count": 273
+        "count": 283
     },
     "劲": {
         "char": "劲",
-        "count": 57
+        "count": 59
     },
     "飞": {
         "char": "飞",
-        "count": 862
+        "count": 906
     },
     "壕": {
         "char": "壕",
@@ -2629,7 +2653,7 @@
     },
     "梁": {
         "char": "梁",
-        "count": 85
+        "count": 89
     },
     "钶": {
         "char": "钶",
@@ -2637,7 +2661,7 @@
     },
     "澜": {
         "char": "澜",
-        "count": 83
+        "count": 84
     },
     "谣": {
         "char": "谣",
@@ -2645,15 +2669,15 @@
     },
     "栩": {
         "char": "栩",
-        "count": 122
+        "count": 125
     },
     "植": {
         "char": "植",
-        "count": 18
+        "count": 23
     },
     "珉": {
         "char": "珉",
-        "count": 26
+        "count": 28
     },
     "泯": {
         "char": "泯",
@@ -2661,31 +2685,31 @@
     },
     "芝": {
         "char": "芝",
-        "count": 126
+        "count": 130
     },
     "喆": {
         "char": "喆",
-        "count": 185
+        "count": 194
     },
     "琅": {
         "char": "琅",
-        "count": 11
+        "count": 12
     },
     "倩": {
         "char": "倩",
-        "count": 283
+        "count": 324
     },
     "清": {
         "char": "清",
-        "count": 634
+        "count": 660
     },
     "宽": {
         "char": "宽",
-        "count": 53
+        "count": 54
     },
     "起": {
         "char": "起",
-        "count": 44
+        "count": 47
     },
     "湦": {
         "char": "湦",
@@ -2697,7 +2721,7 @@
     },
     "施": {
         "char": "施",
-        "count": 35
+        "count": 37
     },
     "首": {
         "char": "首",
@@ -2705,27 +2729,27 @@
     },
     "誉": {
         "char": "誉",
-        "count": 109
+        "count": 110
     },
     "为": {
         "char": "为",
-        "count": 175
+        "count": 180
     },
     "素": {
         "char": "素",
-        "count": 143
+        "count": 147
     },
     "腾": {
         "char": "腾",
-        "count": 182
+        "count": 185
     },
     "琬": {
         "char": "琬",
-        "count": 83
+        "count": 85
     },
     "稳": {
         "char": "稳",
-        "count": 30
+        "count": 31
     },
     "烯": {
         "char": "烯",
@@ -2733,31 +2757,31 @@
     },
     "玺": {
         "char": "玺",
-        "count": 80
+        "count": 84
     },
     "芹": {
         "char": "芹",
-        "count": 92
+        "count": 98
     },
     "校": {
         "char": "校",
-        "count": 7
+        "count": 8
     },
     "歆": {
         "char": "歆",
-        "count": 226
+        "count": 228
     },
     "信": {
         "char": "信",
-        "count": 122
+        "count": 123
     },
     "攀": {
         "char": "攀",
-        "count": 45
+        "count": 49
     },
     "祎": {
         "char": "祎",
-        "count": 140
+        "count": 149
     },
     "淘": {
         "char": "淘",
@@ -2765,15 +2789,15 @@
     },
     "涌": {
         "char": "涌",
-        "count": 23
+        "count": 25
     },
     "游": {
         "char": "游",
-        "count": 37
+        "count": 38
     },
     "俞": {
         "char": "俞",
-        "count": 46
+        "count": 47
     },
     "枝": {
         "char": "枝",
@@ -2785,23 +2809,23 @@
     },
     "钧": {
         "char": "钧",
-        "count": 203
+        "count": 210
     },
     "蕾": {
         "char": "蕾",
-        "count": 265
+        "count": 278
     },
     "则": {
         "char": "则",
-        "count": 54
+        "count": 55
     },
     "勤": {
         "char": "勤",
-        "count": 114
+        "count": 118
     },
     "镇": {
         "char": "镇",
-        "count": 83
+        "count": 87
     },
     "沚": {
         "char": "沚",
@@ -2813,27 +2837,27 @@
     },
     "庚": {
         "char": "庚",
-        "count": 32
+        "count": 36
     },
     "澍": {
         "char": "澍",
-        "count": 23
+        "count": 24
     },
     "念": {
         "char": "念",
-        "count": 98
+        "count": 99
     },
     "莱": {
         "char": "莱",
-        "count": 28
+        "count": 29
     },
     "竞": {
         "char": "竞",
-        "count": 47
+        "count": 48
     },
     "彩": {
         "char": "彩",
-        "count": 160
+        "count": 162
     },
     "渠": {
         "char": "渠",
@@ -2841,7 +2865,7 @@
     },
     "璠": {
         "char": "璠",
-        "count": 21
+        "count": 25
     },
     "踊": {
         "char": "踊",
@@ -2849,23 +2873,23 @@
     },
     "苏": {
         "char": "苏",
-        "count": 351
+        "count": 360
     },
     "河": {
         "char": "河",
-        "count": 31
+        "count": 32
     },
     "霞": {
         "char": "霞",
-        "count": 594
+        "count": 613
     },
     "骐": {
         "char": "骐",
-        "count": 85
+        "count": 86
     },
     "尧": {
         "char": "尧",
-        "count": 257
+        "count": 261
     },
     "曈": {
         "char": "曈",
@@ -2873,7 +2897,7 @@
     },
     "漪": {
         "char": "漪",
-        "count": 38
+        "count": 39
     },
     "厦": {
         "char": "厦",
@@ -2885,27 +2909,27 @@
     },
     "皖": {
         "char": "皖",
-        "count": 23
+        "count": 24
     },
     "铖": {
         "char": "铖",
-        "count": 66
+        "count": 67
     },
     "山": {
         "char": "山",
-        "count": 201
+        "count": 211
     },
     "盛": {
         "char": "盛",
-        "count": 175
+        "count": 181
     },
     "含": {
         "char": "含",
-        "count": 157
+        "count": 165
     },
     "向": {
         "char": "向",
-        "count": 187
+        "count": 191
     },
     "妃": {
         "char": "妃",
@@ -2913,7 +2937,7 @@
     },
     "旻": {
         "char": "旻",
-        "count": 100
+        "count": 111
     },
     "纳": {
         "char": "纳",
@@ -2921,19 +2945,19 @@
     },
     "时": {
         "char": "时",
-        "count": 59
+        "count": 62
     },
     "以": {
         "char": "以",
-        "count": 183
+        "count": 185
     },
     "士": {
         "char": "士",
-        "count": 144
+        "count": 147
     },
     "宛": {
         "char": "宛",
-        "count": 89
+        "count": 90
     },
     "悠": {
         "char": "悠",
@@ -2941,7 +2965,7 @@
     },
     "秉": {
         "char": "秉",
-        "count": 71
+        "count": 72
     },
     "采": {
         "char": "采",
@@ -2949,11 +2973,11 @@
     },
     "昌": {
         "char": "昌",
-        "count": 236
+        "count": 249
     },
     "昶": {
         "char": "昶",
-        "count": 38
+        "count": 39
     },
     "朵": {
         "char": "朵",
@@ -2961,11 +2985,11 @@
     },
     "甫": {
         "char": "甫",
-        "count": 41
+        "count": 45
     },
     "舸": {
         "char": "舸",
-        "count": 8
+        "count": 10
     },
     "炅": {
         "char": "炅",
@@ -2973,7 +2997,7 @@
     },
     "铨": {
         "char": "铨",
-        "count": 13
+        "count": 14
     },
     "逵": {
         "char": "逵",
@@ -2981,15 +3005,15 @@
     },
     "合": {
         "char": "合",
-        "count": 29
+        "count": 30
     },
     "怀": {
         "char": "怀",
-        "count": 127
+        "count": 130
     },
     "鉴": {
         "char": "鉴",
-        "count": 17
+        "count": 19
     },
     "镕": {
         "char": "镕",
@@ -2997,11 +3021,11 @@
     },
     "京": {
         "char": "京",
-        "count": 109
+        "count": 113
     },
     "徽": {
         "char": "徽",
-        "count": 21
+        "count": 22
     },
     "泾": {
         "char": "泾",
@@ -3009,27 +3033,27 @@
     },
     "唐": {
         "char": "唐",
-        "count": 32
+        "count": 33
     },
     "军": {
         "char": "军",
-        "count": 1148
+        "count": 1173
     },
     "溪": {
         "char": "溪",
-        "count": 216
+        "count": 218
     },
     "梅": {
         "char": "梅",
-        "count": 595
+        "count": 621
     },
     "满": {
         "char": "满",
-        "count": 72
+        "count": 73
     },
     "缘": {
         "char": "缘",
-        "count": 52
+        "count": 53
     },
     "铟": {
         "char": "铟",
@@ -3037,7 +3061,7 @@
     },
     "瑛": {
         "char": "瑛",
-        "count": 69
+        "count": 75
     },
     "品": {
         "char": "品",
@@ -3045,11 +3069,11 @@
     },
     "沅": {
         "char": "沅",
-        "count": 60
+        "count": 61
     },
     "勋": {
         "char": "勋",
-        "count": 119
+        "count": 122
     },
     "翘": {
         "char": "翘",
@@ -3061,7 +3085,7 @@
     },
     "树": {
         "char": "树",
-        "count": 201
+        "count": 206
     },
     "璁": {
         "char": "璁",
@@ -3069,11 +3093,11 @@
     },
     "漫": {
         "char": "漫",
-        "count": 58
+        "count": 60
     },
     "苇": {
         "char": "苇",
-        "count": 40
+        "count": 43
     },
     "赳": {
         "char": "赳",
@@ -3081,31 +3105,31 @@
     },
     "逊": {
         "char": "逊",
-        "count": 5
+        "count": 6
     },
     "武": {
         "char": "武",
-        "count": 246
+        "count": 253
     },
     "响": {
         "char": "响",
-        "count": 26
+        "count": 27
     },
     "想": {
         "char": "想",
-        "count": 61
+        "count": 62
     },
     "娅": {
         "char": "娅",
-        "count": 79
+        "count": 83
     },
     "钥": {
         "char": "钥",
-        "count": 22
+        "count": 23
     },
     "叶": {
         "char": "叶",
-        "count": 131
+        "count": 139
     },
     "苡": {
         "char": "苡",
@@ -3117,15 +3141,15 @@
     },
     "忆": {
         "char": "忆",
-        "count": 89
+        "count": 93
     },
     "陈": {
         "char": "陈",
-        "count": 106
+        "count": 112
     },
     "晗": {
         "char": "晗",
-        "count": 333
+        "count": 347
     },
     "弈": {
         "char": "弈",
@@ -3137,19 +3161,19 @@
     },
     "翼": {
         "char": "翼",
-        "count": 83
+        "count": 87
     },
     "虎": {
         "char": "虎",
-        "count": 192
+        "count": 197
     },
     "漩": {
         "char": "漩",
-        "count": 14
+        "count": 15
     },
     "瑾": {
         "char": "瑾",
-        "count": 427
+        "count": 434
     },
     "鋆": {
         "char": "鋆",
@@ -3157,19 +3181,19 @@
     },
     "钊": {
         "char": "钊",
-        "count": 86
+        "count": 92
     },
     "融": {
         "char": "融",
-        "count": 44
+        "count": 47
     },
     "中": {
         "char": "中",
-        "count": 304
+        "count": 318
     },
     "竹": {
         "char": "竹",
-        "count": 102
+        "count": 111
     },
     "阶": {
         "char": "阶",
@@ -3177,19 +3201,19 @@
     },
     "自": {
         "char": "自",
-        "count": 83
+        "count": 88
     },
     "俐": {
         "char": "俐",
-        "count": 34
+        "count": 38
     },
     "高": {
         "char": "高",
-        "count": 158
+        "count": 165
     },
     "广": {
         "char": "广",
-        "count": 358
+        "count": 370
     },
     "铸": {
         "char": "铸",
@@ -3197,7 +3221,7 @@
     },
     "珩": {
         "char": "珩",
-        "count": 78
+        "count": 80
     },
     "津": {
         "char": "津",
@@ -3217,27 +3241,27 @@
     },
     "韶": {
         "char": "韶",
-        "count": 27
+        "count": 28
     },
     "苑": {
         "char": "苑",
-        "count": 40
+        "count": 41
     },
     "顺": {
         "char": "顺",
-        "count": 209
+        "count": 216
     },
     "飏": {
         "char": "飏",
-        "count": 16
+        "count": 17
     },
     "郡": {
         "char": "郡",
-        "count": 31
+        "count": 32
     },
     "燕": {
         "char": "燕",
-        "count": 760
+        "count": 798
     },
     "垌": {
         "char": "垌",
@@ -3245,19 +3269,19 @@
     },
     "芬": {
         "char": "芬",
-        "count": 130
+        "count": 138
     },
     "匀": {
         "char": "匀",
-        "count": 16
+        "count": 17
     },
     "旖": {
         "char": "旖",
-        "count": 35
+        "count": 37
     },
     "益": {
         "char": "益",
-        "count": 217
+        "count": 225
     },
     "御": {
         "char": "御",
@@ -3265,7 +3289,7 @@
     },
     "科": {
         "char": "科",
-        "count": 223
+        "count": 231
     },
     "倬": {
         "char": "倬",
@@ -3277,11 +3301,11 @@
     },
     "炎": {
         "char": "炎",
-        "count": 89
+        "count": 91
     },
     "有": {
         "char": "有",
-        "count": 108
+        "count": 109
     },
     "霭": {
         "char": "霭",
@@ -3289,7 +3313,7 @@
     },
     "佟": {
         "char": "佟",
-        "count": 16
+        "count": 17
     },
     "泊": {
         "char": "泊",
@@ -3301,19 +3325,19 @@
     },
     "宬": {
         "char": "宬",
-        "count": 9
+        "count": 10
     },
     "萃": {
         "char": "萃",
-        "count": 12
+        "count": 13
     },
     "翠": {
         "char": "翠",
-        "count": 175
+        "count": 177
     },
     "贺": {
         "char": "贺",
-        "count": 105
+        "count": 110
     },
     "颉": {
         "char": "颉",
@@ -3321,19 +3345,19 @@
     },
     "锴": {
         "char": "锴",
-        "count": 63
+        "count": 67
     },
     "姝": {
         "char": "姝",
-        "count": 220
+        "count": 227
     },
     "司": {
         "char": "司",
-        "count": 27
+        "count": 29
     },
     "昔": {
         "char": "昔",
-        "count": 15
+        "count": 17
     },
     "蓥": {
         "char": "蓥",
@@ -3341,39 +3365,39 @@
     },
     "甜": {
         "char": "甜",
-        "count": 111
+        "count": 118
     },
     "同": {
         "char": "同",
-        "count": 116
+        "count": 119
     },
     "烜": {
         "char": "烜",
-        "count": 27
+        "count": 28
     },
     "琰": {
         "char": "琰",
-        "count": 91
+        "count": 93
     },
     "欢": {
         "char": "欢",
-        "count": 215
+        "count": 228
     },
     "迎": {
         "char": "迎",
-        "count": 104
+        "count": 109
     },
     "瀛": {
         "char": "瀛",
-        "count": 21
+        "count": 23
     },
     "渊": {
         "char": "渊",
-        "count": 91
+        "count": 95
     },
     "邦": {
         "char": "邦",
-        "count": 93
+        "count": 96
     },
     "钲": {
         "char": "钲",
@@ -3389,7 +3413,7 @@
     },
     "利": {
         "char": "利",
-        "count": 461
+        "count": 472
     },
     "禅": {
         "char": "禅",
@@ -3397,19 +3421,19 @@
     },
     "吉": {
         "char": "吉",
-        "count": 171
+        "count": 184
     },
     "坊": {
         "char": "坊",
-        "count": 2
+        "count": 3
     },
     "付": {
         "char": "付",
-        "count": 39
+        "count": 42
     },
     "桂": {
         "char": "桂",
-        "count": 232
+        "count": 234
     },
     "姮": {
         "char": "姮",
@@ -3417,15 +3441,15 @@
     },
     "银": {
         "char": "银",
-        "count": 166
+        "count": 178
     },
     "会": {
         "char": "会",
-        "count": 193
+        "count": 197
     },
     "纪": {
         "char": "纪",
-        "count": 71
+        "count": 73
     },
     "迦": {
         "char": "迦",
@@ -3433,7 +3457,7 @@
     },
     "鲁": {
         "char": "鲁",
-        "count": 44
+        "count": 49
     },
     "敉": {
         "char": "敉",
@@ -3441,23 +3465,23 @@
     },
     "申": {
         "char": "申",
-        "count": 68
+        "count": 71
     },
     "生": {
         "char": "生",
-        "count": 335
+        "count": 342
     },
     "述": {
         "char": "述",
-        "count": 23
+        "count": 24
     },
     "蒙": {
         "char": "蒙",
-        "count": 77
+        "count": 86
     },
     "毓": {
         "char": "毓",
-        "count": 98
+        "count": 103
     },
     "辞": {
         "char": "辞",
@@ -3465,19 +3489,19 @@
     },
     "喜": {
         "char": "喜",
-        "count": 153
+        "count": 157
     },
     "典": {
         "char": "典",
-        "count": 25
+        "count": 26
     },
     "冲": {
         "char": "冲",
-        "count": 38
+        "count": 40
     },
     "穗": {
         "char": "穗",
-        "count": 6
+        "count": 7
     },
     "禤": {
         "char": "禤",
@@ -3485,11 +3509,11 @@
     },
     "莲": {
         "char": "莲",
-        "count": 112
+        "count": 118
     },
     "而": {
         "char": "而",
-        "count": 9
+        "count": 11
     },
     "壹": {
         "char": "壹",
@@ -3497,11 +3521,11 @@
     },
     "非": {
         "char": "非",
-        "count": 82
+        "count": 86
     },
     "怿": {
         "char": "怿",
-        "count": 24
+        "count": 25
     },
     "妘": {
         "char": "妘",
@@ -3513,19 +3537,19 @@
     },
     "张": {
         "char": "张",
-        "count": 38
+        "count": 41
     },
     "朕": {
         "char": "朕",
-        "count": 7
+        "count": 9
     },
     "纲": {
         "char": "纲",
-        "count": 18
+        "count": 19
     },
     "蓓": {
         "char": "蓓",
-        "count": 94
+        "count": 114
     },
     "亘": {
         "char": "亘",
@@ -3537,43 +3561,43 @@
     },
     "亨": {
         "char": "亨",
-        "count": 19
+        "count": 24
     },
     "妙": {
         "char": "妙",
-        "count": 168
+        "count": 171
     },
     "炀": {
         "char": "炀",
-        "count": 14
+        "count": 15
     },
     "愚": {
         "char": "愚",
-        "count": 12
+        "count": 13
     },
     "镶": {
         "char": "镶",
-        "count": 1
+        "count": 2
     },
     "寒": {
         "char": "寒",
-        "count": 113
+        "count": 120
     },
     "黄": {
         "char": "黄",
-        "count": 30
+        "count": 32
     },
     "郦": {
         "char": "郦",
-        "count": 5
+        "count": 6
     },
     "苗": {
         "char": "苗",
-        "count": 96
+        "count": 106
     },
     "溥": {
         "char": "溥",
-        "count": 6
+        "count": 8
     },
     "楸": {
         "char": "楸",
@@ -3585,7 +3609,7 @@
     },
     "柠": {
         "char": "柠",
-        "count": 49
+        "count": 50
     },
     "证": {
         "char": "证",
@@ -3597,7 +3621,7 @@
     },
     "碧": {
         "char": "碧",
-        "count": 58
+        "count": 63
     },
     "聆": {
         "char": "聆",
@@ -3605,7 +3629,7 @@
     },
     "胜": {
         "char": "胜",
-        "count": 376
+        "count": 388
     },
     "潞": {
         "char": "潞",
@@ -3621,31 +3645,31 @@
     },
     "丁": {
         "char": "丁",
-        "count": 64
+        "count": 72
     },
     "澎": {
         "char": "澎",
-        "count": 33
+        "count": 34
     },
     "倚": {
         "char": "倚",
-        "count": 19
+        "count": 20
     },
     "繁": {
         "char": "繁",
-        "count": 49
+        "count": 54
     },
     "骅": {
         "char": "骅",
-        "count": 30
+        "count": 31
     },
     "香": {
         "char": "香",
-        "count": 185
+        "count": 188
     },
     "亚": {
         "char": "亚",
-        "count": 539
+        "count": 570
     },
     "慆": {
         "char": "慆",
@@ -3661,7 +3685,7 @@
     },
     "澄": {
         "char": "澄",
-        "count": 119
+        "count": 121
     },
     "旷": {
         "char": "旷",
@@ -3669,7 +3693,7 @@
     },
     "羚": {
         "char": "羚",
-        "count": 5
+        "count": 6
     },
     "稀": {
         "char": "稀",
@@ -3677,11 +3701,11 @@
     },
     "才": {
         "char": "才",
-        "count": 102
+        "count": 104
     },
     "荃": {
         "char": "荃",
-        "count": 18
+        "count": 20
     },
     "橦": {
         "char": "橦",
@@ -3689,23 +3713,23 @@
     },
     "偲": {
         "char": "偲",
-        "count": 25
+        "count": 26
     },
     "旸": {
         "char": "旸",
-        "count": 38
+        "count": 43
     },
     "纯": {
         "char": "纯",
-        "count": 96
+        "count": 105
     },
     "炆": {
         "char": "炆",
-        "count": 5
+        "count": 7
     },
     "珠": {
         "char": "珠",
-        "count": 75
+        "count": 76
     },
     "桉": {
         "char": "桉",
@@ -3713,47 +3737,47 @@
     },
     "又": {
         "char": "又",
-        "count": 31
+        "count": 32
     },
     "乙": {
         "char": "乙",
-        "count": 38
+        "count": 39
     },
     "书": {
         "char": "书",
-        "count": 507
+        "count": 527
     },
     "驿": {
         "char": "驿",
-        "count": 22
+        "count": 25
     },
     "赟": {
         "char": "赟",
-        "count": 70
+        "count": 76
     },
     "上": {
         "char": "上",
-        "count": 35
+        "count": 36
     },
     "袁": {
         "char": "袁",
-        "count": 31
+        "count": 32
     },
     "巍": {
         "char": "巍",
-        "count": 129
+        "count": 133
     },
     "用": {
         "char": "用",
-        "count": 10
+        "count": 11
     },
     "里": {
         "char": "里",
-        "count": 32
+        "count": 33
     },
     "艾": {
         "char": "艾",
-        "count": 116
+        "count": 119
     },
     "琢": {
         "char": "琢",
@@ -3761,27 +3785,27 @@
     },
     "瑀": {
         "char": "瑀",
-        "count": 31
+        "count": 32
     },
     "翌": {
         "char": "翌",
-        "count": 73
+        "count": 75
     },
     "彧": {
         "char": "彧",
-        "count": 93
+        "count": 94
     },
     "榛": {
         "char": "榛",
-        "count": 13
+        "count": 14
     },
     "尔": {
         "char": "尔",
-        "count": 86
+        "count": 91
     },
     "笛": {
         "char": "笛",
-        "count": 35
+        "count": 37
     },
     "薛": {
         "char": "薛",
@@ -3789,11 +3813,11 @@
     },
     "岩": {
         "char": "岩",
-        "count": 258
+        "count": 265
     },
     "娇": {
         "char": "娇",
-        "count": 121
+        "count": 136
     },
     "酥": {
         "char": "酥",
@@ -3801,27 +3825,27 @@
     },
     "苹": {
         "char": "苹",
-        "count": 23
+        "count": 24
     },
     "苓": {
         "char": "苓",
-        "count": 21
+        "count": 22
     },
     "人": {
         "char": "人",
-        "count": 43
+        "count": 50
     },
     "必": {
         "char": "必",
-        "count": 31
+        "count": 32
     },
     "颜": {
         "char": "颜",
-        "count": 80
+        "count": 83
     },
     "榆": {
         "char": "榆",
-        "count": 56
+        "count": 57
     },
     "焴": {
         "char": "焴",
@@ -3829,11 +3853,11 @@
     },
     "湛": {
         "char": "湛",
-        "count": 25
+        "count": 26
     },
     "周": {
         "char": "周",
-        "count": 124
+        "count": 127
     },
     "醉": {
         "char": "醉",
@@ -3845,43 +3869,43 @@
     },
     "允": {
         "char": "允",
-        "count": 161
+        "count": 163
     },
     "多": {
         "char": "多",
-        "count": 58
+        "count": 61
     },
     "波": {
         "char": "波",
-        "count": 662
+        "count": 692
     },
     "亿": {
         "char": "亿",
-        "count": 61
+        "count": 62
     },
     "樱": {
         "char": "樱",
-        "count": 42
+        "count": 45
     },
     "传": {
         "char": "传",
-        "count": 206
+        "count": 210
     },
     "关": {
         "char": "关",
-        "count": 20
+        "count": 21
     },
     "石": {
         "char": "石",
-        "count": 77
+        "count": 81
     },
     "汇": {
         "char": "汇",
-        "count": 34
+        "count": 36
     },
     "群": {
         "char": "群",
-        "count": 217
+        "count": 225
     },
     "慎": {
         "char": "慎",
@@ -3889,11 +3913,11 @@
     },
     "孙": {
         "char": "孙",
-        "count": 33
+        "count": 34
     },
     "严": {
         "char": "严",
-        "count": 44
+        "count": 47
     },
     "午": {
         "char": "午",
@@ -3905,11 +3929,11 @@
     },
     "风": {
         "char": "风",
-        "count": 87
+        "count": 89
     },
     "园": {
         "char": "园",
-        "count": 105
+        "count": 120
     },
     "雍": {
         "char": "雍",
@@ -3921,7 +3945,7 @@
     },
     "逍": {
         "char": "逍",
-        "count": 19
+        "count": 21
     },
     "枚": {
         "char": "枚",
@@ -3941,7 +3965,7 @@
     },
     "淞": {
         "char": "淞",
-        "count": 38
+        "count": 40
     },
     "愫": {
         "char": "愫",
@@ -3949,7 +3973,7 @@
     },
     "焰": {
         "char": "焰",
-        "count": 20
+        "count": 21
     },
     "燿": {
         "char": "燿",
@@ -3957,19 +3981,19 @@
     },
     "百": {
         "char": "百",
-        "count": 35
+        "count": 38
     },
     "北": {
         "char": "北",
-        "count": 57
+        "count": 58
     },
     "柄": {
         "char": "柄",
-        "count": 8
+        "count": 10
     },
     "连": {
         "char": "连",
-        "count": 112
+        "count": 113
     },
     "谨": {
         "char": "谨",
@@ -3993,7 +4017,7 @@
     },
     "戎": {
         "char": "戎",
-        "count": 7
+        "count": 8
     },
     "渟": {
         "char": "渟",
@@ -4005,19 +4029,19 @@
     },
     "纾": {
         "char": "纾",
-        "count": 13
+        "count": 14
     },
     "谋": {
         "char": "谋",
-        "count": 20
+        "count": 21
     },
     "珍": {
         "char": "珍",
-        "count": 202
+        "count": 211
     },
     "优": {
         "char": "优",
-        "count": 107
+        "count": 108
     },
     "堉": {
         "char": "堉",
@@ -4025,7 +4049,7 @@
     },
     "珲": {
         "char": "珲",
-        "count": 19
+        "count": 20
     },
     "积": {
         "char": "积",
@@ -4033,15 +4057,15 @@
     },
     "娴": {
         "char": "娴",
-        "count": 149
+        "count": 155
     },
     "崧": {
         "char": "崧",
-        "count": 14
+        "count": 15
     },
     "朋": {
         "char": "朋",
-        "count": 101
+        "count": 108
     },
     "孔": {
         "char": "孔",
@@ -4053,7 +4077,7 @@
     },
     "道": {
         "char": "道",
-        "count": 126
+        "count": 131
     },
     "猷": {
         "char": "猷",
@@ -4061,7 +4085,7 @@
     },
     "贵": {
         "char": "贵",
-        "count": 167
+        "count": 172
     },
     "桀": {
         "char": "桀",
@@ -4069,11 +4093,11 @@
     },
     "菁": {
         "char": "菁",
-        "count": 129
+        "count": 147
     },
     "任": {
         "char": "任",
-        "count": 30
+        "count": 32
     },
     "秦": {
         "char": "秦",
@@ -4093,15 +4117,15 @@
     },
     "增": {
         "char": "增",
-        "count": 104
+        "count": 108
     },
     "历": {
         "char": "历",
-        "count": 11
+        "count": 12
     },
     "啸": {
         "char": "啸",
-        "count": 66
+        "count": 75
     },
     "扉": {
         "char": "扉",
@@ -4113,7 +4137,7 @@
     },
     "昇": {
         "char": "昇",
-        "count": 29
+        "count": 32
     },
     "熔": {
         "char": "熔",
@@ -4129,11 +4153,11 @@
     },
     "藤": {
         "char": "藤",
-        "count": 7
+        "count": 8
     },
     "垠": {
         "char": "垠",
-        "count": 7
+        "count": 8
     },
     "洱": {
         "char": "洱",
@@ -4145,59 +4169,59 @@
     },
     "傑": {
         "char": "傑",
-        "count": 1
+        "count": 2
     },
     "量": {
         "char": "量",
-        "count": 6
+        "count": 7
     },
     "万": {
         "char": "万",
-        "count": 156
+        "count": 159
     },
     "声": {
         "char": "声",
-        "count": 52
+        "count": 56
     },
     "惟": {
         "char": "惟",
-        "count": 48
+        "count": 49
     },
     "渭": {
         "char": "渭",
-        "count": 8
+        "count": 9
     },
     "耿": {
         "char": "耿",
-        "count": 12
+        "count": 14
     },
     "搏": {
         "char": "搏",
-        "count": 15
+        "count": 17
     },
     "曾": {
         "char": "曾",
-        "count": 22
+        "count": 25
     },
     "淋": {
         "char": "淋",
-        "count": 27
+        "count": 29
     },
     "燃": {
         "char": "燃",
-        "count": 44
+        "count": 46
     },
     "煌": {
         "char": "煌",
-        "count": 25
+        "count": 27
     },
     "谕": {
         "char": "谕",
-        "count": 18
+        "count": 20
     },
     "劼": {
         "char": "劼",
-        "count": 21
+        "count": 22
     },
     "期": {
         "char": "期",
@@ -4209,7 +4233,7 @@
     },
     "坚": {
         "char": "坚",
-        "count": 72
+        "count": 77
     },
     "羡": {
         "char": "羡",
@@ -4225,7 +4249,7 @@
     },
     "余": {
         "char": "余",
-        "count": 67
+        "count": 68
     },
     "放": {
         "char": "放",
@@ -4233,39 +4257,39 @@
     },
     "瑗": {
         "char": "瑗",
-        "count": 10
+        "count": 12
     },
     "跃": {
         "char": "跃",
-        "count": 169
+        "count": 176
     },
     "本": {
         "char": "本",
-        "count": 56
+        "count": 59
     },
     "硕": {
         "char": "硕",
-        "count": 368
+        "count": 382
     },
     "铄": {
         "char": "铄",
-        "count": 57
+        "count": 58
     },
     "也": {
         "char": "也",
-        "count": 15
+        "count": 16
     },
     "桥": {
         "char": "桥",
-        "count": 75
+        "count": 78
     },
     "弛": {
         "char": "弛",
-        "count": 14
+        "count": 15
     },
     "舟": {
         "char": "舟",
-        "count": 102
+        "count": 109
     },
     "迩": {
         "char": "迩",
@@ -4285,7 +4309,7 @@
     },
     "琼": {
         "char": "琼",
-        "count": 145
+        "count": 153
     },
     "壤": {
         "char": "壤",
@@ -4293,11 +4317,11 @@
     },
     "丝": {
         "char": "丝",
-        "count": 17
+        "count": 20
     },
     "嵩": {
         "char": "嵩",
-        "count": 36
+        "count": 38
     },
     "蔧": {
         "char": "蔧",
@@ -4309,15 +4333,15 @@
     },
     "珣": {
         "char": "珣",
-        "count": 16
+        "count": 17
     },
     "愿": {
         "char": "愿",
-        "count": 17
+        "count": 19
     },
     "嵘": {
         "char": "嵘",
-        "count": 48
+        "count": 50
     },
     "甄": {
         "char": "甄",
@@ -4333,7 +4357,7 @@
     },
     "戈": {
         "char": "戈",
-        "count": 31
+        "count": 33
     },
     "聿": {
         "char": "聿",
@@ -4341,7 +4365,7 @@
     },
     "醇": {
         "char": "醇",
-        "count": 5
+        "count": 6
     },
     "绅": {
         "char": "绅",
@@ -4353,7 +4377,7 @@
     },
     "漠": {
         "char": "漠",
-        "count": 5
+        "count": 6
     },
     "蔼": {
         "char": "蔼",
@@ -4361,7 +4385,7 @@
     },
     "友": {
         "char": "友",
-        "count": 195
+        "count": 197
     },
     "轲": {
         "char": "轲",
@@ -4381,7 +4405,7 @@
     },
     "和": {
         "char": "和",
-        "count": 188
+        "count": 189
     },
     "岸": {
         "char": "岸",
@@ -4393,23 +4417,23 @@
     },
     "默": {
         "char": "默",
-        "count": 71
+        "count": 76
     },
     "潆": {
         "char": "潆",
-        "count": 14
+        "count": 15
     },
     "池": {
         "char": "池",
-        "count": 19
+        "count": 21
     },
     "印": {
         "char": "印",
-        "count": 49
+        "count": 50
     },
     "滋": {
         "char": "滋",
-        "count": 8
+        "count": 9
     },
     "嶂": {
         "char": "嶂",
@@ -4417,7 +4441,7 @@
     },
     "绪": {
         "char": "绪",
-        "count": 54
+        "count": 59
     },
     "泠": {
         "char": "泠",
@@ -4425,7 +4449,7 @@
     },
     "玫": {
         "char": "玫",
-        "count": 17
+        "count": 19
     },
     "镛": {
         "char": "镛",
@@ -4433,7 +4457,7 @@
     },
     "鹤": {
         "char": "鹤",
-        "count": 83
+        "count": 87
     },
     "苈": {
         "char": "苈",
@@ -4449,7 +4473,7 @@
     },
     "沂": {
         "char": "沂",
-        "count": 40
+        "count": 41
     },
     "遇": {
         "char": "遇",
@@ -4481,7 +4505,7 @@
     },
     "焘": {
         "char": "焘",
-        "count": 5
+        "count": 6
     },
     "攸": {
         "char": "攸",
@@ -4497,7 +4521,7 @@
     },
     "克": {
         "char": "克",
-        "count": 159
+        "count": 164
     },
     "廣": {
         "char": "廣",
@@ -4505,7 +4529,7 @@
     },
     "令": {
         "char": "令",
-        "count": 111
+        "count": 114
     },
     "淅": {
         "char": "淅",
@@ -4517,7 +4541,7 @@
     },
     "于": {
         "char": "于",
-        "count": 60
+        "count": 62
     },
     "舫": {
         "char": "舫",
@@ -4529,19 +4553,19 @@
     },
     "骞": {
         "char": "骞",
-        "count": 89
+        "count": 92
     },
     "骄": {
         "char": "骄",
-        "count": 16
+        "count": 18
     },
     "橙": {
         "char": "橙",
-        "count": 52
+        "count": 53
     },
     "遥": {
         "char": "遥",
-        "count": 58
+        "count": 59
     },
     "岽": {
         "char": "岽",
@@ -4561,11 +4585,11 @@
     },
     "栎": {
         "char": "栎",
-        "count": 31
+        "count": 32
     },
     "霄": {
         "char": "霄",
-        "count": 72
+        "count": 82
     },
     "泺": {
         "char": "泺",
@@ -4573,7 +4597,7 @@
     },
     "水": {
         "char": "水",
-        "count": 75
+        "count": 78
     },
     "劭": {
         "char": "劭",
@@ -4589,11 +4613,11 @@
     },
     "杉": {
         "char": "杉",
-        "count": 48
+        "count": 54
     },
     "骁": {
         "char": "骁",
-        "count": 96
+        "count": 100
     },
     "榜": {
         "char": "榜",
@@ -4601,7 +4625,7 @@
     },
     "沿": {
         "char": "沿",
-        "count": 9
+        "count": 10
     },
     "蓁": {
         "char": "蓁",
@@ -4609,7 +4633,7 @@
     },
     "夫": {
         "char": "夫",
-        "count": 45
+        "count": 50
     },
     "议": {
         "char": "议",
@@ -4617,7 +4641,7 @@
     },
     "诣": {
         "char": "诣",
-        "count": 13
+        "count": 14
     },
     "洇": {
         "char": "洇",
@@ -4629,15 +4653,15 @@
     },
     "汐": {
         "char": "汐",
-        "count": 215
+        "count": 217
     },
     "晰": {
         "char": "晰",
-        "count": 33
+        "count": 34
     },
     "圳": {
         "char": "圳",
-        "count": 16
+        "count": 17
     },
     "衿": {
         "char": "衿",
@@ -4645,7 +4669,7 @@
     },
     "求": {
         "char": "求",
-        "count": 9
+        "count": 10
     },
     "璿": {
         "char": "璿",
@@ -4653,7 +4677,7 @@
     },
     "弋": {
         "char": "弋",
-        "count": 22
+        "count": 26
     },
     "焜": {
         "char": "焜",
@@ -4669,7 +4693,7 @@
     },
     "策": {
         "char": "策",
-        "count": 23
+        "count": 29
     },
     "锵": {
         "char": "锵",
@@ -4677,7 +4701,7 @@
     },
     "情": {
         "char": "情",
-        "count": 30
+        "count": 31
     },
     "媗": {
         "char": "媗",
@@ -4693,15 +4717,15 @@
     },
     "彰": {
         "char": "彰",
-        "count": 20
+        "count": 21
     },
     "恬": {
         "char": "恬",
-        "count": 137
+        "count": 141
     },
     "岭": {
         "char": "岭",
-        "count": 40
+        "count": 41
     },
     "泞": {
         "char": "泞",
@@ -4709,11 +4733,11 @@
     },
     "炼": {
         "char": "炼",
-        "count": 15
+        "count": 17
     },
     "吾": {
         "char": "吾",
-        "count": 8
+        "count": 9
     },
     "焙": {
         "char": "焙",
@@ -4725,11 +4749,11 @@
     },
     "崴": {
         "char": "崴",
-        "count": 18
+        "count": 20
     },
     "峥": {
         "char": "峥",
-        "count": 53
+        "count": 57
     },
     "比": {
         "char": "比",
@@ -4741,7 +4765,7 @@
     },
     "龄": {
         "char": "龄",
-        "count": 23
+        "count": 24
     },
     "问": {
         "char": "问",
@@ -4753,31 +4777,31 @@
     },
     "隽": {
         "char": "隽",
-        "count": 87
+        "count": 88
     },
     "岗": {
         "char": "岗",
-        "count": 29
+        "count": 30
     },
     "荟": {
         "char": "荟",
-        "count": 29
+        "count": 32
     },
     "研": {
         "char": "研",
-        "count": 70
+        "count": 72
     },
     "征": {
         "char": "征",
-        "count": 70
+        "count": 72
     },
     "荻": {
         "char": "荻",
-        "count": 15
+        "count": 16
     },
     "郭": {
         "char": "郭",
-        "count": 7
+        "count": 9
     },
     "浍": {
         "char": "浍",
@@ -4801,7 +4825,7 @@
     },
     "葳": {
         "char": "葳",
-        "count": 20
+        "count": 21
     },
     "洌": {
         "char": "洌",
@@ -4809,11 +4833,11 @@
     },
     "辛": {
         "char": "辛",
-        "count": 31
+        "count": 33
     },
     "修": {
         "char": "修",
-        "count": 142
+        "count": 149
     },
     "楟": {
         "char": "楟",
@@ -4821,7 +4845,7 @@
     },
     "忱": {
         "char": "忱",
-        "count": 21
+        "count": 22
     },
     "恂": {
         "char": "恂",
@@ -4833,15 +4857,15 @@
     },
     "棠": {
         "char": "棠",
-        "count": 41
+        "count": 43
     },
     "纶": {
         "char": "纶",
-        "count": 10
+        "count": 11
     },
     "阔": {
         "char": "阔",
-        "count": 16
+        "count": 17
     },
     "烔": {
         "char": "烔",
@@ -4853,7 +4877,7 @@
     },
     "逢": {
         "char": "逢",
-        "count": 14
+        "count": 15
     },
     "茉": {
         "char": "茉",
@@ -4861,15 +4885,15 @@
     },
     "际": {
         "char": "际",
-        "count": 20
+        "count": 23
     },
     "娣": {
         "char": "娣",
-        "count": 42
+        "count": 43
     },
     "澳": {
         "char": "澳",
-        "count": 13
+        "count": 14
     },
     "銮": {
         "char": "銮",
@@ -4885,7 +4909,7 @@
     },
     "旋": {
         "char": "旋",
-        "count": 44
+        "count": 50
     },
     "睦": {
         "char": "睦",
@@ -4893,7 +4917,7 @@
     },
     "涓": {
         "char": "涓",
-        "count": 13
+        "count": 14
     },
     "钛": {
         "char": "钛",
@@ -4917,7 +4941,7 @@
     },
     "奎": {
         "char": "奎",
-        "count": 74
+        "count": 76
     },
     "蒨": {
         "char": "蒨",
@@ -4929,11 +4953,11 @@
     },
     "今": {
         "char": "今",
-        "count": 22
+        "count": 23
     },
     "谷": {
         "char": "谷",
-        "count": 26
+        "count": 28
     },
     "樂": {
         "char": "樂",
@@ -4965,11 +4989,11 @@
     },
     "耘": {
         "char": "耘",
-        "count": 22
+        "count": 23
     },
     "创": {
         "char": "创",
-        "count": 27
+        "count": 28
     },
     "沄": {
         "char": "沄",
@@ -4985,7 +5009,7 @@
     },
     "记": {
         "char": "记",
-        "count": 10
+        "count": 11
     },
     "朣": {
         "char": "朣",
@@ -4993,11 +5017,11 @@
     },
     "奥": {
         "char": "奥",
-        "count": 181
+        "count": 185
     },
     "年": {
         "char": "年",
-        "count": 56
+        "count": 59
     },
     "帛": {
         "char": "帛",
@@ -5009,19 +5033,19 @@
     },
     "功": {
         "char": "功",
-        "count": 47
+        "count": 51
     },
     "倪": {
         "char": "倪",
-        "count": 30
+        "count": 31
     },
     "荆": {
         "char": "荆",
-        "count": 1
+        "count": 2
     },
     "居": {
         "char": "居",
-        "count": 13
+        "count": 14
     },
     "垒": {
         "char": "垒",
@@ -5049,7 +5073,7 @@
     },
     "屿": {
         "char": "屿",
-        "count": 17
+        "count": 18
     },
     "俨": {
         "char": "俨",
@@ -5061,11 +5085,11 @@
     },
     "直": {
         "char": "直",
-        "count": 7
+        "count": 8
     },
     "柱": {
         "char": "柱",
-        "count": 64
+        "count": 68
     },
     "伸": {
         "char": "伸",
@@ -5073,7 +5097,7 @@
     },
     "陆": {
         "char": "陆",
-        "count": 40
+        "count": 42
     },
     "峄": {
         "char": "峄",
@@ -5081,7 +5105,7 @@
     },
     "宾": {
         "char": "宾",
-        "count": 81
+        "count": 83
     },
     "毫": {
         "char": "毫",
@@ -5089,7 +5113,7 @@
     },
     "末": {
         "char": "末",
-        "count": 10
+        "count": 11
     },
     "珑": {
         "char": "珑",
@@ -5101,11 +5125,11 @@
     },
     "乃": {
         "char": "乃",
-        "count": 47
+        "count": 49
     },
     "爽": {
         "char": "爽",
-        "count": 74
+        "count": 88
     },
     "位": {
         "char": "位",
@@ -5117,7 +5141,7 @@
     },
     "朔": {
         "char": "朔",
-        "count": 38
+        "count": 39
     },
     "深": {
         "char": "深",
@@ -5133,11 +5157,11 @@
     },
     "步": {
         "char": "步",
-        "count": 27
+        "count": 28
     },
     "潮": {
         "char": "潮",
-        "count": 31
+        "count": 32
     },
     "慰": {
         "char": "慰",
@@ -5169,7 +5193,7 @@
     },
     "双": {
         "char": "双",
-        "count": 163
+        "count": 166
     },
     "虞": {
         "char": "虞",
@@ -5181,7 +5205,7 @@
     },
     "彪": {
         "char": "彪",
-        "count": 85
+        "count": 92
     },
     "梽": {
         "char": "梽",
@@ -5205,15 +5229,15 @@
     },
     "珅": {
         "char": "珅",
-        "count": 17
+        "count": 19
     },
     "蕙": {
         "char": "蕙",
-        "count": 66
+        "count": 68
     },
     "婵": {
         "char": "婵",
-        "count": 33
+        "count": 34
     },
     "鱼": {
         "char": "鱼",
@@ -5241,7 +5265,7 @@
     },
     "献": {
         "char": "献",
-        "count": 32
+        "count": 35
     },
     "炘": {
         "char": "炘",
@@ -5257,11 +5281,11 @@
     },
     "珵": {
         "char": "珵",
-        "count": 25
+        "count": 26
     },
     "荷": {
         "char": "荷",
-        "count": 40
+        "count": 41
     },
     "祤": {
         "char": "祤",
@@ -5273,11 +5297,11 @@
     },
     "朱": {
         "char": "朱",
-        "count": 12
+        "count": 13
     },
     "琴": {
         "char": "琴",
-        "count": 311
+        "count": 321
     },
     "樾": {
         "char": "樾",
@@ -5285,7 +5309,7 @@
     },
     "盼": {
         "char": "盼",
-        "count": 46
+        "count": 49
     },
     "让": {
         "char": "让",
@@ -5301,15 +5325,15 @@
     },
     "雷": {
         "char": "雷",
-        "count": 215
+        "count": 220
     },
     "铂": {
         "char": "铂",
-        "count": 26
+        "count": 28
     },
     "化": {
         "char": "化",
-        "count": 34
+        "count": 36
     },
     "淽": {
         "char": "淽",
@@ -5321,11 +5345,11 @@
     },
     "焮": {
         "char": "焮",
-        "count": 5
+        "count": 6
     },
     "姜": {
         "char": "姜",
-        "count": 16
+        "count": 17
     },
     "玘": {
         "char": "玘",
@@ -5337,7 +5361,7 @@
     },
     "照": {
         "char": "照",
-        "count": 74
+        "count": 78
     },
     "邹": {
         "char": "邹",
@@ -5353,7 +5377,7 @@
     },
     "蘅": {
         "char": "蘅",
-        "count": 19
+        "count": 21
     },
     "扶": {
         "char": "扶",
@@ -5365,7 +5389,7 @@
     },
     "媚": {
         "char": "媚",
-        "count": 25
+        "count": 28
     },
     "当": {
         "char": "当",
@@ -5393,7 +5417,7 @@
     },
     "尉": {
         "char": "尉",
-        "count": 13
+        "count": 15
     },
     "浦": {
         "char": "浦",
@@ -5405,11 +5429,11 @@
     },
     "木": {
         "char": "木",
-        "count": 73
+        "count": 76
     },
     "衍": {
         "char": "衍",
-        "count": 64
+        "count": 66
     },
     "晚": {
         "char": "晚",
@@ -5425,7 +5449,7 @@
     },
     "已": {
         "char": "已",
-        "count": 4
+        "count": 5
     },
     "芠": {
         "char": "芠",
@@ -5469,7 +5493,7 @@
     },
     "禛": {
         "char": "禛",
-        "count": 10
+        "count": 12
     },
     "画": {
         "char": "画",
@@ -5493,7 +5517,7 @@
     },
     "端": {
         "char": "端",
-        "count": 38
+        "count": 39
     },
     "甚": {
         "char": "甚",
@@ -5501,7 +5525,7 @@
     },
     "识": {
         "char": "识",
-        "count": 12
+        "count": 13
     },
     "菽": {
         "char": "菽",
@@ -5521,11 +5545,11 @@
     },
     "郑": {
         "char": "郑",
-        "count": 28
+        "count": 29
     },
     "樑": {
         "char": "樑",
-        "count": 4
+        "count": 6
     },
     "皙": {
         "char": "皙",
@@ -5541,11 +5565,11 @@
     },
     "发": {
         "char": "发",
-        "count": 118
+        "count": 123
     },
     "韧": {
         "char": "韧",
-        "count": 8
+        "count": 11
     },
     "儋": {
         "char": "儋",
@@ -5557,7 +5581,7 @@
     },
     "勃": {
         "char": "勃",
-        "count": 25
+        "count": 26
     },
     "銘": {
         "char": "銘",
@@ -5565,11 +5589,11 @@
     },
     "葛": {
         "char": "葛",
-        "count": 13
+        "count": 14
     },
     "慜": {
         "char": "慜",
-        "count": 2
+        "count": 3
     },
     "庶": {
         "char": "庶",
@@ -5609,11 +5633,11 @@
     },
     "初": {
         "char": "初",
-        "count": 104
+        "count": 106
     },
     "耕": {
         "char": "耕",
-        "count": 8
+        "count": 11
     },
     "瞳": {
         "char": "瞳",
@@ -5625,7 +5649,7 @@
     },
     "麦": {
         "char": "麦",
-        "count": 24
+        "count": 25
     },
     "菈": {
         "char": "菈",
@@ -5633,7 +5657,7 @@
     },
     "戴": {
         "char": "戴",
-        "count": 6
+        "count": 7
     },
     "第": {
         "char": "第",
@@ -5641,7 +5665,7 @@
     },
     "演": {
         "char": "演",
-        "count": 12
+        "count": 13
     },
     "卡": {
         "char": "卡",
@@ -5657,7 +5681,7 @@
     },
     "跞": {
         "char": "跞",
-        "count": 4
+        "count": 5
     },
     "燑": {
         "char": "燑",
@@ -5669,7 +5693,7 @@
     },
     "棱": {
         "char": "棱",
-        "count": 10
+        "count": 12
     },
     "缇": {
         "char": "缇",
@@ -5701,7 +5725,7 @@
     },
     "重": {
         "char": "重",
-        "count": 46
+        "count": 48
     },
     "俏": {
         "char": "俏",
@@ -5737,7 +5761,7 @@
     },
     "濛": {
         "char": "濛",
-        "count": 15
+        "count": 16
     },
     "绫": {
         "char": "绫",
@@ -5745,7 +5769,7 @@
     },
     "桃": {
         "char": "桃",
-        "count": 33
+        "count": 36
     },
     "苒": {
         "char": "苒",
@@ -5773,7 +5797,7 @@
     },
     "轶": {
         "char": "轶",
-        "count": 131
+        "count": 137
     },
     "炣": {
         "char": "炣",
@@ -5797,7 +5821,7 @@
     },
     "帮": {
         "char": "帮",
-        "count": 16
+        "count": 17
     },
     "醴": {
         "char": "醴",
@@ -5813,11 +5837,11 @@
     },
     "潘": {
         "char": "潘",
-        "count": 14
+        "count": 16
     },
     "玄": {
         "char": "玄",
-        "count": 44
+        "count": 46
     },
     "洹": {
         "char": "洹",
@@ -5825,7 +5849,7 @@
     },
     "贞": {
         "char": "贞",
-        "count": 55
+        "count": 59
     },
     "刀": {
         "char": "刀",
@@ -5837,7 +5861,7 @@
     },
     "域": {
         "char": "域",
-        "count": 15
+        "count": 16
     },
     "铝": {
         "char": "铝",
@@ -5849,15 +5873,15 @@
     },
     "炽": {
         "char": "炽",
-        "count": 8
+        "count": 9
     },
     "寓": {
         "char": "寓",
-        "count": 9
+        "count": 10
     },
     "帝": {
         "char": "帝",
-        "count": 12
+        "count": 14
     },
     "聃": {
         "char": "聃",
@@ -5869,11 +5893,11 @@
     },
     "黎": {
         "char": "黎",
-        "count": 95
+        "count": 102
     },
     "法": {
         "char": "法",
-        "count": 40
+        "count": 41
     },
     "常": {
         "char": "常",
@@ -5889,11 +5913,11 @@
     },
     "环": {
         "char": "环",
-        "count": 32
+        "count": 36
     },
     "罗": {
         "char": "罗",
-        "count": 33
+        "count": 34
     },
     "迈": {
         "char": "迈",
@@ -5901,7 +5925,7 @@
     },
     "眉": {
         "char": "眉",
-        "count": 4
+        "count": 5
     },
     "筝": {
         "char": "筝",
@@ -5909,15 +5933,15 @@
     },
     "寿": {
         "char": "寿",
-        "count": 36
+        "count": 37
     },
     "温": {
         "char": "温",
-        "count": 13
+        "count": 14
     },
     "蒂": {
         "char": "蒂",
-        "count": 2
+        "count": 4
     },
     "镖": {
         "char": "镖",
@@ -5929,7 +5953,7 @@
     },
     "镐": {
         "char": "镐",
-        "count": 11
+        "count": 12
     },
     "蓒": {
         "char": "蓒",
@@ -5957,7 +5981,7 @@
     },
     "铱": {
         "char": "铱",
-        "count": 17
+        "count": 18
     },
     "纱": {
         "char": "纱",
@@ -5977,7 +6001,7 @@
     },
     "弦": {
         "char": "弦",
-        "count": 14
+        "count": 15
     },
     "順": {
         "char": "順",
@@ -6005,7 +6029,7 @@
     },
     "近": {
         "char": "近",
-        "count": 23
+        "count": 24
     },
     "途": {
         "char": "途",
@@ -6057,7 +6081,7 @@
     },
     "萧": {
         "char": "萧",
-        "count": 18
+        "count": 20
     },
     "倾": {
         "char": "倾",
@@ -6081,7 +6105,7 @@
     },
     "浪": {
         "char": "浪",
-        "count": 15
+        "count": 16
     },
     "陵": {
         "char": "陵",
@@ -6089,7 +6113,7 @@
     },
     "薪": {
         "char": "薪",
-        "count": 20
+        "count": 21
     },
     "巳": {
         "char": "巳",
@@ -6097,7 +6121,7 @@
     },
     "肖": {
         "char": "肖",
-        "count": 42
+        "count": 45
     },
     "胡": {
         "char": "胡",
@@ -6105,7 +6129,7 @@
     },
     "通": {
         "char": "通",
-        "count": 59
+        "count": 65
     },
     "淤": {
         "char": "淤",
@@ -6129,7 +6153,7 @@
     },
     "九": {
         "char": "九",
-        "count": 24
+        "count": 27
     },
     "著": {
         "char": "著",
@@ -6141,7 +6165,7 @@
     },
     "煖": {
         "char": "煖",
-        "count": 1
+        "count": 2
     },
     "柚": {
         "char": "柚",
@@ -6169,11 +6193,11 @@
     },
     "质": {
         "char": "质",
-        "count": 3
+        "count": 4
     },
     "娥": {
         "char": "娥",
-        "count": 41
+        "count": 42
     },
     "伍": {
         "char": "伍",
@@ -6209,11 +6233,11 @@
     },
     "享": {
         "char": "享",
-        "count": 21
+        "count": 22
     },
     "存": {
         "char": "存",
-        "count": 65
+        "count": 66
     },
     "烟": {
         "char": "烟",
@@ -6221,7 +6245,7 @@
     },
     "笔": {
         "char": "笔",
-        "count": 3
+        "count": 4
     },
     "支": {
         "char": "支",
@@ -6245,7 +6269,7 @@
     },
     "韩": {
         "char": "韩",
-        "count": 50
+        "count": 51
     },
     "兹": {
         "char": "兹",
@@ -6261,11 +6285,11 @@
     },
     "仙": {
         "char": "仙",
-        "count": 43
+        "count": 45
     },
     "壮": {
         "char": "壮",
-        "count": 47
+        "count": 51
     },
     "髯": {
         "char": "髯",
@@ -6281,15 +6305,15 @@
     },
     "雲": {
         "char": "雲",
-        "count": 12
+        "count": 13
     },
     "嗣": {
         "char": "嗣",
-        "count": 14
+        "count": 15
     },
     "阿": {
         "char": "阿",
-        "count": 15
+        "count": 17
     },
     "溹": {
         "char": "溹",
@@ -6333,7 +6357,7 @@
     },
     "闽": {
         "char": "闽",
-        "count": 12
+        "count": 13
     },
     "陶": {
         "char": "陶",
@@ -6345,11 +6369,11 @@
     },
     "菊": {
         "char": "菊",
-        "count": 107
+        "count": 110
     },
     "极": {
         "char": "极",
-        "count": 6
+        "count": 7
     },
     "公": {
         "char": "公",
@@ -6373,7 +6397,7 @@
     },
     "占": {
         "char": "占",
-        "count": 89
+        "count": 90
     },
     "栖": {
         "char": "栖",
@@ -6381,7 +6405,7 @@
     },
     "花": {
         "char": "花",
-        "count": 177
+        "count": 182
     },
     "埈": {
         "char": "埈",
@@ -6393,7 +6417,7 @@
     },
     "吏": {
         "char": "吏",
-        "count": 1
+        "count": 2
     },
     "萫": {
         "char": "萫",
@@ -6401,7 +6425,7 @@
     },
     "现": {
         "char": "现",
-        "count": 20
+        "count": 21
     },
     "粒": {
         "char": "粒",
@@ -6417,7 +6441,7 @@
     },
     "皞": {
         "char": "皞",
-        "count": 11
+        "count": 12
     },
     "琥": {
         "char": "琥",
@@ -6425,7 +6449,7 @@
     },
     "范": {
         "char": "范",
-        "count": 16
+        "count": 18
     },
     "梐": {
         "char": "梐",
@@ -6457,7 +6481,7 @@
     },
     "赵": {
         "char": "赵",
-        "count": 24
+        "count": 27
     },
     "爵": {
         "char": "爵",
@@ -6485,11 +6509,11 @@
     },
     "锡": {
         "char": "锡",
-        "count": 67
+        "count": 70
     },
     "穆": {
         "char": "穆",
-        "count": 16
+        "count": 17
     },
     "敖": {
         "char": "敖",
@@ -6505,7 +6529,7 @@
     },
     "飘": {
         "char": "飘",
-        "count": 3
+        "count": 5
     },
     "謦": {
         "char": "謦",
@@ -6521,7 +6545,7 @@
     },
     "舰": {
         "char": "舰",
-        "count": 6
+        "count": 7
     },
     "干": {
         "char": "干",
@@ -6537,7 +6561,7 @@
     },
     "湖": {
         "char": "湖",
-        "count": 13
+        "count": 14
     },
     "员": {
         "char": "员",
@@ -6557,7 +6581,7 @@
     },
     "谱": {
         "char": "谱",
-        "count": 3
+        "count": 4
     },
     "義": {
         "char": "義",
@@ -6637,7 +6661,7 @@
     },
     "港": {
         "char": "港",
-        "count": 6
+        "count": 8
     },
     "蕤": {
         "char": "蕤",
@@ -6657,7 +6681,7 @@
     },
     "殿": {
         "char": "殿",
-        "count": 26
+        "count": 27
     },
     "崡": {
         "char": "崡",
@@ -6689,7 +6713,7 @@
     },
     "麓": {
         "char": "麓",
-        "count": 6
+        "count": 7
     },
     "钕": {
         "char": "钕",
@@ -6701,7 +6725,7 @@
     },
     "抒": {
         "char": "抒",
-        "count": 23
+        "count": 25
     },
     "谈": {
         "char": "谈",
@@ -6713,7 +6737,7 @@
     },
     "许": {
         "char": "许",
-        "count": 31
+        "count": 32
     },
     "婍": {
         "char": "婍",
@@ -6729,7 +6753,7 @@
     },
     "要": {
         "char": "要",
-        "count": 12
+        "count": 14
     },
     "舣": {
         "char": "舣",
@@ -6753,15 +6777,15 @@
     },
     "婴": {
         "char": "婴",
-        "count": 2
+        "count": 3
     },
     "锌": {
         "char": "锌",
-        "count": 13
+        "count": 14
     },
     "岁": {
         "char": "岁",
-        "count": 6
+        "count": 8
     },
     "吴": {
         "char": "吴",
@@ -6773,7 +6797,7 @@
     },
     "作": {
         "char": "作",
-        "count": 40
+        "count": 42
     },
     "睛": {
         "char": "睛",
@@ -6825,7 +6849,7 @@
     },
     "娉": {
         "char": "娉",
-        "count": 9
+        "count": 10
     },
     "栢": {
         "char": "栢",
@@ -6869,7 +6893,7 @@
     },
     "笳": {
         "char": "笳",
-        "count": 4
+        "count": 5
     },
     "旅": {
         "char": "旅",
@@ -6893,7 +6917,7 @@
     },
     "丛": {
         "char": "丛",
-        "count": 19
+        "count": 21
     },
     "鉅": {
         "char": "鉅",
@@ -6941,7 +6965,7 @@
     },
     "偕": {
         "char": "偕",
-        "count": 1
+        "count": 2
     },
     "囿": {
         "char": "囿",
@@ -6957,7 +6981,7 @@
     },
     "罡": {
         "char": "罡",
-        "count": 17
+        "count": 19
     },
     "媱": {
         "char": "媱",
@@ -6989,7 +7013,7 @@
     },
     "久": {
         "char": "久",
-        "count": 56
+        "count": 60
     },
     "鹢": {
         "char": "鹢",
@@ -6997,7 +7021,7 @@
     },
     "沙": {
         "char": "沙",
-        "count": 18
+        "count": 20
     },
     "载": {
         "char": "载",
@@ -7013,7 +7037,7 @@
     },
     "铉": {
         "char": "铉",
-        "count": 12
+        "count": 14
     },
     "潭": {
         "char": "潭",
@@ -7061,7 +7085,7 @@
     },
     "根": {
         "char": "根",
-        "count": 105
+        "count": 111
     },
     "氿": {
         "char": "氿",
@@ -7089,11 +7113,11 @@
     },
     "续": {
         "char": "续",
-        "count": 9
+        "count": 10
     },
     "崟": {
         "char": "崟",
-        "count": 5
+        "count": 7
     },
     "爔": {
         "char": "爔",
@@ -7105,7 +7129,7 @@
     },
     "犇": {
         "char": "犇",
-        "count": 10
+        "count": 13
     },
     "巨": {
         "char": "巨",
@@ -7129,7 +7153,7 @@
     },
     "钒": {
         "char": "钒",
-        "count": 14
+        "count": 16
     },
     "詹": {
         "char": "詹",
@@ -7137,7 +7161,7 @@
     },
     "见": {
         "char": "见",
-        "count": 18
+        "count": 19
     },
     "闵": {
         "char": "闵",
@@ -7149,7 +7173,7 @@
     },
     "菏": {
         "char": "菏",
-        "count": 4
+        "count": 5
     },
     "六": {
         "char": "六",
@@ -7161,7 +7185,7 @@
     },
     "师": {
         "char": "师",
-        "count": 24
+        "count": 26
     },
     "算": {
         "char": "算",
@@ -7173,7 +7197,7 @@
     },
     "宵": {
         "char": "宵",
-        "count": 10
+        "count": 13
     },
     "诩": {
         "char": "诩",
@@ -7185,7 +7209,7 @@
     },
     "祝": {
         "char": "祝",
-        "count": 25
+        "count": 26
     },
     "佰": {
         "char": "佰",
@@ -7193,15 +7217,15 @@
     },
     "点": {
         "char": "点",
-        "count": 4
+        "count": 5
     },
     "芙": {
         "char": "芙",
-        "count": 13
+        "count": 14
     },
     "姣": {
         "char": "姣",
-        "count": 56
+        "count": 58
     },
     "净": {
         "char": "净",
@@ -7229,7 +7253,7 @@
     },
     "镱": {
         "char": "镱",
-        "count": 4
+        "count": 5
     },
     "挥": {
         "char": "挥",
@@ -7245,7 +7269,7 @@
     },
     "荔": {
         "char": "荔",
-        "count": 8
+        "count": 9
     },
     "汛": {
         "char": "汛",
@@ -7277,7 +7301,7 @@
     },
     "钢": {
         "char": "钢",
-        "count": 67
+        "count": 69
     },
     "琏": {
         "char": "琏",
@@ -7313,11 +7337,11 @@
     },
     "芦": {
         "char": "芦",
-        "count": 2
+        "count": 3
     },
     "屾": {
         "char": "屾",
-        "count": 4
+        "count": 5
     },
     "席": {
         "char": "席",
@@ -7325,7 +7349,7 @@
     },
     "嬿": {
         "char": "嬿",
-        "count": 4
+        "count": 5
     },
     "楒": {
         "char": "楒",
@@ -7333,7 +7357,7 @@
     },
     "箴": {
         "char": "箴",
-        "count": 6
+        "count": 7
     },
     "俣": {
         "char": "俣",
@@ -7365,7 +7389,7 @@
     },
     "古": {
         "char": "古",
-        "count": 8
+        "count": 9
     },
     "卢": {
         "char": "卢",
@@ -7393,7 +7417,7 @@
     },
     "代": {
         "char": "代",
-        "count": 32
+        "count": 33
     },
     "杜": {
         "char": "杜",
@@ -7441,7 +7465,7 @@
     },
     "樟": {
         "char": "樟",
-        "count": 10
+        "count": 11
     },
     "楙": {
         "char": "楙",
@@ -7473,11 +7497,11 @@
     },
     "锁": {
         "char": "锁",
-        "count": 23
+        "count": 24
     },
     "幼": {
         "char": "幼",
-        "count": 15
+        "count": 17
     },
     "潾": {
         "char": "潾",
@@ -7505,7 +7529,7 @@
     },
     "曙": {
         "char": "曙",
-        "count": 21
+        "count": 22
     },
     "琎": {
         "char": "琎",
@@ -7533,7 +7557,7 @@
     },
     "廉": {
         "char": "廉",
-        "count": 14
+        "count": 16
     },
     "洧": {
         "char": "洧",
@@ -7565,7 +7589,7 @@
     },
     "粟": {
         "char": "粟",
-        "count": 11
+        "count": 12
     },
     "樵": {
         "char": "樵",
@@ -7589,7 +7613,7 @@
     },
     "弼": {
         "char": "弼",
-        "count": 5
+        "count": 6
     },
     "昉": {
         "char": "昉",
@@ -7613,7 +7637,7 @@
     },
     "仰": {
         "char": "仰",
-        "count": 18
+        "count": 19
     },
     "滏": {
         "char": "滏",
@@ -7625,11 +7649,11 @@
     },
     "咸": {
         "char": "咸",
-        "count": 5
+        "count": 6
     },
     "斓": {
         "char": "斓",
-        "count": 6
+        "count": 7
     },
     "缃": {
         "char": "缃",
@@ -7641,7 +7665,7 @@
     },
     "阁": {
         "char": "阁",
-        "count": 20
+        "count": 21
     },
     "邯": {
         "char": "邯",
@@ -7657,7 +7681,7 @@
     },
     "骋": {
         "char": "骋",
-        "count": 13
+        "count": 14
     },
     "列": {
         "char": "列",
@@ -7685,7 +7709,7 @@
     },
     "溆": {
         "char": "溆",
-        "count": 2
+        "count": 3
     },
     "岷": {
         "char": "岷",
@@ -7701,7 +7725,7 @@
     },
     "村": {
         "char": "村",
-        "count": 10
+        "count": 11
     },
     "莼": {
         "char": "莼",
@@ -7729,11 +7753,11 @@
     },
     "刘": {
         "char": "刘",
-        "count": 39
+        "count": 42
     },
     "垣": {
         "char": "垣",
-        "count": 8
+        "count": 10
     },
     "氧": {
         "char": "氧",
@@ -7749,7 +7773,7 @@
     },
     "充": {
         "char": "充",
-        "count": 3
+        "count": 4
     },
     "钡": {
         "char": "钡",
@@ -7761,11 +7785,11 @@
     },
     "井": {
         "char": "井",
-        "count": 26
+        "count": 27
     },
     "闰": {
         "char": "闰",
-        "count": 15
+        "count": 16
     },
     "玓": {
         "char": "玓",
@@ -7829,7 +7853,7 @@
     },
     "箫": {
         "char": "箫",
-        "count": 5
+        "count": 7
     },
     "莅": {
         "char": "莅",
@@ -7869,15 +7893,15 @@
     },
     "火": {
         "char": "火",
-        "count": 13
+        "count": 14
     },
     "逾": {
         "char": "逾",
-        "count": 4
+        "count": 5
     },
     "前": {
         "char": "前",
-        "count": 48
+        "count": 49
     },
     "固": {
         "char": "固",
@@ -7913,7 +7937,7 @@
     },
     "钇": {
         "char": "钇",
-        "count": 8
+        "count": 9
     },
     "筌": {
         "char": "筌",
@@ -7945,7 +7969,7 @@
     },
     "欧": {
         "char": "欧",
-        "count": 12
+        "count": 13
     },
     "瑆": {
         "char": "瑆",
@@ -7957,7 +7981,7 @@
     },
     "浒": {
         "char": "浒",
-        "count": 2
+        "count": 3
     },
     "凰": {
         "char": "凰",
@@ -8033,7 +8057,7 @@
     },
     "稹": {
         "char": "稹",
-        "count": 1
+        "count": 2
     },
     "七": {
         "char": "七",
@@ -8053,7 +8077,7 @@
     },
     "垦": {
         "char": "垦",
-        "count": 2
+        "count": 3
     },
     "瑧": {
         "char": "瑧",
@@ -8065,7 +8089,7 @@
     },
     "佚": {
         "char": "佚",
-        "count": 1
+        "count": 2
     },
     "岂": {
         "char": "岂",
@@ -8149,7 +8173,7 @@
     },
     "从": {
         "char": "从",
-        "count": 29
+        "count": 30
     },
     "矅": {
         "char": "矅",
@@ -8165,7 +8189,7 @@
     },
     "钏": {
         "char": "钏",
-        "count": 2
+        "count": 3
     },
     "泥": {
         "char": "泥",
@@ -8177,7 +8201,7 @@
     },
     "曹": {
         "char": "曹",
-        "count": 6
+        "count": 8
     },
     "稣": {
         "char": "稣",
@@ -8229,7 +8253,7 @@
     },
     "召": {
         "char": "召",
-        "count": 44
+        "count": 46
     },
     "糖": {
         "char": "糖",
@@ -8313,7 +8337,7 @@
     },
     "瑕": {
         "char": "瑕",
-        "count": 2
+        "count": 3
     },
     "空": {
         "char": "空",
@@ -8321,7 +8345,7 @@
     },
     "王": {
         "char": "王",
-        "count": 32
+        "count": 35
     },
     "檀": {
         "char": "檀",
@@ -8381,7 +8405,7 @@
     },
     "蝉": {
         "char": "蝉",
-        "count": 3
+        "count": 4
     },
     "恵": {
         "char": "恵",
@@ -8477,7 +8501,7 @@
     },
     "乂": {
         "char": "乂",
-        "count": 2
+        "count": 3
     },
     "镝": {
         "char": "镝",
@@ -8497,7 +8521,7 @@
     },
     "醒": {
         "char": "醒",
-        "count": 11
+        "count": 12
     },
     "缈": {
         "char": "缈",
@@ -8521,7 +8545,7 @@
     },
     "敦": {
         "char": "敦",
-        "count": 17
+        "count": 19
     },
     "沼": {
         "char": "沼",
@@ -8529,7 +8553,7 @@
     },
     "曌": {
         "char": "曌",
-        "count": 10
+        "count": 11
     },
     "组": {
         "char": "组",
@@ -8545,7 +8569,7 @@
     },
     "妹": {
         "char": "妹",
-        "count": 38
+        "count": 41
     },
     "类": {
         "char": "类",
@@ -8557,7 +8581,7 @@
     },
     "评": {
         "char": "评",
-        "count": 4
+        "count": 5
     },
     "溱": {
         "char": "溱",
@@ -8581,7 +8605,7 @@
     },
     "举": {
         "char": "举",
-        "count": 43
+        "count": 45
     },
     "戬": {
         "char": "戬",
@@ -8609,7 +8633,7 @@
     },
     "战": {
         "char": "战",
-        "count": 36
+        "count": 39
     },
     "姞": {
         "char": "姞",
@@ -8633,7 +8657,7 @@
     },
     "招": {
         "char": "招",
-        "count": 4
+        "count": 5
     },
     "煲": {
         "char": "煲",
@@ -8641,7 +8665,7 @@
     },
     "猛": {
         "char": "猛",
-        "count": 55
+        "count": 56
     },
     "庠": {
         "char": "庠",
@@ -8677,7 +8701,7 @@
     },
     "鹄": {
         "char": "鹄",
-        "count": 2
+        "count": 3
     },
     "数": {
         "char": "数",
@@ -8685,7 +8709,7 @@
     },
     "地": {
         "char": "地",
-        "count": 7
+        "count": 8
     },
     "釜": {
         "char": "釜",
@@ -8713,7 +8737,7 @@
     },
     "驹": {
         "char": "驹",
-        "count": 4
+        "count": 5
     },
     "倏": {
         "char": "倏",
@@ -8741,7 +8765,7 @@
     },
     "汤": {
         "char": "汤",
-        "count": 2
+        "count": 3
     },
     "於": {
         "char": "於",
@@ -8749,11 +8773,11 @@
     },
     "桠": {
         "char": "桠",
-        "count": 4
+        "count": 5
     },
     "冶": {
         "char": "冶",
-        "count": 10
+        "count": 11
     },
     "郇": {
         "char": "郇",
@@ -8765,7 +8789,7 @@
     },
     "赓": {
         "char": "赓",
-        "count": 2
+        "count": 4
     },
     "顾": {
         "char": "顾",
@@ -8809,7 +8833,7 @@
     },
     "聖": {
         "char": "聖",
-        "count": 1
+        "count": 2
     },
     "入": {
         "char": "入",
@@ -8917,23 +8941,23 @@
     },
     "抱": {
         "char": "抱",
-        "count": 2
+        "count": 4
     },
     "效": {
         "char": "效",
-        "count": 27
+        "count": 29
     },
     "铁": {
         "char": "铁",
-        "count": 72
+        "count": 73
     },
     "四": {
         "char": "四",
-        "count": 18
+        "count": 19
     },
     "野": {
         "char": "野",
-        "count": 32
+        "count": 40
     },
     "曲": {
         "char": "曲",
@@ -8957,11 +8981,11 @@
     },
     "烈": {
         "char": "烈",
-        "count": 18
+        "count": 19
     },
     "玛": {
         "char": "玛",
-        "count": 4
+        "count": 5
     },
     "沭": {
         "char": "沭",
@@ -8969,11 +8993,11 @@
     },
     "挺": {
         "char": "挺",
-        "count": 31
+        "count": 32
     },
     "录": {
         "char": "录",
-        "count": 11
+        "count": 12
     },
     "秒": {
         "char": "秒",
@@ -9017,7 +9041,7 @@
     },
     "农": {
         "char": "农",
-        "count": 7
+        "count": 8
     },
     "遐": {
         "char": "遐",
@@ -9033,11 +9057,11 @@
     },
     "韡": {
         "char": "韡",
-        "count": 4
+        "count": 5
     },
     "勉": {
         "char": "勉",
-        "count": 6
+        "count": 9
     },
     "囤": {
         "char": "囤",
@@ -9049,7 +9073,7 @@
     },
     "赛": {
         "char": "赛",
-        "count": 40
+        "count": 43
     },
     "铘": {
         "char": "铘",
@@ -9061,7 +9085,7 @@
     },
     "党": {
         "char": "党",
-        "count": 7
+        "count": 8
     },
     "即": {
         "char": "即",
@@ -9085,7 +9109,7 @@
     },
     "诤": {
         "char": "诤",
-        "count": 5
+        "count": 6
     },
     "聘": {
         "char": "聘",
@@ -9117,7 +9141,7 @@
     },
     "交": {
         "char": "交",
-        "count": 1
+        "count": 2
     },
     "虚": {
         "char": "虚",
@@ -9145,7 +9169,7 @@
     },
     "览": {
         "char": "览",
-        "count": 2
+        "count": 4
     },
     "麌": {
         "char": "麌",
@@ -9153,7 +9177,7 @@
     },
     "寰": {
         "char": "寰",
-        "count": 11
+        "count": 12
     },
     "翃": {
         "char": "翃",
@@ -9161,7 +9185,7 @@
     },
     "二": {
         "char": "二",
-        "count": 32
+        "count": 33
     },
     "旦": {
         "char": "旦",
@@ -9181,7 +9205,7 @@
     },
     "计": {
         "char": "计",
-        "count": 16
+        "count": 17
     },
     "务": {
         "char": "务",
@@ -9209,7 +9233,7 @@
     },
     "湾": {
         "char": "湾",
-        "count": 3
+        "count": 4
     },
     "婠": {
         "char": "婠",
@@ -9249,7 +9273,7 @@
     },
     "激": {
         "char": "激",
-        "count": 3
+        "count": 4
     },
     "隅": {
         "char": "隅",
@@ -9289,7 +9313,7 @@
     },
     "俭": {
         "char": "俭",
-        "count": 21
+        "count": 22
     },
     "婌": {
         "char": "婌",
@@ -9309,7 +9333,7 @@
     },
     "彭": {
         "char": "彭",
-        "count": 24
+        "count": 27
     },
     "帕": {
         "char": "帕",
@@ -9349,7 +9373,7 @@
     },
     "左": {
         "char": "左",
-        "count": 13
+        "count": 14
     },
     "翱": {
         "char": "翱",
@@ -9365,7 +9389,7 @@
     },
     "督": {
         "char": "督",
-        "count": 1
+        "count": 2
     },
     "皋": {
         "char": "皋",
@@ -9421,7 +9445,7 @@
     },
     "营": {
         "char": "营",
-        "count": 43
+        "count": 44
     },
     "隐": {
         "char": "隐",
@@ -9497,7 +9521,7 @@
     },
     "铿": {
         "char": "铿",
-        "count": 2
+        "count": 3
     },
     "伏": {
         "char": "伏",
@@ -9505,7 +9529,7 @@
     },
     "统": {
         "char": "统",
-        "count": 8
+        "count": 10
     },
     "珽": {
         "char": "珽",
@@ -9513,7 +9537,7 @@
     },
     "弢": {
         "char": "弢",
-        "count": 9
+        "count": 10
     },
     "隋": {
         "char": "隋",
@@ -9565,7 +9589,7 @@
     },
     "囡": {
         "char": "囡",
-        "count": 5
+        "count": 6
     },
     "呇": {
         "char": "呇",
@@ -9589,7 +9613,7 @@
     },
     "咪": {
         "char": "咪",
-        "count": 4
+        "count": 6
     },
     "皎": {
         "char": "皎",
@@ -9597,11 +9621,11 @@
     },
     "朦": {
         "char": "朦",
-        "count": 7
+        "count": 11
     },
     "零": {
         "char": "零",
-        "count": 2
+        "count": 3
     },
     "劢": {
         "char": "劢",
@@ -9633,7 +9657,7 @@
     },
     "侃": {
         "char": "侃",
-        "count": 14
+        "count": 15
     },
     "瀞": {
         "char": "瀞",
@@ -9677,7 +9701,7 @@
     },
     "冀": {
         "char": "冀",
-        "count": 19
+        "count": 20
     },
     "迹": {
         "char": "迹",
@@ -9733,7 +9757,7 @@
     },
     "参": {
         "char": "参",
-        "count": 4
+        "count": 5
     },
     "练": {
         "char": "练",
@@ -9777,7 +9801,7 @@
     },
     "璕": {
         "char": "璕",
-        "count": 1
+        "count": 2
     },
     "镪": {
         "char": "镪",
@@ -9865,11 +9889,11 @@
     },
     "兼": {
         "char": "兼",
-        "count": 1
+        "count": 2
     },
     "桑": {
         "char": "桑",
-        "count": 4
+        "count": 9
     },
     "尼": {
         "char": "尼",
@@ -9881,11 +9905,11 @@
     },
     "早": {
         "char": "早",
-        "count": 4
+        "count": 5
     },
     "烛": {
         "char": "烛",
-        "count": 1
+        "count": 2
     },
     "资": {
         "char": "资",
@@ -9917,7 +9941,7 @@
     },
     "翾": {
         "char": "翾",
-        "count": 3
+        "count": 4
     },
     "畋": {
         "char": "畋",
@@ -9957,7 +9981,7 @@
     },
     "晢": {
         "char": "晢",
-        "count": 2
+        "count": 3
     },
     "翛": {
         "char": "翛",
@@ -9989,11 +10013,11 @@
     },
     "鸾": {
         "char": "鸾",
-        "count": 6
+        "count": 7
     },
     "凉": {
         "char": "凉",
-        "count": 1
+        "count": 2
     },
     "栗": {
         "char": "栗",
@@ -10001,7 +10025,7 @@
     },
     "钤": {
         "char": "钤",
-        "count": 1
+        "count": 3
     },
     "谙": {
         "char": "谙",
@@ -10033,11 +10057,11 @@
     },
     "溯": {
         "char": "溯",
-        "count": 7
+        "count": 8
     },
     "鹂": {
         "char": "鹂",
-        "count": 7
+        "count": 8
     },
     "轾": {
         "char": "轾",
@@ -10061,7 +10085,7 @@
     },
     "涤": {
         "char": "涤",
-        "count": 4
+        "count": 6
     },
     "折": {
         "char": "折",
@@ -10069,7 +10093,7 @@
     },
     "湫": {
         "char": "湫",
-        "count": 3
+        "count": 4
     },
     "妁": {
         "char": "妁",
@@ -10109,7 +10133,7 @@
     },
     "转": {
         "char": "转",
-        "count": 2
+        "count": 4
     },
     "赜": {
         "char": "赜",
@@ -10141,7 +10165,7 @@
     },
     "柘": {
         "char": "柘",
-        "count": 4
+        "count": 6
     },
     "溧": {
         "char": "溧",
@@ -10185,7 +10209,7 @@
     },
     "洽": {
         "char": "洽",
-        "count": 3
+        "count": 4
     },
     "衷": {
         "char": "衷",
@@ -10193,7 +10217,7 @@
     },
     "收": {
         "char": "收",
-        "count": 4
+        "count": 5
     },
     "筑": {
         "char": "筑",
@@ -10233,7 +10257,7 @@
     },
     "迟": {
         "char": "迟",
-        "count": 5
+        "count": 7
     },
     "笍": {
         "char": "笍",
@@ -10273,7 +10297,7 @@
     },
     "改": {
         "char": "改",
-        "count": 11
+        "count": 12
     },
     "砺": {
         "char": "砺",
@@ -10305,11 +10329,11 @@
     },
     "荦": {
         "char": "荦",
-        "count": 2
+        "count": 3
     },
     "争": {
         "char": "争",
-        "count": 13
+        "count": 15
     },
     "寨": {
         "char": "寨",
@@ -10349,7 +10373,7 @@
     },
     "随": {
         "char": "随",
-        "count": 4
+        "count": 5
     },
     "诵": {
         "char": "诵",
@@ -10437,7 +10461,7 @@
     },
     "颀": {
         "char": "颀",
-        "count": 5
+        "count": 6
     },
     "徕": {
         "char": "徕",
@@ -10621,7 +10645,7 @@
     },
     "暘": {
         "char": "暘",
-        "count": 2
+        "count": 3
     },
     "琭": {
         "char": "琭",
@@ -10649,11 +10673,11 @@
     },
     "恪": {
         "char": "恪",
-        "count": 2
+        "count": 3
     },
     "慨": {
         "char": "慨",
-        "count": 2
+        "count": 3
     },
     "秱": {
         "char": "秱",
@@ -10737,7 +10761,7 @@
     },
     "弯": {
         "char": "弯",
-        "count": 3
+        "count": 4
     },
     "玎": {
         "char": "玎",
@@ -10761,7 +10785,7 @@
     },
     "佶": {
         "char": "佶",
-        "count": 2
+        "count": 5
     },
     "沔": {
         "char": "沔",
@@ -10825,7 +10849,7 @@
     },
     "鸽": {
         "char": "鸽",
-        "count": 19
+        "count": 20
     },
     "昨": {
         "char": "昨",
@@ -10893,7 +10917,7 @@
     },
     "亢": {
         "char": "亢",
-        "count": 3
+        "count": 4
     },
     "鼐": {
         "char": "鼐",
@@ -10977,7 +11001,7 @@
     },
     "配": {
         "char": "配",
-        "count": 17
+        "count": 18
     },
     "妲": {
         "char": "妲",
@@ -11041,7 +11065,7 @@
     },
     "玢": {
         "char": "玢",
-        "count": 4
+        "count": 5
     },
     "骉": {
         "char": "骉",
@@ -11125,7 +11149,7 @@
     },
     "桔": {
         "char": "桔",
-        "count": 1
+        "count": 2
     },
     "锖": {
         "char": "锖",
@@ -11177,7 +11201,7 @@
     },
     "禺": {
         "char": "禺",
-        "count": 1
+        "count": 3
     },
     "棼": {
         "char": "棼",
@@ -11357,7 +11381,7 @@
     },
     "页": {
         "char": "页",
-        "count": 4
+        "count": 5
     },
     "婹": {
         "char": "婹",
@@ -11473,7 +11497,7 @@
     },
     "斗": {
         "char": "斗",
-        "count": 4
+        "count": 5
     },
     "漉": {
         "char": "漉",
@@ -11601,11 +11625,11 @@
     },
     "门": {
         "char": "门",
-        "count": 3
+        "count": 4
     },
     "论": {
         "char": "论",
-        "count": 2
+        "count": 3
     },
     "瓅": {
         "char": "瓅",
@@ -11645,7 +11669,7 @@
     },
     "幻": {
         "char": "幻",
-        "count": 4
+        "count": 5
     },
     "哈": {
         "char": "哈",
@@ -11661,7 +11685,7 @@
     },
     "朏": {
         "char": "朏",
-        "count": 1
+        "count": 3
     },
     "翻": {
         "char": "翻",
@@ -11689,7 +11713,7 @@
     },
     "帼": {
         "char": "帼",
-        "count": 1
+        "count": 2
     },
     "鹇": {
         "char": "鹇",
@@ -11709,7 +11733,7 @@
     },
     "闪": {
         "char": "闪",
-        "count": 2
+        "count": 3
     },
     "瑯": {
         "char": "瑯",
@@ -11773,7 +11797,7 @@
     },
     "侬": {
         "char": "侬",
-        "count": 1
+        "count": 2
     },
     "玠": {
         "char": "玠",
@@ -11909,7 +11933,7 @@
     },
     "跟": {
         "char": "跟",
-        "count": 2
+        "count": 3
     },
     "诞": {
         "char": "诞",
@@ -11941,7 +11965,7 @@
     },
     "状": {
         "char": "状",
-        "count": 5
+        "count": 6
     },
     "履": {
         "char": "履",
@@ -12021,7 +12045,7 @@
     },
     "抗": {
         "char": "抗",
-        "count": 1
+        "count": 3
     },
     "暠": {
         "char": "暠",
@@ -12197,7 +12221,7 @@
     },
     "缵": {
         "char": "缵",
-        "count": 1
+        "count": 2
     },
     "砳": {
         "char": "砳",
@@ -12233,7 +12257,7 @@
     },
     "樨": {
         "char": "樨",
-        "count": 1
+        "count": 2
     },
     "卷": {
         "char": "卷",
@@ -12257,7 +12281,7 @@
     },
     "表": {
         "char": "表",
-        "count": 2
+        "count": 3
     },
     "盘": {
         "char": "盘",
@@ -12349,7 +12373,7 @@
     },
     "防": {
         "char": "防",
-        "count": 3
+        "count": 4
     },
     "详": {
         "char": "详",
@@ -12385,7 +12409,7 @@
     },
     "蕗": {
         "char": "蕗",
-        "count": 1
+        "count": 2
     },
     "锭": {
         "char": "锭",
@@ -12529,7 +12553,7 @@
     },
     "勐": {
         "char": "勐",
-        "count": 1
+        "count": 2
     },
     "蔗": {
         "char": "蔗",
@@ -12553,7 +12577,7 @@
     },
     "陟": {
         "char": "陟",
-        "count": 1
+        "count": 2
     },
     "埝": {
         "char": "埝",
@@ -12597,11 +12621,11 @@
     },
     "晹": {
         "char": "晹",
-        "count": 1
+        "count": 2
     },
     "涧": {
         "char": "涧",
-        "count": 1
+        "count": 2
     },
     "薙": {
         "char": "薙",
@@ -12645,7 +12669,7 @@
     },
     "樯": {
         "char": "樯",
-        "count": 1
+        "count": 2
     },
     "靠": {
         "char": "靠",
@@ -12681,7 +12705,7 @@
     },
     "嘎": {
         "char": "嘎",
-        "count": 1
+        "count": 3
     },
     "娒": {
         "char": "娒",
@@ -12837,7 +12861,7 @@
     },
     "溦": {
         "char": "溦",
-        "count": 1
+        "count": 2
     },
     "罹": {
         "char": "罹",
@@ -12883,12 +12907,120 @@
         "char": "查",
         "count": 1
     },
+    "皆": {
+        "char": "皆",
+        "count": 1
+    },
+    "枟": {
+        "char": "枟",
+        "count": 1
+    },
+    "儡": {
+        "char": "儡",
+        "count": 1
+    },
+    "眩": {
+        "char": "眩",
+        "count": 1
+    },
+    "]": {
+        "char": "]",
+        "count": 1
+    },
     "眙": {
         "char": "眙",
         "count": 1
     },
     "锛": {
         "char": "锛",
+        "count": 1
+    },
+    "唱": {
+        "char": "唱",
+        "count": 1
+    },
+    "迨": {
+        "char": "迨",
+        "count": 1
+    },
+    "骎": {
+        "char": "骎",
+        "count": 1
+    },
+    "播": {
+        "char": "播",
+        "count": 2
+    },
+    "雏": {
+        "char": "雏",
+        "count": 1
+    },
+    "姆": {
+        "char": "姆",
+        "count": 1
+    },
+    "揚": {
+        "char": "揚",
+        "count": 1
+    },
+    "畦": {
+        "char": "畦",
+        "count": 1
+    },
+    "蔻": {
+        "char": "蔻",
+        "count": 2
+    },
+    "瑚": {
+        "char": "瑚",
+        "count": 1
+    },
+    "裳": {
+        "char": "裳",
+        "count": 1
+    },
+    "衠": {
+        "char": "衠",
+        "count": 1
+    },
+    "屠": {
+        "char": "屠",
+        "count": 1
+    },
+    "谐": {
+        "char": "谐",
+        "count": 1
+    },
+    "矶": {
+        "char": "矶",
+        "count": 1
+    },
+    "肽": {
+        "char": "肽",
+        "count": 1
+    },
+    "絜": {
+        "char": "絜",
+        "count": 1
+    },
+    "苅": {
+        "char": "苅",
+        "count": 1
+    },
+    "抄": {
+        "char": "抄",
+        "count": 1
+    },
+    "嘻": {
+        "char": "嘻",
+        "count": 1
+    },
+    "倡": {
+        "char": "倡",
+        "count": 2
+    },
+    "箔": {
+        "char": "箔",
         "count": 1
     },
     "洆": {
@@ -13103,10 +13235,6 @@
         "char": "睫",
         "count": 1
     },
-    "倡": {
-        "char": "倡",
-        "count": 1
-    },
     "槙": {
         "char": "槙",
         "count": 1
@@ -13141,10 +13269,6 @@
     },
     "茄": {
         "char": "茄",
-        "count": 1
-    },
-    "播": {
-        "char": "播",
         "count": 1
     },
     "闹": {
