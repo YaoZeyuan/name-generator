@@ -7,6 +7,7 @@
     "build": "vite build",
     "g": "pnpm run generate-name-db",
     "summary": "ts-node script/process_namedb/summary.ts",
+    "handian2json": "ts-node script/generate/handian2json.ts",
     "generate-name-db": "ts-node script/process_namedb/index.ts",
     "h": "echo 'hello world'"
   },

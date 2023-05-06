@@ -1,4 +1,5 @@
 import * as path from "path";
+import * as Type from "./type";
 
 const basePath = path.resolve(__dirname, "..", "..");
 
@@ -14,23 +15,33 @@ export const CharDb_人名字典_Uri = path.resolve(
 
 export const Raw_Char_Db_汉典原始数据_Uri = path.resolve(
   basePath,
-  "chardb/raw_zdic.txt"
+  "database/chardb/raw_zdic.txt"
 );
 
-export const Raw_Char_Db_汉典json数据_Uri = path.resolve(
+export const Raw_Char_Db_汉典_拼音列表_Uri = path.resolve(
   basePath,
-  "chardb/raw_zdic.json"
+  "database/chardb/raw_pinyin_list.json"
 );
 
 export const Char_Db_total_移除多音字_以字为单位_Uri = path.resolve(
   basePath,
-  "chardb/zd_without_muilt_tone.json"
+  "database/chardb/zd_without_muilt_tone_chardb.json"
 );
 
-export const Char_Db_name_char_移除多音字_姓名用字_以字为单位_Uri =
-  path.resolve(basePath, "chardb/zd_name_chardb.json");
+export const Char_Db_name_char_移除多音字_姓名用字_最少出现1次_Uri =
+  path.resolve(basePath, "database/chardb/zd_name_chardb_min_1.json");
+export const Char_Db_name_char_移除多音字_姓名用字_最少出现2次_Uri =
+  path.resolve(basePath, "database/chardb/zd_name_chardb_min_2.json");
+export const Char_Db_name_char_移除多音字_姓名用字_最少出现3次_Uri =
+  path.resolve(basePath, "database/chardb/zd_name_chardb_min_3.json");
+export const Char_Db_name_char_移除多音字_姓名用字_最少出现4次_Uri =
+  path.resolve(basePath, "database/chardb/zd_name_chardb_min_4.json");
+export const Char_Db_name_char_移除多音字_姓名用字_最少出现5次_Uri =
+  path.resolve(basePath, "database/chardb/zd_name_chardb_min_5.json");
+export const Char_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri =
+  path.resolve(basePath, "database/chardb/zd_name_chardb_min_10.json");
 
-export const 音调_Map = {
+export const 音调_Map: Record<string, Type.Type_音调> = {
   ü: 1,
   ǜ: 4,
   ǚ: 3,

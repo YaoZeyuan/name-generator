@@ -12,3 +12,12 @@ export type Char = {
 export type CharDB = {
   [char: string]: Char;
 };
+
+export type Char_Pinyin = {
+  char: "衍" | string;
+  pinyin: "yǎn" | string;
+  tone: 1 | 2 | 3 | 4;
+  pinyin_without_tone: "yan" | string;
+};
+
+export type Type_音调 = 1 | 2 | 3 | 4;
