@@ -1,5 +1,7 @@
 # 起名生成器
 
+在线预览: https://www.yaozeyuan.online/name-generator/
+
 基本思路
 
 任何中文名, 都由姓+两个中文字符构成. 其中名的发音必为所有可能中文发音的组合
