@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
-import { useDebounceFn } from "ahooks";
-import PinyinList from "@/../database/chardb/raw_pinyin_list.json";
-import NameCharDb_Min_1 from "@/../database/chardb/zd_name_chardb_min_1.json";
-import NameCharDb_Min_5 from "@/../database/chardb/zd_name_chardb_min_5.json";
-import NameCharDb_Min_10 from "@/../database/chardb/zd_name_chardb_min_10.json";
+import PinyinList from "@/../database/char_db/raw_pinyin_list.json";
+// import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
+// import PinyinDb_Min_5 from "@/../database/pinyin_db/zd_name_pinyin_db_min_5.json";
+import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.json";
 import * as Type from "@/../script/common/type";
 
 import { Button, Input } from "antd";
@@ -18,6 +17,19 @@ const Const_Storage_姓氏_Key = `${Const_Storage_Key}_family_name`;
 const Const_Storage_需过滤字列表_Key = `${Const_Storage_Key}_Need_Fileter_Char`;
 const Const_Storage_Char_Leve_Key = `${Const_Storage_Key}_Char_Level`;
 
+const Tool = {
+  getPinyinOfChar(char: string) {
+    let pinyinList: Type.Char_With_Pinyin[] = [];
+
+    for (const item of PinyinList as Type.Char_With_Pinyin[]) {
+      if (item.char === char) {
+        pinyinList.push(item);
+      }
+    }
+    return pinyinList;
+  },
+};
+
 // 所有可选字列表
 let TotalCharOptionList: Types.Type_Char_Option[] = [];
 
@@ -27,20 +39,20 @@ const char_level =
     | 1
     | 2) || 0;
 // 根据汉字级别, 设定所使用的选项集
-let Pinyin_Database_Map: Type.CharPinyinDB;
+let Pinyin_Database_Map: Type.Pinyin_Db = PinyinDb_Min_10 as Type.Pinyin_Db;
 
-switch (char_level) {
-  case 0:
-    Pinyin_Database_Map = NameCharDb_Min_1;
-    break;
-  case 1:
-    Pinyin_Database_Map = NameCharDb_Min_5;
-    break;
-  case 2:
-  default:
-    Pinyin_Database_Map = NameCharDb_Min_10;
-    break;
-}
+// switch (char_level) {
+//   case 0:
+//     Pinyin_Database_Map = PinyinDb_Min_1 as Type.Pinyin_Db;
+//     break;
+//   case 1:
+//     Pinyin_Database_Map = PinyinDb_Min_5 as Type.Pinyin_Db;
+//     break;
+//   case 2:
+//   default:
+//     Pinyin_Database_Map = PinyinDb_Min_10 as Type.Pinyin_Db;
+//     break;
+// }
 
 for (let pinyin of Object.keys(Pinyin_Database_Map)) {
   let pinyin_option_list = Pinyin_Database_Map[pinyin].option_list;
@@ -48,7 +60,7 @@ for (let pinyin of Object.keys(Pinyin_Database_Map)) {
     let option: Types.Type_Char_Option = {
       key: `${item.pinyin}-${item.char}`,
       text: `${item.pinyin}-${item.char}`,
-      char_item: item,
+      char_item: item.char_list[0],
     };
     TotalCharOptionList.push(option);
   }
@@ -105,13 +117,15 @@ export default () => {
 
   let generateAllNameList = (char_姓氏: string) => {
     let nameList: Types.Type_Name[] = [];
-    let char_姓氏_最后一个字 = 总字库[char_姓氏?.[char_姓氏.length - 1] || ""];
+    let char_姓氏_最后一个字 = Tool.getPinyinOfChar(
+      char_姓氏?.[char_姓氏.length - 1] || ""
+    )[0];
 
     let needFileterCharList = input_需过滤字列表.split("");
     // 使用set, 方便过滤掉重复的拼音
     let needFileterPinyinSet = new Set();
     for (let needFileterChar of needFileterCharList) {
-      let pinyin = 总字库[needFileterChar]?.pinyin;
+      let pinyin = Tool.getPinyinOfChar(needFileterChar)[0]?.pinyin;
       if (pinyin) {
         needFileterPinyinSet.add(pinyin);
       }
