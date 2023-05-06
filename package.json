@@ -6,6 +6,7 @@
     "start": "vite",
     "build": "vite build",
     "g": "pnpm run generate-name-db",
+    "summary": "ts-node script/process_namedb/summary.ts",
     "generate-name-db": "ts-node script/process_namedb/index.ts",
     "h": "echo 'hello world'"
   },

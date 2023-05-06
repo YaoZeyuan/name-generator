@@ -69,7 +69,7 @@ async function asyncRunner() {
     return b.count - a.count;
   });
 
-  fs.writeFileSync(Const.CharDb_Uri, JSON.stringify(value, null, 4));
+  fs.writeFileSync(Const.CharDb_raw_人名_Uri, JSON.stringify(value, null, 4));
   console.log(
     `执行完毕, 共解析人名${totalUserNameCount}个, 汇总到${value.length}个可用于起名的字符`
   );
