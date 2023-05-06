@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as fs from "fs";
-import * as Const from "./const";
-import * as Type from "./type";
+import * as Const from "../common/const";
+import * as Type from "../common/type";
 
 /**
  * 返回合法人名用字
