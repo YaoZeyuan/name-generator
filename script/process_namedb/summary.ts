@@ -7,7 +7,7 @@ const totalNameRecord = 161733;
 const totalCharUse = 3294;
 
 async function asyncRunner() {
-  const content = fs.readFileSync(Const.CharDb_raw_人名_Uri).toString();
+  const content = fs.readFileSync(Const.CharDb_人名列表_Uri).toString();
   const itemList: Type.Char[] = JSON.parse(content);
   // 输出统计数据
   const perList = [99, 95, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 1];
@@ -40,8 +40,8 @@ async function asyncRunner() {
     }
 
     console.log(
-      `被使用次数小于等于${chatCount}的字共${total - pos}个, 占比${Math.floor(
-        ((total - pos) / total) * 100
+      `被使用数大于${chatCount}次的字共${pos}个, 占比${Math.floor(
+        (pos / total) * 100
       )}%`
     );
   }
