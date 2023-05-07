@@ -10,7 +10,11 @@ import * as CharDb from "../../../database/char_db/zd_without_muilt_tone_char_db
 export function trans2LegalString(str: string) {
   let charList = str.split("");
   let legalList: string[] = charList.filter((item) => {
-    return isCharLegal(item);
+    let itemCode = item.charCodeAt(0);
+    if (0x4e00 <= itemCode && itemCode <= 0x9fa5) {
+      return true;
+    }
+    return false;
   });
   return legalList.join("");
 }
@@ -32,7 +36,7 @@ export function isCharLegal(char: string) {
  */
 export function getScoreOfName(char1: string, char2: string) {
   // @ts-ignore
-  let score = RawCharDb[char1]?.count ?? 0 + RawCharDb[char2]?.count ?? 0;
+  let score = CharDb[char1]?.count ?? 0 + CharDb[char2]?.count ?? 0;
   return score;
 }
 
