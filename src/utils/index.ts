@@ -1,5 +1,4 @@
 import * as CommonType from "@/../script/common/type";
-import * as Type from "@/resource/type";
 import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
 
 export function getValueByStorage(key: string, defaultValue: any) {
@@ -84,7 +83,7 @@ export function generateLegalNameList({
    */
   legal_PinyinDb: CommonType.Pinyin_Db;
 }) {
-  let nameList: Type.Type_Name[] = [];
+  let nameList: CommonType.Type_Name[] = [];
 
   const pinyinSet_同音字 = new Set();
   for (let char_排除字 of char_排除字_list) {
@@ -258,7 +257,7 @@ export function generateLegalNameList({
   for (let firstPinyinKey of Object.keys(totalOption)) {
     let firstPinyin = totalOption[firstPinyinKey];
     for (let option of firstPinyin.optionList) {
-      const name: Type.Type_Name = {
+      const name: CommonType.Type_Name = {
         姓氏: char_姓_全部,
         人名_第一个字: {
           ...firstPinyin,

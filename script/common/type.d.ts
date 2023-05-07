@@ -58,3 +58,13 @@ export type Pinyin_Db = Record<
 >;
 
 export type Type_音调 = 1 | 2 | 3 | 4;
+
+export type Type_Name = {
+  姓氏: Char_With_Pinyin[];
+  人名_第一个字: Pinyin_of_Char;
+  人名_第二个字: Pinyin_of_Char;
+  /**
+   * 示例姓名
+   */
+  demoStr: string;
+};
