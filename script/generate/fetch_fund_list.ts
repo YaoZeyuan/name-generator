@@ -17,16 +17,31 @@ async function asyncSleep() {
  */
 async function asyncRunner() {
   console.log("开始抓取基金列表");
-  const str = fs.readFileSync(Const.Char_Db_私募汇总_Uri).toString();
-  const rawRecordList: {
+  const uriList = [
+    "/home/yao/www/share/name_generator/database/fund_db/私募基金汇总_至1198页.json",
+    "/home/yao/www/share/name_generator/database/fund_db/私募基金汇总_至2097页.json",
+    "/home/yao/www/share/name_generator/database/fund_db/私募基金汇总.json",
+  ];
+  const recordList: {
     fundName: string;
     managerName: string;
-  }[] = JSON.parse(str);
+  }[] = [];
+  for (let uri of uriList) {
+    const str = fs.readFileSync(uri).toString();
+    const rawRecordList = JSON.parse(str);
+    for (let rawRecord of rawRecordList) {
+      recordList.push({
+        fundName: rawRecord.fundName,
+        managerName: rawRecord.managerName,
+      });
+    }
+  }
+
   let fundNameList: string[] = [];
   let fundCropList: string[] = [];
-  for (let rawRecord of rawRecordList) {
-    fundNameList.push(rawRecord.fundName);
-    fundCropList.push(rawRecord.managerName);
+  for (let rawRecord of recordList) {
+    fundNameList.push(rawRecord.fundName.trim());
+    fundCropList.push(rawRecord.managerName.trim());
   }
 
   fundNameList = Array.from(new Set(fundNameList));
@@ -45,44 +60,4 @@ async function asyncRunner() {
   console.log("字典文件处理完毕");
 }
 
-/**
- * 将汉典数据转换为json
- */
-async function asyncFetch() {
-  console.log("开始抓取基金列表");
-  let recordList: any[] = [];
-  for (let pageNo = 2097; pageNo < 2157; pageNo++) {
-    console.log(`开始获取第${pageNo + 1}页数据`);
-    let res = await axios.post(
-      `https://gs.amac.org.cn/amac-infodisc/api/pof/fund?rand=0.028522124553462813&page=${pageNo}&size=100`,
-      {
-        headers: {
-          accept: "application/json, text/javascript, */*; q=0.01",
-          "accept-language": "zh-CN,zh;q=0.9",
-          "cache-control": "no-cache",
-          "content-type": "application/json",
-          pragma: "no-cache",
-        },
-      }
-    );
-    const data = res.data;
-    for (let item of data.content) {
-      recordList.push(item);
-    }
-    console.log(
-      `第${pageNo}页数据获取完毕, 目前共获取数据${recordList.length}条`
-    );
-    fs.writeFileSync(
-      Const.Char_Db_私募汇总_Uri,
-      JSON.stringify(recordList, null, 2)
-    );
-    await asyncSleep();
-  }
-  fs.writeFileSync(
-    Const.Char_Db_私募汇总_Uri,
-    JSON.stringify(recordList, null, 2)
-  );
-  console.log("字典文件处理完毕");
-}
-
-asyncFetch();
+asyncRunner();
