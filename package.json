@@ -9,6 +9,7 @@
     "summary": "ts-node script/process_namedb/summary.ts",
     "handian2json": "ts-node script/generate/handian2json.ts",
     "generate-name-db": "ts-node script/process_namedb/index.ts",
+    "parse-fund": "ts-node script/process_namedb/parse_fund.ts",
     "h": "echo 'hello world'"
   },
   "dependencies": {

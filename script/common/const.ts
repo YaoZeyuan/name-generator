@@ -102,6 +102,23 @@ export const Pinyin_Db_姓名用字_最少出现100次_Uri = path.resolve(
   "database/pinyin_db/zd_name_pinyin_db_min_100.json"
 );
 
+export const Raw_已知私募基金名_Path = path.resolve(
+  basePath,
+  "database/fund_db"
+);
+export const Char_Db_私募用字统计_Uri = path.resolve(
+  basePath,
+  "database/char_db/私募基金用字_统计.json"
+);
+export const Char_Db_私募用字列表_Uri = path.resolve(
+  basePath,
+  "database/char_db/私募基金用字_列表.json"
+);
+export const Char_Db_私募用字txt_Uri = path.resolve(
+  basePath,
+  "database/char_db/私募基金用字_纯文本.txt"
+);
+
 export const 音调_Map: Record<string, Type.Type_音调> = {
   ü: 1,
   ǜ: 4,

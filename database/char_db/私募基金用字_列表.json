@@ -1,0 +1,5322 @@
+[
+    {
+        "char": "稳",
+        "count": 4953
+    },
+    {
+        "char": "融",
+        "count": 4887
+    },
+    {
+        "char": "汇",
+        "count": 4834
+    },
+    {
+        "char": "成",
+        "count": 4743
+    },
+    {
+        "char": "盈",
+        "count": 4652
+    },
+    {
+        "char": "国",
+        "count": 4230
+    },
+    {
+        "char": "财",
+        "count": 4163
+    },
+    {
+        "char": "本",
+        "count": 4100
+    },
+    {
+        "char": "山",
+        "count": 3965
+    },
+    {
+        "char": "恒",
+        "count": 3958
+    },
+    {
+        "char": "东",
+        "count": 3858
+    },
+    {
+        "char": "二",
+        "count": 3820
+    },
+    {
+        "char": "泰",
+        "count": 3715
+    },
+    {
+        "char": "银",
+        "count": 3695
+    },
+    {
+        "char": "集",
+        "count": 3642
+    },
+    {
+        "char": "瑞",
+        "count": 3549
+    },
+    {
+        "char": "波",
+        "count": 3540
+    },
+    {
+        "char": "三",
+        "count": 3489
+    },
+    {
+        "char": "嘉",
+        "count": 3485
+    },
+    {
+        "char": "通",
+        "count": 3325
+    },
+    {
+        "char": "鼎",
+        "count": 3319
+    },
+    {
+        "char": "选",
+        "count": 3311
+    },
+    {
+        "char": "利",
+        "count": 3117
+    },
+    {
+        "char": "德",
+        "count": 3011
+    },
+    {
+        "char": "健",
+        "count": 3001
+    },
+    {
+        "char": "鑫",
+        "count": 2970
+    },
+    {
+        "char": "方",
+        "count": 2957
+    },
+    {
+        "char": "丰",
+        "count": 2849
+    },
+    {
+        "char": "智",
+        "count": 2774
+    },
+    {
+        "char": "江",
+        "count": 2764
+    },
+    {
+        "char": "源",
+        "count": 2719
+    },
+    {
+        "char": "项",
+        "count": 2719
+    },
+    {
+        "char": "元",
+        "count": 2673
+    },
+    {
+        "char": "专",
+        "count": 2660
+    },
+    {
+        "char": "杭",
+        "count": 2585
+    },
+    {
+        "char": "增",
+        "count": 2565
+    },
+    {
+        "char": "城",
+        "count": 2551
+    },
+    {
+        "char": "略",
+        "count": 2497
+    },
+    {
+        "char": "策",
+        "count": 2493
+    },
+    {
+        "char": "对",
+        "count": 2477
+    },
+    {
+        "char": "星",
+        "count": 2338
+    },
+    {
+        "char": "达",
+        "count": 2318
+    },
+    {
+        "char": "世",
+        "count": 2310
+    },
+    {
+        "char": "保",
+        "count": 2277
+    },
+    {
+        "char": "前",
+        "count": 2259
+    },
+    {
+        "char": "润",
+        "count": 2218
+    },
+    {
+        "char": "享",
+        "count": 2200
+    },
+    {
+        "char": "定",
+        "count": 2198
+    },
+    {
+        "char": "睿",
+        "count": 2186
+    },
+    {
+        "char": "精",
+        "count": 2125
+    },
+    {
+        "char": "赢",
+        "count": 2065
+    },
+    {
+        "char": "建",
+        "count": 2028
+    },
+    {
+        "char": "道",
+        "count": 1978
+    },
+    {
+        "char": "优",
+        "count": 1958
+    },
+    {
+        "char": "诚",
+        "count": 1922
+    },
+    {
+        "char": "值",
+        "count": 1895
+    },
+    {
+        "char": "多",
+        "count": 1890
+    },
+    {
+        "char": "科",
+        "count": 1869
+    },
+    {
+        "char": "博",
+        "count": 1825
+    },
+    {
+        "char": "聚",
+        "count": 1810
+    },
+    {
+        "char": "展",
+        "count": 1791
+    },
+    {
+        "char": "青",
+        "count": 1765
+    },
+    {
+        "char": "西",
+        "count": 1761
+    },
+    {
+        "char": "阳",
+        "count": 1751
+    },
+    {
+        "char": "联",
+        "count": 1742
+    },
+    {
+        "char": "平",
+        "count": 1733
+    },
+    {
+        "char": "宝",
+        "count": 1731
+    },
+    {
+        "char": "益",
+        "count": 1729
+    },
+    {
+        "char": "型",
+        "count": 1718
+    },
+    {
+        "char": "高",
+        "count": 1712
+    },
+    {
+        "char": "云",
+        "count": 1652
+    },
+    {
+        "char": "明",
+        "count": 1600
+    },
+    {
+        "char": "龙",
+        "count": 1579
+    },
+    {
+        "char": "湖",
+        "count": 1575
+    },
+    {
+        "char": "壹",
+        "count": 1561
+    },
+    {
+        "char": "弘",
+        "count": 1552
+    },
+    {
+        "char": "九",
+        "count": 1541
+    },
+    {
+        "char": "津",
+        "count": 1522
+    },
+    {
+        "char": "珠",
+        "count": 1506
+    },
+    {
+        "char": "商",
+        "count": 1495
+    },
+    {
+        "char": "税",
+        "count": 1486
+    },
+    {
+        "char": "进",
+        "count": 1467
+    },
+    {
+        "char": "梅",
+        "count": 1448
+    },
+    {
+        "char": "浙",
+        "count": 1447
+    },
+    {
+        "char": "宏",
+        "count": 1446
+    },
+    {
+        "char": "君",
+        "count": 1398
+    },
+    {
+        "char": "光",
+        "count": 1353
+    },
+    {
+        "char": "永",
+        "count": 1342
+    },
+    {
+        "char": "凯",
+        "count": 1334
+    },
+    {
+        "char": "河",
+        "count": 1312
+    },
+    {
+        "char": "福",
+        "count": 1295
+    },
+    {
+        "char": "五",
+        "count": 1262
+    },
+    {
+        "char": "文",
+        "count": 1261
+    },
+    {
+        "char": "航",
+        "count": 1217
+    },
+    {
+        "char": "诺",
+        "count": 1214
+    },
+    {
+        "char": "十",
+        "count": 1200
+    },
+    {
+        "char": "鸿",
+        "count": 1200
+    },
+    {
+        "char": "启",
+        "count": 1184
+    },
+    {
+        "char": "板",
+        "count": 1162
+    },
+    {
+        "char": "子",
+        "count": 1120
+    },
+    {
+        "char": "债",
+        "count": 1069
+    },
+    {
+        "char": "尊",
+        "count": 1060
+    },
+    {
+        "char": "歌",
+        "count": 1045
+    },
+    {
+        "char": "泓",
+        "count": 1041
+    },
+    {
+        "char": "时",
+        "count": 1038
+    },
+    {
+        "char": "康",
+        "count": 1012
+    },
+    {
+        "char": "易",
+        "count": 1007
+    },
+    {
+        "char": "门",
+        "count": 1004
+    },
+    {
+        "char": "工",
+        "count": 1003
+    },
+    {
+        "char": "购",
+        "count": 993
+    },
+    {
+        "char": "之",
+        "count": 951
+    },
+    {
+        "char": "泉",
+        "count": 945
+    },
+    {
+        "char": "民",
+        "count": 943
+    },
+    {
+        "char": "生",
+        "count": 941
+    },
+    {
+        "char": "锦",
+        "count": 925
+    },
+    {
+        "char": "牛",
+        "count": 924
+    },
+    {
+        "char": "四",
+        "count": 911
+    },
+    {
+        "char": "开",
+        "count": 906
+    },
+    {
+        "char": "领",
+        "count": 892
+    },
+    {
+        "char": "汉",
+        "count": 888
+    },
+    {
+        "char": "众",
+        "count": 875
+    },
+    {
+        "char": "特",
+        "count": 873
+    },
+    {
+        "char": "力",
+        "count": 863
+    },
+    {
+        "char": "实",
+        "count": 859
+    },
+    {
+        "char": "收",
+        "count": 849
+    },
+    {
+        "char": "致",
+        "count": 847
+    },
+    {
+        "char": "全",
+        "count": 844
+    },
+    {
+        "char": "惠",
+        "count": 840
+    },
+    {
+        "char": "林",
+        "count": 827
+    },
+    {
+        "char": "隆",
+        "count": 823
+    },
+    {
+        "char": "钜",
+        "count": 818
+    },
+    {
+        "char": "慧",
+        "count": 814
+    },
+    {
+        "char": "取",
+        "count": 811
+    },
+    {
+        "char": "庆",
+        "count": 793
+    },
+    {
+        "char": "禾",
+        "count": 791
+    },
+    {
+        "char": "尔",
+        "count": 789
+    },
+    {
+        "char": "千",
+        "count": 787
+    },
+    {
+        "char": "水",
+        "count": 773
+    },
+    {
+        "char": "亚",
+        "count": 771
+    },
+    {
+        "char": "外",
+        "count": 764
+    },
+    {
+        "char": "久",
+        "count": 763
+    },
+    {
+        "char": "蓝",
+        "count": 757
+    },
+    {
+        "char": "尚",
+        "count": 742
+    },
+    {
+        "char": "技",
+        "count": 738
+    },
+    {
+        "char": "余",
+        "count": 736
+    },
+    {
+        "char": "善",
+        "count": 731
+    },
+    {
+        "char": "坤",
+        "count": 729
+    },
+    {
+        "char": "顺",
+        "count": 727
+    },
+    {
+        "char": "毅",
+        "count": 726
+    },
+    {
+        "char": "鹏",
+        "count": 719
+    },
+    {
+        "char": "普",
+        "count": 715
+    },
+    {
+        "char": "祥",
+        "count": 712
+    },
+    {
+        "char": "货",
+        "count": 704
+    },
+    {
+        "char": "动",
+        "count": 704
+    },
+    {
+        "char": "卓",
+        "count": 696
+    },
+    {
+        "char": "复",
+        "count": 682
+    },
+    {
+        "char": "英",
+        "count": 679
+    },
+    {
+        "char": "级",
+        "count": 675
+    },
+    {
+        "char": "邦",
+        "count": 673
+    },
+    {
+        "char": "腾",
+        "count": 669
+    },
+    {
+        "char": "宇",
+        "count": 667
+    },
+    {
+        "char": "设",
+        "count": 664
+    },
+    {
+        "char": "清",
+        "count": 664
+    },
+    {
+        "char": "势",
+        "count": 664
+    },
+    {
+        "char": "灵",
+        "count": 664
+    },
+    {
+        "char": "厚",
+        "count": 663
+    },
+    {
+        "char": "武",
+        "count": 661
+    },
+    {
+        "char": "贸",
+        "count": 657
+    },
+    {
+        "char": "百",
+        "count": 653
+    },
+    {
+        "char": "吉",
+        "count": 651
+    },
+    {
+        "char": "辰",
+        "count": 640
+    },
+    {
+        "char": "升",
+        "count": 640
+    },
+    {
+        "char": "荣",
+        "count": 638
+    },
+    {
+        "char": "川",
+        "count": 634
+    },
+    {
+        "char": "视",
+        "count": 632
+    },
+    {
+        "char": "目",
+        "count": 630
+    },
+    {
+        "char": "峰",
+        "count": 630
+    },
+    {
+        "char": "控",
+        "count": 630
+    },
+    {
+        "char": "沣",
+        "count": 630
+    },
+    {
+        "char": "医",
+        "count": 628
+    },
+    {
+        "char": "马",
+        "count": 608
+    },
+    {
+        "char": "熙",
+        "count": 607
+    },
+    {
+        "char": "七",
+        "count": 599
+    },
+    {
+        "char": "品",
+        "count": 595
+    },
+    {
+        "char": "裕",
+        "count": 593
+    },
+    {
+        "char": "格",
+        "count": 588
+    },
+    {
+        "char": "置",
+        "count": 584
+    },
+    {
+        "char": "佳",
+        "count": 568
+    },
+    {
+        "char": "小",
+        "count": 565
+    },
+    {
+        "char": "唐",
+        "count": 565
+    },
+    {
+        "char": "美",
+        "count": 561
+    },
+    {
+        "char": "胜",
+        "count": 554
+    },
+    {
+        "char": "辉",
+        "count": 542
+    },
+    {
+        "char": "悦",
+        "count": 542
+    },
+    {
+        "char": "磐",
+        "count": 540
+    },
+    {
+        "char": "岛",
+        "count": 540
+    },
+    {
+        "char": "亿",
+        "count": 539
+    },
+    {
+        "char": "锋",
+        "count": 537
+    },
+    {
+        "char": "太",
+        "count": 535
+    },
+    {
+        "char": "园",
+        "count": 534
+    },
+    {
+        "char": "程",
+        "count": 529
+    },
+    {
+        "char": "越",
+        "count": 521
+    },
+    {
+        "char": "春",
+        "count": 507
+    },
+    {
+        "char": "招",
+        "count": 504
+    },
+    {
+        "char": "琴",
+        "count": 502
+    },
+    {
+        "char": "木",
+        "count": 501
+    },
+    {
+        "char": "双",
+        "count": 495
+    },
+    {
+        "char": "指",
+        "count": 492
+    },
+    {
+        "char": "咨",
+        "count": 491
+    },
+    {
+        "char": "昌",
+        "count": 491
+    },
+    {
+        "char": "客",
+        "count": 490
+    },
+    {
+        "char": "询",
+        "count": 485
+    },
+    {
+        "char": "列",
+        "count": 483
+    },
+    {
+        "char": "经",
+        "count": 482
+    },
+    {
+        "char": "配",
+        "count": 479
+    },
+    {
+        "char": "紫",
+        "count": 478
+    },
+    {
+        "char": "常",
+        "count": 474
+    },
+    {
+        "char": "八",
+        "count": 474
+    },
+    {
+        "char": "锐",
+        "count": 472
+    },
+    {
+        "char": "农",
+        "count": 471
+    },
+    {
+        "char": "夏",
+        "count": 470
+    },
+    {
+        "char": "影",
+        "count": 468
+    },
+    {
+        "char": "洲",
+        "count": 468
+    },
+    {
+        "char": "雪",
+        "count": 466
+    },
+    {
+        "char": "物",
+        "count": 455
+    },
+    {
+        "char": "贰",
+        "count": 453
+    },
+    {
+        "char": "构",
+        "count": 451
+    },
+    {
+        "char": "活",
+        "count": 446
+    },
+    {
+        "char": "代",
+        "count": 446
+    },
+    {
+        "char": "耀",
+        "count": 444
+    },
+    {
+        "char": "沃",
+        "count": 443
+    },
+    {
+        "char": "桥",
+        "count": 441
+    },
+    {
+        "char": "点",
+        "count": 440
+    },
+    {
+        "char": "镇",
+        "count": 439
+    },
+    {
+        "char": "黄",
+        "count": 438
+    },
+    {
+        "char": "向",
+        "count": 438
+    },
+    {
+        "char": "球",
+        "count": 437
+    },
+    {
+        "char": "昆",
+        "count": 436
+    },
+    {
+        "char": "浦",
+        "count": 436
+    },
+    {
+        "char": "圆",
+        "count": 432
+    },
+    {
+        "char": "套",
+        "count": 431
+    },
+    {
+        "char": "宽",
+        "count": 428
+    },
+    {
+        "char": "际",
+        "count": 425
+    },
+    {
+        "char": "人",
+        "count": 424
+    },
+    {
+        "char": "户",
+        "count": 424
+    },
+    {
+        "char": "添",
+        "count": 423
+    },
+    {
+        "char": "先",
+        "count": 416
+    },
+    {
+        "char": "花",
+        "count": 413
+    },
+    {
+        "char": "交",
+        "count": 409
+    },
+    {
+        "char": "环",
+        "count": 408
+    },
+    {
+        "char": "纳",
+        "count": 401
+    },
+    {
+        "char": "日",
+        "count": 400
+    },
+    {
+        "char": "象",
+        "count": 399
+    },
+    {
+        "char": "仁",
+        "count": 397
+    },
+    {
+        "char": "贵",
+        "count": 396
+    },
+    {
+        "char": "飞",
+        "count": 392
+    },
+    {
+        "char": "衡",
+        "count": 390
+    },
+    {
+        "char": "月",
+        "count": 389
+    },
+    {
+        "char": "堂",
+        "count": 389
+    },
+    {
+        "char": "晖",
+        "count": 386
+    },
+    {
+        "char": "晨",
+        "count": 386
+    },
+    {
+        "char": "徽",
+        "count": 380
+    },
+    {
+        "char": "岩",
+        "count": 379
+    },
+    {
+        "char": "斯",
+        "count": 378
+    },
+    {
+        "char": "流",
+        "count": 375
+    },
+    {
+        "char": "友",
+        "count": 374
+    },
+    {
+        "char": "锡",
+        "count": 373
+    },
+    {
+        "char": "瀚",
+        "count": 372
+    },
+    {
+        "char": "立",
+        "count": 368
+    },
+    {
+        "char": "路",
+        "count": 367
+    },
+    {
+        "char": "葵",
+        "count": 364
+    },
+    {
+        "char": "贝",
+        "count": 360
+    },
+    {
+        "char": "硅",
+        "count": 359
+    },
+    {
+        "char": "年",
+        "count": 358
+    },
+    {
+        "char": "茂",
+        "count": 358
+    },
+    {
+        "char": "粤",
+        "count": 358
+    },
+    {
+        "char": "来",
+        "count": 357
+    },
+    {
+        "char": "首",
+        "count": 356
+    },
+    {
+        "char": "翔",
+        "count": 353
+    },
+    {
+        "char": "赛",
+        "count": 352
+    },
+    {
+        "char": "旭",
+        "count": 352
+    },
+    {
+        "char": "疗",
+        "count": 351
+    },
+    {
+        "char": "玉",
+        "count": 347
+    },
+    {
+        "char": "电",
+        "count": 346
+    },
+    {
+        "char": "湾",
+        "count": 345
+    },
+    {
+        "char": "扬",
+        "count": 345
+    },
+    {
+        "char": "桐",
+        "count": 344
+    },
+    {
+        "char": "机",
+        "count": 344
+    },
+    {
+        "char": "骏",
+        "count": 344
+    },
+    {
+        "char": "浩",
+        "count": 342
+    },
+    {
+        "char": "鹰",
+        "count": 341
+    },
+    {
+        "char": "宜",
+        "count": 338
+    },
+    {
+        "char": "陕",
+        "count": 337
+    },
+    {
+        "char": "树",
+        "count": 336
+    },
+    {
+        "char": "森",
+        "count": 336
+    },
+    {
+        "char": "旗",
+        "count": 335
+    },
+    {
+        "char": "臻",
+        "count": 333
+    },
+    {
+        "char": "组",
+        "count": 333
+    },
+    {
+        "char": "誉",
+        "count": 332
+    },
+    {
+        "char": "维",
+        "count": 330
+    },
+    {
+        "char": "至",
+        "count": 329
+    },
+    {
+        "char": "巨",
+        "count": 329
+    },
+    {
+        "char": "翼",
+        "count": 326
+    },
+    {
+        "char": "固",
+        "count": 326
+    },
+    {
+        "char": "植",
+        "count": 326
+    },
+    {
+        "char": "芜",
+        "count": 325
+    },
+    {
+        "char": "法",
+        "count": 323
+    },
+    {
+        "char": "兆",
+        "count": 323
+    },
+    {
+        "char": "玖",
+        "count": 323
+    },
+    {
+        "char": "承",
+        "count": 320
+    },
+    {
+        "char": "望",
+        "count": 319
+    },
+    {
+        "char": "雅",
+        "count": 319
+    },
+    {
+        "char": "潭",
+        "count": 318
+    },
+    {
+        "char": "米",
+        "count": 317
+    },
+    {
+        "char": "菁",
+        "count": 317
+    },
+    {
+        "char": "互",
+        "count": 316
+    },
+    {
+        "char": "团",
+        "count": 314
+    },
+    {
+        "char": "昊",
+        "count": 312
+    },
+    {
+        "char": "铭",
+        "count": 310
+    },
+    {
+        "char": "叁",
+        "count": 306
+    },
+    {
+        "char": "黑",
+        "count": 306
+    },
+    {
+        "char": "然",
+        "count": 306
+    },
+    {
+        "char": "申",
+        "count": 306
+    },
+    {
+        "char": "舟",
+        "count": 306
+    },
+    {
+        "char": "运",
+        "count": 304
+    },
+    {
+        "char": "岳",
+        "count": 303
+    },
+    {
+        "char": "松",
+        "count": 302
+    },
+    {
+        "char": "义",
+        "count": 302
+    },
+    {
+        "char": "欧",
+        "count": 301
+    },
+    {
+        "char": "洋",
+        "count": 300
+    },
+    {
+        "char": "务",
+        "count": 297
+    },
+    {
+        "char": "母",
+        "count": 292
+    },
+    {
+        "char": "神",
+        "count": 292
+    },
+    {
+        "char": "网",
+        "count": 291
+    },
+    {
+        "char": "迪",
+        "count": 291
+    },
+    {
+        "char": "古",
+        "count": 290
+    },
+    {
+        "char": "旅",
+        "count": 289
+    },
+    {
+        "char": "第",
+        "count": 282
+    },
+    {
+        "char": "域",
+        "count": 279
+    },
+    {
+        "char": "铁",
+        "count": 279
+    },
+    {
+        "char": "滨",
+        "count": 279
+    },
+    {
+        "char": "威",
+        "count": 277
+    },
+    {
+        "char": "未",
+        "count": 270
+    },
+    {
+        "char": "圣",
+        "count": 270
+    },
+    {
+        "char": "土",
+        "count": 266
+    },
+    {
+        "char": "果",
+        "count": 266
+    },
+    {
+        "char": "连",
+        "count": 265
+    },
+    {
+        "char": "容",
+        "count": 264
+    },
+    {
+        "char": "学",
+        "count": 263
+    },
+    {
+        "char": "欣",
+        "count": 262
+    },
+    {
+        "char": "伟",
+        "count": 261
+    },
+    {
+        "char": "志",
+        "count": 260
+    },
+    {
+        "char": "恩",
+        "count": 259
+    },
+    {
+        "char": "虎",
+        "count": 258
+    },
+    {
+        "char": "杰",
+        "count": 255
+    },
+    {
+        "char": "喜",
+        "count": 254
+    },
+    {
+        "char": "璞",
+        "count": 253
+    },
+    {
+        "char": "原",
+        "count": 252
+    },
+    {
+        "char": "逸",
+        "count": 252
+    },
+    {
+        "char": "钰",
+        "count": 250
+    },
+    {
+        "char": "兰",
+        "count": 249
+    },
+    {
+        "char": "政",
+        "count": 248
+    },
+    {
+        "char": "嘴",
+        "count": 247
+    },
+    {
+        "char": "雷",
+        "count": 246
+    },
+    {
+        "char": "药",
+        "count": 244
+    },
+    {
+        "char": "游",
+        "count": 241
+    },
+    {
+        "char": "微",
+        "count": 240
+    },
+    {
+        "char": "现",
+        "count": 240
+    },
+    {
+        "char": "制",
+        "count": 239
+    },
+    {
+        "char": "链",
+        "count": 238
+    },
+    {
+        "char": "凤",
+        "count": 235
+    },
+    {
+        "char": "下",
+        "count": 233
+    },
+    {
+        "char": "意",
+        "count": 233
+    },
+    {
+        "char": "御",
+        "count": 231
+    },
+    {
+        "char": "帆",
+        "count": 226
+    },
+    {
+        "char": "极",
+        "count": 226
+    },
+    {
+        "char": "白",
+        "count": 225
+    },
+    {
+        "char": "租",
+        "count": 224
+    },
+    {
+        "char": "晋",
+        "count": 219
+    },
+    {
+        "char": "朗",
+        "count": 219
+    },
+    {
+        "char": "阖",
+        "count": 219
+    },
+    {
+        "char": "溪",
+        "count": 219
+    },
+    {
+        "char": "巴",
+        "count": 217
+    },
+    {
+        "char": "昇",
+        "count": 215
+    },
+    {
+        "char": "院",
+        "count": 215
+    },
+    {
+        "char": "衍",
+        "count": 214
+    },
+    {
+        "char": "轩",
+        "count": 214
+    },
+    {
+        "char": "田",
+        "count": 214
+    },
+    {
+        "char": "鸣",
+        "count": 213
+    },
+    {
+        "char": "火",
+        "count": 212
+    },
+    {
+        "char": "类",
+        "count": 212
+    },
+    {
+        "char": "季",
+        "count": 209
+    },
+    {
+        "char": "候",
+        "count": 208
+    },
+    {
+        "char": "款",
+        "count": 207
+    },
+    {
+        "char": "弈",
+        "count": 204
+    },
+    {
+        "char": "改",
+        "count": 204
+    },
+    {
+        "char": "图",
+        "count": 203
+    },
+    {
+        "char": "麦",
+        "count": 203
+    },
+    {
+        "char": "协",
+        "count": 202
+    },
+    {
+        "char": "捷",
+        "count": 202
+    },
+    {
+        "char": "持",
+        "count": 201
+    },
+    {
+        "char": "鲁",
+        "count": 199
+    },
+    {
+        "char": "费",
+        "count": 199
+    },
+    {
+        "char": "淘",
+        "count": 198
+    },
+    {
+        "char": "赋",
+        "count": 197
+    },
+    {
+        "char": "加",
+        "count": 197
+    },
+    {
+        "char": "造",
+        "count": 197
+    },
+    {
+        "char": "盘",
+        "count": 196
+    },
+    {
+        "char": "鲸",
+        "count": 196
+    },
+    {
+        "char": "汽",
+        "count": 196
+    },
+    {
+        "char": "麟",
+        "count": 196
+    },
+    {
+        "char": "爱",
+        "count": 194
+    },
+    {
+        "char": "勤",
+        "count": 194
+    },
+    {
+        "char": "良",
+        "count": 193
+    },
+    {
+        "char": "克",
+        "count": 193
+    },
+    {
+        "char": "佑",
+        "count": 193
+    },
+    {
+        "char": "筹",
+        "count": 192
+    },
+    {
+        "char": "孚",
+        "count": 192
+    },
+    {
+        "char": "名",
+        "count": 189
+    },
+    {
+        "char": "庄",
+        "count": 189
+    },
+    {
+        "char": "如",
+        "count": 189
+    },
+    {
+        "char": "梧",
+        "count": 188
+    },
+    {
+        "char": "澜",
+        "count": 188
+    },
+    {
+        "char": "宸",
+        "count": 188
+    },
+    {
+        "char": "赁",
+        "count": 188
+    },
+    {
+        "char": "昭",
+        "count": 187
+    },
+    {
+        "char": "喆",
+        "count": 186
+    },
+    {
+        "char": "主",
+        "count": 185
+    },
+    {
+        "char": "回",
+        "count": 183
+    },
+    {
+        "char": "引",
+        "count": 182
+    },
+    {
+        "char": "凡",
+        "count": 181
+    },
+    {
+        "char": "起",
+        "count": 180
+    },
+    {
+        "char": "映",
+        "count": 177
+    },
+    {
+        "char": "晓",
+        "count": 177
+    },
+    {
+        "char": "泛",
+        "count": 176
+    },
+    {
+        "char": "施",
+        "count": 175
+    },
+    {
+        "char": "消",
+        "count": 175
+    },
+    {
+        "char": "罗",
+        "count": 174
+    },
+    {
+        "char": "报",
+        "count": 173
+    },
+    {
+        "char": "里",
+        "count": 172
+    },
+    {
+        "char": "溢",
+        "count": 172
+    },
+    {
+        "char": "艺",
+        "count": 172
+    },
+    {
+        "char": "哲",
+        "count": 172
+    },
+    {
+        "char": "梦",
+        "count": 172
+    },
+    {
+        "char": "使",
+        "count": 171
+    },
+    {
+        "char": "豪",
+        "count": 171
+    },
+    {
+        "char": "汯",
+        "count": 171
+    },
+    {
+        "char": "伍",
+        "count": 170
+    },
+    {
+        "char": "驰",
+        "count": 170
+    },
+    {
+        "char": "典",
+        "count": 169
+    },
+    {
+        "char": "颢",
+        "count": 169
+    },
+    {
+        "char": "础",
+        "count": 166
+    },
+    {
+        "char": "村",
+        "count": 165
+    },
+    {
+        "char": "湘",
+        "count": 162
+    },
+    {
+        "char": "秀",
+        "count": 159
+    },
+    {
+        "char": "狮",
+        "count": 159
+    },
+    {
+        "char": "盟",
+        "count": 158
+    },
+    {
+        "char": "念",
+        "count": 157
+    },
+    {
+        "char": "导",
+        "count": 155
+    },
+    {
+        "char": "军",
+        "count": 155
+    },
+    {
+        "char": "账",
+        "count": 155
+    },
+    {
+        "char": "枫",
+        "count": 154
+    },
+    {
+        "char": "犇",
+        "count": 154
+    },
+    {
+        "char": "肥",
+        "count": 154
+    },
+    {
+        "char": "棉",
+        "count": 154
+    },
+    {
+        "char": "纬",
+        "count": 153
+    },
+    {
+        "char": "玺",
+        "count": 152
+    },
+    {
+        "char": "钱",
+        "count": 152
+    },
+    {
+        "char": "线",
+        "count": 152
+    },
+    {
+        "char": "沪",
+        "count": 152
+    },
+    {
+        "char": "族",
+        "count": 151
+    },
+    {
+        "char": "麒",
+        "count": 151
+    },
+    {
+        "char": "颐",
+        "count": 150
+    },
+    {
+        "char": "均",
+        "count": 150
+    },
+    {
+        "char": "材",
+        "count": 149
+    },
+    {
+        "char": "临",
+        "count": 149
+    },
+    {
+        "char": "问",
+        "count": 147
+    },
+    {
+        "char": "步",
+        "count": 145
+    },
+    {
+        "char": "鲲",
+        "count": 145
+    },
+    {
+        "char": "香",
+        "count": 144
+    },
+    {
+        "char": "牧",
+        "count": 144
+    },
+    {
+        "char": "翰",
+        "count": 144
+    },
+    {
+        "char": "皓",
+        "count": 144
+    },
+    {
+        "char": "纯",
+        "count": 144
+    },
+    {
+        "char": "畅",
+        "count": 143
+    },
+    {
+        "char": "积",
+        "count": 142
+    },
+    {
+        "char": "息",
+        "count": 142
+    },
+    {
+        "char": "韬",
+        "count": 141
+    },
+    {
+        "char": "淡",
+        "count": 141
+    },
+    {
+        "char": "振",
+        "count": 140
+    },
+    {
+        "char": "渤",
+        "count": 140
+    },
+    {
+        "char": "超",
+        "count": 138
+    },
+    {
+        "char": "老",
+        "count": 138
+    },
+    {
+        "char": "跃",
+        "count": 138
+    },
+    {
+        "char": "部",
+        "count": 138
+    },
+    {
+        "char": "险",
+        "count": 137
+    },
+    {
+        "char": "潮",
+        "count": 137
+    },
+    {
+        "char": "呈",
+        "count": 137
+    },
+    {
+        "char": "丝",
+        "count": 136
+    },
+    {
+        "char": "者",
+        "count": 135
+    },
+    {
+        "char": "秋",
+        "count": 135
+    },
+    {
+        "char": "舜",
+        "count": 135
+    },
+    {
+        "char": "贤",
+        "count": 134
+    },
+    {
+        "char": "霖",
+        "count": 133
+    },
+    {
+        "char": "洛",
+        "count": 133
+    },
+    {
+        "char": "真",
+        "count": 133
+    },
+    {
+        "char": "虹",
+        "count": 132
+    },
+    {
+        "char": "战",
+        "count": 132
+    },
+    {
+        "char": "玄",
+        "count": 132
+    },
+    {
+        "char": "口",
+        "count": 131
+    },
+    {
+        "char": "池",
+        "count": 131
+    },
+    {
+        "char": "暖",
+        "count": 131
+    },
+    {
+        "char": "铂",
+        "count": 131
+    },
+    {
+        "char": "旺",
+        "count": 131
+    },
+    {
+        "char": "鹭",
+        "count": 130
+    },
+    {
+        "char": "自",
+        "count": 129
+    },
+    {
+        "char": "莱",
+        "count": 129
+    },
+    {
+        "char": "境",
+        "count": 129
+    },
+    {
+        "char": "丹",
+        "count": 129
+    },
+    {
+        "char": "昱",
+        "count": 129
+    },
+    {
+        "char": "矿",
+        "count": 128
+    },
+    {
+        "char": "乡",
+        "count": 128
+    },
+    {
+        "char": "嵩",
+        "count": 128
+    },
+    {
+        "char": "佰",
+        "count": 127
+    },
+    {
+        "char": "柒",
+        "count": 127
+    },
+    {
+        "char": "谦",
+        "count": 127
+    },
+    {
+        "char": "希",
+        "count": 126
+    },
+    {
+        "char": "仑",
+        "count": 126
+    },
+    {
+        "char": "因",
+        "count": 126
+    },
+    {
+        "char": "贯",
+        "count": 126
+    },
+    {
+        "char": "比",
+        "count": 125
+    },
+    {
+        "char": "满",
+        "count": 125
+    },
+    {
+        "char": "群",
+        "count": 125
+    },
+    {
+        "char": "岸",
+        "count": 124
+    },
+    {
+        "char": "熠",
+        "count": 124
+    },
+    {
+        "char": "剑",
+        "count": 124
+    },
+    {
+        "char": "顾",
+        "count": 123
+    },
+    {
+        "char": "澳",
+        "count": 123
+    },
+    {
+        "char": "禹",
+        "count": 123
+    },
+    {
+        "char": "府",
+        "count": 123
+    },
+    {
+        "char": "涵",
+        "count": 122
+    },
+    {
+        "char": "杨",
+        "count": 122
+    },
+    {
+        "char": "曜",
+        "count": 122
+    },
+    {
+        "char": "仓",
+        "count": 122
+    },
+    {
+        "char": "伦",
+        "count": 121
+    },
+    {
+        "char": "静",
+        "count": 120
+    },
+    {
+        "char": "倍",
+        "count": 120
+    },
+    {
+        "char": "温",
+        "count": 120
+    },
+    {
+        "char": "塔",
+        "count": 119
+    },
+    {
+        "char": "贷",
+        "count": 119
+    },
+    {
+        "char": "洪",
+        "count": 119
+    },
+    {
+        "char": "仕",
+        "count": 119
+    },
+    {
+        "char": "擎",
+        "count": 118
+    },
+    {
+        "char": "煜",
+        "count": 118
+    },
+    {
+        "char": "雁",
+        "count": 118
+    },
+    {
+        "char": "蕴",
+        "count": 117
+    },
+    {
+        "char": "涛",
+        "count": 117
+    },
+    {
+        "char": "乌",
+        "count": 116
+    },
+    {
+        "char": "缘",
+        "count": 116
+    },
+    {
+        "char": "仙",
+        "count": 115
+    },
+    {
+        "char": "钧",
+        "count": 115
+    },
+    {
+        "char": "贫",
+        "count": 115
+    },
+    {
+        "char": "橙",
+        "count": 115
+    },
+    {
+        "char": "幻",
+        "count": 115
+    },
+    {
+        "char": "榕",
+        "count": 115
+    },
+    {
+        "char": "以",
+        "count": 114
+    },
+    {
+        "char": "藤",
+        "count": 114
+    },
+    {
+        "char": "态",
+        "count": 114
+    },
+    {
+        "char": "凰",
+        "count": 114
+    },
+    {
+        "char": "软",
+        "count": 114
+    },
+    {
+        "char": "珺",
+        "count": 114
+    },
+    {
+        "char": "灏",
+        "count": 113
+    },
+    {
+        "char": "璟",
+        "count": 113
+    },
+    {
+        "char": "曦",
+        "count": 113
+    },
+    {
+        "char": "性",
+        "count": 112
+    },
+    {
+        "char": "侨",
+        "count": 111
+    },
+    {
+        "char": "橡",
+        "count": 111
+    },
+    {
+        "char": "营",
+        "count": 111
+    },
+    {
+        "char": "张",
+        "count": 111
+    },
+    {
+        "char": "标",
+        "count": 110
+    },
+    {
+        "char": "媒",
+        "count": 110
+    },
+    {
+        "char": "曼",
+        "count": 110
+    },
+    {
+        "char": "居",
+        "count": 110
+    },
+    {
+        "char": "禧",
+        "count": 110
+    },
+    {
+        "char": "界",
+        "count": 109
+    },
+    {
+        "char": "碧",
+        "count": 109
+    },
+    {
+        "char": "绝",
+        "count": 109
+    },
+    {
+        "char": "遇",
+        "count": 109
+    },
+    {
+        "char": "言",
+        "count": 109
+    },
+    {
+        "char": "殊",
+        "count": 109
+    },
+    {
+        "char": "绍",
+        "count": 108
+    },
+    {
+        "char": "霍",
+        "count": 108
+    },
+    {
+        "char": "幸",
+        "count": 107
+    },
+    {
+        "char": "想",
+        "count": 107
+    },
+    {
+        "char": "祺",
+        "count": 107
+    },
+    {
+        "char": "根",
+        "count": 107
+    },
+    {
+        "char": "吴",
+        "count": 107
+    },
+    {
+        "char": "料",
+        "count": 106
+    },
+    {
+        "char": "瀛",
+        "count": 106
+    },
+    {
+        "char": "禄",
+        "count": 106
+    },
+    {
+        "char": "奕",
+        "count": 105
+    },
+    {
+        "char": "质",
+        "count": 105
+    },
+    {
+        "char": "秦",
+        "count": 105
+    },
+    {
+        "char": "章",
+        "count": 105
+    },
+    {
+        "char": "倚",
+        "count": 104
+    },
+    {
+        "char": "唯",
+        "count": 104
+    },
+    {
+        "char": "桂",
+        "count": 103
+    },
+    {
+        "char": "谐",
+        "count": 103
+    },
+    {
+        "char": "崇",
+        "count": 102
+    },
+    {
+        "char": "今",
+        "count": 102
+    },
+    {
+        "char": "甲",
+        "count": 101
+    },
+    {
+        "char": "晶",
+        "count": 101
+    },
+    {
+        "char": "盐",
+        "count": 101
+    },
+    {
+        "char": "屹",
+        "count": 100
+    },
+    {
+        "char": "玛",
+        "count": 100
+    },
+    {
+        "char": "烟",
+        "count": 100
+    },
+    {
+        "char": "冀",
+        "count": 99
+    },
+    {
+        "char": "荆",
+        "count": 99
+    },
+    {
+        "char": "彩",
+        "count": 98
+    },
+    {
+        "char": "演",
+        "count": 98
+    },
+    {
+        "char": "速",
+        "count": 98
+    },
+    {
+        "char": "峡",
+        "count": 98
+    },
+    {
+        "char": "玑",
+        "count": 97
+    },
+    {
+        "char": "宣",
+        "count": 97
+    },
+    {
+        "char": "途",
+        "count": 96
+    },
+    {
+        "char": "彤",
+        "count": 96
+    },
+    {
+        "char": "谊",
+        "count": 95
+    },
+    {
+        "char": "渡",
+        "count": 94
+    },
+    {
+        "char": "渝",
+        "count": 94
+    },
+    {
+        "char": "零",
+        "count": 93
+    },
+    {
+        "char": "楚",
+        "count": 93
+    },
+    {
+        "char": "绣",
+        "count": 93
+    },
+    {
+        "char": "怡",
+        "count": 93
+    },
+    {
+        "char": "臣",
+        "count": 93
+    },
+    {
+        "char": "凌",
+        "count": 92
+    },
+    {
+        "char": "才",
+        "count": 92
+    },
+    {
+        "char": "轮",
+        "count": 92
+    },
+    {
+        "char": "萨",
+        "count": 92
+    },
+    {
+        "char": "野",
+        "count": 91
+    },
+    {
+        "char": "养",
+        "count": 91
+    },
+    {
+        "char": "娱",
+        "count": 91
+    },
+    {
+        "char": "韵",
+        "count": 91
+    },
+    {
+        "char": "澎",
+        "count": 91
+    },
+    {
+        "char": "迈",
+        "count": 90
+    },
+    {
+        "char": "滚",
+        "count": 90
+    },
+    {
+        "char": "坚",
+        "count": 89
+    },
+    {
+        "char": "庭",
+        "count": 89
+    },
+    {
+        "char": "闻",
+        "count": 89
+    },
+    {
+        "char": "简",
+        "count": 89
+    },
+    {
+        "char": "肯",
+        "count": 89
+    },
+    {
+        "char": "赣",
+        "count": 89
+    },
+    {
+        "char": "搏",
+        "count": 88
+    },
+    {
+        "char": "邮",
+        "count": 88
+    },
+    {
+        "char": "征",
+        "count": 88
+    },
+    {
+        "char": "穗",
+        "count": 87
+    },
+    {
+        "char": "励",
+        "count": 87
+    },
+    {
+        "char": "赤",
+        "count": 87
+    },
+    {
+        "char": "瑾",
+        "count": 86
+    },
+    {
+        "char": "迎",
+        "count": 85
+    },
+    {
+        "char": "素",
+        "count": 85
+    },
+    {
+        "char": "棠",
+        "count": 84
+    },
+    {
+        "char": "肆",
+        "count": 84
+    },
+    {
+        "char": "亮",
+        "count": 83
+    },
+    {
+        "char": "潜",
+        "count": 83
+    },
+    {
+        "char": "郡",
+        "count": 83
+    },
+    {
+        "char": "浪",
+        "count": 82
+    },
+    {
+        "char": "迁",
+        "count": 82
+    },
+    {
+        "char": "式",
+        "count": 81
+    },
+    {
+        "char": "朋",
+        "count": 81
+    },
+    {
+        "char": "蜂",
+        "count": 81
+    },
+    {
+        "char": "俊",
+        "count": 80
+    },
+    {
+        "char": "治",
+        "count": 80
+    },
+    {
+        "char": "铜",
+        "count": 80
+    },
+    {
+        "char": "用",
+        "count": 79
+    },
+    {
+        "char": "驱",
+        "count": 79
+    },
+    {
+        "char": "豫",
+        "count": 79
+    },
+    {
+        "char": "粮",
+        "count": 79
+    },
+    {
+        "char": "捌",
+        "count": 79
+    },
+    {
+        "char": "仟",
+        "count": 79
+    },
+    {
+        "char": "沐",
+        "count": 79
+    },
+    {
+        "char": "舰",
+        "count": 79
+    },
+    {
+        "char": "悟",
+        "count": 78
+    },
+    {
+        "char": "冰",
+        "count": 78
+    },
+    {
+        "char": "缓",
+        "count": 78
+    },
+    {
+        "char": "周",
+        "count": 77
+    },
+    {
+        "char": "层",
+        "count": 77
+    },
+    {
+        "char": "器",
+        "count": 77
+    },
+    {
+        "char": "独",
+        "count": 77
+    },
+    {
+        "char": "赞",
+        "count": 77
+    },
+    {
+        "char": "瓴",
+        "count": 77
+    },
+    {
+        "char": "题",
+        "count": 77
+    },
+    {
+        "char": "煦",
+        "count": 76
+    },
+    {
+        "char": "淮",
+        "count": 76
+    },
+    {
+        "char": "兄",
+        "count": 76
+    },
+    {
+        "char": "怀",
+        "count": 76
+    },
+    {
+        "char": "昂",
+        "count": 75
+    },
+    {
+        "char": "归",
+        "count": 75
+    },
+    {
+        "char": "初",
+        "count": 75
+    },
+    {
+        "char": "墨",
+        "count": 75
+    },
+    {
+        "char": "端",
+        "count": 75
+    },
+    {
+        "char": "雍",
+        "count": 74
+    },
+    {
+        "char": "接",
+        "count": 73
+    },
+    {
+        "char": "扶",
+        "count": 73
+    },
+    {
+        "char": "储",
+        "count": 73
+    },
+    {
+        "char": "靖",
+        "count": 72
+    },
+    {
+        "char": "帝",
+        "count": 72
+    },
+    {
+        "char": "迅",
+        "count": 72
+    },
+    {
+        "char": "礼",
+        "count": 71
+    },
+    {
+        "char": "讯",
+        "count": 71
+    },
+    {
+        "char": "骥",
+        "count": 71
+    },
+    {
+        "char": "骓",
+        "count": 71
+    },
+    {
+        "char": "乔",
+        "count": 71
+    },
+    {
+        "char": "儒",
+        "count": 70
+    },
+    {
+        "char": "鱼",
+        "count": 70
+    },
+    {
+        "char": "暨",
+        "count": 70
+    },
+    {
+        "char": "童",
+        "count": 69
+    },
+    {
+        "char": "秉",
+        "count": 69
+    },
+    {
+        "char": "骐",
+        "count": 69
+    },
+    {
+        "char": "竹",
+        "count": 69
+    },
+    {
+        "char": "昀",
+        "count": 69
+    },
+    {
+        "char": "登",
+        "count": 68
+    },
+    {
+        "char": "羽",
+        "count": 68
+    },
+    {
+        "char": "翊",
+        "count": 68
+    },
+    {
+        "char": "尼",
+        "count": 67
+    },
+    {
+        "char": "荟",
+        "count": 67
+    },
+    {
+        "char": "作",
+        "count": 67
+    },
+    {
+        "char": "萃",
+        "count": 67
+    },
+    {
+        "char": "陵",
+        "count": 67
+    },
+    {
+        "char": "垠",
+        "count": 67
+    },
+    {
+        "char": "酬",
+        "count": 66
+    },
+    {
+        "char": "续",
+        "count": 66
+    },
+    {
+        "char": "黔",
+        "count": 66
+    },
+    {
+        "char": "邻",
+        "count": 66
+    },
+    {
+        "char": "璨",
+        "count": 66
+    },
+    {
+        "char": "关",
+        "count": 65
+    },
+    {
+        "char": "直",
+        "count": 65
+    },
+    {
+        "char": "铸",
+        "count": 65
+    },
+    {
+        "char": "阜",
+        "count": 65
+    },
+    {
+        "char": "诸",
+        "count": 65
+    },
+    {
+        "char": "杏",
+        "count": 64
+    },
+    {
+        "char": "爵",
+        "count": 64
+    },
+    {
+        "char": "事",
+        "count": 64
+    },
+    {
+        "char": "猎",
+        "count": 64
+    },
+    {
+        "char": "顶",
+        "count": 64
+    },
+    {
+        "char": "寿",
+        "count": 64
+    },
+    {
+        "char": "沛",
+        "count": 63
+    },
+    {
+        "char": "非",
+        "count": 63
+    },
+    {
+        "char": "晔",
+        "count": 63
+    },
+    {
+        "char": "掘",
+        "count": 63
+    },
+    {
+        "char": "辽",
+        "count": 63
+    },
+    {
+        "char": "雄",
+        "count": 62
+    },
+    {
+        "char": "棚",
+        "count": 62
+    },
+    {
+        "char": "放",
+        "count": 62
+    },
+    {
+        "char": "照",
+        "count": 62
+    },
+    {
+        "char": "莲",
+        "count": 62
+    },
+    {
+        "char": "在",
+        "count": 61
+    },
+    {
+        "char": "菱",
+        "count": 61
+    },
+    {
+        "char": "气",
+        "count": 61
+    },
+    {
+        "char": "序",
+        "count": 61
+    },
+    {
+        "char": "梵",
+        "count": 61
+    },
+    {
+        "char": "慈",
+        "count": 60
+    },
+    {
+        "char": "字",
+        "count": 60
+    },
+    {
+        "char": "鞍",
+        "count": 60
+    },
+    {
+        "char": "廊",
+        "count": 60
+    },
+    {
+        "char": "皇",
+        "count": 60
+    },
+    {
+        "char": "守",
+        "count": 60
+    },
+    {
+        "char": "琪",
+        "count": 60
+    },
+    {
+        "char": "士",
+        "count": 60
+    },
+    {
+        "char": "炬",
+        "count": 60
+    },
+    {
+        "char": "瑜",
+        "count": 60
+    },
+    {
+        "char": "萍",
+        "count": 60
+    },
+    {
+        "char": "庐",
+        "count": 59
+    },
+    {
+        "char": "梁",
+        "count": 59
+    },
+    {
+        "char": "移",
+        "count": 59
+    },
+    {
+        "char": "兵",
+        "count": 59
+    },
+    {
+        "char": "酒",
+        "count": 59
+    },
+    {
+        "char": "烨",
+        "count": 58
+    },
+    {
+        "char": "淼",
+        "count": 58
+    },
+    {
+        "char": "寰",
+        "count": 58
+    },
+    {
+        "char": "檀",
+        "count": 58
+    },
+    {
+        "char": "盾",
+        "count": 58
+    },
+    {
+        "char": "钛",
+        "count": 58
+    },
+    {
+        "char": "徐",
+        "count": 58
+    },
+    {
+        "char": "甄",
+        "count": 58
+    },
+    {
+        "char": "甘",
+        "count": 57
+    },
+    {
+        "char": "沁",
+        "count": 57
+    },
+    {
+        "char": "鹤",
+        "count": 57
+    },
+    {
+        "char": "社",
+        "count": 57
+    },
+    {
+        "char": "馨",
+        "count": 57
+    },
+    {
+        "char": "柳",
+        "count": 57
+    },
+    {
+        "char": "允",
+        "count": 57
+    },
+    {
+        "char": "柯",
+        "count": 56
+    },
+    {
+        "char": "珀",
+        "count": 56
+    },
+    {
+        "char": "砖",
+        "count": 56
+    },
+    {
+        "char": "郁",
+        "count": 56
+    },
+    {
+        "char": "咸",
+        "count": 56
+    },
+    {
+        "char": "麓",
+        "count": 56
+    },
+    {
+        "char": "沧",
+        "count": 55
+    },
+    {
+        "char": "懿",
+        "count": 55
+    },
+    {
+        "char": "伏",
+        "count": 55
+    },
+    {
+        "char": "布",
+        "count": 54
+    },
+    {
+        "char": "攻",
+        "count": 54
+    },
+    {
+        "char": "巢",
+        "count": 54
+    },
+    {
+        "char": "荷",
+        "count": 54
+    },
+    {
+        "char": "出",
+        "count": 54
+    },
+    {
+        "char": "循",
+        "count": 54
+    },
+    {
+        "char": "换",
+        "count": 54
+    },
+    {
+        "char": "考",
+        "count": 53
+    },
+    {
+        "char": "戈",
+        "count": 53
+    },
+    {
+        "char": "赐",
+        "count": 53
+    },
+    {
+        "char": "鹿",
+        "count": 53
+    },
+    {
+        "char": "装",
+        "count": 53
+    },
+    {
+        "char": "灿",
+        "count": 53
+    },
+    {
+        "char": "掌",
+        "count": 53
+    },
+    {
+        "char": "烁",
+        "count": 53
+    },
+    {
+        "char": "忠",
+        "count": 53
+    },
+    {
+        "char": "草",
+        "count": 52
+    },
+    {
+        "char": "额",
+        "count": 52
+    },
+    {
+        "char": "傲",
+        "count": 52
+    },
+    {
+        "char": "塘",
+        "count": 52
+    },
+    {
+        "char": "备",
+        "count": 52
+    },
+    {
+        "char": "件",
+        "count": 52
+    },
+    {
+        "char": "郑",
+        "count": 52
+    },
+    {
+        "char": "煌",
+        "count": 51
+    },
+    {
+        "char": "印",
+        "count": 51
+    },
+    {
+        "char": "茗",
+        "count": 51
+    },
+    {
+        "char": "惟",
+        "count": 51
+    },
+    {
+        "char": "脱",
+        "count": 51
+    },
+    {
+        "char": "琨",
+        "count": 51
+    },
+    {
+        "char": "蓉",
+        "count": 51
+    },
+    {
+        "char": "赫",
+        "count": 51
+    },
+    {
+        "char": "甬",
+        "count": 51
+    },
+    {
+        "char": "修",
+        "count": 51
+    },
+    {
+        "char": "依",
+        "count": 51
+    },
+    {
+        "char": "霁",
+        "count": 51
+    },
+    {
+        "char": "潍",
+        "count": 51
+    },
+    {
+        "char": "两",
+        "count": 50
+    },
+    {
+        "char": "库",
+        "count": 50
+    },
+    {
+        "char": "兽",
+        "count": 50
+    },
+    {
+        "char": "弦",
+        "count": 50
+    },
+    {
+        "char": "庸",
+        "count": 50
+    },
+    {
+        "char": "延",
+        "count": 50
+    },
+    {
+        "char": "寓",
+        "count": 50
+    },
+    {
+        "char": "樟",
+        "count": 50
+    },
+    {
+        "char": "毓",
+        "count": 50
+    },
+    {
+        "char": "纽",
+        "count": 50
+    },
+    {
+        "char": "书",
+        "count": 50
+    },
+    {
+        "char": "岁",
+        "count": 49
+    },
+    {
+        "char": "钩",
+        "count": 49
+    },
+    {
+        "char": "跨",
+        "count": 49
+    },
+    {
+        "char": "半",
+        "count": 49
+    },
+    {
+        "char": "霄",
+        "count": 49
+    },
+    {
+        "char": "聪",
+        "count": 49
+    },
+    {
+        "char": "寅",
+        "count": 48
+    },
+    {
+        "char": "黎",
+        "count": 48
+    },
+    {
+        "char": "阁",
+        "count": 48
+    },
+    {
+        "char": "轻",
+        "count": 48
+    },
+    {
+        "char": "昕",
+        "count": 48
+    },
+    {
+        "char": "圭",
+        "count": 48
+    },
+    {
+        "char": "午",
+        "count": 48
+    },
+    {
+        "char": "央",
+        "count": 47
+    },
+    {
+        "char": "包",
+        "count": 47
+    },
+    {
+        "char": "懋",
+        "count": 47
+    },
+    {
+        "char": "必",
+        "count": 47
+    },
+    {
+        "char": "宾",
+        "count": 47
+    },
+    {
+        "char": "敏",
+        "count": 47
+    },
+    {
+        "char": "昶",
+        "count": 47
+    },
+    {
+        "char": "焱",
+        "count": 47
+    },
+    {
+        "char": "珑",
+        "count": 47
+    },
+    {
+        "char": "堃",
+        "count": 47
+    },
+    {
+        "char": "猛",
+        "count": 47
+    },
+    {
+        "char": "熹",
+        "count": 46
+    },
+    {
+        "char": "桦",
+        "count": 46
+    },
+    {
+        "char": "卫",
+        "count": 46
+    },
+    {
+        "char": "耕",
+        "count": 46
+    },
+    {
+        "char": "店",
+        "count": 46
+    },
+    {
+        "char": "快",
+        "count": 46
+    },
+    {
+        "char": "支",
+        "count": 45
+    },
+    {
+        "char": "翠",
+        "count": 45
+    },
+    {
+        "char": "枢",
+        "count": 45
+    },
+    {
+        "char": "拙",
+        "count": 45
+    },
+    {
+        "char": "渊",
+        "count": 45
+    },
+    {
+        "char": "玥",
+        "count": 45
+    },
+    {
+        "char": "由",
+        "count": 45
+    },
+    {
+        "char": "钟",
+        "count": 45
+    },
+    {
+        "char": "销",
+        "count": 44
+    },
+    {
+        "char": "仪",
+        "count": 44
+    },
+    {
+        "char": "座",
+        "count": 44
+    },
+    {
+        "char": "斧",
+        "count": 44
+    },
+    {
+        "char": "尧",
+        "count": 44
+    },
+    {
+        "char": "棋",
+        "count": 44
+    },
+    {
+        "char": "羿",
+        "count": 44
+    },
+    {
+        "char": "逊",
+        "count": 44
+    },
+    {
+        "char": "慕",
+        "count": 44
+    },
+    {
+        "char": "琥",
+        "count": 43
+    },
+    {
+        "char": "眼",
+        "count": 43
+    },
+    {
+        "char": "狼",
+        "count": 43
+    },
+    {
+        "char": "孜",
+        "count": 43
+    },
+    {
+        "char": "算",
+        "count": 43
+    },
+    {
+        "char": "贞",
+        "count": 42
+    },
+    {
+        "char": "匹",
+        "count": 42
+    },
+    {
+        "char": "豹",
+        "count": 42
+    },
+    {
+        "char": "毕",
+        "count": 42
+    },
+    {
+        "char": "廷",
+        "count": 42
+    },
+    {
+        "char": "珩",
+        "count": 42
+    },
+    {
+        "char": "沂",
+        "count": 42
+    },
+    {
+        "char": "井",
+        "count": 42
+    },
+    {
+        "char": "声",
+        "count": 42
+    },
+    {
+        "char": "吨",
+        "count": 42
+    },
+    {
+        "char": "煤",
+        "count": 41
+    },
+    {
+        "char": "则",
+        "count": 41
+    },
+    {
+        "char": "耘",
+        "count": 41
+    },
+    {
+        "char": "熔",
+        "count": 41
+    },
+    {
+        "char": "翎",
+        "count": 41
+    },
+    {
+        "char": "肃",
+        "count": 41
+    },
+    {
+        "char": "阴",
+        "count": 41
+    },
+    {
+        "char": "准",
+        "count": 40
+    },
+    {
+        "char": "索",
+        "count": 40
+    },
+    {
+        "char": "孵",
+        "count": 40
+    },
+    {
+        "char": "亦",
+        "count": 40
+    },
+    {
+        "char": "防",
+        "count": 40
+    },
+    {
+        "char": "醴",
+        "count": 40
+    },
+    {
+        "char": "镒",
+        "count": 40
+    },
+    {
+        "char": "孝",
+        "count": 40
+    },
+    {
+        "char": "谟",
+        "count": 40
+    },
+    {
+        "char": "衢",
+        "count": 39
+    },
+    {
+        "char": "存",
+        "count": 39
+    },
+    {
+        "char": "垒",
+        "count": 39
+    },
+    {
+        "char": "沅",
+        "count": 39
+    },
+    {
+        "char": "楼",
+        "count": 39
+    },
+    {
+        "char": "显",
+        "count": 39
+    },
+    {
+        "char": "匀",
+        "count": 39
+    },
+    {
+        "char": "炎",
+        "count": 39
+    },
+    {
+        "char": "颖",
+        "count": 39
+    },
+    {
+        "char": "哥",
+        "count": 39
+    },
+    {
+        "char": "鋆",
+        "count": 39
+    },
+    {
+        "char": "带",
+        "count": 38
+    },
+    {
+        "char": "宗",
+        "count": 38
+    },
+    {
+        "char": "仲",
+        "count": 38
+    },
+    {
+        "char": "挚",
+        "count": 38
+    },
+    {
+        "char": "沿",
+        "count": 38
+    },
+    {
+        "char": "也",
+        "count": 38
+    },
+    {
+        "char": "烜",
+        "count": 38
+    },
+    {
+        "char": "犸",
+        "count": 38
+    },
+    {
+        "char": "辛",
+        "count": 37
+    },
+    {
+        "char": "熊",
+        "count": 37
+    },
+    {
+        "char": "洁",
+        "count": 37
+    },
+    {
+        "char": "蚁",
+        "count": 37
+    },
+    {
+        "char": "验",
+        "count": 37
+    },
+    {
+        "char": "愚",
+        "count": 37
+    },
+    {
+        "char": "鄞",
+        "count": 37
+    },
+    {
+        "char": "局",
+        "count": 37
+    },
+    {
+        "char": "币",
+        "count": 37
+    },
+    {
+        "char": "萌",
+        "count": 37
+    },
+    {
+        "char": "具",
+        "count": 37
+    },
+    {
+        "char": "乙",
+        "count": 37
+    },
+    {
+        "char": "鉴",
+        "count": 37
+    },
+    {
+        "char": "楠",
+        "count": 37
+    },
+    {
+        "char": "戊",
+        "count": 36
+    },
+    {
+        "char": "魔",
+        "count": 36
+    },
+    {
+        "char": "挂",
+        "count": 36
+    },
+    {
+        "char": "瞻",
+        "count": 36
+    },
+    {
+        "char": "壁",
+        "count": 36
+    },
+    {
+        "char": "范",
+        "count": 36
+    },
+    {
+        "char": "律",
+        "count": 36
+    },
+    {
+        "char": "迦",
+        "count": 36
+    },
+    {
+        "char": "旌",
+        "count": 36
+    },
+    {
+        "char": "寻",
+        "count": 36
+    },
+    {
+        "char": "芳",
+        "count": 35
+    },
+    {
+        "char": "薪",
+        "count": 35
+    },
+    {
+        "char": "皖",
+        "count": 35
+    },
+    {
+        "char": "闰",
+        "count": 35
+    },
+    {
+        "char": "苑",
+        "count": 35
+    },
+    {
+        "char": "整",
+        "count": 35
+    },
+    {
+        "char": "恺",
+        "count": 35
+    },
+    {
+        "char": "珈",
+        "count": 35
+    },
+    {
+        "char": "冬",
+        "count": 35
+    },
+    {
+        "char": "舞",
+        "count": 35
+    },
+    {
+        "char": "最",
+        "count": 35
+    },
+    {
+        "char": "岚",
+        "count": 35
+    },
+    {
+        "char": "颂",
+        "count": 35
+    },
+    {
+        "char": "琦",
+        "count": 35
+    },
+    {
+        "char": "架",
+        "count": 35
+    },
+    {
+        "char": "激",
+        "count": 34
+    },
+    {
+        "char": "酉",
+        "count": 34
+    },
+    {
+        "char": "手",
+        "count": 34
+    },
+    {
+        "char": "翱",
+        "count": 34
+    },
+    {
+        "char": "执",
+        "count": 34
+    },
+    {
+        "char": "冉",
+        "count": 34
+    },
+    {
+        "char": "形",
+        "count": 34
+    },
+    {
+        "char": "犀",
+        "count": 34
+    },
+    {
+        "char": "后",
+        "count": 33
+    },
+    {
+        "char": "抱",
+        "count": 33
+    },
+    {
+        "char": "渔",
+        "count": 33
+    },
+    {
+        "char": "绅",
+        "count": 33
+    },
+    {
+        "char": "勇",
+        "count": 33
+    },
+    {
+        "char": "韩",
+        "count": 33
+    },
+    {
+        "char": "总",
+        "count": 33
+    },
+    {
+        "char": "铧",
+        "count": 33
+    },
+    {
+        "char": "歆",
+        "count": 33
+    },
+    {
+        "char": "襄",
+        "count": 33
+    },
+    {
+        "char": "朔",
+        "count": 33
+    },
+    {
+        "char": "弢",
+        "count": 33
+    },
+    {
+        "char": "丙",
+        "count": 32
+    },
+    {
+        "char": "苍",
+        "count": 32
+    },
+    {
+        "char": "码",
+        "count": 32
+    },
+    {
+        "char": "彼",
+        "count": 32
+    },
+    {
+        "char": "绵",
+        "count": 32
+    },
+    {
+        "char": "贺",
+        "count": 32
+    },
+    {
+        "char": "冶",
+        "count": 32
+    },
+    {
+        "char": "咏",
+        "count": 32
+    },
+    {
+        "char": "稻",
+        "count": 32
+    },
+    {
+        "char": "铼",
+        "count": 32
+    },
+    {
+        "char": "潇",
+        "count": 32
+    },
+    {
+        "char": "珏",
+        "count": 32
+    },
+    {
+        "char": "炜",
+        "count": 32
+    },
+    {
+        "char": "胤",
+        "count": 32
+    },
+    {
+        "char": "统",
+        "count": 31
+    },
+    {
+        "char": "泸",
+        "count": 31
+    },
+    {
+        "char": "芙",
+        "count": 31
+    },
+    {
+        "char": "翌",
+        "count": 31
+    },
+    {
+        "char": "伊",
+        "count": 31
+    },
+    {
+        "char": "功",
+        "count": 31
+    },
+    {
+        "char": "豆",
+        "count": 31
+    },
+    {
+        "char": "漳",
+        "count": 31
+    },
+    {
+        "char": "恪",
+        "count": 31
+    },
+    {
+        "char": "帕",
+        "count": 31
+    },
+    {
+        "char": "垚",
+        "count": 31
+    },
+    {
+        "char": "谨",
+        "count": 30
+    },
+    {
+        "char": "岱",
+        "count": 30
+    },
+    {
+        "char": "概",
+        "count": 30
+    },
+    {
+        "char": "绩",
+        "count": 30
+    },
+    {
+        "char": "磁",
+        "count": 30
+    },
+    {
+        "char": "琛",
+        "count": 30
+    },
+    {
+        "char": "彬",
+        "count": 30
+    },
+    {
+        "char": "镕",
+        "count": 30
+    },
+    {
+        "char": "伴",
+        "count": 30
+    },
+    {
+        "char": "阵",
+        "count": 30
+    },
+    {
+        "char": "师",
+        "count": 30
+    },
+    {
+        "char": "始",
+        "count": 30
+    },
+    {
+        "char": "护",
+        "count": 30
+    },
+    {
+        "char": "热",
+        "count": 29
+    },
+    {
+        "char": "笃",
+        "count": 29
+    },
+    {
+        "char": "珞",
+        "count": 29
+    },
+    {
+        "char": "帮",
+        "count": 29
+    },
+    {
+        "char": "感",
+        "count": 29
+    },
+    {
+        "char": "油",
+        "count": 29
+    },
+    {
+        "char": "汕",
+        "count": 29
+    },
+    {
+        "char": "匠",
+        "count": 29
+    },
+    {
+        "char": "锝",
+        "count": 29
+    },
+    {
+        "char": "获",
+        "count": 29
+    },
+    {
+        "char": "骁",
+        "count": 29
+    },
+    {
+        "char": "冷",
+        "count": 28
+    },
+    {
+        "char": "冈",
+        "count": 28
+    },
+    {
+        "char": "刚",
+        "count": 28
+    },
+    {
+        "char": "湛",
+        "count": 28
+    },
+    {
+        "char": "碳",
+        "count": 28
+    },
+    {
+        "char": "障",
+        "count": 28
+    },
+    {
+        "char": "侠",
+        "count": 28
+    },
+    {
+        "char": "琅",
+        "count": 28
+    },
+    {
+        "char": "舒",
+        "count": 28
+    },
+    {
+        "char": "是",
+        "count": 28
+    },
+    {
+        "char": "珍",
+        "count": 28
+    },
+    {
+        "char": "饶",
+        "count": 28
+    },
+    {
+        "char": "株",
+        "count": 28
+    },
+    {
+        "char": "幂",
+        "count": 28
+    },
+    {
+        "char": "次",
+        "count": 28
+    },
+    {
+        "char": "霜",
+        "count": 28
+    },
+    {
+        "char": "灯",
+        "count": 27
+    },
+    {
+        "char": "所",
+        "count": 27
+    },
+    {
+        "char": "滇",
+        "count": 27
+    },
+    {
+        "char": "音",
+        "count": 27
+    },
+    {
+        "char": "探",
+        "count": 27
+    },
+    {
+        "char": "漫",
+        "count": 27
+    },
+    {
+        "char": "示",
+        "count": 27
+    },
+    {
+        "char": "坛",
+        "count": 27
+    },
+    {
+        "char": "逐",
+        "count": 27
+    },
+    {
+        "char": "卢",
+        "count": 27
+    },
+    {
+        "char": "芝",
+        "count": 27
+    },
+    {
+        "char": "熵",
+        "count": 27
+    },
+    {
+        "char": "谱",
+        "count": 27
+    },
+    {
+        "char": "恳",
+        "count": 27
+    },
+    {
+        "char": "及",
+        "count": 27
+    },
+    {
+        "char": "韶",
+        "count": 27
+    },
+    {
+        "char": "芮",
+        "count": 27
+    },
+    {
+        "char": "呼",
+        "count": 27
+    },
+    {
+        "char": "揽",
+        "count": 27
+    },
+    {
+        "char": "汐",
+        "count": 26
+    },
+    {
+        "char": "宥",
+        "count": 26
+    },
+    {
+        "char": "试",
+        "count": 26
+    },
+    {
+        "char": "曙",
+        "count": 26
+    },
+    {
+        "char": "伞",
+        "count": 26
+    },
+    {
+        "char": "迹",
+        "count": 26
+    },
+    {
+        "char": "陇",
+        "count": 26
+    },
+    {
+        "char": "滩",
+        "count": 26
+    },
+    {
+        "char": "攀",
+        "count": 26
+    },
+    {
+        "char": "菩",
+        "count": 25
+    },
+    {
+        "char": "穿",
+        "count": 25
+    },
+    {
+        "char": "埠",
+        "count": 25
+    },
+    {
+        "char": "镜",
+        "count": 25
+    },
+    {
+        "char": "钦",
+        "count": 25
+    },
+    {
+        "char": "璇",
+        "count": 25
+    },
+    {
+        "char": "求",
+        "count": 25
+    },
+    {
+        "char": "羲",
+        "count": 25
+    },
+    {
+        "char": "丘",
+        "count": 25
+    },
+    {
+        "char": "庚",
+        "count": 25
+    },
+    {
+        "char": "搜",
+        "count": 25
+    },
+    {
+        "char": "竞",
+        "count": 25
+    },
+    {
+        "char": "虞",
+        "count": 25
+    },
+    {
+        "char": "骅",
+        "count": 25
+    },
+    {
+        "char": "播",
+        "count": 25
+    },
+    {
+        "char": "奋",
+        "count": 25
+    },
+    {
+        "char": "璀",
+        "count": 25
+    },
+    {
+        "char": "炫",
+        "count": 25
+    },
+    {
+        "char": "矩",
+        "count": 25
+    },
+    {
+        "char": "辕",
+        "count": 25
+    },
+    {
+        "char": "笙",
+        "count": 25
+    },
+    {
+        "char": "旸",
+        "count": 24
+    },
+    {
+        "char": "丞",
+        "count": 24
+    },
+    {
+        "char": "敬",
+        "count": 24
+    },
+    {
+        "char": "鹅",
+        "count": 24
+    },
+    {
+        "char": "蜀",
+        "count": 24
+    },
+    {
+        "char": "胡",
+        "count": 24
+    },
+    {
+        "char": "闽",
+        "count": 24
+    },
+    {
+        "char": "亭",
+        "count": 24
+    },
+    {
+        "char": "桃",
+        "count": 24
+    },
+    {
+        "char": "位",
+        "count": 24
+    },
+    {
+        "char": "烽",
+        "count": 24
+    },
+    {
+        "char": "聊",
+        "count": 24
+    },
+    {
+        "char": "塑",
+        "count": 24
+    },
+    {
+        "char": "阔",
+        "count": 24
+    },
+    {
+        "char": "浑",
+        "count": 24
+    },
+    {
+        "char": "遵",
+        "count": 24
+    },
+    {
+        "char": "顽",
+        "count": 24
+    },
+    {
+        "char": "浮",
+        "count": 23
+    },
+    {
+        "char": "彦",
+        "count": 23
+    },
+    {
+        "char": "稀",
+        "count": 23
+    },
+    {
+        "char": "盆",
+        "count": 23
+    },
+    {
+        "char": "含",
+        "count": 23
+    },
+    {
+        "char": "桓",
+        "count": 23
+    },
+    {
+        "char": "低",
+        "count": 23
+    },
+    {
+        "char": "慢",
+        "count": 23
+    },
+    {
+        "char": "弗",
+        "count": 23
+    },
+    {
+        "char": "焦",
+        "count": 23
+    },
+    {
+        "char": "唱",
+        "count": 23
+    },
+    {
+        "char": "颀",
+        "count": 23
+    },
+    {
+        "char": "瑰",
+        "count": 23
+    },
+    {
+        "char": "麻",
+        "count": 23
+    },
+    {
+        "char": "于",
+        "count": 23
+    },
+    {
+        "char": "夷",
+        "count": 23
+    },
+    {
+        "char": "梓",
+        "count": 23
+    },
+    {
+        "char": "旻",
+        "count": 23
+    },
+    {
+        "char": "骑",
+        "count": 23
+    },
+    {
+        "char": "勋",
+        "count": 22
+    },
+    {
+        "char": "封",
+        "count": 22
+    },
+    {
+        "char": "变",
+        "count": 22
+    },
+    {
+        "char": "芒",
+        "count": 22
+    },
+    {
+        "char": "帛",
+        "count": 22
+    },
+    {
+        "char": "磊",
+        "count": 22
+    },
+    {
+        "char": "牌",
+        "count": 22
+    },
+    {
+        "char": "蝶",
+        "count": 22
+    },
+    {
+        "char": "尖",
+        "count": 22
+    },
+    {
+        "char": "晴",
+        "count": 22
+    },
+    {
+        "char": "诗",
+        "count": 22
+    },
+    {
+        "char": "览",
+        "count": 22
+    },
+    {
+        "char": "侏",
+        "count": 22
+    },
+    {
+        "char": "遥",
+        "count": 22
+    },
+    {
+        "char": "祖",
+        "count": 22
+    },
+    {
+        "char": "啃",
+        "count": 22
+    },
+    {
+        "char": "驹",
+        "count": 21
+    },
+    {
+        "char": "街",
+        "count": 21
+    },
+    {
+        "char": "边",
+        "count": 21
+    },
+    {
+        "char": "怒",
+        "count": 21
+    },
+    {
+        "char": "菜",
+        "count": 21
+    },
+    {
+        "char": "铎",
+        "count": 21
+    },
+    {
+        "char": "卿",
+        "count": 21
+    },
+    {
+        "char": "滴",
+        "count": 21
+    },
+    {
+        "char": "炳",
+        "count": 21
+    },
+    {
+        "char": "泳",
+        "count": 21
+    },
+    {
+        "char": "粟",
+        "count": 21
+    },
+    {
+        "char": "狄",
+        "count": 21
+    },
+    {
+        "char": "另",
+        "count": 21
+    },
+    {
+        "char": "船",
+        "count": 21
+    },
+    {
+        "char": "宋",
+        "count": 21
+    },
+    {
+        "char": "或",
+        "count": 21
+    },
+    {
+        "char": "肇",
+        "count": 21
+    },
+    {
+        "char": "戌",
+        "count": 20
+    },
+    {
+        "char": "足",
+        "count": 20
+    },
+    {
+        "char": "鸡",
+        "count": 20
+    },
+    {
+        "char": "淇",
+        "count": 20
+    },
+    {
+        "char": "悠",
+        "count": 20
+    },
+    {
+        "char": "铄",
+        "count": 20
+    },
+    {
+        "char": "蜜",
+        "count": 20
+    },
+    {
+        "char": "滑",
+        "count": 20
+    },
+    {
+        "char": "兔",
+        "count": 20
+    },
+    {
+        "char": "细",
+        "count": 20
+    },
+    {
+        "char": "奉",
+        "count": 20
+    },
+    {
+        "char": "洼",
+        "count": 20
+    },
+    {
+        "char": "劵",
+        "count": 20
+    },
+    {
+        "char": "赟",
+        "count": 20
+    },
+    {
+        "char": "鎏",
+        "count": 20
+    },
+    {
+        "char": "葳",
+        "count": 20
+    },
+    {
+        "char": "酷",
+        "count": 20
+    },
+    {
+        "char": "苗",
+        "count": 20
+    },
+    {
+        "char": "旧",
+        "count": 20
+    },
+    {
+        "char": "婷",
+        "count": 20
+    },
+    {
+        "char": "朵",
+        "count": 19
+    },
+    {
+        "char": "狐",
+        "count": 19
+    },
+    {
+        "char": "樱",
+        "count": 19
+    },
+    {
+        "char": "玮",
+        "count": 19
+    },
+    {
+        "char": "鼓",
+        "count": 19
+    },
+    {
+        "char": "蟾",
+        "count": 19
+    },
+    {
+        "char": "卧",
+        "count": 19
+    },
+    {
+        "char": "潼",
+        "count": 19
+    },
+    {
+        "char": "究",
+        "count": 19
+    },
+    {
+        "char": "帅",
+        "count": 19
+    },
+    {
+        "char": "我",
+        "count": 19
+    },
+    {
+        "char": "茶",
+        "count": 19
+    },
+    {
+        "char": "睦",
+        "count": 19
+    },
+    {
+        "char": "瑚",
+        "count": 19
+    },
+    {
+        "char": "樾",
+        "count": 19
+    },
+    {
+        "char": "峻",
+        "count": 19
+    },
+    {
+        "char": "受",
+        "count": 19
+    },
+    {
+        "char": "铨",
+        "count": 19
+    },
+    {
+        "char": "淄",
+        "count": 19
+    },
+    {
+        "char": "而",
+        "count": 18
+    },
+    {
+        "char": "芸",
+        "count": 18
+    },
+    {
+        "char": "榴",
+        "count": 18
+    },
+    {
+        "char": "砺",
+        "count": 18
+    },
+    {
+        "char": "闳",
+        "count": 18
+    },
+    {
+        "char": "愿",
+        "count": 18
+    },
+    {
+        "char": "璧",
+        "count": 18
+    },
+    {
+        "char": "斌",
+        "count": 18
+    },
+    {
+        "char": "绎",
+        "count": 18
+    },
+    {
+        "char": "榆",
+        "count": 18
+    },
+    {
+        "char": "针",
+        "count": 18
+    },
+    {
+        "char": "虑",
+        "count": 18
+    },
+    {
+        "char": "坡",
+        "count": 18
+    },
+    {
+        "char": "短",
+        "count": 18
+    },
+    {
+        "char": "押",
+        "count": 18
+    },
+    {
+        "char": "亘",
+        "count": 18
+    },
+    {
+        "char": "湃",
+        "count": 18
+    },
+    {
+        "char": "默",
+        "count": 18
+    },
+    {
+        "char": "瓯",
+        "count": 18
+    },
+    {
+        "char": "阅",
+        "count": 18
+    },
+    {
+        "char": "赏",
+        "count": 18
+    },
+    {
+        "char": "颜",
+        "count": 18
+    },
+    {
+        "char": "祯",
+        "count": 17
+    },
+    {
+        "char": "样",
+        "count": 17
+    },
+    {
+        "char": "桉",
+        "count": 17
+    },
+    {
+        "char": "睛",
+        "count": 17
+    },
+    {
+        "char": "菊",
+        "count": 17
+    },
+    {
+        "char": "轨",
+        "count": 17
+    },
+    {
+        "char": "旷",
+        "count": 17
+    },
+    {
+        "char": "阶",
+        "count": 17
+    },
+    {
+        "char": "递",
+        "count": 17
+    },
+    {
+        "char": "堰",
+        "count": 17
+    },
+    {
+        "char": "岗",
+        "count": 17
+    },
+    {
+        "char": "培",
+        "count": 17
+    },
+    {
+        "char": "浔",
+        "count": 17
+    },
+    {
+        "char": "翡",
+        "count": 17
+    },
+    {
+        "char": "骞",
+        "count": 17
+    },
+    {
+        "char": "蚨",
+        "count": 17
+    },
+    {
+        "char": "桢",
+        "count": 17
+    },
+    {
+        "char": "桑",
+        "count": 17
+    },
+    {
+        "char": "嬴",
+        "count": 17
+    },
+    {
+        "char": "冕",
+        "count": 17
+    },
+    {
+        "char": "芃",
+        "count": 17
+    },
+    {
+        "char": "蠡",
+        "count": 17
+    },
+    {
+        "char": "命",
+        "count": 16
+    },
+    {
+        "char": "历",
+        "count": 16
+    },
+    {
+        "char": "骊",
+        "count": 16
+    },
+    {
+        "char": "柘",
+        "count": 16
+    },
+    {
+        "char": "瑟",
+        "count": 16
+    },
+    {
+        "char": "戴",
+        "count": 16
+    },
+    {
+        "char": "骄",
+        "count": 16
+    },
+    {
+        "char": "煊",
+        "count": 16
+    },
+    {
+        "char": "戎",
+        "count": 16
+    },
+    {
+        "char": "驭",
+        "count": 16
+    },
+    {
+        "char": "滁",
+        "count": 16
+    },
+    {
+        "char": "蓬",
+        "count": 16
+    },
+    {
+        "char": "燊",
+        "count": 16
+    },
+    {
+        "char": "祈",
+        "count": 16
+    },
+    {
+        "char": "铃",
+        "count": 16
+    },
+    {
+        "char": "弓",
+        "count": 16
+    },
+    {
+        "char": "滔",
+        "count": 16
+    },
+    {
+        "char": "辅",
+        "count": 16
+    },
+    {
+        "char": "骋",
+        "count": 16
+    },
+    {
+        "char": "鹊",
+        "count": 16
+    },
+    {
+        "char": "付",
+        "count": 16
+    },
+    {
+        "char": "携",
+        "count": 16
+    },
+    {
+        "char": "跟",
+        "count": 16
+    },
+    {
+        "char": "钺",
+        "count": 16
+    },
+    {
+        "char": "欢",
+        "count": 16
+    },
+    {
+        "char": "箴",
+        "count": 16
+    },
+    {
+        "char": "瞰",
+        "count": 16
+    },
+    {
+        "char": "幽",
+        "count": 16
+    },
+    {
+        "char": "贡",
+        "count": 16
+    },
+    {
+        "char": "辇",
+        "count": 16
+    },
+    {
+        "char": "貔",
+        "count": 16
+    },
+    {
+        "char": "貅",
+        "count": 16
+    },
+    {
+        "char": "茵",
+        "count": 15
+    },
+    {
+        "char": "议",
+        "count": 15
+    },
+    {
+        "char": "枕",
+        "count": 15
+    },
+    {
+        "char": "住",
+        "count": 15
+    },
+    {
+        "char": "翮",
+        "count": 15
+    },
+    {
+        "char": "镭",
+        "count": 15
+    },
+    {
+        "char": "韦",
+        "count": 15
+    },
+    {
+        "char": "虫",
+        "count": 15
+    },
+    {
+        "char": "祐",
+        "count": 15
+    },
+    {
+        "char": "亳",
+        "count": 15
+    },
+    {
+        "char": "徳",
+        "count": 15
+    },
+    {
+        "char": "站",
+        "count": 15
+    },
+    {
+        "char": "潞",
+        "count": 15
+    },
+    {
+        "char": "巧",
+        "count": 15
+    },
+    {
+        "char": "孔",
+        "count": 15
+    },
+    {
+        "char": "垣",
+        "count": 15
+    },
+    {
+        "char": "鄂",
+        "count": 15
+    },
+    {
+        "char": "槿",
+        "count": 15
+    },
+    {
+        "char": "颍",
+        "count": 15
+    },
+    {
+        "char": "淦",
+        "count": 15
+    },
+    {
+        "char": "写",
+        "count": 15
+    },
+    {
+        "char": "珊",
+        "count": 15
+    },
+    {
+        "char": "彰",
+        "count": 15
+    },
+    {
+        "char": "嵘",
+        "count": 15
+    },
+    {
+        "char": "莉",
+        "count": 15
+    },
+    {
+        "char": "遂",
+        "count": 15
+    },
+    {
+        "char": "璐",
+        "count": 15
+    },
+    {
+        "char": "峥",
+        "count": 15
+    },
+    {
+        "char": "逍",
+        "count": 15
+    }
+]
