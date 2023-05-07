@@ -144,18 +144,18 @@ export default () => {
             let columns = [];
             for (let i = 0; i < nameList.length; i++) {
               let item = nameList[i];
-              columns.push(`${i + 1}-${item.demoStr}`);
+              columns.push(`${item.demoStr}`);
             }
 
-            let str = "姓名,\n" + columns.join(",\n");
+            let str = "姓名\n" + columns.join("\n");
 
             let blob = new Blob([str], {
               type: "text/plain;charset=utf-8",
             });
-            saveAs(blob, "所有可能的姓名发音列表.csv");
+            saveAs(blob, "所有可能的姓名发音列表.txt");
           }}
         >
-          点击下载
+          下载所有姓名方案在电脑查看
         </Button>
       </div>
 
