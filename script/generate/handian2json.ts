@@ -49,29 +49,24 @@ const Tool = {
 
     for (let key of Object.keys(CharDB_All)) {
       let item = CharDB_All[key];
-      if (item.count >= 10) {
-        CharDB_Min_10[key] = item;
-        continue;
-      }
-      if (item.count >= 5) {
-        CharDB_Min_5[key] = item;
-        continue;
-      }
-      if (item.count >= 4) {
-        CharDB_Min_4[key] = item;
-        continue;
-      }
-      if (item.count >= 3) {
-        CharDB_Min_3[key] = item;
-        continue;
+
+      if (item.count >= 1) {
+        CharDB_Min_1[key] = item;
       }
       if (item.count >= 2) {
         CharDB_Min_2[key] = item;
-        continue;
       }
-      if (item.count >= 1) {
-        CharDB_Min_1[key] = item;
-        continue;
+      if (item.count >= 3) {
+        CharDB_Min_3[key] = item;
+      }
+      if (item.count >= 4) {
+        CharDB_Min_4[key] = item;
+      }
+      if (item.count >= 5) {
+        CharDB_Min_5[key] = item;
+      }
+      if (item.count >= 10) {
+        CharDB_Min_10[key] = item;
       }
     }
     return {
