@@ -4,24 +4,20 @@ import PinyinList from "@/../database/char_db/raw_pinyin_list.json";
 // import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
 // import PinyinDb_Min_5 from "@/../database/pinyin_db/zd_name_pinyin_db_min_5.json";
 import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.json";
-import * as Type from "@/../script/common/type";
+import * as CommonType from "@/../script/common/type";
 
 import { Button, Input } from "antd";
 import * as utils from "@/utils";
-import * as Types from "@/types/index";
+import * as Type from "@/resource/type";
+import * as Const from "@/resource/const";
 import NameList from "@/component/name_list";
 import { saveAs } from "file-saver";
 
-const Const_Storage_Key = "name_storage";
-const Const_Storage_姓氏_Key = `${Const_Storage_Key}_family_name`;
-const Const_Storage_需过滤字列表_Key = `${Const_Storage_Key}_Need_Fileter_Char`;
-const Const_Storage_Char_Leve_Key = `${Const_Storage_Key}_Char_Level`;
-
 const Tool = {
   getPinyinOfChar(char: string) {
-    let pinyinList: Type.Char_With_Pinyin[] = [];
+    let pinyinList: CommonType.Char_With_Pinyin[] = [];
 
-    for (const item of PinyinList as Type.Char_With_Pinyin[]) {
+    for (const item of PinyinList as CommonType.Char_With_Pinyin[]) {
       if (item.char === char) {
         pinyinList.push(item);
       }
@@ -31,15 +27,16 @@ const Tool = {
 };
 
 // 所有可选字列表
-let TotalCharOptionList: Types.Type_Char_Option[] = [];
+let TotalCharOptionList: Type.Type_Char_Option[] = [];
 
 const char_level =
-  (parseInt(localStorage.getItem(Const_Storage_Char_Leve_Key) || "0") as
+  (parseInt(localStorage.getItem(Const.Storage_Char_Leve_Key) || "0") as
     | 0
     | 1
     | 2) || 0;
 // 根据汉字级别, 设定所使用的选项集
-let Pinyin_Database_Map: Type.Pinyin_Db = PinyinDb_Min_10 as Type.Pinyin_Db;
+let Pinyin_Database_Map: CommonType.Pinyin_Db =
+  PinyinDb_Min_10 as CommonType.Pinyin_Db;
 
 // switch (char_level) {
 //   case 0:
@@ -57,7 +54,7 @@ let Pinyin_Database_Map: Type.Pinyin_Db = PinyinDb_Min_10 as Type.Pinyin_Db;
 for (let pinyin of Object.keys(Pinyin_Database_Map)) {
   let pinyin_option_list = Pinyin_Database_Map[pinyin].option_list;
   for (let item of pinyin_option_list) {
-    let option: Types.Type_Char_Option = {
+    let option: Type.Type_Char_Option = {
       key: `${item.pinyin}-${item.char}`,
       text: `${item.pinyin}-${item.char}`,
       char_item: item.char_list[0],
@@ -66,9 +63,9 @@ for (let pinyin of Object.keys(Pinyin_Database_Map)) {
   }
 }
 
-let default_input_姓氏_str = localStorage.getItem(Const_Storage_姓氏_Key);
+let default_input_姓氏_str = localStorage.getItem(Const.Storage_姓氏_Key);
 let default_input_需过滤字列表_str = localStorage.getItem(
-  Const_Storage_需过滤字列表_Key
+  Const.Storage_需过滤字列表_Key
 );
 
 let default_input_姓氏 = "";
@@ -85,7 +82,7 @@ try {
 } catch (e) {}
 
 const store = proxy<{
-  nameList: Types.Type_Name[];
+  nameList: Type.Type_Name[];
   totalNameCount: number;
   maxDisplayItem: number;
   columnCount: number;
@@ -116,7 +113,7 @@ export default () => {
   let storeSnapshot = useSnapshot(store);
 
   let generateAllNameList = (char_姓氏: string) => {
-    let nameList: Types.Type_Name[] = [];
+    let nameList: Type.Type_Name[] = [];
     let char_姓氏_最后一个字 = Tool.getPinyinOfChar(
       char_姓氏?.[char_姓氏.length - 1] || ""
     )[0];
@@ -147,7 +144,7 @@ export default () => {
         return isLegal;
       });
       for (let char2 of new_char_2_optionList) {
-        let name: Types.Type_Name = {
+        let name: Type.Type_Name = {
           姓氏: input_姓氏,
           人名_第一个字: char1,
           人名_第二个字: char2,
@@ -168,7 +165,7 @@ export default () => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
             localStorage.setItem(
-              Const_Storage_姓氏_Key,
+              Const.Storage_姓氏_Key,
               JSON.stringify(inputValue)
             );
             set_input_姓氏(inputValue);
@@ -183,7 +180,7 @@ export default () => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
             localStorage.setItem(
-              Const_Storage_需过滤字列表_Key,
+              Const.Storage_需过滤字列表_Key,
               JSON.stringify(inputValue)
             );
             set_input_需过滤字列表(inputValue);
