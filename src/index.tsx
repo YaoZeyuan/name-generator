@@ -159,12 +159,17 @@ export default () => {
           下载所有姓名方案在电脑查看
         </Button>
       </div>
-
-      <p>
-        姓氏:{input_姓氏} 共可能有{storeSnapshot.totalNameCount}个可能的三字名,
-        展示前{storeSnapshot.maxDisplayItem}个, 每行展示
-        {storeSnapshot.columnCount}个
-      </p>
+      <p>姓氏:{input_姓氏}</p>
+      {storeSnapshot.nameList.length > 0 ? (
+        <p>
+          共有{storeSnapshot.totalNameCount}
+          种可能的三字名<b>发音</b>, 展示前{storeSnapshot.maxDisplayItem}个,
+          每行展示
+          {storeSnapshot.columnCount}个
+        </p>
+      ) : (
+        ""
+      )}
       <NameList
         nameList={
           storeSnapshot.nameList.slice(
