@@ -289,6 +289,10 @@ export function generateLegalNameList({
     }
   }
 
+  // 排序, 按推荐序来
+  nameList.sort((a, b) => {
+    return b.score - a.score;
+  });
   return nameList;
 }
 
@@ -327,6 +331,8 @@ export function generateLegalNameListFromExist({
   chooseType: Type.ChooseType;
 }) {
   let nameList: CommonType.Type_Name[] = [];
+
+  console.log("开始计算");
 
   const pinyinSet_同音字 = new Set();
   for (let char_排除字 of char_排除字_list) {
@@ -448,6 +454,7 @@ export function generateLegalNameListFromExist({
     ) {
       return false;
     }
+    return true;
   });
 
   // 生成所有可能的结果
@@ -494,5 +501,9 @@ export function generateLegalNameListFromExist({
     }
   }
 
+  // 排序, 按推荐序来
+  nameList.sort((a, b) => {
+    return b.score - a.score;
+  });
   return nameList;
 }

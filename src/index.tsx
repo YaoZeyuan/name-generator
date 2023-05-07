@@ -226,7 +226,7 @@ export default () => {
           storeSnapshot.nameList.slice(
             0,
             storeSnapshot.maxDisplayItem
-          ) as Type.Type_Name[]
+          ) as CommonType.Type_Name[]
         }
         columnCount={storeSnapshot.columnCount}
       ></NameList>
