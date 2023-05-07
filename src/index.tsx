@@ -135,7 +135,7 @@ export default () => {
             store.nameList = nameList;
           }}
         >
-          点击生成所有可能的名字发音
+          诗云-生成所有发音方案
         </Button>
         <Button
           onClick={function () {
@@ -152,7 +152,7 @@ export default () => {
             store.nameList = nameList;
           }}
         >
-          看答案
+          看答案-从已有人名中寻找
         </Button>
         <Button
           onClick={function () {
@@ -169,7 +169,7 @@ export default () => {
             store.nameList = nameList;
           }}
         >
-          古人云
+          古人云-从古代名&字中寻找
         </Button>
         <Button
           onClick={function () {
@@ -186,7 +186,7 @@ export default () => {
             store.nameList = nameList;
           }}
         >
-          财富论
+          财富论-从私募基金名中寻找
         </Button>
         <Button
           disabled={storeSnapshot.nameList.length === 0}
