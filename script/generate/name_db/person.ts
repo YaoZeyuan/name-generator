@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as Type from "../../common/type";
 import * as Const from "../../common/const";
 import * as util from "./util";
-import RawNameDb from "../../../resource/person_name/已知人名.json";
+import * as RawNameDb from "../../../resource/person_name/已知人名.json";
 
 async function asyncRunner() {
   console.log("开始转换人名数据库");
