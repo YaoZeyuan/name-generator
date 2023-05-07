@@ -19,9 +19,14 @@ async function asyncRunner() {
       nameList.push(legalName);
     }
   }
+
+  let realNameList = nameList.map((item) => {
+    return item.人名_第一个字.char + item.人名_第二个字.char;
+  });
+
   fs.writeFileSync(
     Const.Name_Db_看答案_已知人名_Uri,
-    JSON.stringify(nameList, null, 2)
+    JSON.stringify(realNameList, null, 2)
   );
 
   console.log("人名数据库处理完毕");
