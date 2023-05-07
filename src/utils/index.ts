@@ -1,78 +1,61 @@
 import * as CommonType from "@/../script/common/type";
 import * as Type from "@/resource/type";
-import * as Const from "@/resource/const";
 import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
 
-export function isCharLegal(
-  beforChar: CommonType.Char_With_Pinyin,
-  currentChar: CommonType.Char_With_Pinyin
-) {
-  if (beforChar === undefined || currentChar === undefined) {
-    // 传入值不规范, 则不予以比较
-    return true;
+export function getValueByStorage(key: string, defaultValue: any) {
+  let content = (localStorage.getItem(key) as string) ?? "";
+  try {
+    return JSON.parse(content);
+  } catch (e) {
+    return defaultValue;
   }
-  // 规则1-两字音调不能相同
-  if (beforChar.tone === currentChar.tone) {
-    return false;
-  }
-  // 规则2-不能使用叠音
-  if (beforChar.pinyin_without_tone === currentChar.pinyin_without_tone) {
-    return false;
-  }
+}
+export function setValueByStorage(key: string, value = "") {
+  localStorage.setItem(key, JSON.stringify(value));
+  return;
+}
+/**
+ * 获取该字对应的拼音, 假设至少有一个拼音
+ * @param char
+ * @returns
+ */
+export function getPinyinOfChar(char: string) {
+  let pinyinList: CommonType.Char_With_Pinyin[] = [];
 
-  // 规则4-音律富于变化
-  switch (beforChar.tone) {
-    case 1:
-      if (currentChar.tone === 1) {
-        // 一声后只有一声是false
-        return false;
-      }
-      break;
-    case 2:
-    // 二声和三声收尾都是扬声, 等价
-    case 3:
-      if (currentChar.tone === 2) {
-        // 扬声后二声是false, 不能继续扬
-        return false;
-      }
-      break;
-    case 4:
-      if (currentChar.tone === 4) {
-        // 入声后四声是false, 不能继续降
-        return false;
-      }
-      break;
+  for (const item of AllPinyinList as CommonType.Char_With_Pinyin[]) {
+    if (item.char === char) {
+      pinyinList.push(item);
+    }
   }
-  return true;
+  return pinyinList as [
+    CommonType.Char_With_Pinyin,
+    ...CommonType.Char_With_Pinyin[]
+  ];
 }
 
-const Tool = {
-  /**
-   * 获取该字对应的拼音, 假设至少有一个拼音
-   * @param char
-   * @returns
-   */
-  getPinyinOfChar(char: string) {
-    let pinyinList: CommonType.Char_With_Pinyin[] = [];
-
-    for (const item of AllPinyinList as CommonType.Char_With_Pinyin[]) {
-      if (item.char === char) {
-        pinyinList.push(item);
-      }
+/**
+ * 将字符串转换为拼音列表
+ * @param str
+ * @returns
+ */
+export function transString2PinyinList(str: string) {
+  const charList = str.split("");
+  const pinyinList: CommonType.Char_With_Pinyin[] = [];
+  for (const char of charList) {
+    const resultList = getPinyinOfChar(char);
+    for (const result of resultList) {
+      pinyinList.push(result);
     }
-    return pinyinList as [
-      CommonType.Char_With_Pinyin,
-      ...CommonType.Char_With_Pinyin[]
-    ];
-  },
-};
+  }
+  return pinyinList;
+}
 
 /**
  * 生成所有合法的姓名
  * @param char_姓氏
  * @returns
  */
-function generateLegalNameList({
+export function generateLegalNameList({
   char_姓_全部,
   char_姓_末尾字,
   char_排除字_list = [],

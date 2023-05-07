@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
-import PinyinList from "@/../database/char_db/raw_pinyin_list.json";
 // import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
 // import PinyinDb_Min_5 from "@/../database/pinyin_db/zd_name_pinyin_db_min_5.json";
 import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.json";
@@ -13,27 +12,8 @@ import * as Const from "@/resource/const";
 import NameList from "@/component/name_list";
 import { saveAs } from "file-saver";
 
-const Tool = {
-  getPinyinOfChar(char: string) {
-    let pinyinList: CommonType.Char_With_Pinyin[] = [];
+const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
 
-    for (const item of PinyinList as CommonType.Char_With_Pinyin[]) {
-      if (item.char === char) {
-        pinyinList.push(item);
-      }
-    }
-    return pinyinList;
-  },
-};
-
-// 所有可选字列表
-let TotalCharOptionList: Type.Type_Char_Option[] = [];
-
-const char_level =
-  (parseInt(localStorage.getItem(Const.Storage_Char_Leve_Key) || "0") as
-    | 0
-    | 1
-    | 2) || 0;
 // 根据汉字级别, 设定所使用的选项集
 let Pinyin_Database_Map: CommonType.Pinyin_Db =
   PinyinDb_Min_10 as CommonType.Pinyin_Db;
@@ -51,35 +31,15 @@ let Pinyin_Database_Map: CommonType.Pinyin_Db =
 //     break;
 // }
 
-for (let pinyin of Object.keys(Pinyin_Database_Map)) {
-  let pinyin_option_list = Pinyin_Database_Map[pinyin].option_list;
-  for (let item of pinyin_option_list) {
-    let option: Type.Type_Char_Option = {
-      key: `${item.pinyin}-${item.char}`,
-      text: `${item.pinyin}-${item.char}`,
-      char_item: item.char_list[0],
-    };
-    TotalCharOptionList.push(option);
-  }
-}
-
-let default_input_姓氏_str = localStorage.getItem(Const.Storage_姓氏_Key);
-let default_input_需过滤字列表_str = localStorage.getItem(
-  Const.Storage_需过滤字列表_Key
+let default_input_姓氏 = utils.getValueByStorage(Const.Storage_姓氏_Key, "");
+let default_input_排除字列表 = utils.getValueByStorage(
+  Const.Storage_需过滤字列表_Key,
+  ""
 );
-
-let default_input_姓氏 = "";
-try {
-  if (default_input_姓氏_str !== null) {
-    default_input_姓氏 = JSON.parse(default_input_姓氏_str);
-  }
-} catch (e) {}
-let default_input_需过滤字列表 = "";
-try {
-  if (default_input_需过滤字列表_str !== null) {
-    default_input_需过滤字列表 = JSON.parse(default_input_需过滤字列表_str);
-  }
-} catch (e) {}
+let default_input_必选字 = utils.getValueByStorage(
+  Const.Storage_必选字_Key,
+  ""
+);
 
 const store = proxy<{
   nameList: Type.Type_Name[];
@@ -106,54 +66,19 @@ const store = proxy<{
 });
 
 export default () => {
-  let [input_姓氏, set_input_姓氏] = useState(default_input_姓氏);
-  let [input_需过滤字列表, set_input_需过滤字列表] =
-    useState(default_input_需过滤字列表);
+  let [input_姓氏, set_input_姓氏] = useState<string>(default_input_姓氏);
+  let [input_排除字列表, set_input_排除字列表] =
+    useState<string>(default_input_排除字列表);
+  let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
 
   let storeSnapshot = useSnapshot(store);
 
-  let generateAllNameList = (char_姓氏: string) => {
-    let nameList: Type.Type_Name[] = [];
-    let char_姓氏_最后一个字 = Tool.getPinyinOfChar(
-      char_姓氏?.[char_姓氏.length - 1] || ""
-    )[0];
-
-    let needFileterCharList = input_需过滤字列表.split("");
-    // 使用set, 方便过滤掉重复的拼音
-    let needFileterPinyinSet = new Set();
-    for (let needFileterChar of needFileterCharList) {
-      let pinyin = Tool.getPinyinOfChar(needFileterChar)[0]?.pinyin;
-      if (pinyin) {
-        needFileterPinyinSet.add(pinyin);
-      }
-    }
-
-    // 过滤掉所有同音字
-    let newTotalCharOptionList = TotalCharOptionList.filter((item) => {
-      return needFileterPinyinSet.has(item.char_item.pinyin) === false;
-    });
-
-    let new_char_1_optionList = newTotalCharOptionList.filter((item) => {
-      let isLegal = utils.isCharLegal(char_姓氏_最后一个字, item.char_item);
-      return isLegal;
-    });
-
-    for (let char1 of new_char_1_optionList) {
-      let new_char_2_optionList = newTotalCharOptionList.filter((item) => {
-        let isLegal = utils.isCharLegal(char1.char_item, item.char_item);
-        return isLegal;
-      });
-      for (let char2 of new_char_2_optionList) {
-        let name: Type.Type_Name = {
-          姓氏: input_姓氏,
-          人名_第一个字: char1,
-          人名_第二个字: char2,
-        };
-        nameList.push(name);
-      }
-    }
-    return nameList;
-  };
+  const char_姓_全部 = utils.transString2PinyinList(input_姓氏);
+  const char_姓_末尾字 = utils.getPinyinOfChar(
+    input_姓氏.split("").pop() ?? ""
+  );
+  const char_必选字_list = utils.transString2PinyinList(input_必选字);
+  const char_排除字_list = utils.transString2PinyinList(input_排除字列表);
 
   return (
     <div>
@@ -164,10 +89,7 @@ export default () => {
           onChange={(e) => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
-            localStorage.setItem(
-              Const.Storage_姓氏_Key,
-              JSON.stringify(inputValue)
-            );
+            utils.setValueByStorage(Const.Storage_姓氏_Key, inputValue);
             set_input_姓氏(inputValue);
           }}
         ></input>
@@ -175,22 +97,37 @@ export default () => {
       <div>
         需要避开的同音字(例如父母姓名/亲属姓名)
         <Input.TextArea
-          value={input_需过滤字列表}
+          value={input_排除字列表}
           onChange={(e) => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
-            localStorage.setItem(
-              Const.Storage_需过滤字列表_Key,
-              JSON.stringify(inputValue)
-            );
-            set_input_需过滤字列表(inputValue);
+            utils.setValueByStorage(Const.Storage_需过滤字列表_Key, inputValue);
+            set_input_排除字列表(inputValue);
+          }}
+        ></Input.TextArea>
+      </div>
+      <div>
+        指定出现的字(可不填)
+        <Input.TextArea
+          value={input_必选字}
+          onChange={(e) => {
+            let inputValue = e.target.value;
+            inputValue = inputValue.trim();
+            utils.setValueByStorage(Const.Storage_必选字_Key, inputValue);
+            set_input_必选字(inputValue);
           }}
         ></Input.TextArea>
       </div>
       <div>
         <Button
           onClick={function () {
-            let nameList = generateAllNameList(input_姓氏);
+            let nameList = utils.generateLegalNameList({
+              char_姓_全部,
+              char_姓_末尾字: char_姓_末尾字[0],
+              char_必选字_list,
+              char_排除字_list,
+              legal_PinyinDb: Pinyin_Database_Map,
+            });
             store.totalNameCount = nameList.length;
             // 随机打乱
             nameList.sort(() => Math.random() - 0.5);
@@ -207,11 +144,7 @@ export default () => {
             let columns = [];
             for (let i = 0; i < nameList.length; i++) {
               let item = nameList[i];
-              columns.push(
-                `${i + 1}-${item.姓氏}${item.人名_第一个字.char_item.char}${
-                  item.人名_第二个字.char_item.char
-                }`
-              );
+              columns.push(`${i + 1}-${item.demoStr}`);
             }
 
             let str = "姓名,\n" + columns.join(",\n");

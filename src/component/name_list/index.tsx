@@ -1,4 +1,4 @@
-import * as Types from "@/types/index";
+import * as Type from "@/resource/type";
 import { Table } from "antd";
 import "./index.less";
 
@@ -6,7 +6,7 @@ export default ({
   nameList = [],
   columnCount = 5,
 }: {
-  nameList: Types.Type_Name[];
+  nameList: Type.Type_Name[];
   // 每行展示x个姓名
   columnCount: number;
 }) => {
@@ -24,9 +24,7 @@ export default ({
   let realNameList: string[] = [];
   for (let name of nameList) {
     index++;
-    let realName = `${index.toString().padStart(2, "0")} - ${name.姓氏}${
-      name.人名_第一个字.char_item.char
-    }${name.人名_第二个字.char_item.char}`;
+    let realName = `${index.toString().padStart(2, "0")} - ${name.demoStr}`;
     realNameList.push(realName);
   }
 
