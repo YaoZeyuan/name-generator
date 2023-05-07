@@ -76,6 +76,13 @@
     "tone": 1,
     "count": 527
   },
+  "乾": {
+    "char": "乾",
+    "pinyin": "qián",
+    "pinyin_without_tone": "qian",
+    "tone": 2,
+    "count": 114
+  },
   "云": {
     "char": "云",
     "pinyin": "yún",
@@ -209,6 +216,13 @@
     "tone": 3,
     "count": 142
   },
+  "信": {
+    "char": "信",
+    "pinyin": "xìn",
+    "pinyin_without_tone": "xin",
+    "tone": 4,
+    "count": 123
+  },
   "修": {
     "char": "修",
     "pinyin": "xiū",
@@ -313,6 +327,13 @@
     "pinyin_without_tone": "bing",
     "tone": 1,
     "count": 351
+  },
+  "其": {
+    "char": "其",
+    "pinyin": "qí",
+    "pinyin_without_tone": "qi",
+    "tone": 2,
+    "count": 179
   },
   "冉": {
     "char": "冉",
@@ -706,6 +727,13 @@
     "tone": 4,
     "count": 1039
   },
+  "奥": {
+    "char": "奥",
+    "pinyin": "ào",
+    "pinyin_without_tone": "ao",
+    "tone": 4,
+    "count": 185
+  },
   "如": {
     "char": "如",
     "pinyin": "rú",
@@ -740,6 +768,13 @@
     "pinyin_without_tone": "ni",
     "tone": 1,
     "count": 297
+  },
+  "姗": {
+    "char": "姗",
+    "pinyin": "shān",
+    "pinyin_without_tone": "shan",
+    "tone": 1,
+    "count": 118
   },
   "姝": {
     "char": "姝",
@@ -1049,6 +1084,13 @@
     "tone": 2,
     "count": 918
   },
+  "广": {
+    "char": "广",
+    "pinyin": "guǎng",
+    "pinyin_without_tone": "guang",
+    "tone": 3,
+    "count": 370
+  },
   "庆": {
     "char": "庆",
     "pinyin": "qìng",
@@ -1174,6 +1216,13 @@
     "pinyin_without_tone": "huai",
     "tone": 2,
     "count": 130
+  },
+  "思": {
+    "char": "思",
+    "pinyin": "sī",
+    "pinyin_without_tone": "si",
+    "tone": 1,
+    "count": 2284
   },
   "怡": {
     "char": "怡",
@@ -1483,12 +1532,26 @@
     "tone": 1,
     "count": 128
   },
+  "晟": {
+    "char": "晟",
+    "pinyin": "chéng",
+    "pinyin_without_tone": "cheng",
+    "tone": 2,
+    "count": 233
+  },
   "晨": {
     "char": "晨",
     "pinyin": "chén",
     "pinyin_without_tone": "chen",
     "tone": 2,
     "count": 1756
+  },
+  "景": {
+    "char": "景",
+    "pinyin": "jǐng",
+    "pinyin_without_tone": "jing",
+    "tone": 3,
+    "count": 554
   },
   "晴": {
     "char": "晴",
@@ -1531,6 +1594,13 @@
     "pinyin_without_tone": "yue",
     "tone": 4,
     "count": 550
+  },
+  "有": {
+    "char": "有",
+    "pinyin": "yǒu",
+    "pinyin_without_tone": "you",
+    "tone": 3,
+    "count": 109
   },
   "朋": {
     "char": "朋",
@@ -1868,6 +1938,13 @@
     "tone": 3,
     "count": 163
   },
+  "泽": {
+    "char": "泽",
+    "pinyin": "zé",
+    "pinyin_without_tone": "ze",
+    "tone": 2,
+    "count": 2087
+  },
   "洁": {
     "char": "洁",
     "pinyin": "jié",
@@ -1951,6 +2028,13 @@
     "pinyin_without_tone": "shu",
     "tone": 1,
     "count": 382
+  },
+  "淳": {
+    "char": "淳",
+    "pinyin": "chún",
+    "pinyin_without_tone": "chun",
+    "tone": 2,
+    "count": 179
   },
   "添": {
     "char": "添",
@@ -2351,6 +2435,20 @@
     "tone": 4,
     "count": 2211
   },
+  "知": {
+    "char": "知",
+    "pinyin": "zhī",
+    "pinyin_without_tone": "zhi",
+    "tone": 1,
+    "count": 197
+  },
+  "硕": {
+    "char": "硕",
+    "pinyin": "shuò",
+    "pinyin_without_tone": "shuo",
+    "tone": 4,
+    "count": 382
+  },
   "磊": {
     "char": "磊",
     "pinyin": "lěi",
@@ -2498,6 +2596,13 @@
     "tone": 3,
     "count": 927
   },
+  "红": {
+    "char": "红",
+    "pinyin": "hóng",
+    "pinyin_without_tone": "hong",
+    "tone": 2,
+    "count": 1107
+  },
   "纯": {
     "char": "纯",
     "pinyin": "chún",
@@ -2595,6 +2700,13 @@
     "pinyin_without_tone": "cong",
     "tone": 1,
     "count": 262
+  },
+  "育": {
+    "char": "育",
+    "pinyin": "yù",
+    "pinyin_without_tone": "yu",
+    "tone": 4,
+    "count": 110
   },
   "胜": {
     "char": "胜",
@@ -2729,12 +2841,26 @@
     "tone": 2,
     "count": 310
   },
+  "苏": {
+    "char": "苏",
+    "pinyin": "sū",
+    "pinyin_without_tone": "su",
+    "tone": 1,
+    "count": 360
+  },
   "苗": {
     "char": "苗",
     "pinyin": "miáo",
     "pinyin_without_tone": "miao",
     "tone": 2,
     "count": 106
+  },
+  "若": {
+    "char": "若",
+    "pinyin": "ruò",
+    "pinyin_without_tone": "ruo",
+    "tone": 4,
+    "count": 860
   },
   "英": {
     "char": "英",
@@ -2883,13 +3009,6 @@
     "tone": 3,
     "count": 197
   },
-  "虹": {
-    "char": "虹",
-    "pinyin": "hóng",
-    "pinyin_without_tone": "hong",
-    "tone": 2,
-    "count": 143
-  },
   "衡": {
     "char": "衡",
     "pinyin": "héng",
@@ -2938,6 +3057,13 @@
     "pinyin_without_tone": "cheng",
     "tone": 2,
     "count": 449
+  },
+  "语": {
+    "char": "语",
+    "pinyin": "yǔ",
+    "pinyin_without_tone": "yu",
+    "tone": 3,
+    "count": 1093
   },
   "诺": {
     "char": "诺",
@@ -3079,6 +3205,13 @@
     "tone": 4,
     "count": 203
   },
+  "远": {
+    "char": "远",
+    "pinyin": "yuǎn",
+    "pinyin_without_tone": "yuan",
+    "tone": 3,
+    "count": 697
+  },
   "连": {
     "char": "连",
     "pinyin": "lián",
@@ -3204,6 +3337,13 @@
     "pinyin_without_tone": "ya",
     "tone": 3,
     "count": 1638
+  },
+  "雨": {
+    "char": "雨",
+    "pinyin": "yǔ",
+    "pinyin_without_tone": "yu",
+    "tone": 3,
+    "count": 2700
   },
   "雪": {
     "char": "雪",
@@ -3386,6 +3526,13 @@
     "pinyin_without_tone": "li",
     "tone": 2,
     "count": 102
+  },
+  "齐": {
+    "char": "齐",
+    "pinyin": "qí",
+    "pinyin_without_tone": "qi",
+    "tone": 2,
+    "count": 234
   },
   "龙": {
     "char": "龙",
