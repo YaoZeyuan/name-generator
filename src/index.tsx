@@ -43,7 +43,7 @@ let default_input_必选字 = utils.getValueByStorage(
 );
 
 const store = proxy<{
-  nameList: Type.Type_Name[];
+  nameList: CommonType.Type_Name[];
   totalNameCount: number;
   maxDisplayItem: number;
   columnCount: number;
@@ -136,6 +136,57 @@ export default () => {
           }}
         >
           点击生成所有可能的名字发音
+        </Button>
+        <Button
+          onClick={function () {
+            let nameList = utils.generateLegalNameListFromExist({
+              char_姓_全部,
+              char_姓_末尾字: char_姓_末尾字[0],
+              char_必选字_list,
+              char_排除字_list,
+              chooseType: Const.Choose_Type_看答案,
+            });
+            store.totalNameCount = nameList.length;
+            // 随机打乱
+            nameList.sort(() => Math.random() - 0.5);
+            store.nameList = nameList;
+          }}
+        >
+          看答案
+        </Button>
+        <Button
+          onClick={function () {
+            let nameList = utils.generateLegalNameListFromExist({
+              char_姓_全部,
+              char_姓_末尾字: char_姓_末尾字[0],
+              char_必选字_list,
+              char_排除字_list,
+              chooseType: Const.Choose_Type_古人云,
+            });
+            store.totalNameCount = nameList.length;
+            // 随机打乱
+            nameList.sort(() => Math.random() - 0.5);
+            store.nameList = nameList;
+          }}
+        >
+          古人云
+        </Button>
+        <Button
+          onClick={function () {
+            let nameList = utils.generateLegalNameListFromExist({
+              char_姓_全部,
+              char_姓_末尾字: char_姓_末尾字[0],
+              char_必选字_list,
+              char_排除字_list,
+              chooseType: Const.Choose_Type_财富论,
+            });
+            store.totalNameCount = nameList.length;
+            // 随机打乱
+            nameList.sort(() => Math.random() - 0.5);
+            store.nameList = nameList;
+          }}
+        >
+          财富论
         </Button>
         <Button
           disabled={storeSnapshot.nameList.length === 0}
