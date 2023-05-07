@@ -36,7 +36,7 @@ export function isCharLegal(char: string) {
  */
 export function getScoreOfName(char1: string, char2: string) {
   // @ts-ignore
-  let score = CharDb[char1]?.count ?? 0 + CharDb[char2]?.count ?? 0;
+  let score = (CharDb[char1]?.count ?? 0) + (CharDb[char2]?.count ?? 0);
   return score;
 }
 

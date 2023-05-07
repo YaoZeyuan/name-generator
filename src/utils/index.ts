@@ -40,7 +40,7 @@ export function getPinyinOfChar(char: string) {
  */
 export function getScoreOfName(char1: string, char2: string) {
   // @ts-ignore
-  let score = RawCharDb[char1]?.count ?? 0 + RawCharDb[char2]?.count ?? 0;
+  let score = (RawCharDb[char1]?.count ?? 0) + (RawCharDb[char2]?.count ?? 0);
   return score;
 }
 
