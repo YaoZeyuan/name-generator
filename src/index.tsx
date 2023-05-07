@@ -3,6 +3,7 @@ import { proxy, useSnapshot } from "valtio";
 // import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
 // import PinyinDb_Min_5 from "@/../database/pinyin_db/zd_name_pinyin_db_min_5.json";
 import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.json";
+import PinyinDb_Min_100 from "@/../database/pinyin_db/zd_name_pinyin_db_min_100.json";
 import * as CommonType from "@/../script/common/type";
 
 import { Button, Input } from "antd";
@@ -16,7 +17,7 @@ const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
 
 // 根据汉字级别, 设定所使用的选项集
 let Pinyin_Database_Map: CommonType.Pinyin_Db =
-  PinyinDb_Min_10 as CommonType.Pinyin_Db;
+  PinyinDb_Min_100 as CommonType.Pinyin_Db;
 
 // switch (char_level) {
 //   case 0:

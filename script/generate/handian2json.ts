@@ -40,43 +40,49 @@ const Tool = {
   getNameCharDb() {
     const content = fs.readFileSync(Const.CharDb_人名字典_Uri).toString();
     const CharDB_All: Type.CharDB = JSON.parse(content);
-    const CharDB_Min_1: Type.CharDB = CharDB_All;
-    const CharDB_Min_2: Type.CharDB = {};
-    const CharDB_Min_3: Type.CharDB = {};
-    const CharDB_Min_4: Type.CharDB = {};
-    const CharDB_Min_5: Type.CharDB = {};
-    const CharDB_Min_10: Type.CharDB = {};
+    const CharDB_Min_Map: Record<number, Type.CharDB> = {};
+    CharDB_Min_Map[1] = CharDB_All;
+    CharDB_Min_Map[2] = {};
+    CharDB_Min_Map[3] = {};
+    CharDB_Min_Map[4] = {};
+    CharDB_Min_Map[5] = {};
+    CharDB_Min_Map[10] = {};
+    CharDB_Min_Map[20] = {};
+    CharDB_Min_Map[50] = {};
+    CharDB_Min_Map[100] = {};
 
     for (let key of Object.keys(CharDB_All)) {
       let item = CharDB_All[key];
 
       if (item.count >= 1) {
-        CharDB_Min_1[key] = item;
+        CharDB_Min_Map[1][key] = item;
       }
       if (item.count >= 2) {
-        CharDB_Min_2[key] = item;
+        CharDB_Min_Map[2][key] = item;
       }
       if (item.count >= 3) {
-        CharDB_Min_3[key] = item;
+        CharDB_Min_Map[3][key] = item;
       }
       if (item.count >= 4) {
-        CharDB_Min_4[key] = item;
+        CharDB_Min_Map[4][key] = item;
       }
       if (item.count >= 5) {
-        CharDB_Min_5[key] = item;
+        CharDB_Min_Map[5][key] = item;
       }
       if (item.count >= 10) {
-        CharDB_Min_10[key] = item;
+        CharDB_Min_Map[10][key] = item;
+      }
+      if (item.count >= 20) {
+        CharDB_Min_Map[20][key] = item;
+      }
+      if (item.count >= 50) {
+        CharDB_Min_Map[50][key] = item;
+      }
+      if (item.count >= 100) {
+        CharDB_Min_Map[100][key] = item;
       }
     }
-    return {
-      CharDB_Min_1,
-      CharDB_Min_2,
-      CharDB_Min_3,
-      CharDB_Min_4,
-      CharDB_Min_5,
-      CharDB_Min_10,
-    };
+    return CharDB_Min_Map;
   },
   charPinyinDb2PinyinCharDb(charPinyinDb: Type.CharPinyinDB) {
     let pinyinCharDb: Type.Pinyin_Db = {};
@@ -139,50 +145,35 @@ async function asyncRunner() {
   const lineList = content.split("\n");
   const PinyinList_全部: Type.Char_With_Pinyin[] = [];
   const PinyinDb_不含多音字: Record<string, Type.Char_With_Pinyin> = {};
-  const PinyinDb_不含多音字_姓名用字_Min_1: Record<
-    string,
-    Type.Char_With_Pinyin
+  const PinyinDb_姓名用字_Min_Map: Record<
+    number,
+    Record<string, Type.Char_With_Pinyin>
   > = {};
-  const PinyinDb_不含多音字_姓名用字_Min_2: Record<
-    string,
-    Type.Char_With_Pinyin
-  > = {};
-  const PinyinDb_不含多音字_姓名用字_Min_3: Record<
-    string,
-    Type.Char_With_Pinyin
-  > = {};
-  const PinyinDb_不含多音字_姓名用字_Min_4: Record<
-    string,
-    Type.Char_With_Pinyin
-  > = {};
-  const PinyinDb_不含多音字_姓名用字_Min_5: Record<
-    string,
-    Type.Char_With_Pinyin
-  > = {};
-  const PinyinDb_不含多音字_姓名用字_Min_10: Record<
-    string,
-    Type.Char_With_Pinyin
-  > = {};
+  PinyinDb_姓名用字_Min_Map[1] = {};
+  PinyinDb_姓名用字_Min_Map[2] = {};
+  PinyinDb_姓名用字_Min_Map[3] = {};
+  PinyinDb_姓名用字_Min_Map[4] = {};
+  PinyinDb_姓名用字_Min_Map[5] = {};
+  PinyinDb_姓名用字_Min_Map[10] = {};
+  PinyinDb_姓名用字_Min_Map[20] = {};
+  PinyinDb_姓名用字_Min_Map[50] = {};
+  PinyinDb_姓名用字_Min_Map[100] = {};
 
-  const {
-    CharDB_Min_1,
-    CharDB_Min_2,
-    CharDB_Min_3,
-    CharDB_Min_4,
-    CharDB_Min_5,
-    CharDB_Min_10,
-  } = Tool.getNameCharDb();
+  const CharDB_Min_Map = Tool.getNameCharDb();
 
   const db2PinyinListMap = new Map<
     Type.CharDB,
     Record<string, Type.Char_With_Pinyin>
   >();
-  db2PinyinListMap.set(CharDB_Min_10, PinyinDb_不含多音字_姓名用字_Min_10);
-  db2PinyinListMap.set(CharDB_Min_5, PinyinDb_不含多音字_姓名用字_Min_5);
-  db2PinyinListMap.set(CharDB_Min_4, PinyinDb_不含多音字_姓名用字_Min_4);
-  db2PinyinListMap.set(CharDB_Min_3, PinyinDb_不含多音字_姓名用字_Min_3);
-  db2PinyinListMap.set(CharDB_Min_2, PinyinDb_不含多音字_姓名用字_Min_2);
-  db2PinyinListMap.set(CharDB_Min_1, PinyinDb_不含多音字_姓名用字_Min_1);
+  db2PinyinListMap.set(CharDB_Min_Map[100], PinyinDb_姓名用字_Min_Map[100]);
+  db2PinyinListMap.set(CharDB_Min_Map[50], PinyinDb_姓名用字_Min_Map[50]);
+  db2PinyinListMap.set(CharDB_Min_Map[20], PinyinDb_姓名用字_Min_Map[20]);
+  db2PinyinListMap.set(CharDB_Min_Map[10], PinyinDb_姓名用字_Min_Map[10]);
+  db2PinyinListMap.set(CharDB_Min_Map[5], PinyinDb_姓名用字_Min_Map[5]);
+  db2PinyinListMap.set(CharDB_Min_Map[4], PinyinDb_姓名用字_Min_Map[4]);
+  db2PinyinListMap.set(CharDB_Min_Map[3], PinyinDb_姓名用字_Min_Map[3]);
+  db2PinyinListMap.set(CharDB_Min_Map[2], PinyinDb_姓名用字_Min_Map[2]);
+  db2PinyinListMap.set(CharDB_Min_Map[1], PinyinDb_姓名用字_Min_Map[1]);
 
   for (let line of lineList) {
     if (line.startsWith("U+") === false) {
@@ -203,7 +194,7 @@ async function asyncRunner() {
         pinyin: pinyinList[0],
         pinyin_without_tone: Tool.remove音调(pinyinList[0]),
         tone: Tool.parse音标音调(pinyinList[0]),
-        count: CharDB_Min_1[char]?.count ?? 0,
+        count: CharDB_Min_Map[1][char]?.count ?? 0,
       };
       PinyinDb_不含多音字[char] = charPinyin;
 
@@ -226,93 +217,58 @@ async function asyncRunner() {
         pinyin,
         pinyin_without_tone,
         tone,
-        count: CharDB_Min_1[char]?.count ?? 0,
+        count: CharDB_Min_Map[1][char]?.count ?? 0,
       });
     }
   }
+
+  const fileMap = {
+    [Const.Raw_Char_Db_汉典_拼音列表_Uri]: PinyinList_全部,
+    [Const.Char_Db_total_以字为单位_Uri]: PinyinDb_不含多音字,
+    [Const.Char_Db_姓名用字_最少出现1次_Uri]: PinyinDb_姓名用字_Min_Map[1],
+    [Const.Char_Db_姓名用字_最少出现2次_Uri]: PinyinDb_姓名用字_Min_Map[2],
+    [Const.Char_Db_姓名用字_最少出现3次_Uri]: PinyinDb_姓名用字_Min_Map[3],
+    [Const.Char_Db_姓名用字_最少出现4次_Uri]: PinyinDb_姓名用字_Min_Map[4],
+    [Const.Char_Db_姓名用字_最少出现5次_Uri]: PinyinDb_姓名用字_Min_Map[5],
+    [Const.Char_Db_姓名用字_最少出现10次_Uri]: PinyinDb_姓名用字_Min_Map[10],
+    [Const.Char_Db_姓名用字_最少出现20次_Uri]: PinyinDb_姓名用字_Min_Map[20],
+    [Const.Char_Db_姓名用字_最少出现50次_Uri]: PinyinDb_姓名用字_Min_Map[50],
+    [Const.Char_Db_姓名用字_最少出现100次_Uri]: PinyinDb_姓名用字_Min_Map[100],
+
+    [Const.Pinyin_Db_姓名用字_最少出现1次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[1]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现2次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[2]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现3次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[3]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现4次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[4]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现5次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[5]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现10次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[10]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现20次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[20]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现50次_Uri]: Tool.charPinyinDb2PinyinCharDb(
+      PinyinDb_姓名用字_Min_Map[50]
+    ),
+    [Const.Pinyin_Db_姓名用字_最少出现100次_Uri]:
+      Tool.charPinyinDb2PinyinCharDb(PinyinDb_姓名用字_Min_Map[100]),
+  };
+
   // 写入文件
-  fs.writeFileSync(
-    Const.Raw_Char_Db_汉典_拼音列表_Uri,
-    JSON.stringify(PinyinList_全部, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_total_移除多音字_以字为单位_Uri,
-    JSON.stringify(PinyinDb_不含多音字, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_name_char_移除多音字_姓名用字_最少出现1次_Uri,
-    JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_1, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_name_char_移除多音字_姓名用字_最少出现2次_Uri,
-    JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_2, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_name_char_移除多音字_姓名用字_最少出现3次_Uri,
-    JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_3, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_name_char_移除多音字_姓名用字_最少出现4次_Uri,
-    JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_4, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_name_char_移除多音字_姓名用字_最少出现5次_Uri,
-    JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_5, null, 4)
-  );
-  fs.writeFileSync(
-    Const.Char_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri,
-    JSON.stringify(PinyinDb_不含多音字_姓名用字_Min_10, null, 4)
-  );
-
-  fs.writeFileSync(
-    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现1次_Uri,
-    JSON.stringify(
-      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_1),
-      null,
-      4
-    )
-  );
-  fs.writeFileSync(
-    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现2次_Uri,
-    JSON.stringify(
-      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_2),
-      null,
-      4
-    )
-  );
-  fs.writeFileSync(
-    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现3次_Uri,
-    JSON.stringify(
-      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_3),
-      null,
-      4
-    )
-  );
-  fs.writeFileSync(
-    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现4次_Uri,
-    JSON.stringify(
-      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_4),
-      null,
-      4
-    )
-  );
-  fs.writeFileSync(
-    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现5次_Uri,
-    JSON.stringify(
-      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_5),
-      null,
-      4
-    )
-  );
-  fs.writeFileSync(
-    Const.Pinyin_Db_name_char_移除多音字_姓名用字_最少出现10次_Uri,
-    JSON.stringify(
-      Tool.charPinyinDb2PinyinCharDb(PinyinDb_不含多音字_姓名用字_Min_10),
-      null,
-      4
-    )
-  );
-
+  for (let key of Object.keys(fileMap)) {
+    let fileUri = key;
+    let obj = fileMap[key];
+    fs.writeFileSync(fileUri, JSON.stringify(obj, null, 2));
+  }
   console.log("字典文件处理完毕");
 }
 
