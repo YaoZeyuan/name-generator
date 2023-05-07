@@ -58,7 +58,7 @@ const store = proxy<{
   /**
    * 最大展示的姓名数
    */
-  maxDisplayItem: 10000,
+  maxDisplayItem: 1000,
   /**
    * 每行展示x列
    */
@@ -165,7 +165,12 @@ export default () => {
         {storeSnapshot.columnCount}个
       </p>
       <NameList
-        nameList={storeSnapshot.nameList.slice(0, storeSnapshot.maxDisplayItem)}
+        nameList={
+          storeSnapshot.nameList.slice(
+            0,
+            storeSnapshot.maxDisplayItem
+          ) as Type.Type_Name[]
+        }
         columnCount={storeSnapshot.columnCount}
       ></NameList>
     </div>
