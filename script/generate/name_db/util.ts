@@ -73,6 +73,11 @@ export function transName2Record(name: string): Type.Type_Name | false {
     return false;
   }
 
+  if (charItem_1.pinyin_without_tone === charItem_2.pinyin_without_tone) {
+    // 结尾两字不能同音
+    return false;
+  }
+
   return {
     姓氏: [],
     人名_第一个字: {
