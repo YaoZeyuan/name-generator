@@ -1,5 +1,6 @@
 import * as CommonType from "@/../script/common/type";
 import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
+import RawCharDb from "@/../database/char_db/zd_name_char_db_min_1.json";
 
 export function getValueByStorage(key: string, defaultValue: any) {
   let content = (localStorage.getItem(key) as string) ?? "";
@@ -30,6 +31,17 @@ export function getPinyinOfChar(char: string) {
     CommonType.Char_With_Pinyin,
     ...CommonType.Char_With_Pinyin[]
   ];
+}
+
+/**
+ * 获取姓名评分
+ * @param name
+ * @returns
+ */
+export function getScoreOfName(char1: string, char2: string) {
+  // @ts-ignore
+  let score = RawCharDb[char1]?.count ?? 0 + RawCharDb[char2]?.count ?? 0;
+  return score;
 }
 
 /**
@@ -268,6 +280,7 @@ export function generateLegalNameList({
         demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
           firstPinyin.char
         }${option.char}`,
+        score: getScoreOfName(firstPinyin.char, option.char),
       };
       nameList.push(name);
     }

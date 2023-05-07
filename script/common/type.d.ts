@@ -67,4 +67,8 @@ export type Type_Name = {
    * 示例姓名
    */
   demoStr: string;
+  /**
+   * 姓名评分
+   */
+  score: number;
 };

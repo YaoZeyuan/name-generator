@@ -11,6 +11,9 @@
     "generate-name-db": "ts-node script/process_namedb/index.ts",
     "parse-fund": "ts-node script/process_namedb/parse_fund.ts",
     "keep_name_only": "ts-node script/generate/keep_name_only.ts",
+    "g_name_db_fund": "ts-node script/generate/name_db/fund.ts",
+    "g_name_db_old_person": "ts-node script/generate/name_db/old_person.ts",
+    "g_name_db_person": "ts-node script/generate/name_db/person.ts",
     "h": "ts-node script/generate/fetch_fund_list.ts"
   },
   "dependencies": {

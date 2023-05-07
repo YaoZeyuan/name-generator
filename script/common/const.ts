@@ -129,6 +129,21 @@ export const Raw_已公布私募基金名_Uri = path.resolve(
   "database/fund_db/已公布私募基金名_截至20230507.txt"
 );
 
+export const Name_Db_看答案_已知人名_Uri = path.resolve(
+  basePath,
+  "database/name_db/看答案_已知人名.json"
+);
+
+export const Name_Db_财富论_基金选名_Uri = path.resolve(
+  basePath,
+  "database/name_db/财富论_基金选名.json"
+);
+
+export const Name_Db_古人云_历史人名_Uri = path.resolve(
+  basePath,
+  "database/name_db/古人云_历史人名.json"
+);
+
 export const 音调_Map: Record<string, Type.Type_音调> = {
   ü: 1,
   ǜ: 4,
