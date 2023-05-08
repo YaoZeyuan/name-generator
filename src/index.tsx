@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
-// import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
+import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
 // import PinyinDb_Min_5 from "@/../database/pinyin_db/zd_name_pinyin_db_min_5.json";
 import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.json";
 import PinyinDb_Min_100 from "@/../database/pinyin_db/zd_name_pinyin_db_min_100.json";
 import * as CommonType from "@/../script/common/type";
 
-import { Button, Input, Drawer, Divider } from "antd";
+import { Button, Input, Drawer, Divider, Card } from "antd";
 import Desc from "./desc";
 import * as utils from "@/utils";
 import * as Type from "@/resource/type";
@@ -17,8 +17,8 @@ import { saveAs } from "file-saver";
 const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
 
 // 根据汉字级别, 设定所使用的选项集
-let Pinyin_Database_Map: CommonType.Pinyin_Db =
-  PinyinDb_Min_100 as CommonType.Pinyin_Db;
+let Pinyin_Option_List: CommonType.Pinyin_of_Char[] =
+  utils.generatePinyinOptionList(PinyinDb_Min_1 as CommonType.Pinyin_Db);
 
 // switch (char_level) {
 //   case 0:
@@ -48,6 +48,9 @@ const store = proxy<{
   totalNameCount: number;
   maxDisplayItem: number;
   columnCount: number;
+  status: {
+    isLoading: boolean;
+  };
 }>({
   /**
    * 生成的姓名列表
@@ -65,6 +68,9 @@ const store = proxy<{
    * 每行展示x列
    */
   columnCount: 10,
+  status: {
+    isLoading: false,
+  },
 });
 
 export default () => {
@@ -133,13 +139,15 @@ export default () => {
       <div>
         <Button
           onClick={function () {
+            store.status.isLoading = true;
             let nameList = utils.generateLegalNameList({
               char_姓_全部,
               char_姓_末尾字: char_姓_末尾字[0],
               char_必选字_list,
               char_排除字_list,
-              legal_PinyinDb: Pinyin_Database_Map,
+              pinyinOptionList: Pinyin_Option_List,
             });
+            store.status.isLoading = false;
             store.totalNameCount = nameList.length;
             // 随机打乱
             nameList.sort(() => Math.random() - 0.5);
@@ -152,6 +160,7 @@ export default () => {
       <p>
         <Button
           onClick={function () {
+            store.status.isLoading = true;
             let nameList = utils.generateLegalNameListFromExist({
               char_姓_全部,
               char_姓_末尾字: char_姓_末尾字[0],
@@ -159,6 +168,8 @@ export default () => {
               char_排除字_list,
               chooseType: Const.Choose_Type_他山石,
             });
+            store.status.isLoading = false;
+
             store.totalNameCount = nameList.length;
             // 随机打乱
             nameList.sort(() => Math.random() - 0.5);
@@ -170,6 +181,7 @@ export default () => {
         <Divider type="vertical"></Divider>
         <Button
           onClick={function () {
+            store.status.isLoading = true;
             let nameList = utils.generateLegalNameListFromExist({
               char_姓_全部,
               char_姓_末尾字: char_姓_末尾字[0],
@@ -177,6 +189,7 @@ export default () => {
               char_排除字_list,
               chooseType: Const.Choose_Type_古人云,
             });
+            store.status.isLoading = false;
             store.totalNameCount = nameList.length;
             // 随机打乱
             nameList.sort(() => Math.random() - 0.5);
@@ -254,15 +267,17 @@ export default () => {
       ) : (
         ""
       )}
-      <NameList
-        nameList={
-          storeSnapshot.nameList.slice(
-            0,
-            storeSnapshot.maxDisplayItem
-          ) as CommonType.Type_Name[]
-        }
-        columnCount={storeSnapshot.columnCount}
-      ></NameList>
+      <Card title="" bordered={false} loading={storeSnapshot.status.isLoading}>
+        <NameList
+          nameList={
+            storeSnapshot.nameList.slice(
+              0,
+              storeSnapshot.maxDisplayItem
+            ) as CommonType.Type_Name[]
+          }
+          columnCount={storeSnapshot.columnCount}
+        ></NameList>
+      </Card>
     </div>
   );
 };

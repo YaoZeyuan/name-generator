@@ -6,7 +6,6 @@ import RawCharDb from "@/../database/char_db/zd_name_char_db_min_1.json";
 import NameDb_古人云 from "@/../database/name_db/古人云_历史人名.json";
 import NameDb_他山石 from "@/../database/name_db/他山石_已知人名.json";
 import NameDb_财富论 from "@/../database/name_db/财富论_基金选名.json";
-import TotalCharDb from "@/../database/char_db/zd_without_muilt_tone_char_db.json";
 
 export function getValueByStorage(key: string, defaultValue: any) {
   let content = (localStorage.getItem(key) as string) ?? "";
@@ -20,6 +19,30 @@ export function setValueByStorage(key: string, value = "") {
   localStorage.setItem(key, JSON.stringify(value));
   return;
 }
+
+/**
+ * 根据pinyin数据库, 生成乱序的候选拼音列表
+ * @param pinyinDb
+ * @returns
+ */
+export function generatePinyinOptionList(
+  pinyinDb: CommonType.Pinyin_Db
+): CommonType.Pinyin_of_Char[] {
+  let pinyinOptionList: CommonType.Pinyin_of_Char[] = [];
+
+  for (let rawOption of Object.values(pinyinDb)) {
+    for (let item of rawOption.option_list) {
+      pinyinOptionList.push(item);
+    }
+  }
+  // 打乱顺序
+  pinyinOptionList.sort(() => {
+    return Math.random() - 0.5;
+  });
+
+  return pinyinOptionList;
+}
+
 /**
  * 获取该字对应的拼音, 假设至少有一个拼音
  * @param char
@@ -77,7 +100,7 @@ export function generateLegalNameList({
   char_姓_末尾字,
   char_排除字_list = [],
   char_必选字_list = [],
-  legal_PinyinDb,
+  pinyinOptionList,
   generateAll = false,
 }: {
   /**
@@ -100,13 +123,15 @@ export function generateLegalNameList({
   /**
    * 所有可选拼音库, 所有拼音均从可选拼音中产生
    */
-  legal_PinyinDb: CommonType.Pinyin_Db;
+  pinyinOptionList: CommonType.Pinyin_of_Char[];
   /**
    * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
    */
   generateAll?: boolean;
 }) {
   let nameList: CommonType.Type_Name[] = [];
+  // 主动复制一遍变量, 避免内部修改影响到外部值
+  pinyinOptionList = structuredClone(pinyinOptionList);
 
   const pinyinSet_同音字 = new Set();
   for (let char_排除字 of char_排除字_list) {
@@ -120,184 +145,131 @@ export function generateLegalNameList({
     }
   }
   char_必选字_list = [...Object.values(buf_过滤同音必选字)];
-
-  /**
-   * 特定字符下, 连续两位文字对应的拼音可选项是有限的
-   */
-  type Buf_Option = {
-    [pinyin: string]: {
-      pinyin: CommonType.Pinyin_of_Char["pinyin"];
-      pinyin_without_tone: CommonType.Pinyin_of_Char["pinyin_without_tone"];
-      tone: CommonType.Pinyin_of_Char["tone"];
-      char: CommonType.Pinyin_of_Char["char"];
-      /**
-       * 提供可选字列表, 方便替换
-       */
-      char_list: CommonType.Pinyin_of_Char["char_list"];
-      optionList: {
-        pinyin: CommonType.Pinyin_of_Char["pinyin"];
-        pinyin_without_tone: CommonType.Pinyin_of_Char["pinyin_without_tone"];
-        tone: CommonType.Pinyin_of_Char["tone"];
-        char: CommonType.Pinyin_of_Char["char"];
-        /**
-         * 提供可选字列表, 方便替换
-         */
-        char_list: CommonType.Pinyin_of_Char["char_list"];
-      }[];
-    };
-  };
-
-  // 生成所有可能的结果
-  let totalOption: Buf_Option = {};
-  // 生成姓氏后的第一个字
-  for (let pinyinWithoutTone of Object.keys(legal_PinyinDb)) {
-    if (char_姓_末尾字.pinyin_without_tone === pinyinWithoutTone) {
-      // 禁止和姓氏最后一字同音
-      continue;
-    }
-    const optionList = legal_PinyinDb[pinyinWithoutTone].option_list;
-    for (let option of optionList) {
-      if (pinyinSet_同音字.has(option.pinyin)) {
-        // 排除同音字
-        continue;
-      }
-      // 排除一些两字连缀效果不佳的组合`阴阴X` / `上上X`
-      if (char_姓_末尾字.tone === 1 && option.tone === 1) {
-        continue;
-      }
-      if (char_姓_末尾字.tone === 3 && option.tone === 3) {
-        continue;
-      }
-      totalOption[option.pinyin] = {
-        char: option.char,
-        char_list: option.char_list,
-        optionList: [],
-        pinyin: option.pinyin,
-        pinyin_without_tone: option.pinyin_without_tone,
-        tone: option.tone,
-      };
-    }
-  }
-  // 生成姓氏后的第二个字
-  for (const secondPinyin of Object.keys(totalOption)) {
-    // 此时第一个字和第二个字都已经生成
-    let char_1 = char_姓_末尾字;
-    let char_2 = totalOption[secondPinyin];
-
-    // 遍历所有可能的音调
-    for (let pinyinWithoutTone of Object.keys(legal_PinyinDb)) {
-      if (char_1.pinyin_without_tone === pinyinWithoutTone) {
-        // 禁止和姓氏最后一字同音
-        continue;
-      }
-      if (char_2.pinyin_without_tone === pinyinWithoutTone) {
-        // 禁止和姓名第一字同音
-        continue;
-      }
-      const optionList = legal_PinyinDb[pinyinWithoutTone].option_list;
-      for (let option of optionList) {
-        if (pinyinSet_同音字.has(option.pinyin)) {
-          // 排除同音字
-          continue;
-        }
-        // 禁止使用上声(三声)作为姓名结尾
-        if (option.tone === 3) {
-          continue;
-        }
-        // 排除一些两字连缀效果不佳的组合 `X去去`
-        if (char_2.tone === 4 && option.tone === 4) {
-          continue;
-        }
-        // 禁止同音调: 阴阴阴(之前已去)、阳阳阳、上上上(之前已去)、去去去(之前已去)
-        if (char_1.tone === 2 && char_2.tone === 2 && option.tone === 2) {
-          continue;
-        }
-        totalOption[char_2.pinyin].optionList.push({
-          char: option.char,
-          char_list: option.char_list,
-          pinyin: option.pinyin,
-          pinyin_without_tone: option.pinyin_without_tone,
-          tone: option.tone,
-        });
-      }
-    }
-  }
-
   // 按必选字进行过滤
   const set_必选字 = new Set();
   for (let char_必选字 of char_必选字_list) {
     set_必选字.add(char_必选字.char);
   }
-  if (char_必选字_list.length > 0) {
-    const nameOption_包含必选字: Buf_Option = {};
-    for (let firstPinyinKey of Object.keys(totalOption)) {
-      let firstPinyin = totalOption[firstPinyinKey];
 
-      for (let charWithPinyin of firstPinyin.char_list) {
-        if (set_必选字.has(charWithPinyin.char)) {
-          // 符合条件, 将key添加到选项中
-          nameOption_包含必选字[firstPinyinKey] = totalOption[firstPinyinKey];
-          // 将候选字替换为要求的必选字, 方便确认
-          nameOption_包含必选字[firstPinyinKey].char = charWithPinyin.char;
-          break;
+  // 生成所有可能的结果
+  for (let pinyinItemChar_1 of pinyinOptionList) {
+    if (generateAll === false) {
+      // 尽量减少计算量, 未显式要求生成全部结果就只生成一小部分
+      if (nameList.length >= Const.Max_Display_Item) {
+        return nameList;
+      }
+    }
+
+    // 首先生成第一个字
+    if (
+      char_姓_末尾字.pinyin_without_tone ===
+      pinyinItemChar_1.pinyin_without_tone
+    ) {
+      // 禁止和姓氏最后一字同音
+      continue;
+    }
+    if (pinyinSet_同音字.has(pinyinItemChar_1.pinyin)) {
+      // 排除同音字
+      continue;
+    }
+    // 排除一些两字连缀效果不佳的组合`阴阴X` / `上上X`
+    if (char_姓_末尾字.tone === 1 && pinyinItemChar_1.tone === 1) {
+      continue;
+    }
+    if (char_姓_末尾字.tone === 3 && pinyinItemChar_1.tone === 3) {
+      continue;
+    }
+    for (let pinyinItemChar_2 of pinyinOptionList) {
+      // 生成第二个字
+
+      if (generateAll === false) {
+        // 尽量减少计算量, 未显式要求生成全部结果就只生成一小部分
+        if (nameList.length >= Const.Max_Display_Item) {
+          return nameList;
         }
       }
-      // 检查下是否满足了要求
-      if (nameOption_包含必选字[firstPinyinKey] !== undefined) {
+
+      if (
+        char_姓_末尾字.pinyin_without_tone ===
+        pinyinItemChar_2.pinyin_without_tone
+      ) {
+        // 禁止和姓氏最后一字同音
         continue;
       }
-      // 否则, 说明姓名的第一个字中没有必选字, 需要检查第二个字
+      if (pinyinSet_同音字.has(pinyinItemChar_2.pinyin)) {
+        // 排除同音字
+        continue;
+      }
+      // 禁止使用上声(三声)作为姓名结尾
+      if (pinyinItemChar_2.tone === 3) {
+        continue;
+      }
+      // 排除一些两字连缀效果不佳的组合 `X去去`
+      if (pinyinItemChar_1.tone === 4 && pinyinItemChar_2.tone === 4) {
+        continue;
+      }
+      // 禁止同音调: 阴阴阴(之前已去)、阳阳阳、上上上(之前已去)、去去去(之前已去)
+      if (
+        char_姓_末尾字.tone === 2 &&
+        pinyinItemChar_1.tone === 2 &&
+        pinyinItemChar_2.tone === 2
+      ) {
+        continue;
+      }
 
-      // 首先清空第一个字的二级选择列表, 只允许有候选字的选项加入
-      const optionList_包含必选字 = [];
+      // 必选字检查
+      let flag_check_必选字 = true;
+      if (char_必选字_list.length > 0) {
+        // 先将必选字检查置为false
+        flag_check_必选字 = false;
 
-      for (let option of totalOption[firstPinyinKey].optionList) {
-        // 检查第二个字中是否有候选字
-        for (let charWithPinyin of option.char_list) {
-          if (set_必选字.has(charWithPinyin.char)) {
-            // 将候选字替换为要求的必选字, 方便确认
-            option.char = charWithPinyin.char;
-            // 将满足条件的字添加到optionList中
-            optionList_包含必选字.push(option);
+        // 检查是否包含必选字
+        for (let optionChar of pinyinItemChar_1.char_list) {
+          if (flag_check_必选字) {
+            // 有一个包含必选字就可以
+            continue;
+          }
+          if (set_必选字.has(optionChar.char)) {
+            // 匹配成功, 将当前拼音选项中的字替换为必选字
+            // 由于已经进行了深拷贝, 所以这里的修改不会影响外界
+            pinyinItemChar_1.char = optionChar.char;
+            flag_check_必选字 = true;
+          }
+        }
+        for (let optionChar of pinyinItemChar_2.char_list) {
+          if (flag_check_必选字) {
+            // 有一个包含必选字就可以
+            continue;
+          }
+          if (set_必选字.has(optionChar.char)) {
+            // 匹配成功, 将当前拼音选项中的字替换为必选字
+            // 由于已经进行了深拷贝, 所以这里的修改不会影响外界
+            pinyinItemChar_2.char = optionChar.char;
+            flag_check_必选字 = true;
           }
         }
       }
-      if (optionList_包含必选字.length > 0) {
-        // 有满足要求的二级选项, 保存之
-        nameOption_包含必选字[firstPinyinKey] = totalOption[firstPinyinKey];
-        nameOption_包含必选字[firstPinyinKey].optionList =
-          optionList_包含必选字;
+      if (flag_check_必选字 === false) {
+        // 必选字检查未通过
+        continue;
       }
-    }
-    // 过滤完成后, 用必选字结果替代原始结果
-    totalOption = nameOption_包含必选字;
-  }
-
-  // 生成最终结果
-  for (let firstPinyinKey of Object.keys(totalOption)) {
-    let firstPinyin = totalOption[firstPinyinKey];
-    for (let option of firstPinyin.optionList) {
       const name: CommonType.Type_Name = {
         姓氏: char_姓_全部,
         人名_第一个字: {
-          ...firstPinyin,
+          ...pinyinItemChar_1,
         },
         人名_第二个字: {
-          ...option,
+          ...pinyinItemChar_2,
         },
         demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
-          firstPinyin.char
-        }${option.char}`,
-        score: getScoreOfName(firstPinyin.char, option.char),
+          pinyinItemChar_1.char
+        }${pinyinItemChar_2.char}`,
+        score: getScoreOfName(pinyinItemChar_1.char, pinyinItemChar_2.char),
       };
       nameList.push(name);
     }
   }
 
-  // 排序, 按推荐序来
-  nameList.sort((a, b) => {
-    return b.score - a.score;
-  });
   return nameList;
 }
 
@@ -357,31 +329,6 @@ export function generateLegalNameListFromExist({
   }
   char_必选字_list = [...Object.values(buf_过滤同音必选字)];
 
-  /**
-   * 特定字符下, 连续两位文字对应的拼音可选项是有限的
-   */
-  type Buf_Option = {
-    [pinyin: string]: {
-      pinyin: CommonType.Pinyin_of_Char["pinyin"];
-      pinyin_without_tone: CommonType.Pinyin_of_Char["pinyin_without_tone"];
-      tone: CommonType.Pinyin_of_Char["tone"];
-      char: CommonType.Pinyin_of_Char["char"];
-      /**
-       * 提供可选字列表, 方便替换
-       */
-      char_list: CommonType.Pinyin_of_Char["char_list"];
-      optionList: {
-        pinyin: CommonType.Pinyin_of_Char["pinyin"];
-        pinyin_without_tone: CommonType.Pinyin_of_Char["pinyin_without_tone"];
-        tone: CommonType.Pinyin_of_Char["tone"];
-        char: CommonType.Pinyin_of_Char["char"];
-        /**
-         * 提供可选字列表, 方便替换
-         */
-        char_list: CommonType.Pinyin_of_Char["char_list"];
-      }[];
-    };
-  };
   let legalNameList: string[];
   switch (chooseType) {
     case Const.Choose_Type_古人云:
@@ -468,53 +415,34 @@ export function generateLegalNameListFromExist({
   });
 
   // 生成所有可能的结果
-  let totalOption: Buf_Option = {};
   for (let legalPinyinName of legalPinyinNameList) {
     let pinyin_1 = legalPinyinName.pinyin_char_1;
     let pinyin_2 = legalPinyinName.pinyin_char_2;
-    // 由于是对已有答案进行筛选, 此处不再需要按发音合并. 这里应使用全称作为key
-    totalOption[`${pinyin_1.char}${pinyin_2.char}`] = {
-      char: pinyin_1.char,
-      char_list: [pinyin_1],
-      optionList: [
-        {
-          char: pinyin_2.char,
-          char_list: [pinyin_2],
-          pinyin: pinyin_2.pinyin,
-          pinyin_without_tone: pinyin_2.pinyin_without_tone,
-          tone: pinyin_2.tone,
-        },
-      ],
-      pinyin: pinyin_1.pinyin,
-      pinyin_without_tone: pinyin_1.pinyin_without_tone,
-      tone: pinyin_1.tone,
-    };
-  }
 
-  // 生成最终结果
-  for (let firstCharKey of Object.keys(totalOption)) {
-    let firstPinyin = totalOption[firstCharKey];
-    for (let option of firstPinyin.optionList) {
-      const name: CommonType.Type_Name = {
-        姓氏: char_姓_全部,
-        人名_第一个字: {
-          ...firstPinyin,
-        },
-        人名_第二个字: {
-          ...option,
-        },
-        demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
-          firstPinyin.char
-        }${option.char}`,
-        score: getScoreOfName(firstPinyin.char, option.char),
-      };
-      nameList.push(name);
+    const name: CommonType.Type_Name = {
+      姓氏: char_姓_全部,
+      人名_第一个字: {
+        ...pinyin_1,
+        char_list: [pinyin_1],
+      },
+      人名_第二个字: {
+        ...pinyin_2,
+        char_list: [pinyin_2],
+      },
+      demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
+        pinyin_1.char
+      }${pinyin_2.char}`,
+      score: getScoreOfName(pinyin_1.char, pinyin_2.char),
+    };
+    nameList.push(name);
+
+    if (generateAll === false) {
+      // 尽量减少计算量, 未显式要求生成全部结果就只生成一小部分
+      if (nameList.length >= Const.Max_Display_Item) {
+        return nameList;
+      }
     }
   }
 
-  // 排序, 按推荐序来
-  nameList.sort((a, b) => {
-    return b.score - a.score;
-  });
   return nameList;
 }

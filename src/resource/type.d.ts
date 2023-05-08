@@ -1,4 +1,5 @@
 import * as Const from "./const";
+import * as CommonType from "@/../script/common/type";
 
 export type ChooseType =
   | typeof Const.Choose_Type_古人云
