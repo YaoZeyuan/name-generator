@@ -101,6 +101,12 @@ export default () => {
   const onClose = () => {
     setOpen(false);
   };
+  const Tools = {
+    reset: () => {
+      store.previewNameList = [];
+      setTotalNameList([]);
+    },
+  };
 
   return (
     <div>
@@ -145,8 +151,7 @@ export default () => {
           type="primary"
           onClick={async function () {
             store.status.isLoading = true;
-            store.previewNameList = [];
-            setTotalNameList([]);
+            Tools.reset();
             await utils.asyncSleep(100);
             console.log("开始生成候选人名");
             let nameList: CommonType.Type_Name[] = [];
@@ -189,6 +194,7 @@ export default () => {
           defaultValue={storeSnapshot.status.currentTab}
           onChange={(event) => {
             store.status.currentTab = event.target.value;
+            Tools.reset();
           }}
         >
           <Radio.Button value={Const.Choose_Type_Option.诗云}>
