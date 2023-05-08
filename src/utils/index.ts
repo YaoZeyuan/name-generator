@@ -462,7 +462,8 @@ export function generateLegalNameListFromExist({
   for (let legalPinyinName of legalPinyinNameList) {
     let pinyin_1 = legalPinyinName.pinyin_char_1;
     let pinyin_2 = legalPinyinName.pinyin_char_2;
-    totalOption[pinyin_1.pinyin] = {
+    // 由于是对已有答案进行筛选, 此处不再需要按发音合并. 这里应使用汉字作为key, 而不是发音
+    totalOption[pinyin_1.char] = {
       char: pinyin_1.char,
       char_list: [pinyin_1],
       optionList: [
@@ -481,8 +482,8 @@ export function generateLegalNameListFromExist({
   }
 
   // 生成最终结果
-  for (let firstPinyinKey of Object.keys(totalOption)) {
-    let firstPinyin = totalOption[firstPinyinKey];
+  for (let firstCharKey of Object.keys(totalOption)) {
+    let firstPinyin = totalOption[firstCharKey];
     for (let option of firstPinyin.optionList) {
       const name: CommonType.Type_Name = {
         姓氏: char_姓_全部,

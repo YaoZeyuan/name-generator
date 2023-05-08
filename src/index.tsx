@@ -6,7 +6,8 @@ import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.js
 import PinyinDb_Min_100 from "@/../database/pinyin_db/zd_name_pinyin_db_min_100.json";
 import * as CommonType from "@/../script/common/type";
 
-import { Button, Input } from "antd";
+import { Button, Input, Drawer, Divider } from "antd";
+import Desc from "./desc";
 import * as utils from "@/utils";
 import * as Type from "@/resource/type";
 import * as Const from "@/resource/const";
@@ -81,6 +82,16 @@ export default () => {
   const char_必选字_list = utils.transString2PinyinList(input_必选字);
   const char_排除字_list = utils.transString2PinyinList(input_排除字列表);
 
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <div>
@@ -137,6 +148,8 @@ export default () => {
         >
           诗云-生成所有发音方案
         </Button>
+      </div>
+      <p>
         <Button
           onClick={function () {
             let nameList = utils.generateLegalNameListFromExist({
@@ -154,6 +167,7 @@ export default () => {
         >
           看答案-从已有人名中寻找
         </Button>
+        <Divider type="vertical"></Divider>
         <Button
           onClick={function () {
             let nameList = utils.generateLegalNameListFromExist({
@@ -171,6 +185,8 @@ export default () => {
         >
           古人云-从古代名&字中寻找
         </Button>
+        <Divider type="vertical"></Divider>
+
         <Button
           onClick={function () {
             let nameList = utils.generateLegalNameListFromExist({
@@ -188,6 +204,8 @@ export default () => {
         >
           财富论-从私募基金名中寻找
         </Button>
+      </p>
+      <p>
         <Button
           disabled={storeSnapshot.nameList.length === 0}
           type="primary"
@@ -209,13 +227,28 @@ export default () => {
         >
           下载所有姓名方案在电脑查看
         </Button>
-      </div>
+        <Divider type="vertical"></Divider>
+        <Button type="dashed" onClick={showDrawer}>
+          原理介绍
+        </Button>
+      </p>
+      <p>
+        <Drawer
+          size="large"
+          title="原理介绍"
+          placement="right"
+          onClose={onClose}
+          open={open}
+        >
+          <Desc></Desc>
+        </Drawer>
+      </p>
       <p>姓氏:{input_姓氏}</p>
       {storeSnapshot.nameList.length > 0 ? (
         <p>
           共有{storeSnapshot.totalNameCount}
-          种可能的三字名<b>发音</b>, 展示前{storeSnapshot.maxDisplayItem}个,
-          每行展示
+          种可能的三字名, 展示前
+          {storeSnapshot.maxDisplayItem}个, 每行展示
           {storeSnapshot.columnCount}个
         </p>
       ) : (
