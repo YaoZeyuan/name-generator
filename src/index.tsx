@@ -157,7 +157,7 @@ export default () => {
               char_姓_末尾字: char_姓_末尾字[0],
               char_必选字_list,
               char_排除字_list,
-              chooseType: Const.Choose_Type_看答案,
+              chooseType: Const.Choose_Type_他山石,
             });
             store.totalNameCount = nameList.length;
             // 随机打乱
@@ -165,7 +165,7 @@ export default () => {
             store.nameList = nameList;
           }}
         >
-          看答案-从已有人名中寻找
+          他山石-从已有人名中寻找
         </Button>
         <Divider type="vertical"></Divider>
         <Button

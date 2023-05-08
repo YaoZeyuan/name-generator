@@ -129,9 +129,9 @@ export const Raw_已公布私募基金名_Uri = path.resolve(
   "database/fund_db/已公布私募基金名_截至20230507.txt"
 );
 
-export const Name_Db_看答案_已知人名_Uri = path.resolve(
+export const Name_Db_他山石_已知人名_Uri = path.resolve(
   basePath,
-  "database/name_db/看答案_已知人名.json"
+  "database/name_db/他山石_已知人名.json"
 );
 
 export const Name_Db_财富论_基金选名_Uri = path.resolve(

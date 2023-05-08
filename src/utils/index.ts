@@ -4,7 +4,7 @@ import * as Type from "../resource/type";
 import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
 import RawCharDb from "@/../database/char_db/zd_name_char_db_min_1.json";
 import NameDb_古人云 from "@/../database/name_db/古人云_历史人名.json";
-import NameDb_看答案 from "@/../database/name_db/看答案_已知人名.json";
+import NameDb_他山石 from "@/../database/name_db/他山石_已知人名.json";
 import NameDb_财富论 from "@/../database/name_db/财富论_基金选名.json";
 import TotalCharDb from "@/../database/char_db/zd_without_muilt_tone_char_db.json";
 
@@ -78,6 +78,7 @@ export function generateLegalNameList({
   char_排除字_list = [],
   char_必选字_list = [],
   legal_PinyinDb,
+  generateAll = false,
 }: {
   /**
    * 姓的全称, 用于合成最终结果
@@ -100,6 +101,10 @@ export function generateLegalNameList({
    * 所有可选拼音库, 所有拼音均从可选拼音中产生
    */
   legal_PinyinDb: CommonType.Pinyin_Db;
+  /**
+   * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
+   */
+  generateAll?: boolean;
 }) {
   let nameList: CommonType.Type_Name[] = [];
 
@@ -306,7 +311,8 @@ export function generateLegalNameListFromExist({
   char_姓_末尾字,
   char_排除字_list = [],
   char_必选字_list = [],
-  chooseType = Const.Choose_Type_看答案,
+  chooseType = Const.Choose_Type_他山石,
+  generateAll = false,
 }: {
   /**
    * 姓的全称, 用于合成最终结果
@@ -329,6 +335,10 @@ export function generateLegalNameListFromExist({
    * 已有姓名来源
    */
   chooseType: Type.ChooseType;
+  /**
+   * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
+   */
+  generateAll?: boolean;
 }) {
   let nameList: CommonType.Type_Name[] = [];
 
@@ -377,8 +387,8 @@ export function generateLegalNameListFromExist({
     case Const.Choose_Type_古人云:
       legalNameList = NameDb_古人云;
       break;
-    case Const.Choose_Type_看答案:
-      legalNameList = NameDb_看答案;
+    case Const.Choose_Type_他山石:
+      legalNameList = NameDb_他山石;
       break;
     case Const.Choose_Type_财富论:
       legalNameList = NameDb_财富论;

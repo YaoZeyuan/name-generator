@@ -5,5 +5,7 @@ export const Storage_必选字_Key = `${Storage_Key}_Must_Have_Char`;
 export const Storage_Char_Leve_Key = `${Storage_Key}_Char_Level`;
 
 export const Choose_Type_古人云 = `古人云`;
-export const Choose_Type_看答案 = `看答案`;
+export const Choose_Type_他山石 = `他山石`;
 export const Choose_Type_财富论 = `财富论`;
+
+

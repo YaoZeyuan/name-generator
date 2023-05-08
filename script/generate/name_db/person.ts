@@ -25,7 +25,7 @@ async function asyncRunner() {
   });
 
   fs.writeFileSync(
-    Const.Name_Db_看答案_已知人名_Uri,
+    Const.Name_Db_他山石_已知人名_Uri,
     JSON.stringify(realNameList, null, 2)
   );
 
