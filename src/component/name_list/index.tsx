@@ -31,10 +31,16 @@ export default ({
   // 拆分成实际姓名列表
   let tableDataSource = [];
   while (realNameList.length > 0) {
-    let row: { [key: `name-${number}`]: string } = {};
+    let row: {
+      key: string;
+      [key: `name-${number}`]: string;
+    } = {
+      key: "",
+    };
     for (let i = 1; i <= columnCount; i++) {
       let realname = realNameList.shift();
       row[`name-${i}`] = realname ?? "";
+      row["key"] = `${realname}-${i}`;
     }
     tableDataSource.push(row);
   }

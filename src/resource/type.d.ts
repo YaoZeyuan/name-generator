@@ -1,7 +1,4 @@
 import * as Const from "./const";
 import * as CommonType from "@/../script/common/type";
 
-export type ChooseType =
-  | typeof Const.Choose_Type_古人云
-  | typeof Const.Choose_Type_他山石
-  | typeof Const.Choose_Type_财富论;
+export type ChooseType = keyof typeof Const.Choose_Type_Option;

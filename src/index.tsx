@@ -6,7 +6,7 @@ import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.js
 import PinyinDb_Min_100 from "@/../database/pinyin_db/zd_name_pinyin_db_min_100.json";
 import * as CommonType from "@/../script/common/type";
 
-import { Button, Input, Drawer, Divider, Card } from "antd";
+import { Button, Input, Drawer, Divider, Card, Radio, message } from "antd";
 import Desc from "./desc";
 import * as utils from "@/utils";
 import * as Type from "@/resource/type";
@@ -44,18 +44,19 @@ let default_input_必选字 = utils.getValueByStorage(
 );
 
 const store = proxy<{
-  nameList: CommonType.Type_Name[];
+  previewNameList: CommonType.Type_Name[];
   totalNameCount: number;
   maxDisplayItem: number;
   columnCount: number;
   status: {
     isLoading: boolean;
+    currentTab: Type.ChooseType;
   };
 }>({
   /**
-   * 生成的姓名列表
+   * 用于预览的姓名列表
    */
-  nameList: [],
+  previewNameList: [],
   /**
    * 总姓名数量
    */
@@ -70,6 +71,7 @@ const store = proxy<{
   columnCount: 10,
   status: {
     isLoading: false,
+    currentTab: Const.Choose_Type_Option.诗云,
   },
 });
 
@@ -78,6 +80,7 @@ export default () => {
   let [input_排除字列表, set_input_排除字列表] =
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
+  let [totalNameList, setTotalNameList] = useState<CommonType.Type_Name[]>([]);
 
   let storeSnapshot = useSnapshot(store);
 
@@ -136,94 +139,79 @@ export default () => {
           }}
         ></Input.TextArea>
       </div>
-      <div>
-        <Button
-          onClick={function () {
-            store.status.isLoading = true;
-            let nameList = utils.generateLegalNameList({
-              char_姓_全部,
-              char_姓_末尾字: char_姓_末尾字[0],
-              char_必选字_list,
-              char_排除字_list,
-              pinyinOptionList: Pinyin_Option_List,
-            });
-            store.status.isLoading = false;
-            store.totalNameCount = nameList.length;
-            // 随机打乱
-            nameList.sort(() => Math.random() - 0.5);
-            store.nameList = nameList;
-          }}
-        >
-          诗云-生成所有发音方案
-        </Button>
-      </div>
       <p>
         <Button
-          onClick={function () {
+          onClick={async function () {
             store.status.isLoading = true;
-            let nameList = utils.generateLegalNameListFromExist({
-              char_姓_全部,
-              char_姓_末尾字: char_姓_末尾字[0],
-              char_必选字_list,
-              char_排除字_list,
-              chooseType: Const.Choose_Type_他山石,
-            });
+            store.previewNameList = [];
+            setTotalNameList([]);
+            await utils.asyncSleep(100);
+            console.log("开始生成候选人名");
+            let nameList: CommonType.Type_Name[] = [];
+            if (
+              storeSnapshot.status.currentTab === Const.Choose_Type_Option.诗云
+            ) {
+              nameList = utils.generateLegalNameList({
+                char_姓_全部,
+                char_姓_末尾字: char_姓_末尾字[0],
+                char_必选字_list,
+                char_排除字_list,
+                pinyinOptionList: Pinyin_Option_List,
+                generateAll: true,
+              });
+            } else {
+              nameList = utils.generateLegalNameListFromExist({
+                char_姓_全部,
+                char_姓_末尾字: char_姓_末尾字[0],
+                char_必选字_list,
+                char_排除字_list,
+                chooseType: storeSnapshot.status.currentTab,
+                generateAll: true,
+              });
+            }
             store.status.isLoading = false;
+            console.log("候选人名生成完毕");
+            // 随机打乱
+            nameList.sort(() => Math.random() - 0.5);
+            console.log("随机打乱完毕");
+            setTotalNameList(nameList);
+            store.previewNameList = nameList.slice(0, 1000);
+            console.log("数据生成完毕");
+          }}
+        >
+          生成候选方案
+        </Button>
+        <Divider type="vertical" />
 
-            store.totalNameCount = nameList.length;
-            // 随机打乱
-            nameList.sort(() => Math.random() - 0.5);
-            store.nameList = nameList;
+        <Radio.Group
+          defaultValue={storeSnapshot.status.currentTab}
+          onChange={(event) => {
+            store.status.currentTab = event.target.value;
           }}
         >
-          他山石-从已有人名中寻找
-        </Button>
-        <Divider type="vertical"></Divider>
-        <Button
-          onClick={function () {
-            store.status.isLoading = true;
-            let nameList = utils.generateLegalNameListFromExist({
-              char_姓_全部,
-              char_姓_末尾字: char_姓_末尾字[0],
-              char_必选字_list,
-              char_排除字_list,
-              chooseType: Const.Choose_Type_古人云,
-            });
-            store.status.isLoading = false;
-            store.totalNameCount = nameList.length;
-            // 随机打乱
-            nameList.sort(() => Math.random() - 0.5);
-            store.nameList = nameList;
-          }}
-        >
-          古人云-从古代名&字中寻找
-        </Button>
-        <Divider type="vertical"></Divider>
-
-        <Button
-          onClick={function () {
-            let nameList = utils.generateLegalNameListFromExist({
-              char_姓_全部,
-              char_姓_末尾字: char_姓_末尾字[0],
-              char_必选字_list,
-              char_排除字_list,
-              chooseType: Const.Choose_Type_财富论,
-            });
-            store.totalNameCount = nameList.length;
-            // 随机打乱
-            nameList.sort(() => Math.random() - 0.5);
-            store.nameList = nameList;
-          }}
-        >
-          财富论-从私募基金名中寻找
-        </Button>
+          <Radio.Button value={Const.Choose_Type_Option.诗云}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.诗云]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.他山石}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.他山石]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.古人云}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.古人云]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.财富论}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.财富论]}
+          </Radio.Button>
+        </Radio.Group>
       </p>
       <p>
         <Button
-          disabled={storeSnapshot.nameList.length === 0}
+          disabled={totalNameList.length === 0}
           type="primary"
-          onClick={() => {
-            let nameList = storeSnapshot.nameList;
+          onClick={async () => {
+            store.status.isLoading = true;
+            await utils.asyncSleep(10);
+            let nameList = totalNameList;
+
             let columns = [];
             for (let i = 0; i < nameList.length; i++) {
               let item = nameList[i];
@@ -236,6 +224,9 @@ export default () => {
               type: "text/plain;charset=utf-8",
             });
             saveAs(blob, "所有可能的姓名发音列表.txt");
+            message.info(
+              `所有可能的姓名发音列表生成完毕, 共${nameList.length}条`
+            );
           }}
         >
           下载所有姓名方案在电脑查看
@@ -257,9 +248,10 @@ export default () => {
         </Drawer>
       </p>
       <p>姓氏:{input_姓氏}</p>
-      {storeSnapshot.nameList.length > 0 ? (
+      {storeSnapshot.previewNameList.length > 0 ? (
         <p>
-          共有{storeSnapshot.totalNameCount}
+          共生成
+          {totalNameList.length}
           种可能的三字名, 展示前
           {storeSnapshot.maxDisplayItem}个, 每行展示
           {storeSnapshot.columnCount}个
@@ -269,12 +261,7 @@ export default () => {
       )}
       <Card title="" bordered={false} loading={storeSnapshot.status.isLoading}>
         <NameList
-          nameList={
-            storeSnapshot.nameList.slice(
-              0,
-              storeSnapshot.maxDisplayItem
-            ) as CommonType.Type_Name[]
-          }
+          nameList={storeSnapshot.previewNameList as CommonType.Type_Name[]}
           columnCount={storeSnapshot.columnCount}
         ></NameList>
       </Card>

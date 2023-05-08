@@ -7,6 +7,14 @@ import NameDb_古人云 from "@/../database/name_db/古人云_历史人名.json"
 import NameDb_他山石 from "@/../database/name_db/他山石_已知人名.json";
 import NameDb_财富论 from "@/../database/name_db/财富论_基金选名.json";
 
+export async function asyncSleep(ms: number) {
+  return new Promise((reslove) => {
+    setTimeout(() => {
+      reslove(true);
+    }, ms);
+  });
+}
+
 export function getValueByStorage(key: string, defaultValue: any) {
   let content = (localStorage.getItem(key) as string) ?? "";
   try {
@@ -283,7 +291,7 @@ export function generateLegalNameListFromExist({
   char_姓_末尾字,
   char_排除字_list = [],
   char_必选字_list = [],
-  chooseType = Const.Choose_Type_他山石,
+  chooseType = Const.Choose_Type_Option.他山石,
   generateAll = false,
 }: {
   /**
@@ -331,15 +339,17 @@ export function generateLegalNameListFromExist({
 
   let legalNameList: string[];
   switch (chooseType) {
-    case Const.Choose_Type_古人云:
+    case Const.Choose_Type_Option.古人云:
       legalNameList = NameDb_古人云;
       break;
-    case Const.Choose_Type_他山石:
+    case Const.Choose_Type_Option.他山石:
       legalNameList = NameDb_他山石;
       break;
-    case Const.Choose_Type_财富论:
+    case Const.Choose_Type_Option.财富论:
       legalNameList = NameDb_财富论;
       break;
+    default:
+      legalNameList = NameDb_古人云;
   }
 
   // 首先按必选字进行过滤, 减少成本
