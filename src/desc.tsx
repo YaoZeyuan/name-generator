@@ -41,7 +41,13 @@ export default () => {
 
   return (
     <div>
-      <pre>{markContent}</pre>
+      <pre
+        style={{
+          whiteSpace: "break-spaces",
+        }}
+      >
+        {markContent}
+      </pre>
     </div>
   );
 };

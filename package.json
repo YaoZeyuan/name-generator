@@ -17,6 +17,7 @@
     "h": "ts-node script/generate/fetch_fund_list.ts"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "ahooks": "^3.7.2",
     "antd": "^5.0.7",
     "file-saver": "^2.0.5",

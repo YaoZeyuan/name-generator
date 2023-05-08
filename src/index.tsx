@@ -6,6 +6,7 @@ import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.js
 import PinyinDb_Min_100 from "@/../database/pinyin_db/zd_name_pinyin_db_min_100.json";
 import * as CommonType from "@/../script/common/type";
 
+import { DownloadOutlined } from "@ant-design/icons";
 import { Button, Input, Drawer, Divider, Card, Radio, message } from "antd";
 import Desc from "./desc";
 import * as utils from "@/utils";
@@ -71,7 +72,7 @@ const store = proxy<{
   columnCount: 10,
   status: {
     isLoading: false,
-    currentTab: Const.Choose_Type_Option.诗云,
+    currentTab: Const.Choose_Type_Option.古人云,
   },
 });
 
@@ -141,6 +142,7 @@ export default () => {
       </div>
       <p>
         <Button
+          type="primary"
           onClick={async function () {
             store.status.isLoading = true;
             store.previewNameList = [];
@@ -205,8 +207,11 @@ export default () => {
       </p>
       <p>
         <Button
-          disabled={totalNameList.length === 0}
           type="primary"
+          shape="round"
+          ghost
+          icon={<DownloadOutlined />}
+          disabled={totalNameList.length === 0}
           onClick={async () => {
             store.status.isLoading = true;
             await utils.asyncSleep(10);
@@ -232,7 +237,7 @@ export default () => {
           下载所有姓名方案在电脑查看
         </Button>
         <Divider type="vertical"></Divider>
-        <Button type="dashed" onClick={showDrawer}>
+        <Button ghost type="primary" shape="round" onClick={showDrawer}>
           原理介绍
         </Button>
       </p>
