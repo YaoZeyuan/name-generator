@@ -1,6 +1,6 @@
 import * as CommonType from "@/../script/common/type";
-import * as Const from "../resource/const";
-import * as Type from "../resource/type";
+import * as Const from "@/resource/const";
+import * as Type from "@/resource/type";
 import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
 import RawCharDb from "@/../database/char_db/zd_name_char_db_min_1.json";
 import NameDb_古人云 from "@/../database/name_db/古人云_历史人名.json";
@@ -472,8 +472,8 @@ export function generateLegalNameListFromExist({
   for (let legalPinyinName of legalPinyinNameList) {
     let pinyin_1 = legalPinyinName.pinyin_char_1;
     let pinyin_2 = legalPinyinName.pinyin_char_2;
-    // 由于是对已有答案进行筛选, 此处不再需要按发音合并. 这里应使用汉字作为key, 而不是发音
-    totalOption[pinyin_1.char] = {
+    // 由于是对已有答案进行筛选, 此处不再需要按发音合并. 这里应使用全称作为key
+    totalOption[`${pinyin_1.char}${pinyin_2.char}`] = {
       char: pinyin_1.char,
       char_list: [pinyin_1],
       optionList: [

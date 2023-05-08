@@ -1,4 +1,4 @@
-import * as Type from "@/resource/type";
+import * as CommonType from "@/../script/common/type";
 import { Table } from "antd";
 import "./index.less";
 
@@ -6,7 +6,7 @@ export default ({
   nameList = [],
   columnCount = 5,
 }: {
-  nameList: Type.Type_Name[];
+  nameList: CommonType.Type_Name[];
   // 每行展示x个姓名
   columnCount: number;
 }) => {
