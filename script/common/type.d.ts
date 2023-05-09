@@ -1,3 +1,4 @@
+import * as Const from "./const";
 export type Char = {
   /**
    * 可选字
@@ -58,6 +59,10 @@ export type Pinyin_Db = Record<
 >;
 
 export type Type_音调 = 1 | 2 | 3 | 4;
+export type Vowel_韵母 =
+  (typeof Const.Vowel_Type)[keyof typeof Const.Vowel_Type];
+export type Initial_声母_发音方法 = keyof typeof Const.Initial_发音方法_Map;
+export type Initial_声母_发音部位 = keyof typeof Const.Initial_发音部位_Map;
 
 export type Type_Name = {
   姓氏: Char_With_Pinyin[];
