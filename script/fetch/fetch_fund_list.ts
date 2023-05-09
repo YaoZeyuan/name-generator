@@ -13,7 +13,7 @@ async function asyncSleep() {
 }
 
 /**
- * 将汉典数据转换为json
+ * 通过接口, 抓取中国私募基金列表
  */
 async function asyncRunner() {
   console.log("开始抓取基金列表");

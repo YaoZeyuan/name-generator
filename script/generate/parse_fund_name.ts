@@ -3,6 +3,10 @@ import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
 
+/**
+ * 解析基金中的可用取名字符集
+ */
+
 async function asyncRunner() {
   console.log("开始解析基金名");
   let totalUserNameCount = 0;

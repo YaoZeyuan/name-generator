@@ -3,6 +3,11 @@ import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
 
+/**
+ * @todo 已废弃
+ * 对原始人名列表进行统计
+ */
+
 const totalNameRecord = 161733;
 const totalCharUse = 3294;
 

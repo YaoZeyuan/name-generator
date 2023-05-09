@@ -3,6 +3,11 @@ import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
 
+/**
+ * 根据上一步汇总得到的可用于起名的字符集
+ * 将汉典数据转化为拼音json数据库
+ */
+
 const Tool = {
   private: {
     /**

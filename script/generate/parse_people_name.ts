@@ -4,6 +4,10 @@ import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
 
 /**
+ * 解析已有人名数据集, 生成用字统计
+ */
+
+/**
  * 返回合法人名用字
  * @param personName
  * @returns
