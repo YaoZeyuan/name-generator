@@ -6,11 +6,30 @@ const basePath = path.resolve(__dirname, "..", "..");
 export const Raw_已知人名_Path = path.resolve(basePath, "database/raw");
 export const CharDb_人名列表_Uri = path.resolve(
   basePath,
-  "database/json/raw_person_name_char_list.json"
+  "database/summary/人名用字_列表.json"
 );
-export const CharDb_人名字典_Uri = path.resolve(
+export const CharDb_人名用字_字典_Uri = path.resolve(
   basePath,
-  "database/json/raw_person_name_char_db.json"
+  "database/char_db/人名用字_字典.json"
+);
+
+export const Char_Db_私募基金_用字_列表_Uri = path.resolve(
+  basePath,
+  "database/summary/私募基金_用字_列表.json"
+);
+export const CharDb_私募基金_用字_字典_Uri = path.resolve(
+  basePath,
+  "database/char_db/私募基金_用字_字典.json"
+);
+
+export const Raw_私募基金管理公司名称_Uri = path.resolve(
+  basePath,
+  "resource/fund_db/原始数据/私募基金管理公司名称_截至20230507.json"
+);
+
+export const Raw_已公布私募基金名_Uri = path.resolve(
+  basePath,
+  "resource/fund_db/原始数据/已公布私募基金名_截至20230507.json"
 );
 
 export const Raw_Char_Db_汉典原始数据_Uri = path.resolve(
@@ -28,106 +47,23 @@ export const Char_Db_total_以字为单位_Uri = path.resolve(
   "database/char_db/zd_without_muilt_tone_char_db.json"
 );
 
-export const Char_Db_姓名用字_最少出现1次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_1.json"
-);
-export const Char_Db_姓名用字_最少出现2次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_2.json"
-);
-export const Char_Db_姓名用字_最少出现3次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_3.json"
-);
-export const Char_Db_姓名用字_最少出现4次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_4.json"
-);
-export const Char_Db_姓名用字_最少出现5次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_5.json"
-);
-export const Char_Db_姓名用字_最少出现10次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_10.json"
-);
-export const Char_Db_姓名用字_最少出现20次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_20.json"
-);
-export const Char_Db_姓名用字_最少出现50次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_50.json"
-);
-export const Char_Db_姓名用字_最少出现100次_Uri = path.resolve(
-  basePath,
-  "database/char_db/zd_name_char_db_min_100.json"
-);
+export const Char_Db_姓名用字_出现_Uri = {
+  "1次": path.resolve(basePath, "database/char_db/name_min_1.json"),
+  "3次": path.resolve(basePath, "database/char_db/name_min_3.json"),
+  "5次": path.resolve(basePath, "database/char_db/name_min_5.json"),
+  "10次": path.resolve(basePath, "database/char_db/name_min_10.json"),
+  "50次": path.resolve(basePath, "database/char_db/name_min_50.json"),
+  "100次": path.resolve(basePath, "database/char_db/name_min_100.json"),
+};
 
-export const Pinyin_Db_姓名用字_最少出现1次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_1.json"
-);
-export const Pinyin_Db_姓名用字_最少出现2次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_2.json"
-);
-export const Pinyin_Db_姓名用字_最少出现3次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_3.json"
-);
-export const Pinyin_Db_姓名用字_最少出现4次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_4.json"
-);
-export const Pinyin_Db_姓名用字_最少出现5次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_5.json"
-);
-export const Pinyin_Db_姓名用字_最少出现10次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_10.json"
-);
-export const Pinyin_Db_姓名用字_最少出现20次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_20.json"
-);
-export const Pinyin_Db_姓名用字_最少出现50次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_50.json"
-);
-export const Pinyin_Db_姓名用字_最少出现100次_Uri = path.resolve(
-  basePath,
-  "database/pinyin_db/zd_name_pinyin_db_min_100.json"
-);
-
-export const Char_Db_私募基金名_用字_列表_Uri = path.resolve(
-  basePath,
-  "database/char_db/私募基金名_用字_列表.json"
-);
-export const Char_Db_私募基金名_用字_纯文本_Uri = path.resolve(
-  basePath,
-  "database/char_db/私募基金名_用字_纯文本.txt"
-);
-export const Char_Db_私募基金公司_用字_列表_Uri = path.resolve(
-  basePath,
-  "database/char_db/私募基金公司_用字_列表.json"
-);
-export const Char_Db_私募基金公司_用字_纯文本_Uri = path.resolve(
-  basePath,
-  "database/char_db/私募基金公司_用字_纯文本.txt"
-);
-
-export const Raw_私募基金管理公司名称_Uri = path.resolve(
-  basePath,
-  "database/fund_db/私募基金管理公司名称_截至20230507.txt"
-);
-
-export const Raw_已公布私募基金名_Uri = path.resolve(
-  basePath,
-  "database/fund_db/已公布私募基金名_截至20230507.txt"
-);
+export const Pinyin_Db_姓名用字_出现_Uri = {
+  "1次": path.resolve(basePath, "database/pinyin_db/name_char_min_1.json"),
+  "3次": path.resolve(basePath, "database/pinyin_db/name_char_min_1.json"),
+  "5次": path.resolve(basePath, "database/pinyin_db/name_char_min_5.json"),
+  "10次": path.resolve(basePath, "database/pinyin_db/name_char_min_10.json"),
+  "50次": path.resolve(basePath, "database/pinyin_db/name_char_min_50.json"),
+  "100次": path.resolve(basePath, "database/pinyin_db/name_char_min_100.json"),
+};
 
 export const Name_Db_他山石_已知人名_Uri = path.resolve(
   basePath,

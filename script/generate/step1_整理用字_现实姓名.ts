@@ -2,6 +2,7 @@ import * as path from "path";
 import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
+import * as Util from "@/script/common/util";
 
 /**
  * 解析已有人名数据集, 生成用字统计
@@ -13,7 +14,12 @@ import * as Type from "@/script/common/type";
  * @returns
  */
 function parseLegalName(personName: string) {
-  const charList = personName.trim().split("");
+  const charList = personName
+    .trim()
+    .split("")
+    .filter((item) => {
+      return Util.is汉字(item);
+    });
   switch (charList.length) {
     case 0:
     case 1:
@@ -74,7 +80,10 @@ async function asyncRunner() {
   });
 
   fs.writeFileSync(Const.CharDb_人名列表_Uri, JSON.stringify(value, null, 4));
-  fs.writeFileSync(Const.CharDb_人名字典_Uri, JSON.stringify(charDB, null, 4));
+  fs.writeFileSync(
+    Const.CharDb_人名用字_字典_Uri,
+    JSON.stringify(charDB, null, 4)
+  );
   console.log(
     `执行完毕, 共解析人名${totalUserNameCount}个, 汇总到${value.length}个可用于起名的字符`
   );

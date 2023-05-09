@@ -10,13 +10,22 @@ import * as CharDb from "@/database/char_db/zd_without_muilt_tone_char_db.json";
 export function trans2LegalString(str: string) {
   let charList = str.split("");
   let legalList: string[] = charList.filter((item) => {
-    let itemCode = item.charCodeAt(0);
-    if (0x4e00 <= itemCode && itemCode <= 0x9fa5) {
-      return true;
-    }
-    return false;
+    return is汉字(item);
   });
   return legalList.join("");
+}
+
+/**
+ * 检查是否是汉字
+ * @param item
+ * @returns
+ */
+export function is汉字(item: string) {
+  let itemCode = item.charCodeAt(0);
+  if (0x4e00 <= itemCode && itemCode <= 0x9fa5) {
+    return true;
+  }
+  return false;
 }
 
 /**
