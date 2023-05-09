@@ -1,9 +1,9 @@
 import * as fs from "fs";
-import * as Type from "../../common/type";
-import * as Const from "../../common/const";
-import * as util from "./util";
-import * as Content_公司名_List from "../../../resource/fund_db/原始数据/私募基金管理公司名称_截至20230507.json";
-import * as Content_基金名_List from "../../../resource/fund_db/原始数据/已公布私募基金名_截至20230507.json";
+import * as Type from "@/script/common/type";
+import * as Const from "@/script/common/const";
+import * as util from "@/script/common/util";
+import * as Content_公司名_List from "@/resource/fund_db/原始数据/私募基金管理公司名称_截至20230507.json";
+import * as Content_基金名_List from "@/resource/fund_db/原始数据/已公布私募基金名_截至20230507.json";
 import * as jieba from "nodejieba";
 
 function generateLegalStrList(inputStr: string) {

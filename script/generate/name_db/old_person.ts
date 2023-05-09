@@ -1,8 +1,8 @@
 import * as fs from "fs";
-import * as Type from "../../common/type";
-import * as Const from "../../common/const";
-import * as util from "./util";
-import * as OldPersonNameDb from "../../../resource/old_person_name/中国古代人名与字-9336条-简体-opencc转换稿_手工替换_乾干.json";
+import * as Type from "@/script/common/type";
+import * as Const from "@/script/common/const";
+import * as util from "@/script/common/util";
+import * as OldPersonNameDb from "@/resource/old_person_name/中国古代人名与字-9336条-简体-opencc转换稿_手工替换_乾干.json";
 
 async function asyncRunner() {
   console.log("开始转换人名数据库");

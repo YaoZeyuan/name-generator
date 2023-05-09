@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as fs from "fs";
-import * as Const from "../common/const";
-import * as Type from "../common/type";
+import * as Const from "@/script/common/const";
+import * as Type from "@/script/common/type";
 
 async function asyncRunner() {
   console.log("开始解析基金名");

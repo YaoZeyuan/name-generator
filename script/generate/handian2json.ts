@@ -1,8 +1,7 @@
 import * as path from "path";
 import * as fs from "fs";
-import * as Const from "../common/const";
-import * as Type from "../common/type";
-import { TypeOpen } from "antd/es/message/interface";
+import * as Const from "@/script/common/const";
+import * as Type from "@/script/common/type";
 
 const Tool = {
   /**
@@ -33,6 +32,23 @@ const Tool = {
       newVoice.push(newChar);
     }
     return newVoice.join("");
+  },
+  /**
+   * 解析音韵配置
+   * @param voice
+   */
+  parse音韵(voice: string) {
+    let pinyin_without_tone = "";
+    let vowels_type = "";
+
+    // 解析无音调注音
+    let newVoice: string[] = [];
+    for (let char of voice) {
+      // @ts-ignore
+      let newChar = (Const.音标_To_原字母[char] as string) || char;
+      newVoice.push(newChar);
+    }
+    pinyin_without_tone = newVoice.join("");
   },
   /**
    * 获取姓名用字数据库

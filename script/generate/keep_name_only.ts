@@ -3,8 +3,8 @@
  */
 import * as path from "path";
 import * as fs from "fs";
-import * as Const from "../common/const";
-import * as Type from "../common/type";
+import * as Const from "@/script/common/const";
+import * as Type from "@/script/common/type";
 const Input_Uri =
   "/home/yao/www/share/name_generator/resource/person_name/1.txt";
 const Output_Uri =

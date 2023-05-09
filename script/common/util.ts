@@ -1,6 +1,6 @@
-import * as Type from "../../common/type";
-import * as Const from "../../common/const";
-import * as CharDb from "../../../database/char_db/zd_without_muilt_tone_char_db.json";
+import * as Type from "./type";
+import * as Const from "./const";
+import * as CharDb from "@/database/char_db/zd_without_muilt_tone_char_db.json";
 
 /**
  * 过滤指定字符串中的非法字符, 返回剩余部分
