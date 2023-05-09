@@ -214,20 +214,20 @@ export const 音标_To_原字母 = {
  * 韵母分类
  */
 export const Vowel_韵母类别 = {
-  一麻: "1" as const,
-  二波: "2" as const,
-  三皆: "3" as const,
-  四开: "4" as const,
-  五微: "5" as const,
-  六豪: "6" as const,
-  七尤: "7" as const,
-  八寒: "8" as const,
-  九文: "9" as const,
-  十唐: "10" as const,
-  十一庚: "11" as const,
-  十二齐: "12" as const,
-  十三支: "13" as const,
-  十四姑: "14" as const,
+  一麻: "一麻" as const,
+  二波: "二波" as const,
+  三皆: "三皆" as const,
+  四开: "四开" as const,
+  五微: "五微" as const,
+  六豪: "六豪" as const,
+  七尤: "七尤" as const,
+  八寒: "八寒" as const,
+  九文: "九文" as const,
+  十唐: "十唐" as const,
+  十一庚: "十一庚" as const,
+  十二齐: "十二齐" as const,
+  十三支: "十三支" as const,
+  十四姑: "十四姑" as const,
 };
 
 /**
@@ -324,23 +324,23 @@ export const Vowel_2_Type = {
  * 声母分类
  */
 export const Initial_声母类别_发音部位 = {
-  双唇音: "1_1" as const,
-  唇齿音: "1_2" as const,
-  舌尖前音: "1_3" as const,
-  舌尖中音: "1_4" as const,
-  舌尖后音: "1_5" as const,
-  舌面音: "1_6" as const,
-  舌根音: "1_7" as const,
+  双唇音: "双唇音" as const,
+  唇齿音: "唇齿音" as const,
+  舌尖前音: "舌尖前音" as const,
+  舌尖中音: "舌尖中音" as const,
+  舌尖后音: "舌尖后音" as const,
+  舌面音: "舌面音" as const,
+  舌根音: "舌根音" as const,
 };
 export const Initial_声母类别_发音方法 = {
-  塞音_清音_不送气: "2_1" as const,
-  塞音_清音_送气: "2_2" as const,
-  塞擦音_清音_不送气: "2_3" as const,
-  塞擦音_清音_送气: "2_4" as const,
-  擦音_清音: "2_5" as const,
-  擦音_浊音: "2_6" as const,
-  鼻音_浊音: "2_7" as const,
-  边音_浊音: "2_8" as const,
+  塞音_清音_不送气: "塞音_清音_不送气" as const,
+  塞音_清音_送气: "塞音_清音_送气" as const,
+  塞擦音_清音_不送气: "塞擦音_清音_不送气" as const,
+  塞擦音_清音_送气: "塞擦音_清音_送气" as const,
+  擦音_清音: "擦音_清音" as const,
+  擦音_浊音: "擦音_浊音" as const,
+  鼻音_浊音: "鼻音_浊音" as const,
+  边音_浊音: "边音_浊音" as const,
 };
 
 /**
