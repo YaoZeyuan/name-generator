@@ -4,7 +4,7 @@ import * as Const from "@/script/common/const";
 import * as util from "@/script/common/util";
 import * as OldPersonNameDb from "@/resource/old_person_name/中国古代人名与字-9336条-简体-opencc转换稿_手工替换_乾干.json";
 
-async function asyncRunner() {
+export default  async function asyncRunner() {
   console.log("开始转换人名数据库");
 
   let nameList: Type.Type_Name[] = [];
@@ -37,4 +37,4 @@ async function asyncRunner() {
   console.log("人名数据库处理完毕");
 }
 
-asyncRunner();
+

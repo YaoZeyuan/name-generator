@@ -30,7 +30,7 @@ function generateLegalStrList(inputStr: string) {
   return wordList;
 }
 
-async function asyncRunner() {
+export default async function asyncRunner() {
   console.log("开始转换人名数据库");
 
   jieba.load();
@@ -105,5 +105,3 @@ async function asyncRunner() {
 
   console.log("人名数据库处理完毕");
 }
-
-asyncRunner();

@@ -4,7 +4,7 @@ import * as Const from "../../common/const";
 import * as util from "@/script/common/util";
 import * as RawNameDb from "@/resource/person_name/已知人名.json";
 
-async function asyncRunner() {
+export default async function asyncRunner() {
   console.log("开始转换人名数据库");
 
   let nameList: Type.Type_Name[] = [];

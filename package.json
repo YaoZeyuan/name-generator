@@ -11,6 +11,7 @@
     "step1_整理用字_现实姓名": "ts-node script/generate/step1_整理用字_现实姓名.ts",
     "step1_整理用字_私募基金": "ts-node script/generate/step1_整理用字_私募基金.ts",
     "step2_生成_根据起名用字生成拼音数据库": "ts-node script/generate/step2_生成_根据起名用字生成拼音数据库.ts",
+    "step3_生成_生成符合音韵规则的二字候选名": "ts-node script/generate/step3_生成_生成符合音韵规则的二字候选名.ts",
     "g_name_db_fund": "ts-node script/generate/name_db/fund.ts",
     "g_name_db_old_person": "ts-node script/generate/name_db/old_person.ts",
     "g_name_db_person": "ts-node script/generate/name_db/person.ts",
