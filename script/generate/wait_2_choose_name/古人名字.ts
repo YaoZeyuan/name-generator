@@ -4,8 +4,8 @@ import * as Const from "@/script/common/const";
 import * as util from "@/script/common/util";
 import * as OldPersonNameDb from "@/resource/old_person_name/中国古代人名与字-9336条-简体-opencc转换稿_手工替换_乾干.json";
 
-export default  async function asyncRunner() {
-  console.log("开始转换人名数据库");
+export default async function asyncRunner() {
+  console.log("开始根据古人字号生成候选名数据库");
 
   let nameList: Type.Type_Name[] = [];
   let rawNameList: string[] = [];
@@ -30,11 +30,11 @@ export default  async function asyncRunner() {
   });
 
   fs.writeFileSync(
-    Const.Name_Db_古人云_历史人名_Uri,
+    Const.Name_Db_Uri.古人云_历史人名,
     JSON.stringify(realNameList, null, 2)
   );
 
-  console.log("人名数据库处理完毕");
+  console.log(
+    `根据古人字号生成候选名完毕, 共生成${realNameList.length}个候选名`
+  );
 }
-
-

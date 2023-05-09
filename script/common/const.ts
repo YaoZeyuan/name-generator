@@ -65,20 +65,20 @@ export const Pinyin_Db_姓名用字_出现_Uri = {
   "100次": path.resolve(basePath, "database/pinyin_db/name_char_min_100.json"),
 };
 
-export const Name_Db_他山石_已知人名_Uri = path.resolve(
-  basePath,
-  "database/name_db/他山石_已知人名.json"
-);
-
-export const Name_Db_财富论_基金选名_Uri = path.resolve(
-  basePath,
-  "database/name_db/财富论_基金选名.json"
-);
-
-export const Name_Db_古人云_历史人名_Uri = path.resolve(
-  basePath,
-  "database/name_db/古人云_历史人名.json"
-);
+export const Name_Db_Uri = {
+  他山石_已知人名: path.resolve(
+    basePath,
+    "database/name_db/他山石_已知人名.json"
+  ),
+  财富论_基金选名: path.resolve(
+    basePath,
+    "database/name_db/财富论_基金选名.json"
+  ),
+  古人云_历史人名: path.resolve(
+    basePath,
+    "database/name_db/古人云_历史人名.json"
+  ),
+};
 
 export const 音调_Map: Record<string, Type.Type_音调> = {
   ü: 1 as const,

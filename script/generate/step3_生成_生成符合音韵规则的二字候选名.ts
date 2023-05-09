@@ -11,9 +11,9 @@ import async现代人名 from "./wait_2_choose_name/现代人名";
  */
 async function asyncRunner() {
   console.log("开始生成二字候选名");
-  await async古人云();
-  await async基金相关();
   await async现代人名();
+  await async基金相关();
+  await async古人云();
   console.log("所有二字候选名生成完毕");
 }
 

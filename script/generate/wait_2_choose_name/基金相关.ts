@@ -8,9 +8,6 @@ import * as jieba from "nodejieba";
 
 function generateLegalStrList(inputStr: string) {
   let set = new Set<string>();
-  // for (let startAt = 0; startAt < inputStr.length; startAt++) {
-  //   set.add(inputStr.slice(startAt, startAt + 2));
-  // }
   let oldWordList = jieba.cut(inputStr);
   let wordList: string[] = [];
   for (let pos = 0; pos < oldWordList.length; pos++) {
@@ -31,7 +28,7 @@ function generateLegalStrList(inputStr: string) {
 }
 
 export default async function asyncRunner() {
-  console.log("开始转换人名数据库");
+  console.log("开始根据基金名, 生成候选二字名");
 
   jieba.load();
   let nameList: Type.Type_Name[] = [];
@@ -80,10 +77,10 @@ export default async function asyncRunner() {
   });
   // 只保留出现频率在5~300之间的二字词
   optionList = optionList.filter((item) => {
-    if (item.count > 300 || item.count < 5) {
-      return false;
+    if (5 < item.count && item.count < 300) {
+      return true;
     }
-    return true;
+    return false;
   });
   let rawNameItemList = optionList.map((item) => {
     return util.transName2Record(item.content);
@@ -99,9 +96,9 @@ export default async function asyncRunner() {
   });
 
   fs.writeFileSync(
-    Const.Name_Db_财富论_基金选名_Uri,
+    Const.Name_Db_Uri.财富论_基金选名,
     JSON.stringify(realNameList, null, 2)
   );
 
-  console.log("人名数据库处理完毕");
+  console.log(`根据基金名生成候选名完毕, 共生成${realNameList.length}个候选名`);
 }

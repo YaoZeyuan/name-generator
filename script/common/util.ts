@@ -167,23 +167,12 @@ export function transName2Record(name: string): Type.Type_Name | false {
   }
   const charItem_1 = pinyinList[0];
   const charItem_2 = pinyinList[1];
-  if (charList.length === 1) {
-    // 不支持单字名
-    return false;
-  }
 
-  if (charItem_2.tone === 3) {
-    // 不能以三声结尾
-    return false;
-  }
-
-  if (charItem_1.tone === 4 && charItem_2.tone === 4) {
-    // 不能结尾两字都是4声
-    return false;
-  }
-
-  if (charItem_1.pinyin_without_tone === charItem_2.pinyin_without_tone) {
-    // 结尾两字不能同音
+  let checkResult = isCharPairLegal({
+    charList: [charItem_1, charItem_2],
+    type: "last_2_char",
+  });
+  if (checkResult === false) {
     return false;
   }
 
