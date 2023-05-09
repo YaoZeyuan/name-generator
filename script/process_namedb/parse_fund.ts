@@ -7,7 +7,7 @@ async function asyncRunner() {
   console.log("开始解析基金名");
   let totalUserNameCount = 0;
 
-  const charDB: Type.CharDB = {};
+  const charDB: Type.DB_Char_4_Summary = {};
 
   const legalCharDbStr = fs
     .readFileSync(Const.Char_Db_total_以字为单位_Uri)

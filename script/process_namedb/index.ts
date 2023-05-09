@@ -32,7 +32,7 @@ async function asyncRunner() {
   console.log("开始生成取名可选字");
   let totalUserNameCount = 0;
 
-  const charDB: Type.CharDB = {};
+  const charDB: Type.DB_Char_4_Summary = {};
 
   // 获取人名库列表
   const rawFileNameList = fs.readdirSync(Const.Raw_已知人名_Path);

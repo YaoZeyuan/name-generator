@@ -65,14 +65,14 @@ export function isCharPairLegal({
     return false;
   }
   // 禁止同声母分类(叠音)
-  if (char1.initial_声母_发音方法 === char2.initial_声母_发音方法) {
+  if (char1.initial_声母类别_发音方法 === char2.initial_声母类别_发音方法) {
     return false;
   }
-  if (char1.initial_声母_发音部位 === char2.initial_声母_发音部位) {
+  if (char1.initial_声母类别_发音部位 === char2.initial_声母类别_发音部位) {
     return false;
   }
   // 禁止同韵母分类(叠韵)
-  if (char1.vowel_韵母 === char2.vowel_韵母) {
+  if (char1.vowel_韵母类别 === char2.vowel_韵母类别) {
     return false;
   }
 
@@ -96,14 +96,14 @@ export function isCharPairLegal({
       return false;
     }
     // 禁止同声母分类(叠音)
-    if (char3.initial_声母_发音方法 === char2.initial_声母_发音方法) {
+    if (char3.initial_声母类别_发音方法 === char2.initial_声母类别_发音方法) {
       return false;
     }
-    if (char3.initial_声母_发音部位 === char2.initial_声母_发音部位) {
+    if (char3.initial_声母类别_发音部位 === char2.initial_声母类别_发音部位) {
       return false;
     }
     // 禁止同韵母分类(叠韵)
-    if (char3.vowel_韵母 === char2.vowel_韵母) {
+    if (char3.vowel_韵母类别 === char2.vowel_韵母类别) {
       return false;
     }
 

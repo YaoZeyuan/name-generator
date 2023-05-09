@@ -4,43 +4,98 @@ import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
 
 const Tool = {
-  /**
-   * 获取音标对应的音调(只会有一个韵母带音调, 且带音调的字母对应音调一定高于1. 所以可以转换为求最大值问题)
-   * 轻声视为1声
-   * @param input
-   */
-  parse音标音调(input: string): Type.Type_音调 {
-    let max音调: Type.Type_音调 = 1;
-    for (let char of input) {
-      // 没有取到韵母/韵母为轻声, 相当于音调为1
-      let 当前音调 = Const.音调_Map[char] || 1;
-      if (当前音调 >= max音调) {
-        max音调 = 当前音调;
+  private: {
+    /**
+     * 获取音标对应的音调(只会有一个韵母带音调, 且带音调的字母对应音调一定高于1. 所以可以转换为求最大值问题)
+     * 轻声视为1声
+     * @param input
+     */
+    parse音标音调(input: string): Type.Type_音调 {
+      let max音调: Type.Type_音调 = 1;
+      for (let char of input) {
+        // 没有取到韵母/韵母为轻声, 相当于音调为1
+        let 当前音调 = Const.音调_Map[char] || 1;
+        if (当前音调 >= max音调) {
+          max音调 = 当前音调;
+        }
       }
-    }
-    return max音调;
+      return max音调;
+    },
+    /**
+     * 移除音标中的音调
+     * @param voice
+     */
+    remove音调(voice: string) {
+      let newVoice: string[] = [];
+      for (let char of voice) {
+        // @ts-ignore
+        let newChar = (Const.音标_To_原字母[char] as string) || char;
+        newVoice.push(newChar);
+      }
+      return newVoice.join("");
+    },
+    parse声母(pinyin_without_tone: string) {
+      let initial_声母类别_发音方法: Type.Initial_声母类别_发音方法;
+      let initial_声母类别_发音部位: Type.Initial_声母类别_发音部位;
+      let initial_声母: string;
+      // 先检查是否为十三支
+      for (let item of Const.Initial_发音方法_Match_List) {
+        if (pinyin_without_tone.includes(item.target)) {
+          initial_声母 = item.target;
+          initial_声母类别_发音方法 = item.initialType;
+          initial_声母类别_发音部位 =
+            Const.Initial_2_发音部位_Type[item.target];
+          return {
+            initial_声母,
+            initial_声母类别_发音方法,
+            initial_声母类别_发音部位,
+          };
+        }
+      }
+      return {
+        initial_声母: "未匹配",
+        initial_声母类别_发音方法:
+          Const.Initial_声母类别_发音方法.塞擦音_清音_不送气,
+        initial_声母类别_发音部位: Const.Initial_声母类别_发音部位.双唇音,
+      };
+    },
+    parse韵母(pinyin_without_tone: string) {
+      let vowel_韵母: string;
+      let vowel_韵母类别: Type.Vowel_韵母类别;
+      // 先检查是否为十三支
+      for (let item of Const.Vowel_Match_List_十三支) {
+        if (pinyin_without_tone === item.target) {
+          vowel_韵母 = "-i";
+          vowel_韵母类别 = item.vowelType;
+          return {
+            vowel_韵母,
+            vowel_韵母类别,
+          };
+        }
+      }
+      for (let item of Const.Vowel_Match_List) {
+        if (pinyin_without_tone.includes(item.target)) {
+          vowel_韵母 = item.target;
+          vowel_韵母类别 = item.vowelType;
+          return {
+            vowel_韵母,
+            vowel_韵母类别,
+          };
+        }
+      }
+      return {
+        vowel_韵母: "未匹配",
+        vowel_韵母类别: Const.Vowel_韵母类别.一麻,
+      };
+    },
   },
-  /**
-   * 移除音标中的音调
-   * @param voice
-   */
-  remove音调(voice: string) {
-    let newVoice: string[] = [];
-    for (let char of voice) {
-      // @ts-ignore
-      let newChar = (Const.音标_To_原字母[char] as string) || char;
-      newVoice.push(newChar);
-    }
-    return newVoice.join("");
-  },
+
   /**
    * 解析音韵配置
    * @param voice
    */
   parse音韵(voice: string) {
-    let pinyin_without_tone = "";
-    let vowels_type = "";
-
+    let tone = Tool.private.parse音标音调(voice);
     // 解析无音调注音
     let newVoice: string[] = [];
     for (let char of voice) {
@@ -48,15 +103,32 @@ const Tool = {
       let newChar = (Const.音标_To_原字母[char] as string) || char;
       newVoice.push(newChar);
     }
-    pinyin_without_tone = newVoice.join("");
+    let pinyin_without_tone = newVoice.join("");
+
+    let { initial_声母, initial_声母类别_发音方法, initial_声母类别_发音部位 } =
+      Tool.private.parse声母(pinyin_without_tone);
+
+    let { vowel_韵母, vowel_韵母类别 } =
+      Tool.private.parse韵母(pinyin_without_tone);
+
+    return {
+      tone,
+      pinyin_without_tone,
+      initial_声母,
+      initial_声母类别_发音方法,
+      initial_声母类别_发音部位,
+      vowel_韵母,
+      vowel_韵母类别,
+    };
   },
+
   /**
    * 获取姓名用字数据库
    */
   getNameCharDb() {
     const content = fs.readFileSync(Const.CharDb_人名字典_Uri).toString();
-    const CharDB_All: Type.CharDB = JSON.parse(content);
-    const CharDB_Min_Map: Record<number, Type.CharDB> = {};
+    const CharDB_All: Type.DB_Char_4_Summary = JSON.parse(content);
+    const CharDB_Min_Map: Record<number, Type.DB_Char_4_Summary> = {};
     CharDB_Min_Map[1] = CharDB_All;
     CharDB_Min_Map[2] = {};
     CharDB_Min_Map[3] = {};
@@ -100,19 +172,16 @@ const Tool = {
     }
     return CharDB_Min_Map;
   },
-  charPinyinDb2PinyinCharDb(charPinyinDb: Type.CharPinyinDB) {
-    let pinyinCharDb: Type.Pinyin_Db = {};
-    let pinyinWithToneCharDb: Record<string, Type.Pinyin_of_Char> = {};
+  charPinyinDb2PinyinCharDb(charPinyinDb: Type.DB_Char_With_Pinyin) {
+    let pinyinCharDb: Type.DB_Pinyin_Of_Char = {};
+    let pinyinWithToneCharDb: Record<string, Type.Pinyin_Of_Char> = {};
 
     // 先按音调对字符进行汇总
     for (let char of Object.keys(charPinyinDb)) {
       let charPinyin = charPinyinDb[char];
       if (pinyinWithToneCharDb[charPinyin.pinyin] === undefined) {
         pinyinWithToneCharDb[charPinyin.pinyin] = {
-          pinyin: charPinyin.pinyin,
-          pinyin_without_tone: charPinyin.pinyin_without_tone,
-          tone: charPinyin.tone,
-          char: charPinyin.char,
+          ...charPinyin,
           char_list: [charPinyin],
         };
       } else {
@@ -178,7 +247,7 @@ async function asyncRunner() {
   const CharDB_Min_Map = Tool.getNameCharDb();
 
   const db2PinyinListMap = new Map<
-    Type.CharDB,
+    Type.DB_Char_4_Summary,
     Record<string, Type.Char_With_Pinyin>
   >();
   db2PinyinListMap.set(CharDB_Min_Map[100], PinyinDb_姓名用字_Min_Map[100]);
@@ -205,11 +274,26 @@ async function asyncRunner() {
     let char = String.fromCharCode(parseInt(unicode, 16));
 
     if (pinyinList.length === 1) {
-      const charPinyin = {
+      let {
+        tone,
+        pinyin_without_tone,
+        initial_声母,
+        initial_声母类别_发音方法,
+        initial_声母类别_发音部位,
+        vowel_韵母,
+        vowel_韵母类别,
+      } = Tool.parse音韵(pinyinList[0]);
+
+      const charPinyin: Type.Char_With_Pinyin = {
         char: char,
         pinyin: pinyinList[0],
-        pinyin_without_tone: Tool.remove音调(pinyinList[0]),
-        tone: Tool.parse音标音调(pinyinList[0]),
+        tone,
+        pinyin_without_tone,
+        initial_声母,
+        initial_声母类别_发音方法,
+        initial_声母类别_发音部位,
+        vowel_韵母,
+        vowel_韵母类别,
         count: CharDB_Min_Map[1][char]?.count ?? 0,
       };
       PinyinDb_不含多音字[char] = charPinyin;
@@ -226,13 +310,25 @@ async function asyncRunner() {
       }
     }
     for (const pinyin of pinyinList) {
-      const pinyin_without_tone = Tool.remove音调(pinyin);
-      const tone = Tool.parse音标音调(pinyin);
+      let {
+        tone,
+        pinyin_without_tone,
+        initial_声母,
+        initial_声母类别_发音方法,
+        initial_声母类别_发音部位,
+        vowel_韵母,
+        vowel_韵母类别,
+      } = Tool.parse音韵(pinyin);
       PinyinList_全部.push({
         char,
         pinyin,
-        pinyin_without_tone,
         tone,
+        pinyin_without_tone,
+        initial_声母,
+        initial_声母类别_发音方法,
+        initial_声母类别_发音部位,
+        vowel_韵母,
+        vowel_韵母类别,
         count: CharDB_Min_Map[1][char]?.count ?? 0,
       });
     }

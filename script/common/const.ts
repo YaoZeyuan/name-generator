@@ -145,75 +145,75 @@ export const Name_Db_古人云_历史人名_Uri = path.resolve(
 );
 
 export const 音调_Map: Record<string, Type.Type_音调> = {
-  ü: 1,
-  ǜ: 4,
-  ǚ: 3,
-  ǘ: 2,
-  ǖ: 1,
-  u: 1,
-  ù: 4,
-  ǔ: 3,
-  ú: 2,
-  ū: 1,
-  o: 1,
-  ò: 4,
-  ǒ: 3,
-  ó: 2,
-  ō: 1,
-  i: 1,
-  ì: 4,
-  ǐ: 3,
-  í: 2,
-  ī: 1,
-  e: 1,
-  è: 4,
-  ě: 3,
-  é: 2,
-  ē: 1,
-  a: 1,
-  à: 4,
-  ǎ: 3,
-  á: 2,
-  ā: 1,
+  ü: 1 as const,
+  ǜ: 4 as const,
+  ǚ: 3 as const,
+  ǘ: 2 as const,
+  ǖ: 1 as const,
+  u: 1 as const,
+  ù: 4 as const,
+  ǔ: 3 as const,
+  ú: 2 as const,
+  ū: 1 as const,
+  o: 1 as const,
+  ò: 4 as const,
+  ǒ: 3 as const,
+  ó: 2 as const,
+  ō: 1 as const,
+  i: 1 as const,
+  ì: 4 as const,
+  ǐ: 3 as const,
+  í: 2 as const,
+  ī: 1 as const,
+  e: 1 as const,
+  è: 4 as const,
+  ě: 3 as const,
+  é: 2 as const,
+  ē: 1 as const,
+  a: 1 as const,
+  à: 4 as const,
+  ǎ: 3 as const,
+  á: 2 as const,
+  ā: 1 as const,
 };
 
 export const 音标_To_原字母 = {
-  ü: "ü",
-  ǜ: "ü",
-  ǚ: "ü",
-  ǘ: "ü",
-  ǖ: "ü",
-  u: "u",
-  ù: "u",
-  ǔ: "u",
-  ú: "u",
-  ū: "u",
-  o: "o",
-  ò: "o",
-  ǒ: "o",
-  ó: "o",
-  ō: "o",
-  i: "i",
-  ì: "i",
-  ǐ: "i",
-  í: "i",
-  ī: "i",
-  e: "e",
-  è: "e",
-  ě: "e",
-  é: "e",
-  ē: "e",
-  a: "a",
-  à: "a",
-  ǎ: "a",
-  á: "a",
-  ā: "a",
+  ü: "ü" as const,
+  ǜ: "ü" as const,
+  ǚ: "ü" as const,
+  ǘ: "ü" as const,
+  ǖ: "ü" as const,
+  u: "u" as const,
+  ù: "u" as const,
+  ǔ: "u" as const,
+  ú: "u" as const,
+  ū: "u" as const,
+  o: "o" as const,
+  ò: "o" as const,
+  ǒ: "o" as const,
+  ó: "o" as const,
+  ō: "o" as const,
+  i: "i" as const,
+  ì: "i" as const,
+  ǐ: "i" as const,
+  í: "i" as const,
+  ī: "i" as const,
+  e: "e" as const,
+  è: "e" as const,
+  ě: "e" as const,
+  é: "e" as const,
+  ē: "e" as const,
+  a: "a" as const,
+  à: "a" as const,
+  ǎ: "a" as const,
+  á: "a" as const,
+  ā: "a" as const,
 };
 
 /**
  * 韵母分类
  */
-export const Vowel_Type = {
+export const Vowel_韵母类别 = {
   一麻: "1" as const,
   二波: "2" as const,
   三皆: "3" as const,
@@ -233,29 +233,87 @@ export const Vowel_Type = {
 /**
  * 不同类别对应的韵母列表
  */
-export const Vowel_Map = {
-  [Vowel_Type.一麻]: new Set(["a", "ia", "ua"]),
-  [Vowel_Type.二波]: new Set(["o", "e", "uo"]),
-  [Vowel_Type.三皆]: new Set(["ie", "üe"]),
-  [Vowel_Type.四开]: new Set(["ai", "uai"]),
-  [Vowel_Type.五微]: new Set(["ei", "ui"]),
-  [Vowel_Type.六豪]: new Set(["ao", "iao"]),
-  [Vowel_Type.七尤]: new Set(["ou", "iu"]),
-  [Vowel_Type.八寒]: new Set(["an", "ian", "uan", "üan"]),
-  [Vowel_Type.九文]: new Set(["en", "in", "un", "ün"]),
-  [Vowel_Type.十唐]: new Set(["ang", "iang", "uang"]),
-  [Vowel_Type.十一庚]: new Set(["eng", "ing", "ong", "iong"]),
-  [Vowel_Type.十二齐]: new Set(["i", "er", "ü"]),
+export const Vowel_Record = {
+  [Vowel_韵母类别.一麻]: new Set(["a", "ia", "ua"]),
+  [Vowel_韵母类别.二波]: new Set(["o", "e", "uo"]),
+  [Vowel_韵母类别.三皆]: new Set(["ie", "üe"]),
+  [Vowel_韵母类别.四开]: new Set(["ai", "uai"]),
+  [Vowel_韵母类别.五微]: new Set(["ei", "ui"]),
+  [Vowel_韵母类别.六豪]: new Set(["ao", "iao"]),
+  [Vowel_韵母类别.七尤]: new Set(["ou", "iu"]),
+  [Vowel_韵母类别.八寒]: new Set(["an", "ian", "uan", "üan"]),
+  [Vowel_韵母类别.九文]: new Set(["en", "in", "un", "ün"]),
+  [Vowel_韵母类别.十唐]: new Set(["ang", "iang", "uang"]),
+  [Vowel_韵母类别.十一庚]: new Set(["eng", "ing", "ong", "iong"]),
+  [Vowel_韵母类别.十二齐]: new Set(["i", "er", "ü"]),
   // 特指zi/ci/si/ri/zhi/chi/shi, 零韵母
-  [Vowel_Type.十三支]: new Set(["-i"]),
-  [Vowel_Type.十四姑]: new Set(["u"]),
+  [Vowel_韵母类别.十三支]: new Set(["-i"]),
+  [Vowel_韵母类别.十四姑]: new Set(["u"]),
 };
 
-let vowel_item_2_type: Record<string, keyof typeof Vowel_Map> = {};
-for (let vowelType of Object.keys(Vowel_Map)) {
-  let charSet = Vowel_Map[vowelType as Type.Vowel_韵母];
+/**
+ * 根据韵母匹配顺序, 获取韵母与类别信息
+ * 思路: 按字符串长度, 由长到短进行匹配, 可以避免误匹配.
+ * 其中, 第十三韵支对应的i和普通i一样, 需要专门处理
+ */
+export const Vowel_Match_List: {
+  target: string;
+  vowelType: Type.Vowel_韵母类别;
+}[] = [
+  { target: "iang", vowelType: Vowel_韵母类别.十唐 },
+  { target: "uang", vowelType: Vowel_韵母类别.十唐 },
+  { target: "iong", vowelType: Vowel_韵母类别.十一庚 },
+  { target: "uai", vowelType: Vowel_韵母类别.四开 },
+  { target: "iao", vowelType: Vowel_韵母类别.六豪 },
+  { target: "eng", vowelType: Vowel_韵母类别.十一庚 },
+  { target: "ing", vowelType: Vowel_韵母类别.十一庚 },
+  { target: "ong", vowelType: Vowel_韵母类别.十一庚 },
+  { target: "ang", vowelType: Vowel_韵母类别.十唐 },
+  { target: "ian", vowelType: Vowel_韵母类别.八寒 },
+  { target: "uan", vowelType: Vowel_韵母类别.八寒 },
+  { target: "üan", vowelType: Vowel_韵母类别.八寒 },
+  { target: "ia", vowelType: Vowel_韵母类别.一麻 },
+  { target: "ua", vowelType: Vowel_韵母类别.一麻 },
+  { target: "uo", vowelType: Vowel_韵母类别.二波 },
+  { target: "ie", vowelType: Vowel_韵母类别.三皆 },
+  { target: "üe", vowelType: Vowel_韵母类别.三皆 },
+  { target: "ai", vowelType: Vowel_韵母类别.四开 },
+  { target: "ei", vowelType: Vowel_韵母类别.五微 },
+  { target: "ui", vowelType: Vowel_韵母类别.五微 },
+  { target: "ao", vowelType: Vowel_韵母类别.六豪 },
+  { target: "ou", vowelType: Vowel_韵母类别.七尤 },
+  { target: "iu", vowelType: Vowel_韵母类别.七尤 },
+  { target: "an", vowelType: Vowel_韵母类别.八寒 },
+  { target: "en", vowelType: Vowel_韵母类别.九文 },
+  { target: "in", vowelType: Vowel_韵母类别.九文 },
+  { target: "un", vowelType: Vowel_韵母类别.九文 },
+  { target: "ün", vowelType: Vowel_韵母类别.九文 },
+  { target: "er", vowelType: Vowel_韵母类别.十二齐 },
+  { target: "a", vowelType: Vowel_韵母类别.一麻 },
+  { target: "o", vowelType: Vowel_韵母类别.二波 },
+  { target: "e", vowelType: Vowel_韵母类别.二波 },
+  { target: "i", vowelType: Vowel_韵母类别.十二齐 },
+  { target: "ü", vowelType: Vowel_韵母类别.十二齐 },
+  { target: "u", vowelType: Vowel_韵母类别.十四姑 },
+];
+export const Vowel_Match_List_十三支: {
+  target: string;
+  vowelType: Type.Vowel_韵母类别;
+}[] = [
+  { target: "zi", vowelType: Vowel_韵母类别.十三支 },
+  { target: "ci", vowelType: Vowel_韵母类别.十三支 },
+  { target: "si", vowelType: Vowel_韵母类别.十三支 },
+  { target: "ri", vowelType: Vowel_韵母类别.十三支 },
+  { target: "zhi", vowelType: Vowel_韵母类别.十三支 },
+  { target: "chi", vowelType: Vowel_韵母类别.十三支 },
+  { target: "shi", vowelType: Vowel_韵母类别.十三支 },
+];
+
+let vowel_item_2_type: Record<string, keyof typeof Vowel_Record> = {};
+for (let vowelType of Object.keys(Vowel_Record)) {
+  let charSet = Vowel_Record[vowelType as Type.Vowel_韵母类别];
   for (let char of charSet) {
-    vowel_item_2_type[char] = vowelType as keyof typeof Vowel_Map;
+    vowel_item_2_type[char] = vowelType as keyof typeof Vowel_Record;
   }
 }
 export const Vowel_2_Type = {
@@ -265,7 +323,7 @@ export const Vowel_2_Type = {
 /**
  * 声母分类
  */
-export const Initial_发音部位_Type = {
+export const Initial_声母类别_发音部位 = {
   双唇音: "1_1" as const,
   唇齿音: "1_2" as const,
   舌尖前音: "1_3" as const,
@@ -274,7 +332,7 @@ export const Initial_发音部位_Type = {
   舌面音: "1_6" as const,
   舌根音: "1_7" as const,
 };
-export const Initial_发音方法_Type = {
+export const Initial_声母类别_发音方法 = {
   塞音_清音_不送气: "2_1" as const,
   塞音_清音_送气: "2_2" as const,
   塞擦音_清音_不送气: "2_3" as const,
@@ -288,52 +346,118 @@ export const Initial_发音方法_Type = {
 /**
  * 不同类别对应的声母列表
  */
-export const Initial_发音部位_Map = {
-  [Initial_发音部位_Type.双唇音]: new Set(["b", "p", "m"]),
-  [Initial_发音部位_Type.唇齿音]: new Set(["f"]),
-  [Initial_发音部位_Type.舌尖前音]: new Set(["z", "c", "s"]),
-  [Initial_发音部位_Type.舌尖中音]: new Set(["d", "t", "n", "l"]),
-  [Initial_发音部位_Type.舌尖后音]: new Set(["zh", "ch", "sh", "r"]),
-  [Initial_发音部位_Type.舌面音]: new Set(["j", "q", "x"]),
-  [Initial_发音部位_Type.舌根音]: new Set(["g", "k", "h"]),
+export const Initial_发音部位_Record = {
+  [Initial_声母类别_发音部位.双唇音]: new Set(["b", "p", "m"]),
+  [Initial_声母类别_发音部位.唇齿音]: new Set(["f"]),
+  [Initial_声母类别_发音部位.舌尖前音]: new Set(["z", "c", "s"]),
+  [Initial_声母类别_发音部位.舌尖中音]: new Set(["d", "t", "n", "l"]),
+  [Initial_声母类别_发音部位.舌尖后音]: new Set(["zh", "ch", "sh", "r"]),
+  [Initial_声母类别_发音部位.舌面音]: new Set(["j", "q", "x"]),
+  [Initial_声母类别_发音部位.舌根音]: new Set(["g", "k", "h"]),
 };
-export const Initial_发音方法_Map = {
-  [Initial_发音方法_Type.塞音_清音_不送气]: new Set(["b", "d", "g"]),
-  [Initial_发音方法_Type.塞音_清音_送气]: new Set(["p", "t", "k"]),
-  [Initial_发音方法_Type.塞擦音_清音_不送气]: new Set(["z", "zh", "j"]),
-  [Initial_发音方法_Type.塞擦音_清音_送气]: new Set(["c", "ch", "q"]),
-  [Initial_发音方法_Type.擦音_清音]: new Set(["f", "s", "sh", "x", "h"]),
-  [Initial_发音方法_Type.擦音_浊音]: new Set(["r"]),
-  [Initial_发音方法_Type.鼻音_浊音]: new Set(["m", "n"]),
-  [Initial_发音方法_Type.边音_浊音]: new Set(["l"]),
+export const Initial_发音方法_Record = {
+  [Initial_声母类别_发音方法.塞音_清音_不送气]: new Set(["b", "d", "g"]),
+  [Initial_声母类别_发音方法.塞音_清音_送气]: new Set(["p", "t", "k"]),
+  [Initial_声母类别_发音方法.塞擦音_清音_不送气]: new Set(["z", "zh", "j"]),
+  [Initial_声母类别_发音方法.塞擦音_清音_送气]: new Set(["c", "ch", "q"]),
+  [Initial_声母类别_发音方法.擦音_清音]: new Set(["f", "s", "sh", "x", "h"]),
+  [Initial_声母类别_发音方法.擦音_浊音]: new Set(["r"]),
+  [Initial_声母类别_发音方法.鼻音_浊音]: new Set(["m", "n"]),
+  [Initial_声母类别_发音方法.边音_浊音]: new Set(["l"]),
 };
-let initial_item_2_发音部位_type: Record<string, Type.Initial_声母_发音部位> =
-  {};
-for (let initial发音部位Type of Object.keys(Initial_发音部位_Map)) {
+let initial_item_2_发音部位_type: Record<
+  string,
+  Type.Initial_声母类别_发音部位
+> = {};
+for (let initial发音部位Type of Object.keys(Initial_发音部位_Record)) {
   let charSet =
-    Initial_发音部位_Map[initial发音部位Type as Type.Initial_声母_发音部位];
+    Initial_发音部位_Record[
+      initial发音部位Type as Type.Initial_声母类别_发音部位
+    ];
   for (let char of charSet) {
     initial_item_2_发音部位_type[char] =
-      initial发音部位Type as Type.Initial_声母_发音部位;
+      initial发音部位Type as Type.Initial_声母类别_发音部位;
   }
 }
 export const Initial_2_发音部位_Type = {
   ...initial_item_2_发音部位_type,
 };
 
-let initial_item_2_发音方法_type: Record<string, Type.Initial_声母_发音方法> =
-  {};
-for (let initial发音方法Type of Object.keys(Initial_发音方法_Map)) {
+let initial_item_2_发音方法_type: Record<
+  string,
+  Type.Initial_声母类别_发音方法
+> = {};
+for (let initial发音方法Type of Object.keys(Initial_发音方法_Record)) {
   let charSet =
-    Initial_发音方法_Map[initial发音方法Type as Type.Initial_声母_发音方法];
+    Initial_发音方法_Record[
+      initial发音方法Type as Type.Initial_声母类别_发音方法
+    ];
   for (let char of charSet) {
     initial_item_2_发音方法_type[char] =
-      initial发音方法Type as Type.Initial_声母_发音方法;
+      initial发音方法Type as Type.Initial_声母类别_发音方法;
   }
 }
 export const Initial_2_发音方法_Type = {
   ...initial_item_2_发音方法_type,
 };
+
+/**
+ * 根据声母匹配顺序, 获取声母与类别信息
+ * 思路: 按字符串长度, 由长到短进行匹配, 可以避免误匹配.
+ */
+export const Initial_发音方法_Match_List: {
+  target: string;
+  initialType: Type.Initial_声母类别_发音方法;
+}[] = [
+  { initialType: Initial_声母类别_发音方法.塞擦音_清音_不送气, target: "zh" },
+  { initialType: Initial_声母类别_发音方法.塞擦音_清音_送气, target: "ch" },
+  { initialType: Initial_声母类别_发音方法.擦音_清音, target: "sh" },
+  { initialType: Initial_声母类别_发音方法.塞音_清音_不送气, target: "b" },
+  { initialType: Initial_声母类别_发音方法.塞音_清音_不送气, target: "d" },
+  { initialType: Initial_声母类别_发音方法.塞音_清音_不送气, target: "g" },
+  { initialType: Initial_声母类别_发音方法.塞音_清音_送气, target: "p" },
+  { initialType: Initial_声母类别_发音方法.塞音_清音_送气, target: "t" },
+  { initialType: Initial_声母类别_发音方法.塞音_清音_送气, target: "k" },
+  { initialType: Initial_声母类别_发音方法.塞擦音_清音_不送气, target: "z" },
+  { initialType: Initial_声母类别_发音方法.塞擦音_清音_不送气, target: "j" },
+  { initialType: Initial_声母类别_发音方法.塞擦音_清音_送气, target: "c" },
+  { initialType: Initial_声母类别_发音方法.塞擦音_清音_送气, target: "q" },
+  { initialType: Initial_声母类别_发音方法.擦音_清音, target: "f" },
+  { initialType: Initial_声母类别_发音方法.擦音_清音, target: "s" },
+  { initialType: Initial_声母类别_发音方法.擦音_清音, target: "x" },
+  { initialType: Initial_声母类别_发音方法.擦音_清音, target: "h" },
+  { initialType: Initial_声母类别_发音方法.擦音_浊音, target: "r" },
+  { initialType: Initial_声母类别_发音方法.鼻音_浊音, target: "m" },
+  { initialType: Initial_声母类别_发音方法.鼻音_浊音, target: "n" },
+  { initialType: Initial_声母类别_发音方法.边音_浊音, target: "l" },
+];
+
+export const Initial_发音部位_Match_List: {
+  target: string;
+  initialType: Type.Initial_声母类别_发音部位;
+}[] = [
+  { initialType: Initial_声母类别_发音部位.舌尖后音, target: "zh" },
+  { initialType: Initial_声母类别_发音部位.舌尖后音, target: "ch" },
+  { initialType: Initial_声母类别_发音部位.舌尖后音, target: "sh" },
+  { initialType: Initial_声母类别_发音部位.舌尖后音, target: "r" },
+  { initialType: Initial_声母类别_发音部位.双唇音, target: "b" },
+  { initialType: Initial_声母类别_发音部位.双唇音, target: "p" },
+  { initialType: Initial_声母类别_发音部位.双唇音, target: "m" },
+  { initialType: Initial_声母类别_发音部位.唇齿音, target: "f" },
+  { initialType: Initial_声母类别_发音部位.舌尖前音, target: "z" },
+  { initialType: Initial_声母类别_发音部位.舌尖前音, target: "c" },
+  { initialType: Initial_声母类别_发音部位.舌尖前音, target: "s" },
+  { initialType: Initial_声母类别_发音部位.舌尖中音, target: "d" },
+  { initialType: Initial_声母类别_发音部位.舌尖中音, target: "t" },
+  { initialType: Initial_声母类别_发音部位.舌尖中音, target: "n" },
+  { initialType: Initial_声母类别_发音部位.舌尖中音, target: "l" },
+  { initialType: Initial_声母类别_发音部位.舌面音, target: "j" },
+  { initialType: Initial_声母类别_发音部位.舌面音, target: "q" },
+  { initialType: Initial_声母类别_发音部位.舌面音, target: "x" },
+  { initialType: Initial_声母类别_发音部位.舌根音, target: "g" },
+  { initialType: Initial_声母类别_发音部位.舌根音, target: "k" },
+  { initialType: Initial_声母类别_发音部位.舌根音, target: "h" },
+];
 
 /**
  * 音调评分表

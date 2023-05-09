@@ -8,7 +8,7 @@ const totalCharUse = 3294;
 
 async function asyncRunner() {
   const content = fs.readFileSync(Const.CharDb_人名列表_Uri).toString();
-  const itemList: Type.Char[] = JSON.parse(content);
+  const itemList: Type.Char_4_Summary[] = JSON.parse(content);
   // 输出统计数据
   const perList = [99, 95, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 1];
 

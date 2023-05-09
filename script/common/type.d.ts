@@ -7,9 +7,11 @@ export type Char_With_Pinyin = {
   pinyin: "yǎn" | string;
   tone: 1 | 2 | 3 | 4;
   pinyin_without_tone: "yan" | string;
-  initial_声母_发音方法: Initial_声母_发音方法;
-  initial_声母_发音部位: Initial_声母_发音部位;
-  vowel_韵母: Vowel_韵母;
+  initial_声母: string;
+  initial_声母类别_发音方法: Initial_声母类别_发音方法;
+  initial_声母类别_发音部位: Initial_声母类别_发音部位;
+  vowel_韵母: string;
+  vowel_韵母类别: Vowel_韵母类别;
   /**
    * 出现频率
    */
@@ -30,17 +32,25 @@ export type Pinyin_Of_Char = {
    */
   tone: 1 | 2 | 3 | 4;
   /**
-   * 声母分类-发音方法
+   * 声母
    */
-  initial_声母_发音方法: Initial_声母_发音方法;
+  initial_声母: string;
   /**
-   * 声母分类-发音部位
+   * 声母类别_发音方法
    */
-  initial_声母_发音部位: Initial_声母_发音部位;
+  initial_声母类别_发音方法: Initial_声母类别_发音方法;
+  /**
+   * 声母类别_发音部位
+   */
+  initial_声母类别_发音部位: Initial_声母类别_发音部位;
+  /**
+   * 韵母
+   */
+  vowel_韵母: string;
   /**
    * 韵母分类
    */
-  vowel_韵母: Vowel_韵母;
+  vowel_韵母类别: Vowel_韵母类别;
   /**
    * 带音调拼音
    */
@@ -60,10 +70,12 @@ export type Pinyin_Of_Char = {
 };
 
 export type Type_音调 = 1 | 2 | 3 | 4;
-export type Vowel_韵母 =
-  (typeof Const.Vowel_Type)[keyof typeof Const.Vowel_Type];
-export type Initial_声母_发音方法 = keyof typeof Const.Initial_发音方法_Map;
-export type Initial_声母_发音部位 = keyof typeof Const.Initial_发音部位_Map;
+export type Vowel_韵母类别 =
+  (typeof Const.Vowel_韵母类别)[keyof typeof Const.Vowel_韵母类别];
+export type Initial_声母类别_发音方法 =
+  keyof typeof Const.Initial_发音方法_Record;
+export type Initial_声母类别_发音部位 =
+  keyof typeof Const.Initial_发音部位_Record;
 
 export type Type_Name = {
   姓氏: Char_With_Pinyin[];
@@ -78,3 +90,9 @@ export type Type_Name = {
    */
   score: number;
 };
+
+export type Char_4_Summary = {
+  char: string;
+  count: number;
+};
+export type DB_Char_4_Summary = Record<string, Char_4_Summary>;
