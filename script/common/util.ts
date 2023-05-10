@@ -48,6 +48,13 @@ export function isCharPairLegal({
   charList: (Type.Char_With_Pinyin | Type.Pinyin_Of_Char)[];
   type: "last_2_char" | "first_2_char" | "full_name";
 }) {
+  // 禁止出现多音字
+  for (let char of charList) {
+    if (isCharLegal(char.char) === false) {
+      return false;
+    }
+  }
+
   // 分成三种情况
   // 前面两字: "first_2_char"
   // 末尾两字: "first_2_char"
