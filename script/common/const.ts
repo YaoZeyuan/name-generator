@@ -83,9 +83,17 @@ export const Name_Db_Uri = {
     basePath,
     "database/name_db/古人云_历史人名.json"
   ),
-  五道口_国家科研基金项目申报人: path.resolve(
+  五道口_cnki项目申报人名: path.resolve(
     basePath,
-    "database/name_db/五道口_国家科研基金项目申报人.json"
+    "database/name_db/五道口_cnki项目申报人名.json"
+  ),
+  五道口精选_国家科研基金项目负责人名: path.resolve(
+    basePath,
+    "database/name_db/五道口精选_国家科研基金项目负责人名.json"
+  ),
+  登科录_历史进士名: path.resolve(
+    basePath,
+    "database/name_db/登科录_历史进士名.json"
   ),
 };
 
