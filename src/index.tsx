@@ -219,6 +219,15 @@ export default () => {
           <Radio.Button value={Const.Choose_Type_Option.财富论}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.财富论]}
           </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.五道口}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.五道口]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option["五道口_精华版"]}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option["五道口_精华版"]]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.登科录}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.登科录]}
+          </Radio.Button>
         </Radio.Group>
       </p>
       <p>

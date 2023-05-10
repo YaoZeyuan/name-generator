@@ -6,6 +6,9 @@ import RawCharDb from "@/database/char_db/name_min_1.json";
 import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
 import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
 import NameDb_财富论 from "@/database/name_db/财富论_基金选名.json";
+import NameDb_五道口 from "@/database/name_db/五道口_cnki项目申请人名.json";
+import NameDb_五道口_精华版 from "@/database/name_db/五道口精华版_国家科研基金项目负责人名.json";
+import NameDb_登科录 from "@/database/name_db/登科录_历史进士名.json";
 
 export async function asyncSleep(ms: number) {
   return new Promise((reslove) => {
@@ -347,6 +350,15 @@ export function generateLegalNameListFromExist({
       break;
     case Const.Choose_Type_Option.财富论:
       legalNameList = NameDb_财富论;
+      break;
+    case Const.Choose_Type_Option.五道口:
+      legalNameList = NameDb_五道口;
+      break;
+    case Const.Choose_Type_Option["五道口_精华版"]:
+      legalNameList = NameDb_五道口_精华版;
+      break;
+    case Const.Choose_Type_Option.登科录:
+      legalNameList = NameDb_登科录;
       break;
     default:
       legalNameList = NameDb_古人云;
