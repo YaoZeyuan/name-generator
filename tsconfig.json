@@ -17,9 +17,13 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@/*": ["./*"]
     },
     "downlevelIteration": true
   },
-  "include": ["./src"]
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "include": ["./src", "./script"]
 }

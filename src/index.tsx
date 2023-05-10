@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
-import PinyinDb_Min_1 from "@/../database/pinyin_db/zd_name_pinyin_db_min_1.json";
-// import PinyinDb_Min_5 from "@/../database/pinyin_db/zd_name_pinyin_db_min_5.json";
-import PinyinDb_Min_10 from "@/../database/pinyin_db/zd_name_pinyin_db_min_10.json";
-import PinyinDb_Min_100 from "@/../database/pinyin_db/zd_name_pinyin_db_min_100.json";
-import * as CommonType from "@/../script/common/type";
+import PinyinDb_Min_1 from "@/database/pinyin_db/zd_name_pinyin_db_min_1.json";
+// import PinyinDb_Min_5 from "@/database/pinyin_db/zd_name_pinyin_db_min_5.json";
+import PinyinDb_Min_10 from "@/database/pinyin_db/zd_name_pinyin_db_min_10.json";
+import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
+import * as CommonType from "@/script/common/type";
 
 import { DownloadOutlined } from "@ant-design/icons";
 import { Button, Input, Drawer, Divider, Card, Radio, message } from "antd";
 import Desc from "./desc";
-import * as utils from "@/utils";
-import * as Type from "@/resource/type";
-import * as Const from "@/resource/const";
-import NameList from "@/component/name_list";
+import * as utils from "@src/utils";
+import * as Type from "@src/resource/type";
+import * as Const from "@src/resource/const";
+import NameList from "@src/component/name_list";
 import { saveAs } from "file-saver";
 
 const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
 
 // 根据汉字级别, 设定所使用的选项集
-let Pinyin_Option_List: CommonType.Pinyin_of_Char[] =
-  utils.generatePinyinOptionList(PinyinDb_Min_1 as CommonType.Pinyin_Db);
+let Pinyin_Option_List: CommonType.Pinyin_Of_Char[] =
+  utils.generatePinyinOptionList(
+    PinyinDb_Min_1 as CommonType.DB_Pinyin_Of_Char
+  );
 
 // switch (char_level) {
 //   case 0:
@@ -103,11 +105,19 @@ export default () => {
   };
   const Tools = {
     reset: () => {
+      store.status.isLoading = false;
       store.previewNameList = [];
       setTotalNameList([]);
     },
   };
 
+  let tip = "";
+  if (storeSnapshot.previewNameList.length > 0) {
+    tip = `, 共生成${totalNameList.length}种可能的三字名`;
+    if (totalNameList.length > storeSnapshot.previewNameList.length) {
+      tip = `${tip}, 展示前${storeSnapshot.maxDisplayItem}个, 每行展示${storeSnapshot.columnCount}个`;
+    }
+  }
   return (
     <div>
       <div>
@@ -171,7 +181,7 @@ export default () => {
                 char_姓_全部,
                 char_姓_末尾字: char_姓_末尾字[0],
                 char_必选字_list,
-                char_排除字_list,
+                char_待排除的同音字_list: char_排除字_list,
                 chooseType: storeSnapshot.status.currentTab,
                 generateAll: true,
               });
@@ -203,11 +213,17 @@ export default () => {
           <Radio.Button value={Const.Choose_Type_Option.他山石}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.他山石]}
           </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.财富论}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.财富论]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option["五道口_精华版"]}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option["五道口_精华版"]]}
+          </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.古人云}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.古人云]}
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.财富论}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.财富论]}
+          <Radio.Button value={Const.Choose_Type_Option.登科录}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.登科录]}
           </Radio.Button>
         </Radio.Group>
       </p>
@@ -219,7 +235,6 @@ export default () => {
           icon={<DownloadOutlined />}
           disabled={totalNameList.length === 0}
           onClick={async () => {
-            store.status.isLoading = true;
             await utils.asyncSleep(10);
             let nameList = totalNameList;
 
@@ -258,18 +273,10 @@ export default () => {
           <Desc></Desc>
         </Drawer>
       </p>
-      <p>姓氏:{input_姓氏}</p>
-      {storeSnapshot.previewNameList.length > 0 ? (
-        <p>
-          共生成
-          {totalNameList.length}
-          种可能的三字名, 展示前
-          {storeSnapshot.maxDisplayItem}个, 每行展示
-          {storeSnapshot.columnCount}个
-        </p>
-      ) : (
-        ""
-      )}
+      <p>
+        姓氏:{input_姓氏}
+        {tip}
+      </p>
       <Card title="" bordered={false} loading={storeSnapshot.status.isLoading}>
         <NameList
           nameList={storeSnapshot.previewNameList as CommonType.Type_Name[]}

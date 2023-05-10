@@ -1,11 +1,15 @@
-import * as CommonType from "@/../script/common/type";
-import * as Const from "@/resource/const";
-import * as Type from "@/resource/type";
-import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
-import RawCharDb from "@/../database/char_db/zd_name_char_db_min_1.json";
-import NameDb_古人云 from "@/../database/name_db/古人云_历史人名.json";
-import NameDb_他山石 from "@/../database/name_db/他山石_已知人名.json";
-import NameDb_财富论 from "@/../database/name_db/财富论_基金选名.json";
+import * as CommonType from "@/script/common/type";
+import * as Util from "@/script/common/util";
+import * as Const from "@src/resource/const";
+import * as Type from "@src/resource/type";
+import AllPinyinList from "@/database/char_db/raw_pinyin_list.json";
+import RawCharDb from "@/database/char_db/name_min_1.json";
+import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
+import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
+import NameDb_财富论 from "@/database/name_db/财富论_基金选名.json";
+import NameDb_五道口 from "@/database/name_db/五道口_cnki项目申请人名.json";
+import NameDb_五道口_精华版 from "@/database/name_db/五道口精华版_国家科研基金项目负责人名.json";
+import NameDb_登科录 from "@/database/name_db/登科录_历史进士名.json";
 
 export async function asyncSleep(ms: number) {
   return new Promise((reslove) => {
@@ -34,9 +38,9 @@ export function setValueByStorage(key: string, value = "") {
  * @returns
  */
 export function generatePinyinOptionList(
-  pinyinDb: CommonType.Pinyin_Db
-): CommonType.Pinyin_of_Char[] {
-  let pinyinOptionList: CommonType.Pinyin_of_Char[] = [];
+  pinyinDb: CommonType.DB_Pinyin_Of_Char
+): CommonType.Pinyin_Of_Char[] {
+  let pinyinOptionList: CommonType.Pinyin_Of_Char[] = [];
 
   for (let rawOption of Object.values(pinyinDb)) {
     for (let item of rawOption.option_list) {
@@ -131,7 +135,7 @@ export function generateLegalNameList({
   /**
    * 所有可选拼音库, 所有拼音均从可选拼音中产生
    */
-  pinyinOptionList: CommonType.Pinyin_of_Char[];
+  pinyinOptionList: CommonType.Pinyin_Of_Char[];
   /**
    * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
    */
@@ -168,25 +172,19 @@ export function generateLegalNameList({
       }
     }
 
-    // 首先生成第一个字
-    if (
-      char_姓_末尾字.pinyin_without_tone ===
-      pinyinItemChar_1.pinyin_without_tone
-    ) {
-      // 禁止和姓氏最后一字同音
-      continue;
-    }
     if (pinyinSet_同音字.has(pinyinItemChar_1.pinyin)) {
       // 排除同音字
       continue;
     }
-    // 排除一些两字连缀效果不佳的组合`阴阴X` / `上上X`
-    if (char_姓_末尾字.tone === 1 && pinyinItemChar_1.tone === 1) {
+    if (
+      Util.isCharPairLegal({
+        charList: [char_姓_末尾字, pinyinItemChar_1],
+        type: "first_2_char",
+      }) === false
+    ) {
       continue;
     }
-    if (char_姓_末尾字.tone === 3 && pinyinItemChar_1.tone === 3) {
-      continue;
-    }
+
     for (let pinyinItemChar_2 of pinyinOptionList) {
       // 生成第二个字
 
@@ -197,30 +195,15 @@ export function generateLegalNameList({
         }
       }
 
-      if (
-        char_姓_末尾字.pinyin_without_tone ===
-        pinyinItemChar_2.pinyin_without_tone
-      ) {
-        // 禁止和姓氏最后一字同音
-        continue;
-      }
       if (pinyinSet_同音字.has(pinyinItemChar_2.pinyin)) {
         // 排除同音字
         continue;
       }
-      // 禁止使用上声(三声)作为姓名结尾
-      if (pinyinItemChar_2.tone === 3) {
-        continue;
-      }
-      // 排除一些两字连缀效果不佳的组合 `X去去`
-      if (pinyinItemChar_1.tone === 4 && pinyinItemChar_2.tone === 4) {
-        continue;
-      }
-      // 禁止同音调: 阴阴阴(之前已去)、阳阳阳、上上上(之前已去)、去去去(之前已去)
       if (
-        char_姓_末尾字.tone === 2 &&
-        pinyinItemChar_1.tone === 2 &&
-        pinyinItemChar_2.tone === 2
+        Util.isCharPairLegal({
+          charList: [char_姓_末尾字, pinyinItemChar_1, pinyinItemChar_2],
+          type: "full_name",
+        }) === false
       ) {
         continue;
       }
@@ -289,7 +272,7 @@ export function generateLegalNameList({
 export function generateLegalNameListFromExist({
   char_姓_全部,
   char_姓_末尾字,
-  char_排除字_list = [],
+  char_待排除的同音字_list: char_待排除的同音字_list = [],
   char_必选字_list = [],
   chooseType = Const.Choose_Type_Option.他山石,
   generateAll = false,
@@ -305,7 +288,7 @@ export function generateLegalNameListFromExist({
   /**
    * 不能重音的字
    */
-  char_排除字_list?: CommonType.Char_With_Pinyin[];
+  char_待排除的同音字_list?: CommonType.Char_With_Pinyin[];
   /**
    * 姓名中必须出现的字, 一个名字中只能限定一个必选字出现在第二位或第三位, 但可以传入多个, 满足一个条件即可
    * 若必选字同音, 则只保留第一个必选字
@@ -325,8 +308,8 @@ export function generateLegalNameListFromExist({
   console.log("开始计算");
 
   const pinyinSet_同音字 = new Set();
-  for (let char_排除字 of char_排除字_list) {
-    pinyinSet_同音字.add(char_排除字.pinyin);
+  for (let char_待排除的同音字 of char_待排除的同音字_list) {
+    pinyinSet_同音字.add(char_待排除的同音字.pinyin);
   }
   // 必选字不能同音
   let buf_过滤同音必选字: Record<string, CommonType.Char_With_Pinyin> = {};
@@ -347,6 +330,15 @@ export function generateLegalNameListFromExist({
       break;
     case Const.Choose_Type_Option.财富论:
       legalNameList = NameDb_财富论;
+      break;
+    case Const.Choose_Type_Option.五道口:
+      legalNameList = NameDb_五道口;
+      break;
+    case Const.Choose_Type_Option["五道口_精华版"]:
+      legalNameList = NameDb_五道口_精华版;
+      break;
+    case Const.Choose_Type_Option.登科录:
+      legalNameList = NameDb_登科录;
       break;
     default:
       legalNameList = NameDb_古人云;
@@ -369,7 +361,8 @@ export function generateLegalNameListFromExist({
       return true;
     });
   }
-  // 其次, 按同音字进行过滤, 减少成本
+
+  // 将候选字转换为拼音序列
   let legalPinyinNameList = legalNameList.map((item) => {
     let [char_1, char_2] = item.split("");
     let pinyin_char_1 = getPinyinOfChar(char_1)[0];
@@ -382,19 +375,6 @@ export function generateLegalNameListFromExist({
 
   // 排除不合法的发音
   legalPinyinNameList = legalPinyinNameList.filter((item) => {
-    // 禁止和姓氏最后一字同音
-    if (
-      item.pinyin_char_1.pinyin_without_tone ===
-      char_姓_末尾字.pinyin_without_tone
-    ) {
-      return false;
-    }
-    if (
-      item.pinyin_char_2.pinyin_without_tone ===
-      char_姓_末尾字.pinyin_without_tone
-    ) {
-      return false;
-    }
     // 排除同音字
     if (pinyinSet_同音字.has(item.pinyin_char_1.pinyin)) {
       return false;
@@ -402,25 +382,15 @@ export function generateLegalNameListFromExist({
     if (pinyinSet_同音字.has(item.pinyin_char_2.pinyin)) {
       return false;
     }
-    // 排除一些两字连缀效果不佳的组合`阴阴X` / `上上X`
-    if (char_姓_末尾字.tone === 1 && item.pinyin_char_1.tone === 1) {
-      return false;
-    }
-    if (char_姓_末尾字.tone === 3 && item.pinyin_char_1.tone === 3) {
-      return false;
-    }
-    // 排除一些两字连缀效果不佳的组合 `X去去`
-    if (item.pinyin_char_1.tone === 4 && item.pinyin_char_2.tone === 4) {
-      return false;
-    }
-    // 禁止同音调: 阴阴阴(之前已去)、阳阳阳、上上上(之前已去)、去去去(之前已去)
     if (
-      char_姓_末尾字.tone === 2 &&
-      item.pinyin_char_1.tone === 2 &&
-      item.pinyin_char_2.tone === 2
+      Util.isCharPairLegal({
+        charList: [char_姓_末尾字, item.pinyin_char_1, item.pinyin_char_2],
+        type: "full_name",
+      }) === false
     ) {
       return false;
     }
+
     return true;
   });
 
