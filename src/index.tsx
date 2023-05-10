@@ -20,7 +20,7 @@ const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
 // 根据汉字级别, 设定所使用的选项集
 let Pinyin_Option_List: CommonType.Pinyin_Of_Char[] =
   utils.generatePinyinOptionList(
-    PinyinDb_Min_1 as CommonType.DB_Pinyin_Of_Char
+    PinyinDb_Min_10 as CommonType.DB_Pinyin_Of_Char
   );
 
 // switch (char_level) {
@@ -132,8 +132,9 @@ export default () => {
           }}
         ></input>
       </div>
+      <p></p>
       <div>
-        需要避开的同音字(例如父母姓名/亲属姓名)
+        <p>需要避开的同音字(例如父母姓名/亲属姓名)</p>
         <Input.TextArea
           value={input_排除字列表}
           onChange={(e) => {
@@ -144,8 +145,9 @@ export default () => {
           }}
         ></Input.TextArea>
       </div>
+      <p></p>
       <div>
-        指定出现的字(可不填)
+        <p>指定出现的字(可不填)</p>
         <Input.TextArea
           value={input_必选字}
           onChange={(e) => {
@@ -156,7 +158,8 @@ export default () => {
           }}
         ></Input.TextArea>
       </div>
-      <p>
+      <p></p>
+      <div>
         <Button
           type="primary"
           onClick={async function () {
@@ -226,8 +229,9 @@ export default () => {
             {Const.Choose_Type_Show[Const.Choose_Type_Option.登科录]}
           </Radio.Button>
         </Radio.Group>
-      </p>
-      <p>
+      </div>
+      <p></p>
+      <div>
         <Button
           type="primary"
           shape="round"
@@ -261,18 +265,16 @@ export default () => {
         <Button ghost type="primary" shape="round" onClick={showDrawer}>
           原理介绍
         </Button>
-      </p>
-      <p>
-        <Drawer
-          size="large"
-          title="原理介绍"
-          placement="right"
-          onClose={onClose}
-          open={open}
-        >
-          <Desc></Desc>
-        </Drawer>
-      </p>
+      </div>
+      <Drawer
+        size="large"
+        title="原理介绍"
+        placement="right"
+        onClose={onClose}
+        open={open}
+      >
+        <Desc></Desc>
+      </Drawer>
       <p>
         姓氏:{input_姓氏}
         {tip}

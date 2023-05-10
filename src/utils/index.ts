@@ -3,7 +3,6 @@ import * as Util from "@/script/common/util";
 import * as Const from "@src/resource/const";
 import * as Type from "@src/resource/type";
 import AllPinyinList from "@/database/char_db/raw_pinyin_list.json";
-import RawCharDb from "@/database/char_db/name_min_1.json";
 import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
 import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
 import NameDb_财富论 from "@/database/name_db/财富论_基金选名.json";
@@ -80,9 +79,8 @@ export function getPinyinOfChar(char: string) {
  * @returns
  */
 export function getScoreOfName(char1: string, char2: string) {
-  // @ts-ignore
-  let score = (RawCharDb[char1]?.count ?? 0) + (RawCharDb[char2]?.count ?? 0);
-  return score;
+  // 没想好评分标准, 先返回默认值
+  return 666;
 }
 
 /**
