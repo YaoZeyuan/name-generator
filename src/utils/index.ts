@@ -1,11 +1,11 @@
-import * as CommonType from "@/../script/common/type";
-import * as Const from "@/resource/const";
-import * as Type from "@/resource/type";
-import AllPinyinList from "@/../database/char_db/raw_pinyin_list.json";
-import RawCharDb from "@/../database/char_db/zd_name_char_db_min_1.json";
-import NameDb_古人云 from "@/../database/name_db/古人云_历史人名.json";
-import NameDb_他山石 from "@/../database/name_db/他山石_已知人名.json";
-import NameDb_财富论 from "@/../database/name_db/财富论_基金选名.json";
+import * as CommonType from "@/script/common/type";
+import * as Const from "@src/resource/const";
+import * as Type from "@src/resource/type";
+import AllPinyinList from "@/database/char_db/raw_pinyin_list.json";
+import RawCharDb from "@/database/char_db/name_min_1.json";
+import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
+import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
+import NameDb_财富论 from "@/database/name_db/财富论_基金选名.json";
 
 export async function asyncSleep(ms: number) {
   return new Promise((reslove) => {
@@ -34,9 +34,9 @@ export function setValueByStorage(key: string, value = "") {
  * @returns
  */
 export function generatePinyinOptionList(
-  pinyinDb: CommonType.Pinyin_Db
-): CommonType.Pinyin_of_Char[] {
-  let pinyinOptionList: CommonType.Pinyin_of_Char[] = [];
+  pinyinDb: CommonType.DB_Pinyin_Of_Char
+): CommonType.Pinyin_Of_Char[] {
+  let pinyinOptionList: CommonType.Pinyin_Of_Char[] = [];
 
   for (let rawOption of Object.values(pinyinDb)) {
     for (let item of rawOption.option_list) {
@@ -131,7 +131,7 @@ export function generateLegalNameList({
   /**
    * 所有可选拼音库, 所有拼音均从可选拼音中产生
    */
-  pinyinOptionList: CommonType.Pinyin_of_Char[];
+  pinyinOptionList: CommonType.Pinyin_Of_Char[];
   /**
    * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
    */
