@@ -14,6 +14,7 @@
     "step3_生成_生成符合音韵规则的二字候选名": "ts-node script/generate/step3_生成_生成符合音韵规则的二字候选名.ts",
     "根据偏旁整理汉字": "ts-node script/data_source_fetch/根据偏旁整理汉字.ts",
     "解析科研基金申报人": "ts-node script/data_source_fetch/解析科研基金申报人.ts",
+    "生成中国古代进士名录": "ts-node script/data_source_fetch/生成中国古代进士名录.ts",
     "g_name_db_old_person": "ts-node script/data_source_fetch/old_person.ts",
     "g_name_db_person": "ts-node script/generate/name_db/person.ts",
     "h": "ts-node script/generate/fetch_fund_list.ts"
@@ -22,12 +23,17 @@
     "@ant-design/icons": "^5.0.1",
     "ahooks": "^3.7.2",
     "antd": "^5.0.7",
+    "better-sqlite3": "^8.3.0",
     "file-saver": "^2.0.5",
+    "knex": "^2.4.2",
+    "opencc": "^1.1.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "sqlite3": "^5.1.6",
     "valtio": "^1.7.6"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.4",
     "@types/file-saver": "^2.0.5",
     "@types/node": "^16.10.1",
     "@types/react": "^17.0.0",
