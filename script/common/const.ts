@@ -65,6 +65,11 @@ export const Pinyin_Db_姓名用字_出现_Uri = {
   "100次": path.resolve(basePath, "database/pinyin_db/name_char_min_100.json"),
 };
 
+export const Raw_国家科研基金项目_申报人_Uri = path.resolve(
+  basePath,
+  "resource/fund_db/原始数据/国家科研基金项目_申报人_Uri.txt"
+);
+
 export const Name_Db_Uri = {
   他山石_已知人名: path.resolve(
     basePath,
@@ -77,6 +82,10 @@ export const Name_Db_Uri = {
   古人云_历史人名: path.resolve(
     basePath,
     "database/name_db/古人云_历史人名.json"
+  ),
+  五道口_国家科研基金项目申报人: path.resolve(
+    basePath,
+    "database/name_db/五道口_国家科研基金项目申报人.json"
   ),
 };
 
