@@ -45,7 +45,7 @@ export function isCharPairLegal({
   charList = [],
   type,
 }: {
-  charList: Type.Char_With_Pinyin[];
+  charList: (Type.Char_With_Pinyin | Type.Pinyin_Of_Char)[];
   type: "last_2_char" | "first_2_char" | "full_name";
 }) {
   // 分成三种情况

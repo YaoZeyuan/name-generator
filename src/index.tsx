@@ -181,7 +181,7 @@ export default () => {
                 char_姓_全部,
                 char_姓_末尾字: char_姓_末尾字[0],
                 char_必选字_list,
-                char_排除字_list,
+                char_待排除的同音字_list: char_排除字_list,
                 chooseType: storeSnapshot.status.currentTab,
                 generateAll: true,
               });
@@ -213,17 +213,14 @@ export default () => {
           <Radio.Button value={Const.Choose_Type_Option.他山石}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.他山石]}
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.古人云}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.古人云]}
-          </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.财富论}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.财富论]}
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.五道口}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.五道口]}
-          </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option["五道口_精华版"]}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option["五道口_精华版"]]}
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.古人云}>
+            {Const.Choose_Type_Show[Const.Choose_Type_Option.古人云]}
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.登科录}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.登科录]}
