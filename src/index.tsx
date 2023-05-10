@@ -1,13 +1,23 @@
 import { useEffect, useState } from "react";
 import { proxy, useSnapshot } from "valtio";
-import PinyinDb_Min_1 from "@/database/pinyin_db/zd_name_pinyin_db_min_1.json";
+// import PinyinDb_Min_1 from "@/database/pinyin_db/zd_name_pinyin_db_min_1.json";
 // import PinyinDb_Min_5 from "@/database/pinyin_db/zd_name_pinyin_db_min_5.json";
 import PinyinDb_Min_10 from "@/database/pinyin_db/zd_name_pinyin_db_min_10.json";
-import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
+// import PinyinDb_Min_50 from "@/database/pinyin_db/zd_name_pinyin_db_min_50.json";
+// import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
 import * as CommonType from "@/script/common/type";
 
 import { DownloadOutlined } from "@ant-design/icons";
-import { Button, Input, Drawer, Divider, Card, Radio, message } from "antd";
+import {
+  Button,
+  Input,
+  Drawer,
+  Divider,
+  Card,
+  Radio,
+  message,
+  Select,
+} from "antd";
 import Desc from "./desc";
 import * as utils from "@src/utils";
 import * as Type from "@src/resource/type";
@@ -265,6 +275,10 @@ export default () => {
         <Button ghost type="primary" shape="round" onClick={showDrawer}>
           原理介绍
         </Button>
+        <Divider type="vertical"></Divider>
+        {/* <Select>
+          <Select.Option value={0}>{}</Select.Option>
+        </Select> */}
       </div>
       <Drawer
         size="large"
