@@ -24,6 +24,9 @@ export default async function asyncRunner() {
   let realNameList = nameList.map((item) => {
     return item.人名_第一个字.char + item.人名_第二个字.char;
   });
+  // 去重并排序
+  realNameList = [...new Set(realNameList).values()];
+  realNameList.sort();
 
   fs.writeFileSync(
     Const.Name_Db_Uri.他山石_已知人名,

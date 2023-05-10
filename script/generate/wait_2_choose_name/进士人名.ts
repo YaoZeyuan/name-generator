@@ -23,6 +23,7 @@ export default async function asyncRunner() {
   for (let rawRecord of RawRecordList as Type_Record[]) {
     let rawName = rawRecord.c_name_chn_simple;
     rawName = util.trans2LegalString(rawName);
+    rawName = rawName.slice(1);
     if (rawName.length !== 2) {
       // 不考虑非双字名
       continue;
@@ -41,6 +42,9 @@ export default async function asyncRunner() {
   let realNameList = nameList.map((item) => {
     return item.人名_第一个字.char + item.人名_第二个字.char;
   });
+  // 去重并排序
+  realNameList = [...new Set(realNameList).values()];
+  realNameList.sort();
 
   fs.writeFileSync(
     Const.Name_Db_Uri.登科录_历史进士名,
