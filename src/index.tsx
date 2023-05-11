@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { proxy, snapshot, useSnapshot } from "valtio";
 import * as CommonType from "@/script/common/type";
 
-import { DownloadOutlined, QuestionCircleFilled } from "@ant-design/icons";
+import { DownloadOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import {
   Button,
   Input,
@@ -275,6 +275,7 @@ export default () => {
 
       <div>
         <Radio.Group
+          size="large"
           defaultValue={storeSnapshot.status.currentTab}
           onChange={(event) => {
             store.status.currentTab = event.target.value;
@@ -317,9 +318,23 @@ export default () => {
         >
           <Radio.Button value={Const.Gender_Type.男宝}>
             {Const.Gender_Type.男宝}
+            <Tooltip
+              placement="topLeft"
+              title="男宝的姓名一般以二/四声结尾, 简洁有力, 三声亦可"
+            >
+              &nbsp;
+              <QuestionCircleOutlined />
+            </Tooltip>
           </Radio.Button>
           <Radio.Button value={Const.Gender_Type.女宝}>
             {Const.Gender_Type.女宝}
+            <Tooltip
+              placement="topLeft"
+              title="女的姓名一般以一声结尾, 温文尔雅, 三声亦可"
+            >
+              &nbsp;
+              <QuestionCircleOutlined />
+            </Tooltip>
           </Radio.Button>
           <Radio.Button value={Const.Gender_Type.都看看}>
             {Const.Gender_Type.都看看}
