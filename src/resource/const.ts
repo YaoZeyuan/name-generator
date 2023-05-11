@@ -7,16 +7,25 @@ import PinyinDb_Min_10 from "@/database/pinyin_db/zd_name_pinyin_db_min_10.json"
 import PinyinDb_Min_50 from "@/database/pinyin_db/zd_name_pinyin_db_min_50.json";
 import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
 
-const Storage_Key = "name_storage";
-export const Storage_姓氏_Key = `${Storage_Key}_family_name`;
-export const Storage_需过滤字列表_Key = `${Storage_Key}_Need_Fileter_Char`;
-export const Storage_必选字_Key = `${Storage_Key}_Must_Have_Char`;
-export const Storage_Char_Leve_Key = `${Storage_Key}_Char_Level`;
+const Base_Storage_Key = "name_storage";
+export const Storage_Key_Map = {
+  姓氏: `${Base_Storage_Key}_family_name`,
+  需过滤字列表: `${Base_Storage_Key}_Need_Fileter_Char`,
+  必选字: `${Base_Storage_Key}_Must_Have_Char`,
+  Char_Level: `${Base_Storage_Key}_Char_Level`,
+  Gender_Type: `${Base_Storage_Key}_Gender_Type`,
+};
 
 export const Char_Specify_Option = {
   指定出现在第二位: "指定出现在第二位" as const,
   指定出现在第三位: "指定出现在第三位" as const,
   指定出现: "指定出现" as const,
+};
+
+export const Gender_Type = {
+  男宝: "男宝" as const,
+  女宝: "女宝" as const,
+  都看看: "都看看" as const,
 };
 
 export const Choose_Type_Option = {

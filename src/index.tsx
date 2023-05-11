@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { proxy, snapshot, useSnapshot } from "valtio";
 import * as CommonType from "@/script/common/type";
 
-import { DownloadOutlined } from "@ant-design/icons";
+import { DownloadOutlined, QuestionCircleFilled } from "@ant-design/icons";
 import {
   Button,
   Input,
@@ -14,6 +14,7 @@ import {
   Select,
   Space,
   Tabs,
+  Tooltip,
 } from "antd";
 import Desc from "./desc";
 import * as utils from "@src/utils";
@@ -23,21 +24,25 @@ import NameList from "@src/component/name_list";
 import { saveAs } from "file-saver";
 
 const default_char_level = utils.getValueByStorage<Type.CharDbLevel>(
-  Const.Storage_Char_Leve_Key,
+  Const.Storage_Key_Map.Char_Level,
   Const.CharDb_Level_Option["至少出现10次"]
 );
 
 let default_input_姓氏 = utils.getValueByStorage<string>(
-  Const.Storage_姓氏_Key,
+  Const.Storage_Key_Map.姓氏,
   ""
 );
 let default_input_排除字列表 = utils.getValueByStorage<string>(
-  Const.Storage_需过滤字列表_Key,
+  Const.Storage_Key_Map.需过滤字列表,
   ""
 );
 let default_input_必选字 = utils.getValueByStorage<string>(
-  Const.Storage_必选字_Key,
+  Const.Storage_Key_Map.必选字,
   ""
+);
+let default_gender_type = utils.getValueByStorage<Type.GenderType>(
+  Const.Storage_Key_Map.Gender_Type,
+  Const.Gender_Type.都看看
 );
 
 const store = proxy<{
@@ -49,6 +54,7 @@ const store = proxy<{
     isLoading: boolean;
     currentTab: Type.ChooseType;
     currentCharDbLevel: Type.CharDbLevel;
+    genderType: Type.GenderType;
   };
 }>({
   /**
@@ -71,6 +77,7 @@ const store = proxy<{
     isLoading: false,
     currentTab: Const.Choose_Type_Option.古人云,
     currentCharDbLevel: default_char_level,
+    genderType: default_gender_type,
   },
 });
 
@@ -132,7 +139,7 @@ export default () => {
           onChange={(e) => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
-            utils.setValueByStorage(Const.Storage_姓氏_Key, inputValue);
+            utils.setValueByStorage(Const.Storage_Key_Map.姓氏, inputValue);
             set_input_姓氏(inputValue);
           }}
         ></input>
@@ -141,10 +148,14 @@ export default () => {
       <div>
         <p>需要避开的同音字(例如父母姓名/亲属姓名)</p>
         <Input.TextArea
+          autoSize
           value={input_排除字列表}
           onChange={(e) => {
             let inputValue = e.target.value;
-            utils.setValueByStorage(Const.Storage_需过滤字列表_Key, inputValue);
+            utils.setValueByStorage(
+              Const.Storage_Key_Map.需过滤字列表,
+              inputValue
+            );
             set_input_排除字列表(inputValue);
           }}
         ></Input.TextArea>
@@ -154,10 +165,11 @@ export default () => {
         <p>指定出现的字(可不填)</p>
         <Tabs></Tabs>
         <Input.TextArea
+          autoSize
           value={input_必选字}
           onChange={(e) => {
             let inputValue = e.target.value;
-            utils.setValueByStorage(Const.Storage_必选字_Key, inputValue);
+            utils.setValueByStorage(Const.Storage_Key_Map.必选字, inputValue);
             set_input_必选字(inputValue);
           }}
         ></Input.TextArea>
@@ -171,11 +183,12 @@ export default () => {
             Tools.reset();
             await utils.asyncSleep(100);
             console.log("开始生成候选人名");
+            let rawNameList: CommonType.Type_Name[] = [];
             let nameList: CommonType.Type_Name[] = [];
             if (
               storeSnapshot.status.currentTab === Const.Choose_Type_Option.诗云
             ) {
-              nameList = utils.generateLegalNameList({
+              rawNameList = utils.generateLegalNameList({
                 char_姓_全部,
                 char_姓_末尾字: char_姓_末尾字[0],
                 char_必选字_list,
@@ -184,7 +197,7 @@ export default () => {
                 generateAll: true,
               });
             } else {
-              nameList = utils.generateLegalNameListFromExist({
+              rawNameList = utils.generateLegalNameListFromExist({
                 char_姓_全部,
                 char_姓_末尾字: char_姓_末尾字[0],
                 char_必选字_list,
@@ -195,6 +208,26 @@ export default () => {
             }
             store.status.isLoading = false;
             console.log("候选人名生成完毕");
+
+            // 按性别要求进行过滤
+            for (let name of rawNameList) {
+              switch (storeSnapshot.status.genderType) {
+                case Const.Gender_Type.男宝:
+                  if ([2, 3, 4].includes(name.人名_第二个字.tone)) {
+                    nameList.push(name);
+                  }
+                  break;
+                case Const.Gender_Type.女宝:
+                  if ([1, 3].includes(name.人名_第二个字.tone)) {
+                    nameList.push(name);
+                  }
+                  break;
+                case Const.Gender_Type.都看看:
+                default:
+                  nameList.push(name);
+              }
+            }
+
             // 随机打乱
             nameList.sort(() => Math.random() - 0.5);
             console.log("随机打乱完毕");
@@ -216,7 +249,7 @@ export default () => {
             value={storeSnapshot.status.currentCharDbLevel}
             onChange={(value: Type.CharDbLevel) => {
               store.status.currentCharDbLevel = value;
-              utils.setValueByStorage(Const.Storage_Char_Leve_Key, value);
+              utils.setValueByStorage(Const.Storage_Key_Map.Char_Level, value);
               Tools.reset();
             }}
           >
@@ -265,6 +298,31 @@ export default () => {
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.登科录}>
             {Const.Choose_Type_Show[Const.Choose_Type_Option.登科录]}
+          </Radio.Button>
+        </Radio.Group>
+      </div>
+      <p></p>
+      <div>
+        <span>按音韵过滤姓名:&nbsp;</span>
+        <Radio.Group
+          defaultValue={storeSnapshot.status.genderType}
+          onChange={(event) => {
+            store.status.genderType = event.target.value;
+            utils.setValueByStorage(
+              Const.Storage_Key_Map.Gender_Type,
+              store.status.genderType
+            );
+            Tools.reset();
+          }}
+        >
+          <Radio.Button value={Const.Gender_Type.男宝}>
+            {Const.Gender_Type.男宝}
+          </Radio.Button>
+          <Radio.Button value={Const.Gender_Type.女宝}>
+            {Const.Gender_Type.女宝}
+          </Radio.Button>
+          <Radio.Button value={Const.Gender_Type.都看看}>
+            {Const.Gender_Type.都看看}
           </Radio.Button>
         </Radio.Group>
       </div>
