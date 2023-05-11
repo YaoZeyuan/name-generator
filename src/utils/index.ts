@@ -102,6 +102,22 @@ export function getScoreOfName(char1: string, char2: string) {
 }
 
 /**
+ * 移除字符串中的非中文字符
+ * @param str
+ * @returns
+ */
+export function removeUnChineseChar(str: string) {
+  const charList = str.split("");
+  let resultList: string[] = [];
+  for (let char of charList) {
+    if (Util.is汉字(char)) {
+      resultList.push(char);
+    }
+  }
+  return resultList.join("");
+}
+
+/**
  * 将字符串转换为拼音列表
  * @param str
  * @returns

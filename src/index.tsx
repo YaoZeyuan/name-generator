@@ -13,6 +13,7 @@ import {
   message,
   Select,
   Space,
+  Tabs,
 } from "antd";
 import Desc from "./desc";
 import * as utils from "@src/utils";
@@ -83,12 +84,18 @@ export default () => {
 
   let storeSnapshot = useSnapshot(store);
 
-  const char_姓_全部 = utils.transString2PinyinList(input_姓氏);
+  const char_姓_全部 = utils.transString2PinyinList(
+    utils.removeUnChineseChar(input_姓氏)
+  );
   const char_姓_末尾字 = utils.getPinyinOfChar(
     input_姓氏.split("").pop() ?? ""
   );
-  const char_必选字_list = utils.transString2PinyinList(input_必选字);
-  const char_排除字_list = utils.transString2PinyinList(input_排除字列表);
+  const char_必选字_list = utils.transString2PinyinList(
+    utils.removeUnChineseChar(input_必选字)
+  );
+  const char_排除字_list = utils.transString2PinyinList(
+    utils.removeUnChineseChar(input_排除字列表)
+  );
 
   // 根据汉字级别, 设定所使用的选项集
   let pinyinOptionList =
@@ -137,7 +144,6 @@ export default () => {
           value={input_排除字列表}
           onChange={(e) => {
             let inputValue = e.target.value;
-            inputValue = inputValue.trim();
             utils.setValueByStorage(Const.Storage_需过滤字列表_Key, inputValue);
             set_input_排除字列表(inputValue);
           }}
@@ -146,11 +152,11 @@ export default () => {
       <p></p>
       <div>
         <p>指定出现的字(可不填)</p>
+        <Tabs></Tabs>
         <Input.TextArea
           value={input_必选字}
           onChange={(e) => {
             let inputValue = e.target.value;
-            inputValue = inputValue.trim();
             utils.setValueByStorage(Const.Storage_必选字_Key, inputValue);
             set_input_必选字(inputValue);
           }}

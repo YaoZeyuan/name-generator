@@ -13,6 +13,12 @@ export const Storage_需过滤字列表_Key = `${Storage_Key}_Need_Fileter_Char`
 export const Storage_必选字_Key = `${Storage_Key}_Must_Have_Char`;
 export const Storage_Char_Leve_Key = `${Storage_Key}_Char_Level`;
 
+export const Char_Specify_Option = {
+  指定出现在第二位: "指定出现在第二位" as const,
+  指定出现在第三位: "指定出现在第三位" as const,
+  指定出现: "指定出现" as const,
+};
+
 export const Choose_Type_Option = {
   [`诗云`]: `诗云` as const,
   [`古人云`]: `古人云` as const,
