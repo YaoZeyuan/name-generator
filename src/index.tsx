@@ -21,31 +21,20 @@ import * as Const from "@src/resource/const";
 import NameList from "@src/component/name_list";
 import { saveAs } from "file-saver";
 
-const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
+const default_char_level = utils.getValueByStorage<Type.CharDbLevel>(
+  Const.Storage_Char_Leve_Key,
+  Const.CharDb_Level_Option["至少出现10次"]
+);
 
-// 根据汉字级别, 设定所使用的选项集
-let pinyinOptionList =
-  Const.CharDb_Level_Item[Const.CharDb_Level_Option["至少出现10次"]];
-
-// switch (char_level) {
-//   case 0:
-//     Pinyin_Database_Map = PinyinDb_Min_1 as Type.Pinyin_Db;
-//     break;
-//   case 1:
-//     Pinyin_Database_Map = PinyinDb_Min_5 as Type.Pinyin_Db;
-//     break;
-//   case 2:
-//   default:
-//     Pinyin_Database_Map = PinyinDb_Min_10 as Type.Pinyin_Db;
-//     break;
-// }
-
-let default_input_姓氏 = utils.getValueByStorage(Const.Storage_姓氏_Key, "");
-let default_input_排除字列表 = utils.getValueByStorage(
+let default_input_姓氏 = utils.getValueByStorage<string>(
+  Const.Storage_姓氏_Key,
+  ""
+);
+let default_input_排除字列表 = utils.getValueByStorage<string>(
   Const.Storage_需过滤字列表_Key,
   ""
 );
-let default_input_必选字 = utils.getValueByStorage(
+let default_input_必选字 = utils.getValueByStorage<string>(
   Const.Storage_必选字_Key,
   ""
 );
@@ -80,7 +69,7 @@ const store = proxy<{
   status: {
     isLoading: false,
     currentTab: Const.Choose_Type_Option.古人云,
-    currentCharDbLevel: Const.CharDb_Level_Option.至少出现10次,
+    currentCharDbLevel: default_char_level,
   },
 });
 
@@ -101,7 +90,8 @@ export default () => {
   const char_必选字_list = utils.transString2PinyinList(input_必选字);
   const char_排除字_list = utils.transString2PinyinList(input_排除字列表);
 
-  pinyinOptionList =
+  // 根据汉字级别, 设定所使用的选项集
+  let pinyinOptionList =
     Const.CharDb_Level_Item[storeSnapshot.status.currentCharDbLevel];
 
   const showDrawer = () => {
@@ -220,6 +210,7 @@ export default () => {
             value={storeSnapshot.status.currentCharDbLevel}
             onChange={(value: Type.CharDbLevel) => {
               store.status.currentCharDbLevel = value;
+              utils.setValueByStorage(Const.Storage_Char_Leve_Key, value);
               Tools.reset();
             }}
           >

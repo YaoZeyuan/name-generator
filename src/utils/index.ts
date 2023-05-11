@@ -18,12 +18,12 @@ export async function asyncSleep(ms: number) {
   });
 }
 
-export function getValueByStorage(key: string, defaultValue: any) {
+export function getValueByStorage<T>(key: string, defaultValue: any) {
   let content = (localStorage.getItem(key) as string) ?? "";
   try {
-    return JSON.parse(content);
+    return JSON.parse(content) as T;
   } catch (e) {
-    return defaultValue;
+    return defaultValue as T;
   }
 }
 export function setValueByStorage(key: string, value = "") {
