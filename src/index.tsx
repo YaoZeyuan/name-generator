@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-import { proxy, useSnapshot } from "valtio";
-// import PinyinDb_Min_1 from "@/database/pinyin_db/zd_name_pinyin_db_min_1.json";
-// import PinyinDb_Min_5 from "@/database/pinyin_db/zd_name_pinyin_db_min_5.json";
-import PinyinDb_Min_10 from "@/database/pinyin_db/zd_name_pinyin_db_min_10.json";
-// import PinyinDb_Min_50 from "@/database/pinyin_db/zd_name_pinyin_db_min_50.json";
-// import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
+import { proxy, snapshot, useSnapshot } from "valtio";
 import * as CommonType from "@/script/common/type";
 
 import { DownloadOutlined } from "@ant-design/icons";
@@ -17,6 +12,7 @@ import {
   Radio,
   message,
   Select,
+  Space,
 } from "antd";
 import Desc from "./desc";
 import * as utils from "@src/utils";
@@ -28,10 +24,8 @@ import { saveAs } from "file-saver";
 const char_level = utils.getValueByStorage(Const.Storage_Char_Leve_Key, 0);
 
 // 根据汉字级别, 设定所使用的选项集
-let Pinyin_Option_List: CommonType.Pinyin_Of_Char[] =
-  utils.generatePinyinOptionList(
-    PinyinDb_Min_10 as CommonType.DB_Pinyin_Of_Char
-  );
+let pinyinOptionList =
+  Const.CharDb_Level_Item[Const.CharDb_Level_Option["至少出现10次"]];
 
 // switch (char_level) {
 //   case 0:
@@ -64,6 +58,7 @@ const store = proxy<{
   status: {
     isLoading: boolean;
     currentTab: Type.ChooseType;
+    currentCharDbLevel: Type.CharDbLevel;
   };
 }>({
   /**
@@ -85,6 +80,7 @@ const store = proxy<{
   status: {
     isLoading: false,
     currentTab: Const.Choose_Type_Option.古人云,
+    currentCharDbLevel: Const.CharDb_Level_Option.至少出现10次,
   },
 });
 
@@ -94,6 +90,7 @@ export default () => {
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
   let [totalNameList, setTotalNameList] = useState<CommonType.Type_Name[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   let storeSnapshot = useSnapshot(store);
 
@@ -104,14 +101,15 @@ export default () => {
   const char_必选字_list = utils.transString2PinyinList(input_必选字);
   const char_排除字_list = utils.transString2PinyinList(input_排除字列表);
 
-  const [open, setOpen] = useState(false);
+  pinyinOptionList =
+    Const.CharDb_Level_Item[storeSnapshot.status.currentCharDbLevel];
 
   const showDrawer = () => {
-    setOpen(true);
+    setIsOpen(true);
   };
 
   const onClose = () => {
-    setOpen(false);
+    setIsOpen(false);
   };
   const Tools = {
     reset: () => {
@@ -186,7 +184,7 @@ export default () => {
                 char_姓_末尾字: char_姓_末尾字[0],
                 char_必选字_list,
                 char_排除字_list,
-                pinyinOptionList: Pinyin_Option_List,
+                pinyinOptionList: pinyinOptionList,
                 generateAll: true,
               });
             } else {
@@ -211,8 +209,41 @@ export default () => {
         >
           生成候选方案
         </Button>
-        <Divider type="vertical" />
+      </div>
+      <p></p>
+      <div>
+        <Space>
+          <span>当前诗云候选字条件:</span>
+          <Select
+            dropdownMatchSelectWidth={false}
+            style={{ width: "100%" }}
+            value={storeSnapshot.status.currentCharDbLevel}
+            onChange={(value: Type.CharDbLevel) => {
+              store.status.currentCharDbLevel = value;
+              Tools.reset();
+            }}
+          >
+            <Select.Option value={Const.CharDb_Level_Option.至少出现1次}>
+              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现1次]}
+            </Select.Option>
+            <Select.Option value={Const.CharDb_Level_Option.至少出现5次}>
+              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现5次]}
+            </Select.Option>
+            <Select.Option value={Const.CharDb_Level_Option.至少出现10次}>
+              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现10次]}
+            </Select.Option>
+            <Select.Option value={Const.CharDb_Level_Option.至少出现50次}>
+              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现50次]}
+            </Select.Option>
+            <Select.Option value={Const.CharDb_Level_Option.至少出现100次}>
+              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现100次]}
+            </Select.Option>
+          </Select>
+        </Space>
+      </div>
+      <p></p>
 
+      <div>
         <Radio.Group
           defaultValue={storeSnapshot.status.currentTab}
           onChange={(event) => {
@@ -275,17 +306,13 @@ export default () => {
         <Button ghost type="primary" shape="round" onClick={showDrawer}>
           原理介绍
         </Button>
-        <Divider type="vertical"></Divider>
-        {/* <Select>
-          <Select.Option value={0}>{}</Select.Option>
-        </Select> */}
       </div>
       <Drawer
         size="large"
         title="原理介绍"
         placement="right"
         onClose={onClose}
-        open={open}
+        open={isOpen}
       >
         <Desc></Desc>
       </Drawer>

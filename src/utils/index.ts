@@ -55,6 +55,24 @@ export function generatePinyinOptionList(
 }
 
 /**
+ * 返回pinyin数据库中候选字的数量
+ * @param pinyinDb
+ * @returns
+ */
+export function getCharCountInPinyinDb(
+  pinyinDb: CommonType.DB_Pinyin_Of_Char
+): number {
+  let counter = 0;
+  for (let rawOption of Object.values(pinyinDb)) {
+    for (let item of rawOption.option_list) {
+      counter = counter + item.char_list.length;
+    }
+  }
+
+  return counter;
+}
+
+/**
  * 获取该字对应的拼音, 假设至少有一个拼音
  * @param char
  * @returns
