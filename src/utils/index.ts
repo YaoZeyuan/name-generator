@@ -134,16 +134,84 @@ export function transString2PinyinList(str: string) {
   return pinyinList;
 }
 
-/**
- * 生成所有合法的姓名
- * @param char_姓氏
- * @returns
- */
 export function generateLegalNameList({
   char_姓_全部,
   char_姓_末尾字,
   char_排除字_list = [],
   char_必选字_list = [],
+  pinyinOptionList,
+  generateType,
+  charSpecifyPos,
+  generateAll = false,
+}: {
+  /**
+   * 姓的全称, 用于合成最终结果
+   */
+  char_姓_全部: CommonType.Char_With_Pinyin[];
+  /**
+   * 姓中的最后一个字, 需要明确发音
+   */
+  char_姓_末尾字: CommonType.Char_With_Pinyin;
+  /**
+   * 不能重音的字
+   */
+  char_排除字_list?: CommonType.Char_With_Pinyin[];
+  /**
+   * 姓名中必须出现的字, 一个名字中只能限定一个必选字出现在第二位或第三位, 但可以传入多个, 满足一个条件即可
+   * 若必选字同音, 则只保留第一个必选字
+   */
+  char_必选字_list?: CommonType.Char_With_Pinyin[];
+  /**
+   * 必选字位置
+   */
+  charSpecifyPos: Type.CharSpecifyPos;
+  /**
+   * 所有可选拼音库, 所有拼音均从可选拼音中产生
+   */
+  pinyinOptionList: CommonType.Pinyin_Of_Char[];
+  /**
+   * 生成类别
+   */
+  generateType: Type.ChooseType;
+  /**
+   * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
+   */
+  generateAll?: boolean;
+}) {
+  if (generateType === Const.Choose_Type_Option.诗云) {
+    return generateLegalNameListBy诗云({
+      char_姓_全部,
+      char_姓_末尾字,
+      char_排除字_list,
+      char_必选字_list,
+      charSpecifyPos,
+      pinyinOptionList,
+      generateAll,
+    });
+  } else {
+    return generateLegalNameListFromExist({
+      char_姓_全部,
+      char_姓_末尾字,
+      char_待排除的同音字_list: char_排除字_list,
+      char_必选字_list,
+      charSpecifyPos,
+      generateType,
+      generateAll,
+    });
+  }
+}
+
+/**
+ * 生成所有合法的姓名
+ * @param char_姓氏
+ * @returns
+ */
+export function generateLegalNameListBy诗云({
+  char_姓_全部,
+  char_姓_末尾字,
+  char_排除字_list = [],
+  char_必选字_list = [],
+  charSpecifyPos,
   pinyinOptionList,
   generateAll = false,
 }: {
@@ -164,6 +232,10 @@ export function generateLegalNameList({
    * 若必选字同音, 则只保留第一个必选字
    */
   char_必选字_list?: CommonType.Char_With_Pinyin[];
+  /**
+   * 必选字位置
+   */
+  charSpecifyPos: Type.CharSpecifyPos;
   /**
    * 所有可选拼音库, 所有拼音均从可选拼音中产生
    */
@@ -306,7 +378,8 @@ export function generateLegalNameListFromExist({
   char_姓_末尾字,
   char_待排除的同音字_list: char_待排除的同音字_list = [],
   char_必选字_list = [],
-  chooseType = Const.Choose_Type_Option.他山石,
+  charSpecifyPos,
+  generateType = Const.Choose_Type_Option.他山石,
   generateAll = false,
 }: {
   /**
@@ -327,9 +400,13 @@ export function generateLegalNameListFromExist({
    */
   char_必选字_list?: CommonType.Char_With_Pinyin[];
   /**
-   * 已有姓名来源
+   * 必选字位置
    */
-  chooseType: Type.ChooseType;
+  charSpecifyPos: Type.CharSpecifyPos;
+  /**
+   * 生成类别
+   */
+  generateType: Type.ChooseType;
   /**
    * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
    */
@@ -353,7 +430,7 @@ export function generateLegalNameListFromExist({
   char_必选字_list = [...Object.values(buf_过滤同音必选字)];
 
   let legalNameList: string[];
-  switch (chooseType) {
+  switch (generateType) {
     case Const.Choose_Type_Option.古人云:
       legalNameList = NameDb_古人云;
       break;

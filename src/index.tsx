@@ -36,6 +36,10 @@ let default_input_排除字列表 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.需过滤字列表,
   ""
 );
+let default_input_必选字位置 = utils.getValueByStorage<Type.CharSpecifyPos>(
+  Const.Storage_Key_Map.必选字位置,
+  Const.Char_Specify_Option.不限制
+);
 let default_input_必选字 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.必选字,
   ""
@@ -55,6 +59,10 @@ const store = proxy<{
     currentTab: Type.ChooseType;
     currentCharDbLevel: Type.CharDbLevel;
     genderType: Type.GenderType;
+    generateConfig: {
+      charSpecifyPos: Type.CharSpecifyPos;
+      input_姓氏: string;
+    };
   };
 }>({
   /**
@@ -78,24 +86,27 @@ const store = proxy<{
     currentTab: Const.Choose_Type_Option.古人云,
     currentCharDbLevel: default_char_level,
     genderType: default_gender_type,
+    generateConfig: {
+      charSpecifyPos: default_input_必选字位置,
+      input_姓氏: default_input_姓氏,
+    },
   },
 });
 
 export default () => {
-  let [input_姓氏, set_input_姓氏] = useState<string>(default_input_姓氏);
   let [input_排除字列表, set_input_排除字列表] =
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
   let [totalNameList, setTotalNameList] = useState<CommonType.Type_Name[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  let storeSnapshot = useSnapshot(store);
+  let snapshot = useSnapshot(store);
 
   const char_姓_全部 = utils.transString2PinyinList(
-    utils.removeUnChineseChar(input_姓氏)
+    utils.removeUnChineseChar(snapshot.status.generateConfig.input_姓氏)
   );
   const char_姓_末尾字 = utils.getPinyinOfChar(
-    input_姓氏.split("").pop() ?? ""
+    snapshot.status.generateConfig.input_姓氏.split("").pop() ?? ""
   );
   const char_必选字_list = utils.transString2PinyinList(
     utils.removeUnChineseChar(input_必选字)
@@ -106,7 +117,7 @@ export default () => {
 
   // 根据汉字级别, 设定所使用的选项集
   let pinyinOptionList =
-    Const.CharDb_Level_Item[storeSnapshot.status.currentCharDbLevel];
+    Const.CharDb_Level_Item[snapshot.status.currentCharDbLevel];
 
   const showDrawer = () => {
     setIsOpen(true);
@@ -124,10 +135,10 @@ export default () => {
   };
 
   let tip = "";
-  if (storeSnapshot.previewNameList.length > 0) {
+  if (snapshot.previewNameList.length > 0) {
     tip = `, 共生成${totalNameList.length}种可能的三字名`;
-    if (totalNameList.length > storeSnapshot.previewNameList.length) {
-      tip = `${tip}, 展示前${storeSnapshot.maxDisplayItem}个, 每行展示${storeSnapshot.columnCount}个`;
+    if (totalNameList.length > snapshot.previewNameList.length) {
+      tip = `${tip}, 展示前${snapshot.maxDisplayItem}个, 每行展示${snapshot.columnCount}个`;
     }
   }
   return (
@@ -135,12 +146,12 @@ export default () => {
       <div>
         <span>请输入姓氏</span>
         <input
-          value={input_姓氏}
+          value={snapshot.status.generateConfig.input_姓氏}
           onChange={(e) => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
             utils.setValueByStorage(Const.Storage_Key_Map.姓氏, inputValue);
-            set_input_姓氏(inputValue);
+            store.status.generateConfig.input_姓氏 = inputValue;
           }}
         ></input>
       </div>
@@ -162,8 +173,28 @@ export default () => {
       </div>
       <p></p>
       <div>
-        <p>指定出现的字(可不填)</p>
-        <Tabs></Tabs>
+        <span>指定用字&出现位置(可不填): </span>
+        <Radio.Group
+          defaultValue={snapshot.status.generateConfig.charSpecifyPos}
+          onChange={(event) => {
+            store.status.generateConfig.charSpecifyPos = event.target.value;
+            utils.setValueByStorage(
+              Const.Storage_Key_Map.必选字位置,
+              event.target.value
+            );
+            Tools.reset();
+          }}
+        >
+          <Radio.Button value={Const.Char_Specify_Option.第二位}>
+            {Const.Char_Specify_Option.第二位}
+          </Radio.Button>
+          <Radio.Button value={Const.Char_Specify_Option.第三位}>
+            {Const.Char_Specify_Option.第三位}
+          </Radio.Button>
+          <Radio.Button value={Const.Char_Specify_Option.不限制}>
+            {Const.Char_Specify_Option.不限制}
+          </Radio.Button>
+        </Radio.Group>
         <Input.TextArea
           autoSize
           value={input_必选字}
@@ -183,35 +214,23 @@ export default () => {
             Tools.reset();
             await utils.asyncSleep(100);
             console.log("开始生成候选人名");
-            let rawNameList: CommonType.Type_Name[] = [];
             let nameList: CommonType.Type_Name[] = [];
-            if (
-              storeSnapshot.status.currentTab === Const.Choose_Type_Option.诗云
-            ) {
-              rawNameList = utils.generateLegalNameList({
-                char_姓_全部,
-                char_姓_末尾字: char_姓_末尾字[0],
-                char_必选字_list,
-                char_排除字_list,
-                pinyinOptionList: pinyinOptionList,
-                generateAll: true,
-              });
-            } else {
-              rawNameList = utils.generateLegalNameListFromExist({
-                char_姓_全部,
-                char_姓_末尾字: char_姓_末尾字[0],
-                char_必选字_list,
-                char_待排除的同音字_list: char_排除字_list,
-                chooseType: storeSnapshot.status.currentTab,
-                generateAll: true,
-              });
-            }
+            let rawNameList = utils.generateLegalNameList({
+              char_姓_全部,
+              char_姓_末尾字: char_姓_末尾字[0],
+              char_必选字_list,
+              char_排除字_list,
+              charSpecifyPos: snapshot.status.generateConfig.charSpecifyPos,
+              generateType: snapshot.status.currentTab,
+              pinyinOptionList: pinyinOptionList,
+              generateAll: true,
+            });
             store.status.isLoading = false;
             console.log("候选人名生成完毕");
 
             // 按性别要求进行过滤
             for (let name of rawNameList) {
-              switch (storeSnapshot.status.genderType) {
+              switch (snapshot.status.genderType) {
                 case Const.Gender_Type.男宝:
                   if ([2, 3, 4].includes(name.人名_第二个字.tone)) {
                     nameList.push(name);
@@ -246,7 +265,7 @@ export default () => {
           <Select
             dropdownMatchSelectWidth={false}
             style={{ width: "100%" }}
-            value={storeSnapshot.status.currentCharDbLevel}
+            value={snapshot.status.currentCharDbLevel}
             onChange={(value: Type.CharDbLevel) => {
               store.status.currentCharDbLevel = value;
               utils.setValueByStorage(Const.Storage_Key_Map.Char_Level, value);
@@ -276,7 +295,7 @@ export default () => {
       <div>
         <Radio.Group
           size="large"
-          defaultValue={storeSnapshot.status.currentTab}
+          defaultValue={snapshot.status.currentTab}
           onChange={(event) => {
             store.status.currentTab = event.target.value;
             Tools.reset();
@@ -306,7 +325,7 @@ export default () => {
       <div>
         <span>按音韵过滤姓名:&nbsp;</span>
         <Radio.Group
-          defaultValue={storeSnapshot.status.genderType}
+          defaultValue={snapshot.status.genderType}
           onChange={(event) => {
             store.status.genderType = event.target.value;
             utils.setValueByStorage(
@@ -387,13 +406,13 @@ export default () => {
         <Desc></Desc>
       </Drawer>
       <p>
-        姓氏:{input_姓氏}
+        姓氏:{snapshot.status.generateConfig.input_姓氏}
         {tip}
       </p>
-      <Card title="" bordered={false} loading={storeSnapshot.status.isLoading}>
+      <Card title="" bordered={false} loading={snapshot.status.isLoading}>
         <NameList
-          nameList={storeSnapshot.previewNameList as CommonType.Type_Name[]}
-          columnCount={storeSnapshot.columnCount}
+          nameList={snapshot.previewNameList as CommonType.Type_Name[]}
+          columnCount={snapshot.columnCount}
         ></NameList>
       </Card>
     </div>

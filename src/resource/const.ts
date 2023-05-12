@@ -11,15 +11,16 @@ const Base_Storage_Key = "name_storage";
 export const Storage_Key_Map = {
   姓氏: `${Base_Storage_Key}_family_name`,
   需过滤字列表: `${Base_Storage_Key}_Need_Fileter_Char`,
+  必选字位置: `${Base_Storage_Key}_必选字位置`,
   必选字: `${Base_Storage_Key}_Must_Have_Char`,
   Char_Level: `${Base_Storage_Key}_Char_Level`,
   Gender_Type: `${Base_Storage_Key}_Gender_Type`,
 };
 
 export const Char_Specify_Option = {
-  指定出现在第二位: "指定出现在第二位" as const,
-  指定出现在第三位: "指定出现在第三位" as const,
-  指定出现: "指定出现" as const,
+  第二位: "第二位" as const,
+  第三位: "第三位" as const,
+  不限制: "不限制" as const,
 };
 
 export const Gender_Type = {
