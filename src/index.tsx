@@ -300,23 +300,31 @@ export default () => {
             Tools.reset();
           }}
         >
-          <Radio.Button value={Const.Choose_Type_Option.诗云}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.诗云]}
+          <Radio.Button value={Const.Choose_Type_Option["诗云-按发音合并"]}>
+            {
+              Const.Choose_Type_Desc[
+                Const.Choose_Type_Option["诗云-按发音合并"]
+              ]
+            }
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option["诗云-所有可能"]}>
+            {Const.Choose_Type_Option["诗云-所有可能"]}
+            {Const.Choose_Type_Desc[Const.Choose_Type_Option["诗云-所有可能"]]}
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.他山石}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.他山石]}
+            {Const.Choose_Type_Desc[Const.Choose_Type_Option.他山石]}
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.财富论}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.财富论]}
+            {Const.Choose_Type_Desc[Const.Choose_Type_Option.财富论]}
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口_精华版"]}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option["五道口_精华版"]]}
+          <Radio.Button value={Const.Choose_Type_Option["五道口-精华版"]}>
+            {Const.Choose_Type_Desc[Const.Choose_Type_Option["五道口-精华版"]]}
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.古人云}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.古人云]}
+            {Const.Choose_Type_Desc[Const.Choose_Type_Option.古人云]}
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.登科录}>
-            {Const.Choose_Type_Show[Const.Choose_Type_Option.登科录]}
+            {Const.Choose_Type_Desc[Const.Choose_Type_Option.登科录]}
           </Radio.Button>
         </Radio.Group>
       </div>

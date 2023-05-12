@@ -178,7 +178,7 @@ export function generateLegalNameList({
    */
   generateAll?: boolean;
 }) {
-  if (generateType === Const.Choose_Type_Option.诗云) {
+  if (generateType === Const.Choose_Type_Option["诗云-按发音合并"]) {
     return generateLegalNameListBy诗云({
       char_姓_全部,
       char_姓_末尾字,
@@ -186,6 +186,7 @@ export function generateLegalNameList({
       char_必选字_list,
       charSpecifyPos,
       pinyinOptionList,
+      generateType,
       generateAll,
     });
   } else {
@@ -213,6 +214,7 @@ export function generateLegalNameListBy诗云({
   char_必选字_list = [],
   charSpecifyPos,
   pinyinOptionList,
+  generateType,
   generateAll = false,
 }: {
   /**
@@ -240,6 +242,12 @@ export function generateLegalNameListBy诗云({
    * 所有可选拼音库, 所有拼音均从可选拼音中产生
    */
   pinyinOptionList: CommonType.Pinyin_Of_Char[];
+  /**
+   * 生成类别
+   */
+  generateType:
+    | (typeof Const.Choose_Type_Option)["诗云-所有可能"]
+    | (typeof Const.Choose_Type_Option)["诗云-按发音合并"];
   /**
    * 是否生成全部数据, 默认只生成有限个数, 以节约计算时间
    */
@@ -328,6 +336,7 @@ export function generateLegalNameListBy诗云({
             // 匹配成功, 将当前拼音选项中的字替换为必选字
             // 由于已经进行了深拷贝, 所以这里的修改不会影响外界
             pinyinItemChar_1.char = optionChar.char;
+            pinyinItemChar_1.char_list = [optionChar];
             flag_check_必选字 = true;
           }
         }
@@ -340,6 +349,7 @@ export function generateLegalNameListBy诗云({
             // 匹配成功, 将当前拼音选项中的字替换为必选字
             // 由于已经进行了深拷贝, 所以这里的修改不会影响外界
             pinyinItemChar_2.char = optionChar.char;
+            pinyinItemChar_2.char_list = [optionChar];
             flag_check_必选字 = true;
           }
         }
@@ -361,20 +371,46 @@ export function generateLegalNameListBy诗云({
         // 必选字检查未通过
         continue;
       }
-      const name: CommonType.Type_Name = {
-        姓氏: char_姓_全部,
-        人名_第一个字: {
-          ...pinyinItemChar_1,
-        },
-        人名_第二个字: {
-          ...pinyinItemChar_2,
-        },
-        demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
-          pinyinItemChar_1.char
-        }${pinyinItemChar_2.char}`,
-        score: getScoreOfName(pinyinItemChar_1.char, pinyinItemChar_2.char),
-      };
-      nameList.push(name);
+      if (generateType === Const.Choose_Type_Option["诗云-按发音合并"]) {
+        const name: CommonType.Type_Name = {
+          姓氏: char_姓_全部,
+          人名_第一个字: {
+            ...pinyinItemChar_1,
+          },
+          人名_第二个字: {
+            ...pinyinItemChar_2,
+          },
+          demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
+            pinyinItemChar_1.char
+          }${pinyinItemChar_2.char}`,
+          score: getScoreOfName(pinyinItemChar_1.char, pinyinItemChar_2.char),
+        };
+        nameList.push(name);
+      } else {
+        for (let char1 of pinyinItemChar_1.char_list) {
+          for (let char2 of pinyinItemChar_2.char_list) {
+            const name: CommonType.Type_Name = {
+              姓氏: char_姓_全部,
+              人名_第一个字: {
+                ...char1,
+                char_list: [char1],
+              },
+              人名_第二个字: {
+                ...char2,
+                char_list: [char2],
+              },
+              demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
+                char1.char
+              }${char2.char}`,
+              score: getScoreOfName(
+                pinyinItemChar_1.char,
+                pinyinItemChar_2.char
+              ),
+            };
+            nameList.push(name);
+          }
+        }
+      }
     }
   }
 
@@ -456,7 +492,7 @@ export function generateLegalNameListFromExist({
     case Const.Choose_Type_Option.五道口:
       legalNameList = NameDb_五道口;
       break;
-    case Const.Choose_Type_Option["五道口_精华版"]:
+    case Const.Choose_Type_Option["五道口-精华版"]:
       legalNameList = NameDb_五道口_精华版;
       break;
     case Const.Choose_Type_Option.登科录:

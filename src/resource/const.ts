@@ -30,22 +30,24 @@ export const Gender_Type = {
 };
 
 export const Choose_Type_Option = {
-  [`诗云`]: `诗云` as const,
+  [`诗云-按发音合并`]: `诗云-按发音合并` as const,
+  [`诗云-所有可能`]: `诗云-所有可能` as const,
   [`古人云`]: `古人云` as const,
   [`他山石`]: `他山石` as const,
   [`财富论`]: `财富论` as const,
   [`五道口`]: `五道口` as const,
-  [`五道口_精华版`]: `五道口_精华版` as const,
+  [`五道口-精华版`]: `五道口-精华版` as const,
   [`登科录`]: `登科录` as const,
 };
 
-export const Choose_Type_Show: Record<Type.ChooseType, string> = {
-  [Choose_Type_Option.诗云]: "诗云-生成所有可能发音组合",
+export const Choose_Type_Desc: Record<Type.ChooseType, string> = {
+  [Choose_Type_Option["诗云-按发音合并"]]: "生成所有可能组合-按发音合并",
+  [Choose_Type_Option["诗云-所有可能"]]: "生成所有可能组合",
   [Choose_Type_Option.古人云]: "古人云-古代名与字,均有典故",
   [Choose_Type_Option.他山石]: "他山石-现代人名",
   [Choose_Type_Option.财富论]: "财富论-私募基金",
   [Choose_Type_Option.五道口]: "五道口-从cnki项目中寻找",
-  [Choose_Type_Option.五道口_精华版]: "五道口-院士与国家科研基金项目负责人",
+  [Choose_Type_Option["五道口-精华版"]]: "五道口-院士与国家科研基金项目负责人",
   [Choose_Type_Option.登科录]: "登科录-历代进士名",
 };
 
