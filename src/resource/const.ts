@@ -24,8 +24,8 @@ export const Char_Specify_Option = {
 };
 
 export const Gender_Type = {
-  男宝: "男宝" as const,
-  女宝: "女宝" as const,
+  偏男宝: "偏男宝" as const,
+  偏女宝: "偏女宝" as const,
   都看看: "都看看" as const,
 };
 

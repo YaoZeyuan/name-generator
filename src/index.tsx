@@ -17,6 +17,7 @@ import {
   Tooltip,
 } from "antd";
 import Desc from "./desc";
+import Tip from "./component/tip";
 import * as utils from "@src/utils";
 import * as Type from "@src/resource/type";
 import * as Const from "@src/resource/const";
@@ -230,12 +231,12 @@ export default () => {
             // 按性别要求进行过滤
             for (let name of rawNameList) {
               switch (snapshot.status.genderType) {
-                case Const.Gender_Type.男宝:
+                case Const.Gender_Type.偏男宝:
                   if ([2, 3, 4].includes(name.人名_第二个字.tone)) {
                     nameList.push(name);
                   }
                   break;
-                case Const.Gender_Type.女宝:
+                case Const.Gender_Type.偏女宝:
                   if ([1, 3].includes(name.人名_第二个字.tone)) {
                     nameList.push(name);
                   }
@@ -301,30 +302,58 @@ export default () => {
           }}
         >
           <Radio.Button value={Const.Choose_Type_Option["诗云-按发音合并"]}>
-            {
-              Const.Choose_Type_Desc[
-                Const.Choose_Type_Option["诗云-按发音合并"]
-              ]
-            }
+            {Const.Choose_Type_Option["诗云-按发音合并"]}
+            <Tip
+              title={
+                Const.Choose_Type_Desc[
+                  Const.Choose_Type_Option["诗云-按发音合并"]
+                ]
+              }
+            ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option["诗云-所有可能"]}>
             {Const.Choose_Type_Option["诗云-所有可能"]}
-            {Const.Choose_Type_Desc[Const.Choose_Type_Option["诗云-所有可能"]]}
+            <Tip
+              title={
+                Const.Choose_Type_Desc[
+                  Const.Choose_Type_Option["诗云-所有可能"]
+                ]
+              }
+            ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.他山石}>
-            {Const.Choose_Type_Desc[Const.Choose_Type_Option.他山石]}
+            {Const.Choose_Type_Option.他山石}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.他山石]}
+            ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.财富论}>
-            {Const.Choose_Type_Desc[Const.Choose_Type_Option.财富论]}
+            {Const.Choose_Type_Option.财富论}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.财富论]}
+            ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option["五道口-精华版"]}>
-            {Const.Choose_Type_Desc[Const.Choose_Type_Option["五道口-精华版"]]}
+            {Const.Choose_Type_Option["五道口-精华版"]}
+            <Tip
+              title={
+                Const.Choose_Type_Desc[
+                  Const.Choose_Type_Option["五道口-精华版"]
+                ]
+              }
+            ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.古人云}>
-            {Const.Choose_Type_Desc[Const.Choose_Type_Option.古人云]}
+            {Const.Choose_Type_Option.古人云}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.古人云]}
+            ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option.登科录}>
-            {Const.Choose_Type_Desc[Const.Choose_Type_Option.登科录]}
+            {Const.Choose_Type_Option.登科录}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.登科录]}
+            ></Tip>
           </Radio.Button>
         </Radio.Group>
       </div>
@@ -342,8 +371,8 @@ export default () => {
             Tools.reset();
           }}
         >
-          <Radio.Button value={Const.Gender_Type.男宝}>
-            {Const.Gender_Type.男宝}
+          <Radio.Button value={Const.Gender_Type.偏男宝}>
+            {Const.Gender_Type.偏男宝}
             <Tooltip
               placement="topLeft"
               title="男宝的姓名一般以二/四声结尾, 简洁有力, 三声亦可"
@@ -352,11 +381,11 @@ export default () => {
               <QuestionCircleOutlined />
             </Tooltip>
           </Radio.Button>
-          <Radio.Button value={Const.Gender_Type.女宝}>
-            {Const.Gender_Type.女宝}
+          <Radio.Button value={Const.Gender_Type.偏女宝}>
+            {Const.Gender_Type.偏女宝}
             <Tooltip
               placement="topLeft"
-              title="女的姓名一般以一声结尾, 温文尔雅, 三声亦可"
+              title="女宝的姓名一般以一声结尾, 温文尔雅, 三声亦可"
             >
               &nbsp;
               <QuestionCircleOutlined />
