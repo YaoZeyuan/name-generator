@@ -344,6 +344,19 @@ export function generateLegalNameListBy诗云({
           }
         }
       }
+      // 必选字位置检查
+      if (char_必选字_list.length > 0) {
+        if (charSpecifyPos === Const.Char_Specify_Option.第二位) {
+          if (set_必选字.has(pinyinItemChar_1.char) === false) {
+            flag_check_必选字 = false;
+          }
+        }
+        if (charSpecifyPos === Const.Char_Specify_Option.第三位) {
+          if (set_必选字.has(pinyinItemChar_2.char) === false) {
+            flag_check_必选字 = false;
+          }
+        }
+      }
       if (flag_check_必选字 === false) {
         // 必选字检查未通过
         continue;
@@ -467,6 +480,18 @@ export function generateLegalNameListFromExist({
       ) {
         return false;
       }
+      // 必选字位置检查
+      if (charSpecifyPos === Const.Char_Specify_Option.第二位) {
+        if (set_必选字.has(char_1) === false) {
+          return false;
+        }
+      }
+      if (charSpecifyPos === Const.Char_Specify_Option.第三位) {
+        if (set_必选字.has(char_2) === false) {
+          return false;
+        }
+      }
+
       return true;
     });
   }

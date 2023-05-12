@@ -127,21 +127,21 @@ export function isCharPairLegal({
 
     // 对音调的特殊逻辑进行检查
     // 以下均为不符合要求的音调组合
-    const illegalToneSet = new Set([
-      `131`,
-      `132`,
-      `134`,
-      `231`,
-      `232`,
-      `234`,
-      `431`,
-      `432`,
-      `434`,
-    ]);
-    let currentTonePair = `${char1.tone}${char2.tone}${char3.tone}`;
-    if (illegalToneSet.has(currentTonePair)) {
-      return false;
-    }
+    // const illegalToneSet = new Set([
+    //   `131`,
+    //   `132`,
+    //   `134`,
+    //   `231`,
+    //   `232`,
+    //   `234`,
+    //   `431`,
+    //   `432`,
+    //   `434`,
+    // ]);
+    // let currentTonePair = `${char1.tone}${char2.tone}${char3.tone}`;
+    // if (illegalToneSet.has(currentTonePair)) {
+    //   return false;
+    // }
   }
   // 抵达最后的一定合法
   return true;

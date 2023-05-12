@@ -61,7 +61,6 @@ const store = proxy<{
     genderType: Type.GenderType;
     generateConfig: {
       charSpecifyPos: Type.CharSpecifyPos;
-      input_姓氏: string;
     };
   };
 }>({
@@ -88,12 +87,12 @@ const store = proxy<{
     genderType: default_gender_type,
     generateConfig: {
       charSpecifyPos: default_input_必选字位置,
-      input_姓氏: default_input_姓氏,
     },
   },
 });
 
 export default () => {
+  let [input_姓氏, set_input_姓氏] = useState<string>(default_input_姓氏);
   let [input_排除字列表, set_input_排除字列表] =
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
@@ -103,10 +102,10 @@ export default () => {
   let snapshot = useSnapshot(store);
 
   const char_姓_全部 = utils.transString2PinyinList(
-    utils.removeUnChineseChar(snapshot.status.generateConfig.input_姓氏)
+    utils.removeUnChineseChar(input_姓氏)
   );
   const char_姓_末尾字 = utils.getPinyinOfChar(
-    snapshot.status.generateConfig.input_姓氏.split("").pop() ?? ""
+    input_姓氏.split("").pop() ?? ""
   );
   const char_必选字_list = utils.transString2PinyinList(
     utils.removeUnChineseChar(input_必选字)
@@ -146,12 +145,12 @@ export default () => {
       <div>
         <span>请输入姓氏</span>
         <input
-          value={snapshot.status.generateConfig.input_姓氏}
+          value={input_姓氏}
           onChange={(e) => {
             let inputValue = e.target.value;
             inputValue = inputValue.trim();
             utils.setValueByStorage(Const.Storage_Key_Map.姓氏, inputValue);
-            store.status.generateConfig.input_姓氏 = inputValue;
+            set_input_姓氏(inputValue);
           }}
         ></input>
       </div>
@@ -406,7 +405,7 @@ export default () => {
         <Desc></Desc>
       </Drawer>
       <p>
-        姓氏:{snapshot.status.generateConfig.input_姓氏}
+        姓氏:{input_姓氏}
         {tip}
       </p>
       <Card title="" bordered={false} loading={snapshot.status.isLoading}>
