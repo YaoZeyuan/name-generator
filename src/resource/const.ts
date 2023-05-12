@@ -6,6 +6,12 @@ import PinyinDb_Min_5 from "@/database/pinyin_db/zd_name_pinyin_db_min_5.json";
 import PinyinDb_Min_10 from "@/database/pinyin_db/zd_name_pinyin_db_min_10.json";
 import PinyinDb_Min_50 from "@/database/pinyin_db/zd_name_pinyin_db_min_50.json";
 import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
+import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
+import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
+import NameDb_财富论 from "@/database/name_db/财富论_基金选名.json";
+import NameDb_五道口 from "@/database/name_db/五道口_cnki项目申请人名.json";
+import NameDb_五道口_精华版 from "@/database/name_db/五道口精华版_国家科研基金项目负责人名.json";
+import NameDb_登科录 from "@/database/name_db/登科录_历史进士名.json";
 
 const Base_Storage_Key = "name_storage";
 export const Storage_Key_Map = {
@@ -41,14 +47,20 @@ export const Choose_Type_Option = {
 };
 
 export const Choose_Type_Desc: Record<Type.ChooseType, string> = {
-  [Choose_Type_Option["诗云-按发音合并"]]: "生成所有可能组合-按发音合并",
-  [Choose_Type_Option["诗云-所有可能"]]: "生成所有可能组合",
-  [Choose_Type_Option.古人云]: "古人云-古代名与字,均有典故",
-  [Choose_Type_Option.他山石]: "他山石-现代人名",
-  [Choose_Type_Option.财富论]: "财富论-私募基金",
-  [Choose_Type_Option.五道口]: "五道口-从cnki项目中寻找",
-  [Choose_Type_Option["五道口-精华版"]]: "五道口-院士与国家科研基金项目负责人",
-  [Choose_Type_Option.登科录]: "登科录-历代进士名",
+  [Choose_Type_Option[
+    "诗云-按发音合并"
+  ]]: `基于所选诗云字库文字, 生成所有可能组合-按发音合并,相同发音姓名只展示一条`,
+  [Choose_Type_Option[
+    `诗云-所有可能`
+  ]]: `基于所选诗云字库文字, 生成所有可能组合`,
+  [Choose_Type_Option.古人云]: `基于古人姓名字号生成的可选名列表, 可以保证每个名字均有出处(具体来源详见得到电子书<古人名字解诂>或百度百科)-共${NameDb_古人云.length}个可选方案`,
+  [Choose_Type_Option.他山石]: `基于16万条政府公开数据生成的现代人名可选名列表-共${NameDb_他山石.length}个可选方案`,
+  [Choose_Type_Option.财富论]: `基于215557项私募基金名, 以及其所属的21748所公司生成的可选名列表-共${NameDb_财富论.length}个可选方案`,
+  [Choose_Type_Option.五道口]: `基于cnki项目负责人生成的可选名列表-共${NameDb_五道口.length}个可选方案`,
+  [Choose_Type_Option[
+    `五道口-精华版`
+  ]]: `基于国家自然科学基金/国家社会科学基金资助项目负责人以及两院院士生成的可选名列表-共${NameDb_五道口_精华版.length}个可选方案`,
+  [Choose_Type_Option.登科录]: `基于通过中國歷代人物傳記資料庫CBDB查询得到的中国历史上66891位登科进士生成的可选名列表-共${NameDb_登科录.length}个可选方案`,
 };
 
 export const CharDb_Level_Option = {

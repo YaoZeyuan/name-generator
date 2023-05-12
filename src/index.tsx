@@ -333,6 +333,12 @@ export default () => {
               title={Const.Choose_Type_Desc[Const.Choose_Type_Option.财富论]}
             ></Tip>
           </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option["五道口"]}>
+            {Const.Choose_Type_Option["五道口"]}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option["五道口"]]}
+            ></Tip>
+          </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option["五道口-精华版"]}>
             {Const.Choose_Type_Option["五道口-精华版"]}
             <Tip
@@ -373,23 +379,11 @@ export default () => {
         >
           <Radio.Button value={Const.Gender_Type.偏男宝}>
             {Const.Gender_Type.偏男宝}
-            <Tooltip
-              placement="topLeft"
-              title="男宝的姓名一般以二/四声结尾, 简洁有力, 三声亦可"
-            >
-              &nbsp;
-              <QuestionCircleOutlined />
-            </Tooltip>
+            <Tip title="男宝的姓名一般以二/四声结尾, 简洁有力, 三声亦可" />
           </Radio.Button>
           <Radio.Button value={Const.Gender_Type.偏女宝}>
             {Const.Gender_Type.偏女宝}
-            <Tooltip
-              placement="topLeft"
-              title="女宝的姓名一般以一声结尾, 温文尔雅, 三声亦可"
-            >
-              &nbsp;
-              <QuestionCircleOutlined />
-            </Tooltip>
+            <Tip title="女宝的姓名一般以一声结尾, 温文尔雅, 三声亦可" />
           </Radio.Button>
           <Radio.Button value={Const.Gender_Type.都看看}>
             {Const.Gender_Type.都看看}
