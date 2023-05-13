@@ -111,7 +111,11 @@ export const Name_Db_Uri = {
   ),
   财富论_基金选名: path.resolve(
     basePath,
-    "database/name_db/财富论_基金选名.json"
+    "database/name_db/财富论_基金选名_出现1_2次.json"
+  ),
+  财富论_基金选名_精选_出现频率3_300次: path.resolve(
+    basePath,
+    "database/name_db/财富论_精选基金选名_出现3_300次.json"
   ),
   古人云_历史人名: path.resolve(
     basePath,
