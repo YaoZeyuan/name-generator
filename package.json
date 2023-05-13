@@ -15,6 +15,7 @@
     "根据偏旁整理汉字": "ts-node script/data_source_fetch/根据偏旁整理汉字.ts",
     "解析科研基金申报人": "ts-node script/data_source_fetch/解析科研基金申报人.ts",
     "生成中国古代进士名录": "ts-node script/data_source_fetch/生成中国古代进士名录.ts",
+    "基于CBDB导出古人数据": "ts-node script/data_source_fetch/基于CBDB导出古人数据.ts",
     "g_name_db_old_person": "ts-node script/data_source_fetch/old_person.ts",
     "g_name_db_person": "ts-node script/generate/name_db/person.ts",
     "h": "ts-node script/generate/fetch_fund_list.ts"

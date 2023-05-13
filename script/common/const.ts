@@ -41,6 +41,19 @@ export const Raw_Char_Db_汉典_拼音列表_Uri = path.resolve(
   basePath,
   "database/char_db/raw_pinyin_list.json"
 );
+export const Raw_CBDB_中国历代人物传记资料库_Uri = path.resolve(
+  basePath,
+  "resource/登科录/CBDB_2022.sqlite3"
+);
+
+export const Raw_古代进士名录_JSON_Uri = path.resolve(
+  basePath,
+  "resource/science/古代进士名录.json"
+);
+export const Raw_古代进士名录_CSV_Uri = path.resolve(
+  basePath,
+  "resource/science/古代进士名录.csv"
+);
 
 export const Char_Db_total_以字为单位_Uri = path.resolve(
   basePath,
