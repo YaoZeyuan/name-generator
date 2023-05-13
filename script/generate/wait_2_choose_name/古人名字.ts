@@ -11,8 +11,8 @@ export default async function asyncRunner() {
   let rawNameList: string[] = [];
   // 先汇总所有选项
   for (let oldPersonNameItem of OldPersonNameDb) {
-    rawNameList.push(util.trans2LegalString(oldPersonNameItem.char_名));
-    rawNameList.push(util.trans2LegalString(oldPersonNameItem.char_字));
+    rawNameList.push(util.trans2LegalString(oldPersonNameItem.char_名, false));
+    rawNameList.push(util.trans2LegalString(oldPersonNameItem.char_字, false));
   }
   // 只保留2位名字
   rawNameList = rawNameList.filter((item) => {

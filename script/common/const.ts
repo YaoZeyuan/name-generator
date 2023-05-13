@@ -59,6 +59,10 @@ export const Char_Db_total_以字为单位_Uri = path.resolve(
   basePath,
   "database/char_db/zd_without_muilt_tone_char_db.json"
 );
+export const Char_Db_汉典_全部汉字_Uri = path.resolve(
+  basePath,
+  "database/char_db/db_all_char_map.json"
+);
 
 export const Char_Db_姓名用字_出现_Uri = {
   "1次": path.resolve(basePath, "database/char_db/name_min_1.json"),

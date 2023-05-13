@@ -1,17 +1,30 @@
 import * as Type from "./type";
 import * as Const from "./const";
-import * as CharDb from "@/database/char_db/zd_without_muilt_tone_char_db.json";
+import * as CharDb_不含多音字 from "@/database/char_db/zd_without_muilt_tone_char_db.json";
+import * as CharDb_所有支持汉字 from "@/database/char_db/db_all_char_map.json";
 
 /**
  * 过滤指定字符串中的非法字符, 返回剩余部分
+ * 严格模式下多音字也视为非法字符
  * @param str
  * @returns
  */
-export function trans2LegalString(str: string) {
+export function trans2LegalString(str: string, strict: boolean) {
   let charList = str.split("");
+  // 要求: 1. 是汉字 2. 有对应拼音(不能为多音字)
   let legalList: string[] = charList.filter((item) => {
     return is汉字(item);
   });
+  if (strict) {
+    // 严格模式下过滤多音字
+    legalList = legalList.filter((char) => {
+      let result = isCharLegal(char);
+      if (result === false) {
+        console.log(`${char} 为多音字, 自动跳过`);
+      }
+      return result;
+    });
+  }
   return legalList.join("");
 }
 
@@ -21,11 +34,8 @@ export function trans2LegalString(str: string) {
  * @returns
  */
 export function is汉字(item: string) {
-  let itemCode = item.charCodeAt(0);
-  if (0x4e00 <= itemCode && itemCode <= 0x9fa5) {
-    return true;
-  }
-  return false;
+  // @ts-ignore
+  return CharDb_所有支持汉字[item] !== undefined;
 }
 
 /**
@@ -35,7 +45,7 @@ export function is汉字(item: string) {
  */
 export function isCharLegal(char: string) {
   // @ts-ignore
-  return CharDb[char] !== undefined;
+  return CharDb_不含多音字[char] !== undefined;
 }
 
 /**
@@ -154,7 +164,11 @@ export function isCharPairLegal({
  */
 export function getScoreOfName(char1: string, char2: string) {
   // @ts-ignore
-  let score = (CharDb[char1]?.count ?? 0) + (CharDb[char2]?.count ?? 0);
+  let score =
+    // @ts-ignore
+    (CharDb_不含多音字[char1]?.count ?? 0) +
+    // @ts-ignore
+    (CharDb_不含多音字[char2]?.count ?? 0);
   return score;
 }
 
@@ -172,7 +186,7 @@ export function transName2Record(name: string): Type.Type_Name | false {
       return false;
     }
     // @ts-ignore
-    pinyinList.push(CharDb[char]);
+    pinyinList.push(CharDb_不含多音字[char]);
   }
   const charItem_1 = pinyinList[0];
   const charItem_2 = pinyinList[1];

@@ -9,7 +9,7 @@ export default async function asyncRunner() {
 
   let nameList: Type.Type_Name[] = [];
   for (let name of Object.keys(RawNameDb)) {
-    name = util.trans2LegalString(name);
+    name = util.trans2LegalString(name, true);
     if (name.length !== 2) {
       // 不考虑非双字名
       continue;
