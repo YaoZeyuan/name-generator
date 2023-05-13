@@ -351,8 +351,18 @@ async function asyncRunner() {
     }
   }
 
+  let legalCharList = [
+    ...new Set(PinyinList_全部.map((item) => item.char)).values(),
+  ];
+  legalCharList.sort();
+  let legalCharDb: Record<string, true> = {};
+  for (let char of legalCharList) {
+    legalCharDb[char] = true;
+  }
+
   const fileMap = {
     [Const.Raw_Char_Db_汉典_拼音列表_Uri]: PinyinList_全部,
+    [Const.Char_Db_汉典_全部汉字_Uri]: legalCharDb,
     [Const.Char_Db_total_以字为单位_Uri]: PinyinDb_不含多音字,
     [Const.Char_Db_姓名用字_出现_Uri["1次"]]: PinyinDb_姓名用字_Min[1],
     [Const.Char_Db_姓名用字_出现_Uri["3次"]]: PinyinDb_姓名用字_Min[3],
