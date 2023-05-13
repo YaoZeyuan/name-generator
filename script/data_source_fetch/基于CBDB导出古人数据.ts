@@ -56,8 +56,10 @@ async function asyncRunner() {
   type Person_进士 = {
     // 人物id
     c_personid: string;
-    // 朝代
+    // 所属朝代
     c_dynasty_chn: string;
+    // 登科时朝代
+    c_dynasty_chn_登科: string;
     // 姓名
     c_name_chn: string;
     // 姓名-简体
@@ -68,8 +70,6 @@ async function asyncRunner() {
     c_alt_name_字_简体: string;
     c_alt_name_别号_简体: string;
     c_alt_name_别名_曾用名_简体: string;
-    c_alt_name_谥号: string;
-    c_alt_name_谥号_简体: string;
     // 考取年份
     c_year: number;
     /**
@@ -125,11 +125,9 @@ async function asyncRunner() {
       c_alt_name_字: string;
       c_alt_name_别号: string;
       c_alt_name_别名_曾用名: string;
-      c_alt_name_谥号: string;
       c_alt_name_字_简体: string;
       c_alt_name_别号_简体: string;
       c_alt_name_别名_曾用名_简体: string;
-      c_alt_name_谥号_简体: string;
     }
   > = {};
 
@@ -137,17 +135,16 @@ async function asyncRunner() {
     c_alt_name_字: string[];
     c_alt_name_别号: string[];
     c_alt_name_别名_曾用名: string[];
-    c_alt_name_谥号: string[];
   };
   type DB_RawAliasNameInfo = Record<number, RawAliasNameInfo>;
   let rawDbRawAliasNameInfo: DB_RawAliasNameInfo = {};
 
   for (let c_personid of c_personidList) {
     bufPersonIdList.push(c_personid);
-    if (bufPersonIdList.length > 20) {
+    if (bufPersonIdList.length > 100) {
       let rawPresonList = await knex
         .queryBuilder()
-        .select(["c_name_chn", "c_personid"])
+        .select(["c_name_chn", "c_dy", "c_personid"])
         .from("BIOG_MAIN")
         .whereIn("c_personid", bufPersonIdList);
       personList = personList.concat(rawPresonList);
@@ -165,7 +162,6 @@ async function asyncRunner() {
             c_alt_name_字: [],
             c_alt_name_别号: [],
             c_alt_name_别名_曾用名: [],
-            c_alt_name_谥号: [],
           };
         }
         let rawNameInfo: RawAliasNameInfo = rawDbRawAliasNameInfo[personId];
@@ -182,9 +178,6 @@ async function asyncRunner() {
               presonAliasName.c_alt_name_chn
             );
             break;
-          case 6:
-            rawNameInfo["c_alt_name_谥号"].push(presonAliasName.c_alt_name_chn);
-            break;
         }
       }
       bufPersonIdList = [];
@@ -193,7 +186,7 @@ async function asyncRunner() {
   if (bufPersonIdList.length > 0) {
     let rawPresonList = await knex
       .queryBuilder()
-      .select(["c_name_chn", "c_personid"])
+      .select(["c_name_chn", "c_dy", "c_personid"])
       .from("BIOG_MAIN")
       .whereIn("c_personid", bufPersonIdList);
     personList = personList.concat(rawPresonList);
@@ -211,7 +204,6 @@ async function asyncRunner() {
           c_alt_name_字: [],
           c_alt_name_别号: [],
           c_alt_name_别名_曾用名: [],
-          c_alt_name_谥号: [],
         };
       }
       let rawNameInfo: RawAliasNameInfo = rawDbRawAliasNameInfo[personId];
@@ -228,9 +220,6 @@ async function asyncRunner() {
             presonAliasName.c_alt_name_chn
           );
           break;
-        case 6:
-          rawNameInfo["c_alt_name_谥号"].push(presonAliasName.c_alt_name_chn);
-          break;
       }
     }
 
@@ -242,13 +231,11 @@ async function asyncRunner() {
       c_alt_name_字: rawNameInfo.c_alt_name_字.join("/"),
       c_alt_name_别号: rawNameInfo.c_alt_name_别号.join("/"),
       c_alt_name_别名_曾用名: rawNameInfo.c_alt_name_别名_曾用名.join("/"),
-      c_alt_name_谥号: rawNameInfo.c_alt_name_谥号.join("/"),
       c_alt_name_字_简体: t2s4Name(rawNameInfo.c_alt_name_字.join("/")),
       c_alt_name_别号_简体: t2s4Name(rawNameInfo.c_alt_name_别号.join("/")),
       c_alt_name_别名_曾用名_简体: t2s4Name(
         rawNameInfo.c_alt_name_别名_曾用名.join("/")
       ),
-      c_alt_name_谥号_简体: t2s4Name(rawNameInfo.c_alt_name_谥号.join("/")),
     };
   }
 
@@ -261,6 +248,7 @@ async function asyncRunner() {
     {
       c_name_chn: string;
       c_personid: string;
+      c_dy: string;
     }
   > = {};
   for (let person of personList) {
@@ -271,6 +259,29 @@ async function asyncRunner() {
     personMap[person.c_personid] = person;
   }
   console.log(`古人信息去重后剩余${Object.keys(personMap).length}条`);
+
+  let c_dy朝代Map: Record<
+    string,
+    {
+      // 朝代代码
+      c_dy: string;
+      // 朝代名称
+      c_dynasty: string;
+      // 朝代中文名称
+      c_dynasty_chn: string;
+    }
+  > = {};
+  // 找到相关朝代信息
+  let record朝代List = await knex
+    .queryBuilder()
+    .select(["c_dy", "c_dynasty", "c_dynasty_chn"])
+    .from("dynasties");
+  for (let item of record朝代List) {
+    c_dy朝代Map[item.c_dy] = {
+      ...item,
+      c_dynasty_chn: t2s4Name(item.c_dynasty_chn),
+    };
+  }
 
   // 找到相关年号信息
   let record年号List = await knex
@@ -283,18 +294,24 @@ async function asyncRunner() {
     {
       c_nianhao_id: string;
       c_nianhao_chn: string;
-      c_dynasty_chn: string;
+      c_dynasty_chn_登科: string;
     }
   > = {};
   for (let record年号 of record年号List) {
-    record年号Map[record年号.c_nianhao_id] = record年号;
+    record年号Map[record年号.c_nianhao_id] = {
+      c_nianhao_id: record年号.c_nianhao_id,
+      c_nianhao_chn: record年号.c_nianhao_chn,
+      c_dynasty_chn_登科: record年号.c_dynasty_chn,
+    };
   }
 
   let recordList: Person_进士[] = [];
   let dbPerson_进士: Record<string, Person_进士> = {};
+  let muilt登科记录Counter = 0;
   for (let record成为进士 of record成为进士List) {
     let record年号 = record年号Map[record成为进士.c_nianhao_id];
     let person = personMap[record成为进士.c_personid];
+    let str活动朝代 = c_dy朝代Map[person.c_dy]?.c_dynasty_chn ?? "";
     // if (record年号 === undefined) {
     //   continue;
     // }
@@ -316,10 +333,9 @@ async function asyncRunner() {
       c_alt_name_字_简体: aliasInfo?.c_alt_name_字_简体 ?? "",
       c_alt_name_别号_简体: aliasInfo?.c_alt_name_别号_简体 ?? "",
       c_alt_name_别名_曾用名_简体: aliasInfo?.c_alt_name_别名_曾用名_简体 ?? "",
-      c_alt_name_谥号: aliasInfo?.c_alt_name_谥号 ?? "",
-      c_alt_name_谥号_简体: aliasInfo?.c_alt_name_谥号_简体 ?? "",
-      // 朝代
-      c_dynasty_chn: record年号?.c_dynasty_chn ?? "",
+      // 所属朝代
+      c_dynasty_chn: str活动朝代 ?? "",
+      c_dynasty_chn_登科: record年号?.c_dynasty_chn_登科 ?? "",
       // 考取年份
       c_year: record成为进士.c_year,
       /**
@@ -343,6 +359,7 @@ async function asyncRunner() {
     };
     // 同一人会有多条登科记录
     if (dbPerson_进士[item.c_personid] !== undefined) {
+      muilt登科记录Counter++;
       let oldRecord = dbPerson_进士[item.c_personid];
       console.log("发现重复信息, 原登科记录 => ", oldRecord);
       console.log("新登科记录 => ", item);
@@ -381,15 +398,16 @@ async function asyncRunner() {
   recordList.sort((a, b) => {
     return b.c_year - a.c_year;
   });
+  console.log(`数据库中存在多条登科记录的情况共 => ${muilt登科记录Counter}项`);
 
   let csvRecordList: string[] = [
-    `朝代,姓名,姓名-简体,登科年份,登科年号,登科年号年份,登科年龄,科考成绩,字,字-简体,别号,别号-简体,别名_曾用名,别名_曾用名-简体,谥号,谥号-简体`,
+    `所属朝代,姓名,姓名-简体,登科朝代,登科年份,登科年号,登科年号年份,登科年龄,科考成绩,字,字-简体,别号,别号-简体,别名_曾用名,别名_曾用名-简体`,
   ];
 
   for (let item of recordList) {
-    // `朝代,姓名,姓名-简体,登科年份,登科年号,登科年号年份,登科年龄,科考成绩,字,字-简体,别号,别号-简体,别名_曾用名,别名_曾用名-简体,谥号,谥号-简体`,
+    // `所属朝代,姓名,姓名-简体,登科朝代,登科年份,登科年号,登科年号年份,登科年龄,科考成绩,字,字-简体,别号,别号-简体,别名_曾用名,别名_曾用名-简体`,
     csvRecordList.push(
-      `${item.c_dynasty_chn},${item.c_name_chn},${item.c_name_chn_simple},${item.c_year},${item.c_nianhao_chn},${item.c_entry_nh_year},${item.c_age},${item.c_exam_rank},${item.c_alt_name_字},${item.c_alt_name_字_简体},${item.c_alt_name_别号},${item.c_alt_name_别号_简体},${item.c_alt_name_别名_曾用名},${item.c_alt_name_别名_曾用名_简体},${item.c_alt_name_谥号},${item.c_alt_name_谥号_简体}`
+      `${item.c_dynasty_chn},${item.c_name_chn},${item.c_name_chn_simple},${item.c_dynasty_chn_登科},${item.c_year},${item.c_nianhao_chn},${item.c_entry_nh_year},${item.c_age},${item.c_exam_rank},${item.c_alt_name_字},${item.c_alt_name_字_简体},${item.c_alt_name_别号},${item.c_alt_name_别号_简体},${item.c_alt_name_别名_曾用名},${item.c_alt_name_别名_曾用名_简体}`
     );
   }
 
