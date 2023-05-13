@@ -48,11 +48,11 @@ export const Raw_CBDB_中国历代人物传记资料库_Uri = path.resolve(
 
 export const Raw_古代进士名录_JSON_Uri = path.resolve(
   basePath,
-  "resource/science/古代进士名录.json"
+  "resource/登科录/古代进士名录.json"
 );
 export const Raw_古代进士名录_CSV_Uri = path.resolve(
   basePath,
-  "resource/science/古代进士名录.csv"
+  "resource/登科录/古代进士名录.csv"
 );
 
 export const Char_Db_total_以字为单位_Uri = path.resolve(
