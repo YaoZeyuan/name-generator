@@ -347,12 +347,16 @@ async function asyncRunner() {
       console.log("发现重复信息, 原登科记录 => ", oldRecord);
       console.log("新登科记录 => ", item);
       // 比较原则
-      // 1. 若旧登科年号为 '未詳', 取新值
-      // 2. 若新记录登科年号为 '未詳' 或 没有c_year记录  或 没有c_age记录, 保留旧值
+      // 1. 若旧登科年号为 '未詳' 或空字符串, 或c_year无记录, 取新值
+      // 2. 若新记录登科年号为 '未詳' 或空字符串 或 没有c_year记录  或 没有c_age记录, 保留旧值
       // 2.1 若旧c_year为空, 取新值
       // 2.2 若旧age为空, 取新值
       // 2.3 其他情况-保留原值
-      if (oldRecord.c_dynasty_chn === "未詳") {
+      if (
+        oldRecord.c_dynasty_chn === "未詳" ||
+        oldRecord.c_dynasty_chn === "" ||
+        oldRecord.c_year > 0 === false
+      ) {
         dbPerson_进士[item.c_personid] = item;
         continue;
       }
@@ -393,7 +397,11 @@ async function asyncRunner() {
     Const.Raw_古代进士名录_JSON_Uri,
     JSON.stringify(recordList, null, 2)
   );
-  fs.writeFileSync(Const.Raw_古代进士名录_CSV_Uri, csvRecordList.join("\n"));
+  fs.writeFileSync(
+    Const.Raw_古代进士名录_CSV_Uri,
+    // 添加utf-8 bom信息
+    `\ufeff` + csvRecordList.join("\n")
+  );
   console.log("数据写入完毕");
 
   return;
