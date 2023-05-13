@@ -34,7 +34,7 @@ export default async function asyncRunner() {
   for (let rawRecord of RawRecordList as Type_Record[]) {
     // 按姓名过滤
     let rawName = rawRecord.c_name_chn_simple;
-    rawName = util.trans2LegalString(rawName, false);
+    rawName = util.trans2LegalString(rawName, true);
     rawName = rawName.slice(1);
     if (rawName.length !== 2) {
       // 不考虑非双字名
@@ -45,7 +45,7 @@ export default async function asyncRunner() {
     // 按字过滤
     let raw字称List = rawRecord.c_alt_name_字_简体.split("/");
     for (let raw字称 of raw字称List) {
-      raw字称 = util.trans2LegalString(raw字称, false);
+      raw字称 = util.trans2LegalString(raw字称, true);
       if (raw字称.length !== 2) {
         // 不考虑非双字称谓
         continue;
@@ -55,7 +55,7 @@ export default async function asyncRunner() {
     // 按别号过滤
     let raw别号List = rawRecord.c_alt_name_别号_简体.split("/");
     for (let raw别号 of raw别号List) {
-      raw别号 = util.trans2LegalString(raw别号, false);
+      raw别号 = util.trans2LegalString(raw别号, true);
       if (raw别号.length !== 2) {
         // 不考虑非双字称谓
         continue;

@@ -15,7 +15,7 @@ export default async function asyncRunner() {
   let nameList: Type.Type_Name[] = [];
 
   for (let line of lineList) {
-    line = util.trans2LegalString(line, false);
+    line = util.trans2LegalString(line, true);
     let name = line.slice(1);
     if (name.length !== 2) {
       // 不考虑非双字名

@@ -55,6 +55,23 @@ export const Raw_古代进士名录_CSV_Uri = path.resolve(
   "resource/登科录/古代进士名录.csv"
 );
 
+export const Char_Db_生成二字候选名时统计发现的多音字及出现场景_Markdown_Uri =
+  path.resolve(
+    basePath,
+    "database/char_db/生成二字候选名时统计发现的多音字及出现场景.md"
+  );
+
+export const Char_Db_生成二字候选名时统计发现的多音字及出现场景_JSON_Uri =
+  path.resolve(
+    basePath,
+    "database/char_db/生成二字候选名时统计发现的多音字及出现场景.json"
+  );
+export const Char_Db_生成二字候选名时统计发现的多音字及出现场景_仅字符_Uri =
+  path.resolve(
+    basePath,
+    "database/char_db/生成二字候选名时统计发现的多音字及出现场景_仅字符.txt"
+  );
+
 export const Char_Db_total_以字为单位_Uri = path.resolve(
   basePath,
   "database/char_db/zd_without_muilt_tone_char_db.json"

@@ -35,14 +35,14 @@ export default async function asyncRunner() {
   let rawNameList: string[] = [];
   // 先汇总所有选项
   for (let str_公司名 of Content_公司名_List) {
-    let legalName = util.trans2LegalString(str_公司名);
+    let legalName = util.trans2LegalString(str_公司名, true);
     let allStrList = generateLegalStrList(legalName);
     for (let item of allStrList) {
       rawNameList.push(item);
     }
   }
   for (let str_基金名 of Content_基金名_List as string[]) {
-    let legalName = util.trans2LegalString(str_基金名);
+    let legalName = util.trans2LegalString(str_基金名, true);
     let allStrList = generateLegalStrList(legalName);
     for (let item of allStrList) {
       rawNameList.push(item);

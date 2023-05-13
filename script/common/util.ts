@@ -3,6 +3,19 @@ import * as Const from "./const";
 import * as CharDb_不含多音字 from "@/database/char_db/zd_without_muilt_tone_char_db.json";
 import * as CharDb_所有支持汉字 from "@/database/char_db/db_all_char_map.json";
 
+let summaryDb_仅在生成二字候选名时使用: Record<
+  string,
+  {
+    count: number;
+    nameMap: Record<
+      string,
+      {
+        count: number;
+      }
+    >;
+  }
+> = {};
+
 /**
  * 过滤指定字符串中的非法字符, 返回剩余部分
  * 严格模式下多音字也视为非法字符
@@ -20,12 +33,64 @@ export function trans2LegalString(str: string, strict: boolean) {
     legalList = legalList.filter((char) => {
       let result = isCharLegal(char);
       if (result === false) {
-        console.log(`${char} 为多音字, 自动跳过`);
+        // 额外统计下多音字来源以及出现场景, 方便更新拼音库
+        let checkName = legalList.join("");
+        if (summaryDb_仅在生成二字候选名时使用[char]) {
+          summaryDb_仅在生成二字候选名时使用[char].count++;
+          if (summaryDb_仅在生成二字候选名时使用[char].nameMap[checkName]) {
+            summaryDb_仅在生成二字候选名时使用[char].nameMap[checkName].count++;
+          } else {
+            summaryDb_仅在生成二字候选名时使用[char].nameMap[checkName] = {
+              count: 1,
+            };
+          }
+        } else {
+          summaryDb_仅在生成二字候选名时使用[char] = {
+            count: 1,
+            nameMap: {
+              [checkName]: {
+                count: 1,
+              },
+            },
+          };
+        }
       }
       return result;
     });
   }
   return legalList.join("");
+}
+
+/**
+ * 额外统计下多音字来源以及出现场景, 方便更新拼音库
+ *
+ * @returns
+ */
+export function private_getSummaryDb_仅在生成二字候选名时使用() {
+  let charList = [...Object.keys(summaryDb_仅在生成二字候选名时使用)].map(
+    (char) => {
+      let item = summaryDb_仅在生成二字候选名时使用[char];
+      let nameList = [...Object.keys(item.nameMap)].map((name) => {
+        return {
+          count: item.nameMap[name].count,
+          name: name,
+        };
+      });
+      nameList.sort((a, b) => {
+        return b.count - a.count;
+      });
+      let transItem = {
+        char,
+        totalCount: summaryDb_仅在生成二字候选名时使用[char].count,
+        nameList: nameList,
+      };
+      return transItem;
+    }
+  );
+  charList.sort((a, b) => {
+    return b.totalCount - a.totalCount;
+  });
+  return charList;
 }
 
 /**
