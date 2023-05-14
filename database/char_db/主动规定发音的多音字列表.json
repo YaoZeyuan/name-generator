@@ -433,8 +433,8 @@
   },
   {
     "char": "纪",
-    "pinyin": "jǐ",
-    "tone": 3,
+    "pinyin": "jì",
+    "tone": 4,
     "pinyin_without_tone": "ji",
     "initial_声母": "j",
     "initial_声母类别_发音方法": "塞擦音_清音_不送气",
@@ -912,18 +912,6 @@
     "count": 17
   },
   {
-    "char": "召",
-    "pinyin": "zhào",
-    "tone": 4,
-    "pinyin_without_tone": "zhao",
-    "initial_声母": "zh",
-    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
-    "initial_声母类别_发音部位": "舌尖后音",
-    "vowel_韵母": "ao",
-    "vowel_韵母类别": "六豪",
-    "count": 48
-  },
-  {
     "char": "荫",
     "pinyin": "yīn",
     "tone": 1,
@@ -934,6 +922,18 @@
     "vowel_韵母": "in",
     "vowel_韵母类别": "九文",
     "count": 26
+  },
+  {
+    "char": "召",
+    "pinyin": "zhào",
+    "tone": 4,
+    "pinyin_without_tone": "zhao",
+    "initial_声母": "zh",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 48
   },
   {
     "char": "翟",

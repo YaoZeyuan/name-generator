@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as Type from "./type";
 
-const basePath = path.resolve(__dirname, "..", "..");
+export const basePath = path.resolve(__dirname, "..", "..");
 
 export const Raw_已知人名_Path = path.resolve(basePath, "database/raw");
 export const CharDb_人名列表_Uri = path.resolve(
