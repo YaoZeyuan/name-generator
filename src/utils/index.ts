@@ -593,7 +593,8 @@ export function generateLegalNameListBy他山石({
   // 排除不合法的发音
   legalPinyinNameList = legalPinyinNameList.filter((item) => {
     // 排除同音字
-    if (flag_第二位指定了候选字_执行特殊音韵检查逻辑 === false) {
+    if (flag_第二位指定了候选字_执行特殊音韵检查逻辑) {
+    } else {
       // 必选字在第二位时, 不应执行对必选字同音的检测
       if (pinyinSet_同音字.has(item.pinyin_char_1.pinyin)) {
         return false;

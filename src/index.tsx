@@ -112,15 +112,20 @@ export default () => {
   let str_排除字列表 = utils.removeUnChineseChar(input_排除字列表);
   const char_姓_末尾字 = str_姓氏.split("").pop() ?? "";
   const char_姓_末尾字_PinyinList = utils.getPinyinOfChar(char_姓_末尾字);
-  const pinyin_of_姓_末尾字 = char_姓_末尾字_PinyinList[0];
+  let pinyin_of_姓_末尾字 = char_姓_末尾字_PinyinList[0];
 
   let flag姓氏最后一字是否为多音字 = char_姓_末尾字_PinyinList.length > 1;
   let flag已确认姓氏最后一字发音 = true;
-  if (
-    flag姓氏最后一字是否为多音字 &&
-    snapshot.status.generateConfig.姓氏末字_拼音_choose.char !== char_姓_末尾字
-  ) {
-    flag已确认姓氏最后一字发音 = false;
+  if (flag姓氏最后一字是否为多音字) {
+    if (
+      snapshot.status.generateConfig.姓氏末字_拼音_choose.char !==
+      char_姓_末尾字
+    ) {
+      flag已确认姓氏最后一字发音 = false;
+    } else {
+      // 若之前已配置过, 则使用配置的发音
+      pinyin_of_姓_末尾字 = snapshot.status.generateConfig.姓氏末字_拼音_choose;
+    }
   }
 
   let ele_选择末尾字发音 = <div></div>;
@@ -150,7 +155,9 @@ export default () => {
         >
           {char_姓_末尾字_PinyinList.map((item) => {
             return (
-              <Radio.Button value={item.pinyin}>{item.pinyin}</Radio.Button>
+              <Radio.Button key={item.pinyin} value={item.pinyin}>
+                {item.pinyin}
+              </Radio.Button>
             );
           })}
         </Radio.Group>
@@ -366,7 +373,7 @@ export default () => {
             }
 
             // 随机打乱
-            nameList.sort(() => Math.random() - 0.5);
+            // nameList.sort(() => Math.random() - 0.5);
             console.log("随机打乱完毕");
             setTotalNameList(nameList);
             store.previewNameList = nameList.slice(0, 1000);
