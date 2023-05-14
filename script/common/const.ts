@@ -109,25 +109,25 @@ export const Name_Db_Uri = {
     basePath,
     "database/name_db/他山石_已知人名.json"
   ),
-  财富论_基金选名: path.resolve(
+  财富论_私募基金_集思录: path.resolve(
     basePath,
-    "database/name_db/财富论_基金选名_出现1_2次.json"
+    "database/name_db/财富论_私募基金_集思录_出现1_2次.json"
   ),
-  财富论_基金选名_精选_出现频率3_300次: path.resolve(
+  财富论_私募基金_精选集: path.resolve(
     basePath,
-    "database/name_db/财富论_精选基金选名_出现3_300次.json"
+    "database/name_db/财富论_私募基金_精选集_出现3_300次.json"
   ),
   古人云_历史人名: path.resolve(
     basePath,
     "database/name_db/古人云_历史人名.json"
   ),
-  五道口_cnki项目申报人名: path.resolve(
+  五道口_集思录_cnki项目申报人名: path.resolve(
     basePath,
-    "database/name_db/五道口_cnki项目申报人名.json"
+    "database/name_db/五道口_集思录_cnki项目申报人名.json"
   ),
-  五道口精华版_国家科研基金项目负责人名: path.resolve(
+  五道口_精选集_国家科研基金项目负责人名: path.resolve(
     basePath,
-    "database/name_db/五道口精华版_国家科研基金项目负责人名.json"
+    "database/name_db/五道口_精选集_国家科研基金项目负责人名.json"
   ),
   登科录_历史进士名: path.resolve(
     basePath,

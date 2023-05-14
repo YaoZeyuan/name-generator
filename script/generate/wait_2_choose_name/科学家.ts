@@ -35,7 +35,7 @@ export default async function asyncRunner() {
   realNameList.sort();
 
   fs.writeFileSync(
-    Const.Name_Db_Uri.五道口精华版_国家科研基金项目负责人名,
+    Const.Name_Db_Uri.五道口_精选集_国家科研基金项目负责人名,
     JSON.stringify(realNameList, null, 2)
   );
 

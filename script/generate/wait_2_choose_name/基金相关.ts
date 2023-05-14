@@ -147,11 +147,11 @@ export default async function asyncRunner() {
   realNameList_集思广益.sort();
 
   fs.writeFileSync(
-    Const.Name_Db_Uri.财富论_基金选名_精选_出现频率3_300次,
+    Const.Name_Db_Uri.财富论_私募基金_精选集,
     JSON.stringify(realNameList_精选方案, null, 2)
   );
   fs.writeFileSync(
-    Const.Name_Db_Uri.财富论_基金选名,
+    Const.Name_Db_Uri.财富论_私募基金_集思录,
     JSON.stringify(realNameList_集思广益, null, 2)
   );
 
