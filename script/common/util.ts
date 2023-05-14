@@ -1,7 +1,14 @@
 import * as Type from "./type";
 import * as Const from "./const";
 import * as CharDb_不含多音字 from "@/database/char_db/zd_without_muilt_tone_char_db.json";
+import * as CharDb_主动规定发音的多音字列表 from "@/database/char_db/主动规定发音的多音字列表.json";
 import * as CharDb_所有支持汉字 from "@/database/char_db/db_all_char_map.json";
+
+// 将特定多音字按照起名中实际使用的发音视为单音字, 补充到CharDB字典中
+for (let charConfig of CharDb_主动规定发音的多音字列表) {
+  // @ts-ignore
+  CharDb_不含多音字[charConfig.char] = charConfig;
+}
 
 let summaryDb_仅在生成二字候选名时使用: Record<
   string,
