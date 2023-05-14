@@ -17,6 +17,7 @@ import NameDb_登科录 from "@/database/name_db/登科录_历史进士名.json"
 const Base_Storage_Key = "name_storage";
 export const Storage_Key_Map = {
   姓氏: `${Base_Storage_Key}_family_name`,
+  姓氏末字_拼音_choose: `${Base_Storage_Key}_姓氏末字_拼音_choose`,
   需过滤字列表: `${Base_Storage_Key}_Need_Fileter_Char`,
   必选字位置: `${Base_Storage_Key}_必选字位置`,
   必选字: `${Base_Storage_Key}_Must_Have_Char`,

@@ -27,7 +27,7 @@ export function getValueByStorage<T>(key: string, defaultValue: any) {
     return defaultValue as T;
   }
 }
-export function setValueByStorage(key: string, value = "") {
+export function setValueByStorage(key: string, value: any = "") {
   localStorage.setItem(key, JSON.stringify(value));
   return;
 }

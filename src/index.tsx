@@ -33,6 +33,11 @@ let default_input_姓氏 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.姓氏,
   "张"
 );
+let default_姓氏末字_拼音_choose =
+  utils.getValueByStorage<CommonType.Char_With_Pinyin>(
+    Const.Storage_Key_Map.姓氏末字_拼音_choose,
+    {}
+  );
 let default_input_排除字列表 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.需过滤字列表,
   "李诞\n呼兰\n思文\n黄西"
@@ -62,6 +67,7 @@ const store = proxy<{
     genderType: Type.GenderType;
     generateConfig: {
       charSpecifyPos: Type.CharSpecifyPos;
+      姓氏末字_拼音_choose: CommonType.Char_With_Pinyin;
     };
   };
 }>({
@@ -88,32 +94,76 @@ const store = proxy<{
     genderType: default_gender_type,
     generateConfig: {
       charSpecifyPos: default_input_必选字位置,
+      姓氏末字_拼音_choose: default_姓氏末字_拼音_choose,
     },
   },
 });
 
 export default () => {
+  let snapshot = useSnapshot(store);
   let [input_姓氏, set_input_姓氏] = useState<string>(default_input_姓氏);
   let [input_排除字列表, set_input_排除字列表] =
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
   let [totalNameList, setTotalNameList] = useState<CommonType.Type_Name[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  let str_姓氏 = utils.removeUnChineseChar(input_姓氏);
+  let str_必选字 = utils.removeUnChineseChar(input_必选字);
+  let str_排除字列表 = utils.removeUnChineseChar(input_排除字列表);
+  const char_姓_末尾字 = str_姓氏.split("").pop() ?? "";
+  const char_姓_末尾字_PinyinList = utils.getPinyinOfChar(char_姓_末尾字);
+  const pinyin_of_姓_末尾字 = char_姓_末尾字_PinyinList[0];
 
-  let snapshot = useSnapshot(store);
+  let flag姓氏最后一字是否为多音字 = char_姓_末尾字_PinyinList.length > 1;
+  let flag已确认姓氏最后一字发音 = true;
+  if (
+    flag姓氏最后一字是否为多音字 &&
+    snapshot.status.generateConfig.姓氏末字_拼音_choose.char !== char_姓_末尾字
+  ) {
+    flag已确认姓氏最后一字发音 = false;
+  }
 
-  const char_姓_全部 = utils.transString2PinyinList(
-    utils.removeUnChineseChar(input_姓氏)
-  );
-  const char_姓_末尾字 = utils.getPinyinOfChar(
-    input_姓氏.split("").pop() ?? ""
-  );
-  const char_必选字_list = utils.transString2PinyinList(
-    utils.removeUnChineseChar(input_必选字)
-  );
-  const char_排除字_list = utils.transString2PinyinList(
-    utils.removeUnChineseChar(input_排除字列表)
-  );
+  let ele_选择末尾字发音 = <div></div>;
+  if (flag姓氏最后一字是否为多音字) {
+    ele_选择末尾字发音 = (
+      <div>
+        <p></p>
+        <span>
+          {char_姓_末尾字}为多音字, 请选择{char_姓_末尾字}的读音:&nbsp;
+        </span>
+        <Radio.Group
+          defaultValue={
+            snapshot.status.generateConfig.姓氏末字_拼音_choose.pinyin
+          }
+          onChange={(event) => {
+            let choosePinyin原始值 = event.target.value;
+            let choose拼音配置 = char_姓_末尾字_PinyinList.filter((item) => {
+              return item.pinyin === choosePinyin原始值;
+            })[0];
+            store.status.generateConfig.姓氏末字_拼音_choose = choose拼音配置;
+            utils.setValueByStorage(
+              Const.Storage_Key_Map.姓氏末字_拼音_choose,
+              choose拼音配置
+            );
+            Tools.reset();
+          }}
+        >
+          {char_姓_末尾字_PinyinList.map((item) => {
+            return (
+              <Radio.Button value={item.pinyin}>{item.pinyin}</Radio.Button>
+            );
+          })}
+        </Radio.Group>
+      </div>
+    );
+  }
+
+  const char_姓_全部 = str_姓氏.split("").map((char) => {
+    return utils.transString2PinyinList(char)[0];
+  });
+
+  const char_必选字_list = utils.transString2PinyinList(str_必选字);
+  const char_排除字_list = utils.transString2PinyinList(str_排除字列表);
 
   // 根据汉字级别, 设定所使用的选项集
   let pinyinOptionList =
@@ -214,6 +264,7 @@ export default () => {
           }}
         ></input>
       </div>
+      {ele_选择末尾字发音}
       <p></p>
       <div>
         <p>需要避开的同音字(例如父母姓名/亲属姓名)</p>
@@ -270,6 +321,13 @@ export default () => {
         <Button
           type="primary"
           onClick={async function () {
+            if (flag已确认姓氏最后一字发音 === false) {
+              message.error(
+                `姓氏中的 "${char_姓_末尾字}" 为多音字, 请先确认 "${char_姓_末尾字}" 的读音`
+              );
+              return;
+            }
+
             Tools.reset();
             store.status.isLoading = true;
             await utils.asyncSleep(100);
@@ -277,7 +335,7 @@ export default () => {
             let nameList: CommonType.Type_Name[] = [];
             let rawNameList = utils.generateLegalNameList({
               char_姓_全部,
-              char_姓_末尾字: char_姓_末尾字[0],
+              char_姓_末尾字: pinyin_of_姓_末尾字,
               char_必选字_list,
               char_排除字_list,
               charSpecifyPos: snapshot.status.generateConfig.charSpecifyPos,
