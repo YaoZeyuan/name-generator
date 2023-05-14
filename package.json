@@ -5,6 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "analyzer": "vite-bundle-visualizer && serve ./node_modules/.pnpm/vite-bundle-visualizer@0.6.0/node_modules/vite-bundle-visualizer",
     "g": "pnpm run generate-name-db",
     "summary": "ts-node script/process_namedb/summary.ts",
     "handian2json": "ts-node script/generate/handian2json.ts",
@@ -44,10 +45,12 @@
     "cnchar-radical": "^3.2.4",
     "less": "^4.1.3",
     "nodejieba": "^2.6.0",
+    "serve": "^14.2.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.5.0",
     "typescript": "^5.0.4",
-    "vite": "^4.0.1"
+    "vite": "^4.0.1",
+    "vite-bundle-visualizer": "^0.6.0"
   }
 }
