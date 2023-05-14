@@ -179,27 +179,36 @@ export function generateLegalNameList({
    */
   generateAll?: boolean;
 }) {
-  if (generateType === Const.Choose_Type_Option["诗云-按发音合并"]) {
-    return generateLegalNameListBy诗云({
-      char_姓_全部,
-      char_姓_末尾字,
-      char_排除字_list,
-      char_必选字_list,
-      charSpecifyPos,
-      pinyinOptionList,
-      generateType,
-      generateAll,
-    });
-  } else {
-    return generateLegalNameListFromExist({
-      char_姓_全部,
-      char_姓_末尾字,
-      char_待排除的同音字_list: char_排除字_list,
-      char_必选字_list,
-      charSpecifyPos,
-      generateType,
-      generateAll,
-    });
+  // 显式对类型进行判断, 避免以后因漏加类型导致落入默认情况上
+  switch (generateType) {
+    case Const.Choose_Type_Option["诗云-按发音合并"]:
+    case Const.Choose_Type_Option["诗云-所有可能"]:
+      return generateLegalNameListBy诗云({
+        char_姓_全部,
+        char_姓_末尾字,
+        char_排除字_list,
+        char_必选字_list,
+        charSpecifyPos,
+        pinyinOptionList,
+        generateType,
+        generateAll,
+      });
+    case Const.Choose_Type_Option["五道口-精选集"]:
+    case Const.Choose_Type_Option["五道口-集思录"]:
+    case Const.Choose_Type_Option["他山石"]:
+    case Const.Choose_Type_Option["古人云"]:
+    case Const.Choose_Type_Option["登科录"]:
+    case Const.Choose_Type_Option["财富论-精选集"]:
+    case Const.Choose_Type_Option["财富论-集思录"]:
+      return generateLegalNameListBy他山石({
+        char_姓_全部,
+        char_姓_末尾字,
+        char_待排除的同音字_list: char_排除字_list,
+        char_必选字_list,
+        charSpecifyPos,
+        generateType,
+        generateAll,
+      });
   }
 }
 
@@ -388,6 +397,7 @@ export function generateLegalNameListBy诗云({
         };
         nameList.push(name);
       } else {
+        // generateType === Const.Choose_Type_Option["诗云-全部可能"]
         for (let char1 of pinyinItemChar_1.char_list) {
           for (let char2 of pinyinItemChar_2.char_list) {
             const name: CommonType.Type_Name = {
@@ -400,9 +410,9 @@ export function generateLegalNameListBy诗云({
                 ...char2,
                 char_list: [char2],
               },
-              demoStr: `${char_姓_全部.map((item) => item.char).join("")}${
-                char1.char
-              }${char2.char}`,
+              demoStr:
+                `${char_姓_全部.map((item) => item.char).join("")}` +
+                `${char1.char}${char2.char}`,
               score: getScoreOfName(
                 pinyinItemChar_1.char,
                 pinyinItemChar_2.char
@@ -423,10 +433,10 @@ export function generateLegalNameListBy诗云({
  * @param char_姓氏
  * @returns
  */
-export function generateLegalNameListFromExist({
+export function generateLegalNameListBy他山石({
   char_姓_全部,
   char_姓_末尾字,
-  char_待排除的同音字_list: char_待排除的同音字_list = [],
+  char_待排除的同音字_list = [],
   char_必选字_list = [],
   charSpecifyPos,
   generateType = Const.Choose_Type_Option.他山石,
