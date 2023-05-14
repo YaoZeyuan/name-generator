@@ -327,16 +327,24 @@ export default () => {
               title={Const.Choose_Type_Desc[Const.Choose_Type_Option.他山石]}
             ></Tip>
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.财富论}>
-            {Const.Choose_Type_Option.财富论}
+          <Radio.Button value={Const.Choose_Type_Option["财富论-精选集"]}>
+            {Const.Choose_Type_Option["财富论-精选集"]}
             <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.财富论]}
+              title={
+                Const.Choose_Type_Desc[
+                  Const.Choose_Type_Option["财富论-精选集"]
+                ]
+              }
             ></Tip>
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口"]}>
-            {Const.Choose_Type_Option["五道口"]}
+          <Radio.Button value={Const.Choose_Type_Option["财富论-集思录"]}>
+            {Const.Choose_Type_Option["财富论-集思录"]}
             <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option["五道口"]]}
+              title={
+                Const.Choose_Type_Desc[
+                  Const.Choose_Type_Option["财富论-集思录"]
+                ]
+              }
             ></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Choose_Type_Option["五道口-精选集"]}>
@@ -345,6 +353,16 @@ export default () => {
               title={
                 Const.Choose_Type_Desc[
                   Const.Choose_Type_Option["五道口-精选集"]
+                ]
+              }
+            ></Tip>
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option["五道口-集思录"]}>
+            {Const.Choose_Type_Option["五道口-集思录"]}
+            <Tip
+              title={
+                Const.Choose_Type_Desc[
+                  Const.Choose_Type_Option["五道口-集思录"]
                 ]
               }
             ></Tip>
