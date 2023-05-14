@@ -195,7 +195,7 @@ export default () => {
 
   let tip = "";
   if (snapshot.previewNameList.length > 0) {
-    tip = `, 共生成${totalNameList.length}种可能的三字名`;
+    tip = `, 共有${totalNameList.length}种候选方案`;
     if (totalNameList.length > snapshot.previewNameList.length) {
       tip = `${tip}, 展示前${snapshot.maxDisplayItem}个, 每行展示${snapshot.columnCount}个`;
     }
@@ -269,8 +269,8 @@ export default () => {
         <Button
           type="primary"
           onClick={async function () {
-            store.status.isLoading = true;
             Tools.reset();
+            store.status.isLoading = true;
             await utils.asyncSleep(100);
             console.log("开始生成候选人名");
             let nameList: CommonType.Type_Name[] = [];
