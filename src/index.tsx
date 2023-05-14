@@ -246,6 +246,7 @@ export default () => {
         >
           <Radio.Button value={Const.Char_Specify_Option.第二位}>
             {Const.Char_Specify_Option.第二位}
+            <Tip title="若在第二位指定候选字,则跳过对姓氏+第二位候选字的音韵检查逻辑,直接生成结果"></Tip>
           </Radio.Button>
           <Radio.Button value={Const.Char_Specify_Option.第三位}>
             {Const.Char_Specify_Option.第三位}

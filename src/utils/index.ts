@@ -265,7 +265,8 @@ export function generateLegalNameListBy诗云({
 }) {
   let nameList: CommonType.Type_Name[] = [];
   // 主动复制一遍变量, 避免内部修改影响到外部值
-  pinyinOptionList = structuredClone(pinyinOptionList);
+  let pinyinOptionList_Char1 = structuredClone(pinyinOptionList);
+  let pinyinOptionList_Char2 = structuredClone(pinyinOptionList);
 
   const pinyinSet_同音字 = new Set();
   for (let char_排除字 of char_排除字_list) {
@@ -285,8 +286,23 @@ export function generateLegalNameListBy诗云({
     set_必选字.add(char_必选字.char);
   }
 
+  let flag_第二位指定了候选字_执行特殊音韵检查逻辑 =
+    set_必选字.size > 0 && charSpecifyPos === Const.Char_Specify_Option.第二位;
+
+  if (flag_第二位指定了候选字_执行特殊音韵检查逻辑) {
+    // 若必选字位于第二位, 则应忽略对一二位的音韵检查, 直接使用候选字
+    pinyinOptionList_Char1 = transString2PinyinList(
+      [...set_必选字.values()].join("")
+    ).map((item) => {
+      return {
+        ...item,
+        char_list: [item],
+      };
+    });
+  }
+
   // 生成所有可能的结果
-  for (let pinyinItemChar_1 of pinyinOptionList) {
+  for (let pinyinItemChar_1 of pinyinOptionList_Char1) {
     if (generateAll === false) {
       // 尽量减少计算量, 未显式要求生成全部结果就只生成一小部分
       if (nameList.length >= Const.Max_Display_Item) {
@@ -294,20 +310,22 @@ export function generateLegalNameListBy诗云({
       }
     }
 
-    if (pinyinSet_同音字.has(pinyinItemChar_1.pinyin)) {
-      // 排除同音字
-      continue;
-    }
-    if (
-      Util.isCharPairLegal({
-        charList: [char_姓_末尾字, pinyinItemChar_1],
-        type: "first_2_char",
-      }) === false
-    ) {
-      continue;
+    if (flag_第二位指定了候选字_执行特殊音韵检查逻辑 === false) {
+      if (pinyinSet_同音字.has(pinyinItemChar_1.pinyin)) {
+        // 排除同音字
+        continue;
+      }
+      if (
+        Util.isCharPairLegal({
+          charList: [char_姓_末尾字, pinyinItemChar_1],
+          type: "first_2_char",
+        }) === false
+      ) {
+        continue;
+      }
     }
 
-    for (let pinyinItemChar_2 of pinyinOptionList) {
+    for (let pinyinItemChar_2 of pinyinOptionList_Char2) {
       // 生成第二个字
 
       if (generateAll === false) {
@@ -321,13 +339,24 @@ export function generateLegalNameListBy诗云({
         // 排除同音字
         continue;
       }
-      if (
-        Util.isCharPairLegal({
-          charList: [char_姓_末尾字, pinyinItemChar_1, pinyinItemChar_2],
-          type: "full_name",
-        }) === false
-      ) {
-        continue;
+      if (flag_第二位指定了候选字_执行特殊音韵检查逻辑) {
+        if (
+          Util.isCharPairLegal({
+            charList: [pinyinItemChar_1, pinyinItemChar_2],
+            type: "last_2_char",
+          }) === false
+        ) {
+          continue;
+        }
+      } else {
+        if (
+          Util.isCharPairLegal({
+            charList: [char_姓_末尾字, pinyinItemChar_1, pinyinItemChar_2],
+            type: "full_name",
+          }) === false
+        ) {
+          continue;
+        }
       }
 
       // 必选字检查
@@ -487,6 +516,7 @@ export function generateLegalNameListBy他山石({
       buf_过滤同音必选字[char_必选字["pinyin"]] = char_必选字;
     }
   }
+
   char_必选字_list = [...Object.values(buf_过滤同音必选字)];
 
   let legalNameList: string[];
@@ -521,6 +551,9 @@ export function generateLegalNameListBy他山石({
   for (let char_必选字 of char_必选字_list) {
     set_必选字.add(char_必选字.char);
   }
+  let flag_第二位指定了候选字_执行特殊音韵检查逻辑 =
+    set_必选字.size > 0 && charSpecifyPos === Const.Char_Specify_Option.第二位;
+
   if (char_必选字_list.length > 0) {
     legalNameList = legalNameList.filter((item) => {
       let [char_1, char_2] = item.split("");
@@ -560,19 +593,34 @@ export function generateLegalNameListBy他山石({
   // 排除不合法的发音
   legalPinyinNameList = legalPinyinNameList.filter((item) => {
     // 排除同音字
-    if (pinyinSet_同音字.has(item.pinyin_char_1.pinyin)) {
-      return false;
+    if (flag_第二位指定了候选字_执行特殊音韵检查逻辑 === false) {
+      // 必选字在第二位时, 不应执行对必选字同音的检测
+      if (pinyinSet_同音字.has(item.pinyin_char_1.pinyin)) {
+        return false;
+      }
     }
     if (pinyinSet_同音字.has(item.pinyin_char_2.pinyin)) {
       return false;
     }
-    if (
-      Util.isCharPairLegal({
-        charList: [char_姓_末尾字, item.pinyin_char_1, item.pinyin_char_2],
-        type: "full_name",
-      }) === false
-    ) {
-      return false;
+
+    if (flag_第二位指定了候选字_执行特殊音韵检查逻辑) {
+      if (
+        Util.isCharPairLegal({
+          charList: [item.pinyin_char_1, item.pinyin_char_2],
+          type: "last_2_char",
+        }) === false
+      ) {
+        return false;
+      }
+    } else {
+      if (
+        Util.isCharPairLegal({
+          charList: [char_姓_末尾字, item.pinyin_char_1, item.pinyin_char_2],
+          type: "full_name",
+        }) === false
+      ) {
+        return false;
+      }
     }
 
     return true;
