@@ -339,12 +339,12 @@ export default () => {
               title={Const.Choose_Type_Desc[Const.Choose_Type_Option["五道口"]]}
             ></Tip>
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口-精华版"]}>
-            {Const.Choose_Type_Option["五道口-精华版"]}
+          <Radio.Button value={Const.Choose_Type_Option["五道口-精选集"]}>
+            {Const.Choose_Type_Option["五道口-精选集"]}
             <Tip
               title={
                 Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["五道口-精华版"]
+                  Const.Choose_Type_Option["五道口-精选集"]
                 ]
               }
             ></Tip>
