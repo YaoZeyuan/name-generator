@@ -31,11 +31,11 @@ const default_char_level = utils.getValueByStorage<Type.CharDbLevel>(
 
 let default_input_姓氏 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.姓氏,
-  ""
+  "张"
 );
 let default_input_排除字列表 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.需过滤字列表,
-  ""
+  "李诞\n呼兰\n思文\n黄西"
 );
 let default_input_必选字位置 = utils.getValueByStorage<Type.CharSpecifyPos>(
   Const.Storage_Key_Map.必选字位置,
@@ -43,7 +43,7 @@ let default_input_必选字位置 = utils.getValueByStorage<Type.CharSpecifyPos>
 );
 let default_input_必选字 = utils.getValueByStorage<string>(
   Const.Storage_Key_Map.必选字,
-  ""
+  "王建国\n呼兰\n庞博\n程璐\n周奇墨"
 );
 let default_gender_type = utils.getValueByStorage<Type.GenderType>(
   Const.Storage_Key_Map.Gender_Type,
@@ -133,6 +133,65 @@ export default () => {
       setTotalNameList([]);
     },
   };
+
+  let isIn诗云Tab =
+    snapshot.status.currentTab === Const.Choose_Type_Option["诗云-所有可能"] ||
+    snapshot.status.currentTab === Const.Choose_Type_Option["诗云-按发音合并"];
+
+  let ele诗云字库 = <div></div>;
+  if (isIn诗云Tab) {
+    ele诗云字库 = (
+      <div>
+        <div>
+          <Space>
+            <span>当前诗云候选字条件:</span>
+            <Select
+              dropdownMatchSelectWidth={false}
+              style={{ width: "100%" }}
+              value={snapshot.status.currentCharDbLevel}
+              onChange={(value: Type.CharDbLevel) => {
+                store.status.currentCharDbLevel = value;
+                utils.setValueByStorage(
+                  Const.Storage_Key_Map.Char_Level,
+                  value
+                );
+                Tools.reset();
+              }}
+            >
+              <Select.Option value={Const.CharDb_Level_Option.至少出现1次}>
+                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现1次]}
+              </Select.Option>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现5次}>
+                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现5次]}
+              </Select.Option>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现10次}>
+                {
+                  Const.CharDb_Level_Show[
+                    Const.CharDb_Level_Option.至少出现10次
+                  ]
+                }
+              </Select.Option>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现50次}>
+                {
+                  Const.CharDb_Level_Show[
+                    Const.CharDb_Level_Option.至少出现50次
+                  ]
+                }
+              </Select.Option>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现100次}>
+                {
+                  Const.CharDb_Level_Show[
+                    Const.CharDb_Level_Option.至少出现100次
+                  ]
+                }
+              </Select.Option>
+            </Select>
+          </Space>
+        </div>
+        <p></p>
+      </div>
+    );
+  }
 
   let tip = "";
   if (snapshot.previewNameList.length > 0) {
@@ -259,38 +318,6 @@ export default () => {
         </Button>
       </div>
       <p></p>
-      <div>
-        <Space>
-          <span>当前诗云候选字条件:</span>
-          <Select
-            dropdownMatchSelectWidth={false}
-            style={{ width: "100%" }}
-            value={snapshot.status.currentCharDbLevel}
-            onChange={(value: Type.CharDbLevel) => {
-              store.status.currentCharDbLevel = value;
-              utils.setValueByStorage(Const.Storage_Key_Map.Char_Level, value);
-              Tools.reset();
-            }}
-          >
-            <Select.Option value={Const.CharDb_Level_Option.至少出现1次}>
-              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现1次]}
-            </Select.Option>
-            <Select.Option value={Const.CharDb_Level_Option.至少出现5次}>
-              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现5次]}
-            </Select.Option>
-            <Select.Option value={Const.CharDb_Level_Option.至少出现10次}>
-              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现10次]}
-            </Select.Option>
-            <Select.Option value={Const.CharDb_Level_Option.至少出现50次}>
-              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现50次]}
-            </Select.Option>
-            <Select.Option value={Const.CharDb_Level_Option.至少出现100次}>
-              {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现100次]}
-            </Select.Option>
-          </Select>
-        </Space>
-      </div>
-      <p></p>
 
       <div>
         <Radio.Group
@@ -301,26 +328,39 @@ export default () => {
             Tools.reset();
           }}
         >
-          <Radio.Button value={Const.Choose_Type_Option["诗云-按发音合并"]}>
-            {Const.Choose_Type_Option["诗云-按发音合并"]}
+          <Radio.Button value={Const.Choose_Type_Option.登科录}>
+            {Const.Choose_Type_Option.登科录}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.登科录]}
+            ></Tip>
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option.古人云}>
+            {Const.Choose_Type_Option.古人云}
+            <Tip
+              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.古人云]}
+            ></Tip>
+          </Radio.Button>
+          <Radio.Button value={Const.Choose_Type_Option["五道口-精选集"]}>
+            {Const.Choose_Type_Option["五道口-精选集"]}
             <Tip
               title={
                 Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["诗云-按发音合并"]
+                  Const.Choose_Type_Option["五道口-精选集"]
                 ]
               }
             ></Tip>
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["诗云-所有可能"]}>
-            {Const.Choose_Type_Option["诗云-所有可能"]}
+          <Radio.Button value={Const.Choose_Type_Option["五道口-集思录"]}>
+            {Const.Choose_Type_Option["五道口-集思录"]}
             <Tip
               title={
                 Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["诗云-所有可能"]
+                  Const.Choose_Type_Option["五道口-集思录"]
                 ]
               }
             ></Tip>
           </Radio.Button>
+
           <Radio.Button value={Const.Choose_Type_Option.他山石}>
             {Const.Choose_Type_Option.他山石}
             <Tip
@@ -347,41 +387,31 @@ export default () => {
               }
             ></Tip>
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口-精选集"]}>
-            {Const.Choose_Type_Option["五道口-精选集"]}
+
+          <Radio.Button value={Const.Choose_Type_Option["诗云-按发音合并"]}>
+            {Const.Choose_Type_Option["诗云-按发音合并"]}
             <Tip
               title={
                 Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["五道口-精选集"]
+                  Const.Choose_Type_Option["诗云-按发音合并"]
                 ]
               }
             ></Tip>
           </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口-集思录"]}>
-            {Const.Choose_Type_Option["五道口-集思录"]}
+          <Radio.Button value={Const.Choose_Type_Option["诗云-所有可能"]}>
+            {Const.Choose_Type_Option["诗云-所有可能"]}
             <Tip
               title={
                 Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["五道口-集思录"]
+                  Const.Choose_Type_Option["诗云-所有可能"]
                 ]
               }
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.古人云}>
-            {Const.Choose_Type_Option.古人云}
-            <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.古人云]}
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.登科录}>
-            {Const.Choose_Type_Option.登科录}
-            <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.登科录]}
             ></Tip>
           </Radio.Button>
         </Radio.Group>
       </div>
       <p></p>
+      {ele诗云字库}
       <div>
         <span>按音韵过滤姓名:&nbsp;</span>
         <Radio.Group
