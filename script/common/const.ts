@@ -76,6 +76,11 @@ export const Char_Db_total_以字为单位_Uri = path.resolve(
   basePath,
   "database/char_db/zd_without_muilt_tone_char_db.json"
 );
+export const Char_Db_仅单音字_Uri = path.resolve(
+  basePath,
+  "database/char_db/zd_without_muilt_tone_only_char.json"
+);
+
 export const Char_Db_汉典_全部汉字_Uri = path.resolve(
   basePath,
   "database/char_db/db_all_char_map.json"
@@ -88,6 +93,15 @@ export const Char_Db_姓名用字_出现_Uri = {
   "10次": path.resolve(basePath, "database/char_db/name_min_10.json"),
   "50次": path.resolve(basePath, "database/char_db/name_min_50.json"),
   "100次": path.resolve(basePath, "database/char_db/name_min_100.json"),
+};
+
+export const Char_Db_姓名用字_仅字符列表_Uri = {
+  "1次": path.resolve(basePath, "database/char_db/min_1_olny_char.json"),
+  "3次": path.resolve(basePath, "database/char_db/min_3_olny_char.json"),
+  "5次": path.resolve(basePath, "database/char_db/min_5_olny_char.json"),
+  "10次": path.resolve(basePath, "database/char_db/min_10_olny_char.json"),
+  "50次": path.resolve(basePath, "database/char_db/min_50_olny_char.json"),
+  "100次": path.resolve(basePath, "database/char_db/min_100_olny_char.json"),
 };
 
 export const Pinyin_Db_姓名用字_出现_Uri = {

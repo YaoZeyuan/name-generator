@@ -241,6 +241,9 @@ const Tool = {
     }
     return pinyinCharDb;
   },
+  charPinyinDb2CharList(charDb: Type.DB_Char_4_Summary) {
+    return [...Object.keys(charDb)];
+  },
 };
 
 /**
@@ -364,12 +367,32 @@ async function asyncRunner() {
     [Const.Raw_Char_Db_汉典_拼音列表_Uri]: PinyinList_全部,
     [Const.Char_Db_汉典_全部汉字_Uri]: legalCharDb,
     [Const.Char_Db_total_以字为单位_Uri]: PinyinDb_不含多音字,
+    [Const.Char_Db_仅单音字_Uri]:
+      Tool.charPinyinDb2CharList(PinyinDb_不含多音字),
     [Const.Char_Db_姓名用字_出现_Uri["1次"]]: PinyinDb_姓名用字_Min[1],
     [Const.Char_Db_姓名用字_出现_Uri["3次"]]: PinyinDb_姓名用字_Min[3],
     [Const.Char_Db_姓名用字_出现_Uri["5次"]]: PinyinDb_姓名用字_Min[5],
     [Const.Char_Db_姓名用字_出现_Uri["10次"]]: PinyinDb_姓名用字_Min[10],
     [Const.Char_Db_姓名用字_出现_Uri["50次"]]: PinyinDb_姓名用字_Min[50],
     [Const.Char_Db_姓名用字_出现_Uri["100次"]]: PinyinDb_姓名用字_Min[100],
+
+    [Const.Char_Db_姓名用字_仅字符列表_Uri["1次"]]: Tool.charPinyinDb2CharList(
+      CharDB_Min_Map[1]
+    ),
+    [Const.Char_Db_姓名用字_仅字符列表_Uri["3次"]]: Tool.charPinyinDb2CharList(
+      CharDB_Min_Map[3]
+    ),
+    [Const.Char_Db_姓名用字_仅字符列表_Uri["5次"]]: Tool.charPinyinDb2CharList(
+      CharDB_Min_Map[5]
+    ),
+    [Const.Char_Db_姓名用字_仅字符列表_Uri["10次"]]: Tool.charPinyinDb2CharList(
+      CharDB_Min_Map[10]
+    ),
+    [Const.Char_Db_姓名用字_仅字符列表_Uri["50次"]]: Tool.charPinyinDb2CharList(
+      CharDB_Min_Map[50]
+    ),
+    [Const.Char_Db_姓名用字_仅字符列表_Uri["100次"]]:
+      Tool.charPinyinDb2CharList(CharDB_Min_Map[100]),
 
     [Const.Pinyin_Db_姓名用字_出现_Uri["1次"]]: Tool.charPinyinDb2PinyinCharDb(
       PinyinDb_姓名用字_Min[1]
