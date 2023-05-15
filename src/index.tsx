@@ -28,7 +28,7 @@ import { saveAs } from "file-saver";
 
 const default_char_level = utils.getValueByStorage<Type.CharDbLevel>(
   Const.Storage_Key_Map.Char_Level,
-  Const.CharDb_Level_Option["至少出现10次"]
+  Const.CharDb_Level_Option["标准字库"]
 );
 
 let default_input_姓氏 = utils.getValueByStorage<string>(
@@ -206,7 +206,7 @@ export default () => {
       <div>
         <div>
           <Space>
-            <span>当前诗云候选字条件:</span>
+            <span>诗云候选字字库</span>
             <Select
               dropdownMatchSelectWidth={false}
               style={{ width: "100%" }}
