@@ -4,6 +4,8 @@ import * as CommonType from "@/script/common/type";
 
 import { DownloadOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import {
+  Row,
+  Col,
   Button,
   Input,
   Drawer,
@@ -114,6 +116,9 @@ export default () => {
   const char_姓_末尾字_PinyinList = utils.getPinyinOfChar(char_姓_末尾字);
   let pinyin_of_姓_末尾字 = char_姓_末尾字_PinyinList[0];
 
+  const const_col_标题_span = 4;
+  const const_col_输入框_span = 4;
+
   let flag姓氏最后一字是否为多音字 = char_姓_末尾字_PinyinList.length > 1;
   let flag已确认姓氏最后一字发音 = true;
   if (flag姓氏最后一字是否为多音字) {
@@ -131,37 +136,38 @@ export default () => {
   let ele_选择末尾字发音 = <div></div>;
   if (flag姓氏最后一字是否为多音字) {
     ele_选择末尾字发音 = (
-      <div>
-        <p></p>
-        <span>
+      <Row align="middle">
+        <Col span={const_col_标题_span}>
           {char_姓_末尾字}为多音字, 请选择{char_姓_末尾字}的读音:&nbsp;
-        </span>
-        <Radio.Group
-          defaultValue={
-            snapshot.status.generateConfig.姓氏末字_拼音_choose.pinyin
-          }
-          onChange={(event) => {
-            let choosePinyin原始值 = event.target.value;
-            let choose拼音配置 = char_姓_末尾字_PinyinList.filter((item) => {
-              return item.pinyin === choosePinyin原始值;
-            })[0];
-            store.status.generateConfig.姓氏末字_拼音_choose = choose拼音配置;
-            utils.setValueByStorage(
-              Const.Storage_Key_Map.姓氏末字_拼音_choose,
-              choose拼音配置
-            );
-            Tools.reset();
-          }}
-        >
-          {char_姓_末尾字_PinyinList.map((item) => {
-            return (
-              <Radio.Button key={item.pinyin} value={item.pinyin}>
-                {item.pinyin}
-              </Radio.Button>
-            );
-          })}
-        </Radio.Group>
-      </div>
+        </Col>
+        <Col span={const_col_输入框_span}>
+          <Radio.Group
+            defaultValue={
+              snapshot.status.generateConfig.姓氏末字_拼音_choose.pinyin
+            }
+            onChange={(event) => {
+              let choosePinyin原始值 = event.target.value;
+              let choose拼音配置 = char_姓_末尾字_PinyinList.filter((item) => {
+                return item.pinyin === choosePinyin原始值;
+              })[0];
+              store.status.generateConfig.姓氏末字_拼音_choose = choose拼音配置;
+              utils.setValueByStorage(
+                Const.Storage_Key_Map.姓氏末字_拼音_choose,
+                choose拼音配置
+              );
+              Tools.reset();
+            }}
+          >
+            {char_姓_末尾字_PinyinList.map((item) => {
+              return (
+                <Radio.Button key={item.pinyin} value={item.pinyin}>
+                  {item.pinyin}
+                </Radio.Button>
+              );
+            })}
+          </Radio.Group>
+        </Col>
+      </Row>
     );
   }
 
@@ -259,71 +265,110 @@ export default () => {
   }
   return (
     <div>
-      <div>
-        <span>请输入姓氏</span>
-        <input
-          value={input_姓氏}
-          onChange={(e) => {
-            let inputValue = e.target.value;
-            inputValue = inputValue.trim();
-            utils.setValueByStorage(Const.Storage_Key_Map.姓氏, inputValue);
-            set_input_姓氏(inputValue);
-          }}
-        ></input>
-      </div>
+      <Row align="middle">
+        <Col span={const_col_标题_span}>
+          <span>请输入姓氏</span>
+        </Col>
+        <Col span={const_col_输入框_span}>
+          <Input
+            value={input_姓氏}
+            onChange={(e) => {
+              let inputValue = e.target.value;
+              inputValue = inputValue.trim();
+              utils.setValueByStorage(Const.Storage_Key_Map.姓氏, inputValue);
+              set_input_姓氏(inputValue);
+            }}
+          ></Input>
+        </Col>
+      </Row>
+      <Divider
+        style={{
+          margin: "12px 0px",
+        }}
+      ></Divider>
       {ele_选择末尾字发音}
+      <Divider
+        style={{
+          margin: "12px 0px",
+        }}
+      ></Divider>
+      <Row align="middle">
+        <Col span={const_col_标题_span}>
+          <p>需要避开的同音字(例如父母姓名/亲属姓名)</p>
+        </Col>
+        <Col span={const_col_输入框_span}>
+          <Input.TextArea
+            autoSize={{
+              minRows: 3,
+            }}
+            value={input_排除字列表}
+            onChange={(e) => {
+              let inputValue = e.target.value;
+              utils.setValueByStorage(
+                Const.Storage_Key_Map.需过滤字列表,
+                inputValue
+              );
+              set_input_排除字列表(inputValue);
+            }}
+          ></Input.TextArea>
+        </Col>
+      </Row>
+      <Divider
+        style={{
+          margin: "12px 0px",
+        }}
+      ></Divider>
+      <Row>
+        <Col span={const_col_标题_span}>
+          <span>指定用字&出现位置(可不填)</span>
+        </Col>
+        <Col span={const_col_输入框_span}>
+          <Radio.Group
+            defaultValue={snapshot.status.generateConfig.charSpecifyPos}
+            onChange={(event) => {
+              store.status.generateConfig.charSpecifyPos = event.target.value;
+              utils.setValueByStorage(
+                Const.Storage_Key_Map.必选字位置,
+                event.target.value
+              );
+              Tools.reset();
+            }}
+          >
+            <Radio.Button value={Const.Char_Specify_Option.第二位}>
+              {Const.Char_Specify_Option.第二位}
+              <Tip title="若在第二位指定候选字,则跳过对姓氏+第二位候选字的音韵检查逻辑,直接生成结果"></Tip>
+            </Radio.Button>
+            <Radio.Button value={Const.Char_Specify_Option.第三位}>
+              {Const.Char_Specify_Option.第三位}
+            </Radio.Button>
+            <Radio.Button value={Const.Char_Specify_Option.不限制}>
+              {Const.Char_Specify_Option.不限制}
+            </Radio.Button>
+          </Radio.Group>
+        </Col>
+      </Row>
       <p></p>
-      <div>
-        <p>需要避开的同音字(例如父母姓名/亲属姓名)</p>
-        <Input.TextArea
-          autoSize
-          value={input_排除字列表}
-          onChange={(e) => {
-            let inputValue = e.target.value;
-            utils.setValueByStorage(
-              Const.Storage_Key_Map.需过滤字列表,
-              inputValue
-            );
-            set_input_排除字列表(inputValue);
-          }}
-        ></Input.TextArea>
-      </div>
-      <p></p>
-      <div>
-        <span>指定用字&出现位置(可不填): </span>
-        <Radio.Group
-          defaultValue={snapshot.status.generateConfig.charSpecifyPos}
-          onChange={(event) => {
-            store.status.generateConfig.charSpecifyPos = event.target.value;
-            utils.setValueByStorage(
-              Const.Storage_Key_Map.必选字位置,
-              event.target.value
-            );
-            Tools.reset();
-          }}
-        >
-          <Radio.Button value={Const.Char_Specify_Option.第二位}>
-            {Const.Char_Specify_Option.第二位}
-            <Tip title="若在第二位指定候选字,则跳过对姓氏+第二位候选字的音韵检查逻辑,直接生成结果"></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Char_Specify_Option.第三位}>
-            {Const.Char_Specify_Option.第三位}
-          </Radio.Button>
-          <Radio.Button value={Const.Char_Specify_Option.不限制}>
-            {Const.Char_Specify_Option.不限制}
-          </Radio.Button>
-        </Radio.Group>
-        <Input.TextArea
-          autoSize
-          value={input_必选字}
-          onChange={(e) => {
-            let inputValue = e.target.value;
-            utils.setValueByStorage(Const.Storage_Key_Map.必选字, inputValue);
-            set_input_必选字(inputValue);
-          }}
-        ></Input.TextArea>
-      </div>
-      <p></p>
+      <Row>
+        <Col span={const_col_标题_span}></Col>
+        <Col span={const_col_输入框_span}>
+          <Input.TextArea
+            autoSize={{
+              minRows: 3,
+            }}
+            value={input_必选字}
+            onChange={(e) => {
+              let inputValue = e.target.value;
+              utils.setValueByStorage(Const.Storage_Key_Map.必选字, inputValue);
+              set_input_必选字(inputValue);
+            }}
+          ></Input.TextArea>
+        </Col>
+      </Row>
+      <Divider
+        style={{
+          margin: "12px 0px",
+        }}
+      ></Divider>
       <div>
         <Button
           type="primary"
