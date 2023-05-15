@@ -15,6 +15,7 @@ import {
   message,
   Select,
   Space,
+  Switch,
   Tabs,
   Tooltip,
 } from "antd";
@@ -56,6 +57,10 @@ let default_gender_type = utils.getValueByStorage<Type.GenderType>(
   Const.Storage_Key_Map.Gender_Type,
   Const.Gender_Type.都看看
 );
+let default_是否乱序展示候选名 = utils.getValueByStorage<boolean>(
+  Const.Storage_Key_Map.是否乱序展示候选名,
+  true
+);
 
 const store = proxy<{
   previewNameList: CommonType.Type_Name[];
@@ -67,6 +72,7 @@ const store = proxy<{
     currentTab: Type.ChooseType;
     currentCharDbLevel: Type.CharDbLevel;
     genderType: Type.GenderType;
+    enableRandomNameList: boolean;
     generateConfig: {
       charSpecifyPos: Type.CharSpecifyPos;
       姓氏末字_拼音_choose: CommonType.Char_With_Pinyin;
@@ -94,6 +100,7 @@ const store = proxy<{
     currentTab: Const.Choose_Type_Option.古人云,
     currentCharDbLevel: default_char_level,
     genderType: default_gender_type,
+    enableRandomNameList: default_是否乱序展示候选名,
     generateConfig: {
       charSpecifyPos: default_input_必选字位置,
       姓氏末字_拼音_choose: default_姓氏末字_拼音_choose,
@@ -320,7 +327,7 @@ export default () => {
           margin: "12px 0px",
         }}
       ></Divider>
-      <Row>
+      <Row align="middle">
         <Col span={const_col_标题_span}>
           <span>指定用字&出现位置(可不填)</span>
         </Col>
@@ -350,7 +357,7 @@ export default () => {
         </Col>
       </Row>
       <p></p>
-      <Row>
+      <Row align="middle">
         <Col span={const_col_标题_span}></Col>
         <Col span={const_col_输入框_span}>
           <Input.TextArea
@@ -371,65 +378,96 @@ export default () => {
           margin: "12px 0px",
         }}
       ></Divider>
-      <div>
-        <Button
-          type="primary"
-          onClick={async function () {
-            if (flag已确认姓氏最后一字发音 === false) {
-              message.error(
-                `姓氏中的 "${char_姓_末尾字}" 为多音字, 请先确认 "${char_姓_末尾字}" 的读音`
-              );
-              return;
-            }
-
-            Tools.reset();
-            store.status.isLoading = true;
-            await utils.asyncSleep(100);
-            console.log("开始生成候选人名");
-            let nameList: CommonType.Type_Name[] = [];
-            let rawNameList = utils.generateLegalNameList({
-              char_姓_全部,
-              char_姓_末尾字: pinyin_of_姓_末尾字,
-              char_必选字_list,
-              char_排除字_list,
-              charSpecifyPos: snapshot.status.generateConfig.charSpecifyPos,
-              generateType: snapshot.status.currentTab,
-              pinyinOptionList: pinyinOptionList,
-              generateAll: true,
-            });
-            store.status.isLoading = false;
-            console.log("候选人名生成完毕");
-
-            // 按性别要求进行过滤
-            for (let name of rawNameList) {
-              switch (snapshot.status.genderType) {
-                case Const.Gender_Type.偏男宝:
-                  if ([2, 3, 4].includes(name.人名_第二个字.tone)) {
-                    nameList.push(name);
-                  }
-                  break;
-                case Const.Gender_Type.偏女宝:
-                  if ([1, 3].includes(name.人名_第二个字.tone)) {
-                    nameList.push(name);
-                  }
-                  break;
-                case Const.Gender_Type.都看看:
-                default:
-                  nameList.push(name);
+      <Row align="middle">
+        <Col span={const_col_标题_span}>
+          <Button
+            type="primary"
+            onClick={async function () {
+              if (flag已确认姓氏最后一字发音 === false) {
+                message.error(
+                  `姓氏中的 "${char_姓_末尾字}" 为多音字, 请先确认 "${char_姓_末尾字}" 的读音`
+                );
+                return;
               }
-            }
 
-            // 随机打乱
-            // nameList.sort(() => Math.random() - 0.5);
-            console.log("随机打乱完毕");
-            setTotalNameList(nameList);
-            store.previewNameList = nameList.slice(0, 1000);
-            console.log("数据生成完毕");
-          }}
-        >
-          生成候选方案
-        </Button>
-      </div>
+              Tools.reset();
+              store.status.isLoading = true;
+              await utils.asyncSleep(100);
+              console.log("开始生成候选人名");
+              let totalNameList: CommonType.Type_Name[] = [];
+              let rawNameList = utils.generateLegalNameList({
+                char_姓_全部,
+                char_姓_末尾字: pinyin_of_姓_末尾字,
+                char_必选字_list,
+                char_排除字_list,
+                charSpecifyPos: snapshot.status.generateConfig.charSpecifyPos,
+                generateType: snapshot.status.currentTab,
+                pinyinOptionList: pinyinOptionList,
+                generateAll: true,
+              });
+              store.status.isLoading = false;
+              console.log("候选人名生成完毕");
+
+              // 按性别要求进行过滤
+              for (let name of rawNameList) {
+                switch (snapshot.status.genderType) {
+                  case Const.Gender_Type.偏男宝:
+                    if ([2, 3, 4].includes(name.人名_第二个字.tone)) {
+                      totalNameList.push(name);
+                    }
+                    break;
+                  case Const.Gender_Type.偏女宝:
+                    if ([1, 3].includes(name.人名_第二个字.tone)) {
+                      totalNameList.push(name);
+                    }
+                    break;
+                  case Const.Gender_Type.都看看:
+                  default:
+                    totalNameList.push(name);
+                }
+              }
+
+              // 随机打乱
+              let displayNameList = totalNameList.slice(0, 1000);
+              setTotalNameList(totalNameList);
+              console.log("随机打乱完毕");
+              if (snapshot.status.enableRandomNameList) {
+                displayNameList.sort(() => Math.random() - 0.5);
+              }
+              store.previewNameList = displayNameList;
+              console.log("数据生成完毕");
+            }}
+          >
+            生成候选方案
+          </Button>
+        </Col>
+        <Col span={const_col_输入框_span}>
+          乱序展示候选名
+          <Switch
+            onChange={(checked) => {
+              store.status.enableRandomNameList = checked;
+              utils.setValueByStorage(
+                Const.Storage_Key_Map.是否乱序展示候选名,
+                checked
+              );
+              if (checked) {
+                store.previewNameList = [...store.previewNameList].sort(
+                  () => Math.random() - 0.5
+                );
+              } else {
+                store.previewNameList = [...store.previewNameList].sort(
+                  (a, b) => {
+                    let t = a.demoStr.localeCompare(b.demoStr);
+                    console.log(`${a.demoStr} vs ${b.demoStr} => ${t}`);
+                    return t;
+                  }
+                );
+              }
+            }}
+            checked={snapshot.status.enableRandomNameList}
+          ></Switch>
+        </Col>
+      </Row>
       <p></p>
 
       <div>
@@ -567,6 +605,15 @@ export default () => {
             for (let i = 0; i < nameList.length; i++) {
               let item = nameList[i];
               columns.push(`${item.demoStr}`);
+            }
+            if (snapshot.status.enableRandomNameList) {
+              columns.sort(() => {
+                return Math.random() - 0.5;
+              });
+            } else {
+              columns.sort((a, b) => {
+                return a.localeCompare(b);
+              });
             }
 
             let str = "姓名\n" + columns.join("\n");

@@ -26,6 +26,7 @@ export const Storage_Key_Map = {
   必选字: `${Base_Storage_Key}_Must_Have_Char`,
   Char_Level: `${Base_Storage_Key}_Char_Level`,
   Gender_Type: `${Base_Storage_Key}_Gender_Type`,
+  是否乱序展示候选名: `${Base_Storage_Key}_是否乱序展示候选名`,
 };
 
 export const Char_Specify_Option = {
