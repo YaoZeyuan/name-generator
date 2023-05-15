@@ -442,7 +442,7 @@ export default () => {
           </Button>
         </Col>
         <Col span={const_col_输入框_span}>
-          乱序展示候选名
+          乱序展示候选名&nbsp;
           <Switch
             onChange={(checked) => {
               store.status.enableRandomNameList = checked;
