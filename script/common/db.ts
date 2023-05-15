@@ -36,3 +36,56 @@ for (let pinyinConfig of CharDb_主动规定发音的多音字列表) {
 export const CharDb_不含多音字 = charDb_不含多音字;
 
 // 基于姓名出现频率列表, 构建姓名频率-拼音数据库
+
+function charSet2PinyinDb(charSet: Set<string>): Type.DB_Pinyin_Of_Char {
+  let optionPinyinDb: Record<string, Type.Pinyin_Of_Char> = {};
+  for (let pinyin of RawPinyinList) {
+    if (charSet.has(pinyin.char)) {
+      if (optionPinyinDb[pinyin.pinyin]) {
+        // @ts-ignore
+        optionPinyinDb[pinyin.pinyin].char_list.push(pinyin);
+      } else {
+        optionPinyinDb[pinyin.pinyin] = {
+          ...pinyin,
+          // @ts-ignore
+          char_list: [pinyin],
+        };
+      }
+    }
+  }
+
+  let pinyinDb: Type.DB_Pinyin_Of_Char = {};
+  for (let item of Object.values(optionPinyinDb)) {
+    if (pinyinDb[item.pinyin_without_tone]) {
+      pinyinDb[item.pinyin_without_tone].option_list.push(item);
+    } else {
+      pinyinDb[item.pinyin_without_tone] = {
+        option_list: [item],
+        pinyin_without_tone: item.pinyin_without_tone,
+      };
+    }
+  }
+
+  for (let pinyin_without_tone of Object.keys(pinyinDb)) {
+    // 对拼音选项按声调升序进行排序
+    pinyinDb[pinyin_without_tone].option_list.sort((a, b) => {
+      return a.tone - b.tone;
+    });
+    // 对拼音选项中的候选字按频率降序进行排序
+    pinyinDb[pinyin_without_tone].option_list.map((item) => {
+      item.char_list.sort((a, b) => {
+        return b.count - a.count;
+      });
+      // 代表字设为出现频率最高的字
+      item.char = item.char_list[0].char;
+    });
+  }
+
+  return pinyinDb;
+}
+
+export const PinyinDb_Min_1 = charSet2PinyinDb(new Set(Only_Char_Min_1));
+export const PinyinDb_Min_5 = charSet2PinyinDb(new Set(Only_Char_Min_5));
+export const PinyinDb_Min_10 = charSet2PinyinDb(new Set(Only_Char_Min_10));
+export const PinyinDb_Min_50 = charSet2PinyinDb(new Set(Only_Char_Min_50));
+export const PinyinDb_Min_100 = charSet2PinyinDb(new Set(Only_Char_Min_100));

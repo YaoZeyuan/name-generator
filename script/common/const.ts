@@ -336,6 +336,7 @@ export const Initial_声母类别_发音部位 = {
   舌尖后音: "舌尖后音" as const,
   舌面音: "舌面音" as const,
   舌根音: "舌根音" as const,
+  零声母: "零声母" as const,
 };
 export const Initial_声母类别_发音方法 = {
   塞音_清音_不送气: "塞音_清音_不送气" as const,
@@ -346,6 +347,7 @@ export const Initial_声母类别_发音方法 = {
   擦音_浊音: "擦音_浊音" as const,
   鼻音_浊音: "鼻音_浊音" as const,
   边音_浊音: "边音_浊音" as const,
+  零声母: "零声母" as const,
 };
 
 /**
@@ -359,6 +361,7 @@ export const Initial_发音部位_Record = {
   [Initial_声母类别_发音部位.舌尖后音]: new Set(["zh", "ch", "sh", "r"]),
   [Initial_声母类别_发音部位.舌面音]: new Set(["j", "q", "x"]),
   [Initial_声母类别_发音部位.舌根音]: new Set(["g", "k", "h"]),
+  [Initial_声母类别_发音部位.零声母]: new Set(["y", "w"]),
 };
 export const Initial_发音方法_Record = {
   [Initial_声母类别_发音方法.塞音_清音_不送气]: new Set(["b", "d", "g"]),
@@ -369,6 +372,7 @@ export const Initial_发音方法_Record = {
   [Initial_声母类别_发音方法.擦音_浊音]: new Set(["r"]),
   [Initial_声母类别_发音方法.鼻音_浊音]: new Set(["m", "n"]),
   [Initial_声母类别_发音方法.边音_浊音]: new Set(["l"]),
+  [Initial_声母类别_发音方法.零声母]: new Set(["y", "w"]),
 };
 let initial_item_2_发音部位_type: Record<
   string,
@@ -435,6 +439,8 @@ export const Initial_发音方法_Match_List: {
   { initialType: Initial_声母类别_发音方法.鼻音_浊音, target: "m" },
   { initialType: Initial_声母类别_发音方法.鼻音_浊音, target: "n" },
   { initialType: Initial_声母类别_发音方法.边音_浊音, target: "l" },
+  { initialType: Initial_声母类别_发音方法.零声母, target: "y" },
+  { initialType: Initial_声母类别_发音方法.零声母, target: "w" },
 ];
 
 export const Initial_发音部位_Match_List: {
@@ -462,6 +468,8 @@ export const Initial_发音部位_Match_List: {
   { initialType: Initial_声母类别_发音部位.舌根音, target: "g" },
   { initialType: Initial_声母类别_发音部位.舌根音, target: "k" },
   { initialType: Initial_声母类别_发音部位.舌根音, target: "h" },
+  { initialType: Initial_声母类别_发音部位.零声母, target: "y" },
+  { initialType: Initial_声母类别_发音部位.零声母, target: "w" },
 ];
 
 /**

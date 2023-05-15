@@ -2,6 +2,7 @@ import * as path from "path";
 import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
+import { CharDb_不含多音字 } from "@/script/common/db";
 
 let global零声母Counter = 0;
 
@@ -205,7 +206,7 @@ const Tool = {
         CharDB_Min_Map[10][key] = item;
       }
       if (item.count >= 50) {
-        CharDB_Min_Map[20][key] = item;
+        CharDB_Min_Map[50][key] = item;
       }
       if (item.count >= 100) {
         CharDB_Min_Map[100][key] = item;
@@ -259,8 +260,15 @@ const Tool = {
     }
     return pinyinCharDb;
   },
-  charPinyinDb2CharList(charDb: Type.DB_Char_4_Summary) {
-    return [...new Set([...Object.keys(charDb)]).values()].sort();
+  charPinyinDb2CharList(charDb: Record<string, Type.Char_With_Pinyin>) {
+    let charList = [...Object.keys(charDb)];
+    // 去除多音字
+    charList = charList.filter((char) => {
+      return CharDb_不含多音字[char] !== undefined;
+    });
+    charList.sort();
+
+    return charList;
   },
 };
 
@@ -395,22 +403,22 @@ async function asyncRunner() {
     [Const.Char_Db_姓名用字_出现_Uri["100次"]]: PinyinDb_姓名用字_Min[100],
 
     [Const.Char_Db_姓名用字_仅字符列表_Uri["1次"]]: Tool.charPinyinDb2CharList(
-      CharDB_Min_Map[1]
+      PinyinDb_姓名用字_Min[1]
     ),
     [Const.Char_Db_姓名用字_仅字符列表_Uri["3次"]]: Tool.charPinyinDb2CharList(
-      CharDB_Min_Map[3]
+      PinyinDb_姓名用字_Min[3]
     ),
     [Const.Char_Db_姓名用字_仅字符列表_Uri["5次"]]: Tool.charPinyinDb2CharList(
-      CharDB_Min_Map[5]
+      PinyinDb_姓名用字_Min[5]
     ),
     [Const.Char_Db_姓名用字_仅字符列表_Uri["10次"]]: Tool.charPinyinDb2CharList(
-      CharDB_Min_Map[10]
+      PinyinDb_姓名用字_Min[10]
     ),
     [Const.Char_Db_姓名用字_仅字符列表_Uri["50次"]]: Tool.charPinyinDb2CharList(
-      CharDB_Min_Map[50]
+      PinyinDb_姓名用字_Min[50]
     ),
     [Const.Char_Db_姓名用字_仅字符列表_Uri["100次"]]:
-      Tool.charPinyinDb2CharList(CharDB_Min_Map[100]),
+      Tool.charPinyinDb2CharList(PinyinDb_姓名用字_Min[100]),
 
     [Const.Pinyin_Db_姓名用字_出现_Uri["1次"]]: Tool.charPinyinDb2PinyinCharDb(
       PinyinDb_姓名用字_Min[1]
