@@ -1,11 +1,13 @@
 import * as CommonType from "@/script/common/type";
 import * as Type from "./type";
 import * as utils from "@src/utils";
-import PinyinDb_Min_1 from "@/database/pinyin_db/zd_name_pinyin_db_min_1.json";
-import PinyinDb_Min_5 from "@/database/pinyin_db/zd_name_pinyin_db_min_5.json";
-import PinyinDb_Min_10 from "@/database/pinyin_db/zd_name_pinyin_db_min_10.json";
-import PinyinDb_Min_50 from "@/database/pinyin_db/zd_name_pinyin_db_min_50.json";
-import PinyinDb_Min_100 from "@/database/pinyin_db/zd_name_pinyin_db_min_100.json";
+import {
+  PinyinDb_Min_1,
+  PinyinDb_Min_5,
+  PinyinDb_Min_10,
+  PinyinDb_Min_50,
+  PinyinDb_Min_100,
+} from "@/script/common/db";
 import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
 import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
 import NameDb_财富论_精选集 from "@/database/name_db/财富论_私募基金_精选集_出现3_300次.json";
