@@ -260,7 +260,7 @@ const Tool = {
     return pinyinCharDb;
   },
   charPinyinDb2CharList(charDb: Type.DB_Char_4_Summary) {
-    return [...Object.keys(charDb)];
+    return [...new Set([...Object.keys(charDb)]).values()].sort();
   },
 };
 
