@@ -63,14 +63,17 @@ export function generatePinyinOptionList(
 export function getCharCountInPinyinDb(
   pinyinDb: CommonType.DB_Pinyin_Of_Char
 ): number {
-  let counter = 0;
+  let charSet = new Set<string>();
+
   for (let rawOption of Object.values(pinyinDb)) {
     for (let item of rawOption.option_list) {
-      counter = counter + item.char_list.length;
+      for (let char_pinyin of item.char_list) {
+        charSet.add(char_pinyin.char);
+      }
     }
   }
 
-  return counter;
+  return charSet.size;
 }
 
 /**

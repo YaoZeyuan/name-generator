@@ -220,16 +220,13 @@ export default () => {
                 Tools.reset();
               }}
             >
-              <Select.Option value={Const.CharDb_Level_Option.至少出现1次}>
-                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现1次]}
+              <Select.Option value={Const.CharDb_Level_Option.标准字库}>
+                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.标准字库]}
               </Select.Option>
-              <Select.Option value={Const.CharDb_Level_Option.至少出现5次}>
-                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现5次]}
-              </Select.Option>
-              <Select.Option value={Const.CharDb_Level_Option.至少出现10次}>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现100次}>
                 {
                   Const.CharDb_Level_Show[
-                    Const.CharDb_Level_Option.至少出现10次
+                    Const.CharDb_Level_Option.至少出现100次
                   ]
                 }
               </Select.Option>
@@ -240,12 +237,18 @@ export default () => {
                   ]
                 }
               </Select.Option>
-              <Select.Option value={Const.CharDb_Level_Option.至少出现100次}>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现10次}>
                 {
                   Const.CharDb_Level_Show[
-                    Const.CharDb_Level_Option.至少出现100次
+                    Const.CharDb_Level_Option.至少出现10次
                   ]
                 }
+              </Select.Option>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现5次}>
+                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现5次]}
+              </Select.Option>
+              <Select.Option value={Const.CharDb_Level_Option.至少出现1次}>
+                {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现1次]}
               </Select.Option>
             </Select>
           </Space>

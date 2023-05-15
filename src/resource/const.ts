@@ -7,6 +7,7 @@ import {
   PinyinDb_Min_10,
   PinyinDb_Min_50,
   PinyinDb_Min_100,
+  PinyinDb_Standard_Char,
 } from "@/script/common/db";
 import NameDb_古人云 from "@/database/name_db/古人云_历史人名.json";
 import NameDb_他山石 from "@/database/name_db/他山石_已知人名.json";
@@ -81,43 +82,40 @@ export const CharDb_Level_Option = {
   ["至少出现10次"]: "至少出现10次" as const,
   ["至少出现50次"]: "至少出现50次" as const,
   ["至少出现100次"]: "至少出现100次" as const,
+  ["标准字库"]: "标准字库" as const,
 };
 
 export const CharDb_Level_Item: Record<
   Type.CharDbLevel,
   CommonType.Pinyin_Of_Char[]
 > = {
-  [CharDb_Level_Option["至少出现1次"]]: utils.generatePinyinOptionList(
-    PinyinDb_Min_1 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现5次"]]: utils.generatePinyinOptionList(
-    PinyinDb_Min_5 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现10次"]]: utils.generatePinyinOptionList(
-    PinyinDb_Min_10 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现50次"]]: utils.generatePinyinOptionList(
-    PinyinDb_Min_50 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现100次"]]: utils.generatePinyinOptionList(
-    PinyinDb_Min_100 as unknown as CommonType.DB_Pinyin_Of_Char
+  [CharDb_Level_Option["至少出现1次"]]:
+    utils.generatePinyinOptionList(PinyinDb_Min_1),
+  [CharDb_Level_Option["至少出现5次"]]:
+    utils.generatePinyinOptionList(PinyinDb_Min_5),
+  [CharDb_Level_Option["至少出现10次"]]:
+    utils.generatePinyinOptionList(PinyinDb_Min_10),
+  [CharDb_Level_Option["至少出现50次"]]:
+    utils.generatePinyinOptionList(PinyinDb_Min_50),
+  [CharDb_Level_Option["至少出现100次"]]:
+    utils.generatePinyinOptionList(PinyinDb_Min_100),
+  [CharDb_Level_Option["标准字库"]]: utils.generatePinyinOptionList(
+    PinyinDb_Standard_Char
   ),
 };
 export const CharDb_Char_Item_Count: Record<Type.CharDbLevel, number> = {
-  [CharDb_Level_Option["至少出现1次"]]: utils.getCharCountInPinyinDb(
-    PinyinDb_Min_1 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现5次"]]: utils.getCharCountInPinyinDb(
-    PinyinDb_Min_5 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现10次"]]: utils.getCharCountInPinyinDb(
-    PinyinDb_Min_10 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现50次"]]: utils.getCharCountInPinyinDb(
-    PinyinDb_Min_50 as unknown as CommonType.DB_Pinyin_Of_Char
-  ),
-  [CharDb_Level_Option["至少出现100次"]]: utils.getCharCountInPinyinDb(
-    PinyinDb_Min_100 as unknown as CommonType.DB_Pinyin_Of_Char
+  [CharDb_Level_Option["至少出现1次"]]:
+    utils.getCharCountInPinyinDb(PinyinDb_Min_1),
+  [CharDb_Level_Option["至少出现5次"]]:
+    utils.getCharCountInPinyinDb(PinyinDb_Min_5),
+  [CharDb_Level_Option["至少出现10次"]]:
+    utils.getCharCountInPinyinDb(PinyinDb_Min_10),
+  [CharDb_Level_Option["至少出现50次"]]:
+    utils.getCharCountInPinyinDb(PinyinDb_Min_50),
+  [CharDb_Level_Option["至少出现100次"]]:
+    utils.getCharCountInPinyinDb(PinyinDb_Min_100),
+  [CharDb_Level_Option["标准字库"]]: utils.getCharCountInPinyinDb(
+    PinyinDb_Standard_Char
   ),
 };
 
@@ -136,6 +134,9 @@ export const CharDb_Level_Show: Record<Type.CharDbLevel, string> = {
   }个候选字`,
   [CharDb_Level_Option["至少出现100次"]]: `至少被使用过100次-共${
     CharDb_Char_Item_Count[CharDb_Level_Option["至少出现100次"]]
+  }个候选字`,
+  [CharDb_Level_Option["标准字库"]]: `标准字库-共${
+    CharDb_Char_Item_Count[CharDb_Level_Option["标准字库"]]
   }个候选字`,
 };
 

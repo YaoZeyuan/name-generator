@@ -6,6 +6,7 @@ import Only_Char_Min_5 from "@/database/char_db/min_5_olny_char.json";
 import Only_Char_Min_10 from "@/database/char_db/min_10_olny_char.json";
 import Only_Char_Min_50 from "@/database/char_db/min_50_olny_char.json";
 import Only_Char_Min_100 from "@/database/char_db/min_100_olny_char.json";
+import Standard_Char_820 from "@/database/char_db/standard_820_char.json";
 
 // import PinyinDb_Min_1 from "@/database/pinyin_db/zd_name_pinyin_db_min_1.json";
 // import PinyinDb_Min_5 from "@/database/pinyin_db/zd_name_pinyin_db_min_5.json";
@@ -36,21 +37,24 @@ for (let pinyinConfig of CharDb_主动规定发音的多音字列表) {
 export const CharDb_不含多音字 = charDb_不含多音字;
 
 // 基于姓名出现频率列表, 构建姓名频率-拼音数据库
-
 function charSet2PinyinDb(charSet: Set<string>): Type.DB_Pinyin_Of_Char {
   let optionPinyinDb: Record<string, Type.Pinyin_Of_Char> = {};
-  for (let pinyin of RawPinyinList) {
-    if (charSet.has(pinyin.char)) {
-      if (optionPinyinDb[pinyin.pinyin]) {
+  for (let char of charSet.values()) {
+    let pinyin = charDb_不含多音字[char];
+    if (pinyin === undefined) {
+      // 过滤掉不支持的字符
+      continue;
+    }
+
+    if (optionPinyinDb[pinyin.pinyin]) {
+      // @ts-ignore
+      optionPinyinDb[pinyin.pinyin].char_list.push(pinyin);
+    } else {
+      optionPinyinDb[pinyin.pinyin] = {
+        ...pinyin,
         // @ts-ignore
-        optionPinyinDb[pinyin.pinyin].char_list.push(pinyin);
-      } else {
-        optionPinyinDb[pinyin.pinyin] = {
-          ...pinyin,
-          // @ts-ignore
-          char_list: [pinyin],
-        };
-      }
+        char_list: [pinyin],
+      };
     }
   }
 
@@ -89,3 +93,10 @@ export const PinyinDb_Min_5 = charSet2PinyinDb(new Set(Only_Char_Min_5));
 export const PinyinDb_Min_10 = charSet2PinyinDb(new Set(Only_Char_Min_10));
 export const PinyinDb_Min_50 = charSet2PinyinDb(new Set(Only_Char_Min_50));
 export const PinyinDb_Min_100 = charSet2PinyinDb(new Set(Only_Char_Min_100));
+
+let standCharList: string[] = [];
+for (let item of Standard_Char_820) {
+  standCharList = standCharList.concat(item.split(""));
+}
+
+export const PinyinDb_Standard_Char = charSet2PinyinDb(new Set(standCharList));

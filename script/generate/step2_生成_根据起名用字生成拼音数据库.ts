@@ -2,6 +2,8 @@ import * as path from "path";
 import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
+import * as CharDb_主动规定发音的多音字列表 from "@/database/char_db/主动规定发音的多音字列表.json";
+
 import { CharDb_不含多音字 } from "@/script/common/db";
 
 let global零声母Counter = 0;
@@ -282,6 +284,14 @@ async function asyncRunner() {
   const lineList = content.split("\n");
   const PinyinList_全部: Type.Char_With_Pinyin[] = [];
   const PinyinDb_不含多音字: Record<string, Type.Char_With_Pinyin> = {};
+  // 初始化不含多音字的字典时, 需要先将指定为单音的多音字加入
+  let set主动规定发音的多音字列表 = new Set(
+    CharDb_主动规定发音的多音字列表.map((item) => item.char)
+  );
+  for (let pinyin of CharDb_主动规定发音的多音字列表) {
+    // @ts-ignore
+    PinyinDb_不含多音字[pinyin.char] = pinyin;
+  }
   const PinyinDb_姓名用字_Min: Record<
     number,
     Record<string, Type.Char_With_Pinyin>
@@ -319,7 +329,7 @@ async function asyncRunner() {
     let pinyinList = rawPinyin.split(",");
     let char = String.fromCharCode(parseInt(unicode, 16));
 
-    if (pinyinList.length === 1) {
+    if (pinyinList.length === 1 || set主动规定发音的多音字列表.has(char)) {
       let {
         tone,
         pinyin_without_tone,
