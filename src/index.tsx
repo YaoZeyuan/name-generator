@@ -117,7 +117,7 @@ export default () => {
   let pinyin_of_姓_末尾字 = char_姓_末尾字_PinyinList[0];
 
   const const_col_标题_span = 4;
-  const const_col_输入框_span = 4;
+  const const_col_输入框_span = 20;
 
   let flag姓氏最后一字是否为多音字 = char_姓_末尾字_PinyinList.length > 1;
   let flag已确认姓氏最后一字发音 = true;
@@ -137,10 +137,9 @@ export default () => {
   if (flag姓氏最后一字是否为多音字) {
     ele_选择末尾字发音 = (
       <Row align="middle">
-        <Col span={const_col_标题_span}>
-          {char_姓_末尾字}为多音字, 请选择{char_姓_末尾字}的读音:&nbsp;
-        </Col>
-        <Col span={const_col_输入框_span}>
+        <Col span={const_col_标题_span}></Col>
+        <Col span={const_col_输入框_span - const_col_标题_span}>
+          {char_姓_末尾字}为多音字, 请选择其读音&nbsp;&nbsp;
           <Radio.Group
             defaultValue={
               snapshot.status.generateConfig.姓氏末字_拼音_choose.pinyin
