@@ -206,7 +206,7 @@ export default () => {
       <div>
         <div>
           <Space>
-            <span>诗云候选字字库</span>
+            <span>候选字库</span>
             <Select
               dropdownMatchSelectWidth={false}
               style={{ width: "100%" }}
