@@ -35,6 +35,18 @@
     "vowel_韵母类别": "十二齐",
     "count": 1676
   },
+  "万": {
+    "char": "万",
+    "pinyin": "mò",
+    "tone": 4,
+    "pinyin_without_tone": "mo",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "o",
+    "vowel_韵母类别": "二波",
+    "count": 2457
+  },
   "丈": {
     "char": "丈",
     "pinyin": "zhàng",
@@ -59,6 +71,18 @@
     "vowel_韵母类别": "八寒",
     "count": 6743
   },
+  "上": {
+    "char": "上",
+    "pinyin": "shǎng",
+    "tone": 3,
+    "pinyin_without_tone": "shang",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ang",
+    "vowel_韵母类别": "十唐",
+    "count": 9454
+  },
   "下": {
     "char": "下",
     "pinyin": "xià",
@@ -79,6 +103,18 @@
     "initial_声母": "b",
     "initial_声母类别_发音方法": "塞音_清音_不送气",
     "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 154
+  },
+  "与": {
+    "char": "与",
+    "pinyin": "yǔ",
+    "tone": 3,
+    "pinyin_without_tone": "yu",
+    "initial_声母": "y",
+    "initial_声母类别_发音方法": "零声母-9",
+    "initial_声母类别_发音部位": "零声母-9",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 154
@@ -173,8 +209,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-11",
-    "initial_声母类别_发音部位": "零声母-11",
+    "initial_声母类别_发音方法": "零声母-12",
+    "initial_声母类别_发音部位": "零声母-12",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 64764
@@ -257,11 +293,23 @@
     "tone": 1,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-13",
-    "initial_声母类别_发音部位": "零声母-13",
+    "initial_声母类别_发音方法": "零声母-14",
+    "initial_声母类别_发音部位": "零声母-14",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 6
+  },
+  "中": {
+    "char": "中",
+    "pinyin": "zhōng",
+    "tone": 1,
+    "pinyin_without_tone": "zhong",
+    "initial_声母": "zh",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 25774
   },
   "丰": {
     "char": "丰",
@@ -335,6 +383,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 314
   },
+  "丽": {
+    "char": "丽",
+    "pinyin": "lí",
+    "tone": 2,
+    "pinyin_without_tone": "li",
+    "initial_声母": "l",
+    "initial_声母类别_发音方法": "边音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 1921
+  },
   "举": {
     "char": "举",
     "pinyin": "jǔ",
@@ -353,8 +413,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-17",
-    "initial_声母类别_发音部位": "零声母-17",
+    "initial_声母类别_发音方法": "零声母-18",
+    "initial_声母类别_发音部位": "零声母-18",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 4
@@ -401,8 +461,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-19",
-    "initial_声母类别_发音部位": "零声母-19",
+    "initial_声母类别_发音方法": "零声母-20",
+    "initial_声母类别_发音部位": "零声母-20",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 801
@@ -425,8 +485,8 @@
     "tone": 1,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-21",
-    "initial_声母类别_发音部位": "零声母-21",
+    "initial_声母类别_发音方法": "零声母-22",
+    "initial_声母类别_发音部位": "零声母-22",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 164
@@ -485,8 +545,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-24",
-    "initial_声母类别_发音部位": "零声母-24",
+    "initial_声母类别_发音方法": "零声母-25",
+    "initial_声母类别_发音部位": "零声母-25",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 117
@@ -521,8 +581,8 @@
     "tone": 3,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-26",
-    "initial_声母类别_发音部位": "零声母-26",
+    "initial_声母类别_发音方法": "零声母-27",
+    "initial_声母类别_发音部位": "零声母-27",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 79
@@ -599,6 +659,18 @@
     "vowel_韵母类别": "八寒",
     "count": 1959
   },
+  "予": {
+    "char": "予",
+    "pinyin": "yú",
+    "tone": 2,
+    "pinyin_without_tone": "yu",
+    "initial_声母": "y",
+    "initial_声母类别_发音方法": "零声母-29",
+    "initial_声母类别_发音部位": "零声母-29",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 349
+  },
   "争": {
     "char": "争",
     "pinyin": "zhēng",
@@ -641,8 +713,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-30",
-    "initial_声母类别_发音部位": "零声母-30",
+    "initial_声母类别_发音方法": "零声母-32",
+    "initial_声母类别_发音部位": "零声母-32",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 193
@@ -701,8 +773,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-32",
-    "initial_声母类别_发音部位": "零声母-32",
+    "initial_声母类别_发音方法": "零声母-34",
+    "initial_声母类别_发音部位": "零声母-34",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2873
@@ -737,8 +809,8 @@
     "tone": 4,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-34",
-    "initial_声母类别_发音部位": "零声母-34",
+    "initial_声母类别_发音方法": "零声母-36",
+    "initial_声母类别_发音部位": "零声母-36",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 1843
@@ -785,8 +857,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-36",
-    "initial_声母类别_发音部位": "零声母-36",
+    "initial_声母类别_发音方法": "零声母-38",
+    "initial_声母类别_发音部位": "零声母-38",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 468
@@ -905,8 +977,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-40",
-    "initial_声母类别_发音部位": "零声母-40",
+    "initial_声母类别_发音方法": "零声母-42",
+    "initial_声母类别_发音部位": "零声母-42",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 938
@@ -1115,14 +1187,26 @@
     "vowel_韵母类别": "四开",
     "count": 927
   },
+  "令": {
+    "char": "令",
+    "pinyin": "líng",
+    "tone": 2,
+    "pinyin_without_tone": "ling",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 133
+  },
   "以": {
     "char": "以",
     "pinyin": "yǐ",
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-42",
-    "initial_声母类别_发音部位": "零声母-42",
+    "initial_声母类别_发音方法": "零声母-44",
+    "initial_声母类别_发音部位": "零声母-44",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 371
@@ -1145,8 +1229,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-44",
-    "initial_声母类别_发音部位": "零声母-44",
+    "initial_声母类别_发音方法": "零声母-46",
+    "initial_声母类别_发音部位": "零声母-46",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 443
@@ -1186,6 +1270,30 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 63
+  },
+  "价": {
+    "char": "价",
+    "pinyin": "jià",
+    "tone": 4,
+    "pinyin_without_tone": "jia",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ia",
+    "vowel_韵母类别": "一麻",
+    "count": 5445
+  },
+  "任": {
+    "char": "任",
+    "pinyin": "rén",
+    "tone": 2,
+    "pinyin_without_tone": "ren",
+    "initial_声母": "r",
+    "initial_声母类别_发音方法": "擦音_浊音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "en",
+    "vowel_韵母类别": "九文",
+    "count": 785
   },
   "份": {
     "char": "份",
@@ -1229,8 +1337,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-48",
-    "initial_声母类别_发音部位": "零声母-48",
+    "initial_声母类别_发音方法": "零声母-50",
+    "initial_声母类别_发音部位": "零声母-50",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 732
@@ -1241,8 +1349,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-50",
-    "initial_声母类别_发音部位": "零声母-50",
+    "initial_声母类别_发音方法": "零声母-52",
+    "initial_声母类别_发音部位": "零声母-52",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 341
@@ -1313,8 +1421,8 @@
     "tone": 1,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-52",
-    "initial_声母类别_发音部位": "零声母-52",
+    "initial_声母类别_发音方法": "零声母-54",
+    "initial_声母类别_发音部位": "零声母-54",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 4999
@@ -1330,6 +1438,18 @@
     "vowel_韵母": "uo",
     "vowel_韵母类别": "二波",
     "count": 97682
+  },
+  "会": {
+    "char": "会",
+    "pinyin": "huì",
+    "tone": 4,
+    "pinyin_without_tone": "hui",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ui",
+    "vowel_韵母类别": "五微",
+    "count": 639
   },
   "伞": {
     "char": "伞",
@@ -1349,11 +1469,23 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-56",
-    "initial_声母类别_发音部位": "零声母-56",
+    "initial_声母类别_发音方法": "零声母-58",
+    "initial_声母类别_发音部位": "零声母-58",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 2226
+  },
+  "传": {
+    "char": "传",
+    "pinyin": "chuán",
+    "tone": 2,
+    "pinyin_without_tone": "chuan",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 835
   },
   "伦": {
     "char": "伦",
@@ -1366,6 +1498,18 @@
     "vowel_韵母": "un",
     "vowel_韵母类别": "九文",
     "count": 302
+  },
+  "伯": {
+    "char": "伯",
+    "pinyin": "bǎi",
+    "tone": 3,
+    "pinyin_without_tone": "bai",
+    "initial_声母": "b",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 516
   },
   "伲": {
     "char": "伲",
@@ -1415,6 +1559,30 @@
     "vowel_韵母类别": "九文",
     "count": 7
   },
+  "似": {
+    "char": "似",
+    "pinyin": "shì",
+    "tone": 4,
+    "pinyin_without_tone": "shi",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "-i",
+    "vowel_韵母类别": "十三支",
+    "count": 8
+  },
+  "伽": {
+    "char": "伽",
+    "pinyin": "gā",
+    "tone": 1,
+    "pinyin_without_tone": "ga",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 92
+  },
   "佃": {
     "char": "佃",
     "pinyin": "diàn",
@@ -1445,8 +1613,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-64",
-    "initial_声母类别_发音部位": "零声母-64",
+    "initial_声母类别_发音方法": "零声母-66",
+    "initial_声母类别_发音部位": "零声母-66",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 106
@@ -1493,11 +1661,23 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-66",
-    "initial_声母类别_发音部位": "零声母-66",
+    "initial_声母类别_发音方法": "零声母-68",
+    "initial_声母类别_发音部位": "零声母-68",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 622
+  },
+  "体": {
+    "char": "体",
+    "pinyin": "tī",
+    "tone": 1,
+    "pinyin_without_tone": "ti",
+    "initial_声母": "t",
+    "initial_声母类别_发音方法": "塞音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 323
   },
   "何": {
     "char": "何",
@@ -1529,8 +1709,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-68",
-    "initial_声母类别_发音部位": "零声母-68",
+    "initial_声母类别_发音方法": "零声母-70",
+    "initial_声母类别_发音部位": "零声母-70",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1113
@@ -1541,11 +1721,35 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-70",
-    "initial_声母类别_发音部位": "零声母-70",
+    "initial_声母类别_发音方法": "零声母-72",
+    "initial_声母类别_发音部位": "零声母-72",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 3
+  },
+  "佛": {
+    "char": "佛",
+    "pinyin": "fó",
+    "tone": 2,
+    "pinyin_without_tone": "fo",
+    "initial_声母": "f",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "唇齿音",
+    "vowel_韵母": "o",
+    "vowel_韵母类别": "二波",
+    "count": 515
+  },
+  "作": {
+    "char": "作",
+    "pinyin": "zuō",
+    "tone": 1,
+    "pinyin_without_tone": "zuo",
+    "initial_声母": "z",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "uo",
+    "vowel_韵母类别": "二波",
+    "count": 419
   },
   "佟": {
     "char": "佟",
@@ -1661,8 +1865,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-74",
-    "initial_声母类别_发音部位": "零声母-74",
+    "initial_声母类别_发音方法": "零声母-76",
+    "initial_声母类别_发音部位": "零声母-76",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 3
@@ -1709,8 +1913,8 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-76",
-    "initial_声母类别_发音部位": "零声母-76",
+    "initial_声母类别_发音方法": "零声母-78",
+    "initial_声母类别_发音部位": "零声母-78",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 15
@@ -1727,14 +1931,26 @@
     "vowel_韵母类别": "十一庚",
     "count": 1
   },
+  "供": {
+    "char": "供",
+    "pinyin": "gōng",
+    "tone": 1,
+    "pinyin_without_tone": "gong",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 132
+  },
   "依": {
     "char": "依",
     "pinyin": "yī",
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-78",
-    "initial_声母类别_发音部位": "零声母-78",
+    "initial_声母类别_发音方法": "零声母-80",
+    "initial_声母类别_发音部位": "零声母-80",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 823
@@ -1810,6 +2026,18 @@
     "vowel_韵母": "ong",
     "vowel_韵母类别": "十一庚",
     "count": 4
+  },
+  "侯": {
+    "char": "侯",
+    "pinyin": "hóu",
+    "tone": 2,
+    "pinyin_without_tone": "hou",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 21
   },
   "促": {
     "char": "促",
@@ -1901,8 +2129,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-83",
-    "initial_声母类别_发音部位": "零声母-83",
+    "initial_声母类别_发音方法": "零声母-85",
+    "initial_声母类别_发音部位": "零声母-85",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 51
@@ -1925,8 +2153,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-85",
-    "initial_声母类别_发音部位": "零声母-85",
+    "initial_声母类别_发音方法": "零声母-87",
+    "initial_声母类别_发音部位": "零声母-87",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 8
@@ -2081,8 +2309,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-87",
-    "initial_声母类别_发音部位": "零声母-87",
+    "initial_声母类别_发音方法": "零声母-89",
+    "initial_声母类别_发音部位": "零声母-89",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 258
@@ -2513,8 +2741,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-97",
-    "initial_声母类别_发音部位": "零声母-97",
+    "initial_声母类别_发音方法": "零声母-99",
+    "initial_声母类别_发音部位": "零声母-99",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2
@@ -2807,6 +3035,18 @@
     "vowel_韵母类别": "八寒",
     "count": 162
   },
+  "兴": {
+    "char": "兴",
+    "pinyin": "xīng",
+    "tone": 1,
+    "pinyin_without_tone": "xing",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 9647
+  },
   "兵": {
     "char": "兵",
     "pinyin": "bīng",
@@ -2854,6 +3094,18 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 381
+  },
+  "兹": {
+    "char": "兹",
+    "pinyin": "cí",
+    "tone": 2,
+    "pinyin_without_tone": "ci",
+    "initial_声母": "c",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "-i",
+    "vowel_韵母类别": "十三支",
+    "count": 86
   },
   "养": {
     "char": "养",
@@ -3095,6 +3347,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 436
   },
+  "冲": {
+    "char": "冲",
+    "pinyin": "chōng",
+    "tone": 1,
+    "pinyin_without_tone": "chong",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 5142
+  },
   "决": {
     "char": "决",
     "pinyin": "jué",
@@ -3125,8 +3389,8 @@
     "tone": 3,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-99",
-    "initial_声母类别_发音部位": "零声母-99",
+    "initial_声母类别_发音方法": "零声母-101",
+    "initial_声母类别_发音部位": "零声母-101",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 164
@@ -3262,6 +3526,18 @@
     "vowel_韵母": "ing",
     "vowel_韵母类别": "十一庚",
     "count": 156
+  },
+  "几": {
+    "char": "几",
+    "pinyin": "jī",
+    "tone": 1,
+    "pinyin_without_tone": "ji",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 44
   },
   "凡": {
     "char": "凡",
@@ -3443,6 +3719,18 @@
     "vowel_韵母类别": "九文",
     "count": 1
   },
+  "分": {
+    "char": "分",
+    "pinyin": "fēn",
+    "tone": 1,
+    "pinyin_without_tone": "fen",
+    "initial_声母": "f",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "唇齿音",
+    "vowel_韵母": "en",
+    "vowel_韵母类别": "九文",
+    "count": 659
+  },
   "刍": {
     "char": "刍",
     "pinyin": "chú",
@@ -3461,8 +3749,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-103",
-    "initial_声母类别_发音部位": "零声母-103",
+    "initial_声母类别_发音方法": "零声母-105",
+    "initial_声母类别_发音部位": "零声母-105",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1
@@ -3514,6 +3802,18 @@
     "vowel_韵母": "ang",
     "vowel_韵母类别": "十唐",
     "count": 568
+  },
+  "创": {
+    "char": "创",
+    "pinyin": "chuāng",
+    "tone": 1,
+    "pinyin_without_tone": "chuang",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "uang",
+    "vowel_韵母类别": "十唐",
+    "count": 21294
   },
   "初": {
     "char": "初",
@@ -3725,8 +4025,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-107",
-    "initial_声母类别_发音部位": "零声母-107",
+    "initial_声母类别_发音方法": "零声母-109",
+    "initial_声母类别_发音部位": "零声母-109",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 358
@@ -3814,6 +4114,18 @@
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 274
+  },
+  "劲": {
+    "char": "劲",
+    "pinyin": "jìn",
+    "tone": 4,
+    "pinyin_without_tone": "jin",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "in",
+    "vowel_韵母类别": "九文",
+    "count": 150
   },
   "劳": {
     "char": "劳",
@@ -4001,8 +4313,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-111",
-    "initial_声母类别_发音部位": "零声母-111",
+    "initial_声母类别_发音方法": "零声母-113",
+    "initial_声母类别_发音部位": "零声母-113",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 4
@@ -4127,14 +4439,26 @@
     "vowel_韵母类别": "十二齐",
     "count": 49
   },
+  "区": {
+    "char": "区",
+    "pinyin": "ōu",
+    "tone": 1,
+    "pinyin_without_tone": "ou",
+    "initial_声母": "未匹配",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 3627
+  },
   "医": {
     "char": "医",
     "pinyin": "yī",
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-115",
-    "initial_声母类别_发音部位": "零声母-115",
+    "initial_声母类别_发音方法": "零声母-117",
+    "initial_声母类别_发音部位": "零声母-117",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1070
@@ -4193,8 +4517,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-117",
-    "initial_声母类别_发音部位": "零声母-117",
+    "initial_声母类别_发音方法": "零声母-119",
+    "initial_声母类别_发音部位": "零声母-119",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 186
@@ -4222,6 +4546,18 @@
     "vowel_韵母": "an",
     "vowel_韵母类别": "八寒",
     "count": 273
+  },
+  "华": {
+    "char": "华",
+    "pinyin": "huá",
+    "tone": 2,
+    "pinyin_without_tone": "hua",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ua",
+    "vowel_韵母类别": "一麻",
+    "count": 12956
   },
   "协": {
     "char": "协",
@@ -4259,6 +4595,18 @@
     "vowel_韵母类别": "二波",
     "count": 2209
   },
+  "单": {
+    "char": "单",
+    "pinyin": "chán",
+    "tone": 2,
+    "pinyin_without_tone": "chan",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 717
+  },
   "卖": {
     "char": "卖",
     "pinyin": "mài",
@@ -4271,6 +4619,18 @@
     "vowel_韵母类别": "四开",
     "count": 10
   },
+  "南": {
+    "char": "南",
+    "pinyin": "nā",
+    "tone": 1,
+    "pinyin_without_tone": "na",
+    "initial_声母": "n",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 6425
+  },
   "博": {
     "char": "博",
     "pinyin": "bó",
@@ -4282,6 +4642,30 @@
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 7206
+  },
+  "卜": {
+    "char": "卜",
+    "pinyin": "bo",
+    "tone": 1,
+    "pinyin_without_tone": "bo",
+    "initial_声母": "b",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "o",
+    "vowel_韵母类别": "二波",
+    "count": 38
+  },
+  "卡": {
+    "char": "卡",
+    "pinyin": "kǎ",
+    "tone": 3,
+    "pinyin_without_tone": "ka",
+    "initial_声母": "k",
+    "initial_声母类别_发音方法": "塞音_清音_送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 127
   },
   "卢": {
     "char": "卢",
@@ -4313,8 +4697,8 @@
     "tone": 4,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-121",
-    "initial_声母类别_发音部位": "零声母-121",
+    "initial_声母类别_发音方法": "零声母-123",
+    "initial_声母类别_发音部位": "零声母-123",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 29
@@ -4325,8 +4709,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-123",
-    "initial_声母类别_发音部位": "零声母-123",
+    "initial_声母类别_发音方法": "零声母-125",
+    "initial_声母类别_发音部位": "零声母-125",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 426
@@ -4361,8 +4745,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-125",
-    "initial_声母类别_发音部位": "零声母-125",
+    "initial_声母类别_发音方法": "零声母-127",
+    "initial_声母类别_发音部位": "零声母-127",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 6
@@ -4487,6 +4871,18 @@
     "vowel_韵母类别": "八寒",
     "count": 554
   },
+  "厦": {
+    "char": "厦",
+    "pinyin": "shà",
+    "tone": 4,
+    "pinyin_without_tone": "sha",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 1644
+  },
   "厨": {
     "char": "厨",
     "pinyin": "chú",
@@ -4541,8 +4937,8 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-129",
-    "initial_声母类别_发音部位": "零声母-129",
+    "initial_声母类别_发音方法": "零声母-131",
+    "initial_声母类别_发音部位": "零声母-131",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 42
@@ -4565,8 +4961,8 @@
     "tone": 3,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-131",
-    "initial_声母类别_发音部位": "零声母-131",
+    "initial_声母类别_发音方法": "零声母-133",
+    "initial_声母类别_发音部位": "零声母-133",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 981
@@ -4594,6 +4990,18 @@
     "vowel_韵母": "an",
     "vowel_韵母类别": "八寒",
     "count": 37
+  },
+  "发": {
+    "char": "发",
+    "pinyin": "fā",
+    "tone": 1,
+    "pinyin_without_tone": "fa",
+    "initial_声母": "f",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "唇齿音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 3837
   },
   "叔": {
     "char": "叔",
@@ -4739,6 +5147,18 @@
     "vowel_韵母类别": "六豪",
     "count": 1
   },
+  "召": {
+    "char": "召",
+    "pinyin": "shào",
+    "tone": 4,
+    "pinyin_without_tone": "shao",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 48
+  },
   "叮": {
     "char": "叮",
     "pinyin": "dīng",
@@ -4750,6 +5170,30 @@
     "vowel_韵母": "ing",
     "vowel_韵母类别": "十一庚",
     "count": 18
+  },
+  "可": {
+    "char": "可",
+    "pinyin": "kě",
+    "tone": 3,
+    "pinyin_without_tone": "ke",
+    "initial_声母": "k",
+    "initial_声母类别_发音方法": "塞音_清音_送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 1456
+  },
+  "台": {
+    "char": "台",
+    "pinyin": "tāi",
+    "tone": 1,
+    "pinyin_without_tone": "tai",
+    "initial_声母": "t",
+    "initial_声母类别_发音方法": "塞音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 563
   },
   "叱": {
     "char": "叱",
@@ -4781,11 +5225,35 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-133",
-    "initial_声母类别_发音部位": "零声母-133",
+    "initial_声母类别_发音方法": "零声母-135",
+    "initial_声母类别_发音部位": "零声母-135",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 26
+  },
+  "叶": {
+    "char": "叶",
+    "pinyin": "xié",
+    "tone": 2,
+    "pinyin_without_tone": "xie",
+    "initial_声母": "x",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ie",
+    "vowel_韵母类别": "三皆",
+    "count": 809
+  },
+  "号": {
+    "char": "号",
+    "pinyin": "háo",
+    "tone": 2,
+    "pinyin_without_tone": "hao",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 127401
   },
   "司": {
     "char": "司",
@@ -4823,6 +5291,18 @@
     "vowel_韵母类别": "二波",
     "count": 7
   },
+  "合": {
+    "char": "合",
+    "pinyin": "gě",
+    "tone": 3,
+    "pinyin_without_tone": "ge",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 110780
+  },
   "吉": {
     "char": "吉",
     "pinyin": "jí",
@@ -4834,6 +5314,18 @@
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1241
+  },
+  "同": {
+    "char": "同",
+    "pinyin": "tóng",
+    "tone": 2,
+    "pinyin_without_tone": "tong",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 2741
   },
   "名": {
     "char": "名",
@@ -4985,8 +5477,8 @@
     "tone": 2,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-140",
-    "initial_声母类别_发音部位": "零声母-140",
+    "initial_声母类别_发音方法": "零声母-142",
+    "initial_声母类别_发音部位": "零声母-142",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 238
@@ -5021,8 +5513,8 @@
     "tone": 2,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-142",
-    "initial_声母类别_发音部位": "零声母-142",
+    "initial_声母类别_发音方法": "零声母-144",
+    "initial_声母类别_发音部位": "零声母-144",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 148
@@ -5093,8 +5585,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-146",
-    "initial_声母类别_发音部位": "零声母-146",
+    "initial_声母类别_发音方法": "零声母-148",
+    "initial_声母类别_发音部位": "零声母-148",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 3
@@ -5111,14 +5603,26 @@
     "vowel_韵母类别": "五微",
     "count": 16
   },
+  "员": {
+    "char": "员",
+    "pinyin": "yuán",
+    "tone": 2,
+    "pinyin_without_tone": "yuan",
+    "initial_声母": "n",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 53
+  },
   "呜": {
     "char": "呜",
     "pinyin": "wū",
     "tone": 1,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-148",
-    "initial_声母类别_发音部位": "零声母-148",
+    "initial_声母类别_发音方法": "零声母-150",
+    "initial_声母类别_发音部位": "零声母-150",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -5129,8 +5633,8 @@
     "tone": 1,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-150",
-    "initial_声母类别_发音部位": "零声母-150",
+    "initial_声母类别_发音方法": "零声母-152",
+    "initial_声母类别_发音部位": "零声母-152",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 1
@@ -5153,8 +5657,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-152",
-    "initial_声母类别_发音部位": "零声母-152",
+    "initial_声母类别_发音方法": "零声母-154",
+    "initial_声母类别_发音部位": "零声母-154",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 24
@@ -5194,6 +5698,18 @@
     "vowel_韵母": "ing",
     "vowel_韵母类别": "十一庚",
     "count": 46
+  },
+  "和": {
+    "char": "和",
+    "pinyin": "hé",
+    "tone": 2,
+    "pinyin_without_tone": "he",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 6879
   },
   "咎": {
     "char": "咎",
@@ -5285,8 +5801,8 @@
     "tone": 3,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-156",
-    "initial_声母类别_发音部位": "零声母-156",
+    "initial_声母类别_发音方法": "零声母-158",
+    "initial_声母类别_发音部位": "零声母-158",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 3
@@ -5309,8 +5825,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-159",
-    "initial_声母类别_发音部位": "零声母-159",
+    "initial_声母类别_发音方法": "零声母-161",
+    "initial_声母类别_发音部位": "零声母-161",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -5326,6 +5842,18 @@
     "vowel_韵母": "in",
     "vowel_韵母类别": "九文",
     "count": 1169
+  },
+  "哈": {
+    "char": "哈",
+    "pinyin": "hā",
+    "tone": 1,
+    "pinyin_without_tone": "ha",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 213
   },
   "哉": {
     "char": "哉",
@@ -5453,8 +5981,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-170",
-    "initial_声母类别_发音部位": "零声母-170",
+    "initial_声母类别_发音方法": "零声母-172",
+    "initial_声母类别_发音部位": "零声母-172",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 211
@@ -5609,8 +6137,8 @@
     "tone": 1,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-177",
-    "initial_声母类别_发音部位": "零声母-177",
+    "initial_声母类别_发音方法": "零声母-179",
+    "initial_声母类别_发音部位": "零声母-179",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 3
@@ -5657,8 +6185,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-179",
-    "initial_声母类别_发音部位": "零声母-179",
+    "initial_声母类别_发音方法": "零声母-181",
+    "initial_声母类别_发音部位": "零声母-181",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 45
@@ -5777,8 +6305,8 @@
     "tone": 1,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-182",
-    "initial_声母类别_发音部位": "零声母-182",
+    "initial_声母类别_发音方法": "零声母-184",
+    "initial_声母类别_发音部位": "零声母-184",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 2
@@ -5897,8 +6425,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-186",
-    "initial_声母类别_发音部位": "零声母-186",
+    "initial_声母类别_发音方法": "零声母-188",
+    "initial_声母类别_发音部位": "零声母-188",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 22
@@ -5945,8 +6473,8 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-188",
-    "initial_声母类别_发音部位": "零声母-188",
+    "initial_声母类别_发音方法": "零声母-190",
+    "initial_声母类别_发音部位": "零声母-190",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 3
@@ -6023,6 +6551,18 @@
     "vowel_韵母类别": "五微",
     "count": 71
   },
+  "地": {
+    "char": "地",
+    "pinyin": "de",
+    "tone": 1,
+    "pinyin_without_tone": "de",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 906
+  },
   "圲": {
     "char": "圲",
     "pinyin": "qiān",
@@ -6046,6 +6586,18 @@
     "vowel_韵母": "en",
     "vowel_韵母类别": "九文",
     "count": 8936
+  },
+  "场": {
+    "char": "场",
+    "pinyin": "cháng",
+    "tone": 2,
+    "pinyin_without_tone": "chang",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ang",
+    "vowel_韵母类别": "十唐",
+    "count": 821
   },
   "圻": {
     "char": "圻",
@@ -6197,8 +6749,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-199",
-    "initial_声母类别_发音部位": "零声母-199",
+    "initial_声母类别_发音方法": "零声母-201",
+    "initial_声母类别_发音部位": "零声母-201",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 6
@@ -6317,8 +6869,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-202",
-    "initial_声母类别_发音部位": "零声母-202",
+    "initial_声母类别_发音方法": "零声母-204",
+    "initial_声母类别_发音部位": "零声母-204",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 141
@@ -6389,8 +6941,8 @@
     "tone": 1,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-204",
-    "initial_声母类别_发音部位": "零声母-204",
+    "initial_声母类别_发音方法": "零声母-206",
+    "initial_声母类别_发音部位": "零声母-206",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 2
@@ -6485,8 +7037,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-206",
-    "initial_声母类别_发音部位": "零声母-206",
+    "initial_声母类别_发音方法": "零声母-208",
+    "initial_声母类别_发音部位": "零声母-208",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 445
@@ -6521,8 +7073,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-208",
-    "initial_声母类别_发音部位": "零声母-208",
+    "initial_声母类别_发音方法": "零声母-210",
+    "initial_声母类别_发音部位": "零声母-210",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -6617,8 +7169,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-210",
-    "initial_声母类别_发音部位": "零声母-210",
+    "initial_声母类别_发音方法": "零声母-212",
+    "initial_声母类别_发音部位": "零声母-212",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 20
@@ -6646,6 +7198,18 @@
     "vowel_韵母": "uo",
     "vowel_韵母类别": "二波",
     "count": 10
+  },
+  "堡": {
+    "char": "堡",
+    "pinyin": "bǎo",
+    "tone": 3,
+    "pinyin_without_tone": "bao",
+    "initial_声母": "b",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 77
   },
   "堤": {
     "char": "堤",
@@ -7013,11 +7577,23 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-214",
-    "initial_声母类别_发音部位": "零声母-214",
+    "initial_声母类别_发音方法": "零声母-216",
+    "initial_声母类别_发音部位": "零声母-216",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 3028
+  },
+  "处": {
+    "char": "处",
+    "pinyin": "chǔ",
+    "tone": 3,
+    "pinyin_without_tone": "chu",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 17
   },
   "备": {
     "char": "备",
@@ -7085,8 +7661,8 @@
     "tone": 4,
     "pinyin_without_tone": "wai",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-216",
-    "initial_声母类别_发音部位": "零声母-216",
+    "initial_声母类别_发音方法": "零声母-218",
+    "initial_声母类别_发音部位": "零声母-218",
     "vowel_韵母": "ai",
     "vowel_韵母类别": "四开",
     "count": 1554
@@ -7121,8 +7697,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-218",
-    "initial_声母类别_发音部位": "零声母-218",
+    "initial_声母类别_发音方法": "零声母-220",
+    "initial_声母类别_发音部位": "零声母-220",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 87
@@ -7138,6 +7714,18 @@
     "vowel_韵母": "in",
     "vowel_韵母类别": "九文",
     "count": 1
+  },
+  "大": {
+    "char": "大",
+    "pinyin": "dà",
+    "tone": 4,
+    "pinyin_without_tone": "da",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 4547
   },
   "天": {
     "char": "天",
@@ -7217,8 +7805,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-222",
-    "initial_声母类别_发音部位": "零声母-222",
+    "initial_声母类别_发音方法": "零声母-224",
+    "initial_声母类别_发音部位": "零声母-224",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 75
@@ -7270,6 +7858,18 @@
     "vowel_韵母": "uan",
     "vowel_韵母类别": "八寒",
     "count": 7
+  },
+  "奇": {
+    "char": "奇",
+    "pinyin": "jī",
+    "tone": 1,
+    "pinyin_without_tone": "ji",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 1339
   },
   "奈": {
     "char": "奈",
@@ -7343,14 +7943,26 @@
     "vowel_韵母类别": "十二齐",
     "count": 879
   },
+  "奔": {
+    "char": "奔",
+    "pinyin": "bēn",
+    "tone": 1,
+    "pinyin_without_tone": "ben",
+    "initial_声母": "b",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "en",
+    "vowel_韵母类别": "九文",
+    "count": 57
+  },
   "奕": {
     "char": "奕",
     "pinyin": "yì",
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-224",
-    "initial_声母类别_发音部位": "零声母-224",
+    "initial_声母类别_发音方法": "零声母-226",
+    "initial_声母类别_发音部位": "零声母-226",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1348
@@ -7625,8 +8237,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-228",
-    "initial_声母类别_发音部位": "零声母-228",
+    "initial_声母类别_发音方法": "零声母-230",
+    "initial_声母类别_发音部位": "零声母-230",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 240
@@ -7661,8 +8273,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-230",
-    "initial_声母类别_发音部位": "零声母-230",
+    "initial_声母类别_发音方法": "零声母-232",
+    "initial_声母类别_发音部位": "零声母-232",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -7793,8 +8405,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-234",
-    "initial_声母类别_发音部位": "零声母-234",
+    "initial_声母类别_发音方法": "零声母-236",
+    "initial_声母类别_发音部位": "零声母-236",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 44
@@ -7817,8 +8429,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-236",
-    "initial_声母类别_发音部位": "零声母-236",
+    "initial_声母类别_发音方法": "零声母-238",
+    "initial_声母类别_发音部位": "零声母-238",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 46
@@ -7889,8 +8501,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-238",
-    "initial_声母类别_发音部位": "零声母-238",
+    "initial_声母类别_发音方法": "零声母-240",
+    "initial_声母类别_发音部位": "零声母-240",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -7949,8 +8561,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-240",
-    "initial_声母类别_发音部位": "零声母-240",
+    "initial_声母类别_发音方法": "零声母-242",
+    "initial_声母类别_发音部位": "零声母-242",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 877
@@ -7961,8 +8573,8 @@
     "tone": 2,
     "pinyin_without_tone": "wa",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-242",
-    "initial_声母类别_发音部位": "零声母-242",
+    "initial_声母类别_发音方法": "零声母-244",
+    "initial_声母类别_发音部位": "零声母-244",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 16
@@ -7985,8 +8597,8 @@
     "tone": 4,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-244",
-    "initial_声母类别_发音部位": "零声母-244",
+    "initial_声母类别_发音方法": "零声母-246",
+    "initial_声母类别_发音部位": "零声母-246",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 84
@@ -8057,8 +8669,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-246",
-    "initial_声母类别_发音部位": "零声母-246",
+    "initial_声母类别_发音方法": "零声母-248",
+    "initial_声母类别_发音部位": "零声母-248",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 3
@@ -8074,6 +8686,18 @@
     "vowel_韵母": "iang",
     "vowel_韵母类别": "十唐",
     "count": 1
+  },
+  "娜": {
+    "char": "娜",
+    "pinyin": "nà",
+    "tone": 4,
+    "pinyin_without_tone": "na",
+    "initial_声母": "n",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 642
   },
   "娟": {
     "char": "娟",
@@ -8117,8 +8741,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-248",
-    "initial_声母类别_发音部位": "零声母-248",
+    "initial_声母类别_发音方法": "零声母-250",
+    "initial_声母类别_发音部位": "零声母-250",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 83
@@ -8129,8 +8753,8 @@
     "tone": 1,
     "pinyin_without_tone": "wa",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-250",
-    "initial_声母类别_发音部位": "零声母-250",
+    "initial_声母类别_发音方法": "零声母-252",
+    "initial_声母类别_发音部位": "零声母-252",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 3
@@ -8285,8 +8909,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-252",
-    "initial_声母类别_发音部位": "零声母-252",
+    "initial_声母类别_发音方法": "零声母-254",
+    "initial_声母类别_发音部位": "零声母-254",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 3
@@ -8339,6 +8963,18 @@
     "vowel_韵母类别": "五微",
     "count": 28
   },
+  "媛": {
+    "char": "媛",
+    "pinyin": "yuán",
+    "tone": 2,
+    "pinyin_without_tone": "yuan",
+    "initial_声母": "n",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 604
+  },
   "媞": {
     "char": "媞",
     "pinyin": "shì",
@@ -8357,8 +8993,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-254",
-    "initial_声母类别_发音部位": "零声母-254",
+    "initial_声母类别_发音方法": "零声母-256",
+    "initial_声母类别_发音部位": "零声母-256",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 6
@@ -8759,6 +9395,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 6
   },
+  "宁": {
+    "char": "宁",
+    "pinyin": "níng",
+    "tone": 2,
+    "pinyin_without_tone": "ning",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 7499
+  },
   "它": {
     "char": "它",
     "pinyin": "tā",
@@ -8789,8 +9437,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-258",
-    "initial_声母类别_发音部位": "零声母-258",
+    "initial_声母类别_发音方法": "零声母-260",
+    "initial_声母类别_发音部位": "零声母-260",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 5611
@@ -8921,8 +9569,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-260",
-    "initial_声母类别_发音部位": "零声母-260",
+    "initial_声母类别_发音方法": "零声母-262",
+    "initial_声母类别_发音部位": "零声母-262",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1051
@@ -9005,8 +9653,8 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-262",
-    "initial_声母类别_发音部位": "零声母-262",
+    "initial_声母类别_发音方法": "零声母-264",
+    "initial_声母类别_发音部位": "零声母-264",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 135
@@ -9083,6 +9731,18 @@
     "vowel_韵母类别": "六豪",
     "count": 16
   },
+  "家": {
+    "char": "家",
+    "pinyin": "jiā",
+    "tone": 1,
+    "pinyin_without_tone": "jia",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ia",
+    "vowel_韵母类别": "一麻",
+    "count": 2975
+  },
   "宸": {
     "char": "宸",
     "pinyin": "chén",
@@ -9130,6 +9790,18 @@
     "vowel_韵母": "in",
     "vowel_韵母类别": "九文",
     "count": 167
+  },
+  "宿": {
+    "char": "宿",
+    "pinyin": "sù",
+    "tone": 4,
+    "pinyin_without_tone": "su",
+    "initial_声母": "s",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 221
   },
   "寂": {
     "char": "寂",
@@ -9209,8 +9881,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-266",
-    "initial_声母类别_发音部位": "零声母-266",
+    "initial_声母类别_发音方法": "零声母-268",
+    "initial_声母类别_发音部位": "零声母-268",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 48
@@ -9449,8 +10121,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-272",
-    "initial_声母类别_发音部位": "零声母-272",
+    "initial_声母类别_发音方法": "零声母-274",
+    "initial_声母类别_发音部位": "零声母-274",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 8
@@ -9461,8 +10133,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-274",
-    "initial_声母类别_发音部位": "零声母-274",
+    "initial_声母类别_发音方法": "零声母-276",
+    "initial_声母类别_发音部位": "零声母-276",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 348
@@ -9569,11 +10241,23 @@
     "tone": 1,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-278",
-    "initial_声母类别_发音部位": "零声母-278",
+    "initial_声母类别_发音方法": "零声母-280",
+    "initial_声母类别_发音部位": "零声母-280",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 12
+  },
+  "屏": {
+    "char": "屏",
+    "pinyin": "bǐng",
+    "tone": 3,
+    "pinyin_without_tone": "bing",
+    "initial_声母": "b",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 62
   },
   "展": {
     "char": "展",
@@ -9653,8 +10337,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-280",
-    "initial_声母类别_发音部位": "零声母-280",
+    "initial_声母类别_发音方法": "零声母-282",
+    "initial_声母类别_发音部位": "零声母-282",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 325
@@ -9689,8 +10373,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-284",
-    "initial_声母类别_发音部位": "零声母-284",
+    "initial_声母类别_发音方法": "零声母-286",
+    "initial_声母类别_发音部位": "零声母-286",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 97
@@ -9754,6 +10438,18 @@
     "vowel_韵母": "en",
     "vowel_韵母类别": "九文",
     "count": 81
+  },
+  "岗": {
+    "char": "岗",
+    "pinyin": "gāng",
+    "tone": 1,
+    "pinyin_without_tone": "gang",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ang",
+    "vowel_韵母类别": "十唐",
+    "count": 50
   },
   "岙": {
     "char": "岙",
@@ -9869,8 +10565,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-288",
-    "initial_声母类别_发音部位": "零声母-288",
+    "initial_声母类别_发音方法": "零声母-290",
+    "initial_声母类别_发音部位": "零声母-290",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1026
@@ -9941,8 +10637,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-290",
-    "initial_声母类别_发音部位": "零声母-290",
+    "initial_声母类别_发音方法": "零声母-292",
+    "initial_声母类别_发音部位": "零声母-292",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 14
@@ -9989,8 +10685,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-294",
-    "initial_声母类别_发音部位": "零声母-294",
+    "initial_声母类别_发音方法": "零声母-296",
+    "initial_声母类别_发音部位": "零声母-296",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 5
@@ -10037,8 +10733,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-296",
-    "initial_声母类别_发音部位": "零声母-296",
+    "initial_声母类别_发音方法": "零声母-298",
+    "initial_声母类别_发音部位": "零声母-298",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 12
@@ -10157,8 +10853,8 @@
     "tone": 2,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-300",
-    "initial_声母类别_发音部位": "零声母-300",
+    "initial_声母类别_发音方法": "零声母-302",
+    "initial_声母类别_发音部位": "零声母-302",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 23
@@ -10265,8 +10961,8 @@
     "tone": 3,
     "pinyin_without_tone": "wai",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-302",
-    "initial_声母类别_发音部位": "零声母-302",
+    "initial_声母类别_发音方法": "零声母-304",
+    "initial_声母类别_发音部位": "零声母-304",
     "vowel_韵母": "ai",
     "vowel_韵母类别": "四开",
     "count": 21
@@ -10337,8 +11033,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-308",
-    "initial_声母类别_发音部位": "零声母-308",
+    "initial_声母类别_发音方法": "零声母-310",
+    "initial_声母类别_发音部位": "零声母-310",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 9
@@ -10361,8 +11057,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-310",
-    "initial_声母类别_发音部位": "零声母-310",
+    "initial_声母类别_发音方法": "零声母-312",
+    "initial_声母类别_发音部位": "零声母-312",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 1
@@ -10433,8 +11129,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-314",
-    "initial_声母类别_发音部位": "零声母-314",
+    "initial_声母类别_发音方法": "零声母-316",
+    "initial_声母类别_发音部位": "零声母-316",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 171
@@ -10553,8 +11249,8 @@
     "tone": 1,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-316",
-    "initial_声母类别_发音部位": "零声母-316",
+    "initial_声母类别_发音方法": "零声母-318",
+    "initial_声母类别_发音部位": "零声母-318",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 3
@@ -10577,8 +11273,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-318",
-    "initial_声母类别_发音部位": "零声母-318",
+    "initial_声母类别_发音方法": "零声母-320",
+    "initial_声母类别_发音部位": "零声母-320",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 7
@@ -10853,8 +11549,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-322",
-    "initial_声母类别_发音部位": "零声母-322",
+    "initial_声母类别_发音方法": "零声母-324",
+    "initial_声母类别_发音部位": "零声母-324",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 9
@@ -10901,8 +11597,8 @@
     "tone": 4,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-324",
-    "initial_声母类别_发音部位": "零声母-324",
+    "initial_声母类别_发音方法": "零声母-326",
+    "initial_声母类别_发音部位": "零声母-326",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 34
@@ -10985,8 +11681,8 @@
     "tone": 1,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-326",
-    "initial_声母类别_发音部位": "零声母-326",
+    "initial_声母类别_发音方法": "零声母-328",
+    "initial_声母类别_发音部位": "零声母-328",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 4
@@ -11009,8 +11705,8 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-328",
-    "initial_声母类别_发音部位": "零声母-328",
+    "initial_声母类别_发音方法": "零声母-330",
+    "initial_声母类别_发音部位": "零声母-330",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 22
@@ -11021,8 +11717,8 @@
     "tone": 1,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-330",
-    "initial_声母类别_发音部位": "零声母-330",
+    "initial_声母类别_发音方法": "零声母-332",
+    "initial_声母类别_发音部位": "零声母-332",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 26
@@ -11219,6 +11915,18 @@
     "vowel_韵母类别": "七尤",
     "count": 2
   },
+  "度": {
+    "char": "度",
+    "pinyin": "dù",
+    "tone": 4,
+    "pinyin_without_tone": "du",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 351
+  },
   "座": {
     "char": "座",
     "pinyin": "zuò",
@@ -11297,8 +12005,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-334",
-    "initial_声母类别_发音部位": "零声母-334",
+    "initial_声母类别_发音方法": "零声母-336",
+    "initial_声母类别_发音部位": "零声母-336",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 3
@@ -11417,8 +12125,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-340",
-    "initial_声母类别_发音部位": "零声母-340",
+    "initial_声母类别_发音方法": "零声母-342",
+    "initial_声母类别_发音部位": "零声母-342",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 48
@@ -11429,8 +12137,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-342",
-    "initial_声母类别_发音部位": "零声母-342",
+    "initial_声母类别_发音方法": "零声母-344",
+    "initial_声母类别_发音部位": "零声母-344",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 672
@@ -11441,8 +12149,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-344",
-    "initial_声母类别_发音部位": "零声母-344",
+    "initial_声母类别_发音方法": "零声母-346",
+    "initial_声母类别_发音部位": "零声母-346",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 46
@@ -11639,6 +12347,18 @@
     "vowel_韵母类别": "二波",
     "count": 10
   },
+  "强": {
+    "char": "强",
+    "pinyin": "jiàng",
+    "tone": 4,
+    "pinyin_without_tone": "jiang",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "iang",
+    "vowel_韵母类别": "十唐",
+    "count": 5899
+  },
   "弼": {
     "char": "弼",
     "pinyin": "bì",
@@ -11705,8 +12425,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-346",
-    "initial_声母类别_发音部位": "零声母-346",
+    "initial_声母类别_发音方法": "零声母-348",
+    "initial_声母类别_发音部位": "零声母-348",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2
@@ -11753,8 +12473,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-350",
-    "initial_声母类别_发音部位": "零声母-350",
+    "initial_声母类别_发音方法": "零声母-352",
+    "initial_声母类别_发音部位": "零声母-352",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 103
@@ -11891,6 +12611,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 8
   },
+  "待": {
+    "char": "待",
+    "pinyin": "dāi",
+    "tone": 1,
+    "pinyin_without_tone": "dai",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 8
+  },
   "徇": {
     "char": "徇",
     "pinyin": "xùn",
@@ -11975,14 +12707,26 @@
     "vowel_韵母类别": "四开",
     "count": 8
   },
+  "得": {
+    "char": "得",
+    "pinyin": "dé",
+    "tone": 2,
+    "pinyin_without_tone": "de",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 842
+  },
   "御": {
     "char": "御",
     "pinyin": "yù",
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-354",
-    "initial_声母类别_发音部位": "零声母-354",
+    "initial_声母类别_发音方法": "零声母-356",
+    "initial_声母类别_发音部位": "零声母-356",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 478
@@ -12017,8 +12761,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-358",
-    "initial_声母类别_发音部位": "零声母-358",
+    "initial_声母类别_发音方法": "零声母-360",
+    "initial_声母类别_发音部位": "零声母-360",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 715
@@ -12089,8 +12833,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-360",
-    "initial_声母类别_发音部位": "零声母-360",
+    "initial_声母类别_发音方法": "零声母-362",
+    "initial_声母类别_发音部位": "零声母-362",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 139
@@ -12197,8 +12941,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-362",
-    "initial_声母类别_发音部位": "零声母-362",
+    "initial_声母类别_发音方法": "零声母-364",
+    "initial_声母类别_发音部位": "零声母-364",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 26
@@ -12209,8 +12953,8 @@
     "tone": 1,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-364",
-    "initial_声母类别_发音部位": "零声母-364",
+    "initial_声母类别_发音方法": "零声母-366",
+    "initial_声母类别_发音部位": "零声母-366",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 33
@@ -12341,8 +13085,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-368",
-    "initial_声母类别_发音部位": "零声母-368",
+    "initial_声母类别_发音方法": "零声母-370",
+    "initial_声母类别_发音部位": "零声母-370",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2369
@@ -12401,8 +13145,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-370",
-    "initial_声母类别_发音部位": "零声母-370",
+    "initial_声母类别_发音方法": "零声母-372",
+    "initial_声母类别_发音部位": "零声母-372",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 58
@@ -12653,8 +13397,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-377",
-    "initial_声母类别_发音部位": "零声母-377",
+    "initial_声母类别_发音方法": "零声母-379",
+    "initial_声母类别_发音部位": "零声母-379",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 250
@@ -12665,8 +13409,8 @@
     "tone": 1,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-379",
-    "initial_声母类别_发音部位": "零声母-379",
+    "initial_声母类别_发音方法": "零声母-381",
+    "initial_声母类别_发音部位": "零声母-381",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 185
@@ -12677,8 +13421,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-381",
-    "initial_声母类别_发音部位": "零声母-381",
+    "initial_声母类别_发音方法": "零声母-383",
+    "initial_声母类别_发音部位": "零声母-383",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 2594
@@ -12809,8 +13553,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-383",
-    "initial_声母类别_发音部位": "零声母-383",
+    "initial_声母类别_发音方法": "零声母-385",
+    "initial_声母类别_发音部位": "零声母-385",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 237
@@ -12881,8 +13625,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-385",
-    "initial_声母类别_发音部位": "零声母-385",
+    "initial_声母类别_发音方法": "零声母-387",
+    "initial_声母类别_发音部位": "零声母-387",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 9
@@ -12893,8 +13637,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-387",
-    "initial_声母类别_发音部位": "零声母-387",
+    "initial_声母类别_发音方法": "零声母-389",
+    "initial_声母类别_发音部位": "零声母-389",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 53
@@ -12917,8 +13661,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-389",
-    "initial_声母类别_发音部位": "零声母-389",
+    "initial_声母类别_发音方法": "零声母-391",
+    "initial_声母类别_发音部位": "零声母-391",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 786
@@ -12941,8 +13685,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-391",
-    "initial_声母类别_发音部位": "零声母-391",
+    "initial_声母类别_发音方法": "零声母-393",
+    "initial_声母类别_发音部位": "零声母-393",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 81
@@ -13073,8 +13817,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-393",
-    "initial_声母类别_发音部位": "零声母-393",
+    "initial_声母类别_发音方法": "零声母-395",
+    "initial_声母类别_发音部位": "零声母-395",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 10
@@ -13205,8 +13949,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-395",
-    "initial_声母类别_发音部位": "零声母-395",
+    "initial_声母类别_发音方法": "零声母-397",
+    "initial_声母类别_发音部位": "零声母-397",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 580
@@ -13229,11 +13973,23 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-397",
-    "initial_声母类别_发音部位": "零声母-397",
+    "initial_声母类别_发音方法": "零声母-399",
+    "initial_声母类别_发音部位": "零声母-399",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 104
+  },
+  "戌": {
+    "char": "戌",
+    "pinyin": "qu",
+    "tone": 1,
+    "pinyin_without_tone": "qu",
+    "initial_声母": "q",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 89
   },
   "戍": {
     "char": "戍",
@@ -13289,8 +14045,8 @@
     "tone": 3,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-399",
-    "initial_声母类别_发音部位": "零声母-399",
+    "initial_声母类别_发音方法": "零声母-401",
+    "initial_声母类别_发音部位": "零声母-401",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 16
@@ -13475,6 +14231,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 15
   },
+  "打": {
+    "char": "打",
+    "pinyin": "dá",
+    "tone": 2,
+    "pinyin_without_tone": "da",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 53
+  },
   "托": {
     "char": "托",
     "pinyin": "tuō",
@@ -13625,8 +14393,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-405",
-    "initial_声母类别_发音部位": "零声母-405",
+    "initial_声母类别_发音方法": "零声母-407",
+    "initial_声母类别_发音部位": "零声母-407",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -13781,8 +14549,8 @@
     "tone": 1,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-407",
-    "initial_声母类别_发音部位": "零声母-407",
+    "initial_声母类别_发音方法": "零声母-409",
+    "initial_声母类别_发音部位": "零声母-409",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 9
@@ -13822,6 +14590,18 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 1
+  },
+  "拉": {
+    "char": "拉",
+    "pinyin": "lā",
+    "tone": 1,
+    "pinyin_without_tone": "la",
+    "initial_声母": "l",
+    "initial_声母类别_发音方法": "边音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 496
   },
   "拍": {
     "char": "拍",
@@ -13943,6 +14723,18 @@
     "vowel_韵母类别": "二波",
     "count": 4
   },
+  "择": {
+    "char": "择",
+    "pinyin": "zé",
+    "tone": 2,
+    "pinyin_without_tone": "ze",
+    "initial_声母": "z",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 371
+  },
   "拯": {
     "char": "拯",
     "pinyin": "zhěng",
@@ -13990,6 +14782,18 @@
     "vowel_韵母": "uan",
     "vowel_韵母类别": "八寒",
     "count": 2
+  },
+  "拾": {
+    "char": "拾",
+    "pinyin": "shè",
+    "tone": 4,
+    "pinyin_without_tone": "she",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 660
   },
   "拿": {
     "char": "拿",
@@ -14057,8 +14861,8 @@
     "tone": 1,
     "pinyin_without_tone": "wa",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-409",
-    "initial_声母类别_发音部位": "零声母-409",
+    "initial_声母类别_发音方法": "零声母-411",
+    "initial_声母类别_发音部位": "零声母-411",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 13
@@ -14207,6 +15011,18 @@
     "vowel_韵母类别": "四开",
     "count": 7
   },
+  "据": {
+    "char": "据",
+    "pinyin": "jū",
+    "tone": 1,
+    "pinyin_without_tone": "ju",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 153
+  },
   "捷": {
     "char": "捷",
     "pinyin": "jié",
@@ -14351,14 +15167,26 @@
     "vowel_韵母类别": "五微",
     "count": 1
   },
+  "提": {
+    "char": "提",
+    "pinyin": "dī",
+    "tone": 1,
+    "pinyin_without_tone": "di",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 70
+  },
   "揖": {
     "char": "揖",
     "pinyin": "yī",
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-421",
-    "initial_声母类别_发音部位": "零声母-421",
+    "initial_声母类别_发音方法": "零声母-423",
+    "initial_声母类别_发音部位": "零声母-423",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -14369,8 +15197,8 @@
     "tone": 4,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-425",
-    "initial_声母类别_发音部位": "零声母-425",
+    "initial_声母类别_发音方法": "零声母-427",
+    "initial_声母类别_发音部位": "零声母-427",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 9
@@ -14489,8 +15317,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-429",
-    "initial_声母类别_发音部位": "零声母-429",
+    "initial_声母类别_发音方法": "零声母-431",
+    "initial_声母类别_发音部位": "零声母-431",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 55
@@ -14506,6 +15334,18 @@
     "vowel_韵母": "ai",
     "vowel_韵母类别": "四开",
     "count": 8
+  },
+  "摩": {
+    "char": "摩",
+    "pinyin": "mā",
+    "tone": 1,
+    "pinyin_without_tone": "ma",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 278
   },
   "摸": {
     "char": "摸",
@@ -14681,8 +15521,8 @@
     "tone": 1,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-431",
-    "initial_声母类别_发音部位": "零声母-431",
+    "initial_声母类别_发音方法": "零声母-433",
+    "initial_声母类别_发音部位": "零声母-433",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 25
@@ -14819,6 +15659,18 @@
     "vowel_韵母类别": "六豪",
     "count": 35
   },
+  "教": {
+    "char": "教",
+    "pinyin": "jiāo",
+    "tone": 1,
+    "pinyin_without_tone": "jiao",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "iao",
+    "vowel_韵母类别": "六豪",
+    "count": 195
+  },
   "敞": {
     "char": "敞",
     "pinyin": "chǎng",
@@ -14878,6 +15730,18 @@
     "vowel_韵母": "ing",
     "vowel_韵母类别": "十一庚",
     "count": 282
+  },
+  "数": {
+    "char": "数",
+    "pinyin": "shǔ",
+    "tone": 3,
+    "pinyin_without_tone": "shu",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 4952
   },
   "整": {
     "char": "整",
@@ -14963,6 +15827,18 @@
     "vowel_韵母类别": "八寒",
     "count": 10
   },
+  "斗": {
+    "char": "斗",
+    "pinyin": "dǒu",
+    "tone": 3,
+    "pinyin_without_tone": "dou",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 247
+  },
   "料": {
     "char": "料",
     "pinyin": "liào",
@@ -15017,8 +15893,8 @@
     "tone": 4,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-435",
-    "initial_声母类别_发音部位": "零声母-435",
+    "initial_声母类别_发音方法": "零声母-437",
+    "initial_声母类别_发音部位": "零声母-437",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 2
@@ -15131,6 +16007,18 @@
     "vowel_韵母类别": "五微",
     "count": 5
   },
+  "旋": {
+    "char": "旋",
+    "pinyin": "xuán",
+    "tone": 2,
+    "pinyin_without_tone": "xuan",
+    "initial_声母": "x",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 174
+  },
   "旌": {
     "char": "旌",
     "pinyin": "jīng",
@@ -15185,8 +16073,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-439",
-    "initial_声母类别_发音部位": "零声母-439",
+    "initial_声母类别_发音方法": "零声母-441",
+    "initial_声母类别_发音部位": "零声母-441",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 39
@@ -15202,6 +16090,18 @@
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 642
+  },
+  "无": {
+    "char": "无",
+    "pinyin": "mó",
+    "tone": 2,
+    "pinyin_without_tone": "mo",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "o",
+    "vowel_韵母类别": "二波",
+    "count": 1269
   },
   "既": {
     "char": "既",
@@ -15509,8 +16409,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-444",
-    "initial_声母类别_发音部位": "零声母-444",
+    "initial_声母类别_发音方法": "零声母-446",
+    "initial_声母类别_发音部位": "零声母-446",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2093
@@ -15653,8 +16553,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-446",
-    "initial_声母类别_发音部位": "零声母-446",
+    "initial_声母类别_发音方法": "零声母-448",
+    "initial_声母类别_发音部位": "零声母-448",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 695
@@ -15809,8 +16709,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-448",
-    "initial_声母类别_发音部位": "零声母-448",
+    "initial_声母类别_发音方法": "零声母-450",
+    "initial_声母类别_发音部位": "零声母-450",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 257
@@ -15905,8 +16805,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-450",
-    "initial_声母类别_发音部位": "零声母-450",
+    "initial_声母类别_发音方法": "零声母-452",
+    "initial_声母类别_发音部位": "零声母-452",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 5
@@ -16205,8 +17105,8 @@
     "tone": 4,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-452",
-    "initial_声母类别_发音部位": "零声母-452",
+    "initial_声母类别_发音方法": "零声母-454",
+    "initial_声母类别_发音部位": "零声母-454",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 403
@@ -16229,11 +17129,23 @@
     "tone": 1,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-454",
-    "initial_声母类别_发音部位": "零声母-454",
+    "initial_声母类别_发音方法": "零声母-456",
+    "initial_声母类别_发音部位": "零声母-456",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 3
+  },
+  "曲": {
+    "char": "曲",
+    "pinyin": "qū",
+    "tone": 1,
+    "pinyin_without_tone": "qu",
+    "initial_声母": "q",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 155
   },
   "曳": {
     "char": "曳",
@@ -16241,11 +17153,23 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-456",
-    "initial_声母类别_发音部位": "零声母-456",
+    "initial_声母类别_发音方法": "零声母-458",
+    "initial_声母类别_发音部位": "零声母-458",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1
+  },
+  "更": {
+    "char": "更",
+    "pinyin": "gēng",
+    "tone": 1,
+    "pinyin_without_tone": "geng",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 111
   },
   "曹": {
     "char": "曹",
@@ -16301,8 +17225,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-458",
-    "initial_声母类别_发音部位": "零声母-458",
+    "initial_声母类别_发音方法": "零声母-460",
+    "initial_声母类别_发音部位": "零声母-460",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1576
@@ -16313,8 +17237,8 @@
     "tone": 3,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-460",
-    "initial_声母类别_发音部位": "零声母-460",
+    "initial_声母类别_发音方法": "零声母-462",
+    "initial_声母类别_发音部位": "零声母-462",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 78430
@@ -16330,6 +17254,18 @@
     "vowel_韵母": "eng",
     "vowel_韵母类别": "十一庚",
     "count": 258
+  },
+  "服": {
+    "char": "服",
+    "pinyin": "fú",
+    "tone": 2,
+    "pinyin_without_tone": "fu",
+    "initial_声母": "f",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "唇齿音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 232
   },
   "朏": {
     "char": "朏",
@@ -16391,6 +17327,18 @@
     "vowel_韵母类别": "十唐",
     "count": 904
   },
+  "期": {
+    "char": "期",
+    "pinyin": "jī",
+    "tone": 1,
+    "pinyin_without_tone": "ji",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 24105
+  },
   "朦": {
     "char": "朦",
     "pinyin": "méng",
@@ -16421,8 +17369,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-462",
-    "initial_声母类别_发音部位": "零声母-462",
+    "initial_声母类别_发音方法": "零声母-464",
+    "initial_声母类别_发音部位": "零声母-464",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 638
@@ -16451,6 +17399,18 @@
     "vowel_韵母类别": "九文",
     "count": 4658
   },
+  "术": {
+    "char": "术",
+    "pinyin": "shù",
+    "tone": 4,
+    "pinyin_without_tone": "shu",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 378
+  },
   "朱": {
     "char": "朱",
     "pinyin": "zhū",
@@ -16462,6 +17422,18 @@
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 220
+  },
+  "朴": {
+    "char": "朴",
+    "pinyin": "piáo",
+    "tone": 2,
+    "pinyin_without_tone": "piao",
+    "initial_声母": "p",
+    "initial_声母类别_发音方法": "塞音_清音_送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "iao",
+    "vowel_韵母类别": "六豪",
+    "count": 999
   },
   "朵": {
     "char": "朵",
@@ -16510,6 +17482,18 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 2
+  },
+  "杉": {
+    "char": "杉",
+    "pinyin": "shā",
+    "tone": 1,
+    "pinyin_without_tone": "sha",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 1268
   },
   "李": {
     "char": "李",
@@ -16769,8 +17753,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-470",
-    "initial_声母类别_发音部位": "零声母-470",
+    "initial_声母类别_发音方法": "零声母-472",
+    "initial_声母类别_发音部位": "零声母-472",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -17123,6 +18107,18 @@
     "vowel_韵母类别": "十二齐",
     "count": 10
   },
+  "查": {
+    "char": "查",
+    "pinyin": "chá",
+    "tone": 2,
+    "pinyin_without_tone": "cha",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 32
+  },
   "柯": {
     "char": "柯",
     "pinyin": "kē",
@@ -17267,6 +18263,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 1
   },
+  "栎": {
+    "char": "栎",
+    "pinyin": "lì",
+    "tone": 4,
+    "pinyin_without_tone": "li",
+    "initial_声母": "l",
+    "initial_声母类别_发音方法": "边音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 54
+  },
   "栏": {
     "char": "栏",
     "pinyin": "lán",
@@ -17398,6 +18406,18 @@
     "vowel_韵母": "ang",
     "vowel_韵母类别": "十唐",
     "count": 34
+  },
+  "核": {
+    "char": "核",
+    "pinyin": "hé",
+    "tone": 2,
+    "pinyin_without_tone": "he",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 642
   },
   "根": {
     "char": "根",
@@ -17597,8 +18617,8 @@
     "tone": 1,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-477",
-    "initial_声母类别_发音部位": "零声母-477",
+    "initial_声母类别_发音方法": "零声母-479",
+    "initial_声母类别_发音部位": "零声母-479",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 14
@@ -17789,8 +18809,8 @@
     "tone": 2,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-479",
-    "initial_声母类别_发音部位": "零声母-479",
+    "initial_声母类别_发音方法": "零声母-481",
+    "initial_声母类别_发音部位": "零声母-481",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 362
@@ -18053,8 +19073,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-481",
-    "initial_声母类别_发音部位": "零声母-481",
+    "initial_声母类别_发音方法": "零声母-483",
+    "initial_声母类别_发音部位": "零声母-483",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2
@@ -18173,8 +19193,8 @@
     "tone": 1,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-485",
-    "initial_声母类别_发音部位": "零声母-485",
+    "initial_声母类别_发音方法": "零声母-487",
+    "initial_声母类别_发音部位": "零声母-487",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 10
@@ -18335,6 +19355,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 1
   },
+  "楷": {
+    "char": "楷",
+    "pinyin": "jiē",
+    "tone": 1,
+    "pinyin_without_tone": "jie",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ie",
+    "vowel_韵母类别": "三皆",
+    "count": 290
+  },
   "楸": {
     "char": "楸",
     "pinyin": "qiū",
@@ -18401,8 +19433,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-489",
-    "initial_声母类别_发音部位": "零声母-489",
+    "initial_声母类别_发音方法": "零声母-491",
+    "initial_声母类别_发音部位": "零声母-491",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 100
@@ -18647,6 +19679,18 @@
     "vowel_韵母类别": "十唐",
     "count": 219
   },
+  "模": {
+    "char": "模",
+    "pinyin": "mó",
+    "tone": 2,
+    "pinyin_without_tone": "mo",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "o",
+    "vowel_韵母类别": "二波",
+    "count": 14
+  },
   "樨": {
     "char": "樨",
     "pinyin": "xī",
@@ -18658,6 +19702,18 @@
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 4
+  },
+  "横": {
+    "char": "横",
+    "pinyin": "héng",
+    "tone": 2,
+    "pinyin_without_tone": "heng",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 882
   },
   "樯": {
     "char": "樯",
@@ -18713,8 +19769,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-493",
-    "initial_声母类别_发音部位": "零声母-493",
+    "initial_声母类别_发音方法": "零声母-495",
+    "initial_声母类别_发音部位": "零声母-495",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 44
@@ -18941,8 +19997,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-497",
-    "initial_声母类别_发音部位": "零声母-497",
+    "initial_声母类别_发音方法": "零声母-499",
+    "initial_声母类别_发音部位": "零声母-499",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 5
@@ -19019,6 +20075,18 @@
     "vowel_韵母类别": "十三支",
     "count": 85
   },
+  "正": {
+    "char": "正",
+    "pinyin": "zhēng",
+    "tone": 1,
+    "pinyin_without_tone": "zheng",
+    "initial_声母": "zh",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 3979
+  },
   "此": {
     "char": "此",
     "pinyin": "cǐ",
@@ -19049,8 +20117,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-499",
-    "initial_声母类别_发音部位": "零声母-499",
+    "initial_声母类别_发音方法": "零声母-501",
+    "initial_声母类别_发音部位": "零声母-501",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1257
@@ -19115,6 +20183,18 @@
     "vowel_韵母类别": "八寒",
     "count": 44
   },
+  "殷": {
+    "char": "殷",
+    "pinyin": "yān",
+    "tone": 1,
+    "pinyin_without_tone": "yan",
+    "initial_声母": "n",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 94
+  },
   "殿": {
     "char": "殿",
     "pinyin": "diàn",
@@ -19133,8 +20213,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-505",
-    "initial_声母类别_发音部位": "零声母-505",
+    "initial_声母类别_发音方法": "零声母-507",
+    "initial_声母类别_发音部位": "零声母-507",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2661
@@ -19169,8 +20249,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-509",
-    "initial_声母类别_发音部位": "零声母-509",
+    "initial_声母类别_发音方法": "零声母-511",
+    "initial_声母类别_发音部位": "零声母-511",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 238
@@ -19246,6 +20326,18 @@
     "vowel_韵母": "ui",
     "vowel_韵母类别": "五微",
     "count": 1
+  },
+  "氏": {
+    "char": "氏",
+    "pinyin": "shì",
+    "tone": 4,
+    "pinyin_without_tone": "shi",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "-i",
+    "vowel_韵母类别": "十三支",
+    "count": 86
   },
   "民": {
     "char": "民",
@@ -19325,8 +20417,8 @@
     "tone": 4,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-511",
-    "initial_声母类别_发音部位": "零声母-511",
+    "initial_声母类别_发音方法": "零声母-513",
+    "initial_声母类别_发音部位": "零声母-513",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 1
@@ -19517,8 +20609,8 @@
     "tone": 1,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-513",
-    "initial_声母类别_发音部位": "零声母-513",
+    "initial_声母类别_发音方法": "零声母-515",
+    "initial_声母类别_发音部位": "零声母-515",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 12
@@ -19673,8 +20765,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-515",
-    "initial_声母类别_发音部位": "零声母-515",
+    "initial_声母类别_发音方法": "零声母-517",
+    "initial_声母类别_发音部位": "零声母-517",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 127
@@ -19685,8 +20777,8 @@
     "tone": 4,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-517",
-    "initial_声母类别_发音部位": "零声母-517",
+    "initial_声母类别_发音方法": "零声母-519",
+    "initial_声母类别_发音部位": "零声母-519",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 636
@@ -19774,6 +20866,18 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 1
+  },
+  "沙": {
+    "char": "沙",
+    "pinyin": "shā",
+    "tone": 1,
+    "pinyin_without_tone": "sha",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 519
   },
   "沚": {
     "char": "沚",
@@ -19865,8 +20969,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-519",
-    "initial_声母类别_发音部位": "零声母-519",
+    "initial_声母类别_发音方法": "零声母-521",
+    "initial_声母类别_发音部位": "零声母-521",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 1
@@ -19949,8 +21053,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-521",
-    "initial_声母类别_发音部位": "零声母-521",
+    "initial_声母类别_发音方法": "零声母-523",
+    "initial_声母类别_发音部位": "零声母-523",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 48
@@ -20050,6 +21154,18 @@
     "vowel_韵母": "uan",
     "vowel_韵母类别": "八寒",
     "count": 2835
+  },
+  "泊": {
+    "char": "泊",
+    "pinyin": "bó",
+    "tone": 2,
+    "pinyin_without_tone": "bo",
+    "initial_声母": "b",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "o",
+    "vowel_韵母类别": "二波",
+    "count": 197
   },
   "泓": {
     "char": "泓",
@@ -20333,8 +21449,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-523",
-    "initial_声母类别_发音部位": "零声母-523",
+    "initial_声母类别_发音方法": "零声母-525",
+    "initial_声母类别_发音部位": "零声母-525",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 1
@@ -20405,8 +21521,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-525",
-    "initial_声母类别_发音部位": "零声母-525",
+    "initial_声母类别_发音方法": "零声母-527",
+    "initial_声母类别_发音部位": "零声母-527",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 8
@@ -20429,8 +21545,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-527",
-    "initial_声母类别_发音部位": "零声母-527",
+    "initial_声母类别_发音方法": "零声母-529",
+    "initial_声母类别_发音部位": "零声母-529",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 5
@@ -20561,8 +21677,8 @@
     "tone": 1,
     "pinyin_without_tone": "wa",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-529",
-    "initial_声母类别_发音部位": "零声母-529",
+    "initial_声母类别_发音方法": "零声母-531",
+    "initial_声母类别_发音部位": "零声母-531",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 44
@@ -20747,6 +21863,18 @@
     "vowel_韵母类别": "二波",
     "count": 1522
   },
+  "浚": {
+    "char": "浚",
+    "pinyin": "jùn",
+    "tone": 4,
+    "pinyin_without_tone": "jun",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "un",
+    "vowel_韵母类别": "九文",
+    "count": 235
+  },
   "浛": {
     "char": "浛",
     "pinyin": "hán",
@@ -20801,8 +21929,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-535",
-    "initial_声母类别_发音部位": "零声母-535",
+    "initial_声母类别_发音方法": "零声母-537",
+    "initial_声母类别_发音部位": "零声母-537",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 6
@@ -20861,8 +21989,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-539",
-    "initial_声母类别_发音部位": "零声母-539",
+    "initial_声母类别_发音方法": "零声母-541",
+    "initial_声母类别_发音部位": "零声母-541",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 5
@@ -20938,6 +22066,18 @@
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 4
+  },
+  "涌": {
+    "char": "涌",
+    "pinyin": "chōng",
+    "tone": 1,
+    "pinyin_without_tone": "chong",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 1123
   },
   "涍": {
     "char": "涍",
@@ -21017,8 +22157,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-541",
-    "initial_声母类别_发音部位": "零声母-541",
+    "initial_声母类别_发音方法": "零声母-543",
+    "initial_声母类别_发音部位": "零声母-543",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 1
@@ -21113,8 +22253,8 @@
     "tone": 2,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-544",
-    "initial_声母类别_发音部位": "零声母-544",
+    "initial_声母类别_发音方法": "零声母-546",
+    "initial_声母类别_发音部位": "零声母-546",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 24
@@ -21125,8 +22265,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-546",
-    "initial_声母类别_发音部位": "零声母-546",
+    "initial_声母类别_发音方法": "零声母-548",
+    "initial_声母类别_发音部位": "零声母-548",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 7
@@ -21305,8 +22445,8 @@
     "tone": 1,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-548",
-    "initial_声母类别_发音部位": "零声母-548",
+    "initial_声母类别_发音方法": "零声母-550",
+    "initial_声母类别_发音部位": "零声母-550",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -21353,8 +22493,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-550",
-    "initial_声母类别_发音部位": "零声母-550",
+    "initial_声母类别_发音方法": "零声母-552",
+    "initial_声母类别_发音部位": "零声母-552",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -21497,8 +22637,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-552",
-    "initial_声母类别_发音部位": "零声母-552",
+    "initial_声母类别_发音方法": "零声母-554",
+    "initial_声母类别_发音部位": "零声母-554",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 48
@@ -21533,8 +22673,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-554",
-    "initial_声母类别_发音部位": "零声母-554",
+    "initial_声母类别_发音方法": "零声母-556",
+    "initial_声母类别_发音部位": "零声母-556",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 256
@@ -21593,8 +22733,8 @@
     "tone": 4,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-556",
-    "initial_声母类别_发音部位": "零声母-556",
+    "initial_声母类别_发音方法": "零声母-558",
+    "initial_声母类别_发音部位": "零声母-558",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 7
@@ -21617,8 +22757,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-558",
-    "initial_声母类别_发音部位": "零声母-558",
+    "initial_声母类别_发音方法": "零声母-560",
+    "initial_声母类别_发音部位": "零声母-560",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 33
@@ -21665,8 +22805,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-560",
-    "initial_声母类别_发音部位": "零声母-560",
+    "initial_声母类别_发音方法": "零声母-562",
+    "initial_声母类别_发音部位": "零声母-562",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 425
@@ -21893,8 +23033,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-562",
-    "initial_声母类别_发音部位": "零声母-562",
+    "initial_声母类别_发音方法": "零声母-564",
+    "initial_声母类别_发音部位": "零声母-564",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 328
@@ -21917,8 +23057,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-564",
-    "initial_声母类别_发音部位": "零声母-564",
+    "initial_声母类别_发音方法": "零声母-566",
+    "initial_声母类别_发音部位": "零声母-566",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 3
@@ -22301,8 +23441,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-568",
-    "initial_声母类别_发音部位": "零声母-568",
+    "initial_声母类别_发音方法": "零声母-570",
+    "initial_声母类别_发音部位": "零声母-570",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 46
@@ -22409,8 +23549,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-570",
-    "initial_声母类别_发音部位": "零声母-570",
+    "initial_声母类别_发音方法": "零声母-572",
+    "initial_声母类别_发音部位": "零声母-572",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 189
@@ -22421,8 +23561,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-572",
-    "initial_声母类别_发音部位": "零声母-572",
+    "initial_声母类别_发音方法": "零声母-574",
+    "initial_声母类别_发音部位": "零声母-574",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -22559,6 +23699,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 5
   },
+  "澄": {
+    "char": "澄",
+    "pinyin": "chéng",
+    "tone": 2,
+    "pinyin_without_tone": "cheng",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 454
+  },
   "澈": {
     "char": "澈",
     "pinyin": "chè",
@@ -22642,6 +23794,18 @@
     "vowel_韵母": "uan",
     "vowel_韵母类别": "八寒",
     "count": 3
+  },
+  "澹": {
+    "char": "澹",
+    "pinyin": "dàn",
+    "tone": 4,
+    "pinyin_without_tone": "dan",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 115
   },
   "激": {
     "char": "激",
@@ -22985,8 +24149,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-578",
-    "initial_声母类别_发音部位": "零声母-578",
+    "initial_声母类别_发音方法": "零声母-580",
+    "initial_声母类别_发音部位": "零声母-580",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 453
@@ -23225,8 +24389,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-580",
-    "initial_声母类别_发音部位": "零声母-580",
+    "initial_声母类别_发音方法": "零声母-582",
+    "initial_声母类别_发音部位": "零声母-582",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 574
@@ -23513,8 +24677,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-584",
-    "initial_声母类别_发音部位": "零声母-584",
+    "initial_声母类别_发音方法": "零声母-586",
+    "initial_声母类别_发音部位": "零声母-586",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 930
@@ -23633,8 +24797,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-590",
-    "initial_声母类别_发音部位": "零声母-590",
+    "initial_声母类别_发音方法": "零声母-592",
+    "initial_声母类别_发音部位": "零声母-592",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 531
@@ -23693,8 +24857,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-593",
-    "initial_声母类别_发音部位": "零声母-593",
+    "initial_声母类别_发音方法": "零声母-595",
+    "initial_声母类别_发音部位": "零声母-595",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -23717,8 +24881,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-595",
-    "initial_声母类别_发音部位": "零声母-595",
+    "initial_声母类别_发音方法": "零声母-597",
+    "initial_声母类别_发音部位": "零声母-597",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 40
@@ -23729,8 +24893,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-597",
-    "initial_声母类别_发音部位": "零声母-597",
+    "initial_声母类别_发音方法": "零声母-599",
+    "initial_声母类别_发音部位": "零声母-599",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -23849,8 +25013,8 @@
     "tone": 2,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-601",
-    "initial_声母类别_发音部位": "零声母-601",
+    "initial_声母类别_发音方法": "零声母-603",
+    "initial_声母类别_发音部位": "零声母-603",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 2
@@ -23873,8 +25037,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-603",
-    "initial_声母类别_发音部位": "零声母-603",
+    "initial_声母类别_发音方法": "零声母-605",
+    "initial_声母类别_发音部位": "零声母-605",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 2
@@ -23921,8 +25085,8 @@
     "tone": 2,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-607",
-    "initial_声母类别_发音部位": "零声母-607",
+    "initial_声母类别_发音方法": "零声母-609",
+    "initial_声母类别_发音部位": "零声母-609",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 4
@@ -23938,6 +25102,18 @@
     "vowel_韵母": "iu",
     "vowel_韵母类别": "七尤",
     "count": 1864
+  },
+  "牟": {
+    "char": "牟",
+    "pinyin": "móu",
+    "tone": 2,
+    "pinyin_without_tone": "mou",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 139
   },
   "牡": {
     "char": "牡",
@@ -23981,8 +25157,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-609",
-    "initial_声母类别_发音部位": "零声母-609",
+    "initial_声母类别_发音方法": "零声母-611",
+    "initial_声母类别_发音部位": "零声母-611",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 764
@@ -24305,8 +25481,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-623",
-    "initial_声母类别_发音部位": "零声母-623",
+    "initial_声母类别_发音方法": "零声母-625",
+    "initial_声母类别_发音部位": "零声母-625",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 3
@@ -24341,8 +25517,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-627",
-    "initial_声母类别_发音部位": "零声母-627",
+    "initial_声母类别_发音方法": "零声母-629",
+    "initial_声母类别_发音部位": "零声母-629",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 4
@@ -24413,8 +25589,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-631",
-    "initial_声母类别_发音部位": "零声母-631",
+    "initial_声母类别_发音方法": "零声母-633",
+    "initial_声母类别_发音部位": "零声母-633",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2230
@@ -24509,8 +25685,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-633",
-    "initial_声母类别_发音部位": "零声母-633",
+    "initial_声母类别_发音方法": "零声母-635",
+    "initial_声母类别_发音部位": "零声母-635",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 22
@@ -24569,8 +25745,8 @@
     "tone": 2,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-635",
-    "initial_声母类别_发音部位": "零声母-635",
+    "initial_声母类别_发音方法": "零声母-637",
+    "initial_声母类别_发音部位": "零声母-637",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 6
@@ -24593,8 +25769,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-637",
-    "initial_声母类别_发音部位": "零声母-637",
+    "initial_声母类别_发音方法": "零声母-639",
+    "initial_声母类别_发音部位": "零声母-639",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 855
@@ -24653,8 +25829,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-639",
-    "initial_声母类别_发音部位": "零声母-639",
+    "initial_声母类别_发音方法": "零声母-641",
+    "initial_声母类别_发音部位": "零声母-641",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 484
@@ -24989,8 +26165,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-641",
-    "initial_声母类别_发音部位": "零声母-641",
+    "initial_声母类别_发音方法": "零声母-643",
+    "initial_声母类别_发音部位": "零声母-643",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 5
@@ -25073,8 +26249,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-643",
-    "initial_声母类别_发音部位": "零声母-643",
+    "initial_声母类别_发音方法": "零声母-645",
+    "initial_声母类别_发音部位": "零声母-645",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -25085,8 +26261,8 @@
     "tone": 2,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-645",
-    "initial_声母类别_发音部位": "零声母-645",
+    "initial_声母类别_发音方法": "零声母-647",
+    "initial_声母类别_发音部位": "零声母-647",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2
@@ -25205,8 +26381,8 @@
     "tone": 2,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-647",
-    "initial_声母类别_发音部位": "零声母-647",
+    "initial_声母类别_发音方法": "零声母-649",
+    "initial_声母类别_发音部位": "零声母-649",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 12
@@ -25265,11 +26441,23 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-649",
-    "initial_声母类别_发音部位": "零声母-649",
+    "initial_声母类别_发音方法": "零声母-651",
+    "initial_声母类别_发音部位": "零声母-651",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 2
+  },
+  "琢": {
+    "char": "琢",
+    "pinyin": "zhuó",
+    "tone": 2,
+    "pinyin_without_tone": "zhuo",
+    "initial_声母": "zh",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "uo",
+    "vowel_韵母类别": "二波",
+    "count": 138
   },
   "琤": {
     "char": "琤",
@@ -25445,8 +26633,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-651",
-    "initial_声母类别_发音部位": "零声母-651",
+    "initial_声母类别_发音方法": "零声母-653",
+    "initial_声母类别_发音部位": "零声母-653",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 38
@@ -25589,8 +26777,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-653",
-    "initial_声母类别_发音部位": "零声母-653",
+    "initial_声母类别_发音方法": "零声母-655",
+    "initial_声母类别_发音部位": "零声母-655",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 771
@@ -25709,8 +26897,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-655",
-    "initial_声母类别_发音部位": "零声母-655",
+    "initial_声母类别_发音方法": "零声母-657",
+    "initial_声母类别_发音部位": "零声母-657",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 875
@@ -26225,8 +27413,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-659",
-    "initial_声母类别_发音部位": "零声母-659",
+    "initial_声母类别_发音方法": "零声母-661",
+    "initial_声母类别_发音部位": "零声母-661",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 129
@@ -26369,8 +27557,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-661",
-    "initial_声母类别_发音部位": "零声母-661",
+    "initial_声母类别_发音方法": "零声母-663",
+    "initial_声母类别_发音部位": "零声母-663",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 10
@@ -26525,8 +27713,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-667",
-    "initial_声母类别_发音部位": "零声母-667",
+    "initial_声母类别_发音方法": "零声母-669",
+    "initial_声母类别_发音部位": "零声母-669",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2
@@ -26549,8 +27737,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-672",
-    "initial_声母类别_发音部位": "零声母-672",
+    "initial_声母类别_发音方法": "零声母-674",
+    "initial_声母类别_发音部位": "零声母-674",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 4
@@ -26825,8 +28013,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-688",
-    "initial_声母类别_发音部位": "零声母-688",
+    "initial_声母类别_发音方法": "零声母-690",
+    "initial_声母类别_发音部位": "零声母-690",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -26861,8 +28049,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-690",
-    "initial_声母类别_发音部位": "零声母-690",
+    "initial_声母类别_发音方法": "零声母-692",
+    "initial_声母类别_发音部位": "零声母-692",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 3446
@@ -26914,6 +28102,18 @@
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 13
+  },
+  "盖": {
+    "char": "盖",
+    "pinyin": "gài",
+    "tone": 4,
+    "pinyin_without_tone": "gai",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 142
   },
   "盘": {
     "char": "盘",
@@ -26999,6 +28199,18 @@
     "vowel_韵母类别": "九文",
     "count": 121
   },
+  "省": {
+    "char": "省",
+    "pinyin": "shěng",
+    "tone": 3,
+    "pinyin_without_tone": "sheng",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 783
+  },
   "眉": {
     "char": "眉",
     "pinyin": "méi",
@@ -27017,8 +28229,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-692",
-    "initial_声母类别_发音部位": "零声母-692",
+    "initial_声母类别_发音方法": "零声母-694",
+    "initial_声母类别_发音部位": "零声母-694",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 11
@@ -27365,8 +28577,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-696",
-    "initial_声母类别_发音部位": "零声母-696",
+    "initial_声母类别_发音方法": "零声母-698",
+    "initial_声母类别_发音部位": "零声母-698",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2
@@ -27389,8 +28601,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-698",
-    "initial_声母类别_发音部位": "零声母-698",
+    "initial_声母类别_发音方法": "零声母-700",
+    "initial_声母类别_发音部位": "零声母-700",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -27430,6 +28642,18 @@
     "vowel_韵母": "uan",
     "vowel_韵母类别": "八寒",
     "count": 22
+  },
+  "石": {
+    "char": "石",
+    "pinyin": "dàn",
+    "tone": 4,
+    "pinyin_without_tone": "dan",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 5907
   },
   "矶": {
     "char": "矶",
@@ -28037,8 +29261,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-708",
-    "initial_声母类别_发音部位": "零声母-708",
+    "initial_声母类别_发音方法": "零声母-710",
+    "initial_声母类别_发音部位": "零声母-710",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 187
@@ -28049,8 +29273,8 @@
     "tone": 4,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-710",
-    "initial_声母类别_发音部位": "零声母-710",
+    "initial_声母类别_发音方法": "零声母-712",
+    "initial_声母类别_发音部位": "零声母-712",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 95
@@ -28235,6 +29459,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 284
   },
+  "禅": {
+    "char": "禅",
+    "pinyin": "chán",
+    "tone": 2,
+    "pinyin_without_tone": "chan",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 97
+  },
   "禊": {
     "char": "禊",
     "pinyin": "xì",
@@ -28313,8 +29549,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-712",
-    "initial_声母类别_发音部位": "零声母-712",
+    "initial_声母类别_发音方法": "零声母-714",
+    "initial_声母类别_发音部位": "零声母-714",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 659
@@ -28325,8 +29561,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-714",
-    "initial_声母类别_发音部位": "零声母-714",
+    "initial_声母类别_发音方法": "零声母-716",
+    "initial_声母类别_发音部位": "零声母-716",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 24
@@ -28553,8 +29789,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-716",
-    "initial_声母类别_发音部位": "零声母-716",
+    "initial_声母类别_发音方法": "零声母-718",
+    "initial_声母类别_发音部位": "零声母-718",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 83
@@ -28859,6 +30095,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 22
   },
+  "空": {
+    "char": "空",
+    "pinyin": "kōng",
+    "tone": 1,
+    "pinyin_without_tone": "kong",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 1073
+  },
   "穿": {
     "char": "穿",
     "pinyin": "chuān",
@@ -28901,8 +30149,8 @@
     "tone": 3,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-720",
-    "initial_声母类别_发音部位": "零声母-720",
+    "initial_声母类别_发音方法": "零声母-722",
+    "initial_声母类别_发音部位": "零声母-722",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 18
@@ -28913,8 +30161,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-724",
-    "initial_声母类别_发音部位": "零声母-724",
+    "initial_声母类别_发音方法": "零声母-726",
+    "initial_声母类别_发音部位": "零声母-726",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 4
@@ -28949,8 +30197,8 @@
     "tone": 1,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-726",
-    "initial_声母类别_发音部位": "零声母-726",
+    "initial_声母类别_发音方法": "零声母-728",
+    "initial_声母类别_发音部位": "零声母-728",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 2
@@ -29351,6 +30599,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 16
   },
+  "筠": {
+    "char": "筠",
+    "pinyin": "jūn",
+    "tone": 1,
+    "pinyin_without_tone": "jun",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "un",
+    "vowel_韵母类别": "九文",
+    "count": 135
+  },
   "筱": {
     "char": "筱",
     "pinyin": "xiǎo",
@@ -29657,8 +30917,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-734",
-    "initial_声母类别_发音部位": "零声母-734",
+    "initial_声母类别_发音方法": "零声母-736",
+    "initial_声母类别_发音部位": "零声母-736",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -29825,8 +31085,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-738",
-    "initial_声母类别_发音部位": "零声母-738",
+    "initial_声母类别_发音方法": "零声母-740",
+    "initial_声母类别_发音部位": "零声母-740",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 711
@@ -30023,14 +31283,26 @@
     "vowel_韵母类别": "十二齐",
     "count": 7
   },
+  "繁": {
+    "char": "繁",
+    "pinyin": "fán",
+    "tone": 2,
+    "pinyin_without_tone": "fan",
+    "initial_声母": "f",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "唇齿音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 155
+  },
   "繇": {
     "char": "繇",
     "pinyin": "yóu",
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-742",
-    "initial_声母类别_发音部位": "零声母-742",
+    "initial_声母类别_发音方法": "零声母-744",
+    "initial_声母类别_发音部位": "零声母-744",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 1
@@ -30059,6 +31331,18 @@
     "vowel_韵母类别": "二波",
     "count": 1
   },
+  "约": {
+    "char": "约",
+    "pinyin": "yāo",
+    "tone": 1,
+    "pinyin_without_tone": "yao",
+    "initial_声母": "y",
+    "initial_声母类别_发音方法": "零声母-748",
+    "initial_声母类别_发音部位": "零声母-748",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 937
+  },
   "级": {
     "char": "级",
     "pinyin": "jí",
@@ -30071,14 +31355,26 @@
     "vowel_韵母类别": "十二齐",
     "count": 637
   },
+  "纪": {
+    "char": "纪",
+    "pinyin": "jǐ",
+    "tone": 3,
+    "pinyin_without_tone": "ji",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 777
+  },
   "纬": {
     "char": "纬",
     "pinyin": "wěi",
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-748",
-    "initial_声母类别_发音部位": "零声母-748",
+    "initial_声母类别_发音方法": "零声母-751",
+    "initial_声母类别_发音部位": "零声母-751",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 298
@@ -30154,6 +31450,18 @@
     "vowel_韵母": "ong",
     "vowel_韵母类别": "十一庚",
     "count": 184
+  },
+  "纶": {
+    "char": "纶",
+    "pinyin": "guān",
+    "tone": 1,
+    "pinyin_without_tone": "guan",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 32
   },
   "纷": {
     "char": "纷",
@@ -30329,11 +31637,23 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-750",
-    "initial_声母类别_发音部位": "零声母-750",
+    "initial_声母类别_发音方法": "零声母-753",
+    "initial_声母类别_发音部位": "零声母-753",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 73
+  },
+  "经": {
+    "char": "经",
+    "pinyin": "jīng",
+    "tone": 1,
+    "pinyin_without_tone": "jing",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 910
   },
   "绒": {
     "char": "绒",
@@ -30346,6 +31666,18 @@
     "vowel_韵母": "ong",
     "vowel_韵母类别": "十一庚",
     "count": 2
+  },
+  "结": {
+    "char": "结",
+    "pinyin": "jiē",
+    "tone": 1,
+    "pinyin_without_tone": "jie",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ie",
+    "vowel_韵母类别": "三皆",
+    "count": 469
   },
   "绕": {
     "char": "绕",
@@ -30551,14 +31883,26 @@
     "vowel_韵母类别": "五微",
     "count": 22
   },
+  "绰": {
+    "char": "绰",
+    "pinyin": "chāo",
+    "tone": 1,
+    "pinyin_without_tone": "chao",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 176
+  },
   "维": {
     "char": "维",
     "pinyin": "wéi",
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-752",
-    "initial_声母类别_发音部位": "零声母-752",
+    "initial_声母类别_发音方法": "零声母-755",
+    "initial_声母类别_发音部位": "零声母-755",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 1128
@@ -30587,6 +31931,18 @@
     "vowel_韵母类别": "七尤",
     "count": 10
   },
+  "综": {
+    "char": "综",
+    "pinyin": "zèng",
+    "tone": 4,
+    "pinyin_without_tone": "zeng",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 174
+  },
   "绽": {
     "char": "绽",
     "pinyin": "zhàn",
@@ -30610,6 +31966,18 @@
     "vowel_韵母": "an",
     "vowel_韵母类别": "八寒",
     "count": 5
+  },
+  "绿": {
+    "char": "绿",
+    "pinyin": "lù",
+    "tone": 4,
+    "pinyin_without_tone": "lu",
+    "initial_声母": "l",
+    "initial_声母类别_发音方法": "边音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 550
   },
   "缀": {
     "char": "缀",
@@ -31109,8 +32477,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-758",
-    "initial_声母类别_发音部位": "零声母-758",
+    "initial_声母类别_发音方法": "零声母-761",
+    "initial_声母类别_发音部位": "零声母-761",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 900
@@ -31121,8 +32489,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-760",
-    "initial_声母类别_发音部位": "零声母-760",
+    "initial_声母类别_发音方法": "零声母-763",
+    "initial_声母类别_发音部位": "零声母-763",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 215
@@ -31181,8 +32549,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-762",
-    "initial_声母类别_发音部位": "零声母-762",
+    "initial_声母类别_发音方法": "零声母-765",
+    "initial_声母类别_发音部位": "零声母-765",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 532
@@ -31193,8 +32561,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-764",
-    "initial_声母类别_发音部位": "零声母-764",
+    "initial_声母类别_发音方法": "零声母-767",
+    "initial_声母类别_发音部位": "零声母-767",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 121
@@ -31258,6 +32626,18 @@
     "vowel_韵母": "iao",
     "vowel_韵母类别": "六豪",
     "count": 5
+  },
+  "翟": {
+    "char": "翟",
+    "pinyin": "dí",
+    "tone": 2,
+    "pinyin_without_tone": "di",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "i",
+    "vowel_韵母类别": "十二齐",
+    "count": 6
   },
   "翠": {
     "char": "翠",
@@ -31385,8 +32765,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-768",
-    "initial_声母类别_发音部位": "零声母-768",
+    "initial_声母类别_发音方法": "零声母-771",
+    "initial_声母类别_发音部位": "零声母-771",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1100
@@ -31409,8 +32789,8 @@
     "tone": 4,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-770",
-    "initial_声母类别_发音部位": "零声母-770",
+    "initial_声母类别_发音方法": "零声母-773",
+    "initial_声母类别_发音部位": "零声母-773",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 1511
@@ -31697,8 +33077,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-776",
-    "initial_声母类别_发音部位": "零声母-776",
+    "initial_声母类别_发音方法": "零声母-779",
+    "initial_声母类别_发音部位": "零声母-779",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 56
@@ -31750,6 +33130,18 @@
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 4
+  },
+  "肖": {
+    "char": "肖",
+    "pinyin": "xiāo",
+    "tone": 1,
+    "pinyin_without_tone": "xiao",
+    "initial_声母": "x",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "iao",
+    "vowel_韵母类别": "六豪",
+    "count": 48
   },
   "肝": {
     "char": "肝",
@@ -31841,8 +33233,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-782",
-    "initial_声母类别_发音部位": "零声母-782",
+    "initial_声母类别_发音方法": "零声母-785",
+    "initial_声母类别_发音部位": "零声母-785",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 425
@@ -31853,8 +33245,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-784",
-    "initial_声母类别_发音部位": "零声母-784",
+    "initial_声母类别_发音方法": "零声母-787",
+    "initial_声母类别_发音部位": "零声母-787",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 2
@@ -32098,6 +33490,18 @@
     "vowel_韵母": "ui",
     "vowel_韵母类别": "五微",
     "count": 10
+  },
+  "脉": {
+    "char": "脉",
+    "pinyin": "mài",
+    "tone": 4,
+    "pinyin_without_tone": "mai",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 101
   },
   "脊": {
     "char": "脊",
@@ -32381,8 +33785,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-806",
-    "initial_声母类别_发音部位": "零声母-806",
+    "initial_声母类别_发音方法": "零声母-809",
+    "initial_声母类别_发音部位": "零声母-809",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 59
@@ -32398,6 +33802,18 @@
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 3
+  },
+  "舍": {
+    "char": "舍",
+    "pinyin": "shě",
+    "tone": 3,
+    "pinyin_without_tone": "she",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 98
   },
   "舒": {
     "char": "舒",
@@ -32429,8 +33845,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-808",
-    "initial_声母类别_发音部位": "零声母-808",
+    "initial_声母类别_发音方法": "零声母-811",
+    "initial_声母类别_发音部位": "零声母-811",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 57
@@ -32465,8 +33881,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-810",
-    "initial_声母类别_发音部位": "零声母-810",
+    "initial_声母类别_发音方法": "零声母-813",
+    "initial_声母类别_发音部位": "零声母-813",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -32615,6 +34031,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 1
   },
+  "艮": {
+    "char": "艮",
+    "pinyin": "gěn",
+    "tone": 3,
+    "pinyin_without_tone": "gen",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "en",
+    "vowel_韵母类别": "九文",
+    "count": 100
+  },
   "良": {
     "char": "良",
     "pinyin": "liáng",
@@ -32626,6 +34054,18 @@
     "vowel_韵母": "iang",
     "vowel_韵母类别": "十唐",
     "count": 594
+  },
+  "色": {
+    "char": "色",
+    "pinyin": "sè",
+    "tone": 4,
+    "pinyin_without_tone": "se",
+    "initial_声母": "s",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 599
   },
   "艳": {
     "char": "艳",
@@ -32645,8 +34085,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-816",
-    "initial_声母类别_发音部位": "零声母-816",
+    "initial_声母类别_发音方法": "零声母-819",
+    "initial_声母类别_发音部位": "零声母-819",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1128
@@ -32662,6 +34102,30 @@
     "vowel_韵母": "iao",
     "vowel_韵母类别": "六豪",
     "count": 1
+  },
+  "艾": {
+    "char": "艾",
+    "pinyin": "ài",
+    "tone": 4,
+    "pinyin_without_tone": "ai",
+    "initial_声母": "未匹配",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 618
+  },
+  "节": {
+    "char": "节",
+    "pinyin": "jiē",
+    "tone": 1,
+    "pinyin_without_tone": "jie",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ie",
+    "vowel_韵母类别": "三皆",
+    "count": 187
   },
   "芃": {
     "char": "芃",
@@ -32705,8 +34169,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-819",
-    "initial_声母类别_发音部位": "零声母-819",
+    "initial_声母类别_发音方法": "零声母-822",
+    "initial_声母类别_发音部位": "零声母-822",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 2
@@ -32753,8 +34217,8 @@
     "tone": 2,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-821",
-    "initial_声母类别_发音部位": "零声母-821",
+    "initial_声母类别_发音方法": "零声母-824",
+    "initial_声母类别_发音部位": "零声母-824",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 606
@@ -32843,6 +34307,18 @@
     "vowel_韵母类别": "五微",
     "count": 347
   },
+  "芯": {
+    "char": "芯",
+    "pinyin": "xīn",
+    "tone": 1,
+    "pinyin_without_tone": "xin",
+    "initial_声母": "x",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "in",
+    "vowel_韵母类别": "九文",
+    "count": 1392
+  },
   "花": {
     "char": "花",
     "pinyin": "huā",
@@ -32909,8 +34385,8 @@
     "tone": 2,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-825",
-    "initial_声母类别_发音部位": "零声母-825",
+    "initial_声母类别_发音方法": "零声母-828",
+    "initial_声母类别_发音部位": "零声母-828",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 19
@@ -32921,8 +34397,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-827",
-    "initial_声母类别_发音部位": "零声母-827",
+    "initial_声母类别_发音方法": "零声母-830",
+    "initial_声母类别_发音部位": "零声母-830",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 91
@@ -33101,8 +34577,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-829",
-    "initial_声母类别_发音部位": "零声母-829",
+    "initial_声母类别_发音方法": "零声母-832",
+    "initial_声母类别_发音部位": "零声母-832",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 35
@@ -33599,6 +35075,18 @@
     "vowel_韵母类别": "九文",
     "count": 5
   },
+  "荫": {
+    "char": "荫",
+    "pinyin": "yīn",
+    "tone": 1,
+    "pinyin_without_tone": "yin",
+    "initial_声母": "n",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "in",
+    "vowel_韵母类别": "九文",
+    "count": 26
+  },
   "荭": {
     "char": "荭",
     "pinyin": "hóng",
@@ -33617,11 +35105,23 @@
     "tone": 4,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-832",
-    "initial_声母类别_发音部位": "零声母-832",
+    "initial_声母类别_发音方法": "零声母-835",
+    "initial_声母类别_发音部位": "零声母-835",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 487
+  },
+  "荷": {
+    "char": "荷",
+    "pinyin": "hé",
+    "tone": 2,
+    "pinyin_without_tone": "he",
+    "initial_声母": "h",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 186
   },
   "荻": {
     "char": "荻",
@@ -33671,6 +35171,18 @@
     "vowel_韵母类别": "十二齐",
     "count": 563
   },
+  "莎": {
+    "char": "莎",
+    "pinyin": "shā",
+    "tone": 1,
+    "pinyin_without_tone": "sha",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 131
+  },
   "莓": {
     "char": "莓",
     "pinyin": "méi",
@@ -33713,11 +35225,23 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-834",
-    "initial_声母类别_发音部位": "零声母-834",
+    "initial_声母类别_发音方法": "零声母-837",
+    "initial_声母类别_发音部位": "零声母-837",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 8
+  },
+  "莞": {
+    "char": "莞",
+    "pinyin": "guǎn",
+    "tone": 3,
+    "pinyin_without_tone": "guan",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 443
   },
   "莫": {
     "char": "莫",
@@ -33959,6 +35483,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 182
   },
+  "菲": {
+    "char": "菲",
+    "pinyin": "fēi",
+    "tone": 1,
+    "pinyin_without_tone": "fei",
+    "initial_声母": "f",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "唇齿音",
+    "vowel_韵母": "ei",
+    "vowel_韵母类别": "五微",
+    "count": 822
+  },
   "菽": {
     "char": "菽",
     "pinyin": "shū",
@@ -34169,8 +35705,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-844",
-    "initial_声母类别_发音部位": "零声母-844",
+    "initial_声母类别_发音方法": "零声母-847",
+    "initial_声母类别_发音部位": "零声母-847",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -34198,6 +35734,18 @@
     "vowel_韵母": "eng",
     "vowel_韵母类别": "十一庚",
     "count": 2
+  },
+  "葛": {
+    "char": "葛",
+    "pinyin": "gé",
+    "tone": 2,
+    "pinyin_without_tone": "ge",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 88
   },
   "葡": {
     "char": "葡",
@@ -34265,8 +35813,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-846",
-    "initial_声母类别_发音部位": "零声母-846",
+    "initial_声母类别_发音方法": "零声母-849",
+    "initial_声母类别_发音部位": "零声母-849",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 90
@@ -34330,6 +35878,18 @@
     "vowel_韵母": "iang",
     "vowel_韵母类别": "十唐",
     "count": 29
+  },
+  "蒙": {
+    "char": "蒙",
+    "pinyin": "mēng",
+    "tone": 1,
+    "pinyin_without_tone": "meng",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "eng",
+    "vowel_韵母类别": "十一庚",
+    "count": 567
   },
   "蒨": {
     "char": "蒨",
@@ -34547,6 +36107,18 @@
     "vowel_韵母类别": "十唐",
     "count": 1
   },
+  "蔓": {
+    "char": "蔓",
+    "pinyin": "mán",
+    "tone": 2,
+    "pinyin_without_tone": "man",
+    "initial_声母": "m",
+    "initial_声母类别_发音方法": "鼻音_浊音",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "an",
+    "vowel_韵母类别": "八寒",
+    "count": 76
+  },
   "蔗": {
     "char": "蔗",
     "pinyin": "zhè",
@@ -34558,6 +36130,18 @@
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 2
+  },
+  "蔚": {
+    "char": "蔚",
+    "pinyin": "wèi",
+    "tone": 4,
+    "pinyin_without_tone": "wei",
+    "initial_声母": "w",
+    "initial_声母类别_发音方法": "零声母-853",
+    "initial_声母类别_发音部位": "零声母-853",
+    "vowel_韵母": "ei",
+    "vowel_韵母类别": "五微",
+    "count": 367
   },
   "蔡": {
     "char": "蔡",
@@ -34769,8 +36353,8 @@
     "tone": 1,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-852",
-    "initial_声母类别_发音部位": "零声母-852",
+    "initial_声母类别_发音方法": "零声母-856",
+    "initial_声母类别_发音部位": "零声母-856",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 437
@@ -34781,8 +36365,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-854",
-    "initial_声母类别_发音部位": "零声母-854",
+    "initial_声母类别_发音方法": "零声母-858",
+    "initial_声母类别_发音部位": "零声母-858",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 28
@@ -35045,8 +36629,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-858",
-    "initial_声母类别_发音部位": "零声母-858",
+    "initial_声母类别_发音方法": "零声母-862",
+    "initial_声母类别_发音部位": "零声母-862",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 82
@@ -35075,6 +36659,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 58
   },
+  "虹": {
+    "char": "虹",
+    "pinyin": "hóng",
+    "tone": 2,
+    "pinyin_without_tone": "hong",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 478
+  },
   "虾": {
     "char": "虾",
     "pinyin": "xiā",
@@ -35093,8 +36689,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-860",
-    "initial_声母类别_发音部位": "零声母-860",
+    "initial_声母类别_发音方法": "零声母-864",
+    "initial_声母类别_发音部位": "零声母-864",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 62
@@ -35177,8 +36773,8 @@
     "tone": 1,
     "pinyin_without_tone": "wa",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-868",
-    "initial_声母类别_发音部位": "零声母-868",
+    "initial_声母类别_发音方法": "零声母-872",
+    "initial_声母类别_发音部位": "零声母-872",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 8
@@ -35285,8 +36881,8 @@
     "tone": 1,
     "pinyin_without_tone": "wo",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-872",
-    "initial_声母类别_发音部位": "零声母-872",
+    "initial_声母类别_发音方法": "零声母-876",
+    "initial_声母类别_发音部位": "零声母-876",
     "vowel_韵母": "o",
     "vowel_韵母类别": "二波",
     "count": 26
@@ -35333,8 +36929,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-876",
-    "initial_声母类别_发音部位": "零声母-876",
+    "initial_声母类别_发音方法": "零声母-880",
+    "initial_声母类别_发音部位": "零声母-880",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -35573,8 +37169,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-889",
-    "initial_声母类别_发音部位": "零声母-889",
+    "initial_声母类别_发音方法": "零声母-893",
+    "initial_声母类别_发音部位": "零声母-893",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 20
@@ -35813,8 +37409,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-893",
-    "initial_声母类别_发音部位": "零声母-893",
+    "initial_声母类别_发音方法": "零声母-897",
+    "initial_声母类别_发音部位": "零声母-897",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 42
@@ -35825,8 +37421,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-895",
-    "initial_声母类别_发音部位": "零声母-895",
+    "initial_声母类别_发音方法": "零声母-899",
+    "initial_声母类别_发音部位": "零声母-899",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1551
@@ -35963,6 +37559,30 @@
     "vowel_韵母类别": "十四姑",
     "count": 4
   },
+  "见": {
+    "char": "见",
+    "pinyin": "jiàn",
+    "tone": 4,
+    "pinyin_without_tone": "jian",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ian",
+    "vowel_韵母类别": "八寒",
+    "count": 496
+  },
+  "观": {
+    "char": "观",
+    "pinyin": "guān",
+    "tone": 1,
+    "pinyin_without_tone": "guan",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 2101
+  },
   "规": {
     "char": "规",
     "pinyin": "guī",
@@ -36011,6 +37631,18 @@
     "vowel_韵母类别": "八寒",
     "count": 57
   },
+  "觉": {
+    "char": "觉",
+    "pinyin": "jiào",
+    "tone": 4,
+    "pinyin_without_tone": "jiao",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "iao",
+    "vowel_韵母类别": "六豪",
+    "count": 240
+  },
   "觋": {
     "char": "觋",
     "pinyin": "xí",
@@ -36034,6 +37666,30 @@
     "vowel_韵母": "in",
     "vowel_韵母类别": "九文",
     "count": 2
+  },
+  "角": {
+    "char": "角",
+    "pinyin": "jiǎo",
+    "tone": 3,
+    "pinyin_without_tone": "jiao",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "iao",
+    "vowel_韵母类别": "六豪",
+    "count": 270
+  },
+  "解": {
+    "char": "解",
+    "pinyin": "jiě",
+    "tone": 3,
+    "pinyin_without_tone": "jie",
+    "initial_声母": "j",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "ie",
+    "vowel_韵母类别": "三皆",
+    "count": 23
   },
   "触": {
     "char": "触",
@@ -36089,8 +37745,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-905",
-    "initial_声母类别_发音部位": "零声母-905",
+    "initial_声母类别_发音方法": "零声母-909",
+    "initial_声母类别_发音部位": "零声母-909",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 787
@@ -36209,8 +37865,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-907",
-    "initial_声母类别_发音部位": "零声母-907",
+    "initial_声母类别_发音方法": "零声母-911",
+    "initial_声母类别_发音部位": "零声母-911",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 25
@@ -36335,6 +37991,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 7
   },
+  "识": {
+    "char": "识",
+    "pinyin": "shí",
+    "tone": 2,
+    "pinyin_without_tone": "shi",
+    "initial_声母": "sh",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "-i",
+    "vowel_韵母类别": "十三支",
+    "count": 352
+  },
   "诊": {
     "char": "诊",
     "pinyin": "zhěn",
@@ -36377,8 +38045,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-911",
-    "initial_声母类别_发音部位": "零声母-911",
+    "initial_声母类别_发音方法": "零声母-915",
+    "initial_声母类别_发音部位": "零声母-915",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 128
@@ -36389,8 +38057,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-913",
-    "initial_声母类别_发音部位": "零声母-913",
+    "initial_声母类别_发音方法": "零声母-917",
+    "initial_声母类别_发音部位": "零声母-917",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 4
@@ -36509,8 +38177,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-915",
-    "initial_声母类别_发音部位": "零声母-915",
+    "initial_声母类别_发音方法": "零声母-919",
+    "initial_声母类别_发音部位": "零声母-919",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 46
@@ -36569,8 +38237,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-919",
-    "initial_声母类别_发音部位": "零声母-919",
+    "initial_声母类别_发音方法": "零声母-923",
+    "initial_声母类别_发音部位": "零声母-923",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1175
@@ -36635,6 +38303,18 @@
     "vowel_韵母类别": "二波",
     "count": 2923
   },
+  "读": {
+    "char": "读",
+    "pinyin": "dòu",
+    "tone": 4,
+    "pinyin_without_tone": "dou",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 63
+  },
   "课": {
     "char": "课",
     "pinyin": "kè",
@@ -36689,8 +38369,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-929",
-    "initial_声母类别_发音部位": "零声母-929",
+    "initial_声母类别_发音方法": "零声母-933",
+    "initial_声母类别_发音部位": "零声母-933",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 223
@@ -36761,8 +38441,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-931",
-    "initial_声母类别_发音部位": "零声母-931",
+    "initial_声母类别_发音方法": "零声母-935",
+    "initial_声母类别_发音部位": "零声母-935",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1
@@ -36773,8 +38453,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-933",
-    "initial_声母类别_发音部位": "零声母-933",
+    "initial_声母类别_发音方法": "零声母-937",
+    "initial_声母类别_发音部位": "零声母-937",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 2
@@ -36797,8 +38477,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-935",
-    "initial_声母类别_发音部位": "零声母-935",
+    "initial_声母类别_发音方法": "零声母-939",
+    "initial_声母类别_发音部位": "零声母-939",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 25
@@ -36881,8 +38561,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-937",
-    "initial_声母类别_发音部位": "零声母-937",
+    "initial_声母类别_发音方法": "零声母-941",
+    "initial_声母类别_发音部位": "零声母-941",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 15
@@ -37049,8 +38729,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-939",
-    "initial_声母类别_发音部位": "零声母-939",
+    "initial_声母类别_发音方法": "零声母-943",
+    "initial_声母类别_发音部位": "零声母-943",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 208
@@ -37385,8 +39065,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-941",
-    "initial_声母类别_发音部位": "零声母-941",
+    "initial_声母类别_发音方法": "零声母-945",
+    "initial_声母类别_发音部位": "零声母-945",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 43
@@ -37769,8 +39449,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-943",
-    "initial_声母类别_发音部位": "零声母-943",
+    "initial_声母类别_发音方法": "零声母-947",
+    "initial_声母类别_发音部位": "零声母-947",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1529
@@ -37841,8 +39521,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-945",
-    "initial_声母类别_发音部位": "零声母-945",
+    "initial_声母类别_发音方法": "零声母-949",
+    "initial_声母类别_发音部位": "零声母-949",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 544
@@ -38099,6 +39779,18 @@
     "vowel_韵母类别": "十一庚",
     "count": 1
   },
+  "车": {
+    "char": "车",
+    "pinyin": "chē",
+    "tone": 1,
+    "pinyin_without_tone": "che",
+    "initial_声母": "ch",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "e",
+    "vowel_韵母类别": "二波",
+    "count": 285
+  },
   "轨": {
     "char": "轨",
     "pinyin": "guǐ",
@@ -38122,6 +39814,18 @@
     "vowel_韵母": "uan",
     "vowel_韵母类别": "八寒",
     "count": 3310
+  },
+  "转": {
+    "char": "转",
+    "pinyin": "zhuǎn",
+    "tone": 3,
+    "pinyin_without_tone": "zhuan",
+    "initial_声母": "zh",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖后音",
+    "vowel_韵母": "uan",
+    "vowel_韵母类别": "八寒",
+    "count": 864
   },
   "轮": {
     "char": "轮",
@@ -38165,8 +39869,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-952",
-    "initial_声母类别_发音部位": "零声母-952",
+    "initial_声母类别_发音方法": "零声母-956",
+    "initial_声母类别_发音部位": "零声母-956",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 153
@@ -38573,8 +40277,8 @@
     "tone": 4,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-958",
-    "initial_声母类别_发音部位": "零声母-958",
+    "initial_声母类别_发音方法": "零声母-962",
+    "initial_声母类别_发音部位": "零声母-962",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 1
@@ -38621,8 +40325,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-962",
-    "initial_声母类别_发音部位": "零声母-962",
+    "initial_声母类别_发音方法": "零声母-966",
+    "initial_声母类别_发音部位": "零声母-966",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 4
@@ -38891,6 +40595,18 @@
     "vowel_韵母类别": "十四姑",
     "count": 309
   },
+  "通": {
+    "char": "通",
+    "pinyin": "tōng",
+    "tone": 1,
+    "pinyin_without_tone": "tong",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ong",
+    "vowel_韵母类别": "十一庚",
+    "count": 4826
+  },
   "逞": {
     "char": "逞",
     "pinyin": "chěng",
@@ -38957,8 +40673,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-968",
-    "initial_声母类别_发音部位": "零声母-968",
+    "initial_声母类别_发音方法": "零声母-972",
+    "initial_声母类别_发音部位": "零声母-972",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1260
@@ -38981,8 +40697,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-970",
-    "initial_声母类别_发音部位": "零声母-970",
+    "initial_声母类别_发音方法": "零声母-974",
+    "initial_声母类别_发音部位": "零声母-974",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 8
@@ -38998,6 +40714,18 @@
     "vowel_韵母": "un",
     "vowel_韵母类别": "九文",
     "count": 3
+  },
+  "遂": {
+    "char": "遂",
+    "pinyin": "suí",
+    "tone": 2,
+    "pinyin_without_tone": "sui",
+    "initial_声母": "s",
+    "initial_声母类别_发音方法": "擦音_清音",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "ui",
+    "vowel_韵母类别": "五微",
+    "count": 93
   },
   "遆": {
     "char": "遆",
@@ -39017,8 +40745,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-972",
-    "initial_声母类别_发音部位": "零声母-972",
+    "initial_声母类别_发音方法": "零声母-976",
+    "initial_声母类别_发音部位": "零声母-976",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 287
@@ -39077,8 +40805,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-974",
-    "initial_声母类别_发音部位": "零声母-974",
+    "initial_声母类别_发音方法": "零声母-978",
+    "initial_声母类别_发音部位": "零声母-978",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2
@@ -39089,8 +40817,8 @@
     "tone": 2,
     "pinyin_without_tone": "yao",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-976",
-    "initial_声母类别_发音部位": "零声母-976",
+    "initial_声母类别_发音方法": "零声母-980",
+    "initial_声母类别_发音部位": "零声母-980",
     "vowel_韵母": "ao",
     "vowel_韵母类别": "六豪",
     "count": 125
@@ -39173,8 +40901,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-982",
-    "initial_声母类别_发音部位": "零声母-982",
+    "initial_声母类别_发音方法": "零声母-986",
+    "initial_声母类别_发音部位": "零声母-986",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 102
@@ -39257,8 +40985,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-988",
-    "initial_声母类别_发音部位": "零声母-988",
+    "initial_声母类别_发音方法": "零声母-992",
+    "initial_声母类别_发音部位": "零声母-992",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 249
@@ -39353,8 +41081,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-990",
-    "initial_声母类别_发音部位": "零声母-990",
+    "initial_声母类别_发音方法": "零声母-994",
+    "initial_声母类别_发音部位": "零声母-994",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 39
@@ -39377,8 +41105,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-992",
-    "initial_声母类别_发音部位": "零声母-992",
+    "initial_声母类别_发音方法": "零声母-996",
+    "initial_声母类别_发音部位": "零声母-996",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 82
@@ -39406,6 +41134,18 @@
     "vowel_韵母": "iao",
     "vowel_韵母类别": "六豪",
     "count": 6
+  },
+  "郎": {
+    "char": "郎",
+    "pinyin": "láng",
+    "tone": 2,
+    "pinyin_without_tone": "lang",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ang",
+    "vowel_韵母类别": "十唐",
+    "count": 17
   },
   "郑": {
     "char": "郑",
@@ -39587,6 +41327,18 @@
     "vowel_韵母类别": "八寒",
     "count": 13
   },
+  "都": {
+    "char": "都",
+    "pinyin": "dōu",
+    "tone": 1,
+    "pinyin_without_tone": "dou",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 1032
+  },
   "鄀": {
     "char": "鄀",
     "pinyin": "ruò",
@@ -39689,8 +41441,8 @@
     "tone": 3,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-998",
-    "initial_声母类别_发音部位": "零声母-998",
+    "initial_声母类别_发音方法": "零声母-1002",
+    "initial_声母类别_发音部位": "零声母-1002",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 51
@@ -39983,6 +41735,18 @@
     "vowel_韵母类别": "九文",
     "count": 1
   },
+  "采": {
+    "char": "采",
+    "pinyin": "cǎi",
+    "tone": 3,
+    "pinyin_without_tone": "cai",
+    "initial_声母": "c",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌尖前音",
+    "vowel_韵母": "ai",
+    "vowel_韵母类别": "四开",
+    "count": 95
+  },
   "释": {
     "char": "释",
     "pinyin": "shì",
@@ -40013,11 +41777,23 @@
     "tone": 3,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1004",
-    "initial_声母类别_发音部位": "零声母-1004",
+    "initial_声母类别_发音方法": "零声母-1008",
+    "initial_声母类别_发音部位": "零声母-1008",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 223
+  },
+  "量": {
+    "char": "量",
+    "pinyin": "liáng",
+    "tone": 2,
+    "pinyin_without_tone": "liang",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "iang",
+    "vowel_韵母类别": "十唐",
+    "count": 12968
   },
   "金": {
     "char": "金",
@@ -40145,8 +41921,8 @@
     "tone": 3,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1008",
-    "initial_声母类别_发音部位": "零声母-1008",
+    "initial_声母类别_发音方法": "零声母-1012",
+    "initial_声母类别_发音部位": "零声母-1012",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 19
@@ -40162,6 +41938,18 @@
     "vowel_韵母": "en",
     "vowel_韵母类别": "九文",
     "count": 42
+  },
+  "钉": {
+    "char": "钉",
+    "pinyin": "dīng",
+    "tone": 1,
+    "pinyin_without_tone": "ding",
+    "initial_声母": "d",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 51
   },
   "钊": {
     "char": "钊",
@@ -40367,6 +42155,18 @@
     "vowel_韵母类别": "五微",
     "count": 2
   },
+  "钢": {
+    "char": "钢",
+    "pinyin": "gāng",
+    "tone": 1,
+    "pinyin_without_tone": "gang",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ang",
+    "vowel_韵母类别": "十唐",
+    "count": 167
+  },
   "钤": {
     "char": "钤",
     "pinyin": "qián",
@@ -40378,6 +42178,18 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 7
+  },
+  "钥": {
+    "char": "钥",
+    "pinyin": "yào",
+    "tone": 4,
+    "pinyin_without_tone": "yao",
+    "initial_声母": "y",
+    "initial_声母类别_发音方法": "零声母-1014",
+    "initial_声母类别_发音部位": "零声母-1014",
+    "vowel_韵母": "ao",
+    "vowel_韵母类别": "六豪",
+    "count": 98
   },
   "钦": {
     "char": "钦",
@@ -40409,8 +42221,8 @@
     "tone": 1,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1012",
-    "initial_声母类别_发音部位": "零声母-1012",
+    "initial_声母类别_发音方法": "零声母-1017",
+    "initial_声母类别_发音部位": "零声母-1017",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 4
@@ -40469,8 +42281,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1014",
-    "initial_声母类别_发音部位": "零声母-1014",
+    "initial_声母类别_发音方法": "零声母-1019",
+    "initial_声母类别_发音部位": "零声母-1019",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1387
@@ -40529,8 +42341,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1016",
-    "initial_声母类别_发音部位": "零声母-1016",
+    "initial_声母类别_发音方法": "零声母-1021",
+    "initial_声母类别_发音部位": "零声母-1021",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 77
@@ -40589,8 +42401,8 @@
     "tone": 2,
     "pinyin_without_tone": "you",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1018",
-    "initial_声母类别_发音部位": "零声母-1018",
+    "initial_声母类别_发音方法": "零声母-1023",
+    "initial_声母类别_发音部位": "零声母-1023",
     "vowel_韵母": "ou",
     "vowel_韵母类别": "七尤",
     "count": 15
@@ -40709,8 +42521,8 @@
     "tone": 2,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1022",
-    "initial_声母类别_发音部位": "零声母-1022",
+    "initial_声母类别_发音方法": "零声母-1027",
+    "initial_声母类别_发音部位": "零声母-1027",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 1
@@ -40865,8 +42677,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1025",
-    "initial_声母类别_发音部位": "零声母-1025",
+    "initial_声母类别_发音方法": "零声母-1030",
+    "initial_声母类别_发音部位": "零声母-1030",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 29
@@ -41537,8 +43349,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1029",
-    "initial_声母类别_发音部位": "零声母-1029",
+    "initial_声母类别_发音方法": "零声母-1034",
+    "initial_声母类别_发音部位": "零声母-1034",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 44
@@ -41729,8 +43541,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1031",
-    "initial_声母类别_发音部位": "零声母-1031",
+    "initial_声母类别_发音方法": "零声母-1036",
+    "initial_声母类别_发音部位": "零声母-1036",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 11
@@ -41945,8 +43757,8 @@
     "tone": 4,
     "pinyin_without_tone": "yue",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1035",
-    "initial_声母类别_发音部位": "零声母-1035",
+    "initial_声母类别_发音方法": "零声母-1040",
+    "initial_声母类别_发音部位": "零声母-1040",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 179
@@ -41969,8 +43781,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1037",
-    "initial_声母类别_发音部位": "零声母-1037",
+    "initial_声母类别_发音方法": "零声母-1042",
+    "initial_声母类别_发音部位": "零声母-1042",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 4
@@ -42179,6 +43991,18 @@
     "vowel_韵母类别": "三皆",
     "count": 41
   },
+  "阿": {
+    "char": "阿",
+    "pinyin": "ā",
+    "tone": 1,
+    "pinyin_without_tone": "a",
+    "initial_声母": "未匹配",
+    "initial_声母类别_发音方法": "塞擦音_清音_不送气",
+    "initial_声母类别_发音部位": "双唇音",
+    "vowel_韵母": "a",
+    "vowel_韵母类别": "一麻",
+    "count": 1541
+  },
   "陀": {
     "char": "陀",
     "pinyin": "tuó",
@@ -42226,6 +44050,18 @@
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 454
+  },
+  "陆": {
+    "char": "陆",
+    "pinyin": "liù",
+    "tone": 4,
+    "pinyin_without_tone": "liu",
+    "initial_声母": "l",
+    "initial_声母类别_发音方法": "边音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "iu",
+    "vowel_韵母类别": "七尤",
+    "count": 1222
   },
   "陇": {
     "char": "陇",
@@ -42413,8 +44249,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1039",
-    "initial_声母类别_发音部位": "零声母-1039",
+    "initial_声母类别_发音方法": "零声母-1044",
+    "initial_声母类别_发音部位": "零声母-1044",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 32
@@ -42563,6 +44399,18 @@
     "vowel_韵母类别": "八寒",
     "count": 303
   },
+  "雀": {
+    "char": "雀",
+    "pinyin": "qiāo",
+    "tone": 1,
+    "pinyin_without_tone": "qiao",
+    "initial_声母": "q",
+    "initial_声母类别_发音方法": "塞擦音_清音_送气",
+    "initial_声母类别_发音部位": "舌面音",
+    "vowel_韵母": "iao",
+    "vowel_韵母类别": "六豪",
+    "count": 220
+  },
   "雁": {
     "char": "雁",
     "pinyin": "yàn",
@@ -42593,8 +44441,8 @@
     "tone": 3,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1045",
-    "initial_声母类别_发音部位": "零声母-1045",
+    "initial_声母类别_发音方法": "零声母-1050",
+    "initial_声母类别_发音部位": "零声母-1050",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 2254
@@ -42689,8 +44537,8 @@
     "tone": 3,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1047",
-    "initial_声母类别_发音部位": "零声母-1047",
+    "initial_声母类别_发音方法": "零声母-1052",
+    "initial_声母类别_发音部位": "零声母-1052",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 3111
@@ -42701,8 +44549,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1049",
-    "initial_声母类别_发音部位": "零声母-1049",
+    "initial_声母类别_发音方法": "零声母-1054",
+    "initial_声母类别_发音部位": "零声母-1054",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -42773,8 +44621,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1051",
-    "initial_声母类别_发音部位": "零声母-1051",
+    "initial_声母类别_发音方法": "零声母-1056",
+    "initial_声母类别_发音部位": "零声母-1056",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 11
@@ -42929,8 +44777,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1053",
-    "initial_声母类别_发音部位": "零声母-1053",
+    "initial_声母类别_发音方法": "零声母-1058",
+    "initial_声母类别_发音部位": "零声母-1058",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 2
@@ -42958,6 +44806,18 @@
     "vowel_韵母": "ian",
     "vowel_韵母类别": "八寒",
     "count": 1
+  },
+  "露": {
+    "char": "露",
+    "pinyin": "lòu",
+    "tone": 4,
+    "pinyin_without_tone": "lou",
+    "initial_声母": "l",
+    "initial_声母类别_发音方法": "边音_浊音",
+    "initial_声母类别_发音部位": "舌尖中音",
+    "vowel_韵母": "ou",
+    "vowel_韵母类别": "七尤",
+    "count": 507
   },
   "霸": {
     "char": "霸",
@@ -43006,6 +44866,18 @@
     "vowel_韵母": "ing",
     "vowel_韵母类别": "十一庚",
     "count": 6899
+  },
+  "靓": {
+    "char": "靓",
+    "pinyin": "jìng",
+    "tone": 4,
+    "pinyin_without_tone": "jing",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ing",
+    "vowel_韵母类别": "十一庚",
+    "count": 64
   },
   "靖": {
     "char": "靖",
@@ -43169,8 +45041,8 @@
     "tone": 2,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1061",
-    "initial_声母类别_发音部位": "零声母-1061",
+    "initial_声母类别_发音方法": "零声母-1066",
+    "initial_声母类别_发音部位": "零声母-1066",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 94
@@ -43205,8 +45077,8 @@
     "tone": 3,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1063",
-    "initial_声母类别_发音部位": "零声母-1063",
+    "initial_声母类别_发音方法": "零声母-1068",
+    "initial_声母类别_发音部位": "零声母-1068",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 1
@@ -43277,8 +45149,8 @@
     "tone": 4,
     "pinyin_without_tone": "ye",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1065",
-    "initial_声母类别_发音部位": "零声母-1065",
+    "initial_声母类别_发音方法": "零声母-1070",
+    "initial_声母类别_发音部位": "零声母-1070",
     "vowel_韵母": "e",
     "vowel_韵母类别": "二波",
     "count": 8
@@ -43421,8 +45293,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1067",
-    "initial_声母类别_发音部位": "零声母-1067",
+    "initial_声母类别_发音方法": "零声母-1072",
+    "initial_声母类别_发音部位": "零声母-1072",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 14
@@ -43481,8 +45353,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1069",
-    "initial_声母类别_发音部位": "零声母-1069",
+    "initial_声母类别_发音方法": "零声母-1074",
+    "initial_声母类别_发音部位": "零声母-1074",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 463
@@ -43781,8 +45653,8 @@
     "tone": 2,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1073",
-    "initial_声母类别_发音部位": "零声母-1073",
+    "initial_声母类别_发音方法": "零声母-1078",
+    "initial_声母类别_发音部位": "零声母-1078",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 2
@@ -43925,8 +45797,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1077",
-    "initial_声母类别_发音部位": "零声母-1077",
+    "initial_声母类别_发音方法": "零声母-1082",
+    "initial_声母类别_发音部位": "零声母-1082",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 47
@@ -44069,8 +45941,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1079",
-    "initial_声母类别_发音部位": "零声母-1079",
+    "initial_声母类别_发音方法": "零声母-1084",
+    "initial_声母类别_发音部位": "零声母-1084",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 39
@@ -44261,8 +46133,8 @@
     "tone": 4,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1081",
-    "initial_声母类别_发音部位": "零声母-1081",
+    "initial_声母类别_发音方法": "零声母-1086",
+    "initial_声母类别_发音部位": "零声母-1086",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 7
@@ -44453,8 +46325,8 @@
     "tone": 4,
     "pinyin_without_tone": "wei",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1087",
-    "initial_声母类别_发音部位": "零声母-1087",
+    "initial_声母类别_发音方法": "零声母-1092",
+    "initial_声母类别_发音部位": "零声母-1092",
     "vowel_韵母": "ei",
     "vowel_韵母类别": "五微",
     "count": 34
@@ -44477,8 +46349,8 @@
     "tone": 2,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1089",
-    "initial_声母类别_发音部位": "零声母-1089",
+    "initial_声母类别_发音方法": "零声母-1094",
+    "initial_声母类别_发音部位": "零声母-1094",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 211
@@ -44729,8 +46601,8 @@
     "tone": 1,
     "pinyin_without_tone": "ya",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1105",
-    "initial_声母类别_发音部位": "零声母-1105",
+    "initial_声母类别_发音方法": "零声母-1110",
+    "initial_声母类别_发音部位": "零声母-1110",
     "vowel_韵母": "a",
     "vowel_韵母类别": "一麻",
     "count": 2
@@ -44855,6 +46727,18 @@
     "vowel_韵母类别": "八寒",
     "count": 11
   },
+  "鹄": {
+    "char": "鹄",
+    "pinyin": "gǔ",
+    "tone": 3,
+    "pinyin_without_tone": "gu",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "u",
+    "vowel_韵母类别": "十四姑",
+    "count": 59
+  },
   "鹅": {
     "char": "鹅",
     "pinyin": "é",
@@ -44897,8 +46781,8 @@
     "tone": 3,
     "pinyin_without_tone": "wu",
     "initial_声母": "w",
-    "initial_声母类别_发音方法": "零声母-1111",
-    "initial_声母类别_发音部位": "零声母-1111",
+    "initial_声母类别_发音方法": "零声母-1116",
+    "initial_声母类别_发音部位": "零声母-1116",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 6
@@ -44957,8 +46841,8 @@
     "tone": 4,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1119",
-    "initial_声母类别_发音部位": "零声母-1119",
+    "initial_声母类别_发音方法": "零声母-1124",
+    "initial_声母类别_发音部位": "零声母-1124",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -45005,8 +46889,8 @@
     "tone": 4,
     "pinyin_without_tone": "yu",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1121",
-    "initial_声母类别_发音部位": "零声母-1121",
+    "initial_声母类别_发音方法": "零声母-1126",
+    "initial_声母类别_发音部位": "零声母-1126",
     "vowel_韵母": "u",
     "vowel_韵母类别": "十四姑",
     "count": 1
@@ -45245,8 +47129,8 @@
     "tone": 1,
     "pinyin_without_tone": "yi",
     "initial_声母": "y",
-    "initial_声母类别_发音方法": "零声母-1127",
-    "initial_声母类别_发音部位": "零声母-1127",
+    "initial_声母类别_发音方法": "零声母-1132",
+    "initial_声母类别_发音部位": "零声母-1132",
     "vowel_韵母": "i",
     "vowel_韵母类别": "十二齐",
     "count": 1
@@ -45394,6 +47278,18 @@
     "vowel_韵母": "ong",
     "vowel_韵母类别": "十一庚",
     "count": 3
+  },
+  "龟": {
+    "char": "龟",
+    "pinyin": "guī",
+    "tone": 1,
+    "pinyin_without_tone": "gui",
+    "initial_声母": "g",
+    "initial_声母类别_发音方法": "塞音_清音_不送气",
+    "initial_声母类别_发音部位": "舌根音",
+    "vowel_韵母": "ui",
+    "vowel_韵母类别": "五微",
+    "count": 62
   },
   "龢": {
     "char": "龢",
