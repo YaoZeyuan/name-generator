@@ -3,6 +3,8 @@ import * as fs from "fs";
 import * as Const from "@/script/common/const";
 import * as Type from "@/script/common/type";
 
+let global零声母Counter = 0;
+
 /**
  * 根据上一步汇总得到的可用于起名的字符集
  * 将汉典数据转化为拼音json数据库
@@ -43,13 +45,29 @@ const Tool = {
       let initial_声母类别_发音方法: Type.Initial_声母类别_发音方法;
       let initial_声母类别_发音部位: Type.Initial_声母类别_发音部位;
       let initial_声母: string;
-      // 先检查是否为十三支
+      // 首先按声母进行匹配
       for (let item of Const.Initial_发音方法_Match_List) {
         if (pinyin_without_tone.includes(item.target)) {
-          initial_声母 = item.target;
           initial_声母类别_发音方法 = item.initialType;
+          if (
+            initial_声母类别_发音方法 === Const.Initial_声母类别_发音方法.零声母
+          ) {
+            // 零声母之间不需要比较, 所以添加全局变量进行区分, 避免重合
+            global零声母Counter = global零声母Counter + 1;
+            initial_声母类别_发音方法 = (initial_声母类别_发音方法 +
+              `-${global零声母Counter}`) as typeof Const.Initial_声母类别_发音方法.零声母;
+          }
+
+          initial_声母 = item.target;
+          initial_声母类别_发音方法 = initial_声母类别_发音方法;
           initial_声母类别_发音部位 =
             Const.Initial_2_发音部位_Type[item.target];
+          if (
+            initial_声母类别_发音部位 === Const.Initial_声母类别_发音部位.零声母
+          ) {
+            initial_声母类别_发音部位 = (initial_声母类别_发音部位 +
+              `-${global零声母Counter}`) as typeof Const.Initial_声母类别_发音部位.零声母;
+          }
           return {
             initial_声母,
             initial_声母类别_发音方法,
