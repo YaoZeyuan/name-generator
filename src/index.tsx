@@ -78,6 +78,9 @@ const store = proxy<{
       charSpecifyPos: Type.CharSpecifyPos;
       姓氏末字_拼音_choose: CommonType.Char_With_Pinyin;
     };
+    drawPanel:{
+      标准字库:boolean;
+    }
   };
 }>({
   /**
@@ -106,6 +109,9 @@ const store = proxy<{
       charSpecifyPos: default_input_必选字位置,
       姓氏末字_拼音_choose: default_姓氏末字_拼音_choose,
     },
+    drawPanel:{
+      标准字库: false
+    }
   },
 });
 
@@ -267,7 +273,9 @@ export default () => {
               </Select.Option>
             </Select>
             <Divider type="vertical"></Divider>
-        <Button ghost type="primary" shape="round" onClick={showDrawer_houxuan}>
+        <Button ghost type="primary" shape="round" onClick={()=>{
+            store.status.drawPanel.标准字库 = true
+        }}>
           候选词库原理介绍
         </Button>
           </Space>
@@ -276,8 +284,10 @@ export default () => {
         size="large"
         title="候选词库原理介绍"
         placement="right"
-        onClose={onClose_houxuan}
-        open={isOpen_houxuan}
+        onClose={()=>{
+          store.status.drawPanel.标准字库 = false
+        }}
+        open={snapshot.status.drawPanel.标准字库}
       >
         <Houxuan></Houxuan>
       </Drawer>
