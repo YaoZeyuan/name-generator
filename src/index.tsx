@@ -258,6 +258,10 @@ export default () => {
                 {Const.CharDb_Level_Show[Const.CharDb_Level_Option.至少出现1次]}
               </Select.Option>
             </Select>
+            <Divider type="vertical"></Divider>
+        <Button ghost type="primary" shape="round" onClick={showDrawer}>
+          原理介绍
+        </Button>
           </Space>
         </div>
         <p></p>
