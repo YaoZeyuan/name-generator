@@ -101,7 +101,7 @@ const store = proxy<{
   columnCount: 10,
   status: {
     isLoading: false,
-    currentTab: Const.Choose_Type_Option.古人云,
+    currentTab: Const.Choose_Type_Option["诗云-所有可能"],
     currentCharDbLevel: default_char_level,
     genderType: default_gender_type,
     enableRandomNameList: default_是否乱序展示候选名,
@@ -110,7 +110,7 @@ const store = proxy<{
       姓氏末字_拼音_choose: default_姓氏末字_拼音_choose,
     },
     drawPanel:{
-      标准字库: false
+      标准字库: true
     }
   },
 });
