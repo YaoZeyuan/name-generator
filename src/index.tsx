@@ -20,6 +20,7 @@ import {
   Tooltip,
 } from "antd";
 import Desc from "./desc";
+import Houxuan from "./houxuan";
 import Tip from "./component/tip";
 import * as utils from "@src/utils";
 import * as Type from "@src/resource/type";
@@ -115,7 +116,8 @@ export default () => {
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
   let [totalNameList, setTotalNameList] = useState<CommonType.Type_Name[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen,setIsOpen] = useState(false);
+  const [isOpen_houxuan,setIsOpen_houxuan] = useState(false);
   let str_姓氏 = utils.removeUnChineseChar(input_姓氏);
   let str_必选字 = utils.removeUnChineseChar(input_必选字);
   let str_排除字列表 = utils.removeUnChineseChar(input_排除字列表);
@@ -191,9 +193,15 @@ export default () => {
   const showDrawer = () => {
     setIsOpen(true);
   };
+  const showDrawer_houxuan = () => {
+    setIsOpen_houxuan(true);
+  };
 
   const onClose = () => {
     setIsOpen(false);
+  };
+  const onClose_houxuan = () => {
+    setIsOpen_houxuan(false);
   };
   const Tools = {
     reset: () => {
@@ -259,11 +267,20 @@ export default () => {
               </Select.Option>
             </Select>
             <Divider type="vertical"></Divider>
-        <Button ghost type="primary" shape="round" onClick={showDrawer}>
-          原理介绍
+        <Button ghost type="primary" shape="round" onClick={showDrawer_houxuan}>
+          候选词库原理介绍
         </Button>
           </Space>
         </div>
+        <Drawer
+        size="large"
+        title="候选词库原理介绍"
+        placement="right"
+        onClose={onClose_houxuan}
+        open={isOpen_houxuan}
+      >
+        <Houxuan></Houxuan>
+      </Drawer>
         <p></p>
       </div>
     );
