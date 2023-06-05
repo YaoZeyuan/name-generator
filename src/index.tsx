@@ -20,6 +20,7 @@ import {
   Tooltip,
 } from "antd";
 import Desc from "./desc";
+import Min100 from "./min_100";
 import Houxuan from "./houxuan";
 import Tip from "./component/tip";
 import * as utils from "@src/utils";
@@ -78,9 +79,14 @@ const store = proxy<{
       charSpecifyPos: Type.CharSpecifyPos;
       姓氏末字_拼音_choose: CommonType.Char_With_Pinyin;
     };
-    drawPanel:{
-      标准字库:boolean;
-    }
+    drawPanel: {
+      标准字库: boolean;
+      至少出现100次: boolean;
+      至少出现50次: boolean;
+      至少出现10次: boolean;
+      至少出现5次: boolean;
+      至少出现1次: boolean;
+    };
   };
 }>({
   /**
@@ -101,7 +107,7 @@ const store = proxy<{
   columnCount: 10,
   status: {
     isLoading: false,
-    currentTab: Const.Choose_Type_Option["诗云-所有可能"],
+    currentTab: Const.Choose_Type_Option["诗云-按发音合并"],
     currentCharDbLevel: default_char_level,
     genderType: default_gender_type,
     enableRandomNameList: default_是否乱序展示候选名,
@@ -109,9 +115,14 @@ const store = proxy<{
       charSpecifyPos: default_input_必选字位置,
       姓氏末字_拼音_choose: default_姓氏末字_拼音_choose,
     },
-    drawPanel:{
-      标准字库: true
-    }
+    drawPanel: {
+      标准字库: false,
+      至少出现100次: false,
+      至少出现50次: false,
+      至少出现10次: false,
+      至少出现5次: false,
+      至少出现1次: false,
+    },
   },
 });
 
@@ -122,8 +133,8 @@ export default () => {
     useState<string>(default_input_排除字列表);
   let [input_必选字, set_input_必选字] = useState<string>(default_input_必选字);
   let [totalNameList, setTotalNameList] = useState<CommonType.Type_Name[]>([]);
-  const [isOpen,setIsOpen] = useState(false);
-  const [isOpen_houxuan,setIsOpen_houxuan] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen_houxuan, setIsOpen_houxuan] = useState(false);
   let str_姓氏 = utils.removeUnChineseChar(input_姓氏);
   let str_必选字 = utils.removeUnChineseChar(input_必选字);
   let str_排除字列表 = utils.removeUnChineseChar(input_排除字列表);
@@ -273,24 +284,51 @@ export default () => {
               </Select.Option>
             </Select>
             <Divider type="vertical"></Divider>
-        <Button ghost type="primary" shape="round" onClick={()=>{
-            store.status.drawPanel.标准字库 = true
-        }}>
-          候选词库原理介绍
-        </Button>
+
+            <Button
+              ghost
+              type="primary"
+              shape="round"
+              onClick={() => {
+                switch (store.status.currentCharDbLevel) {
+                  case Const.CharDb_Level_Option.标准字库:
+                    store.status.drawPanel.标准字库 = true;
+                    break;
+                  case Const.CharDb_Level_Option.至少出现100次:
+                    store.status.drawPanel.至少出现100次 = true;
+                    break;
+                  case Const.CharDb_Level_Option.至少出现50次:
+                    store.status.drawPanel.至少出现50次 = true;
+                    break;
+                  case Const.CharDb_Level_Option.至少出现10次:
+                    store.status.drawPanel.至少出现10次 = true;
+                    break;
+                  case Const.CharDb_Level_Option.至少出现5次:
+                    store.status.drawPanel.至少出现5次 = true;
+                    break;
+                  case Const.CharDb_Level_Option.至少出现1次:
+                    store.status.drawPanel.至少出现1次 = true;
+                    break;
+                }
+              }}
+            >
+
+              标准词库原理介绍
+            </Button>
           </Space>
         </div>
         <Drawer
-        size="large"
-        title="候选词库原理介绍"
-        placement="right"
-        onClose={()=>{
-          store.status.drawPanel.标准字库 = false
-        }}
-        open={snapshot.status.drawPanel.标准字库}
-      >
-        <Houxuan></Houxuan>
-      </Drawer>
+          size="large"
+          title="标准词库原理介绍"
+          placement="right"
+          onClose={() => {
+            store.status.drawPanel.标准字库 = false;
+          }}
+          open={snapshot.status.drawPanel.标准字库}
+        >
+          <Min100 level={"123"}></Min100>
+          <Houxuan></Houxuan>
+        </Drawer>
         <p></p>
       </div>
     );
