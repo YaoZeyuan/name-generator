@@ -53,28 +53,71 @@ export const Choose_Type_Option = {
   [`登科录`]: `登科录` as const,
 };
 
-export const Choose_Type_Desc: Record<Type.ChooseType, string> = {
+export const Choose_Type_Desc: Record<Type.ChooseType, {
+  desc: string,
+  optionCount: number
+  comment: string
+}> = {
   [Choose_Type_Option[
     "诗云-按发音合并"
-  ]]: `基于所选诗云字库文字, 生成所有可能组合-按发音合并,相同发音姓名只展示一条`,
+  ]]: {
+    desc: `基于所选诗云字库文字, 生成所有可能组合`,
+    optionCount: 0,
+    comment: "按发音合并,相同发音姓名只展示一条"
+  },
   [Choose_Type_Option[
     `诗云-所有可能`
-  ]]: `基于所选诗云字库文字, 生成所有可能组合`,
-  [Choose_Type_Option.古人云]: `基于古人姓名字号生成的可选名列表, 可以保证每个名字均有出处(具体来源详见得到电子书<古人名字解诂>或百度百科)-共${NameDb_古人云.length}种候选方案`,
-  [Choose_Type_Option.他山石]: `基于16万条政府公开数据生成的现代人名可选名列表-共${NameDb_他山石.length}种候选方案`,
+  ]]: {
+    desc: `基于所选诗云字库文字, 生成所有可能组合`,
+    optionCount: 0,
+    comment: ""
+  },
+  [Choose_Type_Option.古人云]:
+  {
+    desc: `基于古人姓名字号生成`,
+    optionCount: NameDb_古人云.length,
+    comment: "来自<古人名字解诂>, 每个名字均有寓意, 也可在百度百科中查询"
+  },
+  [Choose_Type_Option.他山石]:
+  {
+    desc: `基于现代人名`,
+    optionCount: NameDb_他山石.length,
+    comment: "来自16万条政府公开数据"
+  },
   [Choose_Type_Option[
     "财富论-精选集"
-  ]]: `基于215557项私募基金名, 以及其所属的21748所公司生成的可选名列表,选择出现频率在3~300之间的二字词-共${NameDb_财富论_精选集.length}种候选方案`,
+  ]]:
+  {
+    desc: `基于私募基金/公司名生成`,
+    optionCount: NameDb_财富论_精选集.length,
+    comment: "来自中国215557项私募基金名, 以及其所属的21748所公司, 选择出现频率在3~300之间的二字词"
+  },
   [Choose_Type_Option[
     "财富论-集思录"
-  ]]: `基于215557项私募基金名, 以及其所属的21748所公司生成的可选名列表,选择出现频率在1~2之间的二字词-共${NameDb_财富论_集思录.length}种候选方案`,
+  ]]: {
+    desc: `基于私募基金/公司名生成`,
+    optionCount: NameDb_财富论_集思录.length,
+    comment: "来自中国215557项私募基金名, 以及其所属的21748所公司, 选择出现频率在1~2之间的二字词"
+  },
   [Choose_Type_Option[
     "五道口-集思录"
-  ]]: `基于cnki项目负责人生成的可选名列表-共${NameDb_五道口_集思录.length}种候选方案`,
+  ]]: {
+    desc: `基于学术界人名生成`,
+    optionCount: NameDb_五道口_集思录.length,
+    comment: "来自cnki项目负责人名录"
+  },
   [Choose_Type_Option[
     `五道口-精选集`
-  ]]: `基于国家自然科学基金/国家社会科学基金资助项目负责人以及两院院士生成的可选名列表-共${NameDb_五道口_精选集.length}种候选方案`,
-  [Choose_Type_Option.登科录]: `基于通过中國歷代人物傳記資料庫CBDB查询得到的中国历史上85210位登科进士的姓名字号生成的可选名列表-共${NameDb_登科录.length}种候选方案`,
+  ]]: {
+    desc: `基于学术界人名生成`,
+    optionCount: NameDb_五道口_精选集.length,
+    comment: "来自国家自然科学基金/国家社会科学基金资助项目负责人以及两院院士"
+  },
+  [Choose_Type_Option.登科录]: {
+    desc: `基于历代进士生成`,
+    optionCount: NameDb_登科录.length,
+    comment: "来自中国历史上85210位登科进士的姓名字号, 数据源: 中國歷代人物傳記資料庫CBDB"
+  },
 };
 
 export const CharDb_Level_Option = {
@@ -121,24 +164,18 @@ export const CharDb_Char_Item_Count: Record<Type.CharDbLevel, number> = {
 };
 
 export const CharDb_Level_Show: Record<Type.CharDbLevel, string> = {
-  [CharDb_Level_Option["至少出现1次"]]: `至少被使用过1次-共${
-    CharDb_Char_Item_Count[CharDb_Level_Option["至少出现1次"]]
-  }个候选字`,
-  [CharDb_Level_Option["至少出现5次"]]: `至少被使用过5次-共${
-    CharDb_Char_Item_Count[CharDb_Level_Option["至少出现5次"]]
-  }个候选字`,
-  [CharDb_Level_Option["至少出现10次"]]: `至少被使用过10次-共${
-    CharDb_Char_Item_Count[CharDb_Level_Option["至少出现10次"]]
-  }个候选字`,
-  [CharDb_Level_Option["至少出现50次"]]: `至少被使用过50次-共${
-    CharDb_Char_Item_Count[CharDb_Level_Option["至少出现50次"]]
-  }个候选字`,
-  [CharDb_Level_Option["至少出现100次"]]: `至少被使用过100次-共${
-    CharDb_Char_Item_Count[CharDb_Level_Option["至少出现100次"]]
-  }个候选字`,
-  [CharDb_Level_Option["标准字库"]]: `标准字库-共${
-    CharDb_Char_Item_Count[CharDb_Level_Option["标准字库"]]
-  }个候选字`,
+  [CharDb_Level_Option["至少出现1次"]]: `至少被使用过1次-共${CharDb_Char_Item_Count[CharDb_Level_Option["至少出现1次"]]
+    }个候选字`,
+  [CharDb_Level_Option["至少出现5次"]]: `至少被使用过5次-共${CharDb_Char_Item_Count[CharDb_Level_Option["至少出现5次"]]
+    }个候选字`,
+  [CharDb_Level_Option["至少出现10次"]]: `至少被使用过10次-共${CharDb_Char_Item_Count[CharDb_Level_Option["至少出现10次"]]
+    }个候选字`,
+  [CharDb_Level_Option["至少出现50次"]]: `至少被使用过50次-共${CharDb_Char_Item_Count[CharDb_Level_Option["至少出现50次"]]
+    }个候选字`,
+  [CharDb_Level_Option["至少出现100次"]]: `至少被使用过100次-共${CharDb_Char_Item_Count[CharDb_Level_Option["至少出现100次"]]
+    }个候选字`,
+  [CharDb_Level_Option["标准字库"]]: `标准字库-共${CharDb_Char_Item_Count[CharDb_Level_Option["标准字库"]]
+    }个候选字`,
 };
 
 /**

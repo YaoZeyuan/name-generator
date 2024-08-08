@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { proxy, snapshot, useSnapshot } from "valtio";
 import * as CommonType from "@/script/common/type";
-
+import "./index.less";
 import { DownloadOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import {
+  List,
   Row,
   Col,
   Button,
@@ -16,6 +17,7 @@ import {
   Select,
   Space,
   Switch,
+  Typography,
   Tabs,
   Tooltip,
 } from "antd";
@@ -272,8 +274,34 @@ export default () => {
       tip = `${tip}, 展示前${snapshot.maxDisplayItem}个, 每行展示${snapshot.columnCount}个`;
     }
   }
+
+  const listConfigList: {
+    title: string;
+    description: string;
+    comment: string;
+    optionCount: number;
+  }[] = [];
+  for (let key of [
+    Const.Choose_Type_Option.登科录,
+    Const.Choose_Type_Option.古人云,
+    Const.Choose_Type_Option["五道口-精选集"],
+    Const.Choose_Type_Option["五道口-集思录"],
+    Const.Choose_Type_Option.他山石,
+    Const.Choose_Type_Option["财富论-精选集"],
+    Const.Choose_Type_Option["财富论-集思录"],
+    Const.Choose_Type_Option["诗云-按发音合并"],
+    Const.Choose_Type_Option["诗云-所有可能"],
+  ]) {
+    listConfigList.push({
+      title: key,
+      description: Const.Choose_Type_Desc[key].desc,
+      comment: Const.Choose_Type_Desc[key].comment,
+      optionCount: Const.Choose_Type_Desc[key].optionCount,
+    });
+  }
+
   return (
-    <div>
+    <div className="root-9969b06-block">
       <Row align="middle">
         <Col span={const_col_标题_span}>
           <span>请输入姓氏</span>
@@ -303,7 +331,7 @@ export default () => {
       ></Divider>
       <Row align="middle">
         <Col span={const_col_标题_span}>
-          <p>需要避开的同音字(例如父母姓名/亲属姓名)</p>
+          <p>需要避开的同音字(如父母姓名/亲属姓名)</p>
         </Col>
         <Col span={const_col_输入框_span}>
           <Input.TextArea
@@ -378,6 +406,40 @@ export default () => {
           margin: "12px 0px",
         }}
       ></Divider>
+
+      <div>
+        <Typography>
+          <Typography.Title level={5}>候选字库</Typography.Title>
+        </Typography>
+        <List
+          itemLayout="horizontal"
+          grid={{ gutter: 16, xxl: 6, xl: 6, md: 3, lg: 5, column: 3 }}
+          dataSource={listConfigList}
+          renderItem={(item, index) => (
+            <List.Item
+              className={
+                item.title === snapshot.status.currentTab ? "selected" : ""
+              }
+              onClick={() => {
+                // @ts-ignore
+                store.status.currentTab = item.title;
+                Tools.reset();
+              }}
+            >
+              <Card hoverable type="inner" title={item.title}>
+                <Card.Meta description={item.description} />
+                <Typography>
+                  <Typography.Paragraph>
+                    {item.comment}
+                    {item.optionCount > 0 ? ` , 共${item.optionCount}项` : ""}
+                  </Typography.Paragraph>
+                </Typography>
+              </Card>
+            </List.Item>
+          )}
+        />
+      </div>
+      <p></p>
       <Row align="middle">
         <Col span={const_col_标题_span}>
           <Button
@@ -468,99 +530,6 @@ export default () => {
           ></Switch>
         </Col>
       </Row>
-      <p></p>
-
-      <div>
-        <Radio.Group
-          size="large"
-          defaultValue={snapshot.status.currentTab}
-          onChange={(event) => {
-            store.status.currentTab = event.target.value;
-            Tools.reset();
-          }}
-        >
-          <Radio.Button value={Const.Choose_Type_Option.登科录}>
-            {Const.Choose_Type_Option.登科录}
-            <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.登科录]}
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option.古人云}>
-            {Const.Choose_Type_Option.古人云}
-            <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.古人云]}
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口-精选集"]}>
-            {Const.Choose_Type_Option["五道口-精选集"]}
-            <Tip
-              title={
-                Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["五道口-精选集"]
-                ]
-              }
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["五道口-集思录"]}>
-            {Const.Choose_Type_Option["五道口-集思录"]}
-            <Tip
-              title={
-                Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["五道口-集思录"]
-                ]
-              }
-            ></Tip>
-          </Radio.Button>
-
-          <Radio.Button value={Const.Choose_Type_Option.他山石}>
-            {Const.Choose_Type_Option.他山石}
-            <Tip
-              title={Const.Choose_Type_Desc[Const.Choose_Type_Option.他山石]}
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["财富论-精选集"]}>
-            {Const.Choose_Type_Option["财富论-精选集"]}
-            <Tip
-              title={
-                Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["财富论-精选集"]
-                ]
-              }
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["财富论-集思录"]}>
-            {Const.Choose_Type_Option["财富论-集思录"]}
-            <Tip
-              title={
-                Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["财富论-集思录"]
-                ]
-              }
-            ></Tip>
-          </Radio.Button>
-
-          <Radio.Button value={Const.Choose_Type_Option["诗云-按发音合并"]}>
-            {Const.Choose_Type_Option["诗云-按发音合并"]}
-            <Tip
-              title={
-                Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["诗云-按发音合并"]
-                ]
-              }
-            ></Tip>
-          </Radio.Button>
-          <Radio.Button value={Const.Choose_Type_Option["诗云-所有可能"]}>
-            {Const.Choose_Type_Option["诗云-所有可能"]}
-            <Tip
-              title={
-                Const.Choose_Type_Desc[
-                  Const.Choose_Type_Option["诗云-所有可能"]
-                ]
-              }
-            ></Tip>
-          </Radio.Button>
-        </Radio.Group>
-      </div>
       <p></p>
       {ele诗云字库}
       <div>
