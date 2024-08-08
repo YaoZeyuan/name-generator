@@ -7,14 +7,24 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+     runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18
-      - run: pnpm
-      - run: pnpm build
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: build page
+        run: pnpm build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
