@@ -191,7 +191,11 @@ export default () => {
     Const.CharDb_Level_Item[snapshot.status.currentCharDbLevel];
 
   const showDrawer = () => {
-    setIsOpen(true);
+    open(
+      "https://github.com/YaoZeyuan/name-generator/blob/master/README.md",
+      "_blank"
+    );
+    // setIsOpen(true);
   };
 
   const onClose = () => {
