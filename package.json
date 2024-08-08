@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "vite",
+    "dev": "npm run start",
     "build": "vite build",
     "analyzer": "vite-bundle-visualizer && serve ./node_modules/.pnpm/vite-bundle-visualizer@0.6.0/node_modules/vite-bundle-visualizer",
     "g": "pnpm run generate-name-db",
@@ -24,7 +25,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "ahooks": "^3.7.2",
-    "antd": "^5.0.7",
+    "antd": "^5.20.0",
     "better-sqlite3": "^8.3.0",
     "file-saver": "^2.0.5",
     "knex": "^2.4.2",
