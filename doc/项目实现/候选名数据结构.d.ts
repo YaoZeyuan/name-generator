@@ -2,7 +2,14 @@ type CandidateName = {
     // 候选名
     name: string;
     // 原始数据来源
-    source: string;
+    source: {
+        // 来源数据库
+        from: "古人云" | "网络" | "其他";
+        // 出现频次
+        frequency: number;
+        // 相关推荐原因-例如使用了这个名字的人、出处、来源等
+        reason: string[];
+    };
     chars: Char[]; // 字级信息
     // 评分
     score: {
@@ -16,7 +23,12 @@ type CandidateName = {
             rarity: ScoreRarity; // 稀有度
             visual: ScoreVisual; // 字形
         }
-    }
+    },
+    // 各模型的embedding数据
+    "embedding": {
+        current: Embedding,
+        modeList: Embedding[],
+    },
     // 标志位
     "flags": {
         // 是否常用名
@@ -131,3 +143,12 @@ type finalVowelType = 'a' | 'e' | 'i' | 'o' | 'u' | 'ai' | 'ei' | 'ou' | 'iu' | 
 
 // 音调模式类型
 type TonePatternType = "仄平" | "仄上" | "仄下" | "平上" | "平下" | "上平" | "下平";
+
+type Embedding = {
+    // 模型名
+    model: string
+    // 描述
+    desc: string
+    // valueList
+    valueList: number[]
+}
