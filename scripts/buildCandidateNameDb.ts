@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 const {
   SOURCE_CONFIGS,
   getSourceConfig,
@@ -7,10 +7,30 @@ const {
   stripNonChinese,
 } = require("../packages/name-core/dist");
 
-const root = path.resolve(__dirname, "..");
-const outDir = path.resolve(root, "database", "candidate");
+type SourceFile = {
+  id: string;
+  file: string;
+};
 
-const sourceFiles = [
+type SourceStats = {
+  id: string;
+  label: string;
+  rawCount: number;
+  usableCount: number;
+  skippedCount: number;
+};
+
+type SourceIndex = {
+  generatedAt: string;
+  sources: Record<string, SourceStats>;
+  sourcePriority: unknown[];
+  totalCandidateCount: number;
+};
+
+const root: string = path.resolve(__dirname, "..");
+const outDir: string = path.resolve(root, "database", "candidate");
+
+const sourceFiles: SourceFile[] = [
   {
     id: "wealth_selected",
     file: path.resolve(root, "old", "database", "name_db", "财富论_私募基金_精选集_出现3_300次.json"),
@@ -41,31 +61,37 @@ const sourceFiles = [
   },
 ];
 
-function readJson(file) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+function readJson<T = unknown>(file: string): T {
+  return JSON.parse(fs.readFileSync(file, "utf8")) as T;
 }
 
-function writeJson(file, value) {
+function writeJson(file: string, value: unknown): void {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
-function sortObjectKeys(input) {
-  return Object.fromEntries(Object.entries(input).sort(([a], [b]) => a.localeCompare(b, "zh-Hans-CN")));
+function sortObjectKeys<T>(input: Record<string, T>): Record<string, T> {
+  return Object.fromEntries(
+    Object.entries(input).sort(([a], [b]) => a.localeCompare(b, "zh-Hans-CN"))
+  );
 }
 
-const legacyCharDb = readJson(path.resolve(root, "old", "database", "char_db", "zd_without_muilt_tone_char_db.json"));
-const activePolyphones = new Set(
-  readJson(path.resolve(root, "old", "database", "char_db", "主动规定发音的多音字列表.json")).map((item) => item.char)
+const legacyCharDb = readJson<Record<string, unknown>>(
+  path.resolve(root, "old", "database", "char_db", "zd_without_muilt_tone_char_db.json")
+);
+const activePolyphones = new Set<string>(
+  readJson<{ char: string }[]>(
+    path.resolve(root, "old", "database", "char_db", "主动规定发音的多音字列表.json")
+  ).map((item) => item.char)
 );
 
-const charDb = {};
+const charDb: Record<string, unknown> = {};
 for (const [char, record] of Object.entries(legacyCharDb)) {
   charDb[char] = normalizeLegacyChar(record, activePolyphones.has(char));
 }
 
-const candidateMap = new Map();
-const sourceIndex = {
+const candidateMap = new Map<string, any>();
+const sourceIndex: SourceIndex = {
   generatedAt: new Date().toISOString(),
   sources: {},
   sourcePriority: SOURCE_CONFIGS,
@@ -74,8 +100,8 @@ const sourceIndex = {
 
 for (const sourceFile of sourceFiles) {
   const source = getSourceConfig(sourceFile.id);
-  const rawNames = readJson(sourceFile.file);
-  const sourceStats = {
+  const rawNames = readJson<string[]>(sourceFile.file);
+  const sourceStats: SourceStats = {
     id: source.id,
     label: source.label,
     rawCount: rawNames.length,
@@ -106,9 +132,9 @@ for (const sourceFile of sourceFiles) {
         sourceReasons: [],
         chars,
         flags: {
-          hasRareChar: charInfos.some((char) => char.count > 0 && char.count < 3),
+          hasRareChar: charInfos.some((char: any) => char.count > 0 && char.count < 3),
           hasRiskChar: false,
-          isCommon: charInfos.every((char) => char.count >= 100),
+          isCommon: charInfos.every((char: any) => char.count >= 100),
         },
       };
       candidateMap.set(name, candidate);
@@ -133,15 +159,15 @@ for (const sourceFile of sourceFiles) {
 }
 
 const candidateDb = Array.from(candidateMap.values()).map((candidate) => {
-  candidate.sources.sort((a, b) => a.priority - b.priority);
-  candidate.sourceIds = candidate.sources.map((source) => source.id);
-  candidate.sourceReasons = candidate.sources.map((source) => source.reason);
+  candidate.sources.sort((a: any, b: any) => a.priority - b.priority);
+  candidate.sourceIds = candidate.sources.map((source: any) => source.id);
+  candidate.sourceReasons = candidate.sources.map((source: any) => source.reason);
   return candidate;
 });
 
 candidateDb.sort((a, b) => {
-  const priorityA = Math.min(...a.sources.map((source) => source.priority));
-  const priorityB = Math.min(...b.sources.map((source) => source.priority));
+  const priorityA = Math.min(...a.sources.map((source: any) => source.priority));
+  const priorityB = Math.min(...b.sources.map((source: any) => source.priority));
   if (priorityA !== priorityB) return priorityA - priorityB;
   return a.name.localeCompare(b.name, "zh-Hans-CN");
 });
@@ -154,7 +180,7 @@ writeJson(path.resolve(outDir, "source_index.json"), sourceIndex);
 
 const readme = `# 候选名数据库
 
-本目录由 \`scripts/buildCandidateNameDb.cjs\` 生成。
+本目录由 \`scripts/buildCandidateNameDb.ts\` 生成。
 
 - \`candidate_name_db.json\`: 统一候选二字名库。
 - \`candidate_char_db.json\`: 查询和评分所需字级拼音信息。

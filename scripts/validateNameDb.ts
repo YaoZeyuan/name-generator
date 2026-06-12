@@ -1,11 +1,11 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 
-const root = path.resolve(__dirname, "..");
-const candidateDir = path.resolve(root, "database", "candidate");
+const root: string = path.resolve(__dirname, "..");
+const candidateDir: string = path.resolve(root, "database", "candidate");
 
-function readJson(file) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+function readJson<T = unknown>(file: string): T {
+  return JSON.parse(fs.readFileSync(file, "utf8")) as T;
 }
 
 const candidateFile = path.resolve(candidateDir, "candidate_name_db.json");
@@ -17,12 +17,12 @@ if (!fs.existsSync(candidateFile) || !fs.existsSync(charFile) || !fs.existsSync(
   process.exit(1);
 }
 
-const candidates = readJson(candidateFile);
-const charDb = readJson(charFile);
-const sourceIndex = readJson(sourceFile);
+const candidates = readJson<any[]>(candidateFile);
+const charDb = readJson<Record<string, unknown>>(charFile);
+const sourceIndex = readJson<any>(sourceFile);
 
 const duplicateNames = candidates.length - new Set(candidates.map((item) => item.name)).size;
-const missingCharCandidates = candidates.filter((item) => item.chars.some((char) => !charDb[char]));
+const missingCharCandidates = candidates.filter((item) => item.chars.some((char: string) => !charDb[char]));
 const invalidLengthCandidates = candidates.filter((item) => Array.from(item.name).length !== 2);
 
 const sampleNames = ["瑾瑞", "弘俶", "歌游", "钱孙", "建国"];

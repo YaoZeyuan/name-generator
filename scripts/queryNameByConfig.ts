@@ -1,13 +1,13 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 const { queryNames, toPublicResult } = require("../packages/name-core/dist");
 
-const root = path.resolve(__dirname, "..");
-const configPath = path.resolve(root, process.argv[2] || "config/name-query.example.json");
-const candidateDir = path.resolve(root, "database", "candidate");
+const root: string = path.resolve(__dirname, "..");
+const configPath: string = path.resolve(root, process.argv[2] || "config/name-query.example.json");
+const candidateDir: string = path.resolve(root, "database", "candidate");
 
-function readJson(file) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+function readJson<T = unknown>(file: string): T {
+  return JSON.parse(fs.readFileSync(file, "utf8")) as T;
 }
 
 if (!fs.existsSync(configPath)) {
@@ -22,9 +22,9 @@ if (!fs.existsSync(candidateFile) || !fs.existsSync(charFile)) {
   process.exit(1);
 }
 
-const query = readJson(configPath);
-const candidateDb = readJson(candidateFile);
-const charDb = readJson(charFile);
+const query = readJson<any>(configPath);
+const candidateDb = readJson<any[]>(candidateFile);
+const charDb = readJson<Record<string, unknown>>(charFile);
 const results = queryNames({ candidateDb, charDb, query });
 const publicResults = results.map(toPublicResult);
 
