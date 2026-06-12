@@ -28,6 +28,8 @@ dist
 database/raw
 
 dist/
+packages/*/dist/
+src/components.d.ts
 deploy_versions/
 .temp/
 .rn_temp/

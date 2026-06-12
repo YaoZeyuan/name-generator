@@ -27,7 +27,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: ['@tarojs/plugin-html'],
+    plugins: [],
     defineConstants: {
     },
     copy: {
