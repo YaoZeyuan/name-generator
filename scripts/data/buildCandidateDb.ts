@@ -1,6 +1,7 @@
 import path from "node:path";
+import fs from "node:fs";
 import type { CharDb } from "../../packages/name-core/src";
-import { SOURCE_CONFIGS, getSourceConfig } from "../../packages/name-core/src";
+import { DEFAULT_SOURCE_ID, SOURCE_CONFIGS, getSourceConfig } from "../../packages/name-core/src";
 import type { CandidateNameRecord, ExtractedNameToken, SourceRef } from "./types";
 import { loadCandidateCharDb, sortObjectKeys } from "./lib/charDb";
 import { createBuildContext } from "./lib/paths";
@@ -16,13 +17,21 @@ type SourceStats = {
   usableCount: number;
   skippedCount: number;
   frequency: number;
+  candidateCount: number;
+  file: string;
+  byteSize: number;
 };
 
 type SourceIndex = {
   generatedAt: string;
+  candidateFileMode: "single_source_shards";
+  defaultSourceId: string;
+  defaultCandidateFile: string;
   sources: Record<string, SourceStats>;
   sourcePriority: typeof SOURCE_CONFIGS;
   totalCandidateCount: number;
+  totalShardCandidateCount: number;
+  candidateCharFile: string;
 };
 
 function createEmptyCandidate(token: ExtractedNameToken, charDb: CharDb): CandidateNameRecord {
@@ -74,86 +83,56 @@ function appendSourceRefs(target: SourceRef[], values: SourceRef[]): void {
   }
 }
 
-export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
-  const context = createBuildContext();
-  const charDb = loadCandidateCharDb(context.rootDir);
-  const extractedDir = path.resolve(context.databaseDir, "extracted");
-  const candidateDir = path.resolve(context.databaseDir, "candidate");
-  const tokens = readJson<ExtractedNameToken[]>(path.resolve(extractedDir, "name_tokens.json"));
-  const rejected = readJson<ExtractedNameToken[]>(path.resolve(extractedDir, "rejected_tokens.json"));
-  const candidateMap = new Map<string, CandidateNameRecord>();
-  const sourceIndex: SourceIndex = {
-    generatedAt: new Date().toISOString(),
-    sources: Object.fromEntries(
-      SOURCE_CONFIGS.map((source) => [
-        source.id,
-        {
-          id: source.id,
-          label: source.label,
-          rawCount: 0,
-          usableCount: 0,
-          skippedCount: 0,
-          frequency: 0,
-        },
-      ])
-    ),
-    sourcePriority: SOURCE_CONFIGS,
-    totalCandidateCount: 0,
-  };
-
-  for (const rejectedToken of rejected) {
-    for (const sourceId of rejectedToken.sourceIds) {
-      const stats = sourceIndex.sources[sourceId];
-      if (stats) {
-        stats.skippedCount += 1;
-      }
-    }
+function addTokenToMap({
+  map,
+  token,
+  sourceId,
+  charDb,
+  sourceIndex,
+}: {
+  map: Map<string, CandidateNameRecord>;
+  token: ExtractedNameToken;
+  sourceId: string;
+  charDb: CharDb;
+  sourceIndex: SourceIndex;
+}): void {
+  const source = getSourceConfig(sourceId);
+  let candidate = map.get(token.token);
+  if (!candidate) {
+    candidate = createEmptyCandidate({ ...token, sourceIds: [sourceId] }, charDb);
+    map.set(token.token, candidate);
   }
 
-  for (const token of tokens) {
-    const chars = splitChars(token.token);
-    if (chars.length !== 2 || chars.some((char) => !charDb[char])) {
-      continue;
-    }
+  candidate.frequency += token.frequency;
+  candidate.sourceStats.totalFrequency += token.frequency;
+  candidate.confidence = Math.max(candidate.confidence, token.confidence);
+  mergeUnique(candidate.extractionMethods, [token.extractionMethod]);
+  mergeUnique(candidate.tokenTypes, [token.tokenType]);
+  mergeUnique(candidate.tags, [token.tokenType]);
+  appendSourceRefs(candidate.sourceRefs, token.sourceRefs);
 
-    let candidate = candidateMap.get(token.token);
-    if (!candidate) {
-      candidate = createEmptyCandidate(token, charDb);
-      candidateMap.set(token.token, candidate);
-    }
-
-    candidate.frequency += token.frequency;
-    candidate.sourceStats.totalFrequency += token.frequency;
-    candidate.confidence = Math.max(candidate.confidence, token.confidence);
-    mergeUnique(candidate.extractionMethods, [token.extractionMethod]);
-    mergeUnique(candidate.tokenTypes, [token.tokenType]);
-    mergeUnique(candidate.tags, [token.tokenType]);
-    appendSourceRefs(candidate.sourceRefs, token.sourceRefs);
-
-    for (const sourceId of token.sourceIds) {
-      const source = getSourceConfig(sourceId);
-      const stats = sourceIndex.sources[source.id];
-      if (stats) {
-        stats.rawCount += token.sourceRefs.length;
-        stats.usableCount += 1;
-        stats.frequency += token.frequency;
-      }
-
-      if (!candidate.sourceIds.includes(source.id)) {
-        candidate.sourceIds.push(source.id);
-        candidate.sources.push({
-          id: source.id,
-          label: source.label,
-          priority: source.priority,
-          weight: source.weight,
-          category: source.category,
-          reason: source.description,
-        });
-        candidate.sourceReasons.push(source.description);
-      }
-    }
+  const stats = sourceIndex.sources[source.id];
+  if (stats) {
+    stats.rawCount += token.sourceRefs.length;
+    stats.usableCount += 1;
+    stats.frequency += token.frequency;
   }
 
+  if (!candidate.sourceIds.includes(source.id)) {
+    candidate.sourceIds.push(source.id);
+    candidate.sources.push({
+      id: source.id,
+      label: source.label,
+      priority: source.priority,
+      weight: source.weight,
+      category: source.category,
+      reason: source.description,
+    });
+    candidate.sourceReasons.push(source.description);
+  }
+}
+
+function finalizeCandidates(candidateMap: Map<string, CandidateNameRecord>): CandidateNameRecord[] {
   const candidateDb = Array.from(candidateMap.values()).map((candidate) => {
     candidate.sources.sort((a, b) => a.priority - b.priority);
     candidate.sourceIds = candidate.sources.map((source) => source.id);
@@ -172,10 +151,97 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     }
     return a.name.localeCompare(b.name, "zh-Hans-CN");
   });
+  return candidateDb;
+}
 
-  sourceIndex.totalCandidateCount = candidateDb.length;
+export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
+  const context = createBuildContext();
+  const charDb = loadCandidateCharDb(context.rootDir);
+  const extractedDir = path.resolve(context.databaseDir, "extracted");
+  const candidateDir = path.resolve(context.databaseDir, "candidate");
+  const candidateSourceDir = path.resolve(candidateDir, "sources");
+  const tokens = readJson<ExtractedNameToken[]>(path.resolve(extractedDir, "name_tokens.json"));
+  const rejected = readJson<ExtractedNameToken[]>(path.resolve(extractedDir, "rejected_tokens.json"));
+  const candidateMaps = new Map<string, Map<string, CandidateNameRecord>>(
+    SOURCE_CONFIGS.map((source) => [source.id, new Map<string, CandidateNameRecord>()])
+  );
+  const allCandidateNames = new Set<string>();
+  const sourceIndex: SourceIndex = {
+    generatedAt: new Date().toISOString(),
+    candidateFileMode: "single_source_shards",
+    defaultSourceId: DEFAULT_SOURCE_ID,
+    defaultCandidateFile: "candidate_name_db.json",
+    sources: Object.fromEntries(
+      SOURCE_CONFIGS.map((source) => [
+        source.id,
+        {
+          id: source.id,
+          label: source.label,
+          rawCount: 0,
+          usableCount: 0,
+          skippedCount: 0,
+          frequency: 0,
+          candidateCount: 0,
+          file: `sources/${source.id}.candidate_name_db.json`,
+          byteSize: 0,
+        },
+      ])
+    ),
+    sourcePriority: SOURCE_CONFIGS,
+    totalCandidateCount: 0,
+    totalShardCandidateCount: 0,
+    candidateCharFile: "candidate_char_db.json",
+  };
+
+  for (const rejectedToken of rejected) {
+    for (const sourceId of rejectedToken.sourceIds) {
+      const stats = sourceIndex.sources[sourceId];
+      if (stats) {
+        stats.skippedCount += 1;
+      }
+    }
+  }
+
+  for (const token of tokens) {
+    const chars = splitChars(token.token);
+    if (chars.length !== 2 || chars.some((char) => !charDb[char])) {
+      continue;
+    }
+
+    for (const sourceId of token.sourceIds) {
+      const map = candidateMaps.get(sourceId);
+      if (map) {
+        addTokenToMap({ map, token, sourceId, charDb, sourceIndex });
+        allCandidateNames.add(token.token);
+      }
+    }
+  }
+
+  fs.mkdirSync(candidateSourceDir, { recursive: true });
+  let defaultCandidateDb: CandidateNameRecord[] = [];
+  let totalShardCandidateCount = 0;
+
+  for (const source of SOURCE_CONFIGS) {
+    const candidateDb = finalizeCandidates(candidateMaps.get(source.id) || new Map());
+    const stats = sourceIndex.sources[source.id];
+    totalShardCandidateCount += candidateDb.length;
+    if (stats) {
+      stats.candidateCount = candidateDb.length;
+    }
+    const file = path.resolve(candidateDir, stats?.file || `sources/${source.id}.candidate_name_db.json`);
+    writeJson(file, candidateDb);
+    if (stats) {
+      stats.byteSize = fs.statSync(file).size;
+    }
+    if (source.id === DEFAULT_SOURCE_ID) {
+      defaultCandidateDb = candidateDb;
+    }
+  }
+
+  sourceIndex.totalCandidateCount = allCandidateNames.size;
+  sourceIndex.totalShardCandidateCount = totalShardCandidateCount;
   writeJson(path.resolve(candidateDir, "candidate_char_db.json"), sortObjectKeys(charDb));
-  writeJson(path.resolve(candidateDir, "candidate_name_db.json"), candidateDb);
+  writeJson(path.resolve(candidateDir, "candidate_name_db.json"), defaultCandidateDb);
   writeJson(path.resolve(candidateDir, "source_index.json"), sourceIndex);
   writeText(
     path.resolve(candidateDir, "README.md"),
@@ -183,21 +249,23 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
 
 本目录由 \`scripts/data/buildCandidateDb.ts\` 生成，输入来自 \`database/extracted/name_tokens.json\`。
 
-- \`candidate_name_db.json\`: 统一候选二字名库，保留兼容 \`name-core\` 的字段，并追加 \`sourceRefs\`、频次和抽取方法。
+- \`candidate_name_db.json\`: 默认来源（${DEFAULT_SOURCE_ID}）候选二字名库，保留兼容 \`name-core\` 的字段，并追加 \`sourceRefs\`、频次和抽取方法。
+- \`sources/*.candidate_name_db.json\`: 按来源拆分的候选二字名库。实际查询应按 \`sourcePreference\` 只加载一个来源分片。
 - \`candidate_char_db.json\`: 查询和评分所需字级拼音信息，读音数据来自旧拼音字库。
 - \`source_index.json\`: 来源优先级和生成统计。
 
 生成时间：${sourceIndex.generatedAt}
 
-候选名总数：${sourceIndex.totalCandidateCount}
+去重候选名总数：${sourceIndex.totalCandidateCount}
+
+默认来源候选名数：${defaultCandidateDb.length}
 `
   );
 
-  console.log(`[candidate] generated: ${candidateDb.length}`);
-  return candidateDb;
+  console.log(`[candidate] generated shards: ${totalShardCandidateCount}, unique: ${allCandidateNames.size}`);
+  return defaultCandidateDb;
 }
 
 runIfMain("buildCandidateDb.ts", async () => {
   await buildCandidateDb();
 });
-

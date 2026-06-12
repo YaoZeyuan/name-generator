@@ -14,10 +14,12 @@ type ValidationSummary = {
   tokenCount: number;
   rejectedTokenCount: number;
   candidateCount: number;
+  totalShardCandidateCount: number;
+  defaultSourceId: string;
   charCount: number;
   errors: string[];
   warnings: string[];
-  sampleStatus: Record<string, boolean>;
+  sampleStatus: Record<string, { default: boolean; anySource: boolean }>;
 };
 
 function assertFile(file: string, errors: string[]): void {
@@ -50,6 +52,8 @@ export async function validateData(): Promise<ValidationSummary> {
       tokenCount: 0,
       rejectedTokenCount: 0,
       candidateCount: 0,
+      totalShardCandidateCount: 0,
+      defaultSourceId: "",
       charCount: Object.keys(charDb).length,
       errors,
       warnings,
@@ -74,6 +78,13 @@ export async function validateData(): Promise<ValidationSummary> {
   const rejected = readJson<RejectedNameToken[]>(path.resolve(extractedDir, "rejected_tokens.json"));
   const candidates = readJson<CandidateNameRecord[]>(path.resolve(candidateDir, "candidate_name_db.json"));
   const candidateCharDb = readJson<Record<string, unknown>>(path.resolve(candidateDir, "candidate_char_db.json"));
+  const sourceIndex = readJson<any>(path.resolve(candidateDir, "source_index.json"));
+  const sourceFiles = Object.values(sourceIndex.sources || {}) as Array<{
+    id: string;
+    file: string;
+    candidateCount: number;
+  }>;
+  const shardCandidates: CandidateNameRecord[] = [];
 
   tokens.forEach((token, index) => {
     const reasons = validateToken(token, charDb);
@@ -94,33 +105,69 @@ export async function validateData(): Promise<ValidationSummary> {
     }
   });
 
-  const duplicateNames = candidates.length - new Set(candidates.map((item) => item.name)).size;
-  if (duplicateNames > 0) {
-    errors.push(`duplicate candidate names: ${duplicateNames}`);
+  for (const sourceFile of sourceFiles) {
+    const shardFile = path.resolve(candidateDir, sourceFile.file);
+    assertFile(shardFile, errors);
+    if (!fs.existsSync(shardFile)) {
+      continue;
+    }
+    const shard = readJson<CandidateNameRecord[]>(shardFile);
+    shardCandidates.push(...shard);
+    if (sourceFile.candidateCount !== shard.length) {
+      errors.push(`${sourceFile.id} candidate count mismatch: index=${sourceFile.candidateCount}, file=${shard.length}`);
+    }
+    const duplicateNames = shard.length - new Set(shard.map((item) => item.name)).size;
+    if (duplicateNames > 0) {
+      errors.push(`${sourceFile.id} duplicate candidate names: ${duplicateNames}`);
+    }
+    const invalidLengthCandidates = shard.filter((item) => splitChars(item.name).length !== 2);
+    if (invalidLengthCandidates.length > 0) {
+      errors.push(`${sourceFile.id} invalid candidate length: ${invalidLengthCandidates.length}`);
+    }
+    const missingCharCandidates = shard.filter((item) => item.chars.some((char) => !candidateCharDb[char]));
+    if (missingCharCandidates.length > 0) {
+      errors.push(`${sourceFile.id} missing char candidates: ${missingCharCandidates.length}`);
+    }
+    const missingRefCandidates = shard.filter((item) => !item.sourceRefs || item.sourceRefs.length === 0);
+    if (missingRefCandidates.length > 0) {
+      errors.push(`${sourceFile.id} missing source refs: ${missingRefCandidates.length}`);
+    }
+    const wrongSourceCandidates = shard.filter(
+      (item) => item.sourceIds.length !== 1 || item.sourceIds[0] !== sourceFile.id
+    );
+    if (wrongSourceCandidates.length > 0) {
+      errors.push(`${sourceFile.id} contains candidates from other sources: ${wrongSourceCandidates.length}`);
+    }
   }
-  const invalidLengthCandidates = candidates.filter((item) => splitChars(item.name).length !== 2);
-  if (invalidLengthCandidates.length > 0) {
-    errors.push(`invalid candidate length: ${invalidLengthCandidates.length}`);
+
+  const defaultSourceFile = sourceFiles.find((item) => item.id === sourceIndex.defaultSourceId);
+  if (defaultSourceFile && defaultSourceFile.candidateCount !== candidates.length) {
+    errors.push(
+      `default candidate count mismatch: default=${candidates.length}, ${defaultSourceFile.id}=${defaultSourceFile.candidateCount}`
+    );
   }
-  const missingCharCandidates = candidates.filter((item) => item.chars.some((char) => !candidateCharDb[char]));
-  if (missingCharCandidates.length > 0) {
-    errors.push(`missing char candidates: ${missingCharCandidates.length}`);
-  }
-  const missingRefCandidates = candidates.filter((item) => !item.sourceRefs || item.sourceRefs.length === 0);
-  if (missingRefCandidates.length > 0) {
-    errors.push(`missing source refs: ${missingRefCandidates.length}`);
-  }
+
   if (rejected.length === 0) {
     warnings.push("rejected_tokens.json is empty; check whether rejection paths are covered");
   }
 
   const sampleNames = ["瑾瑞", "弘俶", "歌游", "钱孙", "建国"];
-  const sampleStatus = Object.fromEntries(sampleNames.map((name) => [name, candidates.some((item) => item.name === name)]));
+  const sampleStatus = Object.fromEntries(
+    sampleNames.map((name) => [
+      name,
+      {
+        default: candidates.some((item) => item.name === name),
+        anySource: shardCandidates.some((item) => item.name === name),
+      },
+    ])
+  );
   const summary = {
     sourceRecordCount,
     tokenCount: tokens.length,
     rejectedTokenCount: rejected.length,
     candidateCount: candidates.length,
+    totalShardCandidateCount: shardCandidates.length,
+    defaultSourceId: sourceIndex.defaultSourceId,
     charCount: Object.keys(candidateCharDb).length,
     errors,
     warnings,
@@ -137,4 +184,3 @@ export async function validateData(): Promise<ValidationSummary> {
 runIfMain("validateData.ts", async () => {
   await validateData();
 });
-

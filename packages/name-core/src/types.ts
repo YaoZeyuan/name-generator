@@ -42,6 +42,16 @@ export interface SourceConfig {
   description: string;
 }
 
+export type SourcePreference =
+  | "default"
+  | "wealth_selected"
+  | "wealth_broad"
+  | "academic_selected"
+  | "academic_broad"
+  | "modern_people"
+  | "imperial_exam"
+  | "ancient_names";
+
 export interface CandidateSource {
   id: string;
   label: string;
@@ -70,7 +80,7 @@ export interface QueryConfig {
   must?: string[];
   mustPosition?: MustPosition;
   style?: NameStyle;
-  sourcePreference?: "default";
+  sourcePreference?: SourcePreference;
   limit?: number;
   outputPath?: string;
 }

@@ -59,6 +59,8 @@ export const SOURCE_CONFIGS: SourceConfig[] = [
   },
 ];
 
+export const DEFAULT_SOURCE_ID = SOURCE_CONFIGS[0].id;
+
 export function getSourceConfig(id: string): SourceConfig {
   const source = SOURCE_CONFIGS.find((item) => item.id === id);
   if (source) {
