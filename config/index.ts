@@ -1,10 +1,49 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import fs from 'node:fs'
+import path from 'node:path'
 import devConfig from './dev'
 import prodConfig from './prod'
 import NutUIResolver from '@nutui/auto-import-resolver'
 
 import Components from 'unplugin-vue-components/vite'
+
+function apiStaticPlugin() {
+  const apiDir = path.resolve(process.cwd(), 'api')
+  const outputDir = path.resolve(process.cwd(), 'dist', 'api')
+  const mime: Record<string, string> = {
+    '.json': 'application/json; charset=utf-8',
+    '.md': 'text/markdown; charset=utf-8',
+    '.txt': 'text/plain; charset=utf-8'
+  }
+
+  return {
+    name: 'api-static-files',
+    configureServer(server) {
+      server.middlewares.use('/api', (req, res, next) => {
+        const requestPath = decodeURIComponent((req.url || '').split('?')[0] || '')
+        const normalized = path.normalize(requestPath).replace(/^(\.\.(\/|\\|$))+/, '')
+        const filePath = path.resolve(apiDir, normalized.replace(/^[\/\\]+/, ''))
+        if (!filePath.startsWith(apiDir)) {
+          next()
+          return
+        }
+        if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+          next()
+          return
+        }
+        res.setHeader('Content-Type', mime[path.extname(filePath)] || 'application/octet-stream')
+        fs.createReadStream(filePath).pipe(res)
+      })
+    },
+    closeBundle() {
+      if (!fs.existsSync(apiDir)) {
+        return
+      }
+      fs.cpSync(apiDir, outputDir, { recursive: true })
+    }
+  }
+}
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<'vite'>(async (merge, { command, mode }) => {
@@ -40,6 +79,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     compiler: {
       type: 'vite',
       vitePlugins: [
+        apiStaticPlugin(),
         Components({
           resolvers: [NutUIResolver({taro: true})]
         })

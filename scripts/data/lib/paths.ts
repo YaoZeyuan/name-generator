@@ -6,7 +6,7 @@ export function createBuildContext(): BuildContext {
   return {
     rootDir,
     resourceDir: path.resolve(rootDir, "resource"),
-    databaseDir: path.resolve(rootDir, "database"),
+    databaseDir: path.resolve(rootDir, "api", "database"),
   };
 }
 
@@ -17,4 +17,3 @@ export function fromRoot(...parts: string[]): string {
 export function toPosixPath(input: string): string {
   return input.split(path.sep).join("/");
 }
-

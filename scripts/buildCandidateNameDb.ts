@@ -28,7 +28,7 @@ type SourceIndex = {
 };
 
 const root: string = path.resolve(__dirname, "..");
-const outDir: string = path.resolve(root, "database", "candidate");
+const outDir: string = path.resolve(root, "api", "database", "candidate");
 
 const sourceFiles: SourceFile[] = [
   {

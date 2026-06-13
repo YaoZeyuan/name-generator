@@ -4,7 +4,7 @@ const { DEFAULT_SOURCE_ID, SOURCE_CONFIGS, queryNames, toPublicResult } = requir
 
 const root: string = path.resolve(__dirname, "..");
 const configPath: string = path.resolve(root, process.argv[2] || "config/name-query.example.json");
-const candidateDir: string = path.resolve(root, "database", "candidate");
+const candidateDir: string = path.resolve(root, "api", "database", "candidate");
 
 function readJson<T = unknown>(file: string): T {
   return JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/u, "")) as T;

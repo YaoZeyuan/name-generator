@@ -247,7 +247,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     path.resolve(candidateDir, "README.md"),
     `# 候选名数据库
 
-本目录由 \`scripts/data/buildCandidateDb.ts\` 生成，输入来自 \`database/extracted/name_tokens.json\`。
+本目录由 \`scripts/data/buildCandidateDb.ts\` 生成，输入来自 \`api/database/extracted/name_tokens.json\`。
 
 - \`candidate_name_db.json\`: 默认来源（${DEFAULT_SOURCE_ID}）候选二字名库，保留兼容 \`name-core\` 的字段，并追加 \`sourceRefs\`、频次和抽取方法。
 - \`sources/*.candidate_name_db.json\`: 按来源拆分的候选二字名库。实际查询应按 \`sourcePreference\` 只加载一个来源分片。

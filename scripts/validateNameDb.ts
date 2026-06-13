@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root: string = path.resolve(__dirname, "..");
-const candidateDir: string = path.resolve(root, "database", "candidate");
+const candidateDir: string = path.resolve(root, "api", "database", "candidate");
 
 function readJson<T = unknown>(file: string): T {
   return JSON.parse(fs.readFileSync(file, "utf8")) as T;
