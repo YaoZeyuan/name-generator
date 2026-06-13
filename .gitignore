@@ -36,3 +36,6 @@ deploy_versions/
 node_modules/
 .DS_Store
 .swc
+.idea
+api/database/extracted/name_tokens.json
+api/database/source/imperial_exam.records.json
