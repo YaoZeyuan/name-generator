@@ -4,7 +4,6 @@ import fs from 'node:fs'
 import path from 'node:path'
 import devConfig from './dev'
 import prodConfig from './prod'
-import NutUIResolver from '@nutui/auto-import-resolver'
 
 import Components from 'unplugin-vue-components/vite'
 
@@ -45,6 +44,25 @@ function apiStaticPlugin() {
   }
 }
 
+function nutTaroPackageResolver() {
+  return {
+    type: 'component' as const,
+    resolve(name: string) {
+      if (!name.startsWith('Nut')) {
+        return undefined
+      }
+      const componentName = name.slice(3)
+      const packageName = '@nutui/nutui-taro'
+      const componentDir = componentName.toLowerCase()
+      return {
+        as: name,
+        from: `${packageName}/dist/packages/${componentDir}/index.mjs`,
+        sideEffects: `${packageName}/dist/packages/${componentDir}/style/css`
+      }
+    }
+  }
+}
+
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<'vite'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'vite'> = {
@@ -81,7 +99,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       vitePlugins: [
         apiStaticPlugin(),
         Components({
-          resolvers: [NutUIResolver({taro: true})]
+          resolvers: [nutTaroPackageResolver()]
         })
       ]
     },
