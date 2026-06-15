@@ -29,6 +29,14 @@ type SourceStats = {
   candidateCount: number;
   file: string;
   byteSize: number;
+  percentileFilter?: {
+    enabled: boolean;
+    bucketCount: number;
+    minSelectablePercent: number;
+    defaultMinPercent: number;
+    defaultMaxPercent: number;
+  };
+  sourceNameFile?: string;
 };
 
 type SourceIndex = {
@@ -55,17 +63,43 @@ type CandidateBuildToken = {
   frequency: number;
   extractionMethod: ExtractionMethod;
   confidence: number;
+  sourceNames: string[];
 };
 
+function normalizeSourceId(sourceId: string): string {
+  if (sourceId === "wealth_selected" || sourceId === "wealth_broad") {
+    return "wealth";
+  }
+  if (sourceId === "academic_selected" || sourceId === "academic_broad") {
+    return "academic";
+  }
+  return sourceId;
+}
+
 function normalizeSourceIds(sourceIds: unknown): string[] {
-  return Array.isArray(sourceIds)
-    ? sourceIds.map((sourceId) => String(sourceId)).filter((sourceId) => sourceId.length > 0)
+  const normalized = Array.isArray(sourceIds)
+    ? sourceIds.map((sourceId) => normalizeSourceId(String(sourceId))).filter((sourceId) => sourceId.length > 0)
     : [];
+  return Array.from(new Set(normalized));
+}
+
+function getSourceNamesFromRefs(sourceRefs: SourceRef[]): string[] {
+  const names: string[] = [];
+  for (const sourceRef of sourceRefs) {
+    const name = String(sourceRef.relatedPerson || sourceRef.value || "").trim();
+    if (name && !names.includes(name)) {
+      names.push(name);
+    }
+    if (names.length >= 5) {
+      break;
+    }
+  }
+  return names;
 }
 
 function normalizeStoredToken(input: StoredTokenInput): CandidateBuildToken | null {
   if (Array.isArray(input)) {
-    const [token, sourceIds, frequency] = input;
+    const [token, sourceIds, frequency, sourceNames] = input;
     return {
       token: String(token || ""),
       sourceIds: normalizeSourceIds(sourceIds),
@@ -74,18 +108,21 @@ function normalizeStoredToken(input: StoredTokenInput): CandidateBuildToken | nu
       frequency: Math.max(1, Number(frequency || 1)),
       extractionMethod: "manual",
       confidence: 0.8,
+      sourceNames: Array.isArray(sourceNames) ? sourceNames.slice(0, 5) : [],
     };
   }
 
   if ("token" in input) {
+    const sourceRefs = Array.isArray(input.sourceRefs) ? input.sourceRefs : [];
     return {
       token: String(input.token || ""),
       sourceIds: normalizeSourceIds(input.sourceIds),
-      sourceRefs: Array.isArray(input.sourceRefs) ? input.sourceRefs : [],
+      sourceRefs,
       tokenType: input.tokenType || "given_name",
       frequency: Math.max(1, Number(input.frequency || 1)),
       extractionMethod: input.extractionMethod || "manual",
       confidence: Number(input.confidence || 0.8),
+      sourceNames: getSourceNamesFromRefs(sourceRefs),
     };
   }
 
@@ -97,6 +134,7 @@ function normalizeStoredToken(input: StoredTokenInput): CandidateBuildToken | nu
     frequency: Math.max(1, Number(input.f || 1)),
     extractionMethod: "manual",
     confidence: 0.8,
+    sourceNames: [],
   };
 }
 
@@ -116,7 +154,11 @@ function cleanLegacyCandidateFiles(candidateSourceDir: string): void {
     return;
   }
   for (const item of fs.readdirSync(candidateSourceDir)) {
-    if (item.endsWith(".candidate_name_db.json") || item.endsWith(".candidate_names.json")) {
+    if (
+      item.endsWith(".candidate_name_db.json") ||
+      item.endsWith(".candidate_names.json") ||
+      item.endsWith(".name_sources.json")
+    ) {
       fs.rmSync(path.resolve(candidateSourceDir, item), { force: true });
     }
   }
@@ -177,12 +219,14 @@ function addTokenToMap({
   sourceId,
   charDb,
   sourceIndex,
+  sourceNameIndex,
 }: {
   map: Map<string, CandidateNameRecord>;
   token: CandidateBuildToken;
   sourceId: string;
   charDb: CharDb;
   sourceIndex: SourceIndex;
+  sourceNameIndex: Map<string, Map<string, string[]>>;
 }): void {
   const source = getSourceConfig(sourceId);
   let candidate = map.get(token.token);
@@ -217,6 +261,24 @@ function addTokenToMap({
       reason: source.description,
     });
     candidate.sourceReasons.push(source.description);
+  }
+
+  if (token.sourceNames.length > 0) {
+    let sourceNames = sourceNameIndex.get(source.id);
+    if (!sourceNames) {
+      sourceNames = new Map<string, string[]>();
+      sourceNameIndex.set(source.id, sourceNames);
+    }
+    const current = sourceNames.get(token.token) || [];
+    for (const sourceName of token.sourceNames) {
+      if (!current.includes(sourceName)) {
+        current.push(sourceName);
+      }
+      if (current.length >= 5) {
+        break;
+      }
+    }
+    sourceNames.set(token.token, current);
   }
 }
 
@@ -253,6 +315,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
   const candidateMaps = new Map<string, Map<string, CandidateNameRecord>>(
     SOURCE_CONFIGS.map((source) => [source.id, new Map<string, CandidateNameRecord>()])
   );
+  const sourceNameIndex = new Map<string, Map<string, string[]>>();
   const allCandidateNames = new Set<string>();
   const sourceIndex: SourceIndex = {
     generatedAt: new Date().toISOString(),
@@ -272,6 +335,20 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
           candidateCount: 0,
           file: `sources/${source.id}.candidate_names.json`,
           byteSize: 0,
+          percentileFilter:
+            source.id === "wealth" || source.id === "academic"
+              ? {
+                  enabled: true,
+                  bucketCount: 100,
+                  minSelectablePercent: 2,
+                  defaultMinPercent: 2,
+                  defaultMaxPercent: 100,
+                }
+              : undefined,
+          sourceNameFile:
+            source.id === "imperial_exam" || source.id === "ancient_names"
+              ? `sources/${source.id}.name_sources.json`
+              : undefined,
         },
       ])
     ),
@@ -303,7 +380,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     for (const sourceId of token.sourceIds) {
       const map = candidateMaps.get(sourceId);
       if (map) {
-        addTokenToMap({ map, token, sourceId, charDb, sourceIndex });
+        addTokenToMap({ map, token, sourceId, charDb, sourceIndex, sourceNameIndex });
         allCandidateNames.add(token.token);
       }
     }
@@ -325,6 +402,10 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     writeJson(file, toCompactCandidateDb(candidateDb));
     if (stats) {
       stats.byteSize = fs.statSync(file).size;
+    }
+    const sourceNames = sourceNameIndex.get(source.id);
+    if (stats?.sourceNameFile && sourceNames) {
+      writeJson(path.resolve(candidateDir, stats.sourceNameFile), Object.fromEntries(sourceNames.entries()));
     }
     if (source.id === DEFAULT_SOURCE_ID) {
       defaultCandidateDb = candidateDb;
@@ -363,6 +444,7 @@ Generated by \`scripts/data/buildCandidateDb.ts\`.
 
 - \`candidate_name_db.json\`: compact default-source candidate names for ${DEFAULT_SOURCE_ID}.
 - \`sources/*.candidate_names.json\`: compact per-source candidate name shards.
+- \`sources/*.name_sources.json\`: compact historical source-name lookup for result cards.
 - \`candidate_char_db.json\`: character pronunciation and frequency data used by browser-side hydration/scoring.
 - \`source_index.json\`: source metadata, shard paths, counts, and byte sizes.
 

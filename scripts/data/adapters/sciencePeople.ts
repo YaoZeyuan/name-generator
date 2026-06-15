@@ -10,25 +10,21 @@ const scienceFiles = [
     path: "resource/science/科学院院士名录.txt",
     detail: "academy_science",
     label: "科学院院士名录",
-    candidateSourceId: "academic_selected",
   },
   {
     path: "resource/science/工程院院士名录.txt",
     detail: "academy_engineering",
     label: "工程院院士名录",
-    candidateSourceId: "academic_selected",
   },
   {
     path: "resource/science/国家自然基金_项目负责人_截至2017.txt",
     detail: "natural_science_fund_principal",
     label: "国家自然基金项目负责人",
-    candidateSourceId: "academic_broad",
   },
   {
     path: "resource/science/国家社科基金_项目负责人_截至202305.txt",
     detail: "social_science_fund_principal",
     label: "国家社科基金项目负责人",
-    candidateSourceId: "academic_broad",
   },
 ];
 
@@ -60,19 +56,17 @@ export const sciencePeopleAdapter: DataSourceAdapter = {
             line,
             sourceDetail: file.detail,
             sourceLabel: file.label,
-            candidateSourceId: file.candidateSourceId,
           },
           normalizedFields: {
             fullName,
             sourceDetail: file.detail,
             sourceLabel: file.label,
-            candidateSourceId: file.candidateSourceId,
           },
           extractedTexts: [
             {
               text: fullName,
               textType: "science_person_name",
-              confidence: file.candidateSourceId === "academic_selected" ? 0.92 : 0.82,
+              confidence: 0.86,
               note: file.label,
             },
           ],
@@ -90,7 +84,6 @@ export const sciencePeopleAdapter: DataSourceAdapter = {
       if (!token) {
         continue;
       }
-      const candidateSourceId = String(record.normalizedFields.candidateSourceId || "academic_broad");
       const sourceDetail = String(record.normalizedFields.sourceDetail || "science_person_name");
       tokens.push(
         createToken({
@@ -98,10 +91,10 @@ export const sciencePeopleAdapter: DataSourceAdapter = {
           token,
           field: "line",
           value: fullName,
-          sourceIds: [candidateSourceId],
+          sourceIds: ["academic"],
           tokenType: "science_given_name",
           extractionMethod: "take_name_tail",
-          confidence: candidateSourceId === "academic_selected" ? 0.92 : 0.82,
+          confidence: 0.86,
           sourceDetail,
           relatedPerson: fullName,
         })
@@ -110,4 +103,3 @@ export const sciencePeopleAdapter: DataSourceAdapter = {
     return tokens;
   },
 };
-

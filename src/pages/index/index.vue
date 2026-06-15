@@ -30,11 +30,58 @@
               :key="source.id"
               class="source-chip"
               :class="{ active: selectedSourceId === source.id }"
-              @click="selectedSourceId = source.id"
+              @click="selectSource(source.id)"
             >
               <text>{{ source.shortLabel }}</text>
               <text class="source-count">{{ source.countText }}</text>
             </button>
+          </view>
+        </view>
+
+        <view v-if="frequencyFilterEnabled" class="field-block wide">
+          <view class="label-row">
+            <text class="field-label">频率分位</text>
+            <text class="field-help">{{ frequencySummary }}</text>
+          </view>
+          <view class="range-shell">
+            <input
+              class="range-input"
+              type="range"
+              min="2"
+              max="100"
+              :value="String(frequencyMin)"
+              @input="onFrequencyInput('min', $event)"
+            />
+            <input
+              class="range-input"
+              type="range"
+              min="2"
+              max="100"
+              :value="String(frequencyMax)"
+              @input="onFrequencyInput('max', $event)"
+            />
+          </view>
+          <view class="range-number-row">
+            <view class="range-number">
+              <text>起点</text>
+              <input
+                class="text-input range-number-input"
+                type="number"
+                :value="String(frequencyMin)"
+                @input="onFrequencyInput('min', $event)"
+              />
+              <text>%</text>
+            </view>
+            <view class="range-number">
+              <text>终点</text>
+              <input
+                class="text-input range-number-input"
+                type="number"
+                :value="String(frequencyMax)"
+                @input="onFrequencyInput('max', $event)"
+              />
+              <text>%</text>
+            </view>
           </view>
         </view>
 
@@ -54,16 +101,6 @@
         </view>
 
         <view class="field-block">
-          <text class="field-label">指定字</text>
-          <input
-            class="text-input"
-            maxlength="8"
-            :value="mustText"
-            @input="onInput('mustText', $event)"
-          />
-        </view>
-
-        <view class="field-block">
           <text class="field-label">位置</text>
           <view class="segmented">
             <button
@@ -76,6 +113,26 @@
               {{ item.label }}
             </button>
           </view>
+        </view>
+
+        <view class="field-block wide">
+          <view class="label-row">
+            <text class="field-label">指定字</text>
+            <text class="field-help">可填多个字，候选名至少包含其中一个</text>
+          </view>
+          <textarea
+            class="text-area must-area"
+            :value="mustText"
+            maxlength="80"
+            @input="onInput('mustText', $event)"
+          />
+          <button
+            class="toggle-button"
+            :class="{ active: looseMode }"
+            @click="looseMode = !looseMode"
+          >
+            没想好，随便看看
+          </button>
         </view>
 
         <view class="field-block">
@@ -145,8 +202,18 @@
               <text>{{ item.sources.join('、') }}</text>
             </view>
             <view class="reason-line">
-              <text>{{ item.semantic }}</text>
+              <text v-if="item.semantic">{{ item.semantic }}</text>
               <text>{{ item.phonetic }}</text>
+            </view>
+            <view v-if="item.sourceNames.length > 0" class="source-name-row">
+              <button
+                v-for="sourceName in item.sourceNames"
+                :key="`${item.name}-${sourceName}`"
+                class="source-link"
+                @click="openSourcePerson(sourceName)"
+              >
+                查 {{ sourceName }}
+              </button>
             </view>
           </view>
         </view>
@@ -173,12 +240,22 @@ import {
   type SourcePreference,
 } from '../../../packages/name-core/src'
 
+type PercentileFilter = {
+  enabled: boolean
+  bucketCount: number
+  minSelectablePercent: number
+  defaultMinPercent: number
+  defaultMaxPercent: number
+}
+
 type SourceStats = {
   id: string
   label: string
   candidateCount: number
   file: string
   byteSize: number
+  percentileFilter?: PercentileFilter
+  sourceNameFile?: string
 }
 
 type SourceIndex = {
@@ -190,11 +267,15 @@ type SourceIndex = {
 type PublicResult = ReturnType<typeof toPublicResult>
 
 const DATABASE_BASE = '/api/database/candidate'
+const DEFAULT_MUST_TEXT = '斌波超丹徳芳凤刚桂国涵航豪浩皓和红华辉佳建杰静娟军俊兰磊丽玲'
 
 const surname = ref('姚')
 const selectedSourceId = ref<SourcePreference>(DEFAULT_SOURCE_ID as SourcePreference)
+const frequencyMin = ref(2)
+const frequencyMax = ref(100)
 const style = ref<NameStyle>('any')
-const mustText = ref('')
+const mustText = ref(DEFAULT_MUST_TEXT)
+const looseMode = ref(false)
 const mustPosition = ref<MustPosition>('any')
 const avoidText = ref('赵钱孙\n刘强\n李建国')
 const limit = ref(30)
@@ -202,6 +283,7 @@ const limit = ref(30)
 const sourceIndex = ref<SourceIndex | null>(null)
 const charDb = ref<CharDb | null>(null)
 const candidateCache = new Map<string, CandidateName[]>()
+const sourceNameCache = new Map<string, Record<string, string[]>>()
 const results = ref<PublicResult[]>([])
 const errorMessage = ref('')
 const isSearching = ref(false)
@@ -240,12 +322,25 @@ const selectedSource = computed(() => {
   return sourceOptions.value.find((item) => item.id === selectedSourceId.value)
 })
 
+const selectedSourceStats = computed(() => sourceIndex.value?.sources?.[selectedSourceId.value])
+
 const selectedSourceLabel = computed(() => selectedSource.value?.label || '默认来源')
 
+const frequencyFilterEnabled = computed(() => Boolean(selectedSourceStats.value?.percentileFilter?.enabled))
+
 const selectedSourceMeta = computed(() => {
-  const stats = sourceIndex.value?.sources?.[selectedSourceId.value]
+  const stats = selectedSourceStats.value
   if (!stats) return '候选加载后显示'
-  return `${stats.candidateCount} 个候选 · ${formatByteSize(stats.byteSize)}`
+  if (!frequencyFilterEnabled.value) {
+    return `${stats.candidateCount} 个候选 · ${formatByteSize(stats.byteSize)}`
+  }
+  return `${currentFrequencyCount(stats.candidateCount)} / ${stats.candidateCount} 个候选 · ${frequencyMin.value}%~${frequencyMax.value}%`
+})
+
+const frequencySummary = computed(() => {
+  const stats = selectedSourceStats.value
+  if (!stats) return ''
+  return `已排除最高频前 1%，当前约 ${currentFrequencyCount(stats.candidateCount)} 个`
 })
 
 const resultSummary = computed(() => {
@@ -261,15 +356,42 @@ onMounted(async () => {
   }
 })
 
+function selectSource(sourceId: SourcePreference) {
+  selectedSourceId.value = sourceId
+  resetFrequencyRange()
+}
+
+function resetFrequencyRange() {
+  const filter = selectedSourceStats.value?.percentileFilter
+  frequencyMin.value = filter?.defaultMinPercent || 2
+  frequencyMax.value = filter?.defaultMaxPercent || 100
+}
+
 function onInput(field: 'surname' | 'mustText' | 'avoidText', event: any) {
   const value = event?.detail?.value ?? ''
   if (field === 'surname') surname.value = stripNonChinese(value).slice(0, 4)
-  if (field === 'mustText') mustText.value = stripNonChinese(value).slice(0, 8)
+  if (field === 'mustText') mustText.value = stripNonChinese(value).slice(0, 80)
   if (field === 'avoidText') avoidText.value = value
 }
 
 function onLimitInput(event: any) {
   setLimit(Number(event?.detail?.value || 0))
+}
+
+function onFrequencyInput(bound: 'min' | 'max', event: any) {
+  const value = Number(event?.detail?.value || 0)
+  setFrequencyRange(bound, value)
+}
+
+function setFrequencyRange(bound: 'min' | 'max', value: number) {
+  const filter = selectedSourceStats.value?.percentileFilter
+  const minSelectable = filter?.minSelectablePercent || 2
+  const next = Math.max(minSelectable, Math.min(100, Number.isFinite(value) ? Math.round(value) : minSelectable))
+  if (bound === 'min') {
+    frequencyMin.value = Math.min(next, frequencyMax.value)
+  } else {
+    frequencyMax.value = Math.max(next, frequencyMin.value)
+  }
 }
 
 function setLimit(next: number) {
@@ -285,14 +407,20 @@ async function handleSearch() {
     return
   }
 
+  const must = looseMode.value ? [] : splitChineseChars(mustText.value)
+  if (!looseMode.value && must.length === 0) {
+    errorMessage.value = '请填写至少一个指定字，或选择“没想好，随便看看”'
+    return
+  }
+
   isSearching.value = true
   try {
-    const candidateDb = await loadCandidateDb(selectedSourceId.value)
+    const candidateDb = applyFrequencyRange(await loadCandidateDb(selectedSourceId.value))
     const loadedCharDb = await loadCharDb()
     const query: QueryConfig = {
       surname: cleanedSurname,
       avoid: parseAvoidList(avoidText.value),
-      must: splitChineseChars(mustText.value),
+      must,
       mustPosition: mustPosition.value,
       style: style.value,
       sourcePreference: selectedSourceId.value,
@@ -311,12 +439,26 @@ async function loadSourceIndex() {
   const index = await requestJson<SourceIndex>(`${DATABASE_BASE}/source_index.json`)
   sourceIndex.value = index
   selectedSourceId.value = (index.defaultSourceId || DEFAULT_SOURCE_ID) as SourcePreference
+  resetFrequencyRange()
 }
 
 async function loadCharDb(): Promise<CharDb> {
   if (charDb.value) return charDb.value
   charDb.value = await requestJson<CharDb>(`${DATABASE_BASE}/candidate_char_db.json`)
   return charDb.value
+}
+
+async function loadSourceNameMap(sourceId: SourcePreference): Promise<Record<string, string[]>> {
+  const cached = sourceNameCache.get(String(sourceId))
+  if (cached) return cached
+  const file = sourceIndex.value?.sources?.[sourceId]?.sourceNameFile
+  if (!file) {
+    sourceNameCache.set(String(sourceId), {})
+    return {}
+  }
+  const sourceNames = await requestJson<Record<string, string[]>>(`${DATABASE_BASE}/${file.replace(/\\/g, '/')}`)
+  sourceNameCache.set(String(sourceId), sourceNames)
+  return sourceNames
 }
 
 async function loadCandidateDb(sourceId: SourcePreference): Promise<CandidateName[]> {
@@ -326,14 +468,16 @@ async function loadCandidateDb(sourceId: SourcePreference): Promise<CandidateNam
 
   const stats = sourceIndex.value?.sources?.[sourceId]
   const file = stats?.file || `sources/${sourceId}.candidate_names.json`
-  const [loadedCharDb, compactCandidateDb] = await Promise.all([
+  const [loadedCharDb, compactCandidateDb, sourceNamesByName] = await Promise.all([
     loadCharDb(),
     requestJson<unknown>(`${DATABASE_BASE}/${file.replace(/\\/g, '/')}`),
+    loadSourceNameMap(sourceId),
   ])
   const candidateDb = hydrateCandidateDb({
     data: compactCandidateDb as any,
     sourceId,
     charDb: loadedCharDb,
+    sourceNamesByName,
   })
   candidateCache.set(cacheKey, candidateDb)
   return candidateDb
@@ -351,9 +495,27 @@ async function requestJson<T>(url: string): Promise<T> {
   return data as T
 }
 
+function applyFrequencyRange(candidateDb: CandidateName[]): CandidateName[] {
+  if (!frequencyFilterEnabled.value) return candidateDb
+  const { start, end } = getFrequencyIndexes(candidateDb.length)
+  return candidateDb.slice(start, end)
+}
+
+function currentFrequencyCount(total: number): number {
+  const { start, end } = getFrequencyIndexes(total)
+  return Math.max(0, end - start)
+}
+
+function getFrequencyIndexes(total: number): { start: number; end: number } {
+  if (total <= 0) return { start: 0, end: 0 }
+  const start = Math.min(total, Math.floor(((frequencyMin.value - 1) / 100) * total))
+  const end = Math.min(total, Math.ceil((frequencyMax.value / 100) * total))
+  return { start, end: Math.max(start, end) }
+}
+
 function parseAvoidList(input: string): string[] {
   return input
-    .split(/[\n,，、;；\s]+/u)
+    .split(/[\n,，、；;\s]+/u)
     .map((item) => stripNonChinese(item))
     .filter(Boolean)
 }
@@ -372,6 +534,15 @@ function formatByteSize(size: number): string {
   if (!size) return '--'
   if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)}MB`
   return `${Math.round(size / 1024)}KB`
+}
+
+function openSourcePerson(sourceName: string) {
+  const url = `https://www.baidu.com/s?wd=${encodeURIComponent(sourceName)}`
+  if (typeof window !== 'undefined' && window.open) {
+    window.open(url, '_blank')
+    return
+  }
+  Taro.setClipboardData({ data: url })
 }
 
 function getErrorMessage(error: unknown): string {
@@ -459,6 +630,14 @@ function getErrorMessage(error: unknown): string {
   grid-column: 1 / -1;
 }
 
+.label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
 .field-label {
   display: block;
   margin-bottom: 10px;
@@ -466,6 +645,18 @@ function getErrorMessage(error: unknown): string {
   line-height: 30px;
   color: #56615d;
   font-weight: 600;
+}
+
+.label-row .field-label {
+  margin-bottom: 0;
+}
+
+.field-help {
+  min-width: 0;
+  color: #7a837f;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: right;
 }
 
 .text-input,
@@ -495,6 +686,10 @@ function getErrorMessage(error: unknown): string {
   line-height: 38px;
 }
 
+.must-area {
+  min-height: 92px;
+}
+
 .source-scroll {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -503,7 +698,9 @@ function getErrorMessage(error: unknown): string {
 
 .source-chip,
 .segment-button,
-.icon-button {
+.icon-button,
+.toggle-button,
+.source-link {
   border: 1px solid #d8ddd8;
   background: #f8faf8;
   color: #27312e;
@@ -525,7 +722,8 @@ function getErrorMessage(error: unknown): string {
 }
 
 .source-chip.active,
-.segment-button.active {
+.segment-button.active,
+.toggle-button.active {
   border-color: #1a7668;
   background: #e8f5f1;
   color: #125e53;
@@ -538,6 +736,39 @@ function getErrorMessage(error: unknown): string {
   font-size: 20px;
 }
 
+.range-shell {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.range-input {
+  width: 100%;
+}
+
+.range-number-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.range-number {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  color: #56615d;
+  font-size: 22px;
+}
+
+.range-number-input {
+  height: 58px;
+  text-align: center;
+  font-size: 24px;
+}
+
 .segmented {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -547,6 +778,13 @@ function getErrorMessage(error: unknown): string {
 .segment-button {
   height: 72px;
   font-size: 24px;
+}
+
+.toggle-button {
+  width: 100%;
+  height: 64px;
+  margin-top: 12px;
+  font-size: 22px;
 }
 
 .limit-control {
@@ -690,7 +928,8 @@ function getErrorMessage(error: unknown): string {
 }
 
 .meta-line,
-.reason-line {
+.reason-line,
+.source-name-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 18px;
@@ -707,6 +946,19 @@ function getErrorMessage(error: unknown): string {
   color: #5b6762;
 }
 
+.source-name-row {
+  gap: 10px;
+}
+
+.source-link {
+  height: 50px;
+  padding: 0 14px;
+  color: #125e53;
+  border-color: #b7d9cc;
+  background: #f2fbf7;
+  font-size: 20px;
+}
+
 @media (max-width: 640px) {
   .index-page {
     padding: 22px;
@@ -720,7 +972,8 @@ function getErrorMessage(error: unknown): string {
     max-width: none;
   }
 
-  .source-scroll {
+  .source-scroll,
+  .range-number-row {
     grid-template-columns: 1fr;
   }
 
@@ -731,6 +984,15 @@ function getErrorMessage(error: unknown): string {
 
   .top-bar {
     flex-direction: column;
+  }
+
+  .label-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .field-help {
+    text-align: left;
   }
 }
 </style>

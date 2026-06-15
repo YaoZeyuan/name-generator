@@ -95,7 +95,7 @@ export function evaluateSemanticSafety(fullName: string, name: string): Semantic
     pass: score > 0,
     score,
     issues,
-    summary: issues.length === 0 ? "未发现明显语义风险" : issues.join("；"),
+    summary: issues.length === 0 ? "" : issues.join("；"),
   };
 }
 

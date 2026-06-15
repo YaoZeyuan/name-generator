@@ -81,7 +81,7 @@ export function scoreCandidate({
     phonetic.summary,
     `来源：${sourceNames || "未知"}`,
     candidate.flags.hasRareChar ? "包含低频字，已降低用字分" : "用字频率可接受",
-  ];
+  ].filter(Boolean);
 
   return {
     fullName: `${surname}${candidate.name}`,

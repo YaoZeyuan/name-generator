@@ -5,9 +5,11 @@ export function explainCandidate(result: ScoredCandidate): string {
   return [
     `${result.fullName}：总分 ${result.score}`,
     `来源：${sourceNames || "未知"}`,
-    `语义：${result.semantic.summary}`,
+    result.semantic.summary ? `避讳：${result.semantic.summary}` : "",
     `音律：${result.phonetic.summary}`,
-  ].join("；");
+  ]
+    .filter(Boolean)
+    .join("；");
 }
 
 export function toPublicResult(result: ScoredCandidate) {
@@ -17,6 +19,7 @@ export function toPublicResult(result: ScoredCandidate) {
     score: result.score,
     breakdown: result.breakdown,
     sources: result.candidate.sources.map((source) => source.label),
+    sourceNames: result.candidate.sourceNames || [],
     pinyin: result.chars.map((char) => char.pinyin),
     tonePattern: result.phonetic.tonePattern,
     semantic: result.semantic.summary,

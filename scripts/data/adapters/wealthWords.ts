@@ -119,23 +119,16 @@ export const wealthWordsAdapter: DataSourceAdapter = {
       })
       .filter((item) => item.token);
 
-    const acceptedForSplit = candidates
-      .filter((item) => item.rejectReasons.length === 0)
-      .sort((a, b) => b.frequency - a.frequency);
-    const selectedCount = Math.max(1, Math.ceil(acceptedForSplit.length * 0.1));
-    const selectedTokens = new Set(acceptedForSplit.slice(0, selectedCount).map((item) => item.token));
-
     return candidates.map((item) => {
-      const sourceId = selectedTokens.has(item.token) ? "wealth_selected" : "wealth_broad";
       return createToken({
         record: item.record,
         token: item.token,
         field: "content",
         value: item.token,
-        sourceIds: [sourceId],
+        sourceIds: ["wealth"],
         tokenType: "fund_word",
         extractionMethod: "word_frequency",
-        confidence: sourceId === "wealth_selected" ? 0.66 : 0.55,
+        confidence: 0.62,
         frequency: Math.max(1, item.frequency),
         sourceDetail: "fund_name_word_frequency",
         rejectReasons: item.rejectReasons.length > 0 ? item.rejectReasons : undefined,

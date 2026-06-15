@@ -48,6 +48,9 @@ const candidateDb = hydrateCandidateDb({
   data: readJson<any[]>(sourceCandidateFile),
   sourceId,
   charDb,
+  sourceNamesByName: sourceIndex.sources[sourceId].sourceNameFile
+    ? readJson<Record<string, string[]>>(path.resolve(candidateDir, sourceIndex.sources[sourceId].sourceNameFile))
+    : {},
 });
 const results = queryNames({ candidateDb, charDb, query });
 const publicResults = results.map(toPublicResult);

@@ -44,10 +44,8 @@ export interface SourceConfig {
 
 export type SourcePreference =
   | "default"
-  | "wealth_selected"
-  | "wealth_broad"
-  | "academic_selected"
-  | "academic_broad"
+  | "wealth"
+  | "academic"
   | "modern_people"
   | "imperial_exam"
   | "ancient_names";
@@ -66,6 +64,7 @@ export interface CandidateName {
   sources: CandidateSource[];
   sourceIds: string[];
   sourceReasons: string[];
+  sourceNames?: string[];
   chars: [string, string];
   flags: {
     hasRareChar: boolean;

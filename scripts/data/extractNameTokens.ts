@@ -44,6 +44,23 @@ function addCharFrequency(map: Map<string, number>, text: string, weight: number
   }
 }
 
+function getSourceNames(token: ExtractedNameToken): string[] {
+  if (!token.sourceIds.some((sourceId) => sourceId === "imperial_exam" || sourceId === "ancient_names")) {
+    return [];
+  }
+  const names: string[] = [];
+  for (const sourceRef of token.sourceRefs) {
+    const name = stripNonChinese(sourceRef.relatedPerson || sourceRef.value);
+    if (name && !names.includes(name)) {
+      names.push(name);
+    }
+    if (names.length >= 5) {
+      break;
+    }
+  }
+  return names;
+}
+
 export async function extractNameTokens(): Promise<{
   tokens: ExtractedNameToken[];
   rejected: RejectedNameToken[];
@@ -116,7 +133,12 @@ export async function extractNameTokens(): Promise<{
     .map(([char, frequency]) => ({ char, frequency }))
     .sort((a, b) => b.frequency - a.frequency || a.char.localeCompare(b.char, "zh-Hans-CN"));
 
-  const storedTokens: StoredNameToken[] = tokens.map((token) => [token.token, token.sourceIds, token.frequency]);
+  const storedTokens: StoredNameToken[] = tokens.map((token) => {
+    const sourceNames = getSourceNames(token);
+    return sourceNames.length > 0
+      ? [token.token, token.sourceIds, token.frequency, sourceNames]
+      : [token.token, token.sourceIds, token.frequency];
+  });
   const storedRejected: StoredRejectedNameToken[] = rejected.map((token) => [
     token.token,
     token.sourceIds,

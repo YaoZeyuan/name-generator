@@ -90,7 +90,7 @@ export type RejectedNameToken = ExtractedNameToken & {
   rejectReasons: RejectReasonCode[];
 };
 
-export type StoredNameToken = [token: string, sourceIds: string[], frequency: number];
+export type StoredNameToken = [token: string, sourceIds: string[], frequency: number, sourceNames?: string[]];
 
 export type StoredRejectedNameToken = [
   token: string,

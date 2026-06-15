@@ -31,10 +31,12 @@ export function hydrateCandidateDb({
   data,
   sourceId,
   charDb,
+  sourceNamesByName,
 }: {
   data: CompactCandidateDb | CandidateName[];
   sourceId: string;
   charDb: CharDb;
+  sourceNamesByName?: Record<string, string[]>;
 }): CandidateName[] {
   const source = toCandidateSource(sourceId);
 
@@ -56,6 +58,7 @@ export function hydrateCandidateDb({
         sources: [source],
         sourceIds: [source.id],
         sourceReasons: [source.reason],
+        sourceNames: sourceNamesByName?.[name] || [],
         chars: chars as [string, string],
         flags: {
           hasRareChar: charInfos.some((char) => char.count > 0 && char.count < 3),

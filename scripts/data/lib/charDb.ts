@@ -1,11 +1,18 @@
 import path from "node:path";
+import fs from "node:fs";
 import type { CharDb, LegacyCharRecord } from "../../../packages/name-core/src";
 import { normalizeLegacyChar } from "../../../packages/name-core/src";
 import { readJson } from "./readJson";
 
 export function loadCandidateCharDb(rootDir: string): CharDb {
+  const generatedCharDbFile = path.resolve(rootDir, "api", "database", "candidate", "candidate_char_db.json");
+  const legacyCharDbFile = path.resolve(rootDir, "old", "database", "char_db", "zd_without_muilt_tone_char_db.json");
+  if (!fs.existsSync(legacyCharDbFile) && fs.existsSync(generatedCharDbFile)) {
+    return readJson<CharDb>(generatedCharDbFile);
+  }
+
   const legacyCharDb = readJson<Record<string, LegacyCharRecord>>(
-    path.resolve(rootDir, "old", "database", "char_db", "zd_without_muilt_tone_char_db.json")
+    legacyCharDbFile
   );
   const activePolyphones = new Set(
     readJson<{ char: string }[]>(
