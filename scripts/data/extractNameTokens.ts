@@ -11,6 +11,7 @@ import type {
 import { loadCandidateCharDb } from "./lib/charDb";
 import { createBuildContext } from "./lib/paths";
 import { validateToken } from "./lib/rejectReason";
+import { getSourceRefDisplayName } from "./lib/sourceRef";
 import { chineseLength, sortChinese, splitChars, stripNonChinese } from "./lib/normalizeText";
 import { writeJson } from "./lib/writeJson";
 import { runIfMain } from "./lib/run";
@@ -50,7 +51,7 @@ function getSourceNames(token: ExtractedNameToken): string[] {
   }
   const names: string[] = [];
   for (const sourceRef of token.sourceRefs) {
-    const name = stripNonChinese(sourceRef.relatedPerson || sourceRef.value);
+    const name = getSourceRefDisplayName(sourceRef);
     if (name && !names.includes(name)) {
       names.push(name);
     }

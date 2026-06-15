@@ -15,6 +15,7 @@ import type {
 import { loadCandidateCharDb, sortObjectKeys } from "./lib/charDb";
 import { createBuildContext } from "./lib/paths";
 import { readJson } from "./lib/readJson";
+import { getSourceRefDisplayName } from "./lib/sourceRef";
 import { splitChars } from "./lib/normalizeText";
 import { writeJson, writeText } from "./lib/writeJson";
 import { runIfMain } from "./lib/run";
@@ -32,6 +33,7 @@ type SourceStats = {
   percentileFilter?: {
     enabled: boolean;
     bucketCount: number;
+    autoExcludeTopPercent: number;
     minSelectablePercent: number;
     defaultMinPercent: number;
     defaultMaxPercent: number;
@@ -86,7 +88,7 @@ function normalizeSourceIds(sourceIds: unknown): string[] {
 function getSourceNamesFromRefs(sourceRefs: SourceRef[]): string[] {
   const names: string[] = [];
   for (const sourceRef of sourceRefs) {
-    const name = String(sourceRef.relatedPerson || sourceRef.value || "").trim();
+    const name = getSourceRefDisplayName(sourceRef);
     if (name && !names.includes(name)) {
       names.push(name);
     }
@@ -335,16 +337,14 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
           candidateCount: 0,
           file: `sources/${source.id}.candidate_names.json`,
           byteSize: 0,
-          percentileFilter:
-            source.id === "wealth" || source.id === "academic"
-              ? {
-                  enabled: true,
-                  bucketCount: 100,
-                  minSelectablePercent: 2,
-                  defaultMinPercent: 2,
-                  defaultMaxPercent: 100,
-                }
-              : undefined,
+          percentileFilter: {
+            enabled: true,
+            bucketCount: 100,
+            autoExcludeTopPercent: 1,
+            minSelectablePercent: 0,
+            defaultMinPercent: 0,
+            defaultMaxPercent: 100,
+          },
           sourceNameFile:
             source.id === "imperial_exam" || source.id === "ancient_names"
               ? `sources/${source.id}.name_sources.json`

@@ -40,43 +40,29 @@
 
         <view v-if="frequencyFilterEnabled" class="field-block wide">
           <view class="label-row">
-            <text class="field-label">频率分位</text>
+            <text class="field-label">频率分位范围</text>
             <text class="field-help">{{ frequencySummary }}</text>
-          </view>
-          <view class="range-shell">
-            <input
-              class="range-input"
-              type="range"
-              min="2"
-              max="100"
-              :value="String(frequencyMin)"
-              @input="onFrequencyInput('min', $event)"
-            />
-            <input
-              class="range-input"
-              type="range"
-              min="2"
-              max="100"
-              :value="String(frequencyMax)"
-              @input="onFrequencyInput('max', $event)"
-            />
           </view>
           <view class="range-number-row">
             <view class="range-number">
-              <text>起点</text>
+              <text>下限</text>
               <input
                 class="text-input range-number-input"
                 type="number"
+                min="0"
+                max="100"
                 :value="String(frequencyMin)"
                 @input="onFrequencyInput('min', $event)"
               />
               <text>%</text>
             </view>
             <view class="range-number">
-              <text>终点</text>
+              <text>上限</text>
               <input
                 class="text-input range-number-input"
                 type="number"
+                min="0"
+                max="100"
                 :value="String(frequencyMax)"
                 @input="onFrequencyInput('max', $event)"
               />
@@ -115,15 +101,17 @@
           </view>
         </view>
 
-        <view class="field-block wide">
+        <view class="field-block wide" :class="{ disabled: looseMode }">
           <view class="label-row">
             <text class="field-label">指定字</text>
             <text class="field-help">可填多个字，候选名至少包含其中一个</text>
           </view>
           <textarea
             class="text-area must-area"
+            :class="{ disabled: looseMode }"
             :value="mustText"
             maxlength="80"
+            :disabled="looseMode"
             @input="onInput('mustText', $event)"
           />
           <button
@@ -131,12 +119,12 @@
             :class="{ active: looseMode }"
             @click="looseMode = !looseMode"
           >
-            没想好，随便看看
+            不指定字，随便看看
           </button>
         </view>
 
         <view class="field-block">
-          <text class="field-label">数量</text>
+          <text class="field-label">返回候选数</text>
           <view class="limit-control">
             <button class="icon-button" @click="setLimit(limit - 5)">-</button>
             <input
@@ -243,6 +231,7 @@ import {
 type PercentileFilter = {
   enabled: boolean
   bucketCount: number
+  autoExcludeTopPercent?: number
   minSelectablePercent: number
   defaultMinPercent: number
   defaultMaxPercent: number
@@ -271,7 +260,7 @@ const DEFAULT_MUST_TEXT = '斌波超丹徳芳凤刚桂国涵航豪浩皓和红�
 
 const surname = ref('姚')
 const selectedSourceId = ref<SourcePreference>(DEFAULT_SOURCE_ID as SourcePreference)
-const frequencyMin = ref(2)
+const frequencyMin = ref(0)
 const frequencyMax = ref(100)
 const style = ref<NameStyle>('any')
 const mustText = ref(DEFAULT_MUST_TEXT)
@@ -340,7 +329,8 @@ const selectedSourceMeta = computed(() => {
 const frequencySummary = computed(() => {
   const stats = selectedSourceStats.value
   if (!stats) return ''
-  return `已排除最高频前 1%，当前约 ${currentFrequencyCount(stats.candidateCount)} 个`
+  const autoExcludePercent = selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1
+  return `自动去除最高频前${formatPercent(autoExcludePercent)}%，当前候选名约${currentFrequencyCount(stats.candidateCount)}个`
 })
 
 const resultSummary = computed(() => {
@@ -363,8 +353,8 @@ function selectSource(sourceId: SourcePreference) {
 
 function resetFrequencyRange() {
   const filter = selectedSourceStats.value?.percentileFilter
-  frequencyMin.value = filter?.defaultMinPercent || 2
-  frequencyMax.value = filter?.defaultMaxPercent || 100
+  frequencyMin.value = filter?.defaultMinPercent ?? 0
+  frequencyMax.value = filter?.defaultMaxPercent ?? 100
 }
 
 function onInput(field: 'surname' | 'mustText' | 'avoidText', event: any) {
@@ -385,7 +375,7 @@ function onFrequencyInput(bound: 'min' | 'max', event: any) {
 
 function setFrequencyRange(bound: 'min' | 'max', value: number) {
   const filter = selectedSourceStats.value?.percentileFilter
-  const minSelectable = filter?.minSelectablePercent || 2
+  const minSelectable = filter?.minSelectablePercent ?? 0
   const next = Math.max(minSelectable, Math.min(100, Number.isFinite(value) ? Math.round(value) : minSelectable))
   if (bound === 'min') {
     frequencyMin.value = Math.min(next, frequencyMax.value)
@@ -409,7 +399,7 @@ async function handleSearch() {
 
   const must = looseMode.value ? [] : splitChineseChars(mustText.value)
   if (!looseMode.value && must.length === 0) {
-    errorMessage.value = '请填写至少一个指定字，或选择“没想好，随便看看”'
+    errorMessage.value = '请填写至少一个指定字，或选择“不指定字，随便看看”'
     return
   }
 
@@ -508,9 +498,16 @@ function currentFrequencyCount(total: number): number {
 
 function getFrequencyIndexes(total: number): { start: number; end: number } {
   if (total <= 0) return { start: 0, end: 0 }
-  const start = Math.min(total, Math.floor(((frequencyMin.value - 1) / 100) * total))
-  const end = Math.min(total, Math.ceil((frequencyMax.value / 100) * total))
+  const autoExcludePercent = selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1
+  const autoExcluded = Math.min(total, Math.floor((clampPercent(autoExcludePercent) / 100) * total))
+  const selectableTotal = Math.max(0, total - autoExcluded)
+  const start = Math.min(total, autoExcluded + Math.floor((clampPercent(frequencyMin.value) / 100) * selectableTotal))
+  const end = Math.min(total, autoExcluded + Math.ceil((clampPercent(frequencyMax.value) / 100) * selectableTotal))
   return { start, end: Math.max(start, end) }
+}
+
+function clampPercent(value: number): number {
+  return Math.max(0, Math.min(100, Number.isFinite(value) ? value : 0))
 }
 
 function parseAvoidList(input: string): string[] {
@@ -528,6 +525,11 @@ function stripNonChinese(input: string): string {
   return Array.from(input || '')
     .filter((char) => /[\u3400-\u9fff]/u.test(char))
     .join('')
+}
+
+function formatPercent(value: number): string {
+  const percent = clampPercent(value)
+  return Number.isInteger(percent) ? String(percent) : percent.toFixed(1)
 }
 
 function formatByteSize(size: number): string {
@@ -659,6 +661,11 @@ function getErrorMessage(error: unknown): string {
   text-align: right;
 }
 
+.field-block.disabled .field-label,
+.field-block.disabled .field-help {
+  color: #9aa39f;
+}
+
 .text-input,
 .text-area {
   box-sizing: border-box;
@@ -668,6 +675,13 @@ function getErrorMessage(error: unknown): string {
   background: #fbfcfb;
   color: #17211e;
   font-size: 28px;
+}
+
+.text-input:disabled,
+.text-area:disabled,
+.text-area.disabled {
+  background: #eef1ee;
+  color: #9aa39f;
 }
 
 .text-input {
@@ -736,22 +750,10 @@ function getErrorMessage(error: unknown): string {
   font-size: 20px;
 }
 
-.range-shell {
-  position: relative;
-  display: grid;
-  gap: 10px;
-  padding: 4px 0;
-}
-
-.range-input {
-  width: 100%;
-}
-
 .range-number-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 10px;
 }
 
 .range-number {
