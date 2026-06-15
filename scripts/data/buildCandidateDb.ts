@@ -341,12 +341,12 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
             enabled: true,
             bucketCount: 100,
             autoExcludeTopPercent: 1,
-            minSelectablePercent: 0,
-            defaultMinPercent: 0,
+            minSelectablePercent: 1,
+            defaultMinPercent: 1,
             defaultMaxPercent: 100,
           },
           sourceNameFile:
-            source.id === "imperial_exam" || source.id === "ancient_names"
+            source.id === "academic" || source.id === "imperial_exam" || source.id === "ancient_names"
               ? `sources/${source.id}.name_sources.json`
               : undefined,
         },

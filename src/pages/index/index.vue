@@ -25,31 +25,34 @@
         <view class="field-block">
           <text class="field-label">来源</text>
           <view class="source-scroll">
-            <button
+            <view
               v-for="source in sourceOptions"
               :key="source.id"
               class="source-chip"
               :class="{ active: selectedSourceId === source.id }"
               @click="selectSource(source.id)"
             >
-              <text>{{ source.shortLabel }}</text>
-              <text class="source-count">{{ source.countText }}</text>
-            </button>
+              <view class="source-chip-main">
+                <text>{{ source.shortLabel }}</text>
+                <text class="source-count">{{ source.countText }}</text>
+              </view>
+              <button class="source-help-button" @click.stop="showSourceInfo(source.id)">?</button>
+            </view>
           </view>
         </view>
 
         <view v-if="frequencyFilterEnabled" class="field-block wide">
           <view class="label-row">
-            <text class="field-label">频率分位范围</text>
+            <text class="field-label">高频分位</text>
             <text class="field-help">{{ frequencySummary }}</text>
           </view>
           <view class="range-number-row">
             <view class="range-number">
-              <text>下限</text>
+              <text>从高频前</text>
               <input
                 class="text-input range-number-input"
                 type="number"
-                min="0"
+                min="1"
                 max="100"
                 :value="String(frequencyMin)"
                 @input="onFrequencyInput('min', $event)"
@@ -57,11 +60,11 @@
               <text>%</text>
             </view>
             <view class="range-number">
-              <text>上限</text>
+              <text>到高频前</text>
               <input
                 class="text-input range-number-input"
                 type="number"
-                min="0"
+                min="1"
                 max="100"
                 :value="String(frequencyMax)"
                 @input="onFrequencyInput('max', $event)"
@@ -69,6 +72,7 @@
               <text>%</text>
             </view>
           </view>
+          <text class="range-hint">1% 更常见，100% 更冷门</text>
         </view>
 
         <view class="field-block">
@@ -110,7 +114,7 @@
             class="text-area must-area"
             :class="{ disabled: looseMode }"
             :value="mustText"
-            maxlength="80"
+            maxlength="160"
             :disabled="looseMode"
             @input="onInput('mustText', $event)"
           />
@@ -154,8 +158,31 @@
           <text>{{ selectedSourceMeta }}</text>
         </view>
         <nut-button type="primary" :loading="isSearching" @click="handleSearch">
-          生成候选
+          从 {{ selectedSourceLabel }}中生成候选
         </nut-button>
+      </view>
+    </view>
+
+    <view v-if="activeSourceInfo" class="modal-backdrop" @click="closeSourceInfo">
+      <view class="source-info-dialog" @click.stop>
+        <view class="source-info-header">
+          <text class="source-info-title">{{ activeSourceInfo.title }}</text>
+          <button class="source-info-close" @click="closeSourceInfo">关闭</button>
+        </view>
+        <text class="source-info-summary">{{ activeSourceInfo.summary }}</text>
+        <view class="source-info-list">
+          <view v-for="item in activeSourceInfo.items" :key="item.label" class="source-info-item">
+            <button
+              v-if="item.url"
+              class="source-info-link"
+              @click="openExternal(item.url)"
+            >
+              {{ item.label }}
+            </button>
+            <text v-else class="source-info-text">{{ item.label }}</text>
+          </view>
+        </view>
+        <text v-if="activeSourceInfo.note" class="source-info-note">{{ activeSourceInfo.note }}</text>
       </view>
     </view>
 
@@ -256,11 +283,93 @@ type SourceIndex = {
 type PublicResult = ReturnType<typeof toPublicResult>
 
 const DATABASE_BASE = '/api/database/candidate'
-const DEFAULT_MUST_TEXT = '斌波超丹徳芳凤刚桂国涵航豪浩皓和红华辉佳建杰静娟军俊兰磊丽玲'
+const DEFAULT_MUST_TEXT = [
+  '素处以默',
+  '妙机其微',
+  '饮之太和',
+  '独鹤与飞',
+  '犹之惠风',
+  '荏苒在衣',
+  '阅音修篁',
+  '美曰载归',
+  '遇之匪深',
+  '即之愈希',
+  '脱有形似',
+  '握手已违',
+].join('\n')
+
+type SourceInfo = {
+  title: string
+  summary: string
+  items: Array<{ label: string; url?: string }>
+  note?: string
+}
+
+const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
+  wealth: {
+    title: '财富论',
+    summary: '基于私募基金名和私募基金管理公司名整理，偏向稳健、资产、品牌语感较强的二字词。',
+    items: [
+      {
+        label: '中国证券投资基金业协会私募基金公示',
+        url: 'https://gs.amac.org.cn/amac-infodisc/res/pof/fund/index.html',
+      },
+      { label: '私募基金管理公司名称' },
+      { label: '已公布私募基金名' },
+    ],
+    note: '具体来源见项目 README.md。',
+  },
+  academic: {
+    title: '五道口',
+    summary: '基于科研项目负责人、两院院士等公开资料整理，偏向现代、稳重、学术语感。',
+    items: [
+      {
+        label: '国家自然科学研究基金资助项目',
+        url: 'https://kd.nsfc.gov.cn/',
+      },
+      {
+        label: '国家社会科学研究基金资助项目',
+        url: 'http://fz.people.com.cn/skygb/sk/index.php/Index/seach',
+      },
+      { label: '科学院院士名录' },
+      { label: '工程院院士名录' },
+      { label: 'CNKI 科研项目' },
+    ],
+    note: '具体来源见项目 README.md。',
+  },
+  modern_people: {
+    title: '他山石',
+    summary: '基于政府公示信息等现代公开姓名整理，贴近现实姓名语感。',
+    items: [{ label: '政府公示信息，例如北京积分落户公示' }],
+    note: '具体来源见项目 README.md。',
+  },
+  imperial_exam: {
+    title: '登科录',
+    summary: '基于中国历代登科进士资料整理，包含姓名、字号等历史人物信息。',
+    items: [
+      {
+        label: '中国历代人物传记资料库 CBDB',
+        url: 'https://projects.iq.harvard.edu/chinesecbdb/home',
+      },
+    ],
+    note: '具体来源见项目 README.md。',
+  },
+  ancient_names: {
+    title: '古人云',
+    summary: '基于古人姓名与字整理，强调典故、出处和文化来源。',
+    items: [
+      {
+        label: '古人名字解诂',
+        url: 'https://book.douban.com/subject/35479474/',
+      },
+    ],
+    note: '具体来源见项目 README.md。',
+  },
+}
 
 const surname = ref('姚')
 const selectedSourceId = ref<SourcePreference>(DEFAULT_SOURCE_ID as SourcePreference)
-const frequencyMin = ref(0)
+const frequencyMin = ref(1)
 const frequencyMax = ref(100)
 const style = ref<NameStyle>('any')
 const mustText = ref(DEFAULT_MUST_TEXT)
@@ -277,6 +386,7 @@ const results = ref<PublicResult[]>([])
 const errorMessage = ref('')
 const isSearching = ref(false)
 const hasSearched = ref(false)
+const activeSourceInfo = ref<SourceInfo | null>(null)
 
 const styleOptions: Array<{ label: string; value: NameStyle }> = [
   { label: '不限', value: 'any' },
@@ -323,7 +433,7 @@ const selectedSourceMeta = computed(() => {
   if (!frequencyFilterEnabled.value) {
     return `${stats.candidateCount} 个候选 · ${formatByteSize(stats.byteSize)}`
   }
-  return `${currentFrequencyCount(stats.candidateCount)} / ${stats.candidateCount} 个候选 · ${frequencyMin.value}%~${frequencyMax.value}%`
+  return `${currentFrequencyCount(stats.candidateCount)} / ${stats.candidateCount} 个候选 · 高频分位 ${frequencyMin.value}%~${frequencyMax.value}%`
 })
 
 const frequencySummary = computed(() => {
@@ -353,14 +463,14 @@ function selectSource(sourceId: SourcePreference) {
 
 function resetFrequencyRange() {
   const filter = selectedSourceStats.value?.percentileFilter
-  frequencyMin.value = filter?.defaultMinPercent ?? 0
+  frequencyMin.value = filter?.defaultMinPercent ?? 1
   frequencyMax.value = filter?.defaultMaxPercent ?? 100
 }
 
 function onInput(field: 'surname' | 'mustText' | 'avoidText', event: any) {
   const value = event?.detail?.value ?? ''
   if (field === 'surname') surname.value = stripNonChinese(value).slice(0, 4)
-  if (field === 'mustText') mustText.value = stripNonChinese(value).slice(0, 80)
+  if (field === 'mustText') mustText.value = sliceText(normalizeMustText(value), 160)
   if (field === 'avoidText') avoidText.value = value
 }
 
@@ -375,7 +485,7 @@ function onFrequencyInput(bound: 'min' | 'max', event: any) {
 
 function setFrequencyRange(bound: 'min' | 'max', value: number) {
   const filter = selectedSourceStats.value?.percentileFilter
-  const minSelectable = filter?.minSelectablePercent ?? 0
+  const minSelectable = filter?.minSelectablePercent ?? 1
   const next = Math.max(minSelectable, Math.min(100, Number.isFinite(value) ? Math.round(value) : minSelectable))
   if (bound === 'min') {
     frequencyMin.value = Math.min(next, frequencyMax.value)
@@ -501,13 +611,19 @@ function getFrequencyIndexes(total: number): { start: number; end: number } {
   const autoExcludePercent = selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1
   const autoExcluded = Math.min(total, Math.floor((clampPercent(autoExcludePercent) / 100) * total))
   const selectableTotal = Math.max(0, total - autoExcluded)
-  const start = Math.min(total, autoExcluded + Math.floor((clampPercent(frequencyMin.value) / 100) * selectableTotal))
-  const end = Math.min(total, autoExcluded + Math.ceil((clampPercent(frequencyMax.value) / 100) * selectableTotal))
+  const startPercent = (clampFrequencyPercent(frequencyMin.value) - 1) / 100
+  const endPercent = clampFrequencyPercent(frequencyMax.value) / 100
+  const start = Math.min(total, autoExcluded + Math.floor(startPercent * selectableTotal))
+  const end = Math.min(total, autoExcluded + Math.ceil(endPercent * selectableTotal))
   return { start, end: Math.max(start, end) }
 }
 
 function clampPercent(value: number): number {
   return Math.max(0, Math.min(100, Number.isFinite(value) ? value : 0))
+}
+
+function clampFrequencyPercent(value: number): number {
+  return Math.max(1, Math.min(100, Number.isFinite(value) ? value : 1))
 }
 
 function parseAvoidList(input: string): string[] {
@@ -519,6 +635,16 @@ function parseAvoidList(input: string): string[] {
 
 function splitChineseChars(input: string): string[] {
   return Array.from(stripNonChinese(input))
+}
+
+function normalizeMustText(input: string): string {
+  return Array.from((input || '').replace(/\r\n?/gu, '\n'))
+    .filter((char) => char === '\n' || /[\u3400-\u9fff]/u.test(char))
+    .join('')
+}
+
+function sliceText(input: string, maxLength: number): string {
+  return Array.from(input).slice(0, maxLength).join('')
 }
 
 function stripNonChinese(input: string): string {
@@ -539,7 +665,18 @@ function formatByteSize(size: number): string {
 }
 
 function openSourcePerson(sourceName: string) {
-  const url = `https://www.baidu.com/s?wd=${encodeURIComponent(sourceName)}`
+  openExternal(`https://www.baidu.com/s?wd=${encodeURIComponent(sourceName)}`)
+}
+
+function showSourceInfo(sourceId: SourcePreference) {
+  activeSourceInfo.value = SOURCE_INFO[sourceId] || null
+}
+
+function closeSourceInfo() {
+  activeSourceInfo.value = null
+}
+
+function openExternal(url: string) {
   if (typeof window !== 'undefined' && window.open) {
     window.open(url, '_blank')
     return
@@ -735,6 +872,30 @@ function getErrorMessage(error: unknown): string {
   white-space: pre-line;
 }
 
+.source-chip-main {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.source-help-button {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #c6d8d2;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  color: #176b5b;
+  font-size: 22px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
 .source-chip.active,
 .segment-button.active,
 .toggle-button.active {
@@ -769,6 +930,14 @@ function getErrorMessage(error: unknown): string {
   height: 58px;
   text-align: center;
   font-size: 24px;
+}
+
+.range-hint {
+  display: block;
+  margin-top: 10px;
+  color: #7a837f;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .segmented {
@@ -821,6 +990,96 @@ function getErrorMessage(error: unknown): string {
   font-size: 22px;
   line-height: 30px;
   color: #5b6762;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(18, 28, 25, 0.36);
+}
+
+.source-info-dialog {
+  width: 100%;
+  max-width: 680px;
+  box-sizing: border-box;
+  border: 1px solid #dfe4df;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 24px;
+}
+
+.source-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.source-info-title {
+  min-width: 0;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+  color: #17211e;
+}
+
+.source-info-close {
+  flex: 0 0 auto;
+  height: 44px;
+  border: 1px solid #d8ddd8;
+  border-radius: 8px;
+  padding: 0 18px;
+  margin: 0;
+  background: #f8faf8;
+  color: #56615d;
+  font-size: 20px;
+  line-height: 42px;
+}
+
+.source-info-summary,
+.source-info-note,
+.source-info-text {
+  display: block;
+  color: #5b6762;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+.source-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.source-info-item {
+  min-width: 0;
+}
+
+.source-info-link {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid #b7d9cc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+  background: #f2fbf7;
+  color: #125e53;
+  font-size: 21px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.source-info-note {
+  margin-top: 16px;
+  color: #7a837f;
 }
 
 .state-block {

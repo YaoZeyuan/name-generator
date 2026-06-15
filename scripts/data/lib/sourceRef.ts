@@ -49,6 +49,17 @@ function getContextPrefix(sourceRef: Pick<SourceRef, "field" | "sourceDetail">):
   return null;
 }
 
+function getSourceDetailSuffix(sourceDetail: string | undefined): string | null {
+  const detail = String(sourceDetail || "");
+  const suffixByDetail: Record<string, string> = {
+    academy_science: "科学院院士",
+    academy_engineering: "工程院院士",
+    natural_science_fund_principal: "国家自然基金",
+    social_science_fund_principal: "国家社科基金",
+  };
+  return suffixByDetail[detail] || null;
+}
+
 export function getSourceRefDisplayName(
   sourceRef: Pick<SourceRef, "field" | "value" | "sourceDetail" | "relatedPerson">
 ): string {
@@ -62,6 +73,11 @@ export function getSourceRefDisplayName(
   const contextPrefix = getContextPrefix(sourceRef);
   if (contextPrefix && relatedPerson && value && relatedPerson !== value) {
     return `${name}(${contextPrefix}${value})`;
+  }
+
+  const sourceDetailSuffix = getSourceDetailSuffix(sourceRef.sourceDetail);
+  if (sourceDetailSuffix && relatedPerson) {
+    return `${name}(${sourceDetailSuffix})`;
   }
 
   return name;

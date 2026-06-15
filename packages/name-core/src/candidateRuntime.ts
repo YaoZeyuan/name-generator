@@ -27,6 +27,13 @@ function toCandidateSource(sourceId: string): CandidateSource {
   };
 }
 
+function getFallbackSourceNames(sourceId: string, name: string): string[] {
+  if (sourceId === "wealth") {
+    return [name];
+  }
+  return [];
+}
+
 export function hydrateCandidateDb({
   data,
   sourceId,
@@ -58,7 +65,7 @@ export function hydrateCandidateDb({
         sources: [source],
         sourceIds: [source.id],
         sourceReasons: [source.reason],
-        sourceNames: sourceNamesByName?.[name] || [],
+        sourceNames: sourceNamesByName?.[name] || getFallbackSourceNames(source.id, name),
         chars: chars as [string, string],
         flags: {
           hasRareChar: charInfos.some((char) => char.count > 0 && char.count < 3),
