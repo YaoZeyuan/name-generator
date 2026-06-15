@@ -90,6 +90,18 @@ export type RejectedNameToken = ExtractedNameToken & {
   rejectReasons: RejectReasonCode[];
 };
 
+export type StoredNameToken = [token: string, sourceIds: string[], frequency: number];
+
+export type StoredRejectedNameToken = [
+  token: string,
+  sourceIds: string[],
+  rejectReasons: RejectReasonCode[],
+];
+
+export type StoredTokenFrequencyRecord = [token: string, frequency: number, sourceIds: string[]];
+
+export type StoredCharFrequencyRecord = [char: string, frequency: number];
+
 export type CandidateNameRecord = {
   name: string;
   sources: Array<{

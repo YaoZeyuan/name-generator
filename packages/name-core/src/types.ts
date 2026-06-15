@@ -74,6 +74,10 @@ export interface CandidateName {
   };
 }
 
+export type CompactCandidateEntry = string;
+
+export type CompactCandidateDb = CompactCandidateEntry[];
+
 export interface QueryConfig {
   surname: string;
   avoid?: string[];

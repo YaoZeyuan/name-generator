@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { DEFAULT_SOURCE_ID, hydrateCandidateDb } = require("../packages/name-core/dist");
 
 const root: string = path.resolve(__dirname, "..");
 const candidateDir: string = path.resolve(root, "api", "database", "candidate");
@@ -17,9 +18,13 @@ if (!fs.existsSync(candidateFile) || !fs.existsSync(charFile) || !fs.existsSync(
   process.exit(1);
 }
 
-const candidates = readJson<any[]>(candidateFile);
 const charDb = readJson<Record<string, unknown>>(charFile);
 const sourceIndex = readJson<any>(sourceFile);
+const candidates = hydrateCandidateDb({
+  data: readJson<any[]>(candidateFile),
+  sourceId: sourceIndex.defaultSourceId || DEFAULT_SOURCE_ID,
+  charDb,
+});
 
 const duplicateNames = candidates.length - new Set(candidates.map((item) => item.name)).size;
 const missingCharCandidates = candidates.filter((item) => item.chars.some((char: string) => !charDb[char]));

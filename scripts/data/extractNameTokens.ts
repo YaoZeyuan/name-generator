@@ -1,9 +1,15 @@
 import path from "node:path";
 import { dataSourceAdapters } from "./adapters";
-import type { ExtractedNameToken, NormalizedSourceRecord, RejectedNameToken } from "./types";
+import type {
+  ExtractedNameToken,
+  RejectedNameToken,
+  StoredCharFrequencyRecord,
+  StoredNameToken,
+  StoredRejectedNameToken,
+  StoredTokenFrequencyRecord,
+} from "./types";
 import { loadCandidateCharDb } from "./lib/charDb";
 import { createBuildContext } from "./lib/paths";
-import { readJson } from "./lib/readJson";
 import { validateToken } from "./lib/rejectReason";
 import { chineseLength, sortChinese, splitChars, stripNonChinese } from "./lib/normalizeText";
 import { writeJson } from "./lib/writeJson";
@@ -44,14 +50,13 @@ export async function extractNameTokens(): Promise<{
 }> {
   const context = createBuildContext();
   const charDb = loadCandidateCharDb(context.rootDir);
-  const sourceDir = path.resolve(context.databaseDir, "source");
   const extractedDir = path.resolve(context.databaseDir, "extracted");
   const tokenMap = new Map<string, ExtractedNameToken>();
   const rejected: RejectedNameToken[] = [];
   const charFrequency = new Map<string, number>();
 
   for (const adapter of dataSourceAdapters) {
-    const records = readJson<NormalizedSourceRecord[]>(path.resolve(sourceDir, adapter.recordFile));
+    const records = await adapter.buildRecords(context);
     for (const record of records) {
       for (const extractedText of record.extractedTexts) {
         const text = stripNonChinese(extractedText.text);
@@ -111,14 +116,31 @@ export async function extractNameTokens(): Promise<{
     .map(([char, frequency]) => ({ char, frequency }))
     .sort((a, b) => b.frequency - a.frequency || a.char.localeCompare(b.char, "zh-Hans-CN"));
 
-  writeJson(path.resolve(extractedDir, "name_tokens.json"), tokens);
-  writeJson(path.resolve(extractedDir, "rejected_tokens.json"), rejected);
+  const storedTokens: StoredNameToken[] = tokens.map((token) => [token.token, token.sourceIds, token.frequency]);
+  const storedRejected: StoredRejectedNameToken[] = rejected.map((token) => [
+    token.token,
+    token.sourceIds,
+    token.rejectReasons,
+  ]);
+  const storedTokenFrequency: StoredTokenFrequencyRecord[] = tokenFrequency.map((item) => [
+    item.token,
+    item.frequency,
+    item.sourceIds,
+  ]);
+  const storedCharFrequency: StoredCharFrequencyRecord[] = charFrequencyList.map((item) => [
+    item.char,
+    item.frequency,
+  ]);
+
+  writeJson(path.resolve(extractedDir, "name_tokens.json"), storedTokens);
+  writeJson(path.resolve(extractedDir, "rejected_tokens.json"), storedRejected);
   writeJson(path.resolve(extractedDir, "token_frequency.json"), {
     generatedAt: new Date().toISOString(),
     tokenCount: tokens.length,
     rejectedCount: rejected.length,
-    tokens: tokenFrequency,
-    chars: charFrequencyList,
+    recordMode: "compact_tuple_v1",
+    tokens: storedTokenFrequency,
+    chars: storedCharFrequency,
   });
 
   console.log(`[tokens] accepted: ${tokens.length}, rejected: ${rejected.length}`);

@@ -6,3 +6,4 @@ export * from "./nameRules";
 export * from "./scoreName";
 export * from "./queryName";
 export * from "./explainName";
+export * from "./candidateRuntime";

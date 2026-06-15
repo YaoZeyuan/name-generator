@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { DEFAULT_SOURCE_ID, SOURCE_CONFIGS, queryNames, toPublicResult } = require("../packages/name-core/dist");
+const { DEFAULT_SOURCE_ID, SOURCE_CONFIGS, hydrateCandidateDb, queryNames, toPublicResult } = require("../packages/name-core/dist");
 
 const root: string = path.resolve(__dirname, "..");
 const configPath: string = path.resolve(root, process.argv[2] || "config/name-query.example.json");
@@ -37,14 +37,18 @@ if (!sourceId || !sourceIndex.sources?.[sourceId]) {
   process.exit(1);
 }
 
-const sourceCandidateFile = path.resolve(candidateDir, sourceIndex.sources[sourceId].file || `sources/${sourceId}.candidate_name_db.json`);
+const sourceCandidateFile = path.resolve(candidateDir, sourceIndex.sources[sourceId].file || `sources/${sourceId}.candidate_names.json`);
 if (!fs.existsSync(sourceCandidateFile)) {
   console.error(`来源候选库不存在：${sourceCandidateFile}`);
   process.exit(1);
 }
 
-const candidateDb = readJson<any[]>(sourceCandidateFile);
 const charDb = readJson<Record<string, unknown>>(charFile);
+const candidateDb = hydrateCandidateDb({
+  data: readJson<any[]>(sourceCandidateFile),
+  sourceId,
+  charDb,
+});
 const results = queryNames({ candidateDb, charDb, query });
 const publicResults = results.map(toPublicResult);
 

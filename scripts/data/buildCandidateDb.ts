@@ -2,7 +2,16 @@ import path from "node:path";
 import fs from "node:fs";
 import type { CharDb } from "../../packages/name-core/src";
 import { DEFAULT_SOURCE_ID, SOURCE_CONFIGS, getSourceConfig } from "../../packages/name-core/src";
-import type { CandidateNameRecord, ExtractedNameToken, SourceRef } from "./types";
+import type {
+  CandidateNameRecord,
+  ExtractedNameToken,
+  ExtractionMethod,
+  RejectedNameToken,
+  SourceRef,
+  StoredNameToken,
+  StoredRejectedNameToken,
+  TokenType,
+} from "./types";
 import { loadCandidateCharDb, sortObjectKeys } from "./lib/charDb";
 import { createBuildContext } from "./lib/paths";
 import { readJson } from "./lib/readJson";
@@ -24,7 +33,7 @@ type SourceStats = {
 
 type SourceIndex = {
   generatedAt: string;
-  candidateFileMode: "single_source_shards";
+  candidateFileMode: "compact_name_shards";
   defaultSourceId: string;
   defaultCandidateFile: string;
   sources: Record<string, SourceStats>;
@@ -34,7 +43,86 @@ type SourceIndex = {
   candidateCharFile: string;
 };
 
-function createEmptyCandidate(token: ExtractedNameToken, charDb: CharDb): CandidateNameRecord {
+type StoredTokenInput = ExtractedNameToken | StoredNameToken | { n?: string; s?: string[]; f?: number };
+
+type StoredRejectedInput = RejectedNameToken | StoredRejectedNameToken | { s?: string[]; sourceIds?: string[] };
+
+type CandidateBuildToken = {
+  token: string;
+  sourceIds: string[];
+  sourceRefs: SourceRef[];
+  tokenType: TokenType;
+  frequency: number;
+  extractionMethod: ExtractionMethod;
+  confidence: number;
+};
+
+function normalizeSourceIds(sourceIds: unknown): string[] {
+  return Array.isArray(sourceIds)
+    ? sourceIds.map((sourceId) => String(sourceId)).filter((sourceId) => sourceId.length > 0)
+    : [];
+}
+
+function normalizeStoredToken(input: StoredTokenInput): CandidateBuildToken | null {
+  if (Array.isArray(input)) {
+    const [token, sourceIds, frequency] = input;
+    return {
+      token: String(token || ""),
+      sourceIds: normalizeSourceIds(sourceIds),
+      sourceRefs: [],
+      tokenType: "given_name",
+      frequency: Math.max(1, Number(frequency || 1)),
+      extractionMethod: "manual",
+      confidence: 0.8,
+    };
+  }
+
+  if ("token" in input) {
+    return {
+      token: String(input.token || ""),
+      sourceIds: normalizeSourceIds(input.sourceIds),
+      sourceRefs: Array.isArray(input.sourceRefs) ? input.sourceRefs : [],
+      tokenType: input.tokenType || "given_name",
+      frequency: Math.max(1, Number(input.frequency || 1)),
+      extractionMethod: input.extractionMethod || "manual",
+      confidence: Number(input.confidence || 0.8),
+    };
+  }
+
+  return {
+    token: String(input.n || ""),
+    sourceIds: normalizeSourceIds(input.s),
+    sourceRefs: [],
+    tokenType: "given_name",
+    frequency: Math.max(1, Number(input.f || 1)),
+    extractionMethod: "manual",
+    confidence: 0.8,
+  };
+}
+
+function normalizeRejectedSourceIds(input: StoredRejectedInput): string[] {
+  if (Array.isArray(input)) {
+    return normalizeSourceIds(input[1]);
+  }
+  return normalizeSourceIds("sourceIds" in input ? input.sourceIds : input.s);
+}
+
+function toCompactCandidateDb(candidates: CandidateNameRecord[]): string[] {
+  return candidates.map((candidate) => candidate.name);
+}
+
+function cleanLegacyCandidateFiles(candidateSourceDir: string): void {
+  if (!fs.existsSync(candidateSourceDir)) {
+    return;
+  }
+  for (const item of fs.readdirSync(candidateSourceDir)) {
+    if (item.endsWith(".candidate_name_db.json") || item.endsWith(".candidate_names.json")) {
+      fs.rmSync(path.resolve(candidateSourceDir, item), { force: true });
+    }
+  }
+}
+
+function createEmptyCandidate(token: CandidateBuildToken, charDb: CharDb): CandidateNameRecord {
   const chars = splitChars(token.token) as [string, string];
   const charInfos = chars.map((char) => charDb[char]);
   return {
@@ -91,7 +179,7 @@ function addTokenToMap({
   sourceIndex,
 }: {
   map: Map<string, CandidateNameRecord>;
-  token: ExtractedNameToken;
+  token: CandidateBuildToken;
   sourceId: string;
   charDb: CharDb;
   sourceIndex: SourceIndex;
@@ -113,7 +201,7 @@ function addTokenToMap({
 
   const stats = sourceIndex.sources[source.id];
   if (stats) {
-    stats.rawCount += token.sourceRefs.length;
+    stats.rawCount += Math.max(1, token.sourceRefs.length);
     stats.usableCount += 1;
     stats.frequency += token.frequency;
   }
@@ -160,15 +248,15 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
   const extractedDir = path.resolve(context.databaseDir, "extracted");
   const candidateDir = path.resolve(context.databaseDir, "candidate");
   const candidateSourceDir = path.resolve(candidateDir, "sources");
-  const tokens = readJson<ExtractedNameToken[]>(path.resolve(extractedDir, "name_tokens.json"));
-  const rejected = readJson<ExtractedNameToken[]>(path.resolve(extractedDir, "rejected_tokens.json"));
+  const tokens = readJson<StoredTokenInput[]>(path.resolve(extractedDir, "name_tokens.json"));
+  const rejected = readJson<StoredRejectedInput[]>(path.resolve(extractedDir, "rejected_tokens.json"));
   const candidateMaps = new Map<string, Map<string, CandidateNameRecord>>(
     SOURCE_CONFIGS.map((source) => [source.id, new Map<string, CandidateNameRecord>()])
   );
   const allCandidateNames = new Set<string>();
   const sourceIndex: SourceIndex = {
     generatedAt: new Date().toISOString(),
-    candidateFileMode: "single_source_shards",
+    candidateFileMode: "compact_name_shards",
     defaultSourceId: DEFAULT_SOURCE_ID,
     defaultCandidateFile: "candidate_name_db.json",
     sources: Object.fromEntries(
@@ -182,7 +270,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
           skippedCount: 0,
           frequency: 0,
           candidateCount: 0,
-          file: `sources/${source.id}.candidate_name_db.json`,
+          file: `sources/${source.id}.candidate_names.json`,
           byteSize: 0,
         },
       ])
@@ -194,7 +282,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
   };
 
   for (const rejectedToken of rejected) {
-    for (const sourceId of rejectedToken.sourceIds) {
+    for (const sourceId of normalizeRejectedSourceIds(rejectedToken)) {
       const stats = sourceIndex.sources[sourceId];
       if (stats) {
         stats.skippedCount += 1;
@@ -202,7 +290,11 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     }
   }
 
-  for (const token of tokens) {
+  for (const storedToken of tokens) {
+    const token = normalizeStoredToken(storedToken);
+    if (!token) {
+      continue;
+    }
     const chars = splitChars(token.token);
     if (chars.length !== 2 || chars.some((char) => !charDb[char])) {
       continue;
@@ -217,6 +309,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     }
   }
 
+  cleanLegacyCandidateFiles(candidateSourceDir);
   fs.mkdirSync(candidateSourceDir, { recursive: true });
   let defaultCandidateDb: CandidateNameRecord[] = [];
   let totalShardCandidateCount = 0;
@@ -228,8 +321,8 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
     if (stats) {
       stats.candidateCount = candidateDb.length;
     }
-    const file = path.resolve(candidateDir, stats?.file || `sources/${source.id}.candidate_name_db.json`);
-    writeJson(file, candidateDb);
+    const file = path.resolve(candidateDir, stats?.file || `sources/${source.id}.candidate_names.json`);
+    writeJson(file, toCompactCandidateDb(candidateDb));
     if (stats) {
       stats.byteSize = fs.statSync(file).size;
     }
@@ -241,7 +334,7 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
   sourceIndex.totalCandidateCount = allCandidateNames.size;
   sourceIndex.totalShardCandidateCount = totalShardCandidateCount;
   writeJson(path.resolve(candidateDir, "candidate_char_db.json"), sortObjectKeys(charDb));
-  writeJson(path.resolve(candidateDir, "candidate_name_db.json"), defaultCandidateDb);
+  writeJson(path.resolve(candidateDir, "candidate_name_db.json"), toCompactCandidateDb(defaultCandidateDb));
   writeJson(path.resolve(candidateDir, "source_index.json"), sourceIndex);
   writeText(
     path.resolve(candidateDir, "README.md"),
@@ -259,6 +352,25 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
 去重候选名总数：${sourceIndex.totalCandidateCount}
 
 默认来源候选名数：${defaultCandidateDb.length}
+`
+  );
+
+  writeText(
+    path.resolve(candidateDir, "README.md"),
+    `# Candidate runtime database
+
+Generated by \`scripts/data/buildCandidateDb.ts\`.
+
+- \`candidate_name_db.json\`: compact default-source candidate names for ${DEFAULT_SOURCE_ID}.
+- \`sources/*.candidate_names.json\`: compact per-source candidate name shards.
+- \`candidate_char_db.json\`: character pronunciation and frequency data used by browser-side hydration/scoring.
+- \`source_index.json\`: source metadata, shard paths, counts, and byte sizes.
+
+Generated at: ${sourceIndex.generatedAt}
+
+Unique candidate names: ${sourceIndex.totalCandidateCount}
+
+Default source candidate names: ${defaultCandidateDb.length}
 `
   );
 

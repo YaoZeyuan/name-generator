@@ -161,6 +161,7 @@ import { computed, onMounted, ref } from 'vue'
 import {
   DEFAULT_SOURCE_ID,
   SOURCE_CONFIGS,
+  hydrateCandidateDb,
   queryNames,
   toPublicResult,
   type CandidateName,
@@ -286,10 +287,8 @@ async function handleSearch() {
 
   isSearching.value = true
   try {
-    const [loadedCharDb, candidateDb] = await Promise.all([
-      loadCharDb(),
-      loadCandidateDb(selectedSourceId.value),
-    ])
+    const candidateDb = await loadCandidateDb(selectedSourceId.value)
+    const loadedCharDb = await loadCharDb()
     const query: QueryConfig = {
       surname: cleanedSurname,
       avoid: parseAvoidList(avoidText.value),
@@ -326,8 +325,16 @@ async function loadCandidateDb(sourceId: SourcePreference): Promise<CandidateNam
   if (cached) return cached
 
   const stats = sourceIndex.value?.sources?.[sourceId]
-  const file = stats?.file || `sources/${sourceId}.candidate_name_db.json`
-  const candidateDb = await requestJson<CandidateName[]>(`${DATABASE_BASE}/${file.replace(/\\/g, '/')}`)
+  const file = stats?.file || `sources/${sourceId}.candidate_names.json`
+  const [loadedCharDb, compactCandidateDb] = await Promise.all([
+    loadCharDb(),
+    requestJson<unknown>(`${DATABASE_BASE}/${file.replace(/\\/g, '/')}`),
+  ])
+  const candidateDb = hydrateCandidateDb({
+    data: compactCandidateDb as any,
+    sourceId,
+    charDb: loadedCharDb,
+  })
   candidateCache.set(cacheKey, candidateDb)
   return candidateDb
 }

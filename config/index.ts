@@ -39,7 +39,18 @@ function apiStaticPlugin() {
       if (!fs.existsSync(apiDir)) {
         return
       }
-      fs.cpSync(apiDir, outputDir, { recursive: true })
+      fs.rmSync(outputDir, { recursive: true, force: true })
+      fs.cpSync(apiDir, outputDir, {
+        recursive: true,
+        filter(source) {
+          const rel = path.relative(apiDir, source).replace(/\\+/g, '/')
+          if (!rel) return true
+          if (rel === 'database/source' || rel.startsWith('database/source/')) return false
+          if (rel === 'database/extracted' || rel.startsWith('database/extracted/')) return false
+          if (/^database\/candidate\/sources\/.+\.candidate_name_db\.json$/u.test(rel)) return false
+          return true
+        }
+      })
     }
   }
 }

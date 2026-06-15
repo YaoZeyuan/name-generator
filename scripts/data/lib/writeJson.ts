@@ -16,7 +16,7 @@ function writeFileSafely(file: string, value: string): void {
 }
 
 export function writeJson(file: string, value: unknown): void {
-  const text = `${JSON.stringify(value, null, 2)}\n`;
+  const text = `${JSON.stringify(value)}\n`;
   fs.mkdirSync(path.dirname(file), { recursive: true });
   try {
     fs.writeFileSync(file, text, "utf8");
