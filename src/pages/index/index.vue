@@ -1159,7 +1159,6 @@ async function loadCandidateDb(
 
 async function requestJson<T>(filePath: string): Promise<T> {
   const url = getNoCacheUrl(joinUrl(API_BASE, filePath));
-  console.log("url2 => ", url);
   try {
     const response: any = await Taro.request({
       url,
@@ -1174,9 +1173,9 @@ async function requestJson<T>(filePath: string): Promise<T> {
       return JSON.parse(data.replace(/^\uFEFF/u, "")) as T;
     }
     return data as T;
-  } catch (e) {
-    console.warn("filePath 加载失败 => ", filePath);
-    return {} as T;
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "请求超时或被微信域名校验拦截";
+    throw new Error(`数据加载失败：${filePath}。${message}`);
   }
 }
 
