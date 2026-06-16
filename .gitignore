@@ -26,3 +26,16 @@ yarn-error.log*
 dist
 
 database/raw
+
+dist/
+packages/*/dist/
+src/components.d.ts
+deploy_versions/
+.temp/
+.rn_temp/
+node_modules/
+.DS_Store
+.swc
+.idea
+api/database/extracted/name_tokens.json
+api/database/source/imperial_exam.records.json

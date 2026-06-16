@@ -1,0 +1,9 @@
+{
+  "surname": "姚",
+  "avoid": ["赵钱孙", "刘强", "李建国"],
+  "must": [],
+  "mustPosition": "any",
+  "style": "any",
+  "sourcePreference": "default",
+  "limit": 30
+}
