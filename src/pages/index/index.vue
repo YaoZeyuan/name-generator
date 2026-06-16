@@ -183,13 +183,13 @@
             导出 csv
           </button>
           <button
-            class="at-button at-button--primary generate-action-button"
-            :class="{ 'at-button--disabled': isSearching }"
+            class="generate-action-button"
+            :class="{ disabled: isSearching }"
             :disabled="isSearching"
             :loading="isSearching"
             @click="handleSearch"
           >
-            <text class="at-button__text">{{ searchButtonText }}</text>
+            <text class="generate-action-text">{{ searchButtonText }}</text>
           </button>
         </view>
       </view>
@@ -1645,16 +1645,31 @@ function getErrorMessage(error: unknown): string {
   flex-basis: 180px;
   height: 64px;
   margin: 0;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  border-color: #1a7668;
+  border: 0;
   background: #1a7668;
+  color: #ffffff;
   font-size: 22px;
   line-height: 62px;
 }
 
-.generate-action-button.at-button {
-  min-height: 64px;
-  color: #ffffff;
+.generate-action-button::after {
+  border: 0;
+}
+
+.generate-action-button.disabled {
+  background: #8fb8af;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.generate-action-text {
+  color: inherit;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .load-summary {
