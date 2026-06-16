@@ -89,6 +89,7 @@ function imageStaticPlugin() {
         return
       }
       fs.rmSync(outputDir, { recursive: true, force: true })
+      fs.mkdirSync(path.dirname(outputDir), { recursive: true })
       fs.cpSync(imgDir, outputDir, { recursive: true })
     }
   }
