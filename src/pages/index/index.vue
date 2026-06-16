@@ -30,18 +30,18 @@
               :key="source.id"
               class="source-chip"
               :class="{ active: selectedSourceId === source.id }"
-              @click="selectSource(source.id)"
+              @tap="selectSource(source.id)"
             >
               <view class="source-chip-main">
                 <text>{{ source.shortLabel }}</text>
                 <text class="source-count">{{ source.countText }}</text>
               </view>
-              <button
+              <view
                 class="source-help-button"
-                @click.stop="showSourceInfo(source.id)"
+                @tap.stop="showSourceInfo(source.id)"
               >
                 ?
-              </button>
+              </view>
             </view>
           </view>
         </view>
@@ -83,30 +83,30 @@
         <view class="field-block">
           <text class="field-label">风格</text>
           <view class="segmented">
-            <button
+            <view
               v-for="item in styleOptions"
               :key="item.value"
               class="segment-button"
               :class="{ active: style === item.value }"
-              @click="style = item.value"
+              @tap="style = item.value"
             >
               {{ item.label }}
-            </button>
+            </view>
           </view>
         </view>
 
         <view class="field-block">
           <text class="field-label">位置</text>
           <view class="segmented">
-            <button
+            <view
               v-for="item in positionOptions"
               :key="item.value"
               class="segment-button"
               :class="{ active: mustPosition === item.value }"
-              @click="mustPosition = item.value"
+              @tap="mustPosition = item.value"
             >
               {{ item.label }}
-            </button>
+            </view>
           </view>
         </view>
 
@@ -124,28 +124,28 @@
             @input="onInput('mustText', $event)"
           />
           <view class="loose-action-row">
-            <button class="reset-button" @click="handleReset">重置</button>
-            <button
+            <view class="reset-button" @tap="handleReset">重置</view>
+            <view
               class="toggle-button"
               :class="{ active: looseMode }"
-              @click="looseMode = !looseMode"
+              @tap="looseMode = !looseMode"
             >
               不指定字，随便看看
-            </button>
+            </view>
           </view>
         </view>
 
         <view class="field-block">
           <text class="field-label">返回候选数</text>
           <view class="limit-control">
-            <button class="icon-button" @click="setLimit(limit - 5)">-</button>
+            <view class="icon-button" @tap="setLimit(limit - 5)">-</view>
             <input
               class="text-input limit-input"
               type="number"
               :value="String(limit)"
               @input="onLimitInput"
             />
-            <button class="icon-button" @click="setLimit(limit + 5)">+</button>
+            <view class="icon-button" @tap="setLimit(limit + 5)">+</view>
           </view>
         </view>
 
@@ -176,21 +176,19 @@
           <text>{{ selectedSourceMeta }}</text>
         </view>
         <view class="action-buttons">
-          <button class="secondary-action-button" @click="showFavorites">
+          <view class="secondary-action-button" @tap="showFavorites">
             查看收藏
-          </button>
-          <button class="secondary-action-button" @click="exportCsv">
+          </view>
+          <view class="secondary-action-button" @tap="exportCsv">
             导出 csv
-          </button>
-          <button
+          </view>
+          <view
             class="generate-action-button"
             :class="{ disabled: isSearching }"
-            :disabled="isSearching"
-            :loading="isSearching"
-            @click="handleSearch"
+            @tap="handleSearch"
           >
             <text class="generate-action-text">{{ searchButtonText }}</text>
-          </button>
+          </view>
         </view>
       </view>
     </view>
@@ -198,14 +196,14 @@
     <view
       v-if="activeSourceInfo"
       class="modal-backdrop"
-      @click="closeSourceInfo"
+      @tap="closeSourceInfo"
     >
-      <view class="source-info-dialog" @click.stop>
+      <view class="source-info-dialog" @tap.stop>
         <view class="source-info-header">
           <text class="source-info-title">{{ activeSourceInfo.title }}</text>
-          <button class="source-info-close" @click="closeSourceInfo">
+          <view class="source-info-close" @tap="closeSourceInfo">
             关闭
-          </button>
+          </view>
         </view>
         <text class="source-info-summary">{{ activeSourceInfo.summary }}</text>
         <view class="source-info-list">
@@ -214,13 +212,13 @@
             :key="item.label"
             class="source-info-item"
           >
-            <button
+            <view
               v-if="item.url"
               class="source-info-link"
-              @click="openExternal(item.url)"
+              @tap="openExternal(item.url)"
             >
               {{ item.label }}
-            </button>
+            </view>
             <text v-else class="source-info-text">{{ item.label }}</text>
           </view>
         </view>
@@ -245,21 +243,21 @@
       </view>
 
       <view v-if="displayMode === 'generated'" class="pagination-row">
-        <button
+        <view
           class="page-button"
-          :disabled="currentPage <= 1 || isSearching"
-          @click="goToPreviousPage"
+          :class="{ disabled: currentPage <= 1 || isSearching }"
+          @tap="goToPreviousPage"
         >
           上一页
-        </button>
+        </view>
         <text class="page-current">第 {{ currentPage }} 页</text>
-        <button
+        <view
           class="page-button"
-          :disabled="reachedEnd || isSearching"
-          @click="goToNextPage"
+          :class="{ disabled: reachedEnd || isSearching }"
+          @tap="goToNextPage"
         >
           下一页
-        </button>
+        </view>
       </view>
 
       <view class="result-list">
@@ -280,13 +278,13 @@
               </view>
               <view class="name-actions">
                 <text class="score">{{ item.score }}</text>
-                <button
+                <view
                   class="favorite-card-button"
                   :class="{ active: isFavorite(item.fullName) }"
-                  @click="toggleFavorite(item)"
+                  @tap="toggleFavorite(item)"
                 >
                   {{ isFavorite(item.fullName) ? "已收藏" : "收藏" }}
-                </button>
+                </view>
               </view>
             </view>
             <view class="meta-line">
@@ -299,14 +297,14 @@
               <text>{{ item.phonetic }}</text>
             </view>
             <view v-if="item.sourceNames.length > 0" class="source-name-row">
-              <button
+              <view
                 v-for="sourceName in item.sourceNames"
                 :key="`${item.name}-${sourceName}`"
                 class="source-link"
-                @click="openSourcePerson(sourceName)"
+                @tap="openSourcePerson(sourceName)"
               >
                 查 {{ sourceName }}
-              </button>
+              </view>
             </view>
           </view>
         </view>
@@ -1001,6 +999,7 @@ function showToast(title: string) {
 }
 
 async function handleSearch() {
+  if (isSearching.value) return;
   const isContinuing = canContinueCurrentSearch.value;
   const nextPage = isContinuing ? currentPage.value + 1 : 1;
   await runSearchPage(nextPage, { refreshRandom: !isContinuing });
@@ -1465,6 +1464,10 @@ function getErrorMessage(error: unknown): string {
 .page-button,
 .favorite-card-button,
 .source-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #d8ddd8;
   background: #f8faf8;
   color: #27312e;
@@ -1498,6 +1501,9 @@ function getErrorMessage(error: unknown): string {
   flex: 0 0 38px;
   width: 38px;
   height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #c6d8d2;
   border-radius: 50%;
   padding: 0;
@@ -1759,6 +1765,10 @@ function getErrorMessage(error: unknown): string {
 .source-info-link {
   width: 100%;
   min-height: 54px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   border: 1px solid #b7d9cc;
   border-radius: 8px;
   padding: 10px 14px;
@@ -1815,7 +1825,7 @@ function getErrorMessage(error: unknown): string {
   font-size: 21px;
 }
 
-.page-button:disabled {
+.page-button.disabled {
   color: #a0a7a3;
   background: #eef1ee;
 }
@@ -1962,6 +1972,9 @@ function getErrorMessage(error: unknown): string {
 }
 
 .source-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
   min-height: 50px;
   max-width: 100%;
   padding: 8px 14px;
