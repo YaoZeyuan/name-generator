@@ -2,7 +2,7 @@
   "name": "name-generate",
   "version": "1.0.0",
   "private": true,
-  "description": "起个好名字",
+  "description": "好名有据",
   "templateInfo": {
     "name": "vue3-NutUI",
     "typescript": true,
@@ -22,6 +22,7 @@
     "data:candidate": "tsx scripts/data/buildCandidateDb.ts",
     "data:validate": "tsx scripts/data/validateData.ts",
     "query:name": "npm run build:name-core && node scripts/queryNameByConfig.ts config/name-query.example.json",
+    "build-w": "npm run build:weapp",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",

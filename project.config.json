@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "myApp",
-  "description": "起个好名字",
+  "projectname": "好名有据",
+  "description": "好名有据",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

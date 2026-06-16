@@ -5,7 +5,7 @@ export default {
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: '诗云起名',
+    navigationBarTitleText: '好名有据',
     navigationBarTextStyle: 'black'
   }
 }

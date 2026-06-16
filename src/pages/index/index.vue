@@ -2,11 +2,11 @@
   <view class="index-page">
     <view class="top-bar">
       <view>
-        <text class="app-title">诗云起名</text>
-        <text class="app-subtitle">候选来源 · 音律 · 避讳</text>
+        <text class="app-title">好名有据</text>
+        <text class="app-subtitle">筛选替代生成 · 好音律 · 好名字</text>
       </view>
       <view class="data-pill" :class="{ ready: sourceIndexReady }">
-        {{ sourceIndexReady ? '数据已就绪' : '加载中' }}
+        {{ sourceIndexReady ? "数据已就绪" : "加载中" }}
       </view>
     </view>
 
@@ -36,19 +36,24 @@
                 <text>{{ source.shortLabel }}</text>
                 <text class="source-count">{{ source.countText }}</text>
               </view>
-              <button class="source-help-button" @click.stop="showSourceInfo(source.id)">?</button>
+              <button
+                class="source-help-button"
+                @click.stop="showSourceInfo(source.id)"
+              >
+                ?
+              </button>
             </view>
           </view>
         </view>
 
         <view v-if="frequencyFilterEnabled" class="field-block wide">
           <view class="label-row">
-            <text class="field-label">高频分位</text>
+            <text class="field-label">出现频率</text>
             <text class="field-help">{{ frequencySummary }}</text>
           </view>
           <view class="range-number-row">
             <view class="range-number">
-              <text>从高频前</text>
+              <text>从常见前</text>
               <input
                 class="text-input range-number-input"
                 type="number"
@@ -60,7 +65,7 @@
               <text>%</text>
             </view>
             <view class="range-number">
-              <text>到高频前</text>
+              <text>到常见前</text>
               <input
                 class="text-input range-number-input"
                 type="number"
@@ -72,7 +77,7 @@
               <text>%</text>
             </view>
           </view>
-          <text class="range-hint">1% 更常见，100% 更冷门</text>
+          <text class="range-hint">1% 更常见，100% 更少见</text>
         </view>
 
         <view class="field-block">
@@ -144,6 +149,16 @@
           </view>
         </view>
 
+        <view class="field-block">
+          <text class="field-label">排序</text>
+          <checkbox-group class="checkbox-group" @change="onRandomSortChange">
+            <label class="checkbox-option">
+              <checkbox value="random" :checked="randomSort" color="#1a7668" />
+              <text>随机排序</text>
+            </label>
+          </checkbox-group>
+        </view>
+
         <view class="field-block wide">
           <text class="field-label">避讳</text>
           <textarea
@@ -161,8 +176,12 @@
           <text>{{ selectedSourceMeta }}</text>
         </view>
         <view class="action-buttons">
-          <button class="secondary-action-button" @click="showFavorites">查看收藏</button>
-          <button class="secondary-action-button" @click="exportCsv">导出 csv</button>
+          <button class="secondary-action-button" @click="showFavorites">
+            查看收藏
+          </button>
+          <button class="secondary-action-button" @click="exportCsv">
+            导出 csv
+          </button>
           <nut-button
             class="generate-action-button"
             type="primary"
@@ -175,15 +194,25 @@
       </view>
     </view>
 
-    <view v-if="activeSourceInfo" class="modal-backdrop" @click="closeSourceInfo">
+    <view
+      v-if="activeSourceInfo"
+      class="modal-backdrop"
+      @click="closeSourceInfo"
+    >
       <view class="source-info-dialog" @click.stop>
         <view class="source-info-header">
           <text class="source-info-title">{{ activeSourceInfo.title }}</text>
-          <button class="source-info-close" @click="closeSourceInfo">关闭</button>
+          <button class="source-info-close" @click="closeSourceInfo">
+            关闭
+          </button>
         </view>
         <text class="source-info-summary">{{ activeSourceInfo.summary }}</text>
         <view class="source-info-list">
-          <view v-for="item in activeSourceInfo.items" :key="item.label" class="source-info-item">
+          <view
+            v-for="item in activeSourceInfo.items"
+            :key="item.label"
+            class="source-info-item"
+          >
             <button
               v-if="item.url"
               class="source-info-link"
@@ -243,7 +272,9 @@
           <view class="result-main">
             <view class="name-line">
               <view class="name-title">
-                <text v-if="isFavorite(item.fullName)" class="favorite-star">★</text>
+                <text v-if="isFavorite(item.fullName)" class="favorite-star"
+                  >★</text
+                >
                 <text class="full-name">{{ item.fullName }}</text>
               </view>
               <view class="name-actions">
@@ -253,14 +284,14 @@
                   :class="{ active: isFavorite(item.fullName) }"
                   @click="toggleFavorite(item)"
                 >
-                  {{ isFavorite(item.fullName) ? '已收藏' : '收藏' }}
+                  {{ isFavorite(item.fullName) ? "已收藏" : "收藏" }}
                 </button>
               </view>
             </view>
             <view class="meta-line">
-              <text>{{ item.pinyin.join(' · ') }}</text>
+              <text>{{ item.pinyin.join(" · ") }}</text>
               <text>{{ item.tonePattern }}</text>
-              <text>{{ item.sources.join('、') }}</text>
+              <text>{{ item.sources.join("、") }}</text>
             </view>
             <view class="reason-line">
               <text v-if="item.semantic">{{ item.semantic }}</text>
@@ -284,8 +315,8 @@
 </template>
 
 <script setup lang="ts">
-import Taro from '@tarojs/taro'
-import { computed, onMounted, ref, watch } from 'vue'
+import Taro from "@tarojs/taro";
+import { computed, onMounted, ref, watch } from "vue";
 import {
   DEFAULT_SOURCE_ID,
   SOURCE_CONFIGS,
@@ -299,334 +330,389 @@ import {
   type QueryConfig,
   type SourceConfig,
   type SourcePreference,
-} from '../../../packages/name-core/src'
+} from "../../../packages/name-core/src";
 
 type PercentileFilter = {
-  enabled: boolean
-  bucketCount: number
-  autoExcludeTopPercent?: number
-  minSelectablePercent: number
-  defaultMinPercent: number
-  defaultMaxPercent: number
-}
+  enabled: boolean;
+  bucketCount: number;
+  autoExcludeTopPercent?: number;
+  minSelectablePercent: number;
+  defaultMinPercent: number;
+  defaultMaxPercent: number;
+};
 
 type SourceStats = {
-  id: string
-  label: string
-  candidateCount: number
-  file: string
-  byteSize: number
-  percentileFilter?: PercentileFilter
-  sourceNameFile?: string
-}
+  id: string;
+  label: string;
+  candidateCount: number;
+  file: string;
+  byteSize: number;
+  percentileFilter?: PercentileFilter;
+  sourceNameFile?: string;
+};
 
 type SourceIndex = {
-  defaultSourceId: string
-  sources: Record<string, SourceStats>
-  sourcePriority: SourceConfig[]
-}
+  defaultSourceId: string;
+  sources: Record<string, SourceStats>;
+  sourcePriority: SourceConfig[];
+};
 
-type PublicResult = ReturnType<typeof toPublicResult>
-type DisplayMode = 'generated' | 'favorites'
-type FavoriteResult = PublicResult & { favoritedAt: number }
+type PublicResult = ReturnType<typeof toPublicResult>;
+type DisplayMode = "generated" | "favorites";
+type FavoriteResult = PublicResult & { favoritedAt: number };
 
 type StoredQueryConfig = {
-  surname: string
-  selectedSourceId: SourcePreference
-  frequencyMin: number
-  frequencyMax: number
-  style: NameStyle
-  mustText: string
-  looseMode: boolean
-  mustPosition: MustPosition
-  avoidText: string
-  limit: number
-}
+  surname: string;
+  selectedSourceId: SourcePreference;
+  frequencyMin: number;
+  frequencyMax: number;
+  style: NameStyle;
+  mustText: string;
+  looseMode: boolean;
+  mustPosition: MustPosition;
+  avoidText: string;
+  limit: number;
+  randomSort: boolean;
+};
 
-const DATABASE_BASE = '/api/database/candidate'
-const QUERY_CONFIG_STORAGE_KEY = 'name-generator:index-query-config:v1'
-const FAVORITES_STORAGE_KEY = 'name-generator:favorites:v1'
+const DATABASE_BASE = "/api/database/candidate";
+const QUERY_CONFIG_STORAGE_KEY = "name-generator:index-query-config:v1";
+const FAVORITES_STORAGE_KEY = "name-generator:favorites:v1";
 const DEFAULT_MUST_TEXT = [
-  '素处以默',
-  '妙机其微',
-  '饮之太和',
-  '独鹤与飞',
-  '犹之惠风',
-  '荏苒在衣',
-  '阅音修篁',
-  '美曰载归',
-  '遇之匪深',
-  '即之愈希',
-  '脱有形似',
-  '握手已违',
-].join('\n')
+  "素处以默",
+  "妙机其微",
+  "饮之太和",
+  "独鹤与飞",
+  "犹之惠风",
+  "荏苒在衣",
+  "阅音修篁",
+  "美曰载归",
+  "遇之匪深",
+  "即之愈希",
+  "脱有形似",
+  "握手已违",
+].join("\n");
 
 type SourceInfo = {
-  title: string
-  summary: string
-  items: Array<{ label: string; url?: string }>
-}
+  title: string;
+  summary: string;
+  items: Array<{ label: string; url?: string }>;
+};
 
 const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
   wealth: {
-    title: '财富论',
-    summary: '基于私募基金名和私募基金管理公司名整理，偏向稳健、资产、品牌语感较强的二字词。',
+    title: "财富论",
+    summary:
+      "基于私募基金名和私募基金管理公司名整理，偏向稳健、资产、品牌语感较强的二字词。",
     items: [
       {
-        label: '中国证券投资基金业协会私募基金公示',
-        url: 'https://gs.amac.org.cn/amac-infodisc/res/pof/fund/index.html',
+        label: "中国证券投资基金业协会私募基金公示",
+        url: "https://gs.amac.org.cn/amac-infodisc/res/pof/fund/index.html",
       },
-      { label: '私募基金管理公司名称' },
-      { label: '已公布私募基金名' },
+      { label: "私募基金管理公司名称" },
+      { label: "已公布私募基金名" },
     ],
   },
   academic: {
-    title: '五道口',
-    summary: '基于科研项目负责人、两院院士等公开资料整理，偏向现代、稳重、学术语感。',
+    title: "五道口",
+    summary:
+      "基于科研项目负责人、两院院士等公开资料整理，偏向现代、稳重、学术语感。",
     items: [
       {
-        label: '国家自然科学研究基金资助项目',
-        url: 'https://kd.nsfc.gov.cn/',
+        label: "国家自然科学研究基金资助项目",
+        url: "https://kd.nsfc.gov.cn/",
       },
       {
-        label: '国家社会科学研究基金资助项目',
-        url: 'http://fz.people.com.cn/skygb/sk/index.php/Index/seach',
+        label: "国家社会科学研究基金资助项目",
+        url: "http://fz.people.com.cn/skygb/sk/index.php/Index/seach",
       },
-      { label: '科学院院士名录' },
-      { label: '工程院院士名录' },
-      { label: 'CNKI 科研项目' },
+      { label: "科学院院士名录" },
+      { label: "工程院院士名录" },
+      { label: "CNKI 科研项目" },
     ],
   },
   modern_people: {
-    title: '他山石',
-    summary: '基于政府公示信息等现代公开姓名整理，贴近现实姓名语感。',
-    items: [{ label: '政府公示信息，例如北京积分落户公示' }],
+    title: "他山石",
+    summary: "基于政府公示信息等现代公开姓名整理，贴近现实姓名语感。",
+    items: [{ label: "政府公示信息，例如北京积分落户公示" }],
   },
   imperial_exam: {
-    title: '登科录',
-    summary: '基于中国历代登科进士资料整理，包含姓名、字号等历史人物信息。',
+    title: "登科录",
+    summary: "基于中国历代登科进士资料整理，包含姓名、字号等历史人物信息。",
     items: [
       {
-        label: '中国历代人物传记资料库 CBDB',
-        url: 'https://projects.iq.harvard.edu/chinesecbdb/home',
+        label: "中国历代人物传记资料库 CBDB",
+        url: "https://projects.iq.harvard.edu/chinesecbdb/home",
       },
     ],
   },
   ancient_names: {
-    title: '古人云',
-    summary: '基于古人姓名与字整理，强调典故、出处和文化来源。',
+    title: "古人云",
+    summary: "基于古人姓名与字整理，强调典故、出处和文化来源。",
     items: [
       {
-        label: '古人名字解诂',
-        url: 'https://book.douban.com/subject/35479474/',
+        label: "古人名字解诂",
+        url: "https://book.douban.com/subject/35479474/",
       },
     ],
   },
-}
+};
 
-const surname = ref('张')
-const selectedSourceId = ref<SourcePreference>(DEFAULT_SOURCE_ID as SourcePreference)
-const frequencyMin = ref(1)
-const frequencyMax = ref(100)
-const style = ref<NameStyle>('any')
-const mustText = ref(DEFAULT_MUST_TEXT)
-const looseMode = ref(false)
-const mustPosition = ref<MustPosition>('any')
-const avoidText = ref('赵钱孙\n刘强\n李建国')
-const limit = ref(30)
+const surname = ref("张");
+const selectedSourceId = ref<SourcePreference>(
+  DEFAULT_SOURCE_ID as SourcePreference,
+);
+const frequencyMin = ref(1);
+const frequencyMax = ref(100);
+const style = ref<NameStyle>("any");
+const mustText = ref(DEFAULT_MUST_TEXT);
+const looseMode = ref(false);
+const mustPosition = ref<MustPosition>("any");
+const avoidText = ref("赵钱孙\n刘强\n李建国");
+const limit = ref(30);
+const randomSort = ref(true);
 
-const sourceIndex = ref<SourceIndex | null>(null)
-const charDb = ref<CharDb | null>(null)
-const candidateCache = new Map<string, CandidateName[]>()
-const sourceNameCache = new Map<string, Record<string, string[]>>()
-const results = ref<PublicResult[]>([])
-const errorMessage = ref('')
-const isSearching = ref(false)
-const hasSearched = ref(false)
-const hasOpenedFavorites = ref(false)
-const displayMode = ref<DisplayMode>('generated')
-const currentPage = ref(1)
-const reachedEnd = ref(false)
-const lastSearchSignature = ref('')
-const favorites = ref<FavoriteResult[]>([])
-const storageReady = ref(false)
-const activeSourceInfo = ref<SourceInfo | null>(null)
+const sourceIndex = ref<SourceIndex | null>(null);
+const charDb = ref<CharDb | null>(null);
+const candidateCache = new Map<string, CandidateName[]>();
+const sourceNameCache = new Map<string, Record<string, string[]>>();
+const results = ref<PublicResult[]>([]);
+const errorMessage = ref("");
+const isSearching = ref(false);
+const hasSearched = ref(false);
+const hasOpenedFavorites = ref(false);
+const displayMode = ref<DisplayMode>("generated");
+const currentPage = ref(1);
+const reachedEnd = ref(false);
+const lastSearchSignature = ref("");
+const randomizedSearchSignature = ref("");
+const randomizedResults = ref<PublicResult[]>([]);
+const favorites = ref<FavoriteResult[]>([]);
+const storageReady = ref(false);
+const activeSourceInfo = ref<SourceInfo | null>(null);
 
 const styleOptions: Array<{ label: string; value: NameStyle }> = [
-  { label: '不限', value: 'any' },
-  { label: '响亮', value: 'loud' },
-  { label: '柔和', value: 'soft' },
-]
+  { label: "不限", value: "any" },
+  { label: "响亮", value: "loud" },
+  { label: "柔和", value: "soft" },
+];
 
 const positionOptions: Array<{ label: string; value: MustPosition }> = [
-  { label: '不限', value: 'any' },
-  { label: '第二位', value: 'second' },
-  { label: '第三位', value: 'third' },
-]
+  { label: "不限", value: "any" },
+  { label: "第二位", value: "second" },
+  { label: "第三位", value: "third" },
+];
 
-const sourceIndexReady = computed(() => Boolean(sourceIndex.value))
+const sourceIndexReady = computed(() => Boolean(sourceIndex.value));
 
 const sourceOptions = computed(() => {
-  const index = sourceIndex.value
-  const ordered = index?.sourcePriority?.length ? index.sourcePriority : SOURCE_CONFIGS
+  const index = sourceIndex.value;
+  const ordered = index?.sourcePriority?.length
+    ? index.sourcePriority
+    : SOURCE_CONFIGS;
   return ordered.map((source) => {
-    const stats = index?.sources?.[source.id]
+    const stats = index?.sources?.[source.id];
     return {
       id: source.id as SourcePreference,
-      shortLabel: source.label.replace('-', '\n'),
+      shortLabel: source.label.replace("-", "\n"),
       label: source.label,
-      countText: stats ? `${stats.candidateCount}` : '--',
+      countText: stats ? `${stats.candidateCount}` : "--",
       byteSize: stats?.byteSize ?? 0,
-    }
-  })
-})
+    };
+  });
+});
 
 const selectedSource = computed(() => {
-  return sourceOptions.value.find((item) => item.id === selectedSourceId.value)
-})
+  return sourceOptions.value.find((item) => item.id === selectedSourceId.value);
+});
 
-const selectedSourceStats = computed(() => sourceIndex.value?.sources?.[selectedSourceId.value])
+const selectedSourceStats = computed(
+  () => sourceIndex.value?.sources?.[selectedSourceId.value],
+);
 
-const selectedSourceLabel = computed(() => selectedSource.value?.label || '默认来源')
+const selectedSourceLabel = computed(
+  () => selectedSource.value?.label || "默认来源",
+);
 
-const frequencyFilterEnabled = computed(() => Boolean(selectedSourceStats.value?.percentileFilter?.enabled))
+const frequencyFilterEnabled = computed(() =>
+  Boolean(selectedSourceStats.value?.percentileFilter?.enabled),
+);
 
 const selectedSourceMeta = computed(() => {
-  const stats = selectedSourceStats.value
-  if (!stats) return '候选加载后显示'
+  const stats = selectedSourceStats.value;
+  if (!stats) return "候选加载后显示";
   if (!frequencyFilterEnabled.value) {
-    return `${stats.candidateCount} 个候选 · ${formatByteSize(stats.byteSize)}`
+    return `${stats.candidateCount} 个候选 · ${formatByteSize(stats.byteSize)}`;
   }
-  return `${currentFrequencyCount(stats.candidateCount)} / ${stats.candidateCount} 个候选 · 高频分位 ${frequencyMin.value}%~${frequencyMax.value}%`
-})
+  return `${currentFrequencyCount(stats.candidateCount)} / ${stats.candidateCount} 个候选 · 出现频率 ${frequencyMin.value}%~${frequencyMax.value}%`;
+});
 
 const frequencySummary = computed(() => {
-  const stats = selectedSourceStats.value
-  if (!stats) return ''
-  const autoExcludePercent = selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1
-  return `自动去除最高频前${formatPercent(autoExcludePercent)}%，当前候选名约${currentFrequencyCount(stats.candidateCount)}个`
-})
+  const stats = selectedSourceStats.value;
+  if (!stats) return "";
+  const autoExcludePercent =
+    selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1;
+  return `自动去除最高频前${formatPercent(autoExcludePercent)}%，当前候选名约${currentFrequencyCount(stats.candidateCount)}个`;
+});
 
-const currentSearchSignature = computed(() => getCurrentSearchSignature())
+const currentSearchSignature = computed(() => getCurrentSearchSignature());
 
 const canContinueCurrentSearch = computed(() => {
   return (
-    displayMode.value === 'generated' &&
+    displayMode.value === "generated" &&
     hasSearched.value &&
     !reachedEnd.value &&
     lastSearchSignature.value === currentSearchSignature.value
-  )
-})
+  );
+});
 
 const searchButtonText = computed(() => {
-  return `生成候选`
-})
+  return `生成候选`;
+});
 
-const resultTitle = computed(() => (displayMode.value === 'favorites' ? '收藏名' : '候选名'))
+const resultTitle = computed(() =>
+  displayMode.value === "favorites" ? "收藏名" : "候选名",
+);
 
 const resultCount = computed(() => {
-  if (displayMode.value === 'favorites') return favorites.value.length
-  return results.value.length
-})
+  if (displayMode.value === "favorites") return favorites.value.length;
+  return results.value.length;
+});
 
 const resultSummary = computed(() => {
-  if (displayMode.value === 'favorites') {
-    return favorites.value.length > 0 ? `已收藏 ${favorites.value.length} 个名字` : '尚未收藏名字'
+  if (displayMode.value === "favorites") {
+    return favorites.value.length > 0
+      ? `已收藏 ${favorites.value.length} 个名字`
+      : "尚未收藏名字";
   }
-  if (!hasSearched.value) return selectedSourceLabel.value
-  return `第 ${currentPage.value} 页 · ${selectedSourceLabel.value}`
-})
+  if (!hasSearched.value) return selectedSourceLabel.value;
+  return `第 ${currentPage.value} 页 · ${selectedSourceLabel.value}`;
+});
 
 const emptyStateText = computed(() => {
-  if (isSearching.value || errorMessage.value) return ''
-  if (displayMode.value === 'favorites' && hasOpenedFavorites.value && results.value.length === 0) {
-    return '还没有收藏的名字'
+  if (isSearching.value || errorMessage.value) return "";
+  if (
+    displayMode.value === "favorites" &&
+    hasOpenedFavorites.value &&
+    results.value.length === 0
+  ) {
+    return "还没有收藏的名字";
   }
-  if (displayMode.value === 'generated' && hasSearched.value && results.value.length === 0) {
-    return currentPage.value > 1 ? '没有更多符合条件的候选名' : '没有符合条件的候选名'
+  if (
+    displayMode.value === "generated" &&
+    hasSearched.value &&
+    results.value.length === 0
+  ) {
+    return currentPage.value > 1
+      ? "没有更多符合条件的候选名"
+      : "没有符合条件的候选名";
   }
-  return ''
-})
+  return "";
+});
 
 onMounted(async () => {
   try {
-    restoreQueryConfig()
-    restoreFavorites()
-    await loadSourceIndex()
-    storageReady.value = true
-    saveQueryConfig()
+    restoreQueryConfig();
+    restoreFavorites();
+    await loadSourceIndex();
+    storageReady.value = true;
+    saveQueryConfig();
   } catch (error) {
-    errorMessage.value = getErrorMessage(error)
+    errorMessage.value = getErrorMessage(error);
   }
-})
+});
 
 watch(
-  [surname, selectedSourceId, frequencyMin, frequencyMax, style, mustText, looseMode, mustPosition, avoidText, limit],
+  [
+    surname,
+    selectedSourceId,
+    frequencyMin,
+    frequencyMax,
+    style,
+    mustText,
+    looseMode,
+    mustPosition,
+    avoidText,
+    limit,
+    randomSort,
+  ],
   () => {
     if (storageReady.value) {
-      saveQueryConfig()
+      saveQueryConfig();
     }
-  }
-)
+  },
+);
 
 watch(
   favorites,
   () => {
     if (storageReady.value) {
-      saveFavorites()
+      saveFavorites();
     }
-    if (displayMode.value === 'favorites') {
-      refreshFavoriteResults()
+    if (displayMode.value === "favorites") {
+      refreshFavoriteResults();
     }
   },
-  { deep: true }
-)
+  { deep: true },
+);
 
 function selectSource(sourceId: SourcePreference) {
-  selectedSourceId.value = sourceId
-  resetFrequencyRange()
+  selectedSourceId.value = sourceId;
+  resetFrequencyRange();
 }
 
 function resetFrequencyRange() {
-  const filter = selectedSourceStats.value?.percentileFilter
-  frequencyMin.value = filter?.defaultMinPercent ?? 1
-  frequencyMax.value = filter?.defaultMaxPercent ?? 100
+  const filter = selectedSourceStats.value?.percentileFilter;
+  frequencyMin.value = filter?.defaultMinPercent ?? 1;
+  frequencyMax.value = filter?.defaultMaxPercent ?? 100;
 }
 
-function onInput(field: 'surname' | 'mustText' | 'avoidText', event: any) {
-  const value = event?.detail?.value ?? ''
-  if (field === 'surname') surname.value = stripNonChinese(value).slice(0, 4)
-  if (field === 'mustText') mustText.value = sliceText(normalizeMustText(value), 160)
-  if (field === 'avoidText') avoidText.value = value
+function onInput(field: "surname" | "mustText" | "avoidText", event: any) {
+  const value = event?.detail?.value ?? "";
+  if (field === "surname") surname.value = stripNonChinese(value).slice(0, 4);
+  if (field === "mustText")
+    mustText.value = sliceText(normalizeMustText(value), 160);
+  if (field === "avoidText") avoidText.value = value;
 }
 
 function onLimitInput(event: any) {
-  setLimit(Number(event?.detail?.value || 0))
+  setLimit(Number(event?.detail?.value || 0));
 }
 
-function onFrequencyInput(bound: 'min' | 'max', event: any) {
-  const value = Number(event?.detail?.value || 0)
-  setFrequencyRange(bound, value)
+function onRandomSortChange(event: any) {
+  const values = event?.detail?.value;
+  randomSort.value = Array.isArray(values) && values.includes("random");
 }
 
-function setFrequencyRange(bound: 'min' | 'max', value: number) {
-  const filter = selectedSourceStats.value?.percentileFilter
-  const minSelectable = filter?.minSelectablePercent ?? 1
-  const next = Math.max(minSelectable, Math.min(100, Number.isFinite(value) ? Math.round(value) : minSelectable))
-  if (bound === 'min') {
-    frequencyMin.value = Math.min(next, frequencyMax.value)
+function onFrequencyInput(bound: "min" | "max", event: any) {
+  const value = Number(event?.detail?.value || 0);
+  setFrequencyRange(bound, value);
+}
+
+function setFrequencyRange(bound: "min" | "max", value: number) {
+  const filter = selectedSourceStats.value?.percentileFilter;
+  const minSelectable = filter?.minSelectablePercent ?? 1;
+  const next = Math.max(
+    minSelectable,
+    Math.min(100, Number.isFinite(value) ? Math.round(value) : minSelectable),
+  );
+  if (bound === "min") {
+    frequencyMin.value = Math.min(next, frequencyMax.value);
   } else {
-    frequencyMax.value = Math.max(next, frequencyMin.value)
+    frequencyMax.value = Math.max(next, frequencyMin.value);
   }
 }
 
 function setLimit(next: number) {
-  limit.value = Math.max(5, Math.min(50, Number.isFinite(next) ? Math.round(next) : 30))
+  limit.value = Math.max(
+    5,
+    Math.min(50, Number.isFinite(next) ? Math.round(next) : 30),
+  );
 }
 
 function getCurrentQueryConfig(): StoredQueryConfig {
   return {
-    surname: stripNonChinese(surname.value).slice(0, 4) || '张',
+    surname: stripNonChinese(surname.value).slice(0, 4) || "张",
     selectedSourceId: selectedSourceId.value,
     frequencyMin: frequencyMin.value,
     frequencyMax: frequencyMax.value,
@@ -636,211 +722,245 @@ function getCurrentQueryConfig(): StoredQueryConfig {
     mustPosition: mustPosition.value,
     avoidText: avoidText.value,
     limit: limit.value,
-  }
+    randomSort: randomSort.value,
+  };
 }
 
 function getCurrentSearchSignature(): string {
-  return JSON.stringify(getCurrentQueryConfig())
+  return JSON.stringify(getCurrentQueryConfig());
 }
 
 function restoreQueryConfig() {
-  const stored = readStorageJson<Partial<StoredQueryConfig>>(QUERY_CONFIG_STORAGE_KEY)
-  if (!stored || typeof stored !== 'object') return
+  const stored = readStorageJson<Partial<StoredQueryConfig>>(
+    QUERY_CONFIG_STORAGE_KEY,
+  );
+  if (!stored || typeof stored !== "object") return;
 
-  const storedSurname = stripNonChinese(String(stored.surname || '')).slice(0, 4)
-  if (storedSurname) surname.value = storedSurname
-  if (isSourcePreference(stored.selectedSourceId)) selectedSourceId.value = stored.selectedSourceId
-  if (typeof stored.frequencyMin === 'number') frequencyMin.value = clampFrequencyPercent(stored.frequencyMin)
-  if (typeof stored.frequencyMax === 'number') frequencyMax.value = clampFrequencyPercent(stored.frequencyMax)
-  if (isNameStyle(stored.style)) style.value = stored.style
-  if (typeof stored.mustText === 'string') {
-    mustText.value = sliceText(normalizeMustText(stored.mustText), 160)
+  const storedSurname = stripNonChinese(String(stored.surname || "")).slice(
+    0,
+    4,
+  );
+  if (storedSurname) surname.value = storedSurname;
+  if (isSourcePreference(stored.selectedSourceId))
+    selectedSourceId.value = stored.selectedSourceId;
+  if (typeof stored.frequencyMin === "number")
+    frequencyMin.value = clampFrequencyPercent(stored.frequencyMin);
+  if (typeof stored.frequencyMax === "number")
+    frequencyMax.value = clampFrequencyPercent(stored.frequencyMax);
+  if (isNameStyle(stored.style)) style.value = stored.style;
+  if (typeof stored.mustText === "string") {
+    mustText.value = sliceText(normalizeMustText(stored.mustText), 160);
   }
-  if (typeof stored.looseMode === 'boolean') looseMode.value = stored.looseMode
-  if (isMustPosition(stored.mustPosition)) mustPosition.value = stored.mustPosition
-  if (typeof stored.avoidText === 'string') avoidText.value = stored.avoidText
-  if (typeof stored.limit === 'number') setLimit(stored.limit)
+  if (typeof stored.looseMode === "boolean") looseMode.value = stored.looseMode;
+  if (isMustPosition(stored.mustPosition))
+    mustPosition.value = stored.mustPosition;
+  if (typeof stored.avoidText === "string") avoidText.value = stored.avoidText;
+  if (typeof stored.limit === "number") setLimit(stored.limit);
+  if (typeof stored.randomSort === "boolean")
+    randomSort.value = stored.randomSort;
 }
 
 function saveQueryConfig() {
-  writeStorageJson(QUERY_CONFIG_STORAGE_KEY, getCurrentQueryConfig())
+  writeStorageJson(QUERY_CONFIG_STORAGE_KEY, getCurrentQueryConfig());
 }
 
 function restoreFavorites() {
-  const stored = readStorageJson<FavoriteResult[]>(FAVORITES_STORAGE_KEY)
-  if (!Array.isArray(stored)) return
+  const stored = readStorageJson<FavoriteResult[]>(FAVORITES_STORAGE_KEY);
+  if (!Array.isArray(stored)) return;
   favorites.value = stored.filter(isFavoriteResult).map((item) => ({
     ...item,
     favoritedAt: Number(item.favoritedAt || Date.now()),
-  }))
+  }));
 }
 
 function saveFavorites() {
-  writeStorageJson(FAVORITES_STORAGE_KEY, favorites.value)
+  writeStorageJson(FAVORITES_STORAGE_KEY, favorites.value);
 }
 
 function showFavorites() {
-  errorMessage.value = ''
-  hasOpenedFavorites.value = true
-  displayMode.value = 'favorites'
-  refreshFavoriteResults()
+  errorMessage.value = "";
+  hasOpenedFavorites.value = true;
+  displayMode.value = "favorites";
+  refreshFavoriteResults();
 }
 
 function refreshFavoriteResults() {
   results.value = favorites.value.map((item) => {
-    const { favoritedAt: _favoritedAt, ...result } = item
-    return result
-  })
+    const { favoritedAt: _favoritedAt, ...result } = item;
+    return result;
+  });
 }
 
 function isFavorite(fullName: string): boolean {
-  return favorites.value.some((item) => item.fullName === fullName)
+  return favorites.value.some((item) => item.fullName === fullName);
 }
 
 function toggleFavorite(item: PublicResult) {
-  const index = favorites.value.findIndex((favorite) => favorite.fullName === item.fullName)
+  const index = favorites.value.findIndex(
+    (favorite) => favorite.fullName === item.fullName,
+  );
   if (index >= 0) {
-    favorites.value = favorites.value.filter((favorite) => favorite.fullName !== item.fullName)
-    return
+    favorites.value = favorites.value.filter(
+      (favorite) => favorite.fullName !== item.fullName,
+    );
+    return;
   }
-  favorites.value = [{ ...item, favoritedAt: Date.now() }, ...favorites.value]
+  favorites.value = [{ ...item, favoritedAt: Date.now() }, ...favorites.value];
 }
 
 function getRankNumber(index: number): number {
-  if (displayMode.value === 'favorites') return index + 1
-  return (currentPage.value - 1) * limit.value + index + 1
+  if (displayMode.value === "favorites") return index + 1;
+  return (currentPage.value - 1) * limit.value + index + 1;
 }
 
 function exportCsv() {
   if (results.value.length === 0) {
-    showToast('暂无可导出的名字')
-    return
+    showToast("暂无可导出的名字");
+    return;
   }
 
   const rows = [
-    ['姓名', '二字名', '评分', '拼音', '声调', '来源', '来源名', '避讳说明', '音律说明'],
+    [
+      "姓名",
+      "二字名",
+      "评分",
+      "拼音",
+      "声调",
+      "来源",
+      "来源名",
+      "避讳说明",
+      "音律说明",
+    ],
     ...results.value.map((item) => [
       item.fullName,
       item.name,
       item.score,
-      item.pinyin.join(' '),
+      item.pinyin.join(" "),
       item.tonePattern,
-      item.sources.join('、'),
-      item.sourceNames.join('、'),
+      item.sources.join("、"),
+      item.sourceNames.join("、"),
       item.semantic,
       item.phonetic,
     ]),
-  ]
-  const csv = `\uFEFF${rows.map((row) => row.map(escapeCsvValue).join(',')).join('\r\n')}`
-  const filenamePrefix = displayMode.value === 'favorites' ? '收藏名字' : '候选名字'
-  downloadTextFile(csv, `${filenamePrefix}_${formatDateTime(new Date())}.csv`)
+  ];
+  const csv = `\uFEFF${rows.map((row) => row.map(escapeCsvValue).join(",")).join("\r\n")}`;
+  const filenamePrefix =
+    displayMode.value === "favorites" ? "收藏名字" : "候选名字";
+  downloadTextFile(csv, `${filenamePrefix}_${formatDateTime(new Date())}.csv`);
 }
 
 function handleReset() {
-  clearLocalStorage()
-  reloadPage()
+  clearLocalStorage();
+  reloadPage();
 }
 
 function isSourcePreference(value: unknown): value is SourcePreference {
-  const sourceId = String(value || '')
-  return sourceId === 'default' || SOURCE_CONFIGS.some((source) => source.id === sourceId)
+  const sourceId = String(value || "");
+  return (
+    sourceId === "default" ||
+    SOURCE_CONFIGS.some((source) => source.id === sourceId)
+  );
 }
 
 function isNameStyle(value: unknown): value is NameStyle {
-  return styleOptions.some((item) => item.value === value)
+  return styleOptions.some((item) => item.value === value);
 }
 
 function isMustPosition(value: unknown): value is MustPosition {
-  return positionOptions.some((item) => item.value === value)
+  return positionOptions.some((item) => item.value === value);
 }
 
 function isFavoriteResult(value: unknown): value is FavoriteResult {
-  const item = value as Partial<FavoriteResult>
+  const item = value as Partial<FavoriteResult>;
   return Boolean(
     item &&
-      typeof item.fullName === 'string' &&
-      typeof item.name === 'string' &&
-      Array.isArray(item.pinyin) &&
-      Array.isArray(item.sources) &&
-      Array.isArray(item.sourceNames)
-  )
+    typeof item.fullName === "string" &&
+    typeof item.name === "string" &&
+    Array.isArray(item.pinyin) &&
+    Array.isArray(item.sources) &&
+    Array.isArray(item.sourceNames),
+  );
 }
 
 function readStorageJson<T>(key: string): T | null {
-  const value = readStorageValue(key)
-  if (!value) return null
+  const value = readStorageValue(key);
+  if (!value) return null;
   try {
-    return JSON.parse(value) as T
+    return JSON.parse(value) as T;
   } catch (_error) {
-    return null
+    return null;
   }
 }
 
 function writeStorageJson(key: string, value: unknown) {
-  const serialized = JSON.stringify(value)
-  if (typeof window !== 'undefined' && window.localStorage) {
-    window.localStorage.setItem(key, serialized)
-    return
+  const serialized = JSON.stringify(value);
+  if (typeof window !== "undefined" && window.localStorage) {
+    window.localStorage.setItem(key, serialized);
+    return;
   }
-  Taro.setStorageSync(key, serialized)
+  Taro.setStorageSync(key, serialized);
 }
 
 function readStorageValue(key: string): string | null {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    return window.localStorage.getItem(key)
+  if (typeof window !== "undefined" && window.localStorage) {
+    return window.localStorage.getItem(key);
   }
   try {
-    const value = Taro.getStorageSync(key)
-    if (!value) return null
-    return typeof value === 'string' ? value : JSON.stringify(value)
+    const value = Taro.getStorageSync(key);
+    if (!value) return null;
+    return typeof value === "string" ? value : JSON.stringify(value);
   } catch (_error) {
-    return null
+    return null;
   }
 }
 
 function clearLocalStorage() {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    window.localStorage.clear()
-    return
+  if (typeof window !== "undefined" && window.localStorage) {
+    window.localStorage.clear();
+    return;
   }
-  Taro.clearStorageSync()
+  Taro.clearStorageSync();
 }
 
 function reloadPage() {
-  if (typeof window !== 'undefined' && window.location) {
-    window.location.reload()
-    return
+  if (typeof window !== "undefined" && window.location) {
+    window.location.reload();
+    return;
   }
-  Taro.redirectTo({ url: '/pages/index/index' })
+  Taro.redirectTo({ url: "/pages/index/index" });
 }
 
 function escapeCsvValue(value: unknown): string {
-  const text = String(value ?? '').replace(/\r?\n/gu, ' ')
+  const text = String(value ?? "").replace(/\r?\n/gu, " ");
   if (/[",\r\n]/u.test(text)) {
-    return `"${text.replace(/"/gu, '""')}"`
+    return `"${text.replace(/"/gu, '""')}"`;
   }
-  return text
+  return text;
 }
 
 function downloadTextFile(content: string, filename: string) {
-  if (typeof window !== 'undefined' && typeof document !== 'undefined' && typeof Blob !== 'undefined') {
-    const blob = new Blob([content], { type: 'text/csv;charset=utf-8' })
-    const url = window.URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = filename
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-    window.URL.revokeObjectURL(url)
-    return
+  if (
+    typeof window !== "undefined" &&
+    typeof document !== "undefined" &&
+    typeof Blob !== "undefined"
+  ) {
+    const blob = new Blob([content], { type: "text/csv;charset=utf-8" });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+    return;
   }
-  Taro.setClipboardData({ data: content })
-  showToast('已复制csv内容')
+  Taro.setClipboardData({ data: content });
+  showToast("已复制csv内容");
 }
 
 function formatDateTime(date: Date): string {
-  const pad = (value: number) => String(value).padStart(2, '0')
+  const pad = (value: number) => String(value).padStart(2, "0");
   return [
     date.getFullYear(),
     pad(date.getMonth() + 1),
@@ -848,50 +968,59 @@ function formatDateTime(date: Date): string {
     pad(date.getHours()),
     pad(date.getMinutes()),
     pad(date.getSeconds()),
-  ].join('')
+  ].join("");
 }
 
 function showToast(title: string) {
-  Taro.showToast({ title, icon: 'none' })
+  Taro.showToast({ title, icon: "none" });
 }
 
 async function handleSearch() {
-  const nextPage = canContinueCurrentSearch.value ? currentPage.value + 1 : 1
-  await runSearchPage(nextPage)
+  const isContinuing = canContinueCurrentSearch.value;
+  const nextPage = isContinuing ? currentPage.value + 1 : 1;
+  await runSearchPage(nextPage, { refreshRandom: !isContinuing });
 }
 
 async function goToPreviousPage() {
-  if (currentPage.value <= 1 || isSearching.value) return
-  await runSearchPage(currentPage.value - 1)
+  if (currentPage.value <= 1 || isSearching.value) return;
+  await runSearchPage(currentPage.value - 1);
 }
 
 async function goToNextPage() {
-  if (reachedEnd.value || isSearching.value) return
-  await runSearchPage(currentPage.value + 1)
+  if (reachedEnd.value || isSearching.value) return;
+  await runSearchPage(currentPage.value + 1);
 }
 
-async function runSearchPage(page: number) {
-  errorMessage.value = ''
-  hasSearched.value = true
-  displayMode.value = 'generated'
-  const cleanedSurname = stripNonChinese(surname.value)
+async function runSearchPage(
+  page: number,
+  options: { refreshRandom?: boolean } = {},
+) {
+  errorMessage.value = "";
+  hasSearched.value = true;
+  displayMode.value = "generated";
+  const cleanedSurname = stripNonChinese(surname.value);
   if (!cleanedSurname) {
-    errorMessage.value = '请输入姓氏'
-    return
+    errorMessage.value = "请输入姓氏";
+    return;
   }
 
-  const must = looseMode.value ? [] : splitChineseChars(mustText.value)
+  const must = looseMode.value ? [] : splitChineseChars(mustText.value);
   if (!looseMode.value && must.length === 0) {
-    errorMessage.value = '请填写至少一个指定字，或选择“不指定字，随便看看”'
-    return
+    errorMessage.value = "请填写至少一个指定字，或选择“不指定字，随便看看”";
+    return;
   }
 
-  isSearching.value = true
+  isSearching.value = true;
   try {
-    const candidateDb = applyFrequencyRange(await loadCandidateDb(selectedSourceId.value))
-    const loadedCharDb = await loadCharDb()
-    const pageSize = limit.value
-    const searchLimit = page * pageSize + 1
+    const candidateDb = applyFrequencyRange(
+      await loadCandidateDb(selectedSourceId.value),
+    );
+    const loadedCharDb = await loadCharDb();
+    const pageSize = limit.value;
+    const start = (page - 1) * pageSize;
+    const searchLimit = randomSort.value
+      ? candidateDb.length
+      : page * pageSize + 1;
     const query: QueryConfig = {
       surname: cleanedSurname,
       avoid: parseAvoidList(avoidText.value),
@@ -900,179 +1029,235 @@ async function runSearchPage(page: number) {
       style: style.value,
       sourcePreference: selectedSourceId.value,
       limit: searchLimit,
+    };
+    let queriedResults: PublicResult[];
+    const searchSignature = getCurrentSearchSignature();
+    if (randomSort.value) {
+      if (
+        options.refreshRandom ||
+        randomizedSearchSignature.value !== searchSignature ||
+        randomizedResults.value.length === 0
+      ) {
+        randomizedResults.value = shuffleResults(
+          queryNames({ candidateDb, charDb: loadedCharDb, query }).map(
+            toPublicResult,
+          ),
+        );
+        randomizedSearchSignature.value = searchSignature;
+      }
+      queriedResults = randomizedResults.value;
+    } else {
+      randomizedResults.value = [];
+      randomizedSearchSignature.value = "";
+      queriedResults = queryNames({
+        candidateDb,
+        charDb: loadedCharDb,
+        query,
+      }).map(toPublicResult);
     }
-    const queriedResults = queryNames({ candidateDb, charDb: loadedCharDb, query }).map(toPublicResult)
-    const start = (page - 1) * pageSize
-    results.value = queriedResults.slice(start, start + pageSize)
-    currentPage.value = page
-    reachedEnd.value = queriedResults.length <= start + pageSize
-    lastSearchSignature.value = getCurrentSearchSignature()
+    results.value = queriedResults.slice(start, start + pageSize);
+    currentPage.value = page;
+    reachedEnd.value = queriedResults.length <= start + pageSize;
+    lastSearchSignature.value = searchSignature;
   } catch (error) {
-    errorMessage.value = getErrorMessage(error)
-    results.value = []
+    errorMessage.value = getErrorMessage(error);
+    results.value = [];
   } finally {
-    isSearching.value = false
+    isSearching.value = false;
   }
 }
 
 async function loadSourceIndex() {
-  const index = await requestJson<SourceIndex>(`${DATABASE_BASE}/source_index.json`)
-  sourceIndex.value = index
+  const index = await requestJson<SourceIndex>(
+    `${DATABASE_BASE}/source_index.json`,
+  );
+  sourceIndex.value = index;
   if (!index.sources?.[selectedSourceId.value]) {
-    selectedSourceId.value = (index.defaultSourceId || DEFAULT_SOURCE_ID) as SourcePreference
-    resetFrequencyRange()
+    selectedSourceId.value = (index.defaultSourceId ||
+      DEFAULT_SOURCE_ID) as SourcePreference;
+    resetFrequencyRange();
   } else {
-    setFrequencyRange('min', frequencyMin.value)
-    setFrequencyRange('max', frequencyMax.value)
+    setFrequencyRange("min", frequencyMin.value);
+    setFrequencyRange("max", frequencyMax.value);
   }
 }
 
 async function loadCharDb(): Promise<CharDb> {
-  if (charDb.value) return charDb.value
-  charDb.value = await requestJson<CharDb>(`${DATABASE_BASE}/candidate_char_db.json`)
-  return charDb.value
+  if (charDb.value) return charDb.value;
+  charDb.value = await requestJson<CharDb>(
+    `${DATABASE_BASE}/candidate_char_db.json`,
+  );
+  return charDb.value;
 }
 
-async function loadSourceNameMap(sourceId: SourcePreference): Promise<Record<string, string[]>> {
-  const cached = sourceNameCache.get(String(sourceId))
-  if (cached) return cached
-  const file = sourceIndex.value?.sources?.[sourceId]?.sourceNameFile
+async function loadSourceNameMap(
+  sourceId: SourcePreference,
+): Promise<Record<string, string[]>> {
+  const cached = sourceNameCache.get(String(sourceId));
+  if (cached) return cached;
+  const file = sourceIndex.value?.sources?.[sourceId]?.sourceNameFile;
   if (!file) {
-    sourceNameCache.set(String(sourceId), {})
-    return {}
+    sourceNameCache.set(String(sourceId), {});
+    return {};
   }
-  const sourceNames = await requestJson<Record<string, string[]>>(`${DATABASE_BASE}/${file.replace(/\\/g, '/')}`)
-  sourceNameCache.set(String(sourceId), sourceNames)
-  return sourceNames
+  const sourceNames = await requestJson<Record<string, string[]>>(
+    `${DATABASE_BASE}/${file.replace(/\\/g, "/")}`,
+  );
+  sourceNameCache.set(String(sourceId), sourceNames);
+  return sourceNames;
 }
 
-async function loadCandidateDb(sourceId: SourcePreference): Promise<CandidateName[]> {
-  const cacheKey = String(sourceId)
-  const cached = candidateCache.get(cacheKey)
-  if (cached) return cached
+async function loadCandidateDb(
+  sourceId: SourcePreference,
+): Promise<CandidateName[]> {
+  const cacheKey = String(sourceId);
+  const cached = candidateCache.get(cacheKey);
+  if (cached) return cached;
 
-  const stats = sourceIndex.value?.sources?.[sourceId]
-  const file = stats?.file || `sources/${sourceId}.candidate_names.json`
-  const [loadedCharDb, compactCandidateDb, sourceNamesByName] = await Promise.all([
-    loadCharDb(),
-    requestJson<unknown>(`${DATABASE_BASE}/${file.replace(/\\/g, '/')}`),
-    loadSourceNameMap(sourceId),
-  ])
+  const stats = sourceIndex.value?.sources?.[sourceId];
+  const file = stats?.file || `sources/${sourceId}.candidate_names.json`;
+  const [loadedCharDb, compactCandidateDb, sourceNamesByName] =
+    await Promise.all([
+      loadCharDb(),
+      requestJson<unknown>(`${DATABASE_BASE}/${file.replace(/\\/g, "/")}`),
+      loadSourceNameMap(sourceId),
+    ]);
   const candidateDb = hydrateCandidateDb({
     data: compactCandidateDb as any,
     sourceId,
     charDb: loadedCharDb,
     sourceNamesByName,
-  })
-  candidateCache.set(cacheKey, candidateDb)
-  return candidateDb
+  });
+  candidateCache.set(cacheKey, candidateDb);
+  return candidateDb;
 }
 
 async function requestJson<T>(url: string): Promise<T> {
-  const response: any = await Taro.request({ url, method: 'GET' })
+  const response: any = await Taro.request({ url, method: "GET" });
   if (response.statusCode < 200 || response.statusCode >= 300) {
-    throw new Error(`数据加载失败：${url}`)
+    throw new Error(`数据加载失败：${url}`);
   }
-  const data = response.data
-  if (typeof data === 'string') {
-    return JSON.parse(data.replace(/^\uFEFF/u, '')) as T
+  const data = response.data;
+  if (typeof data === "string") {
+    return JSON.parse(data.replace(/^\uFEFF/u, "")) as T;
   }
-  return data as T
+  return data as T;
 }
 
 function applyFrequencyRange(candidateDb: CandidateName[]): CandidateName[] {
-  if (!frequencyFilterEnabled.value) return candidateDb
-  const { start, end } = getFrequencyIndexes(candidateDb.length)
-  return candidateDb.slice(start, end)
+  if (!frequencyFilterEnabled.value) return candidateDb;
+  const { start, end } = getFrequencyIndexes(candidateDb.length);
+  return candidateDb.slice(start, end);
 }
 
 function currentFrequencyCount(total: number): number {
-  const { start, end } = getFrequencyIndexes(total)
-  return Math.max(0, end - start)
+  const { start, end } = getFrequencyIndexes(total);
+  return Math.max(0, end - start);
 }
 
 function getFrequencyIndexes(total: number): { start: number; end: number } {
-  if (total <= 0) return { start: 0, end: 0 }
-  const autoExcludePercent = selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1
-  const autoExcluded = Math.min(total, Math.floor((clampPercent(autoExcludePercent) / 100) * total))
-  const selectableTotal = Math.max(0, total - autoExcluded)
-  const startPercent = (clampFrequencyPercent(frequencyMin.value) - 1) / 100
-  const endPercent = clampFrequencyPercent(frequencyMax.value) / 100
-  const start = Math.min(total, autoExcluded + Math.floor(startPercent * selectableTotal))
-  const end = Math.min(total, autoExcluded + Math.ceil(endPercent * selectableTotal))
-  return { start, end: Math.max(start, end) }
+  if (total <= 0) return { start: 0, end: 0 };
+  const autoExcludePercent =
+    selectedSourceStats.value?.percentileFilter?.autoExcludeTopPercent ?? 1;
+  const autoExcluded = Math.min(
+    total,
+    Math.floor((clampPercent(autoExcludePercent) / 100) * total),
+  );
+  const selectableTotal = Math.max(0, total - autoExcluded);
+  const startPercent = (clampFrequencyPercent(frequencyMin.value) - 1) / 100;
+  const endPercent = clampFrequencyPercent(frequencyMax.value) / 100;
+  const start = Math.min(
+    total,
+    autoExcluded + Math.floor(startPercent * selectableTotal),
+  );
+  const end = Math.min(
+    total,
+    autoExcluded + Math.ceil(endPercent * selectableTotal),
+  );
+  return { start, end: Math.max(start, end) };
+}
+
+function shuffleResults<T>(items: T[]): T[] {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    const current = shuffled[index];
+    shuffled[index] = shuffled[swapIndex];
+    shuffled[swapIndex] = current;
+  }
+  return shuffled;
 }
 
 function clampPercent(value: number): number {
-  return Math.max(0, Math.min(100, Number.isFinite(value) ? value : 0))
+  return Math.max(0, Math.min(100, Number.isFinite(value) ? value : 0));
 }
 
 function clampFrequencyPercent(value: number): number {
-  return Math.max(1, Math.min(100, Number.isFinite(value) ? value : 1))
+  return Math.max(1, Math.min(100, Number.isFinite(value) ? value : 1));
 }
 
 function parseAvoidList(input: string): string[] {
   return input
     .split(/[\n,，、；;\s]+/u)
     .map((item) => stripNonChinese(item))
-    .filter(Boolean)
+    .filter(Boolean);
 }
 
 function splitChineseChars(input: string): string[] {
-  return Array.from(stripNonChinese(input))
+  return Array.from(stripNonChinese(input));
 }
 
 function normalizeMustText(input: string): string {
-  return Array.from((input || '').replace(/\r\n?/gu, '\n'))
-    .filter((char) => char === '\n' || /[\u3400-\u9fff]/u.test(char))
-    .join('')
+  return Array.from((input || "").replace(/\r\n?/gu, "\n"))
+    .filter((char) => char === "\n" || /[\u3400-\u9fff]/u.test(char))
+    .join("");
 }
 
 function sliceText(input: string, maxLength: number): string {
-  return Array.from(input).slice(0, maxLength).join('')
+  return Array.from(input).slice(0, maxLength).join("");
 }
 
 function stripNonChinese(input: string): string {
-  return Array.from(input || '')
+  return Array.from(input || "")
     .filter((char) => /[\u3400-\u9fff]/u.test(char))
-    .join('')
+    .join("");
 }
 
 function formatPercent(value: number): string {
-  const percent = clampPercent(value)
-  return Number.isInteger(percent) ? String(percent) : percent.toFixed(1)
+  const percent = clampPercent(value);
+  return Number.isInteger(percent) ? String(percent) : percent.toFixed(1);
 }
 
 function formatByteSize(size: number): string {
-  if (!size) return '--'
-  if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)}MB`
-  return `${Math.round(size / 1024)}KB`
+  if (!size) return "--";
+  if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)}MB`;
+  return `${Math.round(size / 1024)}KB`;
 }
 
 function openSourcePerson(sourceName: string) {
-  const searchName = sourceName.replace(/^(基金|公司):/u, '')
-  openExternal(`https://www.baidu.com/s?wd=${encodeURIComponent(searchName)}`)
+  const searchName = sourceName.replace(/^(基金|公司):/u, "");
+  openExternal(`https://www.baidu.com/s?wd=${encodeURIComponent(searchName)}`);
 }
 
 function showSourceInfo(sourceId: SourcePreference) {
-  activeSourceInfo.value = SOURCE_INFO[sourceId] || null
+  activeSourceInfo.value = SOURCE_INFO[sourceId] || null;
 }
 
 function closeSourceInfo() {
-  activeSourceInfo.value = null
+  activeSourceInfo.value = null;
 }
 
 function openExternal(url: string) {
-  if (typeof window !== 'undefined' && window.open) {
-    window.open(url, '_blank')
-    return
+  if (typeof window !== "undefined" && window.open) {
+    window.open(url, "_blank");
+    return;
   }
-  Taro.setClipboardData({ data: url })
+  Taro.setClipboardData({ data: url });
 }
 
 function getErrorMessage(error: unknown): string {
-  if (error instanceof Error) return error.message
-  return '查询失败'
+  if (error instanceof Error) return error.message;
+  return "查询失败";
 }
 </script>
 
@@ -1360,6 +1545,27 @@ function getErrorMessage(error: unknown): string {
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr) 72px;
   gap: 10px;
+}
+
+.checkbox-group {
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-option {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 72px;
+  border: 1px solid #d8ddd8;
+  border-radius: 8px;
+  background: #f8faf8;
+  color: #27312e;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 18px;
+  font-size: 24px;
 }
 
 .icon-button {

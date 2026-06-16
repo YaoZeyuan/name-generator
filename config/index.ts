@@ -55,6 +55,47 @@ function apiStaticPlugin() {
   }
 }
 
+function imageStaticPlugin() {
+  const imgDir = path.resolve(process.cwd(), 'resource', 'img')
+  const outputDir = path.resolve(process.cwd(), 'dist', 'resource', 'img')
+  const mime: Record<string, string> = {
+    '.ico': 'image/x-icon',
+    '.jpeg': 'image/jpeg',
+    '.jpg': 'image/jpeg',
+    '.png': 'image/png',
+    '.svg': 'image/svg+xml; charset=utf-8',
+    '.webp': 'image/webp'
+  }
+
+  return {
+    name: 'image-static-files',
+    configureServer(server) {
+      server.middlewares.use('/resource/img', (req, res, next) => {
+        const requestPath = decodeURIComponent((req.url || '').split('?')[0] || '')
+        const normalized = path.normalize(requestPath).replace(/^(\.\.(\/|\\|$))+/, '')
+        const filePath = path.resolve(imgDir, normalized.replace(/^[\/\\]+/, ''))
+        if (!filePath.startsWith(imgDir)) {
+          next()
+          return
+        }
+        if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+          next()
+          return
+        }
+        res.setHeader('Content-Type', mime[path.extname(filePath)] || 'application/octet-stream')
+        fs.createReadStream(filePath).pipe(res)
+      })
+    },
+    closeBundle() {
+      if (!fs.existsSync(imgDir)) {
+        return
+      }
+      fs.rmSync(outputDir, { recursive: true, force: true })
+      fs.cpSync(imgDir, outputDir, { recursive: true })
+    }
+  }
+}
+
 function nutTaroPackageResolver() {
   return {
     type: 'component' as const,
@@ -77,7 +118,7 @@ function nutTaroPackageResolver() {
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<'vite'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'vite'> = {
-    projectName: 'myApp',
+    projectName: '好名有据',
     date: '2026-6-12',
     designWidth (input) {
       // 配置 NutUI 375 尺寸
@@ -109,6 +150,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       type: 'vite',
       vitePlugins: [
         apiStaticPlugin(),
+        imageStaticPlugin(),
         Components({
           resolvers: [nutTaroPackageResolver()]
         })
