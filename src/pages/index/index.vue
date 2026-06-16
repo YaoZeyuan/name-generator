@@ -315,7 +315,7 @@
 </template>
 
 <script setup lang="ts">
-import Taro from "@tarojs/taro";
+import Taro, { useLoad } from "@tarojs/taro";
 import { computed, onMounted, ref, watch } from "vue";
 import {
   DEFAULT_SOURCE_ID,
@@ -620,6 +620,14 @@ onMounted(async () => {
   } catch (error) {
     errorMessage.value = getErrorMessage(error);
   }
+});
+
+useLoad(async (options) => {
+  // 支持分享
+  Taro.showShareMenu({
+    withShareTicket: true,
+    showShareItems: ["wechatFriends", "wechatMoment"],
+  });
 });
 
 watch(
