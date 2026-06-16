@@ -161,7 +161,7 @@
           <text>{{ selectedSourceMeta }}</text>
         </view>
         <view class="action-buttons">
-          <button class="secondary-action-button" @click="showFavorites">收藏</button>
+          <button class="secondary-action-button" @click="showFavorites">查看收藏</button>
           <button class="secondary-action-button" @click="exportCsv">导出 csv</button>
           <nut-button
             class="generate-action-button"
@@ -519,8 +519,7 @@ const canContinueCurrentSearch = computed(() => {
 })
 
 const searchButtonText = computed(() => {
-  if (canContinueCurrentSearch.value) return '继续生成下一批'
-  return `从${selectedSourceLabel.value}中生成候选`
+  return `生成候选`
 })
 
 const resultTitle = computed(() => (displayMode.value === 'favorites' ? '收藏名' : '候选名'))
