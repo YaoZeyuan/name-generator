@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 
+import 'taro-ui/dist/style/index.css'
 import './app.less'
 
 const App = createApp({

@@ -182,14 +182,15 @@
           <button class="secondary-action-button" @click="exportCsv">
             导出 csv
           </button>
-          <nut-button
-            class="generate-action-button"
-            type="primary"
+          <button
+            class="at-button at-button--primary generate-action-button"
+            :class="{ 'at-button--disabled': isSearching }"
+            :disabled="isSearching"
             :loading="isSearching"
             @click="handleSearch"
           >
-            {{ searchButtonText }}
-          </nut-button>
+            <text class="at-button__text">{{ searchButtonText }}</text>
+          </button>
         </view>
       </view>
     </view>
@@ -1640,6 +1641,18 @@ function getErrorMessage(error: unknown): string {
 
 .generate-action-button {
   flex-basis: 180px;
+  height: 64px;
+  margin: 0;
+  border-radius: 8px;
+  border-color: #1a7668;
+  background: #1a7668;
+  font-size: 22px;
+  line-height: 62px;
+}
+
+.generate-action-button.at-button {
+  min-height: 64px;
+  color: #ffffff;
 }
 
 .load-summary {

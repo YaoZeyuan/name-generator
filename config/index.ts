@@ -5,8 +5,6 @@ import path from 'node:path'
 import devConfig from './dev'
 import prodConfig from './prod'
 
-import Components from 'unplugin-vue-components/vite'
-
 function apiStaticPlugin() {
   const apiDir = path.resolve(process.cwd(), 'api')
   const outputDir = path.resolve(process.cwd(), 'dist', 'api')
@@ -96,35 +94,12 @@ function imageStaticPlugin() {
   }
 }
 
-function nutTaroPackageResolver() {
-  return {
-    type: 'component' as const,
-    resolve(name: string) {
-      if (!name.startsWith('Nut')) {
-        return undefined
-      }
-      const componentName = name.slice(3)
-      const packageName = '@nutui/nutui-taro'
-      const componentDir = componentName.toLowerCase()
-      return {
-        as: name,
-        from: `${packageName}/dist/packages/${componentDir}/index.mjs`,
-        sideEffects: `${packageName}/dist/packages/${componentDir}/style/css`
-      }
-    }
-  }
-}
-
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<'vite'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'vite'> = {
     projectName: '好名有据',
     date: '2026-6-12',
     designWidth (input) {
-      // 配置 NutUI 375 尺寸
-      if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
-        return 375
-      }
       // 全局使用 Taro 默认的 750 尺寸
       return 750
     },
@@ -150,10 +125,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       type: 'vite',
       vitePlugins: [
         apiStaticPlugin(),
-        imageStaticPlugin(),
-        Components({
-          resolvers: [nutTaroPackageResolver()]
-        })
+        imageStaticPlugin()
       ]
     },
     mini: {
