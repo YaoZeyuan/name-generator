@@ -118,13 +118,16 @@
             :disabled="looseMode"
             @input="onInput('mustText', $event)"
           />
-          <button
-            class="toggle-button"
-            :class="{ active: looseMode }"
-            @click="looseMode = !looseMode"
-          >
-            不指定字，随便看看
-          </button>
+          <view class="loose-action-row">
+            <button class="reset-button" @click="handleReset">重置</button>
+            <button
+              class="toggle-button"
+              :class="{ active: looseMode }"
+              @click="looseMode = !looseMode"
+            >
+              不指定字，随便看看
+            </button>
+          </view>
         </view>
 
         <view class="field-block">
@@ -157,9 +160,18 @@
           <text>{{ selectedSourceLabel }}</text>
           <text>{{ selectedSourceMeta }}</text>
         </view>
-        <nut-button type="primary" :loading="isSearching" @click="handleSearch">
-          从 {{ selectedSourceLabel }}中生成候选
-        </nut-button>
+        <view class="action-buttons">
+          <button class="secondary-action-button" @click="showFavorites">收藏</button>
+          <button class="secondary-action-button" @click="exportCsv">导出 csv</button>
+          <nut-button
+            class="generate-action-button"
+            type="primary"
+            :loading="isSearching"
+            @click="handleSearch"
+          >
+            {{ searchButtonText }}
+          </nut-button>
+        </view>
       </view>
     </view>
 
@@ -182,7 +194,6 @@
             <text v-else class="source-info-text">{{ item.label }}</text>
           </view>
         </view>
-        <text v-if="activeSourceInfo.note" class="source-info-note">{{ activeSourceInfo.note }}</text>
       </view>
     </view>
 
@@ -190,26 +201,61 @@
       {{ errorMessage }}
     </view>
 
-    <view v-else-if="hasSearched && results.length === 0 && !isSearching" class="state-block">
-      没有符合条件的候选名
+    <view v-else-if="emptyStateText" class="state-block">
+      {{ emptyStateText }}
     </view>
 
     <view v-if="results.length > 0" class="result-section">
       <view class="result-header">
         <view>
-          <text class="section-title">候选名</text>
+          <text class="section-title">{{ resultTitle }}</text>
           <text class="section-subtitle">{{ resultSummary }}</text>
         </view>
-        <text class="section-count">{{ results.length }}</text>
+        <text class="section-count">{{ resultCount }}</text>
+      </view>
+
+      <view v-if="displayMode === 'generated'" class="pagination-row">
+        <button
+          class="page-button"
+          :disabled="currentPage <= 1 || isSearching"
+          @click="goToPreviousPage"
+        >
+          上一页
+        </button>
+        <text class="page-current">第 {{ currentPage }} 页</text>
+        <button
+          class="page-button"
+          :disabled="reachedEnd || isSearching"
+          @click="goToNextPage"
+        >
+          下一页
+        </button>
       </view>
 
       <view class="result-list">
-        <view v-for="(item, index) in results" :key="item.fullName" class="result-card">
-          <view class="rank">{{ index + 1 }}</view>
+        <view
+          v-for="(item, index) in results"
+          :key="`${displayMode}-${item.fullName}`"
+          class="result-card"
+          :class="{ favorite: isFavorite(item.fullName) }"
+        >
+          <view class="rank">{{ getRankNumber(index) }}</view>
           <view class="result-main">
             <view class="name-line">
-              <text class="full-name">{{ item.fullName }}</text>
-              <text class="score">{{ item.score }}</text>
+              <view class="name-title">
+                <text v-if="isFavorite(item.fullName)" class="favorite-star">★</text>
+                <text class="full-name">{{ item.fullName }}</text>
+              </view>
+              <view class="name-actions">
+                <text class="score">{{ item.score }}</text>
+                <button
+                  class="favorite-card-button"
+                  :class="{ active: isFavorite(item.fullName) }"
+                  @click="toggleFavorite(item)"
+                >
+                  {{ isFavorite(item.fullName) ? '已收藏' : '收藏' }}
+                </button>
+              </view>
             </view>
             <view class="meta-line">
               <text>{{ item.pinyin.join(' · ') }}</text>
@@ -239,7 +285,7 @@
 
 <script setup lang="ts">
 import Taro from '@tarojs/taro'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import {
   DEFAULT_SOURCE_ID,
   SOURCE_CONFIGS,
@@ -281,8 +327,25 @@ type SourceIndex = {
 }
 
 type PublicResult = ReturnType<typeof toPublicResult>
+type DisplayMode = 'generated' | 'favorites'
+type FavoriteResult = PublicResult & { favoritedAt: number }
+
+type StoredQueryConfig = {
+  surname: string
+  selectedSourceId: SourcePreference
+  frequencyMin: number
+  frequencyMax: number
+  style: NameStyle
+  mustText: string
+  looseMode: boolean
+  mustPosition: MustPosition
+  avoidText: string
+  limit: number
+}
 
 const DATABASE_BASE = '/api/database/candidate'
+const QUERY_CONFIG_STORAGE_KEY = 'name-generator:index-query-config:v1'
+const FAVORITES_STORAGE_KEY = 'name-generator:favorites:v1'
 const DEFAULT_MUST_TEXT = [
   '素处以默',
   '妙机其微',
@@ -302,7 +365,6 @@ type SourceInfo = {
   title: string
   summary: string
   items: Array<{ label: string; url?: string }>
-  note?: string
 }
 
 const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
@@ -317,7 +379,6 @@ const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
       { label: '私募基金管理公司名称' },
       { label: '已公布私募基金名' },
     ],
-    note: '具体来源见项目 README.md。',
   },
   academic: {
     title: '五道口',
@@ -335,13 +396,11 @@ const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
       { label: '工程院院士名录' },
       { label: 'CNKI 科研项目' },
     ],
-    note: '具体来源见项目 README.md。',
   },
   modern_people: {
     title: '他山石',
     summary: '基于政府公示信息等现代公开姓名整理，贴近现实姓名语感。',
     items: [{ label: '政府公示信息，例如北京积分落户公示' }],
-    note: '具体来源见项目 README.md。',
   },
   imperial_exam: {
     title: '登科录',
@@ -352,7 +411,6 @@ const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
         url: 'https://projects.iq.harvard.edu/chinesecbdb/home',
       },
     ],
-    note: '具体来源见项目 README.md。',
   },
   ancient_names: {
     title: '古人云',
@@ -363,11 +421,10 @@ const SOURCE_INFO: Partial<Record<SourcePreference, SourceInfo>> = {
         url: 'https://book.douban.com/subject/35479474/',
       },
     ],
-    note: '具体来源见项目 README.md。',
   },
 }
 
-const surname = ref('姚')
+const surname = ref('张')
 const selectedSourceId = ref<SourcePreference>(DEFAULT_SOURCE_ID as SourcePreference)
 const frequencyMin = ref(1)
 const frequencyMax = ref(100)
@@ -386,6 +443,13 @@ const results = ref<PublicResult[]>([])
 const errorMessage = ref('')
 const isSearching = ref(false)
 const hasSearched = ref(false)
+const hasOpenedFavorites = ref(false)
+const displayMode = ref<DisplayMode>('generated')
+const currentPage = ref(1)
+const reachedEnd = ref(false)
+const lastSearchSignature = ref('')
+const favorites = ref<FavoriteResult[]>([])
+const storageReady = ref(false)
 const activeSourceInfo = ref<SourceInfo | null>(null)
 
 const styleOptions: Array<{ label: string; value: NameStyle }> = [
@@ -443,18 +507,81 @@ const frequencySummary = computed(() => {
   return `自动去除最高频前${formatPercent(autoExcludePercent)}%，当前候选名约${currentFrequencyCount(stats.candidateCount)}个`
 })
 
+const currentSearchSignature = computed(() => getCurrentSearchSignature())
+
+const canContinueCurrentSearch = computed(() => {
+  return (
+    displayMode.value === 'generated' &&
+    hasSearched.value &&
+    !reachedEnd.value &&
+    lastSearchSignature.value === currentSearchSignature.value
+  )
+})
+
+const searchButtonText = computed(() => {
+  if (canContinueCurrentSearch.value) return '继续生成下一批'
+  return `从${selectedSourceLabel.value}中生成候选`
+})
+
+const resultTitle = computed(() => (displayMode.value === 'favorites' ? '收藏名' : '候选名'))
+
+const resultCount = computed(() => {
+  if (displayMode.value === 'favorites') return favorites.value.length
+  return results.value.length
+})
+
 const resultSummary = computed(() => {
+  if (displayMode.value === 'favorites') {
+    return favorites.value.length > 0 ? `已收藏 ${favorites.value.length} 个名字` : '尚未收藏名字'
+  }
   if (!hasSearched.value) return selectedSourceLabel.value
-  return `${surname.value}${results.value[0]?.name || ''} · ${selectedSourceLabel.value}`
+  return `第 ${currentPage.value} 页 · ${selectedSourceLabel.value}`
+})
+
+const emptyStateText = computed(() => {
+  if (isSearching.value || errorMessage.value) return ''
+  if (displayMode.value === 'favorites' && hasOpenedFavorites.value && results.value.length === 0) {
+    return '还没有收藏的名字'
+  }
+  if (displayMode.value === 'generated' && hasSearched.value && results.value.length === 0) {
+    return currentPage.value > 1 ? '没有更多符合条件的候选名' : '没有符合条件的候选名'
+  }
+  return ''
 })
 
 onMounted(async () => {
   try {
+    restoreQueryConfig()
+    restoreFavorites()
     await loadSourceIndex()
+    storageReady.value = true
+    saveQueryConfig()
   } catch (error) {
     errorMessage.value = getErrorMessage(error)
   }
 })
+
+watch(
+  [surname, selectedSourceId, frequencyMin, frequencyMax, style, mustText, looseMode, mustPosition, avoidText, limit],
+  () => {
+    if (storageReady.value) {
+      saveQueryConfig()
+    }
+  }
+)
+
+watch(
+  favorites,
+  () => {
+    if (storageReady.value) {
+      saveFavorites()
+    }
+    if (displayMode.value === 'favorites') {
+      refreshFavoriteResults()
+    }
+  },
+  { deep: true }
+)
 
 function selectSource(sourceId: SourcePreference) {
   selectedSourceId.value = sourceId
@@ -498,9 +625,256 @@ function setLimit(next: number) {
   limit.value = Math.max(5, Math.min(50, Number.isFinite(next) ? Math.round(next) : 30))
 }
 
+function getCurrentQueryConfig(): StoredQueryConfig {
+  return {
+    surname: stripNonChinese(surname.value).slice(0, 4) || '张',
+    selectedSourceId: selectedSourceId.value,
+    frequencyMin: frequencyMin.value,
+    frequencyMax: frequencyMax.value,
+    style: style.value,
+    mustText: mustText.value,
+    looseMode: looseMode.value,
+    mustPosition: mustPosition.value,
+    avoidText: avoidText.value,
+    limit: limit.value,
+  }
+}
+
+function getCurrentSearchSignature(): string {
+  return JSON.stringify(getCurrentQueryConfig())
+}
+
+function restoreQueryConfig() {
+  const stored = readStorageJson<Partial<StoredQueryConfig>>(QUERY_CONFIG_STORAGE_KEY)
+  if (!stored || typeof stored !== 'object') return
+
+  const storedSurname = stripNonChinese(String(stored.surname || '')).slice(0, 4)
+  if (storedSurname) surname.value = storedSurname
+  if (isSourcePreference(stored.selectedSourceId)) selectedSourceId.value = stored.selectedSourceId
+  if (typeof stored.frequencyMin === 'number') frequencyMin.value = clampFrequencyPercent(stored.frequencyMin)
+  if (typeof stored.frequencyMax === 'number') frequencyMax.value = clampFrequencyPercent(stored.frequencyMax)
+  if (isNameStyle(stored.style)) style.value = stored.style
+  if (typeof stored.mustText === 'string') {
+    mustText.value = sliceText(normalizeMustText(stored.mustText), 160)
+  }
+  if (typeof stored.looseMode === 'boolean') looseMode.value = stored.looseMode
+  if (isMustPosition(stored.mustPosition)) mustPosition.value = stored.mustPosition
+  if (typeof stored.avoidText === 'string') avoidText.value = stored.avoidText
+  if (typeof stored.limit === 'number') setLimit(stored.limit)
+}
+
+function saveQueryConfig() {
+  writeStorageJson(QUERY_CONFIG_STORAGE_KEY, getCurrentQueryConfig())
+}
+
+function restoreFavorites() {
+  const stored = readStorageJson<FavoriteResult[]>(FAVORITES_STORAGE_KEY)
+  if (!Array.isArray(stored)) return
+  favorites.value = stored.filter(isFavoriteResult).map((item) => ({
+    ...item,
+    favoritedAt: Number(item.favoritedAt || Date.now()),
+  }))
+}
+
+function saveFavorites() {
+  writeStorageJson(FAVORITES_STORAGE_KEY, favorites.value)
+}
+
+function showFavorites() {
+  errorMessage.value = ''
+  hasOpenedFavorites.value = true
+  displayMode.value = 'favorites'
+  refreshFavoriteResults()
+}
+
+function refreshFavoriteResults() {
+  results.value = favorites.value.map((item) => {
+    const { favoritedAt: _favoritedAt, ...result } = item
+    return result
+  })
+}
+
+function isFavorite(fullName: string): boolean {
+  return favorites.value.some((item) => item.fullName === fullName)
+}
+
+function toggleFavorite(item: PublicResult) {
+  const index = favorites.value.findIndex((favorite) => favorite.fullName === item.fullName)
+  if (index >= 0) {
+    favorites.value = favorites.value.filter((favorite) => favorite.fullName !== item.fullName)
+    return
+  }
+  favorites.value = [{ ...item, favoritedAt: Date.now() }, ...favorites.value]
+}
+
+function getRankNumber(index: number): number {
+  if (displayMode.value === 'favorites') return index + 1
+  return (currentPage.value - 1) * limit.value + index + 1
+}
+
+function exportCsv() {
+  if (results.value.length === 0) {
+    showToast('暂无可导出的名字')
+    return
+  }
+
+  const rows = [
+    ['姓名', '二字名', '评分', '拼音', '声调', '来源', '来源名', '避讳说明', '音律说明'],
+    ...results.value.map((item) => [
+      item.fullName,
+      item.name,
+      item.score,
+      item.pinyin.join(' '),
+      item.tonePattern,
+      item.sources.join('、'),
+      item.sourceNames.join('、'),
+      item.semantic,
+      item.phonetic,
+    ]),
+  ]
+  const csv = `\uFEFF${rows.map((row) => row.map(escapeCsvValue).join(',')).join('\r\n')}`
+  const filenamePrefix = displayMode.value === 'favorites' ? '收藏名字' : '候选名字'
+  downloadTextFile(csv, `${filenamePrefix}_${formatDateTime(new Date())}.csv`)
+}
+
+function handleReset() {
+  clearLocalStorage()
+  reloadPage()
+}
+
+function isSourcePreference(value: unknown): value is SourcePreference {
+  const sourceId = String(value || '')
+  return sourceId === 'default' || SOURCE_CONFIGS.some((source) => source.id === sourceId)
+}
+
+function isNameStyle(value: unknown): value is NameStyle {
+  return styleOptions.some((item) => item.value === value)
+}
+
+function isMustPosition(value: unknown): value is MustPosition {
+  return positionOptions.some((item) => item.value === value)
+}
+
+function isFavoriteResult(value: unknown): value is FavoriteResult {
+  const item = value as Partial<FavoriteResult>
+  return Boolean(
+    item &&
+      typeof item.fullName === 'string' &&
+      typeof item.name === 'string' &&
+      Array.isArray(item.pinyin) &&
+      Array.isArray(item.sources) &&
+      Array.isArray(item.sourceNames)
+  )
+}
+
+function readStorageJson<T>(key: string): T | null {
+  const value = readStorageValue(key)
+  if (!value) return null
+  try {
+    return JSON.parse(value) as T
+  } catch (_error) {
+    return null
+  }
+}
+
+function writeStorageJson(key: string, value: unknown) {
+  const serialized = JSON.stringify(value)
+  if (typeof window !== 'undefined' && window.localStorage) {
+    window.localStorage.setItem(key, serialized)
+    return
+  }
+  Taro.setStorageSync(key, serialized)
+}
+
+function readStorageValue(key: string): string | null {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    return window.localStorage.getItem(key)
+  }
+  try {
+    const value = Taro.getStorageSync(key)
+    if (!value) return null
+    return typeof value === 'string' ? value : JSON.stringify(value)
+  } catch (_error) {
+    return null
+  }
+}
+
+function clearLocalStorage() {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    window.localStorage.clear()
+    return
+  }
+  Taro.clearStorageSync()
+}
+
+function reloadPage() {
+  if (typeof window !== 'undefined' && window.location) {
+    window.location.reload()
+    return
+  }
+  Taro.redirectTo({ url: '/pages/index/index' })
+}
+
+function escapeCsvValue(value: unknown): string {
+  const text = String(value ?? '').replace(/\r?\n/gu, ' ')
+  if (/[",\r\n]/u.test(text)) {
+    return `"${text.replace(/"/gu, '""')}"`
+  }
+  return text
+}
+
+function downloadTextFile(content: string, filename: string) {
+  if (typeof window !== 'undefined' && typeof document !== 'undefined' && typeof Blob !== 'undefined') {
+    const blob = new Blob([content], { type: 'text/csv;charset=utf-8' })
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    window.URL.revokeObjectURL(url)
+    return
+  }
+  Taro.setClipboardData({ data: content })
+  showToast('已复制csv内容')
+}
+
+function formatDateTime(date: Date): string {
+  const pad = (value: number) => String(value).padStart(2, '0')
+  return [
+    date.getFullYear(),
+    pad(date.getMonth() + 1),
+    pad(date.getDate()),
+    pad(date.getHours()),
+    pad(date.getMinutes()),
+    pad(date.getSeconds()),
+  ].join('')
+}
+
+function showToast(title: string) {
+  Taro.showToast({ title, icon: 'none' })
+}
+
 async function handleSearch() {
+  const nextPage = canContinueCurrentSearch.value ? currentPage.value + 1 : 1
+  await runSearchPage(nextPage)
+}
+
+async function goToPreviousPage() {
+  if (currentPage.value <= 1 || isSearching.value) return
+  await runSearchPage(currentPage.value - 1)
+}
+
+async function goToNextPage() {
+  if (reachedEnd.value || isSearching.value) return
+  await runSearchPage(currentPage.value + 1)
+}
+
+async function runSearchPage(page: number) {
   errorMessage.value = ''
   hasSearched.value = true
+  displayMode.value = 'generated'
   const cleanedSurname = stripNonChinese(surname.value)
   if (!cleanedSurname) {
     errorMessage.value = '请输入姓氏'
@@ -517,6 +891,8 @@ async function handleSearch() {
   try {
     const candidateDb = applyFrequencyRange(await loadCandidateDb(selectedSourceId.value))
     const loadedCharDb = await loadCharDb()
+    const pageSize = limit.value
+    const searchLimit = page * pageSize + 1
     const query: QueryConfig = {
       surname: cleanedSurname,
       avoid: parseAvoidList(avoidText.value),
@@ -524,9 +900,14 @@ async function handleSearch() {
       mustPosition: mustPosition.value,
       style: style.value,
       sourcePreference: selectedSourceId.value,
-      limit: limit.value,
+      limit: searchLimit,
     }
-    results.value = queryNames({ candidateDb, charDb: loadedCharDb, query }).map(toPublicResult)
+    const queriedResults = queryNames({ candidateDb, charDb: loadedCharDb, query }).map(toPublicResult)
+    const start = (page - 1) * pageSize
+    results.value = queriedResults.slice(start, start + pageSize)
+    currentPage.value = page
+    reachedEnd.value = queriedResults.length <= start + pageSize
+    lastSearchSignature.value = getCurrentSearchSignature()
   } catch (error) {
     errorMessage.value = getErrorMessage(error)
     results.value = []
@@ -538,8 +919,13 @@ async function handleSearch() {
 async function loadSourceIndex() {
   const index = await requestJson<SourceIndex>(`${DATABASE_BASE}/source_index.json`)
   sourceIndex.value = index
-  selectedSourceId.value = (index.defaultSourceId || DEFAULT_SOURCE_ID) as SourcePreference
-  resetFrequencyRange()
+  if (!index.sources?.[selectedSourceId.value]) {
+    selectedSourceId.value = (index.defaultSourceId || DEFAULT_SOURCE_ID) as SourcePreference
+    resetFrequencyRange()
+  } else {
+    setFrequencyRange('min', frequencyMin.value)
+    setFrequencyRange('max', frequencyMax.value)
+  }
 }
 
 async function loadCharDb(): Promise<CharDb> {
@@ -665,7 +1051,8 @@ function formatByteSize(size: number): string {
 }
 
 function openSourcePerson(sourceName: string) {
-  openExternal(`https://www.baidu.com/s?wd=${encodeURIComponent(sourceName)}`)
+  const searchName = sourceName.replace(/^(基金|公司):/u, '')
+  openExternal(`https://www.baidu.com/s?wd=${encodeURIComponent(searchName)}`)
 }
 
 function showSourceInfo(sourceId: SourcePreference) {
@@ -851,6 +1238,10 @@ function getErrorMessage(error: unknown): string {
 .segment-button,
 .icon-button,
 .toggle-button,
+.reset-button,
+.secondary-action-button,
+.page-button,
+.favorite-card-button,
 .source-link {
   border: 1px solid #d8ddd8;
   background: #f8faf8;
@@ -898,7 +1289,8 @@ function getErrorMessage(error: unknown): string {
 
 .source-chip.active,
 .segment-button.active,
-.toggle-button.active {
+.toggle-button.active,
+.favorite-card-button.active {
   border-color: #1a7668;
   background: #e8f5f1;
   color: #125e53;
@@ -951,10 +1343,17 @@ function getErrorMessage(error: unknown): string {
   font-size: 24px;
 }
 
-.toggle-button {
+.loose-action-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.toggle-button,
+.reset-button {
   width: 100%;
   height: 64px;
-  margin-top: 12px;
   font-size: 22px;
 }
 
@@ -980,6 +1379,27 @@ function getErrorMessage(error: unknown): string {
   justify-content: space-between;
   gap: 20px;
   margin-top: 24px;
+}
+
+.action-buttons {
+  min-width: min(100%, 520px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.secondary-action-button,
+.generate-action-button {
+  flex: 1 1 150px;
+  min-width: 0;
+  min-height: 64px;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+
+.generate-action-button {
+  flex-basis: 180px;
 }
 
 .load-summary {
@@ -1024,6 +1444,7 @@ function getErrorMessage(error: unknown): string {
 
 .source-info-title {
   min-width: 0;
+  flex: 1;
   font-size: 30px;
   line-height: 38px;
   font-weight: 700;
@@ -1031,7 +1452,9 @@ function getErrorMessage(error: unknown): string {
 }
 
 .source-info-close {
-  flex: 0 0 auto;
+  flex: 0 0 96px;
+  width: 96px;
+  min-width: 96px;
   height: 44px;
   border: 1px solid #d8ddd8;
   border-radius: 8px;
@@ -1109,6 +1532,30 @@ function getErrorMessage(error: unknown): string {
   margin-bottom: 14px;
 }
 
+.pagination-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.page-button {
+  width: 128px;
+  height: 52px;
+  font-size: 21px;
+}
+
+.page-button:disabled {
+  color: #a0a7a3;
+  background: #eef1ee;
+}
+
+.page-current {
+  color: #5b6762;
+  font-size: 22px;
+  line-height: 30px;
+}
+
 .section-title {
   display: block;
   font-size: 32px;
@@ -1148,6 +1595,11 @@ function getErrorMessage(error: unknown): string {
   background: #ffffff;
 }
 
+.result-card.favorite {
+  border-color: #ead08a;
+  background: #fffdf7;
+}
+
 .rank {
   flex: 0 0 48px;
   width: 48px;
@@ -1169,9 +1621,30 @@ function getErrorMessage(error: unknown): string {
 
 .name-line {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+}
+
+.name-title {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favorite-star {
+  flex: 0 0 auto;
+  color: #e2aa1f;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.name-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .full-name {
@@ -1186,6 +1659,13 @@ function getErrorMessage(error: unknown): string {
   font-size: 26px;
   font-weight: 700;
   color: #12685d;
+}
+
+.favorite-card-button {
+  width: 92px;
+  height: 44px;
+  font-size: 19px;
+  line-height: 42px;
 }
 
 .meta-line,
@@ -1212,12 +1692,16 @@ function getErrorMessage(error: unknown): string {
 }
 
 .source-link {
-  height: 50px;
-  padding: 0 14px;
+  min-height: 50px;
+  max-width: 100%;
+  padding: 8px 14px;
   color: #125e53;
   border-color: #b7d9cc;
   background: #f2fbf7;
   font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+  white-space: normal;
 }
 
 @media (max-width: 640px) {
@@ -1241,6 +1725,29 @@ function getErrorMessage(error: unknown): string {
   .action-row {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .action-buttons {
+    min-width: 0;
+    justify-content: stretch;
+  }
+
+  .secondary-action-button,
+  .generate-action-button {
+    flex-basis: calc(50% - 6px);
+  }
+
+  .generate-action-button {
+    flex-basis: 100%;
+  }
+
+  .name-line {
+    flex-direction: column;
+  }
+
+  .name-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .top-bar {

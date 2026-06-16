@@ -346,7 +346,10 @@ export async function buildCandidateDb(): Promise<CandidateNameRecord[]> {
             defaultMaxPercent: 100,
           },
           sourceNameFile:
-            source.id === "academic" || source.id === "imperial_exam" || source.id === "ancient_names"
+            source.id === "wealth" ||
+            source.id === "academic" ||
+            source.id === "imperial_exam" ||
+            source.id === "ancient_names"
               ? `sources/${source.id}.name_sources.json`
               : undefined,
         },

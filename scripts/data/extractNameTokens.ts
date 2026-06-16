@@ -46,7 +46,7 @@ function addCharFrequency(map: Map<string, number>, text: string, weight: number
 }
 
 function getSourceNames(token: ExtractedNameToken): string[] {
-  const sourceIdsWithLookup = ["academic", "imperial_exam", "ancient_names"];
+  const sourceIdsWithLookup = ["wealth", "academic", "imperial_exam", "ancient_names"];
   if (!token.sourceIds.some((sourceId) => sourceIdsWithLookup.includes(sourceId))) {
     return [];
   }

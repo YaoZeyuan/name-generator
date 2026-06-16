@@ -61,8 +61,24 @@ function getSourceDetailSuffix(sourceDetail: string | undefined): string | null 
 }
 
 export function getSourceRefDisplayName(
-  sourceRef: Pick<SourceRef, "field" | "value" | "sourceDetail" | "relatedPerson">
+  sourceRef: Pick<SourceRef, "sourceId" | "field" | "value" | "sourceDetail" | "relatedPerson">
 ): string {
+  if (sourceRef.sourceId === "wealth") {
+    const rawName = String(sourceRef.value || "").trim();
+    if (!rawName) {
+      return "";
+    }
+    if (sourceRef.sourceDetail === "fund_name_word_frequency") {
+      return "";
+    }
+    if (sourceRef.sourceDetail === "wealth_fund_name") {
+      return `基金:${rawName}`;
+    }
+    if (sourceRef.sourceDetail === "wealth_company_name") {
+      return `公司:${rawName}`;
+    }
+  }
+
   const relatedPerson = stripNonChinese(sourceRef.relatedPerson || "");
   const value = stripNonChinese(sourceRef.value || "");
   const name = relatedPerson || value;
