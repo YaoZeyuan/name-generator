@@ -332,6 +332,22 @@ import {
   type SourcePreference,
 } from "../../../packages/name-core/src";
 
+const DEFAULT_API_BASE = "/";
+const API_BASE = process.env.TARO_APP_API_BASE || DEFAULT_API_BASE;
+
+function getNoCacheUrl(url: string): string {
+  const timestamp = Date.now();
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}t=${timestamp}`;
+}
+
+function joinUrl(base: string, path: string): string {
+  if (/^https?:\/\//.test(path)) return path;
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${normalizedBase}${normalizedPath}`;
+}
+
 type PercentileFilter = {
   enabled: boolean;
   bucketCount: number;
@@ -1140,16 +1156,27 @@ async function loadCandidateDb(
   return candidateDb;
 }
 
-async function requestJson<T>(url: string): Promise<T> {
-  const response: any = await Taro.request({ url, method: "GET" });
-  if (response.statusCode < 200 || response.statusCode >= 300) {
-    throw new Error(`数据加载失败：${url}`);
+async function requestJson<T>(filePath: string): Promise<T> {
+  const url = getNoCacheUrl(joinUrl(API_BASE, filePath));
+  console.log("url2 => ", url);
+  try {
+    const response: any = await Taro.request({
+      url,
+      method: "GET",
+      timeout: 60000,
+    });
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      throw new Error(`数据加载失败：${url}`);
+    }
+    const data = response.data;
+    if (typeof data === "string") {
+      return JSON.parse(data.replace(/^\uFEFF/u, "")) as T;
+    }
+    return data as T;
+  } catch (e) {
+    console.warn("filePath 加载失败 => ", filePath);
+    return {} as T;
   }
-  const data = response.data;
-  if (typeof data === "string") {
-    return JSON.parse(data.replace(/^\uFEFF/u, "")) as T;
-  }
-  return data as T;
 }
 
 function applyFrequencyRange(candidateDb: CandidateName[]): CandidateName[] {
